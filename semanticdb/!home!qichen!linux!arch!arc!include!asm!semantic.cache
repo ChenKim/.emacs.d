@@ -1,0 +1,46 @@
+;; Object asm/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "asm/"
+  :tables (list 
+   (semanticdb-table "delay.h"
+    :major-mode 'c-mode
+    :tags 
+        '( ("__ASM_ARC_UDELAY_H" variable (:constant-flag t) nil [563 581])
+            ("asm/param.h" include (:system-flag t) nil [583 605])
+            ("__delay" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("loops" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [644 664]))                  
+                :type "void")
+                nil [617 760])
+            ("__bad_udelay" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [787 792]))                  
+                :type "void")
+                nil [762 793])
+            ("__udelay" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("usecs" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [1540 1560]))                  
+                :type "void")
+                nil [1512 1784])
+            ("udelay" variable (:constant-flag t) nil [1794 1800]))          
+    :file "delay.h"
+    :pointmax 1930
+    :fsize 1929
+    :lastmodtime '(22116 18313 573641 702000)
+    :unmatched-syntax 'nil
+    :lexical-table 
+        '(("__ASM_ARC_UDELAY_H")
+          ("udelay" (spp-arg-list ("n") 1800 . 1803) . ((semantic-list "(__builtin_constant_p(n) ? ((n) > 20000 ? __bad_udelay() \\
+				: __udelay(n)) : __udelay(n))" 1804 . 1896)))
+          )
+
+    )
+   )
+  :file "!home!qichen!linux!arch!arc!include!asm!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2"
+  )

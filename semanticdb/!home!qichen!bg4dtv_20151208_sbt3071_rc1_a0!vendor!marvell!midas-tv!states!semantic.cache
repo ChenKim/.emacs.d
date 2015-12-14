@@ -1,0 +1,645 @@
+;; Object states/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "states/"
+  :tables (list 
+   (semanticdb-table "NormalState.cpp"
+    :major-mode 'c++-mode
+    :tags 
+        '( ("LOG_NDEBUG" variable (:constant-flag t) nil [808 818])
+            ("LOG_TAG" variable (:constant-flag t) nil [829 836])
+            ("utils/Log.h" include (:system-flag t) nil [851 873])
+            ("dirent.h" include (:system-flag t) nil [874 893])
+            ("errno.h" include (:system-flag t) nil [894 912])
+            ("MidasStates.h" include (:system-flag t) nil [914 938])
+            ("MidasState.h" include (:system-flag t) nil [939 962])
+            ("keycodes.h" include (:system-flag t) nil [963 984])
+            ("MidasSettingsConstants.h" include (:system-flag t) nil [985 1020])
+            ("NormalState.h" include nil nil [1022 1046])
+            ("StateManager.h" include nil nil [1047 1072])
+            ("StatesMessages.h" include nil nil [1073 1100])
+            ("rest_system.h" include nil nil [1101 1125])
+            ("rest_audio.h" include nil nil [1126 1149])
+            ("factoryagent.h" include nil nil [1150 1175])
+            ("amp_client_rpc.h" include
+               (:typemodifiers ("extern" "\"C\"")
+                :system-flag t)
+                (reparse-symbol extern-c-contents) [1190 1217])
+            ("marvell" type
+               (:members 
+                  ( ("android" using (:type ("android" type
+                         (:prototype t
+                          :type "namespace")
+                          nil nil)) (reparse-symbol namespacesubparts) [1242 1266])
+                    ("kSoftAPMsgDelay" variable
+                       (:typemodifiers ("static")
+                        :constant-flag t
+                        :type ("int64_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [1268 1323])
+                    ("videoPictureModes" variable
+                       (:dereference 1
+                        :typemodifiers ("static")
+                        :type ("int32_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [1325 1747])
+                    ("videoWideModes" variable
+                       (:dereference 1
+                        :typemodifiers ("static")
+                        :type ("int32_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [1749 2011])
+                    ("nextVideoPictureMode" function
+                       (:typemodifiers ("static")
+                        :arguments 
+                          ( ("current" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2049 2065])
+                            ("picstatus" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2066 2084]))                          
+                        :type ("int32_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [2013 2838])
+                    ("mapWideModeIndex" function
+                       (:typemodifiers ("static")
+                        :arguments 
+                          ( ("widemode" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2872 2889]))                          
+                        :type ("int32_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [2840 3367])
+                    ("nextVideoWideMode" function
+                       (:typemodifiers ("static")
+                        :arguments 
+                          ( ("currmode" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3402 3419])
+                            ("isSD" variable (:type "bool") (reparse-symbol arg-sub-list) [3420 3430]))                          
+                        :type ("int32_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [3369 4052])
+                    ("NormalStateSettingsObserver" type
+                       (:superclasses 
+                          ( ("BnMidasSettingsObserver" type
+                               (:protection "public"
+                                :type "class")
+                                nil nil))                          
+                        :members 
+                          ( ("public" label nil (reparse-symbol classsubparts) [4125 4132])
+                            ("NormalStateSettingsObserver" function
+                               (:constructor-flag t
+                                :arguments 
+                                  ( ("state" variable
+                                       (:pointer 1
+                                        :type ("NormalState" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [4165 4184]))                                  
+                                :type ("NormalStateSettingsObserver" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [4137 4204])
+                            ("onSettingsChanged" function
+                               (:typemodifiers ("virtual")
+                                :arguments 
+                                  ( ("key" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("String8" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [4240 4259])
+                                    ("value" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("String8" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [4260 4281]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [4209 4428])
+                            ("protected" label nil (reparse-symbol classsubparts) [4431 4441])
+                            ("mState" variable (:type ("wp" type
+                                 (:template-specifier 
+                                    ( ("NormalState" type nil nil nil))                                    
+                                  :type "class")
+                                  nil nil)) (reparse-symbol classsubparts) [4446 4469]))                          
+                        :type "class")
+                        (reparse-symbol namespacesubparts) [4054 4472])
+                    ("NormalStateTvInputObserver" type
+                       (:superclasses 
+                          ( ("BnTvInputObserver" type
+                               (:protection "public"
+                                :type "class")
+                                nil nil))                          
+                        :members 
+                          ( ("public" label nil (reparse-symbol classsubparts) [4536 4543])
+                            ("NormalStateTvInputObserver" function
+                               (:constructor-flag t
+                                :arguments 
+                                  ( ("state" variable
+                                       (:pointer 1
+                                        :type ("NormalState" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [4575 4594]))                                  
+                                :type ("NormalStateTvInputObserver" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [4548 4619])
+                            ("NormalStateTvInputObserver" function
+                               (:destructor-flag t
+                                :typemodifiers ("virtual")
+                                :type "void")
+                                (reparse-symbol classsubparts) [4624 4664])
+                            ("onNotify" function
+                               (:typemodifiers ("virtual")
+                                :arguments 
+                                  ( ("message" variable
+                                       (:constant-flag t
+                                        :type ("int32_t" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [4691 4713])
+                                    ("ext1" variable
+                                       (:constant-flag t
+                                        :type ("int32_t" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [4714 4733])
+                                    ("ext2" variable
+                                       (:constant-flag t
+                                        :type ("int32_t" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [4759 4778])
+                                    ("obj" variable
+                                       (:pointer 1
+                                        :constant-flag t
+                                        :type ("Parcel" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [4779 4797]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [4669 4962])
+                            ("private" label nil (reparse-symbol classsubparts) [4963 4971])
+                            ("mNormalState" variable (:type ("wp" type
+                                 (:template-specifier 
+                                    ( ("NormalState" type nil nil nil))                                    
+                                  :type "class")
+                                  nil nil)) (reparse-symbol classsubparts) [4976 5005]))                          
+                        :type "class")
+                        (reparse-symbol namespacesubparts) [4474 5008])
+                    ("USDTVDeathRecipient" type
+                       (:superclasses 
+                          ( ("IBinder::DeathRecipient" type
+                               (:protection "public"
+                                :type "class")
+                                nil nil))                          
+                        :members 
+                          ( ("public" label nil (reparse-symbol classsubparts) [5071 5078])
+                            ("USDTVDeathRecipient" function
+                               (:constructor-flag t
+                                :arguments 
+                                  ( ("state" variable
+                                       (:pointer 1
+                                        :type ("NormalState" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [5103 5122]))                                  
+                                :type ("USDTVDeathRecipient" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [5083 5147])
+                            ("USDTVDeathRecipient" function
+                               (:destructor-flag t
+                                :typemodifiers ("virtual")
+                                :type "void")
+                                (reparse-symbol classsubparts) [5152 5185])
+                            ("binderDied" function
+                               (:typemodifiers ("virtual")
+                                :arguments 
+                                  ( ("who" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("android::wp" type
+                                             (:template-specifier 
+                                                ( ("android::IBinder" type nil nil nil))                                                
+                                              :type "class")
+                                              nil nil))
+                                        (reparse-symbol arg-sub-list) [5214 5255]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [5190 5401])
+                            ("private" label nil (reparse-symbol classsubparts) [5402 5410])
+                            ("mNormalState" variable (:type ("wp" type
+                                 (:template-specifier 
+                                    ( ("NormalState" type nil nil nil))                                    
+                                  :type "class")
+                                  nil nil)) (reparse-symbol classsubparts) [5415 5444]))                          
+                        :type "class")
+                        (reparse-symbol namespacesubparts) [5010 5447])
+                    ("NormalStatePowerObserver" type
+                       (:superclasses 
+                          ( ("BnPowerObserver" type
+                               (:protection "public"
+                                :type "class")
+                                nil nil))                          
+                        :members 
+                          ( ("public" label nil (reparse-symbol classsubparts) [5507 5514])
+                            ("NormalStatePowerObserver" function
+                               (:constructor-flag t
+                                :arguments 
+                                  ( ("state" variable
+                                       (:pointer 1
+                                        :type ("NormalState" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [5544 5563]))                                  
+                                :type ("NormalStatePowerObserver" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [5519 5588])
+                            ("NormalStatePowerObserver" function
+                               (:destructor-flag t
+                                :typemodifiers ("virtual")
+                                :type "void")
+                                (reparse-symbol classsubparts) [5593 5631])
+                            ("onNotify" function
+                               (:typemodifiers ("virtual")
+                                :arguments 
+                                  ( ("event" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5658 5672])
+                                    ("value" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5673 5687]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [5636 6189])
+                            ("private" label nil (reparse-symbol classsubparts) [6190 6198])
+                            ("mNormalState" variable (:type ("wp" type
+                                 (:template-specifier 
+                                    ( ("NormalState" type nil nil nil))                                    
+                                  :type "class")
+                                  nil nil)) (reparse-symbol classsubparts) [6203 6232]))                          
+                        :type "class")
+                        (reparse-symbol namespacesubparts) [5449 6235])
+                    ("NormalMountObserver" type
+                       (:superclasses 
+                          ( ("BnMountObserver" type
+                               (:protection "public"
+                                :type "class")
+                                nil nil))                          
+                        :members 
+                          ( ("public" label nil (reparse-symbol classsubparts) [6291 6298])
+                            ("NormalMountObserver" function
+                               (:constructor-flag t
+                                :arguments 
+                                  ( ("state" variable
+                                       (:pointer 1
+                                        :type ("NormalState" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [6323 6342]))                                  
+                                :type ("NormalMountObserver" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [6303 6367])
+                            ("NormalMountObserver" function
+                               (:destructor-flag t
+                                :typemodifiers ("virtual")
+                                :type "void")
+                                (reparse-symbol classsubparts) [6372 6405])
+                            ("onMountChanged" function
+                               (:typemodifiers ("virtual")
+                                :arguments 
+                                  ( ("path" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("String8" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [6439 6459])
+                                    ("event" variable (:type ("MIDAS_MOUNT_EVENT" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6460 6484]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [6411 6700])
+                            ("protected" label nil (reparse-symbol classsubparts) [6703 6713])
+                            ("mNormalState" variable (:type ("wp" type
+                                 (:template-specifier 
+                                    ( ("NormalState" type nil nil nil))                                    
+                                  :type "class")
+                                  nil nil)) (reparse-symbol classsubparts) [6718 6747]))                          
+                        :type "class")
+                        (reparse-symbol namespacesubparts) [6237 6750])
+                    ("NormalStateUSDTVListener" type
+                       (:superclasses 
+                          ( ("BnUSDTVListener" type
+                               (:protection "public"
+                                :type "class")
+                                nil nil))                          
+                        :members 
+                          ( ("public" label nil (reparse-symbol classsubparts) [6811 6818])
+                            ("NormalStateUSDTVListener" function
+                               (:constructor-flag t
+                                :arguments 
+                                  ( ("state" variable
+                                       (:pointer 1
+                                        :type ("NormalState" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [6848 6867]))                                  
+                                :type ("NormalStateUSDTVListener" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [6823 6892])
+                            ("NormalStateUSDTVListener" function
+                               (:destructor-flag t
+                                :typemodifiers ("virtual")
+                                :type "void")
+                                (reparse-symbol classsubparts) [6897 6935])
+                            ("handleEvent" function
+                               (:typemodifiers ("virtual")
+                                :arguments 
+                                  ( ("eventType" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6970 6988]))                                  
+                                :type ("int32_t" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [6941 7750])
+                            ("protected" label nil (reparse-symbol classsubparts) [7753 7763])
+                            ("mNormalState" variable (:type ("wp" type
+                                 (:template-specifier 
+                                    ( ("NormalState" type nil nil nil))                                    
+                                  :type "class")
+                                  nil nil)) (reparse-symbol classsubparts) [7768 7797]))                          
+                        :type "class")
+                        (reparse-symbol namespacesubparts) [6752 7800])
+                    ("NormalState" function
+                       (:constructor-flag t
+                        :parent "NormalState"
+                        :arguments 
+                          ( ("mgr" variable (:type ("sp" type
+                                 (:template-specifier 
+                                    ( ("StateManager" type nil nil nil))                                    
+                                  :type "class")
+                                  nil nil)) (reparse-symbol arg-sub-list) [7919 7940]))                          
+                        :type ("NormalState" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [7894 9898])
+                    ("NormalState" function
+                       (:destructor-flag t
+                        :parent "NormalState"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [9900 10106])
+                    ("binderDied" function
+                       (:parent "NormalState"
+                        :arguments 
+                          ( ("who" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("wp" type
+                                     (:template-specifier 
+                                        ( ("IBinder" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [10137 10160]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [10108 10244])
+                    ("onNotify" function
+                       (:parent "NormalState"
+                        :arguments 
+                          ( ("message" variable
+                               (:constant-flag t
+                                :type ("int32_t" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [10273 10295])
+                            ("ext1" variable
+                               (:constant-flag t
+                                :type ("int32_t" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [10296 10315])
+                            ("ext2" variable
+                               (:constant-flag t
+                                :type ("int32_t" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [10338 10357])
+                            ("obj" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type ("Parcel" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [10358 10376]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [10246 11630])
+                    ("setSleepTimerNotification" function
+                       (:parent "NormalState"
+                        :arguments 
+                          ( ("enable" variable (:type "bool") (reparse-symbol arg-sub-list) [11676 11688]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [11632 11789])
+                    ("initIfNecessary" function
+                       (:parent "NormalState"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [11791 11975])
+                    ("linkUSDTVService" function
+                       (:parent "NormalState"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [11977 12575])
+                    ("unlinkUSDTVService" function
+                       (:parent "NormalState"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [12577 12807])
+                    ("getState" function
+                       (:parent "NormalState"
+                        :type ("MIDAS_STATE" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [12809 12879])
+                    ("getWakeupReason" function
+                       (:parent "NormalState"
+                        :type ("MIDAS_WAKEUP_REASON" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [12881 12961])
+                    ("onStart" function
+                       (:parent "NormalState"
+                        :arguments 
+                          ( ("reason" variable
+                               (:constant-flag t
+                                :type ("MIDAS_WAKEUP_REASON" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [12993 13026]))                          
+                        :type ("status_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [12963 14080])
+                    ("onStop" function
+                       (:parent "NormalState"
+                        :arguments 
+                          ( ("reason" variable
+                               (:constant-flag t
+                                :type ("MIDAS_SLEEP_REASON" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [14111 14143]))                          
+                        :type ("status_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [14082 15007])
+                    ("resumeDemoCounter" function
+                       (:parent "NormalState"
+                        :arguments 
+                          ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [15045 15050]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [15009 15369])
+                    ("resetPCPincode" function
+                       (:parent "NormalState"
+                        :arguments 
+                          ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [15404 15409]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [15371 15460])
+                    ("handlePCDigitKeys" function
+                       (:parent "NormalState"
+                        :arguments 
+                          ( ("keyCode" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15502 15518]))                          
+                        :type ("status_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [15462 16039])
+                    ("handlePincode" function
+                       (:parent "NormalState"
+                        :arguments 
+                          ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [16073 16078]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [16041 16699])
+                    ("onKeyDown" function
+                       (:parent "NormalState"
+                        :arguments 
+                          ( ("key" variable
+                               (:reference 1
+                                :type ("KeyEvent" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [16729 16743]))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [16701 18643])
+                    ("GetDigitalNumFromBuffer" function
+                       (:parent "NormalState"
+                        :type "int")
+                        (reparse-symbol namespacesubparts) [18645 19089])
+                    ("InitDigitalNumberForInput" function
+                       (:parent "NormalState"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [19091 19201])
+                    ("handleDigitKeys" function
+                       (:parent "NormalState"
+                        :arguments 
+                          ( ("keyCode" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [19236 19252]))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [19202 21738])
+                    ("getTunerTypebyNumber" function
+                       (:parent "NormalState"
+                        :arguments 
+                          ( ("major" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [21783 21797])
+                            ("minor" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [21798 21812]))                          
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [21740 24229])
+                    ("CheckIfNeedScan" function
+                       (:parent "NormalState"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [24231 25039])
+                    ("clearFirstKeyFlagAndCmd" function
+                       (:parent "NormalState"
+                        :arguments 
+                          ( ("keycode" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [25083 25099]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [25041 25704])
+                    ("showLinkConfirmation" function
+                       (:parent "NormalState"
+                        :arguments 
+                          ( ("show" variable (:type "bool") (reparse-symbol arg-sub-list) [25745 25755]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [25706 26049])
+                    ("lunchLinkProcess" function
+                       (:parent "NormalState"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [26051 26657])
+                    ("onKeyUp" function
+                       (:parent "NormalState"
+                        :arguments 
+                          ( ("key" variable
+                               (:reference 1
+                                :type ("KeyEvent" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [26685 26699]))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [26659 41581])
+                    ("onKeyLongPressed" function
+                       (:parent "NormalState"
+                        :arguments 
+                          ( ("key" variable
+                               (:reference 1
+                                :type ("KeyEvent" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [41618 41632]))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [41583 42911])
+                    ("forgetLockedChannelInfo" function
+                       (:parent "NormalState"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [42913 43049])
+                    ("resetUnlockParCtrlMode" function
+                       (:parent "NormalState"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [43051 43346])
+                    ("showUnlockParCtrlKey" function
+                       (:parent "NormalState"
+                        :arguments 
+                          ( ("show" variable (:type "bool") (reparse-symbol arg-sub-list) [43387 43397]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [43348 44526])
+                    ("setUnlockParCtrlMode" function
+                       (:parent "NormalState"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [44528 46235])
+                    ("applyUnlockParCtrlMode" function
+                       (:parent "NormalState"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [46237 47776])
+                    ("sendCommand" function
+                       (:parent "NormalState"
+                        :arguments 
+                          ( ("message" variable
+                               (:constant-flag t
+                                :type ("int32_t" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [47808 47830])
+                            ("ext1" variable
+                               (:constant-flag t
+                                :type ("int32_t" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [47831 47850])
+                            ("ext2" variable
+                               (:constant-flag t
+                                :type ("int32_t" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [47879 47898])
+                            ("obj" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type ("Parcel" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [47899 47917]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [47778 47998])
+                    ("onMessageReceived" function
+                       (:parent "NormalState"
+                        :arguments 
+                          ( ("msg" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("sp" type
+                                     (:template-specifier 
+                                        ( ("AMessage" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [48036 48060]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [48000 53712])
+                    ("onSettingsChanged" function
+                       (:parent "NormalState"
+                        :arguments 
+                          ( ("key" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [53750 53769])
+                            ("value" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [53770 53791]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [53714 54116])
+                    ("onMountChanged" function
+                       (:parent "NormalState"
+                        :arguments 
+                          ( ("path" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [54151 54171])
+                            ("event" variable (:type ("MIDAS_MOUNT_EVENT" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [54172 54196]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [54118 54718])
+                    ("getUsbPlaybackFileList" function
+                       (:parent "NormalState"
+                        :arguments 
+                          ( ("path" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [54765 54785]))                          
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [54720 56163])
+                    ("createState" function
+                       (:parent "NormalStateFactory"
+                        :arguments 
+                          ( ("mgr" variable (:type ("sp" type
+                                 (:template-specifier 
+                                    ( ("StateManager" type nil nil nil))                                    
+                                  :type "class")
+                                  nil nil)) (reparse-symbol arg-sub-list) [56212 56233]))                          
+                        :type ("sp" type
+                             (:template-specifier 
+                                ( ("MidasState" type nil nil nil))                                
+                              :type "class")
+                              nil nil))
+                        (reparse-symbol namespacesubparts) [56165 56270])
+                    ("createFactory" function
+                       (:pointer 1
+                        :type ("IMidasStateFactory" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [56283 56359]))                  
+                :type "namespace")
+                nil [1222 56362]))          
+    :file "NormalState.cpp"
+    :pointmax 56386
+    :fsize 56385
+    :lastmodtime '(22118 47577 900497 5000)
+    :unmatched-syntax '((string 56279 . 56282) (EXTERN 56272 . 56278) (punctuation 1219 . 1220))
+    :lexical-table 
+        '(("LOG_NDEBUG" . ((number "0" 819 . 820)))
+          ("LOG_TAG" . ((string "\"NormalState\"" 837 . 850)))
+          )
+
+    )
+   (semanticdb-table "NormalState.h"
+    :file "NormalState.h"
+    :fsize 6061
+    :lastmodtime '(22118 47577 900497 5000)
+    )
+   (semanticdb-table "StatesMessages.h"
+    :file "StatesMessages.h"
+    :fsize 2449
+    :lastmodtime '(22118 47577 900497 5000)
+    )
+   )
+  :file "!home!qichen!bg4dtv_20151208_sbt3071_rc1_a0!vendor!marvell!midas-tv!states!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2"
+  )

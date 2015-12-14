@@ -1,0 +1,614 @@
+;; Object foundation/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "foundation/"
+  :tables (list 
+   (semanticdb-table "AMessage.cpp"
+    :major-mode 'c++-mode
+    :tags 
+        '( ("LOG_TAG" variable (:constant-flag t) nil [630 637])
+            ("cutils/log.h" include (:system-flag t) nil [693 716])
+            ("foundation/AMessage.h" include (:system-flag t) nil [718 750])
+            ("ctype.h" include (:system-flag t) nil [752 770])
+            ("foundation/AAtomizer.h" include (:system-flag t) nil [772 805])
+            ("foundation/ABuffer.h" include (:system-flag t) nil [806 837])
+            ("foundation/ADebug.h" include (:system-flag t) nil [838 868])
+            ("foundation/ALooperRoster.h" include (:system-flag t) nil [869 906])
+            ("foundation/AString.h" include (:system-flag t) nil [907 938])
+            ("binder/Parcel.h" include (:system-flag t) nil [940 966])
+            ("foundation/hexdump.h" include (:system-flag t) nil [967 998])
+            ("android" type
+               (:members 
+                  ( ("gLooperRoster" variable
+                       (:typemodifiers ("extern")
+                        :type ("ALooperRoster" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [1021 1056])
+                    ("AMessage" function
+                       (:constructor-flag t
+                        :parent "AMessage"
+                        :arguments 
+                          ( ("what" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1077 1091])
+                            ("target" variable (:type ("ALooper::handler_id" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1092 1119]))                          
+                        :type ("AMessage" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [1058 1184])
+                    ("AMessage" function
+                       (:destructor-flag t
+                        :parent "AMessage"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [1186 1224])
+                    ("setWhat" function
+                       (:parent "AMessage"
+                        :arguments 
+                          ( ("what" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1249 1263]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [1226 1285])
+                    ("what" function
+                       (:parent "AMessage"
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [1287 1340])
+                    ("setTarget" function
+                       (:parent "AMessage"
+                        :arguments 
+                          ( ("handlerID" variable (:type ("ALooper::handler_id" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1367 1397]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [1342 1426])
+                    ("target" function
+                       (:parent "AMessage"
+                        :type ("ALooper::handler_id" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [1428 1496])
+                    ("clear" function
+                       (:parent "AMessage"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [1498 1714])
+                    ("freeItemValue" function
+                       (:parent "AMessage"
+                        :arguments 
+                          ( ("item" variable
+                               (:pointer 1
+                                :type ("Item" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [1745 1756]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [1716 2163])
+                    ("findItemIndex" function
+                       (:parent "AMessage"
+                        :typemodifiers ("inline")
+                        :arguments 
+                          ( ("name" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [3257 3274])
+                            ("len" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3275 3286]))                          
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [3219 3855])
+                    ("setName" function
+                       (:parent "AMessage::Item"
+                        :arguments 
+                          ( ("name" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [3935 3952])
+                            ("len" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3953 3964]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [3906 4063])
+                    ("allocateItem" function
+                       (:pointer 1
+                        :parent "AMessage"
+                        :arguments 
+                          ( ("name" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [4104 4121]))                          
+                        :type ("AMessage::Item" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [4065 4459])
+                    ("findItem" function
+                       (:pointer 1
+                        :parent "AMessage"
+                        :constant-flag t
+                        :arguments 
+                          ( ("name" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [4511 4528])
+                            ("type" variable (:type ("Type" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4529 4539]))                          
+                        :type ("AMessage::Item" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [4461 4737])
+                    ("contains" function
+                       (:parent "AMessage"
+                        :arguments 
+                          ( ("name" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [4763 4780]))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [4739 4866])
+                    ("BASIC_TYPE" variable (:constant-flag t) (reparse-symbol namespacesubparts) [4876 4886])
+                    ("setInt32" function
+                       (:parent "AMessage"
+                        :arguments 
+                          ( ("name" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type "char")
+                                (reparse-symbol arg-sub-list) nil)
+                            ("value" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) nil))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [5981 6017])
+                    ("findInt32" function
+                       (:parent "AMessage"
+                        :arguments 
+                          ( ("name" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type "char")
+                                (reparse-symbol arg-sub-list) nil)
+                            ("value" variable
+                               (:pointer 1
+                                :type ("int32_t" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) nil))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [5981 6017])
+                    ("setInt64" function
+                       (:parent "AMessage"
+                        :arguments 
+                          ( ("name" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type "char")
+                                (reparse-symbol arg-sub-list) nil)
+                            ("value" variable (:type ("int64_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) nil))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [6018 6054])
+                    ("findInt64" function
+                       (:parent "AMessage"
+                        :arguments 
+                          ( ("name" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type "char")
+                                (reparse-symbol arg-sub-list) nil)
+                            ("value" variable
+                               (:pointer 1
+                                :type ("int64_t" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) nil))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [6018 6054])
+                    ("setSize" function
+                       (:parent "AMessage"
+                        :arguments 
+                          ( ("name" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type "char")
+                                (reparse-symbol arg-sub-list) nil)
+                            ("value" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) nil))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [6055 6088])
+                    ("findSize" function
+                       (:parent "AMessage"
+                        :arguments 
+                          ( ("name" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type "char")
+                                (reparse-symbol arg-sub-list) nil)
+                            ("value" variable
+                               (:pointer 1
+                                :type ("size_t" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) nil))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [6055 6088])
+                    ("setFloat" function
+                       (:parent "AMessage"
+                        :arguments 
+                          ( ("name" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type "char")
+                                (reparse-symbol arg-sub-list) nil)
+                            ("value" variable (:type "float") (reparse-symbol arg-sub-list) nil))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [6089 6123])
+                    ("findFloat" function
+                       (:parent "AMessage"
+                        :arguments 
+                          ( ("name" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type "char")
+                                (reparse-symbol arg-sub-list) nil)
+                            ("value" variable
+                               (:pointer 1
+                                :type "float")
+                                (reparse-symbol arg-sub-list) nil))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [6089 6123])
+                    ("setDouble" function
+                       (:parent "AMessage"
+                        :arguments 
+                          ( ("name" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type "char")
+                                (reparse-symbol arg-sub-list) nil)
+                            ("value" variable (:type "double") (reparse-symbol arg-sub-list) nil))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [6124 6161])
+                    ("findDouble" function
+                       (:parent "AMessage"
+                        :arguments 
+                          ( ("name" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type "char")
+                                (reparse-symbol arg-sub-list) nil)
+                            ("value" variable
+                               (:pointer 1
+                                :type "double")
+                                (reparse-symbol arg-sub-list) nil))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [6124 6161])
+                    ("setPointer" function
+                       (:parent "AMessage"
+                        :arguments 
+                          ( ("name" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type "char")
+                                (reparse-symbol arg-sub-list) nil)
+                            ("value" variable (:type "void") (reparse-symbol arg-sub-list) nil))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [6162 6197])
+                    ("findPointer" function
+                       (:parent "AMessage"
+                        :arguments 
+                          ( ("name" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type "char")
+                                (reparse-symbol arg-sub-list) nil)
+                            ("value" variable
+                               (:pointer 1
+                                :type "void")
+                                (reparse-symbol arg-sub-list) nil))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [6162 6197])
+                    ("setString" function
+                       (:parent "AMessage"
+                        :arguments 
+                          ( ("name" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [6252 6269])
+                            ("s" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [6270 6284])
+                            ("len" variable (:type ("ssize_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6285 6297]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [6218 6438])
+                    ("setString" function
+                       (:parent "AMessage"
+                        :arguments 
+                          ( ("name" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [6474 6491])
+                            ("s" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("AString" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [6492 6509]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [6440 6555])
+                    ("setObjectInternal" function
+                       (:parent "AMessage"
+                        :arguments 
+                          ( ("name" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [6599 6616])
+                            ("obj" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("sp" type
+                                     (:template-specifier 
+                                        ( ("RefBase" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [6617 6640])
+                            ("type" variable (:type ("Type" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6641 6651]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [6557 6798])
+                    ("setObject" function
+                       (:parent "AMessage"
+                        :arguments 
+                          ( ("name" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [6825 6842])
+                            ("obj" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("sp" type
+                                     (:template-specifier 
+                                        ( ("RefBase" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [6843 6866]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [6800 6917])
+                    ("setBuffer" function
+                       (:parent "AMessage"
+                        :arguments 
+                          ( ("name" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [6944 6961])
+                            ("buffer" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("sp" type
+                                     (:template-specifier 
+                                        ( ("ABuffer" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [6962 6988]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [6919 7055])
+                    ("setMessage" function
+                       (:parent "AMessage"
+                        :arguments 
+                          ( ("name" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [7083 7100])
+                            ("obj" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("sp" type
+                                     (:template-specifier 
+                                        ( ("AMessage" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [7101 7125]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [7057 7280])
+                    ("setRect" function
+                       (:parent "AMessage"
+                        :arguments 
+                          ( ("name" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [7314 7331])
+                            ("left" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7340 7353])
+                            ("top" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7354 7366])
+                            ("right" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7367 7381])
+                            ("bottom" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7382 7397]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [7282 7616])
+                    ("findString" function
+                       (:parent "AMessage"
+                        :arguments 
+                          ( ("name" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [7644 7661])
+                            ("value" variable
+                               (:pointer 1
+                                :type ("AString" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [7662 7677]))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [7618 7839])
+                    ("findObject" function
+                       (:parent "AMessage"
+                        :arguments 
+                          ( ("name" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [7867 7884])
+                            ("obj" variable
+                               (:pointer 1
+                                :type ("sp" type
+                                     (:template-specifier 
+                                        ( ("RefBase" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [7885 7902]))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [7841 8058])
+                    ("findBuffer" function
+                       (:parent "AMessage"
+                        :arguments 
+                          ( ("name" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [8086 8103])
+                            ("buf" variable
+                               (:pointer 1
+                                :type ("sp" type
+                                     (:template-specifier 
+                                        ( ("ABuffer" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [8104 8121]))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [8060 8290])
+                    ("findMessage" function
+                       (:parent "AMessage"
+                        :arguments 
+                          ( ("name" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [8319 8336])
+                            ("obj" variable
+                               (:pointer 1
+                                :type ("sp" type
+                                     (:template-specifier 
+                                        ( ("AMessage" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [8337 8355]))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [8292 8537])
+                    ("findRect" function
+                       (:parent "AMessage"
+                        :arguments 
+                          ( ("name" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [8572 8589])
+                            ("left" variable
+                               (:pointer 1
+                                :type ("int32_t" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [8598 8612])
+                            ("top" variable
+                               (:pointer 1
+                                :type ("int32_t" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [8613 8626])
+                            ("right" variable
+                               (:pointer 1
+                                :type ("int32_t" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [8627 8642])
+                            ("bottom" variable
+                               (:pointer 1
+                                :type ("int32_t" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [8643 8659]))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [8539 8942])
+                    ("post" function
+                       (:parent "AMessage"
+                        :arguments 
+                          ( ("delayUs" variable (:type ("int64_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8964 8980]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [8944 9030])
+                    ("postAndAwaitResponse" function
+                       (:parent "AMessage"
+                        :arguments 
+                          ( ("response" variable
+                               (:pointer 1
+                                :type ("sp" type
+                                     (:template-specifier 
+                                        ( ("AMessage" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [9072 9095]))                          
+                        :type ("status_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [9032 9162])
+                    ("postReply" function
+                       (:parent "AMessage"
+                        :arguments 
+                          ( ("replyID" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9189 9206]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [9164 9254])
+                    ("senderAwaitsResponse" function
+                       (:parent "AMessage"
+                        :arguments 
+                          ( ("replyID" variable
+                               (:pointer 1
+                                :type ("uint32_t" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [9292 9310]))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [9256 9491])
+                    ("dup" function
+                       (:parent "AMessage"
+                        :type ("sp" type
+                             (:template-specifier 
+                                ( ("AMessage" type nil nil nil))                                
+                              :type "class")
+                              nil nil))
+                        (reparse-symbol namespacesubparts) [9493 10829])
+                    ("appendIndent" function
+                       (:typemodifiers ("static")
+                        :arguments 
+                          ( ("s" variable
+                               (:pointer 1
+                                :type ("AString" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [10856 10867])
+                            ("indent" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10868 10883]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [10831 11117])
+                    ("isFourcc" function
+                       (:typemodifiers ("static")
+                        :arguments 
+                          ( ("what" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11140 11154]))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [11119 11310])
+                    ("debugString" function
+                       (:parent "AMessage"
+                        :arguments 
+                          ( ("indent" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11342 11357]))                          
+                        :type ("AString" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [11312 14969])
+                    ("FromParcel" function
+                       (:parent "AMessage"
+                        :arguments 
+                          ( ("parcel" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("Parcel" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [15015 15036]))                          
+                        :type ("sp" type
+                             (:template-specifier 
+                                ( ("AMessage" type nil nil nil))                                
+                              :type "class")
+                              nil nil))
+                        (reparse-symbol namespacesubparts) [14981 16762])
+                    ("writeToParcel" function
+                       (:parent "AMessage"
+                        :arguments 
+                          ( ("parcel" variable
+                               (:pointer 1
+                                :type ("Parcel" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [16793 16808]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [16764 18336])
+                    ("countEntries" function
+                       (:parent "AMessage"
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [18338 18401])
+                    ("getEntryNameAt" function
+                       (:pointer 1
+                        :parent "AMessage"
+                        :constant-flag t
+                        :arguments 
+                          ( ("index" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [18440 18453])
+                            ("type" variable
+                               (:pointer 1
+                                :type ("Type" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [18454 18465]))                          
+                        :type "char")
+                        (reparse-symbol namespacesubparts) [18403 18628]))                  
+                :type "namespace")
+                nil [1000 18631]))          
+    :file "AMessage.cpp"
+    :pointmax 18654
+    :fsize 18653
+    :lastmodtime '(22099 1854 429918 237000)
+    :unmatched-syntax 'nil
+    :lexical-table 
+        '(("LOG_TAG" . ((string "\"AMessage\"" 638 . 648)))
+          )
+
+    )
+   )
+  :file "!home!qichen!bg4dtv_20151208_sbt3071_rc1!vendor!marvell!midas-tv!system!core!foundation!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2"
+  )

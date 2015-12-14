@@ -1,0 +1,759 @@
+;; Object base/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "base/"
+  :tables (list 
+   (semanticdb-table "platform.c"
+    :major-mode 'c-mode
+    :tags 
+        '( ("linux/string.h" include (:system-flag t) nil [287 312])
+            ("linux/platform_device.h" include (:system-flag t) nil [313 347])
+            ("linux/of_device.h" include (:system-flag t) nil [348 376])
+            ("linux/of_irq.h" include (:system-flag t) nil [377 402])
+            ("linux/module.h" include (:system-flag t) nil [403 428])
+            ("linux/init.h" include (:system-flag t) nil [429 452])
+            ("linux/dma-mapping.h" include (:system-flag t) nil [453 483])
+            ("linux/bootmem.h" include (:system-flag t) nil [484 510])
+            ("linux/err.h" include (:system-flag t) nil [511 533])
+            ("linux/slab.h" include (:system-flag t) nil [534 557])
+            ("linux/pm_runtime.h" include (:system-flag t) nil [558 587])
+            ("linux/idr.h" include (:system-flag t) nil [588 610])
+            ("linux/acpi.h" include (:system-flag t) nil [611 634])
+            ("base.h" include nil nil [636 653])
+            ("power/power.h" include nil nil [654 678])
+            ("DEFINE_IDA" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type ("platform_devid_ida" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [743 762]))                  
+                :type "int")
+                nil [725 763])
+            ("platform_bus" variable (:type ("device" type
+                 (:prototype t
+                  :type "struct")
+                  nil nil)) nil [765 824])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("platform_bus" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [843 856]))                  
+                :type "int")
+                nil [825 857])
+            ("arch_setup_pdev_archdata" function
+               (:arguments 
+                  ( ("pdev" variable
+                       (:pointer 1
+                        :type ("platform_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1427 1456]))                  
+                :type ("__weak" type (:type "class") nil nil))
+                nil [1395 1460])
+            ("platform_get_resource" function
+               (:pointer 1
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("platform_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1637 1665])
+                    ("type" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [1677 1695])
+                    ("num" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [1696 1713]))                  
+                :type ("resource" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1598 1889])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("platform_get_resource" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1908 1930]))                  
+                :type "int")
+                nil [1890 1931])
+            ("platform_get_irq" function
+               (:arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("platform_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2059 2087])
+                    ("num" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [2088 2105]))                  
+                :type "int")
+                nil [2038 2583])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("platform_get_irq" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2602 2619]))                  
+                :type "int")
+                nil [2584 2620])
+            ("platform_get_resource_byname" function
+               (:pointer 1
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("platform_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2819 2847])
+                    ("type" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [2859 2877])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2889 2906]))                  
+                :type ("resource" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2773 3134])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("platform_get_resource_byname" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3153 3182]))                  
+                :type "int")
+                nil [3135 3183])
+            ("platform_get_irq_byname" function
+               (:arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("platform_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3326 3354])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [3355 3372]))                  
+                :type "int")
+                nil [3298 3496])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("platform_get_irq_byname" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3515 3539]))                  
+                :type "int")
+                nil [3497 3540])
+            ("platform_add_devices" function
+               (:arguments 
+                  ( ("devs" variable
+                       (:pointer 2
+                        :type ("platform_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3723 3753])
+                    ("num" variable (:type "int") (reparse-symbol arg-sub-list) [3754 3762]))                  
+                :type "int")
+                nil [3698 3961])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("platform_add_devices" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3980 4001]))                  
+                :type "int")
+                nil [3962 4002])
+            ("platform_object" type
+               (:members 
+                  ( ("pdev" variable (:type ("platform_device" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [4030 4058])
+                    ("name" variable
+                       (:dereference 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [4060 4073]))                  
+                :type "struct")
+                nil [4004 4076])
+            ("platform_device_put" function
+               (:arguments 
+                  ( ("pdev" variable
+                       (:pointer 1
+                        :type ("platform_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4347 4376]))                  
+                :type "void")
+                nil [4322 4417])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("platform_device_put" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4436 4456]))                  
+                :type "int")
+                nil [4418 4457])
+            ("platform_device_release" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4495 4514]))                  
+                :type "void")
+                nil [4459 4748])
+            ("platform_device_alloc" function
+               (:pointer 1
+                :arguments 
+                  ( ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [5073 5090])
+                    ("id" variable (:type "int") (reparse-symbol arg-sub-list) [5091 5098]))                  
+                :type ("platform_device" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [5027 5451])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("platform_device_alloc" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5470 5492]))                  
+                :type "int")
+                nil [5452 5493])
+            ("platform_device_add_resources" function
+               (:arguments 
+                  ( ("pdev" variable
+                       (:pointer 1
+                        :type ("platform_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5943 5972])
+                    ("res" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("resource" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5979 6006])
+                    ("num" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [6007 6024]))                  
+                :type "int")
+                nil [5909 6249])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("platform_device_add_resources" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6268 6298]))                  
+                :type "int")
+                nil [6250 6299])
+            ("platform_device_add_data" function
+               (:arguments 
+                  ( ("pdev" variable
+                       (:pointer 1
+                        :type ("platform_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6791 6820])
+                    ("data" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [6821 6838])
+                    ("size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6847 6859]))                  
+                :type "int")
+                nil [6762 7040])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("platform_device_add_data" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7059 7084]))                  
+                :type "int")
+                nil [7041 7085])
+            ("platform_device_add" function
+               (:arguments 
+                  ( ("pdev" variable
+                       (:pointer 1
+                        :type ("platform_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7365 7394]))                  
+                :type "int")
+                nil [7341 9128])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("platform_device_add" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9147 9167]))                  
+                :type "int")
+                nil [9129 9168])
+            ("platform_device_del" function
+               (:arguments 
+                  ( ("pdev" variable
+                       (:pointer 1
+                        :type ("platform_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9520 9549]))                  
+                :type "void")
+                nil [9495 9939])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("platform_device_del" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9958 9978]))                  
+                :type "int")
+                nil [9940 9979])
+            ("platform_device_register" function
+               (:arguments 
+                  ( ("pdev" variable
+                       (:pointer 1
+                        :type ("platform_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10115 10144]))                  
+                :type "int")
+                nil [10086 10248])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("platform_device_register" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10267 10292]))                  
+                :type "int")
+                nil [10249 10293])
+            ("platform_device_unregister" function
+               (:arguments 
+                  ( ("pdev" variable
+                       (:pointer 1
+                        :type ("platform_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10623 10652]))                  
+                :type "void")
+                nil [10591 10712])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("platform_device_unregister" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10731 10758]))                  
+                :type "int")
+                nil [10713 10759])
+            ("platform_device_register_full" function
+               (:pointer 1
+                :arguments 
+                  ( ("pdevinfo" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("platform_device_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11059 11103]))                  
+                :type ("platform_device" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [11002 12248])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("platform_device_register_full" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12267 12297]))                  
+                :type "int")
+                nil [12249 12298])
+            ("platform_drv_probe" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("_dev" variable
+                       (:pointer 1
+                        :type ("device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [12330 12350]))                  
+                :type "int")
+                nil [12300 12781])
+            ("platform_drv_probe_fail" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("_dev" variable
+                       (:pointer 1
+                        :type ("device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [12818 12838]))                  
+                :type "int")
+                nil [12783 12858])
+            ("platform_drv_remove" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("_dev" variable
+                       (:pointer 1
+                        :type ("device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [12891 12911]))                  
+                :type "int")
+                nil [12860 13145])
+            ("platform_drv_shutdown" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("_dev" variable
+                       (:pointer 1
+                        :type ("device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13181 13201]))                  
+                :type "void")
+                nil [13147 13407])
+            ("__platform_driver_register" function
+               (:arguments 
+                  ( ("drv" variable
+                       (:pointer 1
+                        :type ("platform_driver" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13592 13620])
+                    ("owner" variable
+                       (:pointer 1
+                        :type ("module" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13625 13646]))                  
+                :type "int")
+                nil [13561 13946])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("__platform_driver_register" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [13965 13992]))                  
+                :type "int")
+                nil [13947 13993])
+            ("platform_driver_unregister" function
+               (:arguments 
+                  ( ("drv" variable
+                       (:pointer 1
+                        :type ("platform_driver" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [14149 14177]))                  
+                :type "void")
+                nil [14117 14215])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("platform_driver_unregister" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [14234 14261]))                  
+                :type "int")
+                nil [14216 14262])
+            ("platform_driver_probe" function
+               (:arguments 
+                  ( ("drv" variable
+                       (:pointer 1
+                        :type ("platform_driver" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [15136 15164])
+                    ("" variable (:type "int") (reparse-symbol arg-sub-list) [15167 15179]))                  
+                :type ("__init_or_module" type (:type "class") nil nil))
+                nil [15097 16167])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("platform_driver_probe" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [16186 16208]))                  
+                :type "int")
+                nil [16168 16209])
+            ("platform_create_bundle" function
+               (:arguments 
+                  ( ("driver" variable
+                       (:pointer 1
+                        :type ("platform_driver" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [16894 16925])
+                    ("" variable (:type "int") (reparse-symbol arg-sub-list) [16929 16941])
+                    ("res" variable
+                       (:pointer 1
+                        :type ("resource" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [16972 16993])
+                    ("n_res" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [16994 17013])
+                    ("data" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [17017 17034])
+                    ("size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [17035 17047]))                  
+                :type ("__init_or_module" type (:type "class") nil nil))
+                nil [16850 17666])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("platform_create_bundle" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [17685 17708]))                  
+                :type "int")
+                nil [17667 17709])
+            ("modalias_show" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [18079 18098])
+                    ("a" variable
+                       (:pointer 1
+                        :type ("device_attribute" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [18099 18126])
+                    ("buf" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [18135 18145]))                  
+                :type ("ssize_t" type (:type "class") nil nil))
+                nil [18050 18512])
+            ("DEVICE_ATTR_RO" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type ("modalias" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [18535 18544]))                  
+                :type "int")
+                nil [18513 18545])
+            ("platform_dev_attrs" variable
+               (:pointer 1
+                :dereference 1
+                :typemodifiers ("static")
+                :type ("attribute" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [18547 18632])
+            ("ATTRIBUTE_GROUPS" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("platform_dev" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [18650 18663]))                  
+                :type "int")
+                nil [18633 18664])
+            ("platform_uevent" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [18693 18712])
+                    ("env" variable
+                       (:pointer 1
+                        :type ("kobj_uevent_env" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [18713 18741]))                  
+                :type "int")
+                nil [18666 19121])
+            ("platform_match_id" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :arguments 
+                  ( ("id" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("platform_device_id" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [19185 19221])
+                    ("pdev" variable
+                       (:pointer 1
+                        :type ("platform_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [19225 19254]))                  
+                :type ("platform_device_id" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [19123 19391])
+            ("platform_match" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [19955 19974])
+                    ("drv" variable
+                       (:pointer 1
+                        :type ("device_driver" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [19975 20001]))                  
+                :type "int")
+                nil [19929 20508])
+            ("platform_dev_pm_ops" variable
+               (:typemodifiers ("static")
+                :constant-flag t
+                :type ("dev_pm_ops" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [22894 23072])
+            ("platform_bus_type" variable (:type ("bus_type" type
+                 (:prototype t
+                  :type "struct")
+                  nil nil)) nil [23074 23258])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("platform_bus_type" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [23277 23295]))                  
+                :type "int")
+                nil [23259 23296])
+            ("platform_bus_init" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [23327 23332]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [23302 23553])
+            ("dma_get_required_mask" function
+               (:arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [23620 23639]))                  
+                :type ("u64" type (:type "class") nil nil))
+                nil [23594 24111])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("dma_get_required_mask" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [24130 24152]))                  
+                :type "int")
+                nil [24112 24153])
+            ("LIST_HEAD" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type ("early_platform_driver_list" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [24190 24217]))                  
+                :type ("__initdata" type (:type "class") nil nil))
+                nil [24162 24218])
+            ("LIST_HEAD" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type ("early_platform_device_list" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [24247 24274]))                  
+                :type ("__initdata" type (:type "class") nil nil))
+                nil [24219 24275])
+            ("early_platform_driver_register" function
+               (:arguments 
+                  ( ("epdrv" variable
+                       (:pointer 1
+                        :type ("early_platform_driver" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [24558 24594])
+                    ("buf" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [24602 24612]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [24520 25807])
+            ("early_platform_add_devices" function
+               (:arguments 
+                  ( ("devs" variable
+                       (:pointer 2
+                        :type ("platform_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [26129 26159])
+                    ("num" variable (:type "int") (reparse-symbol arg-sub-list) [26160 26168]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [26095 26477])
+            ("early_platform_driver_register_all" function
+               (:arguments 
+                  ( ("class_str" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [26881 26897]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [26839 27605])
+            ("early_platform_match" function
+               (:arguments 
+                  ( ("epdrv" variable
+                       (:pointer 1
+                        :type ("early_platform_driver" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [27815 27851])
+                    ("id" variable (:type "int") (reparse-symbol arg-sub-list) [27852 27859]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [27787 28069])
+            ("early_platform_left" function
+               (:arguments 
+                  ( ("epdrv" variable
+                       (:pointer 1
+                        :type ("early_platform_driver" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [28279 28315])
+                    ("id" variable (:type "int") (reparse-symbol arg-sub-list) [28327 28334]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [28252 28540])
+            ("early_platform_driver_probe_id" function
+               (:arguments 
+                  ( ("class_str" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [28843 28859])
+                    ("id" variable (:type "int") (reparse-symbol arg-sub-list) [28867 28874])
+                    ("nr_probe" variable (:type "int") (reparse-symbol arg-sub-list) [28882 28895]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [28805 30574])
+            ("early_platform_driver_probe" function
+               (:arguments 
+                  ( ("class_str" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [31111 31127])
+                    ("nr_probe" variable (:type "int") (reparse-symbol arg-sub-list) [31139 31152])
+                    ("user_only" variable (:type "int") (reparse-symbol arg-sub-list) [31164 31178]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [31076 31384])
+            ("early_platform_cleanup" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [31486 31491]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [31456 31774]))          
+    :file "platform.c"
+    :pointmax 31776
+    :fsize 31775
+    :lastmodtime '(22116 18311 21641 784000)
+    :unmatched-syntax '((VOID 31451 . 31455) (INT 31072 . 31075) (INT 28801 . 28804) (STATIC 28794 . 28800) (INT 28248 . 28251) (STATIC 28241 . 28247) (punctuation 27785 . 27786) (symbol 27769 . 27784) (STRUCT 27762 . 27768) (STATIC 27755 . 27761) (VOID 26834 . 26838) (VOID 26090 . 26094) (INT 24516 . 24519) (INT 23298 . 23301) (semantic-list 16941 . 16967) (semantic-list 16933 . 16941) (punctuation 16848 . 16849) (symbol 16832 . 16847) (STRUCT 16825 . 16831) (semantic-list 15179 . 15205) (semantic-list 15171 . 15179) (INT 15093 . 15096) (VOID 1390 . 1394))
+    )
+   (semanticdb-table "base.h"
+    :file "base.h"
+    :fsize 5381
+    :lastmodtime '(22116 18311 9641 785000)
+    )
+   )
+  :file "!home!qichen!linux!drivers!base!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2"
+  )

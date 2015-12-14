@@ -1,0 +1,1452 @@
+;; Object state_manager/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "state_manager/"
+  :tables (list 
+   (semanticdb-table "StateManager.cpp"
+    :major-mode 'c++-mode
+    :tags 
+        '( ("LOG_NDEBUG" variable (:constant-flag t) nil [808 818])
+            ("LOG_TAG" variable (:constant-flag t) nil [829 836])
+            ("binder/IInterface.h" include (:system-flag t) nil [853 883])
+            ("binder/IBinder.h" include (:system-flag t) nil [884 911])
+            ("utils/RefBase.h" include (:system-flag t) nil [912 938])
+            ("utils/String8.h" include (:system-flag t) nil [939 965])
+            ("utils/threads.h" include (:system-flag t) nil [966 992])
+            ("utils/Vector.h" include (:system-flag t) nil [993 1018])
+            ("binder/IServiceManager.h" include (:system-flag t) nil [1019 1054])
+            ("sys/types.h" include (:system-flag t) nil [1056 1078])
+            ("dirent.h" include (:system-flag t) nil [1079 1098])
+            ("dlfcn.h" include (:system-flag t) nil [1099 1117])
+            ("foundation/ADebug.h" include (:system-flag t) nil [1119 1149])
+            ("foundation/AHandlerReflector.h" include (:system-flag t) nil [1150 1191])
+            ("foundation/ALooper.h" include (:system-flag t) nil [1192 1223])
+            ("foundation/AMessage.h" include (:system-flag t) nil [1224 1256])
+            ("MidasState.h" include (:system-flag t) nil [1258 1281])
+            ("MidasSettingsConstants.h" include (:system-flag t) nil [1282 1317])
+            ("StateManager.h" include nil nil [1318 1343])
+            ("HoldKeyControlThread.h" include nil nil [1344 1377])
+            ("FactoryKeyHandler.h" include nil nil [1378 1408])
+            ("AudioTone.h" include nil nil [1409 1431])
+            ("marvell" type
+               (:members 
+                  ( ("android" using (:type ("android" type
+                         (:prototype t
+                          :type "namespace")
+                          nil nil)) (reparse-symbol namespacesubparts) [1453 1477])
+                    ("MIDAS_STATE_FACTORY_PATH" variable (:constant-flag t) (reparse-symbol namespacesubparts) [1580 1604])
+                    ("MIDAS_FACTORY_PREFIX" variable (:constant-flag t) (reparse-symbol namespacesubparts) [1637 1657])
+                    ("createFactoryFunc" variable
+                       (:functionpointer-flag t
+                        :type ("IMidasStateFactory" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [1677 1720])
+                    ("MidasStateFactoryData" type
+                       (:members 
+                          ( ("public" label nil (reparse-symbol classsubparts) [1754 1761])
+                            ("MidasStateFactoryData" function
+                               (:constructor-flag t
+                                :type ("MidasStateFactoryData" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [1766 1804])
+                            ("MidasStateFactoryData" function
+                               (:destructor-flag t
+                                :type "void")
+                                (reparse-symbol classsubparts) [1809 1904])
+                            ("createFactory" variable
+                               (:functionpointer-flag t
+                                :type ("IMidasStateFactory" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [1910 1949])
+                            ("dso" variable
+                               (:pointer 1
+                                :type "void")
+                                (reparse-symbol classsubparts) [1954 1964]))                          
+                        :type "class")
+                        (reparse-symbol namespacesubparts) [1722 1967])
+                    ("gDeviceModules" variable
+                       (:typemodifiers ("static")
+                        :type ("Vector" type
+                             (:template-specifier 
+                                ( ("MidasStateFactoryData" type (:pointer 1) nil nil))                                
+                              :type "class")
+                              nil nil))
+                        (reparse-symbol namespacesubparts) [1969 2022])
+                    ("listDir" function
+                       (:typemodifiers ("static")
+                        :arguments 
+                          ( ("dirpath" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [2044 2064])
+                            ("files" variable
+                               (:pointer 1
+                                :type ("Vector" type
+                                     (:template-specifier 
+                                        ( ("String8" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [2065 2088]))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [2024 2644])
+                    ("loadModule" function
+                       (:typemodifiers ("static")
+                        :arguments 
+                          ( ("dirpath" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [2669 2689])
+                            ("filepath" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [2690 2711])
+                            ("entry" variable
+                               (:pointer 1
+                                :type ("MidasStateFactoryData" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [2712 2741]))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [2646 3675])
+                    ("string8_compare" function
+                       (:typemodifiers ("static")
+                        :arguments 
+                          ( ("lhs" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [3704 3723])
+                            ("rhs" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [3724 3743]))                          
+                        :type "int")
+                        (reparse-symbol namespacesubparts) [3677 3778])
+                    ("loadModulesInDir" function
+                       (:typemodifiers ("static")
+                        :arguments 
+                          ( ("dirpath" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [3809 3829]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [3780 4230])
+                    ("DEMOStateSettingsObserver" type
+                       (:superclasses 
+                          ( ("BnMidasSettingsObserver" type
+                               (:protection "public"
+                                :type "class")
+                                nil nil))                          
+                        :members 
+                          ( ("public" label nil (reparse-symbol classsubparts) [5501 5508])
+                            ("DEMOStateSettingsObserver" function
+                               (:constructor-flag t
+                                :arguments 
+                                  ( ("state" variable
+                                       (:pointer 1
+                                        :type ("StateManager" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [5539 5559]))                                  
+                                :type ("DEMOStateSettingsObserver" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [5513 5586])
+                            ("onSettingsChanged" function
+                               (:typemodifiers ("virtual")
+                                :arguments 
+                                  ( ("key" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("String8" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [5622 5641])
+                                    ("value" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("String8" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [5642 5663]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [5591 5912])
+                            ("protected" label nil (reparse-symbol classsubparts) [5915 5925])
+                            ("mStateManager" variable (:type ("wp" type
+                                 (:template-specifier 
+                                    ( ("StateManager" type nil nil nil))                                    
+                                  :type "class")
+                                  nil nil)) (reparse-symbol classsubparts) [5930 5961]))                          
+                        :type "class")
+                        (reparse-symbol namespacesubparts) [5432 5964])
+                    ("initialize" function
+                       (:parent "StateManager"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [6061 6228])
+                    ("StateManager" function
+                       (:constructor-flag t
+                        :parent "StateManager"
+                        :type ("StateManager" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [6230 7740])
+                    ("StateManager" function
+                       (:destructor-flag t
+                        :parent "StateManager"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [7742 7989])
+                    ("registerStateObserver" function
+                       (:parent "StateManager"
+                        :arguments 
+                          ( ("observer" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("sp" type
+                                     (:template-specifier 
+                                        ( ("IStateObserver" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [8036 8071]))                          
+                        :type ("status_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [7991 8251])
+                    ("unregisterStateObserver" function
+                       (:parent "StateManager"
+                        :arguments 
+                          ( ("observer" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("sp" type
+                                     (:template-specifier 
+                                        ( ("IStateObserver" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [8300 8335]))                          
+                        :type ("status_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [8253 8599])
+                    ("getCurrentState" function
+                       (:parent "StateManager"
+                        :type ("MIDAS_STATE" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [8601 8758])
+                    ("postSleep" function
+                       (:parent "StateManager"
+                        :arguments 
+                          ( ("reason" variable
+                               (:constant-flag t
+                                :type ("MIDAS_SLEEP_REASON" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [8789 8821]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [8760 8971])
+                    ("wakeup" function
+                       (:parent "StateManager"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [8973 9144])
+                    ("postShutdown" function
+                       (:parent "StateManager"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [9146 9273])
+                    ("postSleepOrShutdown" function
+                       (:parent "StateManager"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [9275 9416])
+                    ("postReboot" function
+                       (:parent "StateManager"
+                        :arguments 
+                          ( ("reason" variable
+                               (:constant-flag t
+                                :type ("MIDAS_REBOOT_REASON" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [9448 9481])
+                            ("path" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [9482 9499]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [9418 9688])
+                    ("setStartingState" function
+                       (:parent "StateManager"
+                        :arguments 
+                          ( ("state" variable
+                               (:constant-flag t
+                                :type ("MIDAS_STATE" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [9726 9750]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [9690 9909])
+                    ("injectKey" function
+                       (:parent "StateManager"
+                        :arguments 
+                          ( ("event" variable
+                               (:reference 1
+                                :type ("KeyEvent" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [9940 9956]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [9911 10474])
+                    ("sendCommand" function
+                       (:parent "StateManager"
+                        :arguments 
+                          ( ("message" variable
+                               (:constant-flag t
+                                :type ("int32_t" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [10506 10528])
+                            ("ext1" variable
+                               (:constant-flag t
+                                :type ("int32_t" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [10529 10548])
+                            ("ext2" variable
+                               (:constant-flag t
+                                :type ("int32_t" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [10579 10598])
+                            ("obj" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type ("Parcel" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [10599 10617]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [10475 10968])
+                    ("onMessageReceived" function
+                       (:parent "StateManager"
+                        :arguments 
+                          ( ("msg" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("sp" type
+                                     (:template-specifier 
+                                        ( ("AMessage" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [11007 11031]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [10970 20486])
+                    ("postMessage" function
+                       (:parent "StateManager"
+                        :arguments 
+                          ( ("what" variable
+                               (:constant-flag t
+                                :type ("int32_t" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [20519 20538])
+                            ("delayUs" variable
+                               (:constant-flag t
+                                :type ("int64_t" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [20539 20561]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [20488 20739])
+                    ("removeMessages" function
+                       (:parent "StateManager"
+                        :arguments 
+                          ( ("what" variable
+                               (:constant-flag t
+                                :type ("int32_t" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [20775 20794]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [20741 20833])
+                    ("finishRunningState" function
+                       (:parent "StateManager"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [20835 20966])
+                    ("finishAndRun" function
+                       (:parent "StateManager"
+                        :arguments 
+                          ( ("new_state" variable (:type ("MIDAS_STATE" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [21000 21022]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [20968 21158])
+                    ("finishAndRun" function
+                       (:parent "StateManager"
+                        :arguments 
+                          ( ("new_state" variable (:type ("MIDAS_STATE" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [21192 21214])
+                            ("reason" variable (:type ("MIDAS_SLEEP_REASON" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [21215 21241]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [21160 21414])
+                    ("binderDied" function
+                       (:parent "StateManager"
+                        :arguments 
+                          ( ("who" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("wp" type
+                                     (:template-specifier 
+                                        ( ("IBinder" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [21446 21469]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [21416 21649])
+                    ("loadStates" function
+                       (:parent "StateManager"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [21651 22110])
+                    ("loadStartingState" function
+                       (:parent "StateManager"
+                        :arguments 
+                          ( ("reason" variable
+                               (:constant-flag t
+                                :type ("MIDAS_WAKEUP_REASON" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [22149 22182]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [22112 23027])
+                    ("notifyObservers" function
+                       (:parent "StateManager"
+                        :arguments 
+                          ( ("old_state" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [23064 23082])
+                            ("new_state" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [23083 23101]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [23029 23346])
+                    ("notifyObservers" function
+                       (:parent "StateManager"
+                        :arguments 
+                          ( ("message" variable
+                               (:constant-flag t
+                                :type ("int32_t" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [23383 23405])
+                            ("ext1" variable
+                               (:constant-flag t
+                                :type ("int32_t" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [23406 23425])
+                            ("ext2" variable
+                               (:constant-flag t
+                                :type ("int32_t" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [23450 23469])
+                            ("obj" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type ("Parcel" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [23470 23488]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [23348 23659])
+                    ("switchState" function
+                       (:parent "StateManager"
+                        :arguments 
+                          ( ("new_state" variable (:type ("MIDAS_STATE" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [23692 23714]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [23661 24163])
+                    ("switchState" function
+                       (:parent "StateManager"
+                        :arguments 
+                          ( ("new_state" variable (:type ("MIDAS_STATE" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [24196 24218])
+                            ("sleepReason" variable (:type ("MIDAS_SLEEP_REASON" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [24223 24254])
+                            ("wakeupReason" variable (:type ("MIDAS_WAKEUP_REASON" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [24255 24288])
+                            ("saveAsStarting" variable (:type "bool") (reparse-symbol arg-sub-list) [24289 24309]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [24165 24855])
+                    ("state2value" function
+                       (:typemodifiers ("static")
+                        :arguments 
+                          ( ("state" variable (:type ("MIDAS_STATE" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [24884 24902]))                          
+                        :type ("String8" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [24857 25336])
+                    ("value2state" function
+                       (:typemodifiers ("static")
+                        :arguments 
+                          ( ("state" variable (:type ("String8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [25369 25383]))                          
+                        :type ("MIDAS_STATE" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [25338 25779])
+                    ("getStartingState" function
+                       (:parent "StateManager"
+                        :type ("MIDAS_STATE" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [25781 26016])
+                    ("saveStartingState" function
+                       (:parent "StateManager"
+                        :arguments 
+                          ( ("state" variable (:type ("MIDAS_STATE" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [26055 26073]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [26018 26208])
+                    ("handleFinish" function
+                       (:parent "StateManager"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [26210 26662])
+                    ("handleSleep" function
+                       (:parent "StateManager"
+                        :arguments 
+                          ( ("sleep_reason" variable
+                               (:constant-flag t
+                                :type ("int32_t" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [26695 26722]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [26664 27172])
+                    ("handleWakeup" function
+                       (:parent "StateManager"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [27174 27656])
+                    ("handleSleepOrShutdown" function
+                       (:parent "StateManager"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [27658 28271])
+                    ("handleShutdown" function
+                       (:parent "StateManager"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [28273 28700])
+                    ("handleReboot" function
+                       (:parent "StateManager"
+                        :arguments 
+                          ( ("reason" variable
+                               (:constant-flag t
+                                :type ("int32_t" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [28734 28755])
+                            ("path" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [28756 28773]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [28702 29101])
+                    ("handleDemoStatus" function
+                       (:parent "StateManager"
+                        :arguments 
+                          ( ("enable" variable (:type "bool") (reparse-symbol arg-sub-list) [29139 29151]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [29103 29730])
+                    ("handlePoh" function
+                       (:parent "StateManager"
+                        :arguments 
+                          ( ("keycode" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [29761 29777])
+                            ("on" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [29778 29789]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [29732 30006])
+                    ("stopCurrentState" function
+                       (:parent "StateManager"
+                        :arguments 
+                          ( ("reason" variable
+                               (:constant-flag t
+                                :type ("MIDAS_SLEEP_REASON" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [30044 30076]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [30008 30277])
+                    ("disableKey" function
+                       (:parent "StateManager"
+                        :arguments 
+                          ( ("disableKey" variable (:type "bool") (reparse-symbol arg-sub-list) [30309 30325]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [30279 30417])
+                    ("getKeyState" function
+                       (:parent "StateManager"
+                        :arguments 
+                          ( ("keyState" variable
+                               (:pointer 1
+                                :type "bool")
+                                (reparse-symbol arg-sub-list) [30450 30465]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [30419 30557])
+                    ("readLatestKey" function
+                       (:parent "StateManager"
+                        :arguments 
+                          ( ("latestKeyEvent" variable
+                               (:pointer 1
+                                :type ("KeyEvent" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [30591 30616]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [30558 30659])
+                    ("saveLatestKey" function
+                       (:parent "StateManager"
+                        :arguments 
+                          ( ("events" variable
+                               (:pointer 1
+                                :type ("KeyEvent" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [30694 30711])
+                            ("num" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [30712 30723]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [30661 30924])
+                    ("processKey" function
+                       (:parent "StateManager"
+                        :arguments 
+                          ( ("events" variable
+                               (:pointer 1
+                                :type ("KeyEvent" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [30956 30973])
+                            ("num" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [30974 30985]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [30926 31584])
+                    ("onKeyDown" function
+                       (:parent "StateManager"
+                        :arguments 
+                          ( ("key" variable
+                               (:reference 1
+                                :type ("KeyEvent" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [31615 31629])
+                            ("new_state" variable
+                               (:reference 1
+                                :type ("MIDAS_STATE" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [31630 31653]))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [31586 32955])
+                    ("onKeyUp" function
+                       (:parent "StateManager"
+                        :arguments 
+                          ( ("key" variable
+                               (:reference 1
+                                :type ("KeyEvent" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [32984 32998])
+                            ("new_state" variable
+                               (:reference 1
+                                :type ("MIDAS_STATE" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [32999 33022])
+                            ("wakeupHandled" variable (:type "bool") (reparse-symbol arg-sub-list) [33023 33042]))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [32957 34187])
+                    ("onKeyLongPressed" function
+                       (:parent "StateManager"
+                        :arguments 
+                          ( ("key" variable
+                               (:reference 1
+                                :type ("KeyEvent" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [34225 34239])
+                            ("wakeupHandled" variable (:type "bool") (reparse-symbol arg-sub-list) [34240 34259]))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [34189 34675])
+                    ("sendKeyLongPressed" function
+                       (:parent "StateManager"
+                        :arguments 
+                          ( ("key" variable
+                               (:reference 1
+                                :type ("KeyEvent" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [34714 34728]))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [34676 35036])
+                    ("onSettingsChanged" function
+                       (:parent "StateManager"
+                        :arguments 
+                          ( ("key" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [35074 35093])
+                            ("value" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [35094 35115]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [35037 35349])
+                    ("sendKeyTicksTrigger" function
+                       (:parent "StateManager"
+                        :arguments 
+                          ( ("key" variable
+                               (:reference 1
+                                :type ("KeyEvent" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [35389 35403]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [35350 35636])
+                    ("processKey" function
+                       (:parent "StateManager::StateInputDispatcher"
+                        :arguments 
+                          ( ("event" variable
+                               (:pointer 1
+                                :type ("KeyEvent" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [35777 35793])
+                            ("num" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [35794 35805]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [35725 36013])
+                    ("isKeyEnabled" function
+                       (:parent "StateManager"
+                        :arguments 
+                          ( ("keycode" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [36709 36725]))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [36677 37565])
+                    ("setKeyFilter" function
+                       (:parent "StateManager"
+                        :arguments 
+                          ( ("keycode" variable
+                               (:constant-flag t
+                                :type ("int32_t" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [37599 37621])
+                            ("filterMode" variable
+                               (:constant-flag t
+                                :type ("int32_t" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [37654 37679]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [37567 38381])
+                    ("getKeyFilter" function
+                       (:parent "StateManager"
+                        :arguments 
+                          ( ("keycode" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [38696 38712])
+                            ("pfilterMode" variable
+                               (:pointer 1
+                                :type ("int32_t" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [38713 38734]))                          
+                        :type "int")
+                        (reparse-symbol namespacesubparts) [38665 39079])
+                    ("setLongPressKeyTime" function
+                       (:parent "StateManager"
+                        :arguments 
+                          ( ("keycode" variable
+                               (:constant-flag t
+                                :type ("int32_t" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [39301 39323])
+                            ("time_msec" variable
+                               (:constant-flag t
+                                :type ("int32_t" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [39363 39387]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [39262 39836]))                  
+                :type "namespace")
+                nil [1433 39839]))          
+    :file "StateManager.cpp"
+    :pointmax 39862
+    :fsize 39861
+    :lastmodtime '(22121 7378 855478 325000)
+    :unmatched-syntax '((TYPEDEF 1669 . 1676))
+    :lexical-table 
+        '(("LOG_NDEBUG" . ((number "0" 819 . 820)))
+          ("LOG_TAG" . ((string "\"StateManager\"" 837 . 851)))
+          ("MIDAS_FACTORY_PREFIX" . ((string "\"state.\"" 1660 . 1668)))
+          ("MIDAS_STATE_FACTORY_PATH" . ((string "\"/system/lib/states\"" 1608 . 1628)))
+          )
+
+    )
+   (semanticdb-table "MidasState.h"
+    :file "MidasState.h"
+    :fsize 3340
+    :lastmodtime '(22118 24834 909226 757000)
+    )
+   (semanticdb-table "StateManager.h"
+    :major-mode 'c-mode
+    :tags 
+        '( ("MIDAS_STATE_MANAGER_H_" variable (:constant-flag t) nil [839 861])
+            ("binder/IInterface.h" include (:system-flag t) nil [863 893])
+            ("foundation/AHandlerReflector.h" include (:system-flag t) nil [894 935])
+            ("binder/IBinder.h" include (:system-flag t) nil [936 963])
+            ("utils/RefBase.h" include (:system-flag t) nil [964 990])
+            ("utils/String8.h" include (:system-flag t) nil [991 1017])
+            ("utils/threads.h" include (:system-flag t) nil [1018 1044])
+            ("utils/Vector.h" include (:system-flag t) nil [1045 1070])
+            ("utils/KeyedVector.h" include (:system-flag t) nil [1071 1101])
+            ("MidasState.h" include (:system-flag t) nil [1103 1126])
+            ("IStateManager.h" include (:system-flag t) nil [1127 1153])
+            ("IPowerManager.h" include (:system-flag t) nil [1154 1180])
+            ("IMidasSettings.h" include (:system-flag t) nil [1181 1208])
+            ("InputManager.h" include nil nil [1210 1235])
+            ("LongPressedKeyMonitor.h" include nil nil [1236 1270])
+            ("AudioTone.h" include nil nil [1335 1357])
+            ("marvell" type
+               (:members 
+                  ( ("android" using (:type ("android" type
+                         (:prototype t
+                          :type "namespace")
+                          nil nil)) (reparse-symbol namespacesubparts) [1379 1403])
+                    ("HoldKeyControlThread" type
+                       (:prototype t
+                        :type "class")
+                        (reparse-symbol namespacesubparts) [1405 1432])
+                    ("StateManager" type
+                       (:superclasses 
+                          ( ("BnStateManager" type
+                               (:protection "public"
+                                :type "class")
+                                nil nil)
+                            ("IBinder::DeathRecipient" type
+                               (:protection "public"
+                                :type "class")
+                                nil nil))                          
+                        :members 
+                          ( ("public" label nil (reparse-symbol classsubparts) [1513 1520])
+                            ("initialize" function
+                               (:prototype-flag t
+                                :typemodifiers ("static")
+                                :type "void")
+                                (reparse-symbol classsubparts) [1525 1550])
+                            ("StateManager" function
+                               (:prototype-flag t
+                                :destructor-flag t
+                                :typemodifiers ("virtual")
+                                :type "void")
+                                (reparse-symbol classsubparts) [1555 1579])
+                            ("registerStateObserver" function
+                               (:prototype-flag t
+                                :typemodifiers ("virtual")
+                                :arguments 
+                                  ( ("observer" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("sp" type
+                                             (:template-specifier 
+                                                ( ("IStateObserver" type nil nil nil))                                                
+                                              :type "class")
+                                              nil nil))
+                                        (reparse-symbol arg-sub-list) [1624 1659]))                                  
+                                :type ("status_t" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [1585 1660])
+                            ("unregisterStateObserver" function
+                               (:prototype-flag t
+                                :typemodifiers ("virtual")
+                                :arguments 
+                                  ( ("observer" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("sp" type
+                                             (:template-specifier 
+                                                ( ("IStateObserver" type nil nil nil))                                                
+                                              :type "class")
+                                              nil nil))
+                                        (reparse-symbol arg-sub-list) [1706 1741]))                                  
+                                :type ("status_t" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [1665 1742])
+                            ("finishRunningState" function
+                               (:prototype-flag t
+                                :typemodifiers ("virtual")
+                                :type "void")
+                                (reparse-symbol classsubparts) [1747 1781])
+                            ("getCurrentState" function
+                               (:prototype-flag t
+                                :typemodifiers ("virtual")
+                                :type ("MIDAS_STATE" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [1786 1824])
+                            ("postSleep" function
+                               (:prototype-flag t
+                                :typemodifiers ("virtual")
+                                :arguments 
+                                  ( ("reason" variable
+                                       (:constant-flag t
+                                        :type ("MIDAS_SLEEP_REASON" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [1852 1884]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [1829 1885])
+                            ("wakeup" function
+                               (:prototype-flag t
+                                :typemodifiers ("virtual")
+                                :type "void")
+                                (reparse-symbol classsubparts) [1960 1982])
+                            ("postShutdown" function
+                               (:prototype-flag t
+                                :typemodifiers ("virtual")
+                                :type "void")
+                                (reparse-symbol classsubparts) [1987 2015])
+                            ("postSleepOrShutdown" function
+                               (:prototype-flag t
+                                :typemodifiers ("virtual")
+                                :type "void")
+                                (reparse-symbol classsubparts) [2020 2055])
+                            ("postReboot" function
+                               (:prototype-flag t
+                                :typemodifiers ("virtual")
+                                :arguments 
+                                  ( ("reason" variable
+                                       (:constant-flag t
+                                        :type ("MIDAS_REBOOT_REASON" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [2084 2117])
+                                    ("path" variable
+                                       (:pointer 1
+                                        :constant-flag t
+                                        :type "char")
+                                        (reparse-symbol arg-sub-list) [2118 2135]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [2060 2136])
+                            ("setStartingState" function
+                               (:prototype-flag t
+                                :typemodifiers ("virtual")
+                                :arguments 
+                                  ( ("state" variable
+                                       (:constant-flag t
+                                        :type ("MIDAS_STATE" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [2171 2195]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [2141 2196])
+                            ("getStartingState" function
+                               (:prototype-flag t
+                                :typemodifiers ("virtual")
+                                :type ("MIDAS_STATE" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [2201 2240])
+                            ("injectKey" function
+                               (:prototype-flag t
+                                :typemodifiers ("virtual")
+                                :arguments 
+                                  ( ("event" variable
+                                       (:reference 1
+                                        :type ("KeyEvent" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [2268 2284]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [2245 2285])
+                            ("sendCommand" function
+                               (:prototype-flag t
+                                :typemodifiers ("virtual")
+                                :arguments 
+                                  ( ("message" variable
+                                       (:constant-flag t
+                                        :type ("int32_t" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [2315 2337])
+                                    ("ext1" variable
+                                       (:constant-flag t
+                                        :type ("int32_t" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [2338 2357])
+                                    ("ext2" variable
+                                       (:constant-flag t
+                                        :type ("int32_t" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [2386 2405])
+                                    ("obj" variable
+                                       (:pointer 1
+                                        :constant-flag t
+                                        :type ("Parcel" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [2406 2424]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [2290 2425])
+                            ("disableKey" function
+                               (:prototype-flag t
+                                :typemodifiers ("virtual")
+                                :arguments 
+                                  ( ("disableKey" variable (:type "bool") (reparse-symbol arg-sub-list) [2455 2471]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [2431 2472])
+                            ("getKeyState" function
+                               (:prototype-flag t
+                                :typemodifiers ("virtual")
+                                :arguments 
+                                  ( ("keyState" variable
+                                       (:pointer 1
+                                        :type "bool")
+                                        (reparse-symbol arg-sub-list) [2502 2517]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [2477 2518])
+                            ("readLatestKey" function
+                               (:prototype-flag t
+                                :typemodifiers ("virtual")
+                                :arguments 
+                                  ( ("latestKeyEvent" variable
+                                       (:pointer 1
+                                        :type ("KeyEvent" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [2550 2575]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [2523 2576])
+                            ("onMessageReceived" function
+                               (:prototype-flag t
+                                :typemodifiers ("virtual")
+                                :arguments 
+                                  ( ("msg" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("sp" type
+                                             (:template-specifier 
+                                                ( ("AMessage" type nil nil nil))                                                
+                                              :type "class")
+                                              nil nil))
+                                        (reparse-symbol arg-sub-list) [2646 2670]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [2615 2671])
+                            ("processKey" function
+                               (:prototype-flag t
+                                :typemodifiers ("virtual")
+                                :arguments 
+                                  ( ("event" variable
+                                       (:pointer 1
+                                        :type ("KeyEvent" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [2701 2717])
+                                    ("num" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2718 2729]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [2677 2730])
+                            ("sendKeyLongPressed" function
+                               (:prototype-flag t
+                                :arguments 
+                                  ( ("key" variable
+                                       (:reference 1
+                                        :type ("KeyEvent" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [2759 2773]))                                  
+                                :type "bool")
+                                (reparse-symbol classsubparts) [2735 2774])
+                            ("postMessage" function
+                               (:prototype-flag t
+                                :arguments 
+                                  ( ("what" variable
+                                       (:constant-flag t
+                                        :type ("int32_t" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [2796 2815])
+                                    ("delayUs" variable
+                                       (:constant-flag t
+                                        :type ("int64_t" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [2816 2838]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [2779 2839])
+                            ("removeMessages" function
+                               (:prototype-flag t
+                                :arguments 
+                                  ( ("what" variable
+                                       (:constant-flag t
+                                        :type ("int32_t" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [2864 2883]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [2844 2884])
+                            ("sendKeyTicksTrigger" function
+                               (:prototype-flag t
+                                :arguments 
+                                  ( ("key" variable
+                                       (:reference 1
+                                        :type ("KeyEvent" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [2914 2928]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [2889 2929])
+                            ("finishAndRun" function
+                               (:prototype-flag t
+                                :typemodifiers ("virtual")
+                                :arguments 
+                                  ( ("new_state" variable (:type ("MIDAS_STATE" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2961 2983]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [2935 2984])
+                            ("finishAndRun" function
+                               (:prototype-flag t
+                                :typemodifiers ("virtual")
+                                :arguments 
+                                  ( ("new_state" variable (:type ("MIDAS_STATE" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3015 3037])
+                                    ("reason" variable (:type ("MIDAS_SLEEP_REASON" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3038 3064]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [2989 3065])
+                            ("notifyObservers" function
+                               (:prototype-flag t
+                                :arguments 
+                                  ( ("message" variable
+                                       (:constant-flag t
+                                        :type ("int32_t" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [3091 3113])
+                                    ("ext1" variable
+                                       (:constant-flag t
+                                        :type ("int32_t" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [3114 3133])
+                                    ("ext2" variable
+                                       (:constant-flag t
+                                        :type ("int32_t" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [3158 3177])
+                                    ("obj" variable
+                                       (:pointer 1
+                                        :constant-flag t
+                                        :type ("Parcel" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [3178 3196]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [3070 3197])
+                            ("onSettingsChanged" function
+                               (:prototype-flag t
+                                :typemodifiers ("virtual")
+                                :arguments 
+                                  ( ("key" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("String8" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [3233 3252])
+                                    ("value" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("String8" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [3253 3274]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [3202 3275])
+                            ("saveLatestKey" function
+                               (:prototype-flag t
+                                :arguments 
+                                  ( ("events" variable
+                                       (:pointer 1
+                                        :type ("KeyEvent" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [3299 3316])
+                                    ("num" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3317 3328]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [3280 3329])
+                            ("setKeyFilter" function
+                               (:prototype-flag t
+                                :arguments 
+                                  ( ("keycode" variable
+                                       (:constant-flag t
+                                        :type ("int32_t" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [3352 3374])
+                                    ("filterMode" variable
+                                       (:constant-flag t
+                                        :type ("int32_t" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [3374 3399]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [3334 3400])
+                            ("getKeyFilter" function
+                               (:prototype-flag t
+                                :arguments 
+                                  ( ("keycode" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3422 3438])
+                                    ("pfilterMode" variable
+                                       (:pointer 1
+                                        :type ("int32_t" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [3438 3459]))                                  
+                                :type "int")
+                                (reparse-symbol classsubparts) [3405 3460])
+                            ("isKeyEnabled" function
+                               (:prototype-flag t
+                                :arguments 
+                                  ( ("keycode" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3483 3499]))                                  
+                                :type "bool")
+                                (reparse-symbol classsubparts) [3465 3500])
+                            ("setLongPressKeyTime" function
+                               (:prototype-flag t
+                                :arguments 
+                                  ( ("keycode" variable
+                                       (:constant-flag t
+                                        :type ("int32_t" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [3531 3553])
+                                    ("time_msec" variable
+                                       (:constant-flag t
+                                        :type ("int32_t" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [3554 3578]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [3506 3579])
+                            ("private" label nil (reparse-symbol classsubparts) [3583 3591])
+                            ("StateManager" function
+                               (:prototype-flag t
+                                :constructor-flag t
+                                :type ("StateManager" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [3596 3611])
+                            ("binderDied" function
+                               (:prototype-flag t
+                                :typemodifiers ("virtual")
+                                :arguments 
+                                  ( ("who" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("wp" type
+                                             (:template-specifier 
+                                                ( ("IBinder" type nil nil nil))                                                
+                                              :type "class")
+                                              nil nil))
+                                        (reparse-symbol arg-sub-list) [3640 3663]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [3616 3664])
+                            ("loadStates" function
+                               (:prototype-flag t
+                                :type "void")
+                                (reparse-symbol classsubparts) [3669 3687])
+                            ("loadStartingState" function
+                               (:prototype-flag t
+                                :arguments 
+                                  ( ("reason" variable
+                                       (:constant-flag t
+                                        :type ("MIDAS_WAKEUP_REASON" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [3715 3748]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [3692 3749])
+                            ("notifyObservers" function
+                               (:prototype-flag t
+                                :arguments 
+                                  ( ("old_state" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3775 3793])
+                                    ("new_state" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3794 3812]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [3754 3813])
+                            ("switchState" function
+                               (:prototype-flag t
+                                :arguments 
+                                  ( ("new_state" variable (:type ("MIDAS_STATE" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3835 3857]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [3818 3858])
+                            ("switchState" function
+                               (:prototype-flag t
+                                :arguments 
+                                  ( ("new_state" variable (:type ("MIDAS_STATE" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3880 3902])
+                                    ("sleepReason" variable (:type ("MIDAS_SLEEP_REASON" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3911 3942])
+                                    ("wakeupReason" variable (:type ("MIDAS_WAKEUP_REASON" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3943 3976])
+                                    ("saveAsStarting" variable (:type "bool") (reparse-symbol arg-sub-list) [3985 4005]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [3863 4006])
+                            ("saveStartingState" function
+                               (:prototype-flag t
+                                :arguments 
+                                  ( ("state" variable (:type ("MIDAS_STATE" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4072 4090]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [4049 4091])
+                            ("stopCurrentState" function
+                               (:prototype-flag t
+                                :arguments 
+                                  ( ("reason" variable
+                                       (:constant-flag t
+                                        :type ("MIDAS_SLEEP_REASON" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [4118 4150]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [4096 4151])
+                            ("handleFinish" function
+                               (:prototype-flag t
+                                :type "void")
+                                (reparse-symbol classsubparts) [4157 4177])
+                            ("handleSleep" function
+                               (:prototype-flag t
+                                :arguments 
+                                  ( ("reason" variable
+                                       (:constant-flag t
+                                        :type ("int32_t" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [4199 4220]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [4182 4221])
+                            ("handleWakeup" function
+                               (:prototype-flag t
+                                :type "void")
+                                (reparse-symbol classsubparts) [4226 4246])
+                            ("handleSleepOrShutdown" function
+                               (:prototype-flag t
+                                :type "void")
+                                (reparse-symbol classsubparts) [4251 4280])
+                            ("handleShutdown" function
+                               (:prototype-flag t
+                                :type "void")
+                                (reparse-symbol classsubparts) [4285 4307])
+                            ("handleReboot" function
+                               (:prototype-flag t
+                                :arguments 
+                                  ( ("reason" variable
+                                       (:constant-flag t
+                                        :type ("int32_t" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [4330 4351])
+                                    ("path" variable
+                                       (:pointer 1
+                                        :constant-flag t
+                                        :type "char")
+                                        (reparse-symbol arg-sub-list) [4352 4369]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [4312 4370])
+                            ("handleDemoStatus" function
+                               (:prototype-flag t
+                                :arguments 
+                                  ( ("enable" variable (:type "bool") (reparse-symbol arg-sub-list) [4398 4410]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [4376 4411])
+                            ("handlePoh" function
+                               (:prototype-flag t
+                                :arguments 
+                                  ( ("keycode" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4431 4447])
+                                    ("on" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4448 4459]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [4416 4460])
+                            ("onKeyDown" function
+                               (:prototype-flag t
+                                :arguments 
+                                  ( ("key" variable
+                                       (:reference 1
+                                        :type ("KeyEvent" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [4480 4494])
+                                    ("new_state" variable
+                                       (:reference 1
+                                        :type ("MIDAS_STATE" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [4495 4518]))                                  
+                                :type "bool")
+                                (reparse-symbol classsubparts) [4465 4519])
+                            ("onKeyUp" function
+                               (:prototype-flag t
+                                :arguments 
+                                  ( ("key" variable
+                                       (:reference 1
+                                        :type ("KeyEvent" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [4537 4551])
+                                    ("new_state" variable
+                                       (:reference 1
+                                        :type ("MIDAS_STATE" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [4552 4575])
+                                    ("wakeupHandled" variable (:type "bool") (reparse-symbol arg-sub-list) [4576 4595]))                                  
+                                :type "bool")
+                                (reparse-symbol classsubparts) [4524 4596])
+                            ("onKeyLongPressed" function
+                               (:prototype-flag t
+                                :arguments 
+                                  ( ("key" variable
+                                       (:reference 1
+                                        :type ("KeyEvent" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [4623 4637])
+                                    ("wakeupHandled" variable (:type "bool") (reparse-symbol arg-sub-list) [4638 4657]))                                  
+                                :type "bool")
+                                (reparse-symbol classsubparts) [4601 4658])
+                            ("StateInputDispatcher" type
+                               (:superclasses 
+                                  ( ("InputDispatcher" type
+                                       (:protection "public"
+                                        :type "class")
+                                        nil nil))                                  
+                                :members 
+                                  ( ("public" label nil (reparse-symbol classsubparts) [4724 4731])
+                                    ("StateInputDispatcher" function
+                                       (:constructor-flag t
+                                        :arguments 
+                                          ( ("mgr" variable
+                                               (:pointer 1
+                                                :type ("StateManager" type (:type "class") nil nil))
+                                                (reparse-symbol arg-sub-list) [4761 4779]))                                          
+                                        :type ("StateInputDispatcher" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [4740 4803])
+                                    ("StateInputDispatcher" function
+                                       (:destructor-flag t
+                                        :typemodifiers ("virtual")
+                                        :type "void")
+                                        (reparse-symbol classsubparts) [4812 4846])
+                                    ("processKey" function
+                                       (:prototype-flag t
+                                        :typemodifiers ("virtual")
+                                        :arguments 
+                                          ( ("event" variable
+                                               (:pointer 1
+                                                :type ("KeyEvent" type (:type "class") nil nil))
+                                                (reparse-symbol arg-sub-list) [4879 4895])
+                                            ("num" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4896 4907]))                                          
+                                        :type "void")
+                                        (reparse-symbol classsubparts) [4855 4908])
+                                    ("private" label nil (reparse-symbol classsubparts) [4915 4923])
+                                    ("mStateManager" variable (:type ("wp" type
+                                         (:template-specifier 
+                                            ( ("StateManager" type nil nil nil))                                            
+                                          :type "class")
+                                          nil nil)) (reparse-symbol classsubparts) [4932 4963]))                                  
+                                :type "class")
+                                (reparse-symbol classsubparts) [4664 4970])
+                            ("" type
+                               (:members 
+                                  ( ("kWhatCmdInit" variable
+                                       (:constant-flag t
+                                        :default-value (5006 5007)
+                                        :type "int")
+                                        (reparse-symbol enumsubparts) [4991 5007])
+                                    ("kWhatCmdKeyDown" variable
+                                       (:constant-flag t
+                                        :default-value (5035 5036)
+                                        :type "int")
+                                        (reparse-symbol enumsubparts) [5017 5036])
+                                    ("kWhatCmdKeyUp" variable
+                                       (:constant-flag t
+                                        :default-value (5062 5063)
+                                        :type "int")
+                                        (reparse-symbol enumsubparts) [5046 5063])
+                                    ("kWhatCmdKeyLongPressed" variable
+                                       (:constant-flag t
+                                        :default-value (5098 5099)
+                                        :type "int")
+                                        (reparse-symbol enumsubparts) [5073 5099])
+                                    ("kWhatCmdSwitchState" variable
+                                       (:constant-flag t
+                                        :default-value (5131 5132)
+                                        :type "int")
+                                        (reparse-symbol enumsubparts) [5109 5132])
+                                    ("kWhatCmdFinish" variable
+                                       (:constant-flag t
+                                        :default-value (5159 5160)
+                                        :type "int")
+                                        (reparse-symbol enumsubparts) [5142 5160])
+                                    ("kWhatCmdSleep" variable
+                                       (:constant-flag t
+                                        :default-value (5186 5187)
+                                        :type "int")
+                                        (reparse-symbol enumsubparts) [5170 5187])
+                                    ("kWhatCmdWakeup" variable
+                                       (:constant-flag t
+                                        :default-value (5214 5215)
+                                        :type "int")
+                                        (reparse-symbol enumsubparts) [5197 5215])
+                                    ("kWhatCmdShutdown" variable
+                                       (:constant-flag t
+                                        :default-value (5244 5245)
+                                        :type "int")
+                                        (reparse-symbol enumsubparts) [5225 5245])
+                                    ("kWhatCmdSleepOrShutdown" variable
+                                       (:constant-flag t
+                                        :default-value (5281 5282)
+                                        :type "int")
+                                        (reparse-symbol enumsubparts) [5255 5282])
+                                    ("kWhatCmdReboot" variable
+                                       (:constant-flag t
+                                        :default-value (5309 5311)
+                                        :type "int")
+                                        (reparse-symbol enumsubparts) [5292 5311])
+                                    ("kWhatCmdCommand" variable
+                                       (:constant-flag t
+                                        :default-value (5339 5341)
+                                        :type "int")
+                                        (reparse-symbol enumsubparts) [5321 5341])
+                                    ("kWhatCmdDemoStateChanged" variable
+                                       (:constant-flag t
+                                        :default-value (5378 5380)
+                                        :type "int")
+                                        (reparse-symbol enumsubparts) [5351 5380])
+                                    ("kWhatCmdSetStartingState" variable
+                                       (:constant-flag t
+                                        :default-value (5417 5419)
+                                        :type "int")
+                                        (reparse-symbol enumsubparts) [5390 5419])
+                                    ("kWhatCmdKeyTicksTrigger" variable
+                                       (:constant-flag t
+                                        :default-value (5455 5457)
+                                        :type "int")
+                                        (reparse-symbol enumsubparts) [5429 5457]))                                  
+                                :type "enum")
+                                (reparse-symbol classsubparts) [4976 5465])
+                            ("mKeysFilter" variable (:type ("KeyedVector" type
+                                 (:template-specifier 
+                                    ( ("int32_t" type nil nil nil)
+                                      ("int32_t" type nil nil nil))                                    
+                                  :type "class")
+                                  nil nil)) (reparse-symbol classsubparts) [5470 5512])
+                            ("mReflector" variable (:type ("sp" type
+                                 (:template-specifier 
+                                    ( ("AHandlerReflector" type nil nil nil))                                    
+                                  :type "class")
+                                  nil nil)) (reparse-symbol classsubparts) [5517 5565])
+                            ("mLooper" variable (:type ("sp" type
+                                 (:template-specifier 
+                                    ( ("ALooper" type nil nil nil))                                    
+                                  :type "class")
+                                  nil nil)) (reparse-symbol classsubparts) [5570 5590])
+                            ("mInputManager" variable (:type ("sp" type
+                                 (:template-specifier 
+                                    ( ("InputManager" type nil nil nil))                                    
+                                  :type "class")
+                                  nil nil)) (reparse-symbol classsubparts) [5596 5627])
+                            ("mMidasSettings" variable (:type ("sp" type
+                                 (:template-specifier 
+                                    ( ("IMidasSettings" type nil nil nil))                                    
+                                  :type "class")
+                                  nil nil)) (reparse-symbol classsubparts) [5633 5667])
+                            ("mMidasSettingsObserver" variable (:type ("sp" type
+                                 (:template-specifier 
+                                    ( ("IMidasSettingsObserver" type nil nil nil))                                    
+                                  :type "class")
+                                  nil nil)) (reparse-symbol classsubparts) [5672 5722])
+                            ("mCurrentState" variable (:type ("sp" type
+                                 (:template-specifier 
+                                    ( ("MidasState" type nil nil nil))                                    
+                                  :type "class")
+                                  nil nil)) (reparse-symbol classsubparts) [5728 5757])
+                            ("mStatesPool" variable (:type ("KeyedVector" type
+                                 (:template-specifier 
+                                    ( ("MIDAS_STATE" type nil nil nil)
+                                      ("sp" type nil nil nil))                                    
+                                  :type "class")
+                                  nil nil)) (reparse-symbol classsubparts) [5762 5816])
+                            ("mStateLock" variable (:type ("Mutex" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5821 5838])
+                            ("mObservers" variable (:type ("KeyedVector" type
+                                 (:template-specifier 
+                                    ( ("wp" type nil nil nil)
+                                      ("sp" type nil nil nil))                                    
+                                  :type "class")
+                                  nil nil)) (reparse-symbol classsubparts) [5844 5901])
+                            ("mObserverLock" variable (:type ("Mutex" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5906 5926])
+                            ("mPowerManager" variable (:type ("sp" type
+                                 (:template-specifier 
+                                    ( ("IPowerManager" type nil nil nil))                                    
+                                  :type "class")
+                                  nil nil)) (reparse-symbol classsubparts) [5932 5964])
+                            ("mLongPressedKeyMonitor" variable (:type ("sp" type
+                                 (:template-specifier 
+                                    ( ("LongPressedKeyMonitor" type nil nil nil))                                    
+                                  :type "class")
+                                  nil nil)) (reparse-symbol classsubparts) [5969 6018])
+                            ("mLongPressedKeyTime" variable (:type ("KeyedVector" type
+                                 (:template-specifier 
+                                    ( ("int32_t" type nil nil nil)
+                                      ("int32_t" type nil nil nil))                                    
+                                  :type "class")
+                                  nil nil)) (reparse-symbol classsubparts) [6023 6073])
+                            ("mDropAllKey" variable (:type "bool") (reparse-symbol classsubparts) [6079 6096])
+                            ("mLatestKeyEvent" variable (:type ("KeyEvent" type (:type "class") nil nil)) (reparse-symbol classsubparts) [6101 6126])
+                            ("mHoldKeyControlThread" variable (:type ("sp" type
+                                 (:template-specifier 
+                                    ( ("HoldKeyControlThread" type nil nil nil))                                    
+                                  :type "class")
+                                  nil nil)) (reparse-symbol classsubparts) [6209 6256])
+                            ("mAudioTone" variable (:type ("sp" type
+                                 (:template-specifier 
+                                    ( ("AudioTone" type nil nil nil))                                    
+                                  :type "class")
+                                  nil nil)) (reparse-symbol classsubparts) [6261 6286])
+                            ("mInSleep" variable (:type "bool") (reparse-symbol classsubparts) [6292 6306]))                          
+                        :type "class")
+                        (reparse-symbol namespacesubparts) [1434 6309]))                  
+                :type "namespace")
+                nil [1359 6312]))          
+    :file "StateManager.h"
+    :pointmax 6370
+    :fsize 6369
+    :lastmodtime '(22118 24985 877221 913000)
+    :unmatched-syntax 'nil
+    :lexical-table 
+        '(("MIDAS_STATE_MANAGER_H_")
+          )
+
+    )
+   (semanticdb-table "HoldKeyControlThread.h"
+    :file "HoldKeyControlThread.h"
+    :fsize 2004
+    :lastmodtime '(22118 24834 909226 757000)
+    )
+   (semanticdb-table "LongPressedKeyMonitor.h"
+    :file "LongPressedKeyMonitor.h"
+    :fsize 1702
+    :lastmodtime '(21934 1189 535885 283000)
+    )
+   )
+  :file "!home!qichen!bg4dtv_20151208_sbt3071_rc1!vendor!marvell!midas-tv!frameworks!midas_server!libs!state_manager!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2"
+  )

@@ -1,0 +1,157 @@
+;; Object rom/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "rom/"
+  :tables (list 
+   (semanticdb-table "sm_timer_rom.c"
+    :major-mode 'c-mode
+    :tags 
+        '( ("com_type.h" include nil nil [1 22])
+            ("sm_common.h" include nil nil [23 45])
+            ("sm.h" include nil nil [46 61])
+            ("string.h" include nil nil [62 81])
+            ("platform_config.h" include nil nil [83 111])
+            ("sm_mem.h" include nil nil [113 132])
+            ("sm_timer.h" include nil nil [133 154])
+            ("sm_printf.h" include nil nil [155 177])
+            ("sm_debug_rom.h" include nil nil [178 203])
+            ("sm_comm.h" include nil nil [204 224])
+            ("sm_apb_timers_defs.h" include nil nil [226 257])
+            ("uptime_calibrator" variable
+               (:typemodifiers ("static")
+                :type ("UINT32" type (:type "class") nil nil))
+                nil [260 296])
+            ("timer_resource_t" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("is_freerun" variable (:type ("BOOL" type (:type "class") nil nil)) (reparse-symbol classsubparts) [405 421])
+                          ("is_used" variable (:type ("BOOL" type (:type "class") nil nil)) (reparse-symbol classsubparts) [423 436])
+                          ("callback" variable
+                             (:functionpointer-flag t
+                              :type "void")
+                              (reparse-symbol classsubparts) [438 461]))                        
+                      :type "struct")
+                      nil nil)
+                :type "typedef")
+                nil [387 480])
+            ("timer_res" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :type ("timer_resource_t" type (:type "class") nil nil))
+                nil [482 530])
+            ("rom_sm_timer_stop" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("timerid" variable (:type ("INT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [558 572]))                  
+                :type ("hresult" type (:type "class") nil nil))
+                nil [532 573])
+            ("rom_sm_timer_gettimems" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [603 608]))                  
+                :type ("INT32" type (:type "class") nil nil))
+                nil [574 609])
+            ("save_irq" function
+               (:typemodifiers ("inline")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [641 646]))                  
+                :type "unsigned long")
+                nil [611 843])
+            ("restore_irq" function
+               (:typemodifiers ("inline")
+                :arguments 
+                  ( ("flags" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [869 889]))                  
+                :type "void")
+                nil [845 983])
+            ("rom_sm_timer_init" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1008 1013]))                  
+                :type "void")
+                nil [985 1198])
+            ("rom_sm_timer_getintstatus" function
+               (:arguments 
+                  ( ("timerid" variable (:type ("INT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1232 1246]))                  
+                :type ("INT32" type (:type "class") nil nil))
+                nil [1200 1420])
+            ("rom_sm_timer_clearint" function
+               (:arguments 
+                  ( ("timerid" variable (:type ("INT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1450 1464]))                  
+                :type ("INT32" type (:type "class") nil nil))
+                nil [1422 1634])
+            ("rom_sm_timer_readclock" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1665 1670]))                  
+                :type ("INT32" type (:type "class") nil nil))
+                nil [1636 1755])
+            ("rom_sm_timer_gettimems" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1786 1791]))                  
+                :type ("INT32" type (:type "class") nil nil))
+                nil [1757 2234])
+            ("rom_sm_timer_getlongtimems" function
+               (:arguments 
+                  ( ("ret" variable
+                       (:pointer 1
+                        :type ("timer_long_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2271 2289]))                  
+                :type ("hresult" type (:type "class") nil nil))
+                nil [2236 3116])
+            ("rom_sm_timer_setctrl" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("timerid" variable (:type ("INT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3154 3168])
+                    ("mask" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3169 3181])
+                    ("mode" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3182 3194])
+                    ("enable" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3195 3209]))                  
+                :type ("hresult" type (:type "class") nil nil))
+                nil [3118 3551])
+            ("rom_sm_timer_setloadcount" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("timerid" variable (:type ("INT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3594 3608])
+                    ("loadCount" variable (:type ("INT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3609 3625]))                  
+                :type ("hresult" type (:type "class") nil nil))
+                nil [3553 3825])
+            ("rom_sm_timer_request" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [3974 3979]))                  
+                :type ("INT32" type (:type "class") nil nil))
+                nil [3947 4119])
+            ("rom_sm_timer_start" function
+               (:arguments 
+                  ( ("timerid" variable (:type ("INT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4148 4162])
+                    ("timeoutus" variable (:type ("INT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4163 4179])
+                    ("" variable (:type "void") (reparse-symbol arg-sub-list) [4180 4190])
+                    ("is_freerun" variable (:type ("BOOL" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4198 4214]))                  
+                :type ("hresult" type (:type "class") nil nil))
+                nil [4121 5018])
+            ("rom_sm_timer_stop" function
+               (:arguments 
+                  ( ("timerid" variable (:type ("INT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5046 5060]))                  
+                :type ("hresult" type (:type "class") nil nil))
+                nil [5020 5319])
+            ("rom_sm_timer_isr" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [5926 5931]))                  
+                :type ("hresult" type (:type "class") nil nil))
+                nil [5901 6715])
+            ("rom_sm_timer_isr_timer1" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [6808 6813]))                  
+                :type "void")
+                nil [6779 7059]))          
+    :file "sm_timer_rom.c"
+    :pointmax 7060
+    :fsize 7059
+    :lastmodtime '(21971 11016 549764 599000)
+    :unmatched-syntax '((semantic-list 4190 . 4196) (semantic-list 4185 . 4190))
+    )
+   (semanticdb-table "sm_debug_rom.h"
+    :file "sm_debug_rom.h"
+    :fsize 2386
+    :lastmodtime '(21971 11016 549764 599000)
+    )
+   )
+  :file "!home!qichen!bg4dtv_release_clean!vendor!marvell-sdk!MV88DE3100_SDK!MV88DE3100_Tools!bsp!sm_rom!core!rom!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2"
+  )

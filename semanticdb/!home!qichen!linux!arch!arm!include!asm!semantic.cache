@@ -1,0 +1,171 @@
+;; Object asm/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "asm/"
+  :tables (list 
+   (semanticdb-table "system_misc.h"
+    :major-mode 'c-mode
+    :tags 
+        '( ("__ASM_ARM_SYSTEM_MISC_H" variable (:constant-flag t) nil [41 64])
+            ("linux/compiler.h" include (:system-flag t) nil [88 115])
+            ("linux/linkage.h" include (:system-flag t) nil [116 142])
+            ("linux/irqflags.h" include (:system-flag t) nil [143 170])
+            ("linux/reboot.h" include (:system-flag t) nil [171 196])
+            ("cpu_init" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [219 224]))                  
+                :type "void")
+                nil [198 225])
+            ("soft_restart" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [245 259]))                  
+                :type "void")
+                nil [227 260])
+            ("arm_pm_restart" variable
+               (:functionpointer-flag t
+                :type "void")
+                nil [261 338])
+            ("arm_pm_idle" variable
+               (:functionpointer-flag t
+                :type "void")
+                nil [339 372])
+            ("UDBG_UNDEFINED" variable (:constant-flag t) nil [382 396])
+            ("UDBG_SYSCALL" variable (:constant-flag t) nil [414 426])
+            ("UDBG_BADABORT" variable (:constant-flag t) nil [444 457])
+            ("UDBG_SEGV" variable (:constant-flag t) nil [475 484])
+            ("UDBG_BUS" variable (:constant-flag t) nil [502 510])
+            ("user_debug" variable
+               (:typemodifiers ("extern")
+                :type "unsigned int")
+                nil [521 552]))          
+    :file "system_misc.h"
+    :pointmax 619
+    :fsize 618
+    :lastmodtime '(22116 18324 645641 347000)
+    :unmatched-syntax 'nil
+    :lexical-table 
+        '(("UDBG_UNDEFINED" . ((semantic-list "(1 << 0)" 397 . 405)))
+          ("__ASM_ARM_SYSTEM_MISC_H")
+          ("UDBG_SYSCALL" . ((semantic-list "(1 << 1)" 427 . 435)))
+          ("UDBG_BADABORT" . ((semantic-list "(1 << 2)" 458 . 466)))
+          ("UDBG_SEGV" . ((semantic-list "(1 << 3)" 485 . 493)))
+          ("UDBG_BUS" . ((semantic-list "(1 << 4)" 511 . 519)))
+          )
+
+    )
+   (semanticdb-table "delay.h"
+    :major-mode 'c-mode
+    :tags 
+        '( ("__ASM_ARM_DELAY_H" variable (:constant-flag t) nil [151 168])
+            ("asm/memory.h" include (:system-flag t) nil [170 193])
+            ("asm/param.h" include (:system-flag t) nil [194 216])
+            ("MAX_UDELAY_MS" variable (:constant-flag t) nil [235 248])
+            ("UDELAY_MULT" variable (:constant-flag t) nil [259 270])
+            ("UDELAY_SHIFT" variable (:constant-flag t) nil [306 318])
+            ("delay_timer" type
+               (:members 
+                  ( ("read_current_timer" variable
+                       (:functionpointer-flag t
+                        :type "unsigned long")
+                        (reparse-symbol classsubparts) [367 409])
+                    ("freq" variable (:type "unsigned long") (reparse-symbol classsubparts) [411 430]))                  
+                :type "struct")
+                nil [345 433])
+            ("arm_delay_ops" type
+               (:members 
+                  ( ("delay" variable
+                       (:functionpointer-flag t
+                        :type "void")
+                        (reparse-symbol classsubparts) [466 495])
+                    ("const_udelay" variable
+                       (:functionpointer-flag t
+                        :type "void")
+                        (reparse-symbol classsubparts) [497 533])
+                    ("ticks_per_jiffy" variable (:type "unsigned long") (reparse-symbol classsubparts) [567 597]))                  
+                :type "struct")
+                nil [435 614])
+            ("arm_delay_ops" variable
+               (:typemodifiers ("extern")
+                :type ("arm_delay_ops" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [435 614])
+            ("__delay" variable (:constant-flag t) nil [624 631])
+            ("__bad_udelay" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [971 976]))                  
+                :type "void")
+                nil [946 977])
+            ("__udelay" variable (:constant-flag t) nil [1380 1388])
+            ("__const_udelay" variable (:constant-flag t) nil [1425 1439])
+            ("udelay" variable (:constant-flag t) nil [1482 1488])
+            ("__loop_delay" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("loops" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [1722 1742]))                  
+                :type "void")
+                nil [1697 1743])
+            ("__loop_udelay" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("usecs" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [1770 1790]))                  
+                :type "void")
+                nil [1744 1791])
+            ("__loop_const_udelay" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [1824 1838]))                  
+                :type "void")
+                nil [1792 1839])
+            ("ARCH_HAS_READ_CURRENT_TIMER" variable (:constant-flag t) nil [1886 1913])
+            ("register_current_timer_delay" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("timer" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("delay_timer" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1955 1987]))                  
+                :type "void")
+                nil [1914 1988]))          
+    :file "delay.h"
+    :pointmax 2053
+    :fsize 2052
+    :lastmodtime '(22116 18324 629641 348000)
+    :unmatched-syntax '((punctuation 564 . 565) (semantic-list 549 . 564) (semantic-list 540 . 549) (VOID 535 . 539))
+    :lexical-table 
+        '(("ARCH_HAS_READ_CURRENT_TIMER")
+          ("udelay" (spp-arg-list ("n") 1488 . 1491) . ((semantic-list "(__builtin_constant_p(n) ?					\\
+	  ((n) > (MAX_UDELAY_MS * 1000) ? __bad_udelay() :		\\
+			__const_udelay((n) * UDELAY_MULT)) :		\\
+	  __udelay(n))" 1501 . 1647)))
+          ("__delay" (spp-arg-list ("n") 631 . 634) . 
+              ((symbol "arm_delay_ops" 636 . 649) (punctuation "." 649 . 650) (symbol "delay" 650 . 655) (semantic-list "(n)" 655 . 658)))
+          ("UDELAY_MULT" . ((semantic-list "((UL(2199023) * HZ) >> 11)" 271 . 297)))
+          ("__udelay" (spp-arg-list ("n") 1388 . 1391) . 
+              ((symbol "arm_delay_ops" 1393 . 1406) (punctuation "." 1406 . 1407) (symbol "udelay" 1407 . 1413) (semantic-list "(n)" 1413 . 1416)))
+          ("__ASM_ARM_DELAY_H")
+          ("MAX_UDELAY_MS" . ((number "2" 249 . 250)))
+          ("__const_udelay" (spp-arg-list ("n") 1439 . 1442) . 
+              ((symbol "arm_delay_ops" 1443 . 1456) (punctuation "." 1456 . 1457) (symbol "const_udelay" 1457 . 1469) (semantic-list "(n)" 1469 . 1472)))
+          ("UDELAY_SHIFT" . ((number "30" 319 . 321)))
+          )
+
+    )
+   )
+  :file "!home!qichen!linux!arch!arm!include!asm!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2"
+  )
