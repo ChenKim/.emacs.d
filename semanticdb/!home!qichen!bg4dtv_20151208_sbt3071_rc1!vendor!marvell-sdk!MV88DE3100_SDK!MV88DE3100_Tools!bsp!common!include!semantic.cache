@@ -1,0 +1,88 @@
+;; Object include/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "include/"
+  :tables
+  (list
+    (semanticdb-table "debug.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("__DEBUG_H" variable (:constant-flag t) nil [27 36])
+            ("com_type.h" include nil nil [38 59])
+            ("printf.h" include nil nil [60 79])
+            ("PRINT_LEVEL" type
+               (:members 
+                  ( ("PRN_NONE" variable
+                       (:constant-flag t
+                        :default-value (110 111)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [101 111])
+                    ("PRN_ERR" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [114 122])
+                    ("PRN_NOTICE" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [124 135])
+                    ("PRN_RES" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [137 145])
+                    ("PRN_INFO" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [147 156])
+                    ("PRN_DBG" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [158 168]))                  
+                :type "enum")
+                nil [81 169])
+            ("set_dbg_level" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("lvl" variable (:type "int") (reparse-symbol arg-sub-list) [190 198]))                  
+                :type "void")
+                nil [171 199])
+            ("get_dbg_level" function
+               (:prototype-flag t
+                :typemodifiers ("inline")
+                :type "int")
+                nil [200 227])
+            ("dumpmem" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("mem" variable
+                       (:pointer 1
+                        :type ("uint8_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [242 256])
+                    ("size" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [257 271]))                  
+                :type "void")
+                nil [229 272])
+            ("dbg_printf" variable (:constant-flag t) nil [456 466]))          
+      :file "debug.h"
+      :pointmax 590
+      :fsize 589
+      :lastmodtime '(21934 1026 67890 529000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("__DEBUG_H")
+          ("dbg_printf" (spp-arg-list ("lel" "format" "args...") 466 . 486) . 
+              ((DO "do" 489 . 491) (semantic-list "{ \\
+	if (lel <= get_dbg_level()) { \\
+		printf(format, ## args); \\
+		} \\
+}" 492 . 565) (WHILE "while" 566 . 571) (semantic-list "(0)" 571 . 574)))
+          )
+)
+    (semanticdb-table "com_type.h"
+      :file "com_type.h"
+      :fsize 5850
+      :lastmodtime '(21934 1026 67890 529000))
+    (semanticdb-table "printf.h"
+      :file "printf.h"
+      :fsize 137
+      :lastmodtime '(21934 1026 75890 528000)))
+  :file "!home!qichen!bg4dtv_20151208_sbt3071_rc1!vendor!marvell-sdk!MV88DE3100_SDK!MV88DE3100_Tools!bsp!common!include!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

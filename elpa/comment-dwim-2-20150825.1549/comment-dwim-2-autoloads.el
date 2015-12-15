@@ -3,8 +3,8 @@
 ;;; Code:
 
 
-;;;### (autoloads (comment-dwim-2) "comment-dwim-2" "comment-dwim-2.el"
-;;;;;;  (22116 19526 445602 785000))
+;;;### (autoloads nil "comment-dwim-2" "comment-dwim-2.el" (22126
+;;;;;;  38375 855969 489000))
 ;;; Generated autoloads from comment-dwim-2.el
 
 (autoload 'comment-dwim-2 "comment-dwim-2" "\
@@ -28,8 +28,8 @@ will swap (1) and (2).
 
 ;;;***
 
-;;;### (autoloads nil nil ("comment-dwim-2-pkg.el") (22116 19526
-;;;;;;  449475 787000))
+;;;### (autoloads nil nil ("comment-dwim-2-pkg.el") (22126 38375
+;;;;;;  875381 645000))
 
 ;;;***
 
