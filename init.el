@@ -384,6 +384,13 @@
 ;; show parent matching
 (show-paren-mode t)
 
+;; crosshairs
+;; (crosshairs-mode t)
+
+;; window-margins
+;; (add-hook 'text-mode-hook 'turn-on-window-margin-mode)
+;; (add-hook 'text-mode-hook 'longlines-mode)
+
 ;; open imenu
 (global-set-key (kbd "<f7>") 'imenu)
 
@@ -403,3 +410,19 @@
 
 ;; colors
 (set-face-foreground 'font-lock-comment-face "#585858")
+
+;; treat underscore symbol as word
+(add-hook 'c-mode-hook
+          (lambda () (modify-syntax-entry ?_ "w")))
+(add-hook 'c++-mode-hook
+          (lambda () (modify-syntax-entry ?_ "w")))
+
+;; ifdef
+;; (require 'hideif)
+;; (setq hide-ifdef-initially t)
+;; (add-hook 'c-mode-common-hook
+;;           (lambda ()
+;;             (setq hide-ifdef-shadow t)
+;;             (setq hide-ifdef-mode t)
+;;             (hide-ifdefs)
+;;             ))
