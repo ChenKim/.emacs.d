@@ -1,10 +1,11 @@
 ;; Object led/
 ;; SEMANTICDB Tags save file
 (semanticdb-project-database-file "led/"
-  :tables (list 
-   (semanticdb-table "led.cpp"
-    :major-mode 'c++-mode
-    :tags 
+  :tables
+  (list
+    (semanticdb-table "led.cpp"
+      :major-mode 'c++-mode
+      :tags 
         '( ("LOG_TAG" variable (:constant-flag t) nil [808 815])
             ("hardware/hardware.h" include (:system-flag t) nil [822 852])
             ("sys/stat.h" include (:system-flag t) nil [854 875])
@@ -78,25 +79,41 @@
                 nil [2062 2118])
             ("midas_led_module_methods" variable
                (:typemodifiers ("static")
+                :default-value "{
+    open: midas_led_device_open
+}"
                 :type ("hw_module_methods_t" type
                      (:prototype t
                       :type "struct")
                       nil nil))
                 nil [2120 2217])
-            ("HAL_MODULE_INFO_SYM" variable (:type ("midas_led_module_t" type (:type "class") nil nil)) nil [2219 2516])
-            ("Pwm_RdWrData" type
-               (:typedef ("_Pwm_RdWrData_" type (:type "struct") nil nil)
-                :superclasses "_Pwm_RdWrData_"
-                :type "typedef")
-                nil [2518 2709])
+            ("HAL_MODULE_INFO_SYM" variable
+               (:default-value "{
+    common: {
+        tag: HARDWARE_MODULE_TAG,
+        version_major: 1,
+        version_minor: 0,
+        id: LED_HARDWARE_MODULE_ID,
+        name: \"Marvell MIDAS Led HAL\",
+        author: \"Marvell\",
+        methods: &midas_led_module_methods,
+    }
+}"
+                :type ("midas_led_module_t" type (:type "class") nil nil))
+                nil [2219 2516])
             ("_Pwm_RdWrData_" type
                (:members 
                   ( ("offset" variable (:type ("uint" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2558 2574])
                     ("data" variable (:type ("uint" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2622 2636]))                  
                 :type "struct")
                 nil [2518 2709])
+            ("Pwm_RdWrData" type
+               (:typedef ("_Pwm_RdWrData_" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [2518 2709])
             ("pwm_fd" variable
                (:typemodifiers ("static")
+                :default-value "0"
                 :type "int")
                 nil [2711 2733])
             ("MV_Pwm_Set" function
@@ -163,20 +180,19 @@
                         (reparse-symbol arg-sub-list) [4995 5027])
                     ("percent" variable (:type "int") (reparse-symbol arg-sub-list) [5028 5040]))                  
                 :type "void")
-                nil [4974 5482])
+                nil [4974 5407])
             ("led_flash_once" function
-               (:typemodifiers ("static")
-                :arguments 
+               (:arguments 
                   ( ("module" variable
                        (:pointer 1
                         :type ("midas_led_device" type
                              (:prototype t
                               :type "struct")
                               nil nil))
-                        (reparse-symbol arg-sub-list) [5511 5543])
-                    ("off" variable (:type "int") (reparse-symbol arg-sub-list) [5544 5552]))                  
-                :type "void")
-                nil [5484 5853])
+                        (reparse-symbol arg-sub-list) [5436 5468])
+                    ("off" variable (:type "int") (reparse-symbol arg-sub-list) [5469 5477]))                  
+                :type "int")
+                nil [5421 5778])
             ("led_flash" function
                (:typemodifiers ("static")
                 :arguments 
@@ -186,19 +202,19 @@
                              (:prototype t
                               :type "struct")
                               nil nil))
-                        (reparse-symbol arg-sub-list) [5877 5909])
-                    ("hz" variable (:type "int") (reparse-symbol arg-sub-list) [5910 5917]))                  
+                        (reparse-symbol arg-sub-list) [5802 5834])
+                    ("hz" variable (:type "int") (reparse-symbol arg-sub-list) [5835 5842]))                  
                 :type "void")
-                nil [5855 6319])
+                nil [5780 6244])
             ("midas_led_device_close" function
                (:typemodifiers ("static")
                 :arguments 
                   ( ("dev" variable
                        (:pointer 1
                         :type ("hw_device_t" type (:type "class") nil nil))
-                        (reparse-symbol arg-sub-list) [6355 6372]))                  
+                        (reparse-symbol arg-sub-list) [6280 6297]))                  
                 :type "int")
-                nil [6321 6483])
+                nil [6246 6408])
             ("midas_led_device_open" function
                (:typemodifiers ("static")
                 :arguments 
@@ -209,27 +225,27 @@
                              (:prototype t
                               :type "struct")
                               nil nil))
-                        (reparse-symbol arg-sub-list) [6570 6603])
+                        (reparse-symbol arg-sub-list) [6495 6528])
                     ("name" variable
                        (:pointer 1
                         :constant-flag t
                         :type "char")
-                        (reparse-symbol arg-sub-list) [6604 6621])
+                        (reparse-symbol arg-sub-list) [6529 6546])
                     ("device" variable
                        (:pointer 2
                         :type ("hw_device_t" type
                              (:prototype t
                               :type "struct")
                               nil nil))
-                        (reparse-symbol arg-sub-list) [6650 6678]))                  
+                        (reparse-symbol arg-sub-list) [6575 6603]))                  
                 :type "int")
-                nil [6537 7440]))          
-    :file "led.cpp"
-    :pointmax 7441
-    :fsize 7440
-    :lastmodtime '(22057 63941 588953 403000)
-    :unmatched-syntax 'nil
-    :lexical-table 
+                nil [6462 7365]))          
+      :file "led.cpp"
+      :pointmax 7366
+      :fsize 7365
+      :lastmodtime '(22144 44816 69911 583000)
+      :unmatched-syntax nil
+      :lexical-table 
         '(("PWM_COUNT" . ((number "0x0c" 1840 . 1844)))
           ("PWM_IOCTL_WRITE" . ((number "0x4567" 1443 . 1449)))
           ("PRESCALE_BIT_MASK" . ((semantic-list "(0x7<<0)" 1716 . 1724)))
@@ -245,10 +261,7 @@
           ("ENABLE_BIT_MASK" . ((semantic-list "(1<<0)" 1597 . 1603)))
           ("DUTY_BIT_MASK" . ((semantic-list "(0xFFFF<<0)" 1796 . 1807)))
           )
-
-    )
-   )
+))
   :file "!home!qichen!bg4dtv_release_clean!vendor!marvell!midas-tv!hardware!modules!led!semantic.cache"
   :semantic-tag-version "2.0"
-  :semanticdb-version "2.2"
-  )
+  :semanticdb-version "2.2")

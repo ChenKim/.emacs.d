@@ -1,0 +1,443 @@
+;; Object a2dp/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "a2dp/"
+  :tables
+  (list
+    (semanticdb-table "A2dpSinkStateMachine.java"
+      :major-mode 'java-mode
+      :tags 
+        '( ("com.android.bluetooth.a2dp" package nil nil [1012 1047])
+            ("android.bluetooth.BluetoothA2dpSink" include nil nil [1049 1092])
+            ("android.bluetooth.BluetoothAdapter" include nil nil [1093 1135])
+            ("android.bluetooth.BluetoothAudioConfig" include nil nil [1136 1182])
+            ("android.bluetooth.BluetoothDevice" include nil nil [1183 1224])
+            ("android.bluetooth.BluetoothProfile" include nil nil [1225 1267])
+            ("android.bluetooth.BluetoothUuid" include nil nil [1268 1307])
+            ("android.bluetooth.IBluetooth" include nil nil [1308 1344])
+            ("android.content.Context" include nil nil [1345 1376])
+            ("android.media.AudioFormat" include nil nil [1377 1410])
+            ("android.media.AudioManager" include nil nil [1411 1445])
+            ("android.os.Handler" include nil nil [1446 1472])
+            ("android.os.Message" include nil nil [1473 1499])
+            ("android.os.ParcelUuid" include nil nil [1500 1529])
+            ("android.os.PowerManager" include nil nil [1530 1561])
+            ("android.os.PowerManager.WakeLock" include nil nil [1562 1602])
+            ("android.content.Intent" include nil nil [1603 1633])
+            ("android.os.Message" include nil nil [1634 1660])
+            ("android.os.RemoteException" include nil nil [1661 1695])
+            ("android.os.ServiceManager" include nil nil [1696 1729])
+            ("android.os.ParcelUuid" include nil nil [1730 1759])
+            ("android.util.Log" include nil nil [1760 1784])
+            ("com.android.bluetooth.Utils" include nil nil [1785 1820])
+            ("com.android.bluetooth.btservice.AdapterService" include nil nil [1821 1875])
+            ("com.android.bluetooth.btservice.ProfileService" include nil nil [1876 1930])
+            ("com.android.internal.util.IState" include nil nil [1931 1971])
+            ("com.android.internal.util.State" include nil nil [1972 2011])
+            ("com.android.internal.util.StateMachine" include nil nil [2012 2058])
+            ("java.util.ArrayList" include nil nil [2059 2086])
+            ("java.util.List" include nil nil [2087 2109])
+            ("java.util.HashMap" include nil nil [2110 2135])
+            ("java.util.Set" include nil nil [2136 2157])
+            ("A2dpSinkStateMachine" type
+               (:typemodifiers ("final")
+                :superclasses "StateMachine"
+                :members 
+                  ( ("DBG" variable
+                       (:typemodifiers ("private" "static" "final")
+                        :type "boolean")
+                        (reparse-symbol class_member_declaration) [2219 2260])
+                    ("CONNECT" variable
+                       (:typemodifiers ("static" "final")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [2266 2295])
+                    ("DISCONNECT" variable
+                       (:typemodifiers ("static" "final")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [2300 2332])
+                    ("STACK_EVENT" variable
+                       (:typemodifiers ("private" "static" "final")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [2337 2380])
+                    ("CONNECT_TIMEOUT" variable
+                       (:typemodifiers ("private" "static" "final")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [2385 2432])
+                    ("mDisconnected" variable
+                       (:typemodifiers ("private")
+                        :type "Disconnected")
+                        (reparse-symbol class_member_declaration) [2438 2473])
+                    ("mPending" variable
+                       (:typemodifiers ("private")
+                        :type "Pending")
+                        (reparse-symbol class_member_declaration) [2478 2503])
+                    ("mConnected" variable
+                       (:typemodifiers ("private")
+                        :type "Connected")
+                        (reparse-symbol class_member_declaration) [2508 2537])
+                    ("mService" variable
+                       (:typemodifiers ("private")
+                        :type "A2dpSinkService")
+                        (reparse-symbol class_member_declaration) [2543 2576])
+                    ("mContext" variable
+                       (:typemodifiers ("private")
+                        :type "Context")
+                        (reparse-symbol class_member_declaration) [2581 2606])
+                    ("mAdapter" variable
+                       (:typemodifiers ("private")
+                        :type "BluetoothAdapter")
+                        (reparse-symbol class_member_declaration) [2611 2645])
+                    ("mAudioManager" variable
+                       (:typemodifiers ("private" "final")
+                        :type "AudioManager")
+                        (reparse-symbol class_member_declaration) [2650 2691])
+                    ("mIntentBroadcastHandler" variable
+                       (:typemodifiers ("private")
+                        :type "IntentBroadcastHandler")
+                        (reparse-symbol class_member_declaration) [2696 2751])
+                    ("mWakeLock" variable
+                       (:typemodifiers ("private" "final")
+                        :type "WakeLock")
+                        (reparse-symbol class_member_declaration) [2756 2789])
+                    ("MSG_CONNECTION_STATE_CHANGED" variable
+                       (:typemodifiers ("private" "static" "final")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [2795 2853])
+                    ("mCurrentDevice" variable
+                       (:typemodifiers ("private")
+                        :type "BluetoothDevice")
+                        (reparse-symbol class_member_declaration) [4075 4121])
+                    ("mTargetDevice" variable
+                       (:typemodifiers ("private")
+                        :type "BluetoothDevice")
+                        (reparse-symbol class_member_declaration) [4126 4171])
+                    ("mIncomingDevice" variable
+                       (:typemodifiers ("private")
+                        :type "BluetoothDevice")
+                        (reparse-symbol class_member_declaration) [4176 4223])
+                    ("A2dpSinkStateMachine" function
+                       (:constructor-flag t
+                        :typemodifiers ("private")
+                        :arguments 
+                          ( ("svc" variable (:type "A2dpSinkService") (reparse-symbol formal_parameters) [4451 4470])
+                            ("context" variable (:type "Context") (reparse-symbol formal_parameters) [4472 4487]))                          )
+                        (reparse-symbol class_member_declaration) [4422 5257])
+                    ("make" function
+                       (:typemodifiers ("static")
+                        :arguments 
+                          ( ("svc" variable (:type "A2dpSinkService") (reparse-symbol formal_parameters) [5296 5315])
+                            ("context" variable (:type "Context") (reparse-symbol formal_parameters) [5317 5332]))                          
+                        :type "A2dpSinkStateMachine")
+                        (reparse-symbol class_member_declaration) [5263 5513])
+                    ("doQuit" function
+                       (:typemodifiers ("public")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [5519 5566])
+                    ("cleanup" function
+                       (:typemodifiers ("public")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [5572 5657])
+                    ("dump" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("sb" variable (:type "StringBuilder") (reparse-symbol formal_parameters) [5680 5696]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [5663 5996])
+                    ("Disconnected" type
+                       (:typemodifiers ("private")
+                        :superclasses "State"
+                        :members 
+                          ( ("enter" function
+                               (:typemodifiers ("public")
+                                :type "void")
+                                (reparse-symbol class_member_declaration) [6071 6170])
+                            ("processMessage" function
+                               (:typemodifiers ("public")
+                                :arguments 
+                                  ( ("message" variable (:type "Message") (reparse-symbol formal_parameters) [6228 6243]))                                  
+                                :type "boolean")
+                                (reparse-symbol class_member_declaration) [6198 8500])
+                            ("exit" function
+                               (:typemodifiers ("public")
+                                :type "void")
+                                (reparse-symbol class_member_declaration) [8528 8625])
+                            ("processConnectionEvent" function
+                               (:typemodifiers ("private")
+                                :arguments 
+                                  ( ("state" variable (:type "int") (reparse-symbol formal_parameters) [8704 8713])
+                                    ("device" variable (:type "BluetoothDevice") (reparse-symbol formal_parameters) [8715 8737]))                                  
+                                :type "void")
+                                (reparse-symbol class_member_declaration) [8668 11555]))                          
+                        :type "class")
+                        (reparse-symbol class_member_declaration) [6002 11561])
+                    ("Pending" type
+                       (:typemodifiers ("private")
+                        :superclasses "State"
+                        :members 
+                          ( ("enter" function
+                               (:typemodifiers ("public")
+                                :type "void")
+                                (reparse-symbol class_member_declaration) [11631 11725])
+                            ("processMessage" function
+                               (:typemodifiers ("public")
+                                :arguments 
+                                  ( ("message" variable (:type "Message") (reparse-symbol formal_parameters) [11783 11798]))                                  
+                                :type "boolean")
+                                (reparse-symbol class_member_declaration) [11753 13878])
+                            ("processConnectionEvent" function
+                               (:typemodifiers ("private")
+                                :arguments 
+                                  ( ("state" variable (:type "int") (reparse-symbol formal_parameters) [13952 13961])
+                                    ("device" variable (:type "BluetoothDevice") (reparse-symbol formal_parameters) [13963 13985]))                                  
+                                :type "void")
+                                (reparse-symbol class_member_declaration) [13916 21176]))                          
+                        :type "class")
+                        (reparse-symbol class_member_declaration) [11567 21183])
+                    ("Connected" type
+                       (:typemodifiers ("private")
+                        :superclasses "State"
+                        :members 
+                          ( ("enter" function
+                               (:typemodifiers ("public")
+                                :type "void")
+                                (reparse-symbol class_member_declaration) [21255 21565])
+                            ("processMessage" function
+                               (:typemodifiers ("public")
+                                :arguments 
+                                  ( ("message" variable (:type "Message") (reparse-symbol formal_parameters) [21623 21638]))                                  
+                                :type "boolean")
+                                (reparse-symbol class_member_declaration) [21593 24643])
+                            ("processConnectionEvent" function
+                               (:typemodifiers ("private")
+                                :arguments 
+                                  ( ("state" variable (:type "int") (reparse-symbol formal_parameters) [24719 24728])
+                                    ("device" variable (:type "BluetoothDevice") (reparse-symbol formal_parameters) [24730 24752]))                                  
+                                :type "void")
+                                (reparse-symbol class_member_declaration) [24683 25644])
+                            ("processAudioStateEvent" function
+                               (:typemodifiers ("private")
+                                :arguments 
+                                  ( ("state" variable (:type "int") (reparse-symbol formal_parameters) [25689 25698])
+                                    ("device" variable (:type "BluetoothDevice") (reparse-symbol formal_parameters) [25700 25722]))                                  
+                                :type "void")
+                                (reparse-symbol class_member_declaration) [25653 26672]))                          
+                        :type "class")
+                        (reparse-symbol class_member_declaration) [21189 26678])
+                    ("processAudioConfigEvent" function
+                       (:typemodifiers ("private")
+                        :arguments 
+                          ( ("audioConfig" variable (:type "BluetoothAudioConfig") (reparse-symbol formal_parameters) [26721 26753])
+                            ("device" variable (:type "BluetoothDevice") (reparse-symbol formal_parameters) [26755 26777]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [26684 26885])
+                    ("getConnectionState" function
+                       (:arguments 
+                          ( ("device" variable (:type "BluetoothDevice") (reparse-symbol formal_parameters) [26914 26936]))                          
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [26891 28175])
+                    ("getAudioConfig" function
+                       (:arguments 
+                          ( ("device" variable (:type "BluetoothDevice") (reparse-symbol formal_parameters) [28217 28239]))                          
+                        :type "BluetoothAudioConfig")
+                        (reparse-symbol class_member_declaration) [28181 28290])
+                    ("getConnectedDevices" function (:constructor-flag t) (reparse-symbol class_member_declaration) [28318 28594])
+                    ("okToConnect" function
+                       (:arguments 
+                          ( ("device" variable (:type "BluetoothDevice") (reparse-symbol formal_parameters) [28620 28642]))                          
+                        :type "boolean")
+                        (reparse-symbol class_member_declaration) [28600 29013])
+                    ("getDevicesMatchingConnectionStates" function
+                       (:constructor-flag t
+                        :arguments 
+                          ( ("states" variable
+                               (:dereference 1
+                                :type "int")
+                                (reparse-symbol formal_parameters) [29089 29101]))                          )
+                        (reparse-symbol class_member_declaration) [29054 29810])
+                    ("broadcastConnectionState" function
+                       (:typemodifiers ("private")
+                        :arguments 
+                          ( ("device" variable (:type "BluetoothDevice") (reparse-symbol formal_parameters) [29932 29954])
+                            ("newState" variable (:type "int") (reparse-symbol formal_parameters) [29956 29968])
+                            ("prevState" variable (:type "int") (reparse-symbol formal_parameters) [29970 29983]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [29894 30596])
+                    ("broadcastAudioState" function
+                       (:typemodifiers ("private")
+                        :arguments 
+                          ( ("device" variable (:type "BluetoothDevice") (reparse-symbol formal_parameters) [30635 30657])
+                            ("state" variable (:type "int") (reparse-symbol formal_parameters) [30659 30668])
+                            ("prevState" variable (:type "int") (reparse-symbol formal_parameters) [30670 30683]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [30602 31224])
+                    ("broadcastAudioConfig" function
+                       (:typemodifiers ("private")
+                        :arguments 
+                          ( ("device" variable (:type "BluetoothDevice") (reparse-symbol formal_parameters) [31264 31286])
+                            ("audioConfig" variable (:type "BluetoothAudioConfig") (reparse-symbol formal_parameters) [31288 31320]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [31230 31787])
+                    ("getByteAddress" function
+                       (:typemodifiers ("private")
+                        :arguments 
+                          ( ("device" variable (:type "BluetoothDevice") (reparse-symbol formal_parameters) [31823 31845]))                          
+                        :type "byte[]")
+                        (reparse-symbol class_member_declaration) [31793 31917])
+                    ("onConnectionStateChanged" function
+                       (:typemodifiers ("private")
+                        :arguments 
+                          ( ("state" variable (:type "int") (reparse-symbol formal_parameters) [31961 31970])
+                            ("address" variable
+                               (:dereference 1
+                                :type "byte")
+                                (reparse-symbol formal_parameters) [31972 31986]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [31923 32191])
+                    ("onAudioStateChanged" function
+                       (:typemodifiers ("private")
+                        :arguments 
+                          ( ("state" variable (:type "int") (reparse-symbol formal_parameters) [32230 32239])
+                            ("address" variable
+                               (:dereference 1
+                                :type "byte")
+                                (reparse-symbol formal_parameters) [32241 32255]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [32197 32455])
+                    ("onAudioConfigChanged" function
+                       (:typemodifiers ("private")
+                        :arguments 
+                          ( ("address" variable
+                               (:dereference 1
+                                :type "byte")
+                                (reparse-symbol formal_parameters) [32495 32509])
+                            ("sampleRate" variable (:type "int") (reparse-symbol formal_parameters) [32511 32525])
+                            ("channelCount" variable (:type "int") (reparse-symbol formal_parameters) [32527 32543]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [32461 32999])
+                    ("getDevice" function
+                       (:typemodifiers ("private")
+                        :arguments 
+                          ( ("address" variable
+                               (:dereference 1
+                                :type "byte")
+                                (reparse-symbol formal_parameters) [33039 33053]))                          
+                        :type "BluetoothDevice")
+                        (reparse-symbol class_member_declaration) [33005 33144])
+                    ("StackEvent" type
+                       (:typemodifiers ("private")
+                        :members 
+                          ( ("type" variable (:type "int") (reparse-symbol class_member_declaration) [33185 33212])
+                            ("valueInt" variable (:type "int") (reparse-symbol class_member_declaration) [33221 33238])
+                            ("device" variable (:type "BluetoothDevice") (reparse-symbol class_member_declaration) [33247 33277])
+                            ("audioConfig" variable (:type "BluetoothAudioConfig") (reparse-symbol class_member_declaration) [33286 33326])
+                            ("StackEvent" function
+                               (:constructor-flag t
+                                :typemodifiers ("private")
+                                :arguments 
+                                  ( ("type" variable (:type "int") (reparse-symbol formal_parameters) [33355 33363]))                                  )
+                                (reparse-symbol class_member_declaration) [33336 33406]))                          
+                        :type "class")
+                        (reparse-symbol class_member_declaration) [33150 33412])
+                    ("IntentBroadcastHandler" type
+                       (:typemodifiers ("private")
+                        :superclasses "Handler"
+                        :members 
+                          ( ("onConnectionStateChanged" function
+                               (:typemodifiers ("private")
+                                :arguments 
+                                  ( ("device" variable (:type "BluetoothDevice") (reparse-symbol formal_parameters) [33586 33608])
+                                    ("prevState" variable (:type "int") (reparse-symbol formal_parameters) [33610 33623])
+                                    ("state" variable (:type "int") (reparse-symbol formal_parameters) [33625 33634]))                                  
+                                :type "void")
+                                (reparse-symbol class_member_declaration) [33548 34324])
+                            ("handleMessage" function
+                               (:typemodifiers ("public")
+                                :arguments 
+                                  ( ("msg" variable (:type "Message") (reparse-symbol formal_parameters) [34378 34389]))                                  
+                                :type "void")
+                                (reparse-symbol class_member_declaration) [34352 34660]))                          
+                        :type "class")
+                        (reparse-symbol class_member_declaration) [33484 34666])
+                    ("EVENT_TYPE_NONE" variable
+                       (:typemodifiers ("final" "private" "static")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [34716 34761])
+                    ("EVENT_TYPE_CONNECTION_STATE_CHANGED" variable
+                       (:typemodifiers ("final" "private" "static")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [34766 34831])
+                    ("EVENT_TYPE_AUDIO_STATE_CHANGED" variable
+                       (:typemodifiers ("final" "private" "static")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [34836 34896])
+                    ("EVENT_TYPE_AUDIO_CONFIG_CHANGED" variable
+                       (:typemodifiers ("final" "private" "static")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [34901 34962])
+                    ("CONNECTION_STATE_DISCONNECTED" variable
+                       (:typemodifiers ("final" "static")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [35090 35141])
+                    ("CONNECTION_STATE_CONNECTING" variable
+                       (:typemodifiers ("final" "static")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [35146 35195])
+                    ("CONNECTION_STATE_CONNECTED" variable
+                       (:typemodifiers ("final" "static")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [35200 35248])
+                    ("CONNECTION_STATE_DISCONNECTING" variable
+                       (:typemodifiers ("final" "static")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [35253 35305])
+                    ("AUDIO_STATE_REMOTE_SUSPEND" variable
+                       (:typemodifiers ("final" "static")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [35367 35415])
+                    ("AUDIO_STATE_STOPPED" variable
+                       (:typemodifiers ("final" "static")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [35420 35461])
+                    ("AUDIO_STATE_STARTED" variable
+                       (:typemodifiers ("final" "static")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [35466 35507])
+                    ("classInitNative" function
+                       (:typemodifiers ("private" "native" "static")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [35513 35558])
+                    ("initNative" function
+                       (:typemodifiers ("private" "native")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [35563 35596])
+                    ("cleanupNative" function
+                       (:typemodifiers ("private" "native")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [35601 35637])
+                    ("connectA2dpNative" function
+                       (:typemodifiers ("private" "native")
+                        :arguments 
+                          ( ("address" variable
+                               (:dereference 1
+                                :type "byte")
+                                (reparse-symbol formal_parameters) [35683 35697]))                          
+                        :type "boolean")
+                        (reparse-symbol class_member_declaration) [35642 35699])
+                    ("disconnectA2dpNative" function
+                       (:typemodifiers ("private" "native")
+                        :arguments 
+                          ( ("address" variable
+                               (:dereference 1
+                                :type "byte")
+                                (reparse-symbol formal_parameters) [35748 35762]))                          
+                        :type "boolean")
+                        (reparse-symbol class_member_declaration) [35704 35764]))                  
+                :type "class")
+                nil [2159 35766]))          
+      :file "A2dpSinkStateMachine.java"
+      :pointmax 35767
+      :fsize 35766
+      :lastmodtime '(21832 35945 918068 973000)
+      :unmatched-syntax '((GT 29052 . 29053) (SYNCHRONIZED 29019 . 29031) (LT 29036 . 29037) (GT 28316 . 28317) (IDENTIFIER 28296 . 28300) (LT 28300 . 28301) (SEMICOLON 4368 . 4369) (PAREN_BLOCK 4366 . 4368) (GT 4365 . 4366) (COMMA 4344 . 4345) (LT 4328 . 4329) (NEW 4317 . 4320) (EQ 4315 . 4316) (GT 4287 . 4288) (COMMA 4266 . 4267) (PRIVATE 4229 . 4236) (LT 4250 . 4251))))
+  :file "!home!qichen!tpv2k15_3043_smgpio3!packages!apps!Bluetooth!src!com!android!bluetooth!a2dp!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

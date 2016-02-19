@@ -1,10 +1,11 @@
 ;; Object ir/
 ;; SEMANTICDB Tags save file
 (semanticdb-project-database-file "ir/"
-  :tables (list 
-   (semanticdb-table "ir.c"
-    :major-mode 'c-mode
-    :tags 
+  :tables
+  (list
+    (semanticdb-table "ir.c"
+      :major-mode 'c-mode
+      :tags 
         '( ("linux/init.h" include (:system-flag t) nil [1 24])
             ("linux/module.h" include (:system-flag t) nil [25 50])
             ("linux/kernel.h" include (:system-flag t) nil [51 76])
@@ -14,8 +15,12 @@
             ("linux/gpio.h" include (:system-flag t) nil [161 184])
             ("ir_key_def.h" include nil nil [186 209])
             ("sm.h" include nil nil [210 225])
-            ("sm_int_save" variable
-               (:functionpointer-flag t
+            ("sm_int_save" function
+               (:prototype-flag t
+                :function-pointer t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [254 259]))                  
                 :type "void")
                 nil [227 260])
             ("ir_input" variable
@@ -94,6 +99,138 @@
             ("keymap_tab" variable
                (:dereference 1
                 :typemodifiers ("static")
+                :default-value "{
+	MAKE_IR_KEYMAP(MV_IR_KEY_NULL,          0, KEY_RESERVED), /* no key */
+	MAKE_IR_KEYMAP(MV_IR_KEY_POWER,	        0, KEY_POWER),
+	MAKE_IR_KEYMAP(MV_IR_KEY_OPENCLOSE,     0, KEY_OPEN),
+
+	/* digital keys */
+	MAKE_IR_KEYMAP(MV_IR_KEY_DIGIT_1,       0, KEY_1),
+	MAKE_IR_KEYMAP(MV_IR_KEY_DIGIT_2,       0, KEY_2),
+	MAKE_IR_KEYMAP(MV_IR_KEY_DIGIT_3,       0, KEY_3),
+	MAKE_IR_KEYMAP(MV_IR_KEY_DIGIT_4,       0, KEY_4),
+	MAKE_IR_KEYMAP(MV_IR_KEY_DIGIT_5,       0, KEY_5),
+	MAKE_IR_KEYMAP(MV_IR_KEY_DIGIT_6,       0, KEY_6),
+	MAKE_IR_KEYMAP(MV_IR_KEY_DIGIT_7,       0, KEY_7),
+	MAKE_IR_KEYMAP(MV_IR_KEY_DIGIT_8,       0, KEY_8),
+	MAKE_IR_KEYMAP(MV_IR_KEY_DIGIT_9,       0, KEY_9),
+	MAKE_IR_KEYMAP(MV_IR_KEY_DIGIT_0,       0, KEY_0),
+	MAKE_IR_KEYMAP(MV_IR_KEY_DASH,      0, KEY_DASH),
+
+	/* for BD */
+	MAKE_IR_KEYMAP(MV_IR_KEY_HOME,          0, KEY_HOME),
+	MAKE_IR_KEYMAP(MV_IR_KEY_BACK,          0, KEY_BACK),
+	MAKE_IR_KEYMAP(MV_IR_KEY_INFO,          0, KEY_INFO),
+	MAKE_IR_KEYMAP(MV_IR_KEY_SETUPMENU,     0, KEY_HOME),
+	MAKE_IR_KEYMAP(MV_IR_KEY_CANCEL,        0, KEY_CANCEL), /* no key */
+
+	MAKE_IR_KEYMAP(MV_IR_KEY_DISCMENU,      0, KEY_CONTEXT_MENU),
+	MAKE_IR_KEYMAP(MV_IR_KEY_TITLEMENU,     0, KEY_TITLE),
+	MAKE_IR_KEYMAP(MV_IR_KEY_SUBTITLE,      0, KEY_SUBTITLE),
+	MAKE_IR_KEYMAP(MV_IR_KEY_ANGLE,         0, KEY_ANGLE),
+	MAKE_IR_KEYMAP(MV_IR_KEY_AUDIO,         0, KEY_AUDIO),
+	MAKE_IR_KEYMAP(MV_IR_KEY_SEARCH,        0, KEY_SEARCH),
+	MAKE_IR_KEYMAP(MV_IR_KEY_ZOOM,          0, KEY_ZOOM),
+	MAKE_IR_KEYMAP(MV_IR_KEY_DISPLAY,       0, KEY_SCREEN),
+
+	MAKE_IR_KEYMAP(MV_IR_KEY_REPEAT,        0, KEY_MEDIA_REPEAT),
+	MAKE_IR_KEYMAP(MV_IR_KEY_REPEAT_AB,     0, KEY_AB),
+	MAKE_IR_KEYMAP(MV_IR_KEY_EXIT,          0, KEY_EXIT),
+	MAKE_IR_KEYMAP(MV_IR_KEY_EXIT_OOBE,     0, KEY_EXIT_OOBE),
+	MAKE_IR_KEYMAP(MV_IR_KEY_A,             0, KEY_RED),
+	MAKE_IR_KEYMAP(MV_IR_KEY_B,             0, KEY_GREEN),
+	MAKE_IR_KEYMAP(MV_IR_KEY_C,             0, KEY_YELLOW),
+	MAKE_IR_KEYMAP(MV_IR_KEY_D,             0, KEY_BLUE),
+
+	/* IR misc around ENTER */
+	MAKE_IR_KEYMAP(MV_IR_KEY_CLEAR,         0, KEY_CLEAR),
+	MAKE_IR_KEYMAP(MV_IR_KEY_VIDEO_FORMAT,  0, KEY_VIDEO),
+	MAKE_IR_KEYMAP(MV_IR_KEY_RETURN,        0, KEY_ESC),
+
+	/* up down left right enter */
+	MAKE_IR_KEYMAP(MV_IR_KEY_UP,            0, KEY_UP),
+	MAKE_IR_KEYMAP(MV_IR_KEY_DOWN,          0, KEY_DOWN),
+	MAKE_IR_KEYMAP(MV_IR_KEY_LEFT,          0, KEY_LEFT),
+	MAKE_IR_KEYMAP(MV_IR_KEY_RIGHT,         0, KEY_RIGHT),
+	MAKE_IR_KEYMAP(MV_IR_KEY_ENTER,         0, KEY_ENTER),
+
+	/* for BD */
+	MAKE_IR_KEYMAP(MV_IR_KEY_SLOW,          0, KEY_SLOW),
+	MAKE_IR_KEYMAP(MV_IR_KEY_PAUSE,         0, KEY_PAUSE),
+	MAKE_IR_KEYMAP(MV_IR_KEY_PLAY,          0, KEY_PLAY),
+	MAKE_IR_KEYMAP(MV_IR_KEY_STOP,          0, KEY_STOP),
+	MAKE_IR_KEYMAP(MV_IR_KEY_PLAY_PAUSE,    0, KEY_PLAYPAUSE), /* no key */
+
+	MAKE_IR_KEYMAP(MV_IR_KEY_SKIP_BACKWARD, 0, KEY_PREVIOUS),
+	MAKE_IR_KEYMAP(MV_IR_KEY_SKIP_FORWARD,  0, KEY_NEXT),
+	MAKE_IR_KEYMAP(MV_IR_KEY_SLOW_BACKWARD, 0, KEY_RESERVED),  /* no key */
+	MAKE_IR_KEYMAP(MV_IR_KEY_SLOW_FORWARD,  0, KEY_RESERVED),  /* no key */
+	MAKE_IR_KEYMAP(MV_IR_KEY_FAST_BACKWARD, 0, KEY_REWIND),
+	MAKE_IR_KEYMAP(MV_IR_KEY_FAST_FORWARD,  0, KEY_FORWARD),
+
+	/* bottom keys */
+	MAKE_IR_KEYMAP(MV_IR_KEY_F1,            0, KEY_F1),
+	MAKE_IR_KEYMAP(MV_IR_KEY_F2,            0, KEY_F2),
+	MAKE_IR_KEYMAP(MV_IR_KEY_F3,            0, KEY_F3),
+	MAKE_IR_KEYMAP(MV_IR_KEY_F4,            0, KEY_F4),
+	MAKE_IR_KEYMAP(MV_IR_KEY_F5,            0, KEY_F5),
+	MAKE_IR_KEYMAP(MV_IR_KEY_F6,            0, KEY_F6),
+	MAKE_IR_KEYMAP(MV_IR_KEY_F7,            0, KEY_F7),
+	MAKE_IR_KEYMAP(MV_IR_KEY_F8,            0, KEY_F8),
+
+	/* for future */
+	MAKE_IR_KEYMAP(MV_IR_KEY_VOL_PLUS,      0, KEY_VOLUMEUP),   /* no key */
+	MAKE_IR_KEYMAP(MV_IR_KEY_VOL_MINUS,     0, KEY_VOLUMEDOWN), /* no key */
+	MAKE_IR_KEYMAP(MV_IR_KEY_VOL_MUTE,      0, KEY_MUTE),       /* no key */
+	MAKE_IR_KEYMAP(MV_IR_KEY_CHANNEL_PLUS,  0, KEY_CHANNELUP),  /* no key */
+	MAKE_IR_KEYMAP(MV_IR_KEY_CHANNEL_MINUS, 0, KEY_CHANNELDOWN),/* no key */
+
+	/* obsoleted keys */
+	MAKE_IR_KEYMAP(MV_IR_KEY_MENU,          0, KEY_MENU),
+	MAKE_IR_KEYMAP(MV_IR_KEY_ANYNET,        0, KEY_RESERVED),
+	MAKE_IR_KEYMAP(MV_IR_KEY_TELEVISION,    0, KEY_TV),
+	MAKE_IR_KEYMAP(MV_IR_KEY_CHANNEL_LIST,  0, KEY_RESERVED),
+	MAKE_IR_KEYMAP(MV_IR_KEY_TVPOWER,       0, KEY_RESERVED),
+	MAKE_IR_KEYMAP(MV_IR_KEY_PICTURE_MODE,      0, KEY_PICTURE_MODE),
+	MAKE_IR_KEYMAP(MV_IR_KEY_SYNC,      0, KEY_SYNC),
+	MAKE_IR_KEYMAP(MV_IR_KEY_WIDE,      0, KEY_WIDE),
+	MAKE_IR_KEYMAP(MV_IR_KEY_INPUTSEL,      0, KEY_INPUTSEL),
+	MAKE_IR_KEYMAP(MV_IR_KEY_CLOSEDCAPTION,      0, KEY_CLOSEDCAPTION),
+	MAKE_IR_KEYMAP(MV_IR_KEY_VIZIO,      0, KEY_VIZIO),
+	MAKE_IR_KEYMAP(MV_IR_KEY_RESET,      0, KEY_RESET),
+	MAKE_IR_KEYMAP(MV_IR_KEY_DEMO,      0, KEY_DEMO),
+
+	/* Vizio Factory IR keys*/
+	MAKE_IR_KEYMAP(MV_IR_KEY_VIDEO_CTC,      0, KEY_VIDEO_CTC),
+	MAKE_IR_KEYMAP(MV_IR_KEY_VIDEO_TEST_PATTERN,      0, KEY_VIDEO_TEST_PATTERN),
+	MAKE_IR_KEYMAP(MV_IR_KEY_VIDEO_BACKLIGHT,      0, KEY_VIDEO_BACKLIGHT),
+	MAKE_IR_KEYMAP(MV_IR_KEY_VIDEO_ARC,      0, KEY_VIDEO_ARC),
+	MAKE_IR_KEYMAP(MV_IR_KEY_VIDEO_LIGHTSENSOR,      0, KEY_VIDEO_LIGHTSENSOR),
+	MAKE_IR_KEYMAP(MV_IR_KEY_VIDEO_DCR,      0, KEY_VIDEO_DCR),
+	MAKE_IR_KEYMAP(MV_IR_KEY_AUDIO_SPEAKER_BALANCE,      0, KEY_AUDIO_SPEAKER_BALANCE),
+	MAKE_IR_KEYMAP(MV_IR_KEY_AUDIO_VOL,      0, KEY_AUDIO_VOL),
+	MAKE_IR_KEYMAP(MV_IR_KEY_AUDIO_HW_BYPASS,      0, KEY_AUDIO_HW_BYPASS),
+	MAKE_IR_KEYMAP(MV_IR_KEY_FACTORY_AGING_MODE,      0, KEY_FACTORY_AGING_MODE),
+	MAKE_IR_KEYMAP(MV_IR_KEY_FACTORY_FW_VERSION,      0, KEY_FACTORY_FW_VERSION),
+	MAKE_IR_KEYMAP(MV_IR_KEY_FACTORY_CHANNEL_TABLE,      0, KEY_FACTORY_CHANNEL),
+	MAKE_IR_KEYMAP(MV_IR_KEY_FACTORY_RESET,      0, KEY_FACTORY_RESET),
+	MAKE_IR_KEYMAP(MV_IR_KEY_FACTORY_INPUT_TUNER,      0, KEY_FACTORY_INPUT_TUNER),
+	MAKE_IR_KEYMAP(MV_IR_KEY_FACTORY_INPUT_COMP,      0, KEY_FACTORY_INPUT_COMP),
+	MAKE_IR_KEYMAP(MV_IR_KEY_FACTORY_INPUT_HDMI,      0, KEY_FACTORY_INPUT_HDMI),
+
+	/* POH fake key */
+	MAKE_IR_KEYMAP(POH_RX0_ON,      0, KEY_POH_RX0_ON),
+	MAKE_IR_KEYMAP(POH_RX1_ON,      0, KEY_POH_RX1_ON),
+	MAKE_IR_KEYMAP(POH_RX2_ON,      0, KEY_POH_RX2_ON),
+	MAKE_IR_KEYMAP(POH_RX0_OFF,     0, KEY_POH_RX0_OFF),
+	MAKE_IR_KEYMAP(POH_RX1_OFF,     0, KEY_POH_RX1_OFF),
+	MAKE_IR_KEYMAP(POH_RX2_OFF,     0, KEY_POH_RX2_OFF),
+	/* AC DIP fake key */
+	MAKE_IR_KEYMAP(AC_DIP,       0, KEY_AC_DIP),
+	/* SERVICE INFO fake key */
+	MAKE_IR_KEYMAP(SERVICE_INFO,       0, KEY_SERVICE_INFO),
+
+}"
                 :type ("ir_keymap" type
                      (:prototype t
                       :type "struct")
@@ -151,6 +288,10 @@
                (:dereference 1
                 :typemodifiers ("static")
                 :constant-flag t
+                :default-value "{
+	{ .compatible = \"marvell,berlin-ir\", },
+	{},
+}"
                 :type ("of_device_id" type
                      (:prototype t
                       :type "struct")
@@ -165,6 +306,18 @@
                 nil [10765 10809])
             ("berlin_ir_driver" variable
                (:typemodifiers ("static")
+                :default-value "{
+	.probe		= berlin_ir_probe,
+	.remove		= berlin_ir_remove,
+	.driver	= {
+		.name	= \"berlin-ir\",
+		.owner  = THIS_MODULE,
+		.of_match_table = berlin_ir_of_match,
+#ifdef CONFIG_PM
+		.pm	= &ir_pm_ops,
+#endif
+	},
+}"
                 :type ("platform_driver" type
                      (:prototype t
                       :type "struct")
@@ -188,20 +341,19 @@
                (:prototype-flag t
                 :type "int")
                 nil [11195 11217]))          
-    :file "ir.c"
-    :pointmax 11043
-    :fsize 11217
-    :lastmodtime '(22122 37623 316405 26000)
-    :unmatched-syntax 'nil
-    :lexical-table 
-        '(("MAKE_KEYCODE" (spp-arg-list ("modifier" "scancode") 358 . 378) . ((semantic-list "((modifier<<16)|scancode)" 379 . 404)))
-          ("MAKE_IR_KEYMAP" (spp-arg-list ("i" "m" "s") 428 . 437) . ((semantic-list "{.ircode = i, .keycode = MAKE_KEYCODE(m, s) }" 442 . 487)))
+      :file "ir.c"
+      :pointmax 11218
+      :fsize 11217
+      :lastmodtime '(22122 37623 316405 26000)
+      :unmatched-syntax '((string 11210 . 11215) (string 11167 . 11192) (string 11129 . 11145))
+      :lexical-table 
+        '(("MAKE_KEYCODE" (spp-arg-list ("modifier" "scancode") 382 . 402) . ((semantic-list "((modifier<<16)|scancode)" 403 . 428)))
+          ("MAKE_IR_KEYMAP" (spp-arg-list ("i" "m" "s") 452 . 461) . ((semantic-list "{.ircode = i, .keycode = MAKE_KEYCODE(m, s) }" 466 . 511)))
           )
-
-    )
-   (semanticdb-table "ir_key_def.h"
-    :major-mode 'c-mode
-    :tags 
+)
+    (semanticdb-table "ir_key_def.h"
+      :major-mode 'c-mode
+      :tags 
         '( ("__COMMON_IR_KEY_H__" variable (:constant-flag t) nil [37 56])
             ("MV_IR_KEY_CODE_t" type
                (:typedef ("" type
@@ -1601,12 +1753,12 @@
             ("MV_IR_KEY2UPKEY" variable (:constant-flag t) nil [8783 8798])
             ("MV_IR_HOLDKEY_KEY" variable (:constant-flag t) nil [8861 8878])
             ("MV_IR_HOLDKEY2KEY" variable (:constant-flag t) nil [8919 8936]))          
-    :file "ir_key_def.h"
-    :pointmax 8980
-    :fsize 8979
-    :lastmodtime '(22118 24828 817226 953000)
-    :unmatched-syntax '((spp-macro-def 6992 . 7007) (spp-macro-def 4681 . 4698) (spp-macro-def 4633 . 4652) (spp-macro-def 4595 . 4608) (spp-macro-def 4484 . 4497) (spp-macro-def 4429 . 4443) (spp-macro-def 4391 . 4404) (spp-macro-def 4339 . 4350) (spp-macro-def 4301 . 4314) (spp-macro-def 3350 . 3364) (spp-macro-def 3068 . 3078) (spp-macro-def 3029 . 3039) (spp-macro-def 2990 . 3000) (spp-macro-def 2951 . 2961) (spp-macro-def 2912 . 2922) (spp-macro-def 2873 . 2883) (spp-macro-def 2834 . 2844) (spp-macro-def 2795 . 2805) (spp-macro-def 2756 . 2766) (spp-macro-def 2717 . 2727) (spp-macro-def 2559 . 2572) (spp-macro-def 2512 . 2529) (spp-macro-def 978 . 992) (spp-macro-def 941 . 957) (spp-macro-def 904 . 919) (spp-macro-def 869 . 882))
-    :lexical-table 
+      :file "ir_key_def.h"
+      :pointmax 8980
+      :fsize 8979
+      :lastmodtime '(22118 24828 817226 953000)
+      :unmatched-syntax '((spp-macro-def 6992 . 7007) (spp-macro-def 4681 . 4698) (spp-macro-def 4633 . 4652) (spp-macro-def 4595 . 4608) (spp-macro-def 4484 . 4497) (spp-macro-def 4429 . 4443) (spp-macro-def 4391 . 4404) (spp-macro-def 4339 . 4350) (spp-macro-def 4301 . 4314) (spp-macro-def 3350 . 3364) (spp-macro-def 3068 . 3078) (spp-macro-def 3029 . 3039) (spp-macro-def 2990 . 3000) (spp-macro-def 2951 . 2961) (spp-macro-def 2912 . 2922) (spp-macro-def 2873 . 2883) (spp-macro-def 2834 . 2844) (spp-macro-def 2795 . 2805) (spp-macro-def 2756 . 2766) (spp-macro-def 2717 . 2727) (spp-macro-def 2559 . 2572) (spp-macro-def 2512 . 2529) (spp-macro-def 978 . 992) (spp-macro-def 941 . 957) (spp-macro-def 904 . 919) (spp-macro-def 869 . 882))
+      :lexical-table 
         '(("__COMMON_IR_KEY_H__")
           ("MV_IR_KEY2UPKEY" (spp-arg-list ("key") 8798 . 8803) . ((semantic-list "(key& (~MV_IR_HOLDKEY_FLAG) | MV_IR_UPKEY_FLAG)" 8805 . 8852)))
           ("MV_IR_KEY_RED" . ((symbol "MV_IR_KEY_A" 884 . 895)))
@@ -1640,10 +1792,7 @@
           ("MV_IR_KEY_LIVE_TV" . ((symbol "MV_IR_KEY_TELEVISION" 2530 . 2550)))
           ("MV_IR_KB_2" . ((symbol "MV_IR_KEY_DIGIT_2" 2769 . 2786)))
           )
-
-    )
-   )
+))
   :file "!home!qichen!bg4dtv_20151208_sbt3071_rc1!vendor!marvell-sdk!linux!drivers!soc!berlin!modules!ir!semantic.cache"
   :semantic-tag-version "2.0"
-  :semanticdb-version "2.2"
-  )
+  :semanticdb-version "2.2")

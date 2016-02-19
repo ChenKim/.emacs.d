@@ -1,0 +1,267 @@
+;; Object hardware/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "hardware/"
+  :tables
+  (list
+    (semanticdb-table "hardware.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("ANDROID_INCLUDE_HARDWARE_HARDWARE_H" variable (:constant-flag t) nil [674 709])
+            ("stdint.h" include (:system-flag t) nil [711 730])
+            ("sys/cdefs.h" include (:system-flag t) nil [731 753])
+            ("cutils/native_handle.h" include (:system-flag t) nil [755 788])
+            ("C" extern nil nil [790 803])
+            ("MAKE_TAG_CONSTANT" variable (:constant-flag t) nil [860 877])
+            ("HARDWARE_MODULE_TAG" variable (:constant-flag t) nil [943 962])
+            ("HARDWARE_DEVICE_TAG" variable (:constant-flag t) nil [1009 1028])
+            ("hw_module_t" type
+               (:prototype t
+                :type "struct")
+                nil [1068 1087])
+            ("hw_module_methods_t" type
+               (:prototype t
+                :type "struct")
+                nil [1088 1115])
+            ("hw_device_t" type
+               (:prototype t
+                :type "struct")
+                nil [1116 1135])
+            ("hw_module_t" type
+               (:members 
+                  ( ("tag" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1427 1440])
+                    ("version_major" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1493 1516])
+                    ("version_minor" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1568 1591])
+                    ("id" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol classsubparts) [1629 1644])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol classsubparts) [1681 1698])
+                    ("author" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol classsubparts) [1754 1773])
+                    ("methods" variable
+                       (:pointer 1
+                        :type ("hw_module_methods_t" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [1806 1842])
+                    ("dso" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol classsubparts) [1872 1882])
+                    ("reserved" variable
+                       (:dereference 1
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1945 1969]))                  
+                :type "struct")
+                nil [1336 1985])
+            ("hw_module_t" type
+               (:typedef ("hw_module_t" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [1336 1985])
+            ("hw_module_methods_t" type
+               (:members 
+                  ( ("open" function
+                       (:prototype-flag t
+                        :function-pointer t
+                        :arguments 
+                          ( ("module" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type ("hw_module_t" type
+                                     (:prototype t
+                                      :type "struct")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [2074 2107])
+                            ("id" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [2108 2123])
+                            ("device" variable
+                               (:pointer 2
+                                :type ("hw_device_t" type
+                                     (:prototype t
+                                      :type "struct")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [2136 2164]))                          
+                        :type "int")
+                        (reparse-symbol classsubparts) [2062 2165]))                  
+                :type "struct")
+                nil [1987 2189])
+            ("hw_module_methods_t" type
+               (:typedef ("hw_module_methods_t" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [1987 2189])
+            ("hw_device_t" type
+               (:members 
+                  ( ("tag" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2411 2424])
+                    ("version" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2472 2489])
+                    ("module" variable
+                       (:pointer 1
+                        :type ("hw_module_t" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [2553 2580])
+                    ("reserved" variable
+                       (:dereference 1
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2629 2651])
+                    ("close" function
+                       (:prototype-flag t
+                        :function-pointer t
+                        :arguments 
+                          ( ("device" variable
+                               (:pointer 1
+                                :type ("hw_device_t" type
+                                     (:prototype t
+                                      :type "struct")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [2699 2726]))                          
+                        :type "int")
+                        (reparse-symbol classsubparts) [2686 2727]))                  
+                :type "struct")
+                nil [2320 2743])
+            ("hw_device_t" type
+               (:typedef ("hw_device_t" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [2320 2743])
+            ("HAL_MODULE_INFO_SYM" variable (:constant-flag t) nil [2792 2811])
+            ("HAL_MODULE_INFO_SYM_AS_STR" variable (:constant-flag t) nil [2884 2910])
+            ("hw_get_module" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("id" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [3056 3071])
+                    ("module" variable
+                       (:pointer 2
+                        :constant-flag t
+                        :type ("hw_module_t" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3072 3106]))                  
+                :type "int")
+                nil [3038 3107])
+            ("" type
+               (:members 
+                  ( ("HAL_PIXEL_FORMAT_RGBA_8888" variable
+                       (:constant-flag t
+                        :default-value (3196 3197)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3158 3197])
+                    ("HAL_PIXEL_FORMAT_RGBX_8888" variable
+                       (:constant-flag t
+                        :default-value (3241 3242)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3203 3242])
+                    ("HAL_PIXEL_FORMAT_RGB_888" variable
+                       (:constant-flag t
+                        :default-value (3286 3287)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3248 3287])
+                    ("HAL_PIXEL_FORMAT_RGB_565" variable
+                       (:constant-flag t
+                        :default-value (3331 3332)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3293 3332])
+                    ("HAL_PIXEL_FORMAT_BGRA_8888" variable
+                       (:constant-flag t
+                        :default-value (3376 3377)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3338 3377])
+                    ("HAL_PIXEL_FORMAT_RGBA_5551" variable
+                       (:constant-flag t
+                        :default-value (3421 3422)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3383 3422])
+                    ("HAL_PIXEL_FORMAT_RGBA_4444" variable
+                       (:constant-flag t
+                        :default-value (3466 3467)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3428 3467])
+                    ("HAL_PIXEL_FORMAT_YV12" variable
+                       (:constant-flag t
+                        :default-value (4780 4790)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [4754 4790])
+                    ("HAL_PIXEL_FORMAT_YCbCr_422_SP" variable
+                       (:constant-flag t
+                        :default-value (4923 4927)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [4885 4927])
+                    ("HAL_PIXEL_FORMAT_YCrCb_420_SP" variable
+                       (:constant-flag t
+                        :default-value (4979 4983)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [4941 4983])
+                    ("HAL_PIXEL_FORMAT_YCbCr_420_P" variable
+                       (:constant-flag t
+                        :default-value (5035 5039)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [4997 5039])
+                    ("HAL_PIXEL_FORMAT_YCbCr_422_I" variable
+                       (:constant-flag t
+                        :default-value (5093 5097)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [5055 5097]))                  
+                :type "enum")
+                nil [3147 5109])
+            ("" type
+               (:members 
+                  ( ("HAL_TRANSFORM_FLIP_H" variable
+                       (:constant-flag t
+                        :default-value (5362 5366)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [5336 5366])
+                    ("HAL_TRANSFORM_FLIP_V" variable
+                       (:constant-flag t
+                        :default-value (5465 5469)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [5439 5469])
+                    ("HAL_TRANSFORM_ROT_90" variable
+                       (:constant-flag t
+                        :default-value (5552 5556)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [5526 5556])
+                    ("HAL_TRANSFORM_ROT_180" variable
+                       (:constant-flag t
+                        :default-value (5630 5634)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [5604 5634])
+                    ("HAL_TRANSFORM_ROT_270" variable
+                       (:constant-flag t
+                        :default-value (5718 5722)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [5692 5722]))                  
+                :type "enum")
+                nil [5257 5726]))          
+      :file "hardware.h"
+      :pointmax 5791
+      :fsize 5790
+      :lastmodtime '(21971 11157 245760 85000)
+      :unmatched-syntax '((close-paren "}" 5728 . 5739))
+      :lexical-table 
+        '(("HAL_MODULE_INFO_SYM" . ((symbol "HMI" 2820 . 2823)))
+          ("ANDROID_INCLUDE_HARDWARE_HARDWARE_H")
+          ("HARDWARE_MODULE_TAG" . ((symbol "MAKE_TAG_CONSTANT" 963 . 980) (semantic-list "('H', 'W', 'M', 'T')" 980 . 1000)))
+          ("MAKE_TAG_CONSTANT" (spp-arg-list ("A" "B" "C" "D") 877 . 886) . ((semantic-list "(((A) << 24) | ((B) << 16) | ((C) << 8) | (D))" 887 . 933)))
+          ("HAL_MODULE_INFO_SYM_AS_STR" . ((string "\"HMI\"" 2912 . 2917)))
+          ("HARDWARE_DEVICE_TAG" . ((symbol "MAKE_TAG_CONSTANT" 1029 . 1046) (semantic-list "('H', 'W', 'D', 'T')" 1046 . 1066)))
+          )
+))
+  :file "!home!qichen!bg4dtv_release_clean!vendor!marvell!midas-tv!kinoma!kinoma!libraries!android_OS!Honeycomb!myandroid!hardware!libhardware!include!hardware!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

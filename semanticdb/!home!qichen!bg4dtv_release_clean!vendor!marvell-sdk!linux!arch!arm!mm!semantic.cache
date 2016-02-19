@@ -1,0 +1,235 @@
+;; Object mm/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "mm/"
+  :tables
+  (list
+    (semanticdb-table "ioremap.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("linux/module.h" include (:system-flag t) nil [914 939])
+            ("linux/errno.h" include (:system-flag t) nil [940 964])
+            ("linux/mm.h" include (:system-flag t) nil [965 986])
+            ("linux/vmalloc.h" include (:system-flag t) nil [987 1013])
+            ("linux/io.h" include (:system-flag t) nil [1014 1035])
+            ("linux/sizes.h" include (:system-flag t) nil [1036 1060])
+            ("asm/cp15.h" include (:system-flag t) nil [1062 1083])
+            ("asm/cputype.h" include (:system-flag t) nil [1084 1108])
+            ("asm/cacheflush.h" include (:system-flag t) nil [1109 1136])
+            ("asm/mmu_context.h" include (:system-flag t) nil [1137 1165])
+            ("asm/pgalloc.h" include (:system-flag t) nil [1166 1190])
+            ("asm/tlbflush.h" include (:system-flag t) nil [1191 1216])
+            ("asm/system_info.h" include (:system-flag t) nil [1217 1245])
+            ("asm/mach/map.h" include (:system-flag t) nil [1247 1272])
+            ("asm/mach/pci.h" include (:system-flag t) nil [1273 1298])
+            ("mm.h" include nil nil [1299 1314])
+            ("LIST_HEAD" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("static_vmlist" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1327 1341]))                  
+                :type "int")
+                nil [1317 1342])
+            ("find_static_vm_paddr" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("paddr" variable (:type ("phys_addr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1390 1408])
+                    ("size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1412 1424])
+                    ("mtype" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [1425 1444]))                  
+                :type ("static_vm" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1344 1825])
+            ("find_static_vm_vaddr" function
+               (:pointer 1
+                :arguments 
+                  ( ("vaddr" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [1866 1878]))                  
+                :type ("static_vm" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1827 2163])
+            ("add_static_vm_early" function
+               (:arguments 
+                  ( ("svm" variable
+                       (:pointer 1
+                        :type ("static_vm" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2197 2219]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [2170 2510])
+            ("ioremap_page" function
+               (:arguments 
+                  ( ("virt" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [2529 2548])
+                    ("phys" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [2549 2568])
+                    ("mtype" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("mem_type" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2572 2601]))                  
+                :type "int")
+                nil [2512 2696])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("ioremap_page" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2711 2724]))                  
+                :type "int")
+                nil [2697 2725])
+            ("__check_vmalloc_seq" function
+               (:arguments 
+                  ( ("mm" variable
+                       (:pointer 1
+                        :type ("mm_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2752 2773]))                  
+                :type "void")
+                nil [2727 3082])
+            ("unmap_area_sections" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("virt" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [3658 3677])
+                    ("size" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [3678 3697]))                  
+                :type "void")
+                nil [3626 4709])
+            ("remap_area_sections" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("virt" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [4742 4761])
+                    ("pfn" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [4762 4780])
+                    ("size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4787 4799])
+                    ("type" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("mem_type" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4800 4828]))                  
+                :type "int")
+                nil [4711 5404])
+            ("remap_area_supersections" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("virt" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [5442 5461])
+                    ("pfn" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [5462 5480])
+                    ("size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5485 5497])
+                    ("type" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("mem_type" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5498 5526]))                  
+                :type "int")
+                nil [5406 6250])
+            ("__arm_ioremap_pfn_caller" function
+               (:pointer 1
+                :arguments 
+                  ( ("pfn" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [6299 6317])
+                    ("offset" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [6319 6340])
+                    ("size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6341 6353])
+                    ("mtype" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [6354 6373])
+                    ("caller" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [6374 6387]))                  
+                :type ("__iomem" type (:type "class") nil nil))
+                nil [6264 8196])
+            ("__arm_ioremap_caller" function
+               (:pointer 1
+                :arguments 
+                  ( ("phys_addr" variable (:type ("phys_addr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8233 8255])
+                    ("size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8256 8268])
+                    ("mtype" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [8270 8289])
+                    ("caller" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [8290 8303]))                  
+                :type ("__iomem" type (:type "class") nil nil))
+                nil [8203 8639])
+            ("__arm_ioremap_pfn" function
+               (:pointer 1
+                :arguments 
+                  ( ("pfn" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [9039 9057])
+                    ("offset" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [9058 9079])
+                    ("size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9080 9092])
+                    ("mtype" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [9097 9116]))                  
+                :type ("__iomem" type (:type "class") nil nil))
+                nil [9011 9212])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("__arm_ioremap_pfn" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9227 9245]))                  
+                :type "int")
+                nil [9213 9246])
+            ("__arm_ioremap_caller" variable (:type "int") nil [9342 9363])
+            ("__arm_ioremap" function
+               (:pointer 1
+                :arguments 
+                  ( ("phys_addr" variable (:type ("phys_addr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9394 9416])
+                    ("size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9417 9429])
+                    ("mtype" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [9430 9449]))                  
+                :type ("__iomem" type (:type "class") nil nil))
+                nil [9370 9537])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("__arm_ioremap" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9552 9566]))                  
+                :type "int")
+                nil [9538 9567])
+            ("__arm_ioremap_exec" function
+               (:pointer 1
+                :arguments 
+                  ( ("phys_addr" variable (:type ("phys_addr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9941 9963])
+                    ("size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9964 9976])
+                    ("cached" variable (:type "bool") (reparse-symbol arg-sub-list) [9977 9989]))                  
+                :type ("__iomem" type (:type "class") nil nil))
+                nil [9912 10181])
+            ("__iounmap" function
+               (:arguments 
+                  ( ("__iomem" variable
+                       (:typemodifiers ("volatile")
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [10198 10221])
+                    ("" variable (:type ("io_addr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10221 10229]))                  
+                :type "void")
+                nil [10183 10832])
+            ("__iounmap" variable (:type "int") nil [10882 10892])
+            ("__arm_iounmap" function
+               (:arguments 
+                  ( ("__iomem" variable
+                       (:typemodifiers ("volatile")
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [10913 10936])
+                    ("" variable (:type ("io_addr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10936 10944]))                  
+                :type "void")
+                nil [10894 10972])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("__arm_iounmap" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10987 11001]))                  
+                :type "int")
+                nil [10973 11002]))          
+      :file "ioremap.c"
+      :pointmax 11480
+      :fsize 11479
+      :lastmodtime '(21971 11093 657762 125000)
+      :unmatched-syntax '((punctuation 10935 . 10936) (punctuation 10880 . 10881) (semantic-list 10854 . 10879) (semantic-list 10839 . 10854) (punctuation 10877 . 10878) (VOID 10834 . 10838) (punctuation 10877 . 10878) (punctuation 10220 . 10221) (VOID 9907 . 9911) (VOID 9365 . 9369) (punctuation 9339 . 9340) (semantic-list 9285 . 9338) (semantic-list 9263 . 9285) (punctuation 9261 . 9262) (symbol 9253 . 9260) (VOID 9248 . 9252) (VOID 9006 . 9010) (VOID 8198 . 8202) (VOID 6259 . 6263) (VOID 2165 . 2169)))
+    (semanticdb-table "mm.h"
+      :file "mm.h"
+      :fsize 2386
+      :lastmodtime '(21971 11093 657762 125000)))
+  :file "!home!qichen!bg4dtv_release_clean!vendor!marvell-sdk!linux!arch!arm!mm!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

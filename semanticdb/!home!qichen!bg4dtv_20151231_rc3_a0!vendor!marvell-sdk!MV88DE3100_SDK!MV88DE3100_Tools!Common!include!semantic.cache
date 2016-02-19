@@ -1,0 +1,263 @@
+;; Object include/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "include/"
+  :tables
+  (list
+    (semanticdb-table "image2_header.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("_IMAGE2_HEADER_H_" variable (:constant-flag t) nil [35 52])
+            ("version_table.h" include nil nil [54 80])
+            ("IMG2_PART1_SIZE" variable (:constant-flag t) nil [243 258])
+            ("VT_OFFSET" variable (:constant-flag t) nil [275 284])
+            ("VT_SIZE" variable (:constant-flag t) nil [312 319])
+            ("FIGO_OFFSET" variable (:constant-flag t) nil [335 346])
+            ("FIGO_SIZE" variable (:constant-flag t) nil [382 391])
+            ("KEY_OFFSET" variable (:constant-flag t) nil [406 416])
+            ("KEY_SIZE" variable (:constant-flag t) nil [456 464])
+            ("IMG2_PART2_OFFSET" variable (:constant-flag t) nil [479 496])
+            ("_gen_header_t_" type
+               (:members 
+                  ( ("magic" variable (:type "unsigned int") (reparse-symbol classsubparts) [559 578])
+                    ("offset" variable (:type "unsigned int") (reparse-symbol classsubparts) [580 600])
+                    ("length" variable (:type "unsigned int") (reparse-symbol classsubparts) [602 622])
+                    ("exe_addr" variable (:type "unsigned int") (reparse-symbol classsubparts) [624 646])
+                    ("crc" variable (:type "unsigned int") (reparse-symbol classsubparts) [648 665])
+                    ("flag" variable (:type "unsigned int") (reparse-symbol classsubparts) [667 685]))                  
+                :type "struct")
+                nil [526 701])
+            ("gen_header_t" type
+               (:typedef ("_gen_header_t_" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [526 701])
+            ("_image2_header_t" type
+               (:members 
+                  ( ("part1" variable
+                       (:dereference 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [738 766])
+                    ("" type
+                       (:members 
+                          ( ("vt" variable (:type ("version_table_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [777 796])
+                            ("vt_pad" variable
+                               (:dereference 1
+                                :type "char")
+                                (reparse-symbol classsubparts) [799 820]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [768 824])
+                    ("" type
+                       (:members 
+                          ( ("figo" variable (:type ("gen_header_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [835 853])
+                            ("figo_pad" variable
+                               (:dereference 1
+                                :type "char")
+                                (reparse-symbol classsubparts) [856 881]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [826 885])
+                    ("" type
+                       (:members 
+                          ( ("cust_key" variable (:type ("gen_header_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [896 918])
+                            ("cust_key_pad" variable
+                               (:dereference 1
+                                :type "char")
+                                (reparse-symbol classsubparts) [921 949]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [887 953])
+                    ("part2" variable
+                       (:dereference 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [955 968]))                  
+                :type "struct")
+                nil [703 987])
+            ("image2_header_t" type
+               (:typedef ("_image2_header_t" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [703 987]))          
+      :file "image2_header.h"
+      :pointmax 996
+      :fsize 995
+      :lastmodtime '(21969 40017 953039 729000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("KEY_SIZE" . ((number "4096" 466 . 470)))
+          ("VT_OFFSET" . ((semantic-list "(IMG2_PART1_SIZE)" 286 . 303)))
+          ("FIGO_SIZE" . ((number "4096" 393 . 397)))
+          ("_IMAGE2_HEADER_H_")
+          ("KEY_OFFSET" . ((semantic-list "((FIGO_OFFSET) + (FIGO_SIZE))" 418 . 447)))
+          ("FIGO_OFFSET" . ((semantic-list "((VT_OFFSET) + (VT_SIZE))" 348 . 373)))
+          ("IMG2_PART2_OFFSET" . ((semantic-list "((KEY_OFFSET) + (KEY_SIZE))" 497 . 524)))
+          ("IMG2_PART1_SIZE" . 
+              ((number "12" 260 . 262) (punctuation "<" 262 . 263) (punctuation "<" 263 . 264) (number "10" 264 . 266)))
+          ("VT_SIZE" . ((number "4096" 322 . 326)))
+          )
+)
+    (semanticdb-table "version_table.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("_VERSION_TABLE_H_" variable (:constant-flag t) nil [35 52])
+            ("PART_NAME_MAX_LEN" variable (:constant-flag t) nil [62 79])
+            ("IMG2_NAME" variable (:constant-flag t) nil [91 100])
+            ("IMG3_NAME" variable (:constant-flag t) nil [122 131])
+            ("SYSCONF_NAME" variable (:constant-flag t) nil [151 163])
+            ("FLASHLESS_NAME" variable (:constant-flag t) nil [182 196])
+            ("UBOOT_ENV_NAME" variable (:constant-flag t) nil [222 236])
+            ("DDR_TYPE_DDR2" variable (:constant-flag t) nil [370 383])
+            ("DDR_TYPE_DDR3" variable (:constant-flag t) nil [394 407])
+            ("DDR_CHANNEL_DUAL" variable (:constant-flag t) nil [433 449])
+            ("DDR_CHANNEL_SINGLE" variable (:constant-flag t) nil [460 478])
+            ("CPU_TYPE_B" variable (:constant-flag t) nil [501 511])
+            ("CPU_TYPE_C" variable (:constant-flag t) nil [525 535])
+            ("_version_t_" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("" type
+                               (:members 
+                                  ( ("minor_version" variable (:type "unsigned int") (reparse-symbol classsubparts) [594 617])
+                                    ("major_version" variable (:type "unsigned int") (reparse-symbol classsubparts) [621 644]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [582 649])
+                            ("version" variable (:type "unsigned long long") (reparse-symbol classsubparts) [652 679]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [572 683]))                  
+                :type "struct")
+                nil [542 726])
+            ("version_t" type
+               (:typedef ("_version_t_" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [542 726])
+            ("data_type_t_" type
+               (:members 
+                  ( ("DATA_TYPE_NORMAL" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [757 774])
+                    ("DATA_TYPE_OOB" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [776 790])
+                    ("DATA_TYPE_RAW" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [792 807]))                  
+                :type "enum")
+                nil [728 819])
+            ("data_type_t" type
+               (:typedef ("data_type_t_" type (:type "enum") nil nil)
+                :type "typedef")
+                nil [728 819])
+            ("_sub_img_info_t_" type
+               (:members 
+                  ( ("name" variable
+                       (:dereference 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [856 887])
+                    ("size" variable (:type "unsigned long long") (reparse-symbol classsubparts) [889 913])
+                    ("crc" variable (:type "unsigned int") (reparse-symbol classsubparts) [915 928])
+                    ("version" variable (:type ("version_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [930 948])
+                    ("reserved_blocks" variable (:type "unsigned int") (reparse-symbol classsubparts) [951 976])
+                    ("chip_start_blkind" variable (:type "unsigned int") (reparse-symbol classsubparts) [997 1024])
+                    ("chip_num_blocks" variable (:type "unsigned int") (reparse-symbol classsubparts) [1026 1051])
+                    ("data_type" variable (:type "unsigned int") (reparse-symbol classsubparts) [1053 1072])
+                    ("reserved" variable
+                       (:dereference 1
+                        :type "unsigned char")
+                        (reparse-symbol classsubparts) [1074 1101]))                  
+                :type "struct")
+                nil [821 1138])
+            ("sub_img_info_t" type
+               (:typedef ("_sub_img_info_t_" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [821 1138])
+            ("_img_hdr_t_" type
+               (:members 
+                  ( ("magic" variable (:type "unsigned int") (reparse-symbol classsubparts) [1170 1185])
+                    ("version" variable (:type ("version_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1187 1205])
+                    ("page_size" variable (:type "unsigned int") (reparse-symbol classsubparts) [1208 1227])
+                    ("oob_size" variable (:type "unsigned int") (reparse-symbol classsubparts) [1229 1247])
+                    ("pages_per_block" variable (:type "unsigned int") (reparse-symbol classsubparts) [1249 1274])
+                    ("blks_per_chip" variable (:type "unsigned int") (reparse-symbol classsubparts) [1276 1299])
+                    ("num_sub_images" variable (:type "unsigned int") (reparse-symbol classsubparts) [1302 1326])
+                    ("ddr_type" variable
+                       (:suffix ":4"
+                        :type "unsigned char")
+                        (reparse-symbol classsubparts) [1328 1356])
+                    ("ddr_channel" variable
+                       (:suffix ":4"
+                        :type "unsigned char")
+                        (reparse-symbol classsubparts) [1358 1388])
+                    ("cpu_type" variable
+                       (:dereference 1
+                        :type "unsigned char")
+                        (reparse-symbol classsubparts) [1390 1416])
+                    ("reserved" variable
+                       (:dereference 1
+                        :type "unsigned char")
+                        (reparse-symbol classsubparts) [1418 1445])
+                    ("sub_image" variable
+                       (:dereference 1
+                        :type ("sub_img_info_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1466 1493]))                  
+                :type "struct")
+                nil [1140 1506])
+            ("img_hdr_t" type
+               (:typedef ("_img_hdr_t_" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [1140 1506])
+            ("_ver_table_entry_t_" type
+               (:members 
+                  ( ("name" variable
+                       (:dereference 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [1546 1577])
+                    ("part1_version" variable (:type ("version_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1579 1603])
+                    ("part1_start_blkind" variable (:type "unsigned int") (reparse-symbol classsubparts) [1605 1633])
+                    ("part1_blks" variable (:type "unsigned int") (reparse-symbol classsubparts) [1635 1655])
+                    ("part2_version" variable (:type ("version_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1755 1779])
+                    ("part2_start_blkind" variable (:type "unsigned int") (reparse-symbol classsubparts) [1781 1809])
+                    ("part2_blks" variable (:type "unsigned int") (reparse-symbol classsubparts) [1811 1831]))                  
+                :type "struct")
+                nil [1508 1859])
+            ("ver_table_entry_t" type
+               (:typedef ("_ver_table_entry_t_" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [1508 1859])
+            ("_version_table_t_" type
+               (:members 
+                  ( ("magic" variable (:type "unsigned int") (reparse-symbol classsubparts) [1897 1916])
+                    ("ou_status" variable (:type "unsigned int") (reparse-symbol classsubparts) [1918 1941])
+                    ("num_entries" variable (:type "unsigned int") (reparse-symbol classsubparts) [1943 1968])
+                    ("table" variable
+                       (:dereference 1
+                        :type ("ver_table_entry_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1970 1996]))                  
+                :type "struct")
+                nil [1861 2015])
+            ("version_table_t" type
+               (:typedef ("_version_table_t_" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [1861 2015]))          
+      :file "version_table.h"
+      :pointmax 2024
+      :fsize 2023
+      :lastmodtime '(21969 40017 957039 729000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("IMG3_NAME" . ((string "\"bootimgs\"" 132 . 142)))
+          ("FLASHLESS_NAME" . ((string "\"flashless_data\"" 197 . 213)))
+          ("CPU_TYPE_B" . ((number "0xb" 513 . 516)))
+          ("DDR_TYPE_DDR2" . ((number "2" 384 . 385)))
+          ("DDR_CHANNEL_SINGLE" . ((number "1" 479 . 480)))
+          ("CPU_TYPE_C" . ((number "0xc" 537 . 540)))
+          ("DDR_TYPE_DDR3" . ((number "3" 408 . 409)))
+          ("UBOOT_ENV_NAME" . ((string "\"u-boot.env\"" 237 . 249)))
+          ("_VERSION_TABLE_H_")
+          ("IMG2_NAME" . ((string "\"bootloader\"" 101 . 113)))
+          ("SYSCONF_NAME" . ((string "\"sysconf\"" 164 . 173)))
+          ("PART_NAME_MAX_LEN" . ((number "15" 80 . 82)))
+          ("DDR_CHANNEL_DUAL" . ((number "2" 450 . 451)))
+          )
+))
+  :file "!home!qichen!bg4dtv_20151231_rc3_a0!vendor!marvell-sdk!MV88DE3100_SDK!MV88DE3100_Tools!Common!include!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

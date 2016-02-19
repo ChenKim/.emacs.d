@@ -1,0 +1,316 @@
+;; Object settings/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "settings/"
+  :tables
+  (list
+    (semanticdb-table "SettingsManager.java"
+      :major-mode 'java-mode
+      :tags 
+        '( ("com.android.camera.settings" package nil nil [622 658])
+            ("android.content.Context" include nil nil [660 691])
+            ("android.content.SharedPreferences" include nil nil [692 733])
+            ("android.content.SharedPreferences.OnSharedPreferenceChangeListener" include nil nil [734 808])
+            ("android.preference.PreferenceManager" include nil nil [809 853])
+            ("com.android.camera.debug.Log" include nil nil [855 891])
+            ("com.android.camera.util.Size" include nil nil [892 928])
+            ("java.util.ArrayList" include nil nil [930 957])
+            ("java.util.List" include nil nil [958 980])
+            ("SettingsManager" type
+               (:typemodifiers ("public")
+                :members 
+                  ( ("TAG" variable
+                       (:typemodifiers ("private" "static" "final")
+                        :type "Log.Tag")
+                        (reparse-symbol class_member_declaration) [3043 3109])
+                    ("mContext" variable
+                       (:typemodifiers ("private" "final")
+                        :type "Context")
+                        (reparse-symbol class_member_declaration) [3115 3146])
+                    ("mPackageName" variable
+                       (:typemodifiers ("private" "final")
+                        :type "String")
+                        (reparse-symbol class_member_declaration) [3151 3185])
+                    ("mDefaultPreferences" variable
+                       (:typemodifiers ("private" "final")
+                        :type "SharedPreferences")
+                        (reparse-symbol class_member_declaration) [3190 3242])
+                    ("mCustomPreferences" variable
+                       (:typemodifiers ("private")
+                        :type "SharedPreferences")
+                        (reparse-symbol class_member_declaration) [3247 3292])
+                    ("mDefaultsStore" variable
+                       (:typemodifiers ("private" "final")
+                        :type "DefaultsStore")
+                        (reparse-symbol class_member_declaration) [3297 3362])
+                    ("SettingsManager" function
+                       (:constructor-flag t
+                        :typemodifiers ("public")
+                        :arguments 
+                          ( ("context" variable (:type "Context") (reparse-symbol formal_parameters) [3960 3975]))                          )
+                        (reparse-symbol class_member_declaration) [3937 4150])
+                    ("getDefaultPreferences" function
+                       (:typemodifiers ("public")
+                        :type "SharedPreferences")
+                        (reparse-symbol class_member_declaration) [4407 4499])
+                    ("openPreferences" function
+                       (:typemodifiers ("protected")
+                        :arguments 
+                          ( ("scope" variable (:type "String") (reparse-symbol formal_parameters) [4720 4732]))                          
+                        :type "SharedPreferences")
+                        (reparse-symbol class_member_declaration) [4676 5072])
+                    ("closePreferences" function
+                       (:typemodifiers ("protected")
+                        :arguments 
+                          ( ("preferences" variable (:type "SharedPreferences") (reparse-symbol formal_parameters) [5592 5621]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [5560 5805])
+                    ("OnSettingChangedListener" type
+                       (:typemodifiers ("public")
+                        :members 
+                          ( ("onSettingChanged" function
+                               (:typemodifiers ("public")
+                                :arguments 
+                                  ( ("settingsManager" variable (:type "SettingsManager") (reparse-symbol formal_parameters) [6049 6080])
+                                    ("key" variable (:type "String") (reparse-symbol formal_parameters) [6082 6092]))                                  
+                                :type "void")
+                                (reparse-symbol interface_member_declaration) [6020 6094]))                          
+                        :type "interface")
+                        (reparse-symbol class_member_declaration) [5885 6100])
+                    ("getSharedPreferenceListener" function
+                       (:typemodifiers ("private")
+                        :arguments 
+                          ( ("listener" variable
+                               (:typemodifiers ("final")
+                                :type "OnSettingChangedListener")
+                                (reparse-symbol formal_parameters) [6188 6227]))                          
+                        :type "OnSharedPreferenceChangeListener")
+                        (reparse-symbol class_member_declaration) [6106 6517])
+                    ("addListener" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("listener" variable
+                               (:typemodifiers ("final")
+                                :type "OnSettingChangedListener")
+                                (reparse-symbol formal_parameters) [6714 6753]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [6690 7509])
+                    ("removeListener" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("listener" variable (:type "OnSettingChangedListener") (reparse-symbol formal_parameters) [7667 7700]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [7640 8426])
+                    ("removeAllListeners" function
+                       (:typemodifiers ("public")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [8544 8989])
+                    ("SCOPE_GLOBAL" variable
+                       (:typemodifiers ("public" "static" "final")
+                        :type "String")
+                        (reparse-symbol class_member_declaration) [9081 9139])
+                    ("getPreferencesFromScope" function
+                       (:typemodifiers ("private")
+                        :arguments 
+                          ( ("scope" variable (:type "String") (reparse-symbol formal_parameters) [9469 9481]))                          
+                        :type "SharedPreferences")
+                        (reparse-symbol class_member_declaration) [9419 9773])
+                    ("setDefaults" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("key" variable (:type "String") (reparse-symbol formal_parameters) [9989 9999])
+                            ("defaultValue" variable (:type "String") (reparse-symbol formal_parameters) [10001 10020])
+                            ("possibleValues" variable
+                               (:dereference 1
+                                :type "String")
+                                (reparse-symbol formal_parameters) [10022 10045]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [9965 10127])
+                    ("setDefaults" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("key" variable (:type "String") (reparse-symbol formal_parameters) [10346 10356])
+                            ("defaultValue" variable (:type "int") (reparse-symbol formal_parameters) [10358 10374])
+                            ("possibleValues" variable
+                               (:dereference 1
+                                :type "int")
+                                (reparse-symbol formal_parameters) [10376 10396]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [10322 10776])
+                    ("setDefaults" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("key" variable (:type "String") (reparse-symbol formal_parameters) [10994 11004])
+                            ("defaultValue" variable (:type "boolean") (reparse-symbol formal_parameters) [11006 11026]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [10970 11224])
+                    ("getStringDefault" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("key" variable (:type "String") (reparse-symbol formal_parameters) [11339 11349]))                          
+                        :type "String")
+                        (reparse-symbol class_member_declaration) [11308 11410])
+                    ("getIntegerDefault" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("key" variable (:type "String") (reparse-symbol formal_parameters) [11529 11539]))                          
+                        :type "Integer")
+                        (reparse-symbol class_member_declaration) [11496 11707])
+                    ("getBooleanDefault" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("key" variable (:type "String") (reparse-symbol formal_parameters) [11825 11835]))                          
+                        :type "boolean")
+                        (reparse-symbol class_member_declaration) [11792 12026])
+                    ("getString" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("scope" variable (:type "String") (reparse-symbol formal_parameters) [12164 12176])
+                            ("key" variable (:type "String") (reparse-symbol formal_parameters) [12178 12188])
+                            ("defaultValue" variable (:type "String") (reparse-symbol formal_parameters) [12190 12209]))                          
+                        :type "String")
+                        (reparse-symbol class_member_declaration) [12140 12601])
+                    ("getString" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("scope" variable (:type "String") (reparse-symbol formal_parameters) [12754 12766])
+                            ("key" variable (:type "String") (reparse-symbol formal_parameters) [12768 12778]))                          
+                        :type "String")
+                        (reparse-symbol class_member_declaration) [12730 12848])
+                    ("getInteger" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("scope" variable (:type "String") (reparse-symbol formal_parameters) [12989 13001])
+                            ("key" variable (:type "String") (reparse-symbol formal_parameters) [13003 13013])
+                            ("defaultValue" variable (:type "Integer") (reparse-symbol formal_parameters) [13015 13035]))                          
+                        :type "Integer")
+                        (reparse-symbol class_member_declaration) [12963 13214])
+                    ("getInteger" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("scope" variable (:type "String") (reparse-symbol formal_parameters) [13376 13388])
+                            ("key" variable (:type "String") (reparse-symbol formal_parameters) [13390 13400]))                          
+                        :type "Integer")
+                        (reparse-symbol class_member_declaration) [13350 13472])
+                    ("getBoolean" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("scope" variable (:type "String") (reparse-symbol formal_parameters) [13613 13625])
+                            ("key" variable (:type "String") (reparse-symbol formal_parameters) [13627 13637])
+                            ("defaultValue" variable (:type "boolean") (reparse-symbol formal_parameters) [13639 13659]))                          
+                        :type "boolean")
+                        (reparse-symbol class_member_declaration) [13587 13836])
+                    ("getBoolean" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("scope" variable (:type "String") (reparse-symbol formal_parameters) [13997 14009])
+                            ("key" variable (:type "String") (reparse-symbol formal_parameters) [14011 14021]))                          
+                        :type "boolean")
+                        (reparse-symbol class_member_declaration) [13971 14093])
+                    ("getSize" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("scope" variable (:type "String") (reparse-symbol formal_parameters) [14261 14273])
+                            ("key" variable (:type "String") (reparse-symbol formal_parameters) [14275 14285]))                          
+                        :type "Size")
+                        (reparse-symbol class_member_declaration) [14241 14793])
+                    ("getIndexOfCurrentValue" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("scope" variable (:type "String") (reparse-symbol formal_parameters) [15219 15231])
+                            ("key" variable (:type "String") (reparse-symbol formal_parameters) [15233 15243]))                          
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [15185 15900])
+                    ("set" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("scope" variable (:type "String") (reparse-symbol formal_parameters) [16070 16082])
+                            ("key" variable (:type "String") (reparse-symbol formal_parameters) [16084 16094])
+                            ("value" variable (:type "String") (reparse-symbol formal_parameters) [16096 16108]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [16054 16247])
+                    ("set" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("scope" variable (:type "String") (reparse-symbol formal_parameters) [16431 16443])
+                            ("key" variable (:type "String") (reparse-symbol formal_parameters) [16445 16455])
+                            ("value" variable (:type "int") (reparse-symbol formal_parameters) [16457 16466]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [16415 16516])
+                    ("set" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("scope" variable (:type "String") (reparse-symbol formal_parameters) [16731 16743])
+                            ("key" variable (:type "String") (reparse-symbol formal_parameters) [16745 16755])
+                            ("value" variable (:type "boolean") (reparse-symbol formal_parameters) [16757 16770]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [16715 16820])
+                    ("setToDefault" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("scope" variable (:type "String") (reparse-symbol formal_parameters) [16938 16950])
+                            ("key" variable (:type "String") (reparse-symbol formal_parameters) [16952 16962]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [16913 17019])
+                    ("setValueByIndex" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("scope" variable (:type "String") (reparse-symbol formal_parameters) [17588 17600])
+                            ("key" variable (:type "String") (reparse-symbol formal_parameters) [17602 17612])
+                            ("index" variable (:type "int") (reparse-symbol formal_parameters) [17614 17623]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [17560 18172])
+                    ("isSet" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("scope" variable (:type "String") (reparse-symbol formal_parameters) [18266 18278])
+                            ("key" variable (:type "String") (reparse-symbol formal_parameters) [18280 18290]))                          
+                        :type "boolean")
+                        (reparse-symbol class_member_declaration) [18245 18413])
+                    ("isDefault" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("scope" variable (:type "String") (reparse-symbol formal_parameters) [18546 18558])
+                            ("key" variable (:type "String") (reparse-symbol formal_parameters) [18560 18570]))                          
+                        :type "boolean")
+                        (reparse-symbol class_member_declaration) [18521 18745])
+                    ("remove" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("scope" variable (:type "String") (reparse-symbol formal_parameters) [18811 18823])
+                            ("key" variable (:type "String") (reparse-symbol formal_parameters) [18825 18835]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [18792 18964])
+                    ("convert" function
+                       (:typemodifiers ("static")
+                        :arguments 
+                          ( ("value" variable (:type "int") (reparse-symbol formal_parameters) [19210 19219]))                          
+                        :type "String")
+                        (reparse-symbol class_member_declaration) [19188 19268])
+                    ("convertToInt" function
+                       (:typemodifiers ("static")
+                        :arguments 
+                          ( ("value" variable (:type "String") (reparse-symbol formal_parameters) [19502 19514]))                          
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [19478 19563])
+                    ("convertToBoolean" function
+                       (:typemodifiers ("static")
+                        :arguments 
+                          ( ("value" variable (:type "String") (reparse-symbol formal_parameters) [19817 19829]))                          
+                        :type "boolean")
+                        (reparse-symbol class_member_declaration) [19785 19883])
+                    ("convert" function
+                       (:typemodifiers ("static")
+                        :arguments 
+                          ( ("value" variable (:type "boolean") (reparse-symbol formal_parameters) [20142 20155]))                          
+                        :type "String")
+                        (reparse-symbol class_member_declaration) [20120 20198]))                  
+                :type "class")
+                nil [3008 20200]))          
+      :file "SettingsManager.java"
+      :pointmax 20201
+      :fsize 20200
+      :lastmodtime '(21832 35950 962069 217000)
+      :unmatched-syntax '((SEMICOLON 3930 . 3931) (PAREN_BLOCK 3928 . 3930) (GT 3927 . 3928) (LT 3894 . 3895) (NEW 3881 . 3884) (EQ 3871 . 3872) (GT 3842 . 3843) (LT 3809 . 3810) (SEMICOLON 3617 . 3618) (PAREN_BLOCK 3615 . 3617) (GT 3614 . 3615) (LT 3589 . 3590) (NEW 3576 . 3579) (EQ 3566 . 3567) (GT 3553 . 3554) (PRIVATE 3510 . 3517) (LT 3528 . 3529))))
+  :file "!home!qichen!tpv2k15_3043_smgpio3!packages!apps!Camera2!src!com!android!camera!settings!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

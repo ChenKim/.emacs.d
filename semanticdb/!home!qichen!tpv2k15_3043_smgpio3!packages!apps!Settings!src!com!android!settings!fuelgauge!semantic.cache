@@ -1,0 +1,337 @@
+;; Object fuelgauge/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "fuelgauge/"
+  :tables
+  (list
+    (semanticdb-table "BatterySaverSettings.java"
+      :major-mode 'java-mode
+      :tags 
+        '( ("com.android.settings.fuelgauge" package nil nil [622 661])
+            ("android.content.BroadcastReceiver" include nil nil [735 776])
+            ("android.content.ContentResolver" include nil nil [777 816])
+            ("android.content.Context" include nil nil [817 848])
+            ("android.content.Intent" include nil nil [849 879])
+            ("android.content.IntentFilter" include nil nil [880 916])
+            ("android.content.res.Resources" include nil nil [917 954])
+            ("android.database.ContentObserver" include nil nil [955 995])
+            ("android.net.Uri" include nil nil [996 1019])
+            ("android.os.AsyncTask" include nil nil [1020 1048])
+            ("android.os.Bundle" include nil nil [1049 1074])
+            ("android.os.Handler" include nil nil [1075 1101])
+            ("android.os.PowerManager" include nil nil [1102 1133])
+            ("android.provider.Settings.Global" include nil nil [1134 1174])
+            ("android.util.Log" include nil nil [1175 1199])
+            ("android.widget.Switch" include nil nil [1200 1229])
+            ("com.android.settings.R" include nil nil [1231 1261])
+            ("com.android.settings.SettingsActivity" include nil nil [1262 1307])
+            ("com.android.settings.SettingsPreferenceFragment" include nil nil [1308 1363])
+            ("com.android.settings.Utils" include nil nil [1364 1398])
+            ("com.android.settings.notification.SettingPref" include nil nil [1399 1452])
+            ("com.android.settings.widget.SwitchBar" include nil nil [1453 1498])
+            ("BatterySaverSettings" type
+               (:typemodifiers ("public")
+                :interfaces ("SwitchBar.OnSwitchChangeListener")
+                :superclasses "SettingsPreferenceFragment"
+                :members 
+                  ( ("TAG" variable
+                       (:typemodifiers ("private" "static" "final")
+                        :type "String")
+                        (reparse-symbol class_member_declaration) [1627 1684])
+                    ("DEBUG" variable
+                       (:typemodifiers ("private" "static" "final")
+                        :type "boolean")
+                        (reparse-symbol class_member_declaration) [1689 1757])
+                    ("KEY_TURN_ON_AUTOMATICALLY" variable
+                       (:typemodifiers ("private" "static" "final")
+                        :type "String")
+                        (reparse-symbol class_member_declaration) [1762 1842])
+                    ("WAIT_FOR_SWITCH_ANIM" variable
+                       (:typemodifiers ("private" "static" "final")
+                        :type "long")
+                        (reparse-symbol class_member_declaration) [1847 1900])
+                    ("mHandler" variable
+                       (:typemodifiers ("private" "final")
+                        :type "Handler")
+                        (reparse-symbol class_member_declaration) [1906 1953])
+                    ("mSettingsObserver" variable
+                       (:typemodifiers ("private" "final")
+                        :type "SettingsObserver")
+                        (reparse-symbol class_member_declaration) [1958 2040])
+                    ("mReceiver" variable
+                       (:typemodifiers ("private" "final")
+                        :type "Receiver")
+                        (reparse-symbol class_member_declaration) [2045 2095])
+                    ("mContext" variable
+                       (:typemodifiers ("private")
+                        :type "Context")
+                        (reparse-symbol class_member_declaration) [2101 2126])
+                    ("mCreated" variable
+                       (:typemodifiers ("private")
+                        :type "boolean")
+                        (reparse-symbol class_member_declaration) [2131 2156])
+                    ("mTriggerPref" variable
+                       (:typemodifiers ("private")
+                        :type "SettingPref")
+                        (reparse-symbol class_member_declaration) [2161 2194])
+                    ("mSwitchBar" variable
+                       (:typemodifiers ("private")
+                        :type "SwitchBar")
+                        (reparse-symbol class_member_declaration) [2199 2228])
+                    ("mSwitch" variable
+                       (:typemodifiers ("private")
+                        :type "Switch")
+                        (reparse-symbol class_member_declaration) [2233 2256])
+                    ("mValidListener" variable
+                       (:typemodifiers ("private")
+                        :type "boolean")
+                        (reparse-symbol class_member_declaration) [2261 2292])
+                    ("mPowerManager" variable
+                       (:typemodifiers ("private")
+                        :type "PowerManager")
+                        (reparse-symbol class_member_declaration) [2297 2332])
+                    ("onActivityCreated" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("savedInstanceState" variable (:type "Bundle") (reparse-symbol formal_parameters) [2382 2407]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [2352 3634])
+                    ("onDestroyView" function
+                       (:typemodifiers ("public")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [3654 3747])
+                    ("onResume" function
+                       (:typemodifiers ("public")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [3767 4063])
+                    ("onPause" function
+                       (:typemodifiers ("public")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [4083 4358])
+                    ("onSwitchChanged" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("switchView" variable (:type "Switch") (reparse-symbol formal_parameters) [4406 4423])
+                            ("isChecked" variable (:type "boolean") (reparse-symbol formal_parameters) [4425 4442]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [4378 4733])
+                    ("trySetPowerSaveMode" function
+                       (:typemodifiers ("private")
+                        :arguments 
+                          ( ("mode" variable (:type "boolean") (reparse-symbol formal_parameters) [4772 4784]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [4739 4983])
+                    ("updateSwitch" function
+                       (:typemodifiers ("private")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [4989 5555])
+                    ("mUpdateSwitch" variable
+                       (:typemodifiers ("private" "final")
+                        :type "Runnable")
+                        (reparse-symbol class_member_declaration) [5561 5707])
+                    ("mStartMode" variable
+                       (:typemodifiers ("private" "final")
+                        :type "Runnable")
+                        (reparse-symbol class_member_declaration) [5713 6102])
+                    ("Receiver" type
+                       (:typemodifiers ("private" "final")
+                        :superclasses "BroadcastReceiver"
+                        :members 
+                          ( ("mRegistered" variable
+                               (:typemodifiers ("private")
+                                :type "boolean")
+                                (reparse-symbol class_member_declaration) [6173 6201])
+                            ("onReceive" function
+                               (:typemodifiers ("public")
+                                :arguments 
+                                  ( ("context" variable (:type "Context") (reparse-symbol formal_parameters) [6251 6266])
+                                    ("intent" variable (:type "Intent") (reparse-symbol formal_parameters) [6268 6281]))                                  
+                                :type "void")
+                                (reparse-symbol class_member_declaration) [6229 6405])
+                            ("setListening" function
+                               (:typemodifiers ("public")
+                                :arguments 
+                                  ( ("listening" variable (:type "boolean") (reparse-symbol formal_parameters) [6440 6457]))                                  
+                                :type "void")
+                                (reparse-symbol class_member_declaration) [6415 6805]))                          
+                        :type "class")
+                        (reparse-symbol class_member_declaration) [6108 6811])
+                    ("SettingsObserver" type
+                       (:typemodifiers ("private" "final")
+                        :superclasses "ContentObserver"
+                        :members 
+                          ( ("LOW_POWER_MODE_TRIGGER_LEVEL_URI" variable
+                               (:typemodifiers ("private" "final")
+                                :type "Uri")
+                                (reparse-symbol class_member_declaration) [6888 7011])
+                            ("SettingsObserver" function
+                               (:constructor-flag t
+                                :typemodifiers ("public")
+                                :arguments 
+                                  ( ("handler" variable (:type "Handler") (reparse-symbol formal_parameters) [7045 7060]))                                  )
+                                (reparse-symbol class_member_declaration) [7021 7101])
+                            ("onChange" function
+                               (:typemodifiers ("public")
+                                :arguments 
+                                  ( ("selfChange" variable (:type "boolean") (reparse-symbol formal_parameters) [7150 7168])
+                                    ("uri" variable (:type "Uri") (reparse-symbol formal_parameters) [7170 7177]))                                  
+                                :type "void")
+                                (reparse-symbol class_member_declaration) [7129 7315])
+                            ("setListening" function
+                               (:typemodifiers ("public")
+                                :arguments 
+                                  ( ("listening" variable (:type "boolean") (reparse-symbol formal_parameters) [7350 7367]))                                  
+                                :type "void")
+                                (reparse-symbol class_member_declaration) [7325 7648]))                          
+                        :type "class")
+                        (reparse-symbol class_member_declaration) [6817 7654]))                  
+                :type "class")
+                nil [1500 7656]))          
+      :file "BatterySaverSettings.java"
+      :pointmax 7657
+      :fsize 7656
+      :lastmodtime '(21832 36007 302071 944000)
+      :unmatched-syntax '((IDENTIFIER 701 . 732) (DOT 700 . 701) (IDENTIFIER 688 . 700) (DOT 687 . 688) (IDENTIFIER 685 . 687) (DOT 684 . 685) (IMPORT 663 . 669) (STATIC 670 . 676) (IDENTIFIER 677 . 684)))
+    (semanticdb-table "BatteryEntry.java"
+      :major-mode 'java-mode
+      :tags 
+        '( ("com.android.settings.fuelgauge" package nil nil [622 661])
+            ("android.app.AppGlobals" include nil nil [663 693])
+            ("android.content.Context" include nil nil [694 725])
+            ("android.content.pm.ApplicationInfo" include nil nil [726 768])
+            ("android.content.pm.IPackageManager" include nil nil [769 811])
+            ("android.content.pm.PackageInfo" include nil nil [812 850])
+            ("android.content.pm.PackageManager" include nil nil [851 892])
+            ("android.content.pm.UserInfo" include nil nil [893 928])
+            ("android.graphics.drawable.Drawable" include nil nil [929 971])
+            ("android.os.BatteryStats" include nil nil [972 1003])
+            ("android.os.Handler" include nil nil [1004 1030])
+            ("android.os.RemoteException" include nil nil [1031 1065])
+            ("android.os.UserHandle" include nil nil [1066 1095])
+            ("android.os.UserManager" include nil nil [1096 1126])
+            ("android.util.Log" include nil nil [1127 1151])
+            ("com.android.internal.os.BatterySipper" include nil nil [1153 1198])
+            ("com.android.settings.R" include nil nil [1199 1229])
+            ("com.android.settings.Utils" include nil nil [1230 1264])
+            ("java.util.ArrayList" include nil nil [1266 1293])
+            ("java.util.HashMap" include nil nil [1294 1319])
+            ("BatteryEntry" type
+               (:typemodifiers ("public")
+                :members 
+                  ( ("MSG_UPDATE_NAME_ICON" variable
+                       (:typemodifiers ("public" "static" "final")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [1465 1514])
+                    ("MSG_REPORT_FULLY_DRAWN" variable
+                       (:typemodifiers ("public" "static" "final")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [1519 1570])
+                    ("sHandler" variable
+                       (:typemodifiers ("static")
+                        :type "Handler")
+                        (reparse-symbol class_member_declaration) [1757 1781])
+                    ("NameAndIconLoader" type
+                       (:typemodifiers ("static" "private")
+                        :superclasses "Thread"
+                        :members 
+                          ( ("mAbort" variable
+                               (:typemodifiers ("private")
+                                :type "boolean")
+                                (reparse-symbol class_member_declaration) [1851 1882])
+                            ("NameAndIconLoader" function
+                               (:constructor-flag t
+                                :typemodifiers ("public"))
+                                (reparse-symbol class_member_declaration) [1892 1977])
+                            ("abort" function
+                               (:typemodifiers ("public")
+                                :type "void")
+                                (reparse-symbol class_member_declaration) [1987 2045])
+                            ("run" function
+                               (:typemodifiers ("public")
+                                :type "void")
+                                (reparse-symbol class_member_declaration) [2073 2644]))                          
+                        :type "class")
+                        (reparse-symbol class_member_declaration) [1787 2650])
+                    ("mRequestThread" variable
+                       (:typemodifiers ("private" "static")
+                        :type "NameAndIconLoader")
+                        (reparse-symbol class_member_declaration) [2656 2704])
+                    ("startRequestQueue" function
+                       (:typemodifiers ("public" "static")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [2710 3260])
+                    ("stopRequestQueue" function
+                       (:typemodifiers ("public" "static")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [3266 3528])
+                    ("clearUidCache" function
+                       (:typemodifiers ("public" "static")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [3534 3603])
+                    ("context" variable
+                       (:typemodifiers ("public" "final")
+                        :type "Context")
+                        (reparse-symbol class_member_declaration) [3609 3638])
+                    ("sipper" variable
+                       (:typemodifiers ("public" "final")
+                        :type "BatterySipper")
+                        (reparse-symbol class_member_declaration) [3643 3677])
+                    ("name" variable
+                       (:typemodifiers ("public")
+                        :type "String")
+                        (reparse-symbol class_member_declaration) [3683 3702])
+                    ("icon" variable
+                       (:typemodifiers ("public")
+                        :type "Drawable")
+                        (reparse-symbol class_member_declaration) [3707 3728])
+                    ("iconId" variable
+                       (:typemodifiers ("public")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [3733 3751])
+                    ("defaultPackageName" variable
+                       (:typemodifiers ("public")
+                        :type "String")
+                        (reparse-symbol class_member_declaration) [3793 3826])
+                    ("UidToDetail" type
+                       (:typemodifiers ("static")
+                        :members 
+                          ( ("name" variable (:type "String") (reparse-symbol class_member_declaration) [3867 3879])
+                            ("packageName" variable (:type "String") (reparse-symbol class_member_declaration) [3888 3907])
+                            ("icon" variable (:type "Drawable") (reparse-symbol class_member_declaration) [3916 3930]))                          
+                        :type "class")
+                        (reparse-symbol class_member_declaration) [3832 3936])
+                    ("BatteryEntry" function
+                       (:constructor-flag t
+                        :typemodifiers ("public")
+                        :arguments 
+                          ( ("context" variable (:type "Context") (reparse-symbol formal_parameters) [3962 3977])
+                            ("handler" variable (:type "Handler") (reparse-symbol formal_parameters) [3979 3994])
+                            ("um" variable (:type "UserManager") (reparse-symbol formal_parameters) [3996 4010])
+                            ("sipper" variable (:type "BatterySipper") (reparse-symbol formal_parameters) [4012 4032]))                          )
+                        (reparse-symbol class_member_declaration) [3942 6678])
+                    ("getIcon" function
+                       (:typemodifiers ("public")
+                        :type "Drawable")
+                        (reparse-symbol class_member_declaration) [6684 6738])
+                    ("getLabel" function
+                       (:typemodifiers ("public")
+                        :type "String")
+                        (reparse-symbol class_member_declaration) [6793 6846])
+                    ("getQuickNameIconForUid" function
+                       (:arguments 
+                          ( ("uidObj" variable (:type "BatteryStats.Uid") (reparse-symbol formal_parameters) [6880 6903]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [6852 8077])
+                    ("loadNameAndIcon" function
+                       (:typemodifiers ("public")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [8168 11950]))                  
+                :type "class")
+                nil [1433 11952]))          
+      :file "BatteryEntry.java"
+      :pointmax 11953
+      :fsize 11952
+      :lastmodtime '(21832 36007 302071 944000)
+      :unmatched-syntax '((SEMICOLON 1751 . 1752) (PAREN_BLOCK 1749 . 1751) (GT 1748 . 1749) (LT 1735 . 1736) (NEW 1722 . 1725) (EQ 1720 . 1721) (GT 1704 . 1705) (LT 1691 . 1692) (SEMICOLON 1662 . 1663) (PAREN_BLOCK 1660 . 1662) (GT 1659 . 1660) (COMMA 1647 . 1648) (LT 1640 . 1641) (NEW 1629 . 1632) (EQ 1627 . 1628) (GT 1615 . 1616) (COMMA 1603 . 1604) (STATIC 1576 . 1582) (LT 1596 . 1597))))
+  :file "!home!qichen!tpv2k15_3043_smgpio3!packages!apps!Settings!src!com!android!settings!fuelgauge!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

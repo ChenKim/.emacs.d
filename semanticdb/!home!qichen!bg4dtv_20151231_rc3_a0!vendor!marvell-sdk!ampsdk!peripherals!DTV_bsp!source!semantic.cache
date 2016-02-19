@@ -1,0 +1,153 @@
+;; Object source/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "source/"
+  :tables
+  (list
+    (semanticdb-table "Backlight_Cntrl.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("sys/types.h" include (:system-flag t) nil [1077 1099])
+            ("sys/stat.h" include (:system-flag t) nil [1100 1121])
+            ("sys/select.h" include (:system-flag t) nil [1122 1145])
+            ("sys/time.h" include (:system-flag t) nil [1146 1167])
+            ("unistd.h" include (:system-flag t) nil [1168 1187])
+            ("stdlib.h" include (:system-flag t) nil [1188 1207])
+            ("time.h" include (:system-flag t) nil [1208 1225])
+            ("string.h" include (:system-flag t) nil [1226 1245])
+            ("fcntl.h" include (:system-flag t) nil [1246 1264])
+            ("sys/ioctl.h" include (:system-flag t) nil [1265 1287])
+            ("com_type.h" include nil nil [1288 1309])
+            ("ErrorCode.h" include nil nil [1310 1332])
+            ("GaloisTime.h" include nil nil [1333 1356])
+            ("OSAL_api.h" include nil nil [1357 1378])
+            ("Backlight_Cntrl.h" include nil nil [1379 1407])
+            ("LOG_TAG" variable (:constant-flag t) nil [1417 1424])
+            ("DtvBspLog.h" include nil nil [1431 1453])
+            ("_Pwm_RdWrData_" type
+               (:members 
+                  ( ("offset" variable (:type ("uint" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1495 1511])
+                    ("data" variable (:type ("uint" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1559 1573]))                  
+                :type "struct")
+                nil [1455 1646])
+            ("Pwm_RdWrData" type
+               (:typedef ("_Pwm_RdWrData_" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [1455 1646])
+            ("pwm_fd" variable
+               (:typemodifiers ("static")
+                :default-value "-1"
+                :type "int")
+                nil [1648 1671])
+            ("defaultSetting" variable
+               (:typemodifiers ("static")
+                :default-value "{
+    .pwm_ch     = 0,
+    .pwm_tc     = PWM_TERMINAL_COUNT,
+    .pwm_polarity = 0,
+}"
+                :type ("MV_PicBackLightSetting" type (:type "class") nil nil))
+                nil [1673 1806])
+            ("once_control" variable
+               (:typemodifiers ("static")
+                :default-value "PTHREAD_ONCE_INIT"
+                :type ("pthread_once_t" type (:type "class") nil nil))
+                nil [1808 1863])
+            ("MV_PwmDev_Open" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("pwmch" variable (:type "int") (reparse-symbol arg-sub-list) [1896 1906]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [1865 2279])
+            ("MV_Pwm_Set" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("offset" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [2308 2328])
+                    ("data" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [2329 2347]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [2281 2666])
+            ("MV_Pwm_Get" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("offset" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [2695 2715])
+                    ("data" variable
+                       (:pointer 1
+                        :type "unsigned int")
+                        (reparse-symbol arg-sub-list) [2716 2735]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [2668 3073])
+            ("MV_SetPwmEnable" function
+               (:arguments 
+                  ( ("enable" variable (:type "int") (reparse-symbol arg-sub-list) [3100 3111]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [3075 3465])
+            ("MV_GetPicBacklightDefaultSetting" function
+               (:arguments 
+                  ( ("setting" variable
+                       (:pointer 1
+                        :type ("MV_PicBackLightSetting" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3509 3541]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [3467 3656])
+            ("__MV_Backlight_Once_Init" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [3696 3701]))                  
+                :type "void")
+                nil [3658 3750])
+            ("MV_Backlight_Once_Init" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [3781 3786]))                  
+                :type "void")
+                nil [3752 3874])
+            ("MV_Backlight_Init" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [3910 3915]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [3876 4312])
+            ("MV_SetPicBacklight" function
+               (:arguments 
+                  ( ("szValue" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [4342 4356]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [4314 5228])
+            ("MV_GetPicBacklight" function
+               (:arguments 
+                  ( ("szBuffer" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [5258 5273]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [5230 5675])
+            ("MV_InitPicBacklight2" function
+               (:arguments 
+                  ( ("setting" variable
+                       (:pointer 1
+                        :type ("MV_PicBackLightSetting" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5707 5739]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [5677 5913])
+            ("MV_InitPicBacklight" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [5944 5949]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [5915 6057])
+            ("MV_ExitPicBacklight" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [6088 6093]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [6059 6135]))          
+      :file "Backlight_Cntrl.c"
+      :pointmax 6136
+      :fsize 6135
+      :lastmodtime '(21969 40077 501037 818000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("LOG_TAG" . ((string "\"PWM\"" 1425 . 1430)))
+          )
+))
+  :file "!home!qichen!bg4dtv_20151231_rc3_a0!vendor!marvell-sdk!ampsdk!peripherals!DTV_bsp!source!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

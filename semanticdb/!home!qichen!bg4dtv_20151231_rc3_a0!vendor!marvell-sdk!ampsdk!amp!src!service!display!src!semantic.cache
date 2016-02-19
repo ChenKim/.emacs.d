@@ -1,0 +1,3209 @@
+;; Object src/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "src/"
+  :tables
+  (list
+    (semanticdb-table "disp_api.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("sys/types.h" include (:system-flag t) nil [1526 1548])
+            ("sys/stat.h" include (:system-flag t) nil [1549 1570])
+            ("fcntl.h" include (:system-flag t) nil [1571 1589])
+            ("sys/mman.h" include (:system-flag t) nil [1590 1611])
+            ("sys/ioctl.h" include (:system-flag t) nil [1612 1634])
+            ("fcntl.h" include (:system-flag t) nil [1635 1653])
+            ("stdio.h" include (:system-flag t) nil [1654 1672])
+            ("stdlib.h" include (:system-flag t) nil [1673 1692])
+            ("string.h" include (:system-flag t) nil [1693 1712])
+            ("unistd.h" include (:system-flag t) nil [1713 1732])
+            ("com_type.h" include nil nil [1733 1754])
+            ("mv_logger.h" include nil nil [1755 1777])
+            ("OSAL_api.h" include nil nil [1778 1799])
+            ("dtvbsp.h" include nil nil [1800 1819])
+            ("vpp_api.h" include nil nil [1820 1840])
+            ("vdec_com.h" include nil nil [1841 1862])
+            ("api_avio_dhub.h" include nil nil [1863 1889])
+            ("avioDhub.h" include nil nil [1890 1911])
+            ("avpll.h" include nil nil [1912 1930])
+            ("api_avio_dhub.h" include nil nil [1931 1957])
+            ("disp_api.h" include nil nil [1958 1979])
+            ("disp_prv_type.h" include nil nil [1980 2006])
+            ("disp_soc_map.h" include nil nil [2007 2032])
+            ("amp_types.h" include nil nil [2033 2055])
+            ("Backlight_Cntrl.h" include nil nil [2056 2084])
+            ("disp_pq.h" include nil nil [2085 2105])
+            ("disp_fb.h" include nil nil [2106 2126])
+            ("disp_debug.h" include nil nil [2127 2150])
+            ("disp_ldc.h" include nil nil [2173 2194])
+            ("cpm_api.h" include nil nil [2477 2497])
+            ("WAITCEL_TIMEOUT_VALUE" variable (:constant-flag t) nil [2583 2604])
+            ("BOOTLOGO_PATH" variable (:constant-flag t) nil [2632 2645])
+            ("BOOTLOGO_NUM_MAX" variable (:constant-flag t) nil [2685 2701])
+            ("BOOTLOGO_PLANE" variable (:constant-flag t) nil [2724 2738])
+            ("BOOTLOGO_FRAME_TYPE" variable (:constant-flag t) nil [2778 2797])
+            ("FLASH_TS_MAX_KEY_SIZE" variable (:constant-flag t) nil [2844 2865])
+            ("FLASH_TS_MAX_VAL_SIZE" variable (:constant-flag t) nil [2877 2898])
+            ("flash_ts_io_req" type
+               (:members 
+                  ( ("key" variable
+                       (:dereference 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [2932 2964])
+                    ("val" variable
+                       (:dereference 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [2967 2999]))                  
+                :type "struct")
+                nil [2905 3002])
+            ("FLASH_TS_IO_MAGIC" variable (:constant-flag t) nil [3012 3029])
+            ("FLASH_TS_IO_SET" variable (:constant-flag t) nil [3046 3061])
+            ("FLASH_TS_IO_GET" variable (:constant-flag t) nil [3126 3141])
+            ("FTS_DEVICE" variable (:constant-flag t) nil [3208 3218])
+            ("DISP_VSYNC_PERIOD_DEFAULT" variable (:constant-flag t) nil [3249 3274])
+            ("DISP_VSYNC_PERIOD_FAULT" variable (:constant-flag t) nil [3291 3314])
+            ("ASSERT_READ" variable (:constant-flag t) nil [3382 3393])
+            ("CHECK_DISP_INIT" variable (:constant-flag t) nil [3594 3609])
+            ("CHECK_PANEL_INIT" variable (:constant-flag t) nil [3730 3746])
+            ("gCapAUXFram_handle" variable
+               (:default-value "0"
+                :type ("AMP_SHM_HANDLE" type (:type "class") nil nil))
+                nil [3862 3900])
+            ("gDispModule" variable
+               (:pointer 1
+                :default-value "NULL"
+                :type ("DISP_MODULE" type (:type "class") nil nil))
+                nil [3901 3933])
+            ("tag_DISP_CONFIG" type
+               (:members 
+                  ( ("ResId" variable (:type ("AMP_DISP_OUT_RES" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3975 3998])
+                    ("TgId" variable (:type ("AMP_DISP_TG_ID" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4007 4027])
+                    ("BitDepth" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4036 4052])
+                    ("DeGamma_Icscmode" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4061 4085]))                  
+                :type "struct")
+                nil [3935 4099])
+            ("DISP_CONFIG" type
+               (:typedef ("tag_DISP_CONFIG" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [3935 4099])
+            ("gdisp_init_done" variable
+               (:default-value "FALSE"
+                :type "int")
+                nil [4101 4129])
+            ("gdisp_panel_opened" variable
+               (:default-value "FALSE"
+                :type "int")
+                nil [4130 4161])
+            ("gdisp_logo_removed" variable
+               (:default-value "FALSE"
+                :type "int")
+                nil [4162 4193])
+            ("gdisp_config" variable (:type ("DISP_CONFIG" type (:type "class") nil nil)) nil [4195 4220])
+            ("gPanelConfig" variable (:type ("AMP_DISP_PANEL_CONFIG" type (:type "class") nil nil)) nil [4221 4256])
+            ("gGFXSyncCond" variable (:type ("MV_OSAL_HANDLE_COND_t" type (:type "class") nil nil)) nil [4332 4367])
+            ("gGFXSyncMutex" variable (:type ("MV_OSAL_HANDLE_MUTEX_t" type (:type "class") nil nil)) nil [4368 4405])
+            ("OpenPanelTask" variable (:type ("MV_OSAL_HANDLE_TASK_t" type (:type "class") nil nil)) nil [4407 4444])
+            ("ShowLogoTask" variable (:type ("MV_OSAL_HANDLE_TASK_t" type (:type "class") nil nil)) nil [4445 4481])
+            ("_DISP_LVDS_MAPPING_REGS" type
+               (:members 
+                  ( ("PHY" variable
+                       (:dereference 1
+                        :type ("" type
+                             (:members 
+                                ( ("lvtx_map_BIT0_LANE0" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4544 4570])
+                                  ("lvtx_map_BIT1_LANE0" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4579 4605])
+                                  ("lvtx_map_BIT2_LANE0" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4614 4640])
+                                  ("lvtx_map_BIT3_LANE0" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4649 4675])
+                                  ("lvtx_map_BIT4_LANE0" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4684 4710])
+                                  ("lvtx_map_BIT5_LANE0" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4719 4745])
+                                  ("lvtx_map_BIT6_LANE0" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4754 4780])
+                                  ("lvtx_map_BIT0_LANE1" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4789 4815])
+                                  ("lvtx_map_BIT1_LANE1" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4824 4850])
+                                  ("lvtx_map_BIT2_LANE1" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4859 4885])
+                                  ("lvtx_map_BIT3_LANE1" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4894 4920])
+                                  ("lvtx_map_BIT4_LANE1" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4929 4955])
+                                  ("lvtx_map_BIT5_LANE1" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4964 4990])
+                                  ("lvtx_map_BIT6_LANE1" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4999 5025])
+                                  ("lvtx_map_BIT0_LANE2" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5034 5060])
+                                  ("lvtx_map_BIT1_LANE2" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5069 5095])
+                                  ("lvtx_map_BIT2_LANE2" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5104 5130])
+                                  ("lvtx_map_BIT3_LANE2" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5139 5165])
+                                  ("lvtx_map_BIT4_LANE2" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5174 5200])
+                                  ("lvtx_map_BIT5_LANE2" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5209 5235])
+                                  ("lvtx_map_BIT6_LANE2" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5244 5270])
+                                  ("lvtx_map_BIT0_LANE3" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5279 5305])
+                                  ("lvtx_map_BIT1_LANE3" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5314 5340])
+                                  ("lvtx_map_BIT2_LANE3" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5349 5375])
+                                  ("lvtx_map_BIT3_LANE3" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5384 5410])
+                                  ("lvtx_map_BIT4_LANE3" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5419 5445])
+                                  ("lvtx_map_BIT5_LANE3" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5454 5480])
+                                  ("lvtx_map_BIT6_LANE3" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5489 5515])
+                                  ("lvtx_map_BIT0_LANE4" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5524 5550])
+                                  ("lvtx_map_BIT1_LANE4" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5559 5585])
+                                  ("lvtx_map_BIT2_LANE4" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5594 5620])
+                                  ("lvtx_map_BIT3_LANE4" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5629 5655])
+                                  ("lvtx_map_BIT4_LANE4" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5664 5690])
+                                  ("lvtx_map_BIT5_LANE4" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5699 5725])
+                                  ("lvtx_map_BIT6_LANE4" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5734 5760])
+                                  ("lvtx_map_BIT0_LANE5" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5769 5795])
+                                  ("lvtx_map_BIT1_LANE5" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5804 5830])
+                                  ("lvtx_map_BIT2_LANE5" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5839 5865])
+                                  ("lvtx_map_BIT3_LANE5" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5874 5900])
+                                  ("lvtx_map_BIT4_LANE5" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5909 5935])
+                                  ("lvtx_map_BIT5_LANE5" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5944 5970])
+                                  ("lvtx_map_BIT6_LANE5" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5979 6005]))                                
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [4527 6027]))                  
+                :type "union")
+                nil [4483 6052])
+            ("VPP_DISP_MAPPING_REGS" type
+               (:typedef ("_DISP_LVDS_MAPPING_REGS" type (:type "union") nil nil)
+                :type "typedef")
+                nil [4483 6052])
+            ("g_custom_channel_map" variable
+               (:typemodifiers ("static")
+                :type ("VPP_DISP_MAPPING_REGS" type (:type "class") nil nil))
+                nil [6053 6103])
+            ("DISP_ORIGIN_LVDS_CHANNEL_MAP" variable
+               (:dereference 3
+                :typemodifiers ("static")
+                :default-value "{
+        /* VESA_FHD_60_8BITS panel's mapping - START */
+        {
+                //PHY - 0
+                {0x0c,    0x07,    0x06,    0x05,    0x04,    0x03,    0x02},    //LANE0
+                {0x17,    0x16,    0x11,    0x10,    0x0f,    0x0e,    0x0d},   //LANE1
+                {0x3e,    0x3d,    0x3c,    0x1b,    0x1a,    0x19,    0x18},    //LANE2
+                {0x41,    0x1d,    0x1c,    0x13,    0x12,    0x09,    0x08},    //LANE3
+                {0x41,    0x41,    0x41,    0x41,    0x41,    0x41,    0x41},    //LANE4
+                {0x40,    0x40,    0x3f,    0x3f,    0x3f,    0x40,    0x40},    //LANE5
+                //PHY - 1
+                {0x2a,    0x25,    0x24,    0x23,    0x22,    0x21,    0x20},   //LANE6
+                {0x35,    0x34,    0x2f,    0x2e,    0x2d,    0x2c,    0x2b},    //LANE7
+                {0x3e,    0x3d,    0x3c,    0x39,    0x38,    0x37,    0x36},    //LANE8
+                {0x41,    0x3b,    0x3a,    0x31,    0x30,    0x27,    0x26},    //LANE9
+                {0x41,    0x41,    0x41,    0x41,    0x41,    0x41,    0x41},    //LANE10
+                {0x40,    0x40,    0x3f,    0x3f,    0x3f,    0x40,    0x40}    //LANE11
+        },
+        /* VESA_FHD_60_8BITS panel's mapping - end */
+
+        /* VESA_FHD_60_10BITS panel's mapping - START */
+        {
+                //PHY - 0
+                {0x0a,    0x05,    0x04,    0x03,    0x02,    0x01,    0x00},    //LANE0
+                {0x15,    0x14,    0x0f,    0x0e,    0x0d,    0x0c,    0x0b},    //LANE1
+                {0x3e,    0x3d,    0x3c,    0x19,    0x18,    0x17,    0x16},    //LANE2
+                {0x41,    0x1b,    0x1a,    0x11,    0x10,    0x07,    0x06},    //LANE3
+                {0x41,    0x1d,    0x1c,    0x13,    0x12,    0x09,    0x08},    //LANE4
+                {0x40,    0x40,    0x3f,    0x3f,    0x3f,    0x40,    0x40},    //LANE5
+                //PHY - 1
+                {0x28,    0x23,    0x22,    0x21,    0x20,    0x1f,    0x1e},    //LANE6
+                {0x33,    0x32,    0x2d,    0x2c,    0x2b,    0x2a,    0x29},    //LANE7
+                {0x3e,    0x3d,    0x3c,    0x37,    0x36,    0x35,    0x34},    //LANE8
+                {0x41,    0x39,    0x38,    0x2f,    0x2e,    0x25,    0x24},    //LANE9
+                {0x41,    0x3b,    0x3a,    0x31,    0x30,    0x27,    0x26},    //LANE10
+                {0x40,    0x40,    0x3f,    0x3f,    0x3f,    0x40,    0x40}    //LANE11
+        },
+        /* VESA_FHD_60_10BITS panel's mapping - END */
+
+        /* JIEDA_FHD_60_8BITS panel's mapping - START */
+        {
+                //PHY - 0
+                {0x0e,    0x09,    0x08,    0x07,    0x06,    0x05,    0x04},    //LANE0
+                {0x19,    0x18,    0x13,    0x12,    0x11,    0x10,    0x0f},    //LANE1
+                {0x3e,    0x3d,    0x3c,    0x1d,    0x1c,    0x1b,    0x1a},    //LANE2
+                {0x41,    0x17,    0x16,    0x0d,    0x0c,    0x03,    0x02},   //LANE3
+                {0x41,    0x15,    0x14,    0x0b,    0x0a,    0x01,    0x00},    //LANE4
+                //not match with linsonC0
+                {0x40,    0x40,    0x3f,    0x3f,    0x3f,    0x40,    0x40},   //LANE5
+                //PHY - 1
+                {0x2c,    0x27,    0x26,    0x25,    0x24,    0x23,    0x22},    //LANE6
+                {0x37,    0x36,    0x31,    0x30,    0x2f,    0x2e,    0x2d},    //LANE7
+                {0x3e,    0x3d,    0x3c,    0x3b,    0x3a,    0x39,    0x38},   //LANE8
+                {0x41,    0x35,    0x34,    0x2b,    0x2a,    0x21,    0x20},    //LANE9
+                //0x42 not match
+                {0x41,    0x33,    0x32,    0x29,    0x28,    0x1f,    0x1e},    //LANE10
+                //not match with linsonC0
+                {0x40,    0x40,    0x3f,    0x3f,    0x3f,    0x40,    0x40}    //LANE11
+        },
+        /* JIEDA_FHD_60_8BITS panel's mapping - END */
+
+        /* JIEDA_FHD_60_10BITS panel's mapping - START */
+        {
+                //PHY - 0
+                {0x0e,    0x09,    0x08,    0x07,    0x06,    0x05,    0x04},    //LANE0
+                {0x19,    0x18,    0x13,    0x12,    0x11,    0x10,    0x0f},    //LANE1
+                {0x3e,    0x3d,    0x3c,    0x1d,    0x1c,    0x1b,    0x1a},    //LANE2
+                {0x41,    0x17,    0x16,    0x0d,    0x0c,    0x03,    0x02},   //LANE3
+                {0x41,    0x15,    0x14,    0x0b,    0x0a,    0x01,    0x00},    //LANE4
+                //not match with linsonC0
+                {0x40,    0x40,    0x3f,    0x3f,    0x3f,    0x40,    0x40},   //LANE5
+                //PHY - 1
+                {0x2c,    0x27,    0x26,    0x25,    0x24,    0x23,    0x22},    //LANE6
+                {0x37,    0x36,    0x31,    0x30,    0x2f,    0x2e,    0x2d},    //LANE7
+                {0x3e,    0x3d,    0x3c,    0x3b,    0x3a,    0x39,    0x38},   //LANE8
+                {0x41,    0x35,    0x34,    0x2b,    0x2a,    0x21,    0x20},    //LANE9
+                //0x42 not match
+                {0x41,    0x33,    0x32,    0x29,    0x28,    0x1f,    0x1e},    //LANE10
+                //not match with linsonC0
+                {0x40,    0x40,    0x3f,    0x3f,    0x3f,    0x40,    0x40}    //LANE11
+
+        }
+       /* JIEDA_FHD_60_10BITS panel's mapping - END */
+}"
+                :type ("UINT8" type (:type "class") nil nil))
+                nil [6149 11449])
+            ("DISP_ShowLogo" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("res" variable (:type ("AMP_DISP_OUT_RES" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [20880 20901]))                  
+                :type "void")
+                nil [20861 20902])
+            ("print_LVDS_MappingTable" function (:type "void") nil [20904 24445])
+            ("build_CustLVDS_MappingTable" function
+               (:pointer 1
+                :arguments 
+                  ( ("" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [24481 24502])
+                    ("panelMode" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [24517 24533]))                  
+                :type "void")
+                nil [24446 25329])
+            ("SND_SetConfig" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("hInstance" variable (:type ("HANDLE" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [25395 25412])
+                    ("uiCmd" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [25413 25426])
+                    ("pConfigData" variable
+                       (:pointer 1
+                        :type ("VOID" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [25427 25445])
+                    ("uiSize" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [25446 25460]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [25373 25461])
+            ("disp_callback_res_change" function
+               (:arguments 
+                  ( ("uiEventCode" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [25496 25515])
+                    ("pEventInfo" variable
+                       (:pointer 1
+                        :type ("VOID" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [25516 25533]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [25463 27317])
+            ("DISP_OVPP_Init" function
+               (:arguments 
+                  ( ("pPlane" variable
+                       (:pointer 1
+                        :type ("DISP_PLANE" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [27342 27361]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [27319 27624])
+            ("DISP_Init" function
+               (:arguments 
+                  ( ("" variable (:type ("VOID" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [27682 27687]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [27664 30924])
+            ("DISP_Config_LVTX" function
+               (:arguments 
+                  ( ("ResId" variable (:type ("AMP_DISP_OUT_RES" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [34224 34247]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [34199 34918])
+            ("DISP_Config" function
+               (:arguments 
+                  ( ("pConfig" variable
+                       (:pointer 1
+                        :type ("AMP_DISP_CONFIG" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [43465 43490]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [43445 53179])
+            ("DISP_Push_BuildInFrame" function
+               (:arguments 
+                  ( ("uiPlaneId" variable (:type ("AMP_DISP_PLANE_ID" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [53212 53240])
+                    ("FrameType" variable (:type ("AMP_DISP_BUILD_IN_FRAME_TYPE" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [53272 53311]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [53181 54639])
+            ("DISP_Make_BuildInFrame" function
+               (:arguments 
+                  ( ("uiWidth" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [54672 54687])
+                    ("uiHeight" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [54688 54704])
+                    ("uiShmOffset" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [54705 54724])
+                    ("FrameType" variable (:type ("AMP_DISP_BUILD_IN_FRAME_TYPE" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [54729 54768]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [54641 56812])
+            ("DISP_Make_LogoFrame" function
+               (:arguments 
+                  ( ("uiWidth" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [56842 56857])
+                    ("uiHeight" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [56858 56874])
+                    ("uiStride" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [56875 56891])
+                    ("uiShmOffset" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [56892 56911])
+                    ("FrameType" variable (:type ("AMP_DISP_BUILD_IN_FRAME_TYPE" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [56916 56955]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [56814 58579])
+            ("DISP_Show_Bootlogo" function
+               (:arguments 
+                  ( ("uiWidth" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [58607 58622])
+                    ("uiHeight" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [58623 58639]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [58580 62892])
+            ("DISP_ShowLogo" function
+               (:arguments 
+                  ( ("res" variable (:type ("AMP_DISP_OUT_RES" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [62913 62934]))                  
+                :type "void")
+                nil [62894 63195])
+            ("DISP_Create" function
+               (:arguments 
+                  ( ("pInstance" variable
+                       (:pointer 2
+                        :type ("VOID" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [63261 63278]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [63241 63387])
+            ("uiLastIns" variable
+               (:pointer 1
+                :dereference 1
+                :typemodifiers ("static")
+                :type ("VOID" type (:type "class") nil nil))
+                nil [63389 63429])
+            ("DISP_Destroy" function
+               (:arguments 
+                  ( ("pInstance" variable
+                       (:pointer 2
+                        :type ("VOID" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [63452 63469]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [63431 63747])
+            ("DISP_SaveLastIns" function
+               (:arguments 
+                  ( ("uiIns" variable
+                       (:pointer 1
+                        :type ("VOID" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [63774 63786])
+                    ("uiPlaneId" variable (:type ("AMP_DISP_PLANE_ID" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [63787 63815]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [63749 63896])
+            ("DISP_Suspend" function
+               (:arguments 
+                  ( ("" variable (:type ("VOID" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [64104 64109]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [64083 64499])
+            ("DISP_Resume" function
+               (:arguments 
+                  ( ("" variable (:type ("VOID" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [64521 64526]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [64501 67643])
+            ("DISP_IsPlaneValid" function
+               (:arguments 
+                  ( ("uiPlaneId" variable (:type ("AMP_DISP_PLANE_ID" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [67671 67699])
+                    ("pValid" variable
+                       (:pointer 1
+                        :type ("UINT32" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [67700 67715]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [67645 68059])
+            ("DISP_SetPlaneMute" function
+               (:arguments 
+                  ( ("uiPlaneId" variable (:type ("AMP_DISP_PLANE_ID" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [68087 68115])
+                    ("uiMute" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [68116 68130]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [68061 68732])
+            ("DISP_GetPlaneMute" function
+               (:arguments 
+                  ( ("uiPlaneId" variable (:type ("AMP_DISP_PLANE_ID" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [68760 68788])
+                    ("pMute" variable
+                       (:pointer 1
+                        :type ("UINT32" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [68789 68803]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [68734 69221])
+            ("DISP_MuteActiveVideo" function
+               (:arguments 
+                  ( ("uiPlaneId" variable (:type ("AMP_DISP_PLANE_ID" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [69252 69280])
+                    ("uiMute" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [69281 69295]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [69223 69793])
+            ("DISP_CaptureAUXFrame" function
+               (:arguments 
+                  ( ("paddrhandle" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [69824 69843]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [69795 70355])
+            ("DISP_CaptureVideoFrame" function
+               (:arguments 
+                  ( ("pCapFrmSetting" variable
+                       (:pointer 1
+                        :type ("AMP_DISP_CAP_FRM_SETTING" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [70388 70429])
+                    ("pVidCapInfo" variable
+                       (:pointer 1
+                        :type ("AMP_DISP_CAP_FRM_INFO" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [70469 70504]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [70357 72123])
+            ("DISP_GetCaptureInfo" function
+               (:arguments 
+                  ( ("uiPlaneId" variable (:type ("AMP_DISP_PLANE_ID" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [72153 72181])
+                    ("pVidInfo" variable
+                       (:pointer 1
+                        :type ("AMP_DISP_PLANE_CAP_INFO" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [72182 72216]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [72125 75571])
+            ("DISP_SetPortPower" function
+               (:arguments 
+                  ( ("iPort" variable (:type ("INT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [75600 75612])
+                    ("iEnable" variable (:type ("INT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [75613 75627]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [75574 76309])
+            ("DISP_SetPlaneZOrder" function
+               (:arguments 
+                  ( ("uiTgId" variable (:type ("AMP_DISP_TG_ID" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [76339 76361])
+                    ("pZorder" variable
+                       (:pointer 1
+                        :type ("AMP_DISP_ZORDER" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [76362 76387]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [76311 77515])
+            ("DISP_GetPlaneZOrder" function
+               (:arguments 
+                  ( ("uiTgId" variable (:type ("AMP_DISP_TG_ID" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [77545 77567])
+                    ("pZorder" variable
+                       (:pointer 1
+                        :type ("AMP_DISP_ZORDER" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [77568 77593]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [77517 78370])
+            ("DISP_GetScale" function
+               (:arguments 
+                  ( ("uiPlaneId" variable (:type ("AMP_DISP_PLANE_ID" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [78394 78422])
+                    ("pSrcWin" variable
+                       (:pointer 1
+                        :type ("AMP_DISP_WIN" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [78445 78467])
+                    ("pDstWin" variable
+                       (:pointer 1
+                        :type ("AMP_DISP_WIN" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [78490 78512]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [78372 80092])
+            ("DISP_SetScale" function
+               (:arguments 
+                  ( ("uiPlaneId" variable (:type ("AMP_DISP_PLANE_ID" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [80116 80144])
+                    ("pSrcWin" variable
+                       (:pointer 1
+                        :type ("AMP_DISP_WIN" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [80167 80189])
+                    ("pDstWin" variable
+                       (:pointer 1
+                        :type ("AMP_DISP_WIN" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [80212 80234]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [80094 81439])
+            ("DISP_LoadCustScalerFilter" function
+               (:arguments 
+                  ( ("coeffID" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [81475 81489])
+                    ("hv" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [81490 81499])
+                    ("sclUnit" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [81500 81514])
+                    ("pCoeffs" variable
+                       (:pointer 1
+                        :type ("UINT16" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [81515 81531]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [81441 81967])
+            ("DISP_LoadSystemScalerFilter" function
+               (:arguments 
+                  ( ("coeffID" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [82005 82019])
+                    ("hv" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [82020 82029])
+                    ("sclUnit" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [82030 82044]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [81969 82231])
+            ("DISP_SetScale_RatioCtrl" function
+               (:arguments 
+                  ( ("uiPlaneId" variable (:type ("AMP_DISP_PLANE_ID" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [82265 82293])
+                    ("pSrcWinRatio" variable
+                       (:pointer 1
+                        :type ("AMP_DISP_WIN_RATIO" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [82326 82359])
+                    ("pDstWin" variable
+                       (:pointer 1
+                        :type ("AMP_DISP_WIN" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [82392 82414]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [82233 83107])
+            ("DISP_SetScalerNonLinearControl" function
+               (:arguments 
+                  ( ("uiPlaneId" variable (:type ("AMP_DISP_PLANE_ID" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [83148 83176])
+                    ("uiEnable" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [83181 83197])
+                    ("uiCenterFrac" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [83198 83218])
+                    ("uiCenterRatio" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [83219 83240]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [83109 83411])
+            ("DISP_SetScalerSubPixel" function
+               (:arguments 
+                  ( ("uiScalerId" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [83444 83462])
+                    ("uiHv" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [83463 83475])
+                    ("uiSubPixel" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [83476 83494]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [83413 83708])
+            ("DISP_SetPlaneBgColor" function
+               (:arguments 
+                  ( ("PlaneId" variable (:type ("AMP_DISP_PLANE_ID" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [83739 83765])
+                    ("iColor" variable (:type ("INT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [83766 83779]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [83710 85704])
+            ("DISP_GetPlaneBgColor" function
+               (:arguments 
+                  ( ("PlaneId" variable (:type ("AMP_DISP_PLANE_ID" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [85735 85761])
+                    ("pColor" variable
+                       (:pointer 1
+                        :type ("INT32" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [85762 85776]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [85706 86172])
+            ("DISP_WriteRegGroup" function
+               (:arguments 
+                  ( ("pRegGroup" variable
+                       (:pointer 1
+                        :type ("AMP_DISP_VPP_REG_GROUP" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [86201 86235]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [86174 86662])
+            ("DISP_ReadRegGroup" function
+               (:arguments 
+                  ( ("pRegGroup" variable
+                       (:pointer 1
+                        :type ("AMP_DISP_VPP_REG_GROUP" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [86690 86724]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [86664 86884])
+            ("DISP_VID_PushFrame" function
+               (:arguments 
+                  ( ("uiPlaneId" variable (:type ("AMP_DISP_PLANE_ID" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [99294 99322])
+                    ("pBD" variable
+                       (:pointer 1
+                        :type ("AMP_BD_ST" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [99323 99338]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [99267 100803])
+            ("DISP_VID_PopFrame" function
+               (:arguments 
+                  ( ("uiPlaneId" variable (:type ("AMP_DISP_PLANE_ID" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [100831 100859])
+                    ("pBD" variable
+                       (:pointer 1
+                        :type ("AMP_BD_HANDLE" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [100860 100879]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [100805 101905])
+            ("DISP_AttachPlane" function
+               (:arguments 
+                  ( ("uiPlaneId" variable (:type ("AMP_DISP_PLANE_ID" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [101932 101960])
+                    ("pPlaneCallback" variable
+                       (:pointer 1
+                        :type ("DISP_PLANE_CALLBACK" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [101986 102022]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [101907 102553])
+            ("DISP_DetachPlane" function
+               (:arguments 
+                  ( ("uiPlaneId" variable (:type ("AMP_DISP_PLANE_ID" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [102580 102608]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [102555 103204])
+            ("DISP_WatermarkCTL" function
+               (:arguments 
+                  ( ("WatermarkPlaneID" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [103232 103256])
+                    ("subcmd" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [103257 103271])
+                    ("pAddrHandle" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [103272 103291]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [103206 103487])
+            ("DISP_DDD_SetFormat" function
+               (:arguments 
+                  ( ("ddd_format" variable (:type ("AMP_DISP_DDD_Format" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [103516 103547])
+                    ("enableFlag" variable (:type ("BOOL" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [103548 103564]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [103489 103894])
+            ("DISP_DDD_SetParameters" function
+               (:arguments 
+                  ( ("strength" variable (:type ("INT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [103927 103942])
+                    ("focal_point" variable (:type ("INT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [103943 103961]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [103896 104300])
+            ("DISP_DDD_GetParameters" function
+               (:arguments 
+                  ( ("pDdd_format" variable
+                       (:pointer 1
+                        :type ("AMP_DISP_DDD_Format" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [104333 104366])
+                    ("pStrength" variable
+                       (:pointer 1
+                        :type ("INT32" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [104398 104415])
+                    ("pFocal_point" variable
+                       (:pointer 1
+                        :type ("INT32" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [104416 104436]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [104302 104824])
+            ("DISP_OUT_SetResolution" function
+               (:arguments 
+                  ( ("uiTgId" variable (:type ("AMP_DISP_TG_ID" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [104894 104916])
+                    ("ResId" variable (:type ("AMP_DISP_OUT_RES" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [104921 104944])
+                    ("uiBitDepth" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [104945 104963]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [104863 113351])
+            ("DISP_OUT_GetResolution" function
+               (:arguments 
+                  ( ("uiTgId" variable (:type ("AMP_DISP_TG_ID" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [113384 113406])
+                    ("pResId" variable
+                       (:pointer 1
+                        :type ("AMP_DISP_OUT_RES" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [113407 113432]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [113353 113913])
+            ("DISP_OUT_GetResolutionDescription" function
+               (:arguments 
+                  ( ("ResId" variable (:type ("AMP_DISP_OUT_RES" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [113957 113980])
+                    ("pResDesc" variable
+                       (:pointer 1
+                        :type ("AMP_DISP_OUT_RESOLUTION_DESCRIPTION" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [113989 114035]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [113915 114467])
+            ("DISP_OUT_SetMute" function
+               (:arguments 
+                  ( ("OutPath" variable (:type ("AMP_DISP_OUT_ID" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [114494 114518])
+                    ("uiMute" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [114519 114533]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [114469 115273])
+            ("DISP_OUT_SetMute_Ext" function
+               (:arguments 
+                  ( ("OutPath" variable (:type ("AMP_DISP_OUT_ID" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [115304 115328])
+                    ("uiMute" variable (:type ("BOOL" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [115329 115341])
+                    ("bVideo" variable (:type ("BOOL" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [115346 115358])
+                    ("bAudio" variable (:type ("BOOL" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [115359 115371]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [115275 116254])
+            ("DISP_OUT_SetSource" function
+               (:arguments 
+                  ( ("OutPath" variable (:type ("AMP_DISP_OUT_ID" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [116283 116307])
+                    ("TgId" variable (:type ("AMP_DISP_TG_ID" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [116308 116328])
+                    ("OutMode" variable (:type ("AMP_DISP_OUT_MODE" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [116329 116355]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [116256 116914])
+            ("DISP_OUT_SetTVType" function
+               (:arguments 
+                  ( ("uiTgId" variable (:type ("AMP_DISP_TG_ID" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [116943 116965])
+                    ("uiTVType" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [116966 116982]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [116916 117447])
+            ("DISP_OUT_GetTVType" function
+               (:arguments 
+                  ( ("uiTgId" variable (:type ("AMP_DISP_TG_ID" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [117476 117498])
+                    ("pTVType" variable
+                       (:pointer 1
+                        :type ("UINT32" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [117499 117515]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [117449 117935])
+            ("DISP_OUT_SetFlipMode" function
+               (:arguments 
+                  ( ("uiMode" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [117966 117980]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [117937 119507])
+            ("DISP_OUT_HDMI_SetVidFmt" function
+               (:arguments 
+                  ( ("iHdmiColorFmt" variable (:type ("INT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [119542 119562])
+                    ("uiHdmiBitDepth" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [119595 119617])
+                    ("iHdmiPixelRept" variable (:type ("INT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [119650 119671]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [119510 120871])
+            ("DISP_OUT_HDMI_SetVidInfo" function
+               (:arguments 
+                  ( ("iAspRatio" variable (:type ("INT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [120906 120922])
+                    ("iScanInfo" variable (:type ("INT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [120923 120939]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [120873 121052])
+            ("DISP_OUT_HDMI_GetSinkCaps" function
+               (:arguments 
+                  ( ("pCaps" variable
+                       (:pointer 1
+                        :type ("AMP_DISP_HDMI_SINK_CAPS" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [121088 121119]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [121054 121527])
+            ("DISP_OUT_HDMI_GetRawEdid" function
+               (:arguments 
+                  ( ("pEdid" variable
+                       (:pointer 1
+                        :type ("AMP_DISP_HDMI_RAW_EDID" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [121562 121592]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [121529 121709])
+            ("DISP_OUT_HDMI_SetMode" function
+               (:arguments 
+                  ( ("uiMode" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [121741 121755]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [121711 121849])
+            ("DISP_OUT_HDMI_ConfigureSRM" function
+               (:arguments 
+                  ( ("pSrmBuf" variable
+                       (:pointer 1
+                        :type ("UINT8" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [121886 121901])
+                    ("pSignValid" variable
+                       (:pointer 1
+                        :type ("INT32" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [121902 121920])
+                    ("pVerNum" variable
+                       (:pointer 1
+                        :type ("INT32" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [121956 121971]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [121851 122122])
+            ("DISP_OUT_HDMI_SendAuxPkt" function
+               (:arguments 
+                  ( ("uiPktType" variable (:type ("AMP_DISP_HDMI_AUX_PKT_ID" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [122157 122192])
+                    ("pAmpAuxPkt" variable
+                       (:pointer 1
+                        :type ("AMP_DISP_HDMI_PKT" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [122193 122223])
+                    ("RepeatPkt" variable (:type ("BOOL" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [122257 122272]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [122124 122682])
+            ("DISP_OUT_HDMI_StopAuxPkt" function
+               (:arguments 
+                  ( ("uiPktType" variable (:type ("AMP_DISP_HDMI_AUX_PKT_ID" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [122717 122752]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [122684 122852])
+            ("DISP_OUT_HDMI_GetAuxPkt" function
+               (:arguments 
+                  ( ("uiPktType" variable (:type ("AMP_DISP_HDMI_AUX_PKT_ID" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [122886 122921])
+                    ("pAuxPkt" variable
+                       (:pointer 1
+                        :type ("AMP_DISP_HDMI_PKT_RAW" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [122922 122953]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [122854 123208])
+            ("DISP_OUT_HDMI_EnablexvYCC" function
+               (:arguments 
+                  ( ("uiEnable" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [123245 123261]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [123211 123417])
+            ("DISP_OUT_HDMI_SetxvYCCMode" function
+               (:arguments 
+                  ( ("iMode" variable (:type ("INT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [123454 123466]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [123419 123620])
+            ("DISP_OUT_LVDS_SetPower" function
+               (:arguments 
+                  ( ("uiPowerOnOff" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [123697 123716])
+                    ("uiPanelType" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [123717 123735]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [123666 124006])
+            ("DISP_OUT_LVDS_Config" function
+               (:arguments 
+                  ( ("" variable (:type ("VOID" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [124038 124043]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [124008 124414])
+            ("DISP_OUT_LVDS_SetDefaultMapping" function
+               (:arguments 
+                  ( ("uiIndex" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [124456 124470]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [124416 124966])
+            ("DISP_OUT_LVDS_SetMapping" function
+               (:arguments 
+                  ( ("pMapTab" variable
+                       (:pointer 1
+                        :type ("UINT8" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [125001 125016]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [124968 125392])
+            ("DISP_OUT_LVDS_LoadIcscCustCoeffs" function
+               (:arguments 
+                  ( ("uiDeGammaGamma" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [125435 125456])
+                    ("pCoeffsTab" variable
+                       (:pointer 1
+                        :type ("UINT32" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [125457 125476]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [125394 125718])
+            ("DISP_OUT_LVDS_SetIcsc" function
+               (:arguments 
+                  ( ("uiDeGammaGamma" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [125750 125771])
+                    ("uiIcscMode" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [125772 125789]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [125720 126112])
+            ("DISP_OUT_LVDS_GetIcsc" function
+               (:arguments 
+                  ( ("uiDeGammaGamma" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [126144 126165])
+                    ("pIcscMode" variable
+                       (:pointer 1
+                        :type ("UINT8" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [126166 126183]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [126114 126501])
+            ("DISP_OUT_LVDS_LoadGammaLUT" function
+               (:arguments 
+                  ( ("uiDeGammaGamma" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [126538 126559])
+                    ("uiOptBGR" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [126595 126610])
+                    ("pLUT" variable
+                       (:pointer 1
+                        :type ("UINT16" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [126646 126659]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [126503 127097])
+            ("DISP_OUT_LVDS_WriteGammaLUT" function
+               (:arguments 
+                  ( ("uiDeGammaGamma" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [127135 127156])
+                    ("uiGammaBitDepth" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [127157 127179]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [127099 127433])
+            ("DISP_OUT_LVDS_ReadGammaLUT" function
+               (:arguments 
+                  ( ("uiDeGammaGamma" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [127470 127491])
+                    ("optBGR" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [127492 127505])
+                    ("pLut" variable
+                       (:pointer 1
+                        :type ("UINT16" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [127506 127519]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [127435 128015])
+            ("DISP_OUT_LVDS_BypassDeGammaGamma" function
+               (:arguments 
+                  ( ("uiDeGammaGamma" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [128058 128079])
+                    ("uiBypass" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [128080 128095]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [128017 128620])
+            ("DISP_OUT_LVDS_SetWBGain" function
+               (:arguments 
+                  ( ("uiOptBGR" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [128654 128669])
+                    ("uiGain" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [128670 128684]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [128622 128841])
+            ("DISP_OUT_LVDS_GetWBGain" function
+               (:arguments 
+                  ( ("uiOptBGR" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [128875 128890])
+                    ("pGain" variable
+                       (:pointer 1
+                        :type ("UINT32" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [128891 128905]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [128843 129147])
+            ("DISP_OUT_LVDS_SetWBOffset" function
+               (:arguments 
+                  ( ("uiOptBGR" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [129183 129198])
+                    ("iOffset" variable (:type ("INT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [129199 129213]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [129149 129373])
+            ("DISP_OUT_LVDS_GetWBOffset" function
+               (:arguments 
+                  ( ("uiOptBGR" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [129409 129424])
+                    ("pOffset" variable
+                       (:pointer 1
+                        :type ("INT32" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [129425 129440]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [129375 129688])
+            ("DISP_OUT_LVDS_SetSSC" function
+               (:arguments 
+                  ( ("pLvdsSscCfg" variable
+                       (:pointer 1
+                        :type ("AMP_DISP_LVDS_SSC_CONFIG" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [129719 129757]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [129690 131890])
+            ("DISP_OUT_LVDS_OpenPanel" function
+               (:arguments 
+                  ( ("" variable (:type ("VOID" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [131925 131930]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [131892 132358])
+            ("DISP_OUT_LVDS_ClosePanel" function
+               (:arguments 
+                  ( ("" variable (:type ("VOID" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [132394 132399]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [132360 132829])
+            ("DISP_OUT_LVDS_SetBacklightFrequency" function
+               (:arguments 
+                  ( ("uiBacklightFreq" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [132875 132897]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [132831 133311])
+            ("DISP_OUT_LVDS_SetBacklight" function
+               (:arguments 
+                  ( ("uiPwmBL" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [133349 133363]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [133314 135055])
+            ("DISP_OUT_LVDS_SetPWMDelay" function
+               (:arguments 
+                  ( ("Value" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [135091 135104])
+                    ("index" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [135105 135117]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [135057 135467])
+            ("DISP_OUT_LVDS_SetPwm" function
+               (:arguments 
+                  ( ("uiEnable" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [135499 135514])
+                    ("uiPwmCh" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [135544 135558])
+                    ("uiPwmBL" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [135588 135602])
+                    ("uiTermCount" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [135632 135651]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [135470 138939])
+            ("DISP_OUT_LVDS_SetLed" function
+               (:arguments 
+                  ( ("uiPort" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [138971 138984])
+                    ("uiOnOff" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [138985 138999]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [138942 140142])
+            ("DISP_OUT_LVDS_SetGpio" function
+               (:arguments 
+                  ( ("uiMode" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [140174 140187])
+                    ("uiPort" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [140188 140201])
+                    ("uiOnOff" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [140202 140216]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [140144 140694])
+            ("DISP_OUT_LVDS_InitMemcCmd" function
+               (:arguments 
+                  ( ("uiFrc" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [140730 140742]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [140696 141662])
+            ("DISP_OUT_LVDS_SetMemcMode" function
+               (:arguments 
+                  ( ("uiFrc" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [141698 141710])
+                    ("uiCtrlMode" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [141711 141728])
+                    ("uiMemcMode" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [141729 141746]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [141664 143274])
+            ("DISP_OUT_LVDS_GetMemcMode" function
+               (:arguments 
+                  ( ("uiFrc" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [143310 143322])
+                    ("uiCtrlMode" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [143323 143340])
+                    ("uiMemcMode" variable
+                       (:pointer 1
+                        :type ("UINT8" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [143341 143359]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [143276 144194])
+            ("DISP_OUT_LVDS_Set3dMode" function
+               (:arguments 
+                  ( ("uiFrc" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [144228 144240])
+                    ("uiCtrlMode" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [144241 144258])
+                    ("ui3dMode" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [144259 144274]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [144196 145159])
+            ("DISP_OUT_LVDS_GetSCLCoeffModes" function
+               (:arguments 
+                  ( ("iUnitNum" variable (:type ("INT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [145200 145215])
+                    ("pHSCLCoeffMode" variable
+                       (:pointer 1
+                        :type ("INT32" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [145216 145238])
+                    ("pVSCLCoeffMode" variable
+                       (:pointer 1
+                        :type ("INT32" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [145278 145300]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [145161 145522])
+            ("DISP_OUT_VBO_SetLaneMapping" function
+               (:arguments 
+                  ( ("pLaneMap" variable
+                       (:pointer 1
+                        :type ("UINT8" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [145560 145576]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [145524 145744])
+            ("DISP_OUT_VBO_SetScramblerEn" function
+               (:arguments 
+                  ( ("enable" variable (:type ("BOOL" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [145782 145794])
+                    ("bypassMode" variable (:type ("BOOL" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [145795 145811]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [145746 145988])
+            ("DISP_OUT_VBO_SetEncoderEn" function
+               (:arguments 
+                  ( ("enable" variable (:type ("BOOL" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [146024 146036])
+                    ("bypassMode" variable (:type ("BOOL" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [146037 146053]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [145990 146228])
+            ("DISP_OUT_VBO_SetEmphasis" function
+               (:arguments 
+                  ( ("enable" variable (:type ("BOOL" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [146264 146276])
+                    ("tx_swing" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [146277 146292])
+                    ("emph_swing" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [146293 146310]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [146230 146490])
+            ("DISP_OUT_VBO_GetRecieverStatus" function
+               (:arguments 
+                  ( ("pLockN" variable
+                       (:pointer 1
+                        :type ("UINT8" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [146531 146545])
+                    ("pPwrdN" variable
+                       (:pointer 1
+                        :type ("UINT8" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [146546 146560]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [146492 146736])
+            ("DISP_OUT_HDCP_GetState" function
+               (:arguments 
+                  ( ("pState" variable
+                       (:pointer 1
+                        :type ("INT32" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [146812 146826]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [146781 146985])
+            ("DISP_OUT_HDCP_GetKsv" function
+               (:arguments 
+                  ( ("pKsvData" variable
+                       (:pointer 1
+                        :type ("AMP_DISP_HDCP_KSV_DATA" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [147016 147049]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [146987 147165])
+            ("DISP_OUT_HDCP_SetRepeaterMode" function
+               (:arguments 
+                  ( ("uiMode" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [147205 147219]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [147167 147321])
+            ("DISP_OUT_HDCP_LoadKeys" function
+               (:arguments 
+                  ( ("pHdcpKeys" variable
+                       (:pointer 1
+                        :type ("UINT8" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [147354 147371]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [147323 147645])
+            ("DISP_OUT_HDCP_Enable" function
+               (:arguments 
+                  ( ("uiEnable" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [147676 147691]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [147647 147786])
+            ("DISP_OUT_HDCP_GetVersion" function
+               (:arguments 
+                  ( ("pHDCPVersion" variable
+                       (:pointer 1
+                        :type ("UINT32" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [147821 147842]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [147788 147992])
+            ("DISP_OUT_HPD_GetStatus" function
+               (:arguments 
+                  ( ("pHpdStatus" variable
+                       (:pointer 1
+                        :type ("UINT32" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [148025 148044]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [147994 148149])
+            ("DISP_OUT_CEC_Enable" function
+               (:arguments 
+                  ( ("iEnable" variable (:type ("INT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [148222 148236]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [148194 148329])
+            ("DISP_OUT_CEC_SetPhysicalAddr" function
+               (:arguments 
+                  ( ("iPhyAddr" variable (:type ("INT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [148368 148383]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [148331 148486])
+            ("DISP_OUT_CEC_AllocLogicalAddr" function
+               (:arguments 
+                  ( ("Alloc" variable (:type ("BOOL" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [148527 148538])
+                    ("uiDevType" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [148539 148555])
+                    ("iIniPollAddr" variable (:type ("INT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [148556 148575]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [148488 148701])
+            ("DISP_OUT_CEC_SendMessage" function
+               (:arguments 
+                  ( ("pAmpCecMsg" variable
+                       (:pointer 1
+                        :type ("AMP_DISP_CEC_MSG" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [148737 148766]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [148703 149117])
+            ("DISP_OUT_CEC_GetSupportedFeature" function
+               (:arguments 
+                  ( ("pFeature" variable
+                       (:pointer 1
+                        :type ("INT32" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [149160 149176]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [149119 149286])
+            ("DISP_OUT_CEC_SetSupportedFeature" function
+               (:arguments 
+                  ( ("iFeature" variable (:type ("INT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [149329 149344]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [149288 149451])
+            ("DISP_OUT_ANALOG_SetMacrovision" function
+               (:arguments 
+                  ( ("uiOutPath" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [149538 149555])
+                    ("uiMode" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [149556 149570]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [149499 149678])
+            ("DISP_OUT_ANALOG_SetWSSData" function
+               (:arguments 
+                  ( ("uiOutPath" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [149715 149732])
+                    ("pWssData" variable
+                       (:pointer 1
+                        :type ("AMP_DISP_WSS_DATA" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [149733 149761]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [149680 149883])
+            ("DISP_OUT_ANALOG_SetCGMSData" function
+               (:arguments 
+                  ( ("uiOutPath" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [149922 149939])
+                    ("pCgmsData" variable
+                       (:pointer 1
+                        :type ("AMP_DISP_CGMS_DATA" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [149940 149970]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [149886 150095])
+            ("DISP_OUT_ANALOG_SetCCData" function
+               (:arguments 
+                  ( ("pData" variable
+                       (:pointer 1
+                        :type ("UINT16" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [150131 150145])
+                    ("uiLength" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [150146 150162]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [150097 150263])
+            ("DISP_OUT_3D_SetSSOffsetMode" function
+               (:arguments 
+                  ( ("uiPlaneId" variable (:type ("AMP_DISP_PLANE_ID" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [150343 150371])
+                    ("uiOffsetmode" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [150372 150392]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [150307 150507])
+            ("DISP_OUT_3D_SetSSOffsetSeqIDRef" function
+               (:arguments 
+                  ( ("uiPlaneId" variable (:type ("AMP_DISP_PLANE_ID" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [150549 150577])
+                    ("uiSeqId" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [150578 150593]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [150509 150707])
+            ("DISP_OUT_3D_SetSSDefaultOffset" function
+               (:arguments 
+                  ( ("uiPlaneId" variable (:type ("AMP_DISP_PLANE_ID" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [150748 150776])
+                    ("uiOffset" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [150777 150793]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [150709 150907])
+            ("DISP_OUT_3D_SetSSType" function
+               (:arguments 
+                  ( ("uiChannelMask" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [150939 150960])
+                    ("uiPresenttypes" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [150961 150983]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [150909 151098])
+            ("DISP_OUT_3D_SetHDMIStructure" function
+               (:arguments 
+                  ( ("StructureID" variable (:type ("AMP_DISP_3D_Structure" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [151137 151171])
+                    ("uiExtData" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [151172 151189]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [151100 151444])
+            ("DISP_OUT_3D_SetConvertMode" function
+               (:arguments 
+                  ( ("uiMode" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [151481 151495]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [151446 151658])
+            ("DISP_OUT_3D_SetInvertMode" function
+               (:arguments 
+                  ( ("Mode" variable (:type ("BOOL" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [151694 151704]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [151660 151857])
+            ("DISP_GFX_PushBD" function
+               (:arguments 
+                  ( ("uiPlaneId" variable (:type ("AMP_DISP_PLANE_ID" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [151922 151950])
+                    ("hBD" variable
+                       (:pointer 1
+                        :type ("AMP_BD_ST" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [151951 151966]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [151898 153314])
+            ("DISP_GFX_PopBD" function
+               (:arguments 
+                  ( ("uiPlaneId" variable (:type ("AMP_DISP_PLANE_ID" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [153339 153367])
+                    ("phBD" variable
+                       (:pointer 1
+                        :type ("AMP_BD_ST" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [153368 153384]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [153316 155138])
+            ("DISP_GFX_WaitBDFree" function
+               (:arguments 
+                  ( ("phBD" variable
+                       (:pointer 1
+                        :type ("AMP_BD_ST" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [155168 155184]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [155140 157358])
+            ("DISP_GFX_WaitVSync" function (:type ("HRESULT" type (:type "class") nil nil)) nil [157360 157530])
+            ("DISP_GFX_SetCsc" function
+               (:arguments 
+                  ( ("uiPlaneId" variable (:type ("AMP_DISP_PLANE_ID" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [157556 157584])
+                    ("uiCscMode" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [157585 157602]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [157532 158357])
+            ("DISP_PQ_LoadLDCLut" function
+               (:arguments 
+                  ( ("type" variable (:type ("AMP_DISP_LDC_FW_LUT" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [158419 158444])
+                    ("pData" variable
+                       (:pointer 1
+                        :type ("INT32" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [158445 158459])
+                    ("count" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [158460 158473]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [158392 158622])
+            ("DISP_PQ_SetProperty" function
+               (:arguments 
+                  ( ("uiParaID" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [158653 158669])
+                    ("uiParaVal" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [158670 158687]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [158625 160538])
+            ("DISP_PQ_GetProperties" function
+               (:arguments 
+                  ( ("uiParaID" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [160570 160586])
+                    ("uiCount" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [160587 160602])
+                    ("pParaVal" variable
+                       (:pointer 1
+                        :type ("UINT32" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [160603 160620]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [160540 162392])
+            ("DISP_PQ_LoadProperty" function
+               (:arguments 
+                  ( ("uiParaID" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [162423 162439])
+                    ("uiParaVal" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [162440 162457]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [162394 162599])
+            ("DISP_PQ_CommitProperties" function
+               (:arguments 
+                  ( ("" variable (:type ("VOID" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [162634 162639]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [162601 162787])
+            ("DISP_TZ_memcpy" function
+               (:arguments 
+                  ( ("DstShmAddr" variable
+                       (:pointer 1
+                        :type ("VOID" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [162812 162829])
+                    ("DstShmRegSize" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [162830 162851])
+                    ("SrcShmAddr" variable
+                       (:pointer 1
+                        :type ("VOID" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [162888 162905])
+                    ("SrcShmRegSize" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [162906 162927])
+                    ("CopySize" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [162928 162944]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [162789 163444]))          
+      :file "disp_api.c"
+      :pointmax 163445
+      :fsize 163444
+      :lastmodtime '(22165 55358 153413 518000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("DISP_VSYNC_PERIOD_DEFAULT" . ((semantic-list "(16)" 3278 . 3282)))
+          ("FLASH_TS_IO_MAGIC" . ((number "0xFE" 3033 . 3037)))
+          ("BOOTLOGO_FRAME_TYPE" . ((symbol "AMP_DISP_BUILD_IN_FRAME_LOGO" 2806 . 2834)))
+          ("CHECK_PANEL_INIT" (spp-arg-list nil 3746 . 3748) . 
+              ((DO "do" 3754 . 3756) (semantic-list "{\\
+        if (!gdisp_panel_opened) { \\
+            return (ERR_SWSTATEWRONG);\\
+        }\\
+    }" 3756 . 3852) (WHILE "while" 3852 . 3857) (semantic-list "(0)" 3857 . 3860)))
+          ("DISP_VSYNC_PERIOD_FAULT" . ((semantic-list "(10 * 1000)" 3320 . 3331)))
+          ("WAITCEL_TIMEOUT_VALUE" . ((number "80" 2611 . 2613)))
+          ("BOOTLOGO_PATH" . ((string "\"/etc/boot.logo\"" 2660 . 2676)))
+          ("ASSERT_READ" (spp-arg-list ("fd" "buf" "cnt") 3393 . 3407) . ((semantic-list "{ \\
+        assert(cnt < INT_MAX); \\
+        if ((ssize_t)cnt != read(fd, buf, cnt)) { \\
+            DISP_ERROR(\"read from %s %d failed\\n\", #fd, cnt); \\
+        } \\
+    }" 3414 . 3584)))
+          ("FLASH_TS_IO_GET" . ((symbol "_IOWR" 3147 . 3152) (semantic-list "(FLASH_TS_IO_MAGIC, 1, struct flash_ts_io_req)" 3152 . 3198)))
+          ("FLASH_TS_MAX_KEY_SIZE" . ((number "64" 2866 . 2868)))
+          ("BOOTLOGO_NUM_MAX" . ((number "10" 2713 . 2715)))
+          ("BOOTLOGO_PLANE" . ((symbol "AMP_DISP_PLANE_PG" 2752 . 2769)))
+          ("CHECK_DISP_INIT" (spp-arg-list nil 3609 . 3611) . 
+              ((DO "do" 3617 . 3619) (semantic-list "{\\
+        if (!gdisp_init_done) { \\
+            return (ERR_SWSTATEWRONG);\\
+        }\\
+    }" 3619 . 3712) (WHILE "while" 3712 . 3717) (semantic-list "(0)" 3717 . 3720)))
+          ("FLASH_TS_MAX_VAL_SIZE" . ((number "2048" 2899 . 2903)))
+          ("FLASH_TS_IO_SET" . ((symbol "_IOW" 3067 . 3071) (semantic-list "(FLASH_TS_IO_MAGIC, 0, struct flash_ts_io_req)" 3071 . 3117)))
+          ("FTS_DEVICE" . ((string "\"/dev/fts\"" 3229 . 3239)))
+          )
+)
+    (semanticdb-table "disp_prv_type.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("__DISP_PRV_TYPE_H__" variable (:constant-flag t) nil [1571 1590])
+            ("com_type.h" include nil nil [1592 1613])
+            ("cmd_buf.h" include nil nil [1614 1634])
+            ("vdec_com.h" include nil nil [1635 1656])
+            ("vpp_api.h" include nil nil [1657 1677])
+            ("isl/amp_event_queue.h" include nil nil [1678 1710])
+            ("isl/amp_bd_tag.h" include nil nil [1711 1738])
+            ("amp_buf_desc.h" include nil nil [1739 1764])
+            ("amp_event_service.h" include nil nil [1765 1795])
+            ("disp_soc_map.h" include nil nil [1796 1821])
+            ("disp_api.h" include nil nil [1822 1843])
+            ("disp_prv_type.h" include nil nil [1844 1870])
+            ("amp_monitor.h" include nil nil [1923 1947])
+            ("DISP_FATAL" variable (:constant-flag t) nil [1957 1967])
+            ("DISP_ERROR" variable (:constant-flag t) nil [2048 2058])
+            ("DISP_HIGH" variable (:constant-flag t) nil [2139 2148])
+            ("DISP_MID" variable (:constant-flag t) nil [2229 2237])
+            ("DISP_LOW" variable (:constant-flag t) nil [2318 2326])
+            ("DISP_INFO" variable (:constant-flag t) nil [2407 2416])
+            ("ARRAYSIZE" variable (:constant-flag t) nil [2498 2507])
+            ("DISP_MAGIC" variable (:constant-flag t) nil [2545 2555])
+            ("MAX_DOWN_SCALE_RATIO" variable (:constant-flag t) nil [2609 2629])
+            ("MAX_NUM_GLOBAL_VBUF_DESC" variable (:constant-flag t) nil [2651 2675])
+            ("DISP_GFX_OUTPUT_MODE" variable (:constant-flag t) nil [2867 2887])
+            ("MAX_NUM_GFX_FRAMES_ONE_PLANE" variable (:constant-flag t) nil [2965 2993])
+            ("mn_width_hash" variable (:constant-flag t) nil [3011 3024])
+            ("mn_height_hash" variable (:constant-flag t) nil [3051 3065])
+            ("CMDFUNC" function
+               (:prototype-flag t
+                :function-pointer t
+                :arguments 
+                  ( ("pCmd" variable
+                       (:pointer 1
+                        :type ("CHAR" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3112 3123]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [3093 3124])
+            ("LED_DEV_NAME" variable (:constant-flag t) nil [3134 3146])
+            ("SM_GPIO_CTRL_MODE" variable (:constant-flag t) nil [3174 3191])
+            ("GENERAL_GPIO_CTRL_MODE" variable (:constant-flag t) nil [3202 3224])
+            ("FILE_PATH_LEN" variable (:constant-flag t) nil [3236 3249])
+            ("PANEL_POWER_ON_CFG_FILE" variable (:constant-flag t) nil [3311 3334])
+            ("PANEL_POWER_OFF_CFG_FILE" variable (:constant-flag t) nil [3365 3389])
+            ("LVDS_CFG_FILE" variable (:constant-flag t) nil [3420 3433])
+            ("RECOVERY_PANEL_POWER_ON_CFG_FILE" variable (:constant-flag t) nil [3523 3555])
+            ("RECOVERY_MODEL_INDEX_FILE" variable (:constant-flag t) nil [3596 3621])
+            ("DEFAULT_MODEL_INDEX_FILE" variable (:constant-flag t) nil [3698 3722])
+            ("BOOT_ANIMATION_READY_PATH" variable (:constant-flag t) nil [3810 3835])
+            ("BOOT_ANIMATION_CHECK_TIMEOUT" variable (:constant-flag t) nil [3873 3901])
+            ("DISP_LVDS_SSC_VCO_CLK" variable (:constant-flag t) nil [3915 3936])
+            ("DISP_STATE" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("DISP_STATE_INVALID" variable
+                             (:constant-flag t
+                              :default-value (3987 3988)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [3966 3988])
+                          ("DISP_STATE_IDLE" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [3994 4010])
+                          ("DISP_STATE_RUNNING" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [4015 4034]))                        
+                      :type "enum")
+                      nil nil)
+                :type "typedef")
+                nil [3947 4048])
+            ("DISP_CMD" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("DISP_CMD_SET_SCALE" variable
+                             (:constant-flag t
+                              :default-value (4098 4103)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [4069 4103])
+                          ("DISP_CMD_SET_SCALE_RATIO" variable
+                             (:constant-flag t
+                              :default-value (4138 4143)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [4109 4143]))                        
+                      :type "enum")
+                      nil nil)
+                :type "typedef")
+                nil [4050 4156])
+            ("disp_res_info_t" type
+               (:members 
+                  ( ("uiPicWidth" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4197 4215])
+                    ("uiPicHeight" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4220 4239])
+                    ("uiProgressive" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4244 4265])
+                    ("uiFrameRateNum" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4270 4292])
+                    ("uiFrameRateDen" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4297 4319])
+                    ("uiPtsPerCnt4" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4324 4344])
+                    ("uiAspectRatioWidth_4_3" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4349 4379])
+                    ("uiAspectRatioHeight_4_3" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4384 4415])
+                    ("uiAspectRatioWidth_16_9" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4420 4451])
+                    ("uiAspectRatioHeight_16_9" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4456 4488])
+                    ("uiIs3DFormat" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4493 4513]))                  
+                :type "struct")
+                nil [4159 4530])
+            ("DISP_RES_INFO" type
+               (:typedef ("disp_res_info_t" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [4159 4530])
+            ("DISP_SCALING_MODE" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("DISP_SCALING_NO_SCALE" variable
+                             (:constant-flag t
+                              :default-value (4593 4594)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [4551 4594])
+                          ("DISP_SCALING_CUST_MODE" variable
+                             (:constant-flag t
+                              :default-value (4642 4643)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [4600 4643])
+                          ("DISP_SCALING_AUTO_CALC" variable
+                             (:constant-flag t
+                              :default-value (4691 4693)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [4649 4693])
+                          ("DISP_SCALING_IG_PG_MODE" variable
+                             (:constant-flag t
+                              :default-value (4741 4743)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [4699 4743])
+                          ("DISP_SCALING_VALID_SRC_VALID_DST" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [4749 4782])
+                          ("DISP_SCALING_VALID_SRC_INVALID_DST" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [4787 4822])
+                          ("DISP_SCALING_INVALID_SRC_VALID_DST" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [4827 4862])
+                          ("DISP_SCALING_INVALID_SRC_INVALID_DST" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [4867 4904])
+                          ("DISP_SCALING_RATIO_SRC_VALID_DST" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [4909 4942])
+                          ("DISP_SCALING_RATIO_SRC_INVALID_DST" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [4947 4982])
+                          ("DISP_SCALING_MODE_MAX" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [4987 5009]))                        
+                      :type "enum")
+                      nil nil)
+                :type "typedef")
+                nil [4532 5030])
+            ("DISP_SCALING_PREFER" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("DISP_SCALING_PREFER_LETTER_BOX" variable
+                             (:constant-flag t
+                              :default-value (5085 5086)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [5051 5086])
+                          ("DISP_SCALING_PREFER_PANSCAN" variable
+                             (:constant-flag t
+                              :default-value (5172 5173)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [5138 5173])
+                          ("DISP_AUTO_SCALING_FIT_SCREEN" variable
+                             (:constant-flag t
+                              :default-value (5243 5244)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [5209 5244])
+                          ("DISP_SCALING_PREFER_MAX" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [5287 5311]))                        
+                      :type "enum")
+                      nil nil)
+                :type "typedef")
+                nil [5032 5334])
+            ("DISP_OUTPUT_TV_TYPE" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("DISP_OUTPUT_TV_TYPE_4_3" variable
+                             (:constant-flag t
+                              :default-value (5383 5384)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [5355 5384])
+                          ("DISP_OUTPUT_TV_TYPE_16_9" variable
+                             (:constant-flag t
+                              :default-value (5428 5429)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [5400 5429])
+                          ("DISP_OUTPUT_TV_TYPE_AUTO" variable
+                             (:constant-flag t
+                              :default-value (5474 5475)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [5446 5475])
+                          ("DISP_OUTPUT_TV_TYPE_MAX" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [5507 5531]))                        
+                      :type "enum")
+                      nil nil)
+                :type "typedef")
+                nil [5336 5554])
+            ("DISP_LVDS_CFG_PROP" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("DISP_LVDS_CFG_PROP_BEGIN" variable
+                             (:constant-flag t
+                              :default-value (5634 5635)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [5607 5635])
+                          ("DISP_LVDS_CFG_PROP_PANEL_TYPE" variable
+                             (:constant-flag t
+                              :default-value (5673 5674)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [5641 5674])
+                          ("DISP_LVDS_CFG_PROP_GAMMA_BYPASS" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [5680 5712])
+                          ("DISP_LVDS_CFG_PROP_LVDS_DEFAULT_MAPPING_TABLE" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [5717 5763])
+                          ("DISP_LVDS_CFG_PROP_MAX" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [5768 5792]))                        
+                      :type "enum")
+                      nil nil)
+                :type "typedef")
+                nil [5588 5812])
+            ("DISP_LVDS_PANEL_POWER_ACTION_INDEX" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("DISP_LVDS_PANEL_POWER_ACTION_START" variable
+                             (:constant-flag t
+                              :default-value (5870 5871)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [5833 5871])
+                          ("DISP_LVDS_PANEL_POWER_ACTION_LED" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [5877 5910])
+                          ("DISP_LVDS_PANEL_POWER_ACTION_PANELPOWER" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [5915 5955])
+                          ("DISP_LVDS_PANEL_POWER_ACTION_LVDS_POWER" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [5960 6000])
+                          ("DISP_LVDS_PANEL_POWER_ACTION_PWM" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [6005 6038])
+                          ("DISP_LVDS_PANEL_POWER_ACTION_BACKLIGHT" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [6043 6082])
+                          ("DISP_LVDS_PANEL_POWER_ACTION_MEMC" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [6087 6121])
+                          ("DISP_LVDS_PANEL_POWER_ACTION_MAX" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [6126 6160]))                        
+                      :type "enum")
+                      nil nil)
+                :type "typedef")
+                nil [5814 6196])
+            ("DISP_LVDS_LED_PORT" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("DISP_LVDS_PANEL_LED_BEGIN" variable
+                             (:constant-flag t
+                              :default-value (6245 6246)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [6217 6246])
+                          ("DISP_LVDS_PANEL_LED_0" variable
+                             (:constant-flag t
+                              :default-value (6276 6277)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [6252 6277])
+                          ("DISP_LVDS_PANEL_LED_1" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [6283 6305])
+                          ("DISP_LVDS_PANEL_LED_BLINKING" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [6310 6340])
+                          ("DISP_LVDS_PANEL_LED_MAX" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [6345 6370]))                        
+                      :type "enum")
+                      nil nil)
+                :type "typedef")
+                nil [6198 6390])
+            ("DISP_LVDS_PANEL_FRC" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("DISP_LVDS_FRC_NT_723120" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [6411 6435])
+                          ("DISP_LVDS_FRC_MST_7428BB" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [6440 6465])
+                          ("DISP_LVDS_FRC_PA168" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [6470 6490])
+                          ("DISP_LVDS_FRC_MAX" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [6495 6514]))                        
+                      :type "enum")
+                      nil nil)
+                :type "typedef")
+                nil [6392 6534])
+            ("DISP_LVDS_FRC_CTRL_MODE" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("DISP_LVDS_FRC_CTRL_I2C" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [6555 6578])
+                          ("DISP_LVDS_FRC_CTRL_GPIO" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [6583 6607])
+                          ("DISP_LVDS_FRC_CTRL_MAX" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [6612 6636]))                        
+                      :type "enum")
+                      nil nil)
+                :type "typedef")
+                nil [6536 6660])
+            ("DISP_LVDS_FRC_NT_CMD" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("DISP_LVDS_FRC_NT_CMD_UNLOCK" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [6681 6709])
+                          ("DISP_LVDS_FRC_NT_CMD_WRITE_FRC_MODE" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [6714 6750])
+                          ("DISP_LVDS_FRC_NT_CMD_READ_FRC_MODE" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [6755 6790])
+                          ("DISP_LVDS_FRC_NT_CMD_MAX" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [6795 6821]))                        
+                      :type "enum")
+                      nil nil)
+                :type "typedef")
+                nil [6662 6842])
+            ("DISP_LVDS_FRC_MST_CMD" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("DISP_LVDS_FRC_MST_CMD_WRITE_FRC_2D" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [6863 6898])
+                          ("DISP_LVDS_FRC_MST_CMD_WRITE_FRC_MODE" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [6903 6940])
+                          ("DISP_LVDS_FRC_MST_CMD_MAX" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [6945 6972]))                        
+                      :type "enum")
+                      nil nil)
+                :type "typedef")
+                nil [6844 6994])
+            ("DISP_LVDS_FRC_PA_CMD" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("DISP_LVDS_FRC_PA_CMD_WRITE_FRC_MODE" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [7015 7051])
+                          ("DISP_LVDS_FRC_PA_CMD_WRITE_FRC_3D" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [7056 7090])
+                          ("DISP_LVDS_FRC_PA_CMD_MAX" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [7095 7121]))                        
+                      :type "enum")
+                      nil nil)
+                :type "typedef")
+                nil [6996 7142])
+            ("DISP_LVDS_FRC_MEMC_MODE" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("DISP_LVDS_FRC_MEMC_OFF" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [7163 7186])
+                          ("DISP_LVDS_FRC_MEMC_STANDARD" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [7191 7219])
+                          ("DISP_LVDS_FRC_MEMC_SMOOTH" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [7224 7250])
+                          ("DISP_LVDS_FRC_MEMC_CLEAR" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [7255 7280])
+                          ("DISP_LVDS_FRC_MEMC_USER" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [7285 7309])
+                          ("DISP_LVDS_FRC_MEMC_MAX" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [7314 7338]))                        
+                      :type "enum")
+                      nil nil)
+                :type "typedef")
+                nil [7144 7362])
+            ("DISP_LVDS_SSC_MODE" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("DISP_LVDS_SSC_MODE_CENTER" variable
+                             (:constant-flag t
+                              :default-value (7460 7461)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [7432 7461])
+                          ("DISP_LVDS_SSC_MODE_DOWN" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [7467 7492]))                        
+                      :type "enum")
+                      nil nil)
+                :type "typedef")
+                nil [7413 7511])
+            ("disp_panel_i2c_cmd_t" type
+               (:members 
+                  ( ("uiI2cBusId" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [7555 7572])
+                    ("uiI2cDevAddr" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [7577 7596])
+                    ("uiI2cDatalength" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [7601 7623])
+                    ("uiI2cData" variable
+                       (:dereference 1
+                        :type ("UINT8" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [7628 7649]))                  
+                :type "struct")
+                nil [7513 7671])
+            ("DISP_PANEL_I2C_CMD" type
+               (:typedef ("disp_panel_i2c_cmd_t" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [7513 7671])
+            ("disp_lvds_cmd_property_t" type
+               (:members 
+                  ( ("property" variable
+                       (:pointer 1
+                        :type ("CHAR" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [7719 7734])
+                    ("uiIndex" variable (:type ("DISP_LVDS_CFG_PROP" type (:type "class") nil nil)) (reparse-symbol classsubparts) [7739 7766]))                  
+                :type "struct")
+                nil [7673 7792])
+            ("DISP_LVDS_CMD_PROPERTY" type
+               (:typedef ("disp_lvds_cmd_property_t" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [7673 7792])
+            ("disp_lvds_panel_power_action_t" type
+               (:members 
+                  ( ("action" variable
+                       (:pointer 1
+                        :type ("CHAR" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [7846 7859])
+                    ("uiIndex" variable (:type ("DISP_LVDS_PANEL_POWER_ACTION_INDEX" type (:type "class") nil nil)) (reparse-symbol classsubparts) [7864 7907]))                  
+                :type "struct")
+                nil [7794 7939])
+            ("DISP_LVDS_PANEL_POWER_ACTION" type
+               (:typedef ("disp_lvds_panel_power_action_t" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [7794 7939])
+            ("DISP_WIN" type
+               (:typedef ("VPP_WIN" type (:type "class") nil nil)
+                :type "typedef")
+                nil [7941 7966])
+            ("scaling_wins_t" type
+               (:members 
+                  ( ("src" variable (:type ("DISP_WIN" type (:type "class") nil nil)) (reparse-symbol classsubparts) [8004 8017])
+                    ("dst" variable (:type ("DISP_WIN" type (:type "class") nil nil)) (reparse-symbol classsubparts) [8022 8035]))                  
+                :type "struct")
+                nil [7968 8051])
+            ("SCALING_WINS" type
+               (:typedef ("scaling_wins_t" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [7968 8051])
+            ("scaling_wins_ratio_t" type
+               (:members 
+                  ( ("src" variable (:type ("AMP_DISP_WIN_RATIO" type (:type "class") nil nil)) (reparse-symbol classsubparts) [8095 8118])
+                    ("dst" variable (:type ("DISP_WIN" type (:type "class") nil nil)) (reparse-symbol classsubparts) [8123 8136]))                  
+                :type "struct")
+                nil [8053 8158])
+            ("SCALING_WINS_RATIO" type
+               (:typedef ("scaling_wins_ratio_t" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [8053 8158])
+            ("disp_fps_table_t" type
+               (:members 
+                  ( ("fpsID" variable (:type ("AMP_DISP_OUT_REFRESH_RATE" type (:type "class") nil nil)) (reparse-symbol classsubparts) [8198 8232])
+                    ("fps" variable (:type "double") (reparse-symbol classsubparts) [8237 8269]))                  
+                :type "struct")
+                nil [8160 8286])
+            ("disp_fps_table" type
+               (:typedef ("disp_fps_table_t" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [8160 8286])
+            ("dips_plane_t" type
+               (:members 
+                  ( ("pInputQue" variable
+                       (:pointer 1
+                        :type ("AMP_BDCHAIN" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [8323 8347])
+                    ("pInterQue" variable
+                       (:pointer 1
+                        :type ("AMP_BDCHAIN" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [8352 8376])
+                    ("pOutputQue" variable
+                       (:pointer 1
+                        :type ("AMP_BDCHAIN" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [8381 8406])
+                    ("pGfxBDQue" variable
+                       (:pointer 1
+                        :type ("AMP_BDCHAIN" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [8411 8435])
+                    ("hCmdQue" variable (:type ("MV_CC_HANDLE_MsgQ_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [8441 8469])
+                    ("PlaneState" variable (:type ("DISP_STATE" type (:type "class") nil nil)) (reparse-symbol classsubparts) [8475 8498])
+                    ("uiPlaneEnable" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [8503 8529])
+                    ("uiPicWidth" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [8535 8558])
+                    ("uiPicHight" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [8563 8586])
+                    ("uiDisStride" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [8591 8615])
+                    ("uiDisOffset" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [8620 8644])
+                    ("pDefaultLogo" variable
+                       (:pointer 1
+                        :type ("VDEC_VID_BUF_DESC" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [8650 8682])
+                    ("pClut" variable
+                       (:pointer 1
+                        :type ("UINT32" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [8687 8706])
+                    ("pClutNow" variable
+                       (:pointer 1
+                        :type ("UINT32" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [8711 8733])
+                    ("uiIsMute" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [8738 8760])
+                    ("uiIsMuteActVid" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [8765 8793])
+                    ("uiOutputDispMode" variable (:type ("UINT" type (:type "class") nil nil)) (reparse-symbol classsubparts) [8799 8823])
+                    ("uiBadScaleRatio" variable (:type ("UINT" type (:type "class") nil nil)) (reparse-symbol classsubparts) [8828 8851])
+                    ("CustSclSrcWin" variable (:type ("DISP_WIN" type (:type "class") nil nil)) (reparse-symbol classsubparts) [8856 8883])
+                    ("CustSclDstWin" variable (:type ("DISP_WIN" type (:type "class") nil nil)) (reparse-symbol classsubparts) [8888 8915])
+                    ("DesiredWins" variable (:type ("SCALING_WINS" type (:type "class") nil nil)) (reparse-symbol classsubparts) [8920 8945])
+                    ("LastWins" variable (:type ("SCALING_WINS" type (:type "class") nil nil)) (reparse-symbol classsubparts) [8950 8972])
+                    ("DesiredAttr" variable (:type ("VPP_WIN_ATTR" type (:type "class") nil nil)) (reparse-symbol classsubparts) [8977 9002])
+                    ("LastActualWins" variable (:type ("SCALING_WINS" type (:type "class") nil nil)) (reparse-symbol classsubparts) [9008 9036])
+                    ("ScalingMode" variable (:type ("DISP_SCALING_MODE" type (:type "class") nil nil)) (reparse-symbol classsubparts) [9083 9113])
+                    ("ScalingPrefer" variable (:type ("DISP_SCALING_PREFER" type (:type "class") nil nil)) (reparse-symbol classsubparts) [9159 9193])
+                    ("pCurrentDisp" variable
+                       (:pointer 1
+                        :type ("VDEC_VID_BUF_DESC" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [9243 9275])
+                    ("CurrentBD" variable (:type ("AMP_BD_HANDLE" type (:type "class") nil nil)) (reparse-symbol classsubparts) [9280 9304])
+                    ("PlaneCallback" variable (:type ("DISP_PLANE_CALLBACK" type (:type "class") nil nil)) (reparse-symbol classsubparts) [9310 9344]))                  
+                :type "struct")
+                nil [8288 9612])
+            ("DISP_PLANE" type
+               (:typedef ("dips_plane_t" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [8288 9612])
+            ("disp_chan_t" type
+               (:members 
+                  ( ("uiEnable" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [9649 9666])
+                    ("uiOutWidth" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [9671 9690])
+                    ("uiOutHight" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [9695 9714])
+                    ("uiState" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [9719 9735])
+                    ("uiTVType" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [9782 9799])
+                    ("uiOutResFormat" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [9849 9872]))                  
+                :type "struct")
+                nil [9615 9886])
+            ("DISP_CHAN" type
+               (:typedef ("disp_chan_t" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [9615 9886])
+            ("disp_module_t" type
+               (:members 
+                  ( ("uiMagicNum" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [9925 9948])
+                    ("iVppHandle" variable (:type ("INT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [9953 9976])
+                    ("DispState" variable (:type ("DISP_STATE" type (:type "class") nil nil)) (reparse-symbol classsubparts) [9981 10003])
+                    ("hGFXTask" variable (:type ("MV_OSAL_HANDLE_TASK_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [10008 10039])
+                    ("hGFXTaskCond" variable (:type ("MV_OSAL_HANDLE_COND_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [10044 10079])
+                    ("hGFXTaskMutex" variable (:type ("MV_OSAL_HANDLE_MUTEX_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [10084 10121])
+                    ("hDispNotifyMonitor" variable (:type ("AMP_Monitor_Handle" type (:type "class") nil nil)) (reparse-symbol classsubparts) [10126 10167])
+                    ("uiVsyncCount" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [10172 10207])
+                    ("Plane" variable
+                       (:dereference 1
+                        :type ("DISP_PLANE" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [10213 10251])
+                    ("Chan" variable
+                       (:dereference 1
+                        :type ("DISP_CHAN" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [10256 10290])
+                    ("BuildInFrame" variable
+                       (:dereference 1
+                        :type ("AMP_BD_HANDLE" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [10296 10366])
+                    ("iHdmiColorFmt" variable (:type ("INT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [10372 10392])
+                    ("uiHdmiBitDepth" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [10397 10419])
+                    ("iHdmiPixelRept" variable (:type ("INT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [10424 10445])
+                    ("iPanel3dMode" variable (:type ("INT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [10450 10469])
+                    ("iLvdsEnable" variable (:type ("INT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [10475 10493])
+                    ("iIsNonTunnulMode" variable (:type ("INT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [10498 10521])
+                    ("iIs3DMode" variable (:type ("BOOL" type (:type "class") nil nil)) (reparse-symbol classsubparts) [10526 10542]))                  
+                :type "struct")
+                nil [9889 10816])
+            ("DISP_MODULE" type
+               (:typedef ("disp_module_t" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [9889 10816])
+            ("berlin_pe_dev" variable
+               (:typemodifiers ("extern")
+                :type ("INT32" type (:type "class") nil nil))
+                nil [10818 10845])
+            ("gVinPortConfig" variable
+               (:dereference 1
+                :typemodifiers ("extern")
+                :type ("INT32" type (:type "class") nil nil))
+                nil [10846 10876])
+            ("gDVConfig" variable
+               (:dereference 1
+                :typemodifiers ("extern")
+                :type ("INT32" type (:type "class") nil nil))
+                nil [10877 10902])
+            ("gZorderConfig" variable
+               (:dereference 1
+                :typemodifiers ("extern")
+                :type ("INT32" type (:type "class") nil nil))
+                nil [10903 10932])
+            ("gVoutPortConfig" variable
+               (:dereference 1
+                :typemodifiers ("extern")
+                :type ("INT32" type (:type "class") nil nil))
+                nil [10933 10964])
+            ("gPlaneDefaultGlobalAlpha" variable
+               (:dereference 1
+                :typemodifiers ("extern")
+                :type ("INT32" type (:type "class") nil nil))
+                nil [10965 11005])
+            ("gPlaneDefaultBkgroundColor" variable
+               (:dereference 1
+                :typemodifiers ("extern")
+                :type ("INT32" type (:type "class") nil nil))
+                nil [11006 11048])
+            ("gPlaneToCPCBConfig" variable
+               (:dereference 1
+                :typemodifiers ("extern")
+                :type ("INT32" type (:type "class") nil nil))
+                nil [11049 11083])
+            ("aDispPlanesCap" variable
+               (:dereference 1
+                :typemodifiers ("extern")
+                :type ("vpp_plane_cap" type (:type "class") nil nil))
+                nil [11084 11122])
+            ("gVPPMapTable" variable
+               (:typemodifiers ("extern")
+                :type ("vpp_map_table" type (:type "class") nil nil))
+                nil [11123 11157])
+            ("IS_4K_RES" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("ResId" variable (:type ("AMP_DISP_OUT_RES" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11174 11197]))                  
+                :type ("BOOL" type (:type "class") nil nil))
+                nil [11159 11198])
+            ("IS_HFR_RES" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("ResId" variable (:type ("AMP_DISP_OUT_RES" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11215 11238]))                  
+                :type ("BOOL" type (:type "class") nil nil))
+                nil [11199 11239])
+            ("IS_FHD_RES" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("ResId" variable (:type ("AMP_DISP_OUT_RES" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11256 11279]))                  
+                :type ("BOOL" type (:type "class") nil nil))
+                nil [11240 11280])
+            ("IS_HD_RES" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("ResId" variable (:type ("AMP_DISP_OUT_RES" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11296 11319]))                  
+                :type ("BOOL" type (:type "class") nil nil))
+                nil [11281 11320])
+            ("GetResolutionPixelClock" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("ResId" variable (:type ("AMP_DISP_OUT_RES" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11352 11375]))                  
+                :type ("UINT32" type (:type "class") nil nil))
+                nil [11321 11376])
+            ("get_frame_info" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("hBD" variable (:type ("AMP_BD_HANDLE" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11400 11418])
+                    ("ppTag" variable
+                       (:pointer 2
+                        :type ("AMP_BGTAG_FRAME_INFO" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [11445 11474]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [11377 11475])
+            ("bdchain_move_items" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("pChainIn" variable
+                       (:pointer 1
+                        :type ("AMP_BDCHAIN" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [11504 11526])
+                    ("pChainOut" variable
+                       (:pointer 1
+                        :type ("AMP_BDCHAIN" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [11554 11577])
+                    ("uiItems" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11605 11620])
+                    ("Status" variable (:type ("AMP_FRAME_ST_T" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11648 11670]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [11477 11671])
+            ("bdchain_move_items_without_status" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("pChainIn" variable
+                       (:pointer 1
+                        :type ("AMP_BDCHAIN" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [11715 11737])
+                    ("pChainOut" variable
+                       (:pointer 1
+                        :type ("AMP_BDCHAIN" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [11765 11788])
+                    ("uiItems" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11816 11831])
+                    ("ppFrameInfoOut" variable
+                       (:pointer 2
+                        :type ("AMP_BGTAG_FRAME_INFO" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [11859 11897])
+                    ("pItemsInOut" variable
+                       (:pointer 1
+                        :type ("UINT32" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [11925 11945]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [11673 11946])
+            ("push_frame" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("pDisp" variable
+                       (:pointer 1
+                        :type ("DISP_MODULE" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [11967 11986])
+                    ("uiPlaneID" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12006 12023])
+                    ("pAMPBD" variable (:type ("AMP_BD_HANDLE" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12043 12064]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [11948 12065])
+            ("is_build_in_frame" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("pAMPBD" variable (:type ("AMP_BD_HANDLE" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12092 12113]))                  
+                :type ("BOOL" type (:type "class") nil nil))
+                nil [12069 12114])
+            ("is_valid_reg_group" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("pRegGroup" variable
+                       (:pointer 1
+                        :type ("AMP_DISP_VPP_REG_GROUP" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [12140 12174]))                  
+                :type ("BOOL" type (:type "class") nil nil))
+                nil [12116 12175])
+            ("update_scaler_setting" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("pDisp" variable
+                       (:pointer 1
+                        :type ("DISP_MODULE" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [12207 12226])
+                    ("uiPlaneId" variable (:type ("AMP_DISP_PLANE_ID" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12227 12255])
+                    ("pVbufDesc" variable
+                       (:pointer 1
+                        :type ("VDEC_VID_BUF_DESC" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [12286 12315])
+                    ("bIsBuildInFrame" variable (:type ("BOOL" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12316 12337]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [12177 12338])
+            ("video_plane_config" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("pDisp" variable
+                       (:pointer 1
+                        :type ("DISP_MODULE" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [12364 12383])
+                    ("pConfig" variable
+                       (:pointer 1
+                        :type ("AMP_DISP_CONFIG" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [12408 12433]))                  
+                :type ("VOID" type (:type "class") nil nil))
+                nil [12340 12434])
+            ("hw_init" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("VOID" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12449 12454]))                  
+                :type ("VOID" type (:type "class") nil nil))
+                nil [12436 12455])
+            ("disp_callback_isr" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("VOID" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12579 12584]))                  
+                :type ("VOID" type (:type "class") nil nil))
+                nil [12556 12585])
+            ("disp_callback_hdmi" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("uiEventCode" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12614 12633])
+                    ("pEventInfo" variable
+                       (:pointer 1
+                        :type ("VOID" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [12661 12678])
+                    ("pContext" variable
+                       (:pointer 1
+                        :type ("VOID" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [12679 12694]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [12587 12695])
+            ("disp_callback_cec" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("uiEventCode" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12723 12742])
+                    ("pEventInfo" variable
+                       (:pointer 1
+                        :type ("VOID" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [12769 12786])
+                    ("pContext" variable
+                       (:pointer 1
+                        :type ("VOID" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [12787 12802]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [12697 12803])
+            ("disp_callback_CaptureAUXFrame" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("uiEventCode" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12843 12862])
+                    ("pEventInfo" variable
+                       (:pointer 1
+                        :type ("VOID" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [12889 12906])
+                    ("pContext" variable
+                       (:pointer 1
+                        :type ("VOID" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [12907 12922]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [12805 12923])
+            ("disp_wait_CaptureVideoFrame" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("Plane" variable (:type ("AMP_DISP_PLANE_ID" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [13070 13094])
+                    ("pVidCapInfo" variable
+                       (:pointer 1
+                        :type ("AMP_DISP_CAP_FRM_INFO" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [13095 13130]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [13034 13131])
+            ("gfx_plane_init" function
+               (:prototype-flag t
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [13168 13193])
+            ("gfx_plane_config" function
+               (:prototype-flag t
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [13194 13221])
+            ("gfx_is_scale_ratio_ok" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("Disp" variable
+                       (:pointer 1
+                        :type ("DISP_MODULE" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [13251 13269])
+                    ("plane_id" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [13298 13314]))                  
+                :type ("UINT8" type (:type "class") nil nil))
+                nil [13223 13315])
+            ("gfx_set_default_clut" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("pClut" variable
+                       (:pointer 1
+                        :type ("UINT32" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [13343 13357]))                  
+                :type "void")
+                nil [13317 13358])
+            ("gfx_adj_active_win" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("Disp" variable
+                       (:pointer 1
+                        :type ("DISP_MODULE" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [13384 13402])
+                    ("plane_id" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [13427 13443])
+                    ("pVBufInfo" variable
+                       (:pointer 1
+                        :type ("VBUF_INFO" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [13468 13489]))                  
+                :type "void")
+                nil [13360 13490])
+            ("gfx_create_desc" function
+               (:prototype-flag t
+                :pointer 1
+                :arguments 
+                  ( ("pBuf" variable
+                       (:pointer 1
+                        :type ("VOID" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [13527 13538])
+                    ("w" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [13574 13583])
+                    ("h" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [13619 13628])
+                    ("stride" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [13664 13678])
+                    ("isVideo" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [13714 13729]))                  
+                :type ("VDEC_VID_BUF_DESC" type (:type "class") nil nil))
+                nil [13492 13730])
+            ("gfx_open_display" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("Disp" variable
+                       (:pointer 1
+                        :type ("DISP_MODULE" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [13757 13775])
+                    ("plane_id" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [13801 13817])
+                    ("psrc_win" variable
+                       (:pointer 1
+                        :type ("DISP_WIN" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [13843 13862])
+                    ("pdst_win" variable
+                       (:pointer 1
+                        :type ("DISP_WIN" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [13888 13907]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [13732 13908])
+            ("gfx_open_display_isr" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("Disp" variable
+                       (:pointer 1
+                        :type ("DISP_MODULE" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [13939 13957])
+                    ("plane_id" variable (:type ("UNSG32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [13987 14003])
+                    ("psrc_win" variable
+                       (:pointer 1
+                        :type ("DISP_WIN" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [14033 14052])
+                    ("pdst_win" variable
+                       (:pointer 1
+                        :type ("DISP_WIN" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [14082 14101]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [13910 14102])
+            ("gfx_display_frame" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("Disp" variable
+                       (:pointer 1
+                        :type ("DISP_MODULE" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [14130 14148])
+                    ("plane_id" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [14175 14191])
+                    ("Desc" variable
+                       (:pointer 1
+                        :type ("VDEC_VID_BUF_DESC" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [14218 14242])
+                    ("inISR" variable (:type ("INT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [14269 14281]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [14104 14282])
+            ("gfx_set_scale" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("Disp" variable
+                       (:pointer 1
+                        :type ("DISP_MODULE" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [14306 14324])
+                    ("plane_id" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [14347 14363])
+                    ("psrc_win" variable
+                       (:pointer 1
+                        :type ("DISP_WIN" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [14386 14405])
+                    ("pdst_win" variable
+                       (:pointer 1
+                        :type ("DISP_WIN" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [14428 14447]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [14284 14448])
+            ("DISP_LVDS_GetCurrentModelId" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("pModelIdFile" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("CHAR" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [14487 14512])
+                    ("pModelId" variable
+                       (:pointer 1
+                        :type ("UINT32" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [14513 14530]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [14451 14531])
+            ("DISP_LVDS_GetPropId" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("pProperty" variable
+                       (:pointer 1
+                        :type ("CHAR" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [14561 14577])
+                    ("index" variable
+                       (:pointer 1
+                        :type ("DISP_LVDS_CFG_PROP" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [14606 14633]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [14533 14634])
+            ("DISP_LVDS_GetPropId" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("pProperty" variable
+                       (:pointer 1
+                        :type ("CHAR" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [14664 14680])
+                    ("index" variable
+                       (:pointer 1
+                        :type ("DISP_LVDS_CFG_PROP" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [14709 14736]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [14636 14737])
+            ("DISP_LVDS_SetCfg" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("pCmd" variable
+                       (:pointer 1
+                        :type ("CHAR" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [14764 14775]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [14739 14776])
+            ("DISP_LVDS_GetActionId" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("pAction" variable
+                       (:pointer 1
+                        :type ("CHAR" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [14808 14822])
+                    ("index" variable
+                       (:pointer 1
+                        :type ("DISP_LVDS_PANEL_POWER_ACTION_INDEX" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [14853 14896]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [14778 14897])
+            ("DISP_LVDS_DoPanelPower" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("pCmd" variable
+                       (:pointer 1
+                        :type ("CHAR" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [14930 14941]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [14899 14942])
+            ("DISP_LVDS_ParseCfgFile" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("pModelIdFile" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("CHAR" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [14975 15000])
+                    ("pCfgFile" variable
+                       (:pointer 1
+                        :type ("CHAR" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [15032 15047])
+                    ("runCmd" variable (:type ("CMDFUNC" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15079 15094]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [14944 15095])
+            ("DISP_LVDS_WriteI2cCmd" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("uiFrc" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15127 15139])
+                    ("uiCmd" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15140 15152])
+                    ("uiData" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15153 15166]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [15097 15167])
+            ("DISP_LVDS_ReadI2cCmd" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("uiFrc" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15197 15209])
+                    ("uiCmd" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15210 15222])
+                    ("uiData" variable
+                       (:pointer 1
+                        :type ("UINT8" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [15223 15237]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [15168 15238])
+            ("get_fps_from_fpstable" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("fpsID" variable (:type ("AMP_DISP_OUT_REFRESH_RATE" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15268 15300]))                  
+                :type "double")
+                nil [15239 15301]))          
+      :file "disp_prv_type.h"
+      :pointmax 15311
+      :fsize 15310
+      :lastmodtime '(22144 48584 109790 678000)
+      :unmatched-syntax '((TYPEDEF 3085 . 3092))
+      :lexical-table 
+        '(("DISP_FATAL" (spp-arg-list ("...") 1967 . 1972) . ((symbol "AMP_Log" 1988 . 1995) (semantic-list "(MODULE_DISPSRV, AMP_LOG_FATAL, __VA_ARGS__)" 1995 . 2039)))
+          ("DISP_LOW" (spp-arg-list ("...") 2326 . 2331) . ((symbol "AMP_Log" 2349 . 2356) (semantic-list "(MODULE_DISPSRV, AMP_LOG_LOW, __VA_ARGS__)" 2356 . 2398)))
+          ("LED_DEV_NAME" . ((string "\"/dev/galois_led\"" 3147 . 3164)))
+          ("DISP_LVDS_SSC_VCO_CLK" . ((number "2079000" 3937 . 3944)))
+          ("MAX_NUM_GLOBAL_VBUF_DESC" . ((semantic-list "(10)" 2679 . 2683)))
+          ("SM_GPIO_CTRL_MODE" . ((number "0" 3192 . 3193)))
+          ("PANEL_POWER_OFF_CFG_FILE" . ((string "\"panel_power_off.cfg\"" 3390 . 3411)))
+          ("BOOT_ANIMATION_READY_PATH" . ((string "\"/data/boot_animation_ready\"" 3836 . 3864)))
+          ("MAX_NUM_GFX_FRAMES_ONE_PLANE" . ((semantic-list "(16)" 2997 . 3001)))
+          ("DISP_ERROR" (spp-arg-list ("...") 2058 . 2063) . ((symbol "AMP_Log" 2079 . 2086) (semantic-list "(MODULE_DISPSRV, AMP_LOG_ERROR, __VA_ARGS__)" 2086 . 2130)))
+          ("PANEL_POWER_ON_CFG_FILE" . ((string "\"panel_power_on.cfg\"" 3336 . 3356)))
+          ("DISP_INFO" (spp-arg-list ("...") 2416 . 2421) . ((symbol "AMP_Log" 2438 . 2445) (semantic-list "(MODULE_DISPSRV, AMP_LOG_INFO, __VA_ARGS__)" 2445 . 2488)))
+          ("GENERAL_GPIO_CTRL_MODE" . ((number "1" 3225 . 3226)))
+          ("mn_height_hash" (spp-arg-list ("h") 3065 . 3068) . ((semantic-list "(((h)>>4)&0xf)" 3069 . 3083)))
+          ("RECOVERY_PANEL_POWER_ON_CFG_FILE" . ((string "\"/firmware/panel_power_on.cfg\"" 3557 . 3587)))
+          ("DISP_HIGH" (spp-arg-list ("...") 2148 . 2153) . ((symbol "AMP_Log" 2170 . 2177) (semantic-list "(MODULE_DISPSRV, AMP_LOG_HIGH, __VA_ARGS__)" 2177 . 2220)))
+          ("MAX_DOWN_SCALE_RATIO" . ((semantic-list "(10)" 2637 . 2641)))
+          ("FILE_PATH_LEN" . ((number "256" 3250 . 3253)))
+          ("__DISP_PRV_TYPE_H__")
+          ("ARRAYSIZE" (spp-arg-list ("A") 2507 . 2510) . 
+              ((SIZEOF "sizeof" 2511 . 2517) (semantic-list "(A)" 2517 . 2520) (punctuation "/" 2521 . 2522) (SIZEOF "sizeof" 2523 . 2529) (semantic-list "(*(A))" 2529 . 2535)))
+          ("DISP_MAGIC" . ((symbol "FCC_GEN" 2573 . 2580) (semantic-list "('D', 'I', 'S', 'P')" 2580 . 2600)))
+          ("BOOT_ANIMATION_CHECK_TIMEOUT" . ((number "500" 3902 . 3905)))
+          ("DISP_MID" (spp-arg-list ("...") 2237 . 2242) . ((symbol "AMP_Log" 2260 . 2267) (semantic-list "(MODULE_DISPSRV, AMP_LOG_MID, __VA_ARGS__)" 2267 . 2309)))
+          ("DISP_GFX_OUTPUT_MODE" . ((symbol "DISP_FRAME" 2888 . 2898)))
+          ("mn_width_hash" (spp-arg-list ("w") 3024 . 3027) . ((semantic-list "(((w)>>4)&0xf)" 3028 . 3042)))
+          ("LVDS_CFG_FILE" . ((string "\"lvds_setting.cfg\"" 3445 . 3463)))
+          ("RECOVERY_MODEL_INDEX_FILE" . ((string "\"/firmware/model_index.dat\"" 3630 . 3657)))
+          ("DEFAULT_MODEL_INDEX_FILE" . ((string "\"/system/vendor/firmware/model_index.dat\"" 3731 . 3772)))
+          )
+)
+    (semanticdb-table "disp_soc_map.h"
+      :file "disp_soc_map.h"
+      :fsize 4146
+      :lastmodtime '(21989 15069 147783 305000))
+    (semanticdb-table "disp_pq.h"
+      :file "disp_pq.h"
+      :fsize 30085
+      :lastmodtime '(22144 48584 109790 678000))
+    (semanticdb-table "disp_fb.h"
+      :file "disp_fb.h"
+      :fsize 1702
+      :lastmodtime '(22109 26511 456098 592000))
+    (semanticdb-table "disp_debug.h"
+      :file "disp_debug.h"
+      :fsize 3185
+      :lastmodtime '(22144 48584 101790 678000))
+    (semanticdb-table "disp_parse_panel_cfg.cpp"
+      :major-mode 'c++-mode
+      :tags 
+        '( ("string.h" include nil nil [1 20])
+            ("amp_types.h" include nil nil [21 43])
+            ("disp_api.h" include nil nil [44 65])
+            ("isl/amp_logger.h" include nil nil [66 93])
+            ("amp_config_passer.h" include nil nil [94 124])
+            ("disp_soc_map.h" include nil nil [125 150])
+            ("tinyxml.h" include nil nil [151 171])
+            ("LVDS_CFG_PROP_MAX" variable (:constant-flag t) nil [181 198])
+            ("LVDS_PANEL_POWER_ACTION_MAX" variable (:constant-flag t) nil [209 236])
+            ("OUT_RES" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("sOutRes" variable
+                             (:pointer 1
+                              :constant-flag t
+                              :type "char")
+                              (reparse-symbol classsubparts) [261 281])
+                          ("uiOutRes" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [286 302]))                        
+                      :type "struct")
+                      nil nil)
+                :type "typedef")
+                nil [240 313])
+            ("BOOL_VALUE" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("sBool" variable
+                             (:pointer 1
+                              :constant-flag t
+                              :type "char")
+                              (reparse-symbol classsubparts) [336 354])
+                          ("iBoolValue" variable (:type "int") (reparse-symbol classsubparts) [359 374]))                        
+                      :type "struct")
+                      nil nil)
+                :type "typedef")
+                nil [315 388])
+            ("PANEL_MODE" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("sPanelMode" variable
+                             (:pointer 1
+                              :constant-flag t
+                              :type "char")
+                              (reparse-symbol classsubparts) [412 435])
+                          ("iPanelMode" variable (:type "int") (reparse-symbol classsubparts) [440 455]))                        
+                      :type "struct")
+                      nil nil)
+                :type "typedef")
+                nil [391 469])
+            ("PANEL_TYPE" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("sPanelType" variable
+                             (:pointer 1
+                              :constant-flag t
+                              :type "char")
+                              (reparse-symbol classsubparts) [492 515])
+                          ("iPanelType" variable (:type "int") (reparse-symbol classsubparts) [520 535]))                        
+                      :type "struct")
+                      nil nil)
+                :type "typedef")
+                nil [471 549])
+            ("PANEL_PATH_SEL" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("sPanelPathSel" variable
+                             (:pointer 1
+                              :constant-flag t
+                              :type "char")
+                              (reparse-symbol classsubparts) [572 598])
+                          ("iPanelPathSel" variable (:type "int") (reparse-symbol classsubparts) [603 621]))                        
+                      :type "struct")
+                      nil nil)
+                :type "typedef")
+                nil [551 639])
+            ("PANEL_RES" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("sPanelRes" variable
+                             (:pointer 1
+                              :constant-flag t
+                              :type "char")
+                              (reparse-symbol classsubparts) [662 684])
+                          ("iPanelRes" variable (:type "int") (reparse-symbol classsubparts) [689 703]))                        
+                      :type "struct")
+                      nil nil)
+                :type "typedef")
+                nil [641 716])
+            ("PANEL_NLANES" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("sPanelNLanes" variable
+                             (:pointer 1
+                              :constant-flag t
+                              :type "char")
+                              (reparse-symbol classsubparts) [739 764])
+                          ("iPanelNLanes" variable (:type "int") (reparse-symbol classsubparts) [769 786]))                        
+                      :type "struct")
+                      nil nil)
+                :type "typedef")
+                nil [718 802])
+            ("PANEL_VSPLIT" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("sPanelVSplit" variable
+                             (:pointer 1
+                              :constant-flag t
+                              :type "char")
+                              (reparse-symbol classsubparts) [825 850])
+                          ("iPanelVSplit" variable (:type "int") (reparse-symbol classsubparts) [855 872]))                        
+                      :type "struct")
+                      nil nil)
+                :type "typedef")
+                nil [804 888])
+            ("INVERSE_MODE" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("sInverseMode" variable
+                             (:pointer 1
+                              :constant-flag t
+                              :type "char")
+                              (reparse-symbol classsubparts) [911 936])
+                          ("iInverseMode" variable (:type "int") (reparse-symbol classsubparts) [941 958]))                        
+                      :type "struct")
+                      nil nil)
+                :type "typedef")
+                nil [890 974])
+            ("BacklightControlType" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("sBacklightControlType" variable
+                             (:pointer 1
+                              :constant-flag t
+                              :type "char")
+                              (reparse-symbol classsubparts) [996 1030])
+                          ("iBacklightControlType" variable (:type "int") (reparse-symbol classsubparts) [1035 1061]))                        
+                      :type "struct")
+                      nil nil)
+                :type "typedef")
+                nil [975 1085])
+            ("LEDType" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("sLEDType" variable
+                             (:pointer 1
+                              :constant-flag t
+                              :type "char")
+                              (reparse-symbol classsubparts) [1108 1129])
+                          ("iLEDType" variable (:type "int") (reparse-symbol classsubparts) [1134 1147]))                        
+                      :type "struct")
+                      nil nil)
+                :type "typedef")
+                nil [1087 1158])
+            ("DEFAULT_CHILD_CFG_PATH" variable (:constant-flag t) nil [1169 1191])
+            ("MODEL_CFG_FILE" variable (:constant-flag t) nil [1224 1238])
+            ("DEFAULT_CHILD_CFG_FILE" variable (:constant-flag t) nil [1283 1305])
+            ("CHILD_CFG_FILE_PREFIX" variable (:constant-flag t) nil [1338 1359])
+            ("gPanelIndex" variable
+               (:typemodifiers ("static")
+                :default-value "0"
+                :type ("UINT32" type (:type "class") nil nil))
+                nil [1381 1411])
+            ("bool_value_table" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :default-value "{
+    {\"False\", 0},
+    {\"True\",  1},
+}"
+                :type ("BOOL_VALUE" type (:type "class") nil nil))
+                nil [1413 1492])
+            ("lvds_panel_mode_table" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :default-value "{
+    {\"VESA_8Bits\",   0},
+    {\"VESA_10Bits\",  1},
+    {\"JIEDA_8Bits\",  2},
+    {\"JIEDA_10Bits\", 3},
+#if (BERLIN_CHIP_VERSION >= BERLIN_BG2_DTV)
+    {\"VESA_4K_8Bits\",   4},
+    {\"VESA_4K_10Bits\",  5},
+    {\"JIEDA_4K_8Bits\",  6},
+    {\"JIEDA_4K_10Bits\", 7},
+#endif
+}"
+                :type ("PANEL_MODE" type (:type "class") nil nil))
+                nil [1495 1806])
+            ("video_inverse_mode_table" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :default-value "{
+    {\"Normal\",     0},
+    {\"Inverse_H\",  1},
+    {\"Inverse_V\",  2},
+    {\"Inverse_HV\", 3},
+}"
+                :type ("INVERSE_MODE" type (:type "class") nil nil))
+                nil [3136 3281])
+            ("backlight_type_table" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :default-value "{
+    {\"PWM\",          0},
+    {\"SPI_AMS3820\",  1},
+    {\"SPI_LP1087\",   2},
+    {\"SPI_O2\",       3},
+}"
+                :type ("BacklightControlType" type (:type "class") nil nil))
+                nil [3283 3440])
+            ("led_type_table" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :default-value "{
+    {\"SEL1x2BLK\",   0},
+    {\"SEL1x4BLK\",   1},
+    {\"SEL5x1BLK\",   2},
+    {\"SEL1x5BLK\",   3},
+    {\"SEL6x1BLK\",   4},
+    {\"SEL2x5BLK\",   5},
+    {\"SEL6x2BLK\",   6},
+    {\"SEL2x6BLK\",   7},
+    {\"SEL8x2BLK\",   8},
+    {\"SEL2x8BLK\",   9},
+    {\"SEL7x4BLK\",   10},
+    {\"SEL8x4BLK\",   11},
+    {\"SEL10x4BLK\",  12},
+    {\"SEL8x8BLK\",   13},
+}"
+                :type ("LEDType" type (:type "class") nil nil))
+                nil [3442 3820])
+            ("tranlateBinStringToUint8" function
+               (:arguments 
+                  ( ("binString" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [3853 3876]))                  
+                :type ("UINT8" type (:type "class") nil nil))
+                nil [3822 4174])
+            ("tranlateStringToIntegerArray" function
+               (:arguments 
+                  ( ("" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4357 4377])
+                    ("sRamap" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [4400 4420])
+                    ("maxTransNum" variable (:type "int") (reparse-symbol arg-sub-list) [4420 4436]))                  
+                :type "void")
+                nil [4323 5272])
+            ("perserPanelconfig" function
+               (:arguments 
+                  ( ("PConfigfile" variable
+                       (:pointer 1
+                        :type ("TiXmlDocument" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5297 5324])
+                    ("pPanelCfg" variable
+                       (:pointer 1
+                        :type ("AMP_DISP_PANEL_CONFIG" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5324 5357]))                  
+                :type "void")
+                nil [5274 26100])
+            ("getPaneIndex" function
+               (:arguments 
+                  ( ("modelIndex" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [26122 26140]))                  
+                :type ("UINT32" type (:type "class") nil nil))
+                nil [26102 26883])
+            ("findPanelCfgFile" function
+               (:arguments 
+                  ( ("" variable (:type "char") (reparse-symbol arg-sub-list) [26906 26928]))                  
+                :type "void")
+                nil [26884 27759])
+            ("DISP_LoadPanelCfg" function
+               (:arguments 
+                  ( ("pPanelCfg" variable
+                       (:pointer 1
+                        :type ("AMP_DISP_PANEL_CONFIG" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [27784 27817]))                  
+                :type "void")
+                nil [27761 28115])
+            ("DISP_LVDS_ParseSetting" function
+               (:arguments 
+                  ( ("runCmd" variable (:type ("CMDFUNC" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [28143 28158]))                  
+                :type "int")
+                nil [28116 29561])
+            ("DISP_LVDS_ParsePowerOn" function
+               (:arguments 
+                  ( ("runCmd" variable (:type ("CMDFUNC" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [29589 29604]))                  
+                :type "int")
+                nil [29562 31004])
+            ("DISP_LVDS_ParsePowerOff" function
+               (:arguments 
+                  ( ("runCmd" variable (:type ("CMDFUNC" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [31033 31048]))                  
+                :type "int")
+                nil [31005 32466]))          
+      :file "disp_parse_panel_cfg.cpp"
+      :pointmax 32467
+      :fsize 32466
+      :lastmodtime '(22164 37248 564097 446000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("DEFAULT_CHILD_CFG_FILE" . ((string "\"panel_config0.xml\"" 1310 . 1329)))
+          ("MODEL_CFG_FILE" . ((string "\"/etc/model_config.xml\"" 1251 . 1274)))
+          ("LVDS_CFG_PROP_MAX" . ((number "4" 199 . 200)))
+          ("LVDS_PANEL_POWER_ACTION_MAX" . ((number "5" 237 . 238)))
+          ("DEFAULT_CHILD_CFG_PATH" . ((string "\"/etc/panel_config\"" 1196 . 1215)))
+          ("CHILD_CFG_FILE_PREFIX" . ((string "\"panel_config\"" 1365 . 1379)))
+          )
+)
+    (semanticdb-table "disp_prv.c"
+      :major-mode 'c-mode
+      :tags nil
+      :file "disp_prv.c"
+      :pointmax 146277
+      :fsize 146276
+      :lastmodtime '(22144 48584 109790 678000)
+      :unmatched-syntax nil)
+    (semanticdb-table "disp_main.cpp"
+      :major-mode 'c++-mode
+      :tags 
+        '( ("string.h" include nil nil [1537 1556])
+            ("amp_types.h" include nil nil [1557 1579])
+            ("disp_api.h" include nil nil [1580 1601])
+            ("isl/amp_logger.h" include nil nil [1602 1629])
+            ("amp_config_passer.h" include nil nil [1630 1660])
+            ("disp_soc_map.h" include nil nil [1661 1686])
+            ("tinyxml.h" include nil nil [1687 1707])
+            ("OUT_RES" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("sOutRes" variable
+                             (:pointer 1
+                              :constant-flag t
+                              :type "char")
+                              (reparse-symbol classsubparts) [1730 1750])
+                          ("uiOutRes" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1755 1771]))                        
+                      :type "struct")
+                      nil nil)
+                :type "typedef")
+                nil [1709 1782])
+            ("HDMI_COLOR_FMT" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("sHdmiColFmt" variable
+                             (:pointer 1
+                              :constant-flag t
+                              :type "char")
+                              (reparse-symbol classsubparts) [1805 1829])
+                          ("iHdmiColFmt" variable (:type "int") (reparse-symbol classsubparts) [1834 1850]))                        
+                      :type "struct")
+                      nil nil)
+                :type "typedef")
+                nil [1784 1868])
+            ("BOOL_VALUE" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("sBool" variable
+                             (:pointer 1
+                              :constant-flag t
+                              :type "char")
+                              (reparse-symbol classsubparts) [1891 1909])
+                          ("iBoolValue" variable (:type "int") (reparse-symbol classsubparts) [1914 1929]))                        
+                      :type "struct")
+                      nil nil)
+                :type "typedef")
+                nil [1870 1943])
+            ("BIT_DEPTH" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("sBitDepth" variable
+                             (:pointer 1
+                              :constant-flag t
+                              :type "char")
+                              (reparse-symbol classsubparts) [1965 1987])
+                          ("iBitDepth" variable (:type "int") (reparse-symbol classsubparts) [1992 2006]))                        
+                      :type "struct")
+                      nil nil)
+                :type "typedef")
+                nil [1944 2019])
+            ("PANEL_3D_MODE" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("sPanel3dMode" variable
+                             (:pointer 1
+                              :constant-flag t
+                              :type "char")
+                              (reparse-symbol classsubparts) [2042 2067])
+                          ("iPanel3dMode" variable (:type "int") (reparse-symbol classsubparts) [2072 2089]))                        
+                      :type "struct")
+                      nil nil)
+                :type "typedef")
+                nil [2021 2106])
+            ("GPIO_TYPE" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("sGpioType" variable
+                             (:pointer 1
+                              :constant-flag t
+                              :type "char")
+                              (reparse-symbol classsubparts) [2130 2152])
+                          ("iGpioType" variable (:type "int") (reparse-symbol classsubparts) [2157 2171]))                        
+                      :type "struct")
+                      nil nil)
+                :type "typedef")
+                nil [2109 2184])
+            ("out_res_table" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :default-value "{
+    {\"NTSC_M\",           AMP_DISP_OUT_RES_NTSC_M},
+    {\"NTSC_J\",           AMP_DISP_OUT_RES_NTSC_J},
+    {\"PAL_M\",            AMP_DISP_OUT_RES_PAL_M},
+    {\"PAL_BGH\",          AMP_DISP_OUT_RES_PAL_BGH},
+    {\"525I60\",           AMP_DISP_OUT_RES_525I60},
+    {\"525I5994\",         AMP_DISP_OUT_RES_525I5994},
+    {\"625I50\",           AMP_DISP_OUT_RES_625I50},
+    {\"525P60\",           AMP_DISP_OUT_RES_525P60},
+    {\"525P5994\",         AMP_DISP_OUT_RES_525P5994},
+    {\"625P50\",           AMP_DISP_OUT_RES_625P50},
+    {\"720P30\",           AMP_DISP_OUT_RES_720P30},
+    {\"720P2997\",         AMP_DISP_OUT_RES_720P2997},
+    {\"720P25\",           AMP_DISP_OUT_RES_720P25},
+    {\"720P60\",           AMP_DISP_OUT_RES_720P60},
+    {\"720P5994\",         AMP_DISP_OUT_RES_720P5994},
+    {\"720P50\",           AMP_DISP_OUT_RES_720P50},
+    {\"1080I60\",          AMP_DISP_OUT_RES_1080I60},
+    {\"1080I5994\",        AMP_DISP_OUT_RES_1080I5994},
+    {\"1080I50\",          AMP_DISP_OUT_RES_1080I50},
+    {\"1080P30\",          AMP_DISP_OUT_RES_1080P30},
+    {\"1080P2997\",        AMP_DISP_OUT_RES_1080P2997},
+    {\"1080P25\",          AMP_DISP_OUT_RES_1080P25},
+    {\"1080P24\",          AMP_DISP_OUT_RES_1080P24},
+    {\"1080P2398\",        AMP_DISP_OUT_RES_1080P2398},
+    {\"1080P60\",          AMP_DISP_OUT_RES_1080P60},
+    {\"1080P5994\",        AMP_DISP_OUT_RES_1080P5994},
+    {\"1080P50\",          AMP_DISP_OUT_RES_1080P50},
+    {\"LVDS_1080P48\",     AMP_DISP_OUT_RES_LVDS_1080P48},
+    {\"LVDS_1080P50\",     AMP_DISP_OUT_RES_LVDS_1080P50},
+    {\"LVDS_1080P60\",     AMP_DISP_OUT_RES_LVDS_1080P60},
+    {\"LVDS_2160P12\",     AMP_DISP_OUT_RES_LVDS_2160P12},
+    {\"480P60\",           AMP_DISP_OUT_RES_480P60},
+    {\"480P5994\",         AMP_DISP_OUT_RES_480P5994},
+    {\"3D_FIRST\",         AMP_DISP_OUT_RES_3D_FIRST},
+    {\"3D_720P50\",        AMP_DISP_OUT_RES_3D_720P50},
+    {\"3D_720P60\",        AMP_DISP_OUT_RES_3D_720P60},
+    {\"3D_720P5994\",      AMP_DISP_OUT_RES_3D_720P5994},
+    {\"3D_1080P24\",       AMP_DISP_OUT_RES_3D_1080P24},
+    {\"3D_1080P2398\",     AMP_DISP_OUT_RES_3D_1080P2398},
+    {\"3D_1080P30\",       AMP_DISP_OUT_RES_3D_1080P30},
+    {\"3D_1080P2997\",     AMP_DISP_OUT_RES_3D_1080P2997},
+    {\"3D_1080P25\",       AMP_DISP_OUT_RES_3D_1080P25},
+    {\"3D_1080I60\",       AMP_DISP_OUT_RES_3D_1080I60},
+    {\"3D_1080I5994\",     AMP_DISP_OUT_RES_3D_1080I5994},
+    {\"3D_1080I50\",       AMP_DISP_OUT_RES_3D_1080I50},
+    {\"3D_1920X540P60\",   AMP_DISP_OUT_RES_3D_1920X540P60},
+    {\"3D_1920X540P30\",   AMP_DISP_OUT_RES_3D_1920X540P30},
+    {\"3D_1920X540P24\",   AMP_DISP_OUT_RES_3D_1920X540P24},
+    {\"LVDS_3D_720P100\",  AMP_DISP_OUT_RES_LVDS_3D_720P100},
+    {\"LVDS_3D_720P120\",  AMP_DISP_OUT_RES_LVDS_3D_720P120},
+    {\"LVDS_3D_1080P48\",  AMP_DISP_OUT_RES_LVDS_3D_1080P48},
+    {\"LVDS_3D_1080P50\",  AMP_DISP_OUT_RES_LVDS_3D_1080P50},
+    {\"LVDS_3D_1080P60\",  AMP_DISP_OUT_RES_LVDS_3D_1080P60},
+    {\"LVDS_3D_960X1080P100\",   AMP_DISP_OUT_RES_LVDS_3D_960X1080P100},
+    {\"LVDS_3D_960X1080P120\",   AMP_DISP_OUT_RES_LVDS_3D_960X1080P120},
+    {\"LVDS_3D_1920X540P100\",   AMP_DISP_OUT_RES_LVDS_3D_1920X540P100},
+    {\"LVDS_3D_1920X540P120\",   AMP_DISP_OUT_RES_LVDS_3D_1920X540P120},
+    {\"3D_MAX\",           AMP_DISP_OUT_RES_3D_MAX},
+    {\"RESET\",            AMP_DISP_OUT_RES_RESET},
+}"
+                :type ("OUT_RES" type (:type "class") nil nil))
+                nil [2185 5483])
+            ("hdmi_color_fmt_table" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :default-value "{
+    {\"RGB888\",     AMP_DISP_OUT_CLR_FMT_RGB888},
+    {\"YCBCR444\",   AMP_DISP_OUT_CLR_FMT_YCBCR444},
+    {\"YCBCR422\",   AMP_DISP_OUT_CLR_FMT_YCBCR422},
+}"
+                :type ("HDMI_COLOR_FMT" type (:type "class") nil nil))
+                nil [5484 5686])
+            ("bool_value_table" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :default-value "{
+    {\"False\", 0},
+    {\"True\",  1},
+}"
+                :type ("BOOL_VALUE" type (:type "class") nil nil))
+                nil [5687 5766])
+            ("bit_depth_table" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :default-value "{
+    {\"8\",     AMP_DISP_OUT_BIT_DPE_8},
+    {\"10\",    AMP_DISP_OUT_BIT_DPE_10},
+    {\"12\",    AMP_DISP_OUT_BIT_DPE_12},
+}"
+                :type ("BIT_DEPTH" type (:type "class") nil nil))
+                nil [5767 5927])
+            ("panel_3d_mode_table" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :default-value "{
+    {\"NONE\", 0},
+    {\"HDMITX\",   1},
+    {\"FRC\",  2},
+    {\"PANEL\",  3},
+}"
+                :type ("PANEL_3D_MODE" type (:type "class") nil nil))
+                nil [5929 6052])
+            ("gpio_type_table" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :default-value "{
+    {\"SM\",   0},
+    {\"SOC\",  1},
+}"
+                :type ("GPIO_TYPE" type (:type "class") nil nil))
+                nil [6054 6129])
+            ("iPwmChannel" variable
+               (:default-value "(UINT8)uiAttrValue"
+                :type "int")
+                nil [12996 13029])
+            ("iPwmChannel" variable
+               (:default-value "0"
+                :type "int")
+                nil [13092 13108])
+            ("AMPLOGD" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("Config" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [13168 13175])
+                    ("" variable (:type ("iPanelCfg" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [13175 13185])
+                    ("" variable (:type ("iPwmChannel" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [13185 13197]))                  
+                :type "int")
+                nil [13129 13198])
+            ("iPwmPolarity" variable
+               (:default-value "(UINT8)uiAttrValue"
+                :type "int")
+                nil [13405 13438])
+            ("iPwmPolarity" variable
+               (:default-value "0"
+                :type "int")
+                nil [13501 13518])
+            ("AMPLOGD" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("Config" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [13579 13586])
+                    ("" variable (:type ("iPanelCfg" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [13586 13596])
+                    ("" variable (:type ("iPwmPolarity" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [13596 13609]))                  
+                :type "int")
+                nil [13539 13610])
+            ("iBacklightPowerGpioIndex" variable
+               (:default-value "(UINT8)uiAttrValue"
+                :type "int")
+                nil [13864 13910])
+            ("iBacklightPowerGpioIndex" variable
+               (:default-value "0"
+                :type "int")
+                nil [13973 14002])
+            ("AMPLOGD" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("Config" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [14089 14096])
+                    ("" variable (:type ("iPanelCfg" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [14096 14106])
+                    ("" variable (:type ("iBacklightPowerGpioIndex" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [14106 14131]))                  
+                :type "int")
+                nil [14023 14132])
+            ("iBacklightPowerGpioIndex" variable
+               (:default-value "0"
+                :type "int")
+                nil [14919 14948])
+            ("AMPLOGD" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("pGpioType" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15016 15026]))                  
+                :type "int")
+                nil [14969 15027])
+            ("iPanelPowerGpioIndex" variable
+               (:default-value "(UINT8)uiAttrValue"
+                :type "int")
+                nil [15279 15321])
+            ("iPanelPowerGpioIndex" variable
+               (:default-value "0"
+                :type "int")
+                nil [15384 15409])
+            ("AMPLOGD" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("Config" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15498 15505])
+                    ("" variable (:type ("iPanelCfg" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15505 15515])
+                    ("" variable (:type ("iPanelPowerGpioIndex" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15515 15536]))                  
+                :type "int")
+                nil [15430 15537])
+            ("iPanelPowerGpioType" variable
+               (:default-value "0"
+                :type "int")
+                nil [16315 16339])
+            ("AMPLOGD" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("pGpioType" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [16409 16419]))                  
+                :type "int")
+                nil [16360 16420])
+            ("iPanel3DEnGpioIndex" variable
+               (:default-value "(UINT8)uiAttrValue"
+                :type "int")
+                nil [16671 16712])
+            ("iPanel3DEnGpioIndex" variable
+               (:default-value "0"
+                :type "int")
+                nil [16775 16799])
+            ("AMPLOGD" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("Config" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [16888 16895])
+                    ("" variable (:type ("iPanelCfg" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [16895 16905])
+                    ("" variable (:type ("iPanel3DEnGpioIndex" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [16905 16925]))                  
+                :type "int")
+                nil [16820 16926])
+            ("iPanelPowerGpioType" variable
+               (:default-value "0"
+                :type "int")
+                nil [17701 17725])
+            ("AMPLOGD" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("pGpioType" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [17795 17805]))                  
+                :type "int")
+                nil [17746 17806])
+            ("iPanel3dMode" variable
+               (:default-value "0"
+                :type "int")
+                nil [18601 18618])
+            ("AMPLOGD" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("p3dMode" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [18698 18706]))                  
+                :type "int")
+                nil [18652 18707])
+            ("i" variable
+               (:default-value "0"
+                :type "int")
+                nil [19571 19575])
+            ("uiOutRes" variable (:type "int") nil [19744 19753])
+            ("OutResSec" variable
+               (:default-value "AMP_DISP_OUT_RES_NTSC_M"
+                :type "int")
+                nil [19878 19914])
+            ("i" variable
+               (:default-value "0"
+                :type "int")
+                nil [20179 20183])
+            ("iBoolValue" variable (:type "int") nil [20365 20376])
+            ("iVdacEnable" variable
+               (:default-value "0"
+                :type "int")
+                nil [20507 20523])
+            ("i" variable
+               (:default-value "0"
+                :type "int")
+                nil [20799 20803])
+            ("iBoolValue" variable (:type "int") nil [20977 20988])
+            ("uiEnableAll" variable
+               (:default-value "0"
+                :type "int")
+                nil [21112 21128])
+            ("uiCnt" variable
+               (:default-value "0"
+                :type "int")
+                nil [21182 21192])
+            ("AMP_DISP_BUILD_IN_FRAME_TYPE_INTERNAL_MAX" variable (:type "int") nil [21201 21243])
+            ("TRUE" variable (:type "int") nil [21310 21315])
+            ("uiCnt" variable
+               (:default-value "0"
+                :type "int")
+                nil [21363 21373])
+            ("AMP_DISP_BUILD_IN_FRAME_TYPE_INTERNAL_MAX" variable (:type "int") nil [21382 21424])
+            ("FALSE" variable (:type "int") nil [21491 21497])
+            ("Rval" variable (:type "int") nil [21951 21956])
+            ("Disp_Main" function
+               (:arguments 
+                  ( ("pHwConfigFile" variable
+                       (:pointer 1
+                        :type ("TiXmlDocument" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6151 6180])
+                    ("pSwConfigFile" variable
+                       (:pointer 1
+                        :type ("TiXmlDocument" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6181 6210]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [6133 21958]))          
+      :file "disp_main.cpp"
+      :pointmax 21959
+      :fsize 21958
+      :lastmodtime '(22144 48584 105790 678000)
+      :unmatched-syntax nil)
+    (semanticdb-table "disp_ldc.h"
+      :file "disp_ldc.h"
+      :fsize 8126
+      :lastmodtime '(22144 48584 105790 678000)))
+  :file "!home!qichen!bg4dtv_20151231_rc3_a0!vendor!marvell-sdk!ampsdk!amp!src!service!display!src!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

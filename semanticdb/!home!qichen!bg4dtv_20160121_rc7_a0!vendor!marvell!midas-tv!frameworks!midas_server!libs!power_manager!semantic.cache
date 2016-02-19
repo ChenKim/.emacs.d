@@ -1,0 +1,498 @@
+;; Object power_manager/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "power_manager/"
+  :tables
+  (list
+    (semanticdb-table "PowerManager.cpp"
+      :major-mode 'c++-mode
+      :tags 
+        '( ("LOG_NDEBUG" variable (:constant-flag t) nil [808 818])
+            ("LOG_TAG" variable (:constant-flag t) nil [829 836])
+            ("utils/Log.h" include (:system-flag t) nil [852 874])
+            ("binder/IInterface.h" include (:system-flag t) nil [876 906])
+            ("binder/IBinder.h" include (:system-flag t) nil [907 934])
+            ("binder/Parcel.h" include (:system-flag t) nil [935 961])
+            ("cutils/properties.h" include (:system-flag t) nil [962 992])
+            ("utils/RefBase.h" include (:system-flag t) nil [993 1019])
+            ("utils/String8.h" include (:system-flag t) nil [1020 1046])
+            ("binder/IServiceManager.h" include (:system-flag t) nil [1047 1082])
+            ("utils/Looper.h" include (:system-flag t) nil [1083 1108])
+            ("IStateManager.h" include (:system-flag t) nil [1110 1136])
+            ("IUpdateService.h" include (:system-flag t) nil [1137 1164])
+            ("MidasSettingsConstants.h" include (:system-flag t) nil [1165 1200])
+            ("TvInputManager.h" include (:system-flag t) nil [1201 1228])
+            ("PowerManager.h" include nil nil [1229 1254])
+            ("TvInputManager.h" include nil nil [1255 1282])
+            ("CastControlClient.h" include nil nil [1283 1313])
+            ("time.h" include (:system-flag t) nil [1314 1331])
+            ("hardware/hardware.h" include (:system-flag t) nil [1332 1362])
+            ("hardware/midas_power.h" include (:system-flag t) nil [1363 1396])
+            ("hardware/led.h" include (:system-flag t) nil [1397 1422])
+            ("light_panel.h" include nil nil [1423 1447])
+            ("marvell" type
+               (:members 
+                  ( ("android" using (:type ("android" type
+                         (:prototype t
+                          :type "namespace")
+                          nil nil)) (reparse-symbol namespacesubparts) [1469 1493])
+                    ("standby_mode_string" variable
+                       (:pointer 1
+                        :dereference 1
+                        :typemodifiers ("static")
+                        :constant-flag t
+                        :default-value "{
+    \"standby_passive\",
+    \"standby_active\",
+}"
+                        :type "char")
+                        (reparse-symbol namespacesubparts) [1495 1587])
+                    ("PowerLooperThread" type
+                       (:superclasses 
+                          ( ("Thread" type
+                               (:protection "public"
+                                :type "class")
+                                nil nil))                          
+                        :members 
+                          ( ("public" label nil (reparse-symbol classsubparts) [1726 1733])
+                            ("PowerLooperThread" function
+                               (:constructor-flag t
+                                :arguments 
+                                  ( ("looper" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("sp" type
+                                             (:template-specifier 
+                                                ( ("Looper" type nil nil nil))                                                
+                                              :type "class")
+                                              nil nil))
+                                        (reparse-symbol arg-sub-list) [1765 1790]))                                  
+                                :type ("PowerLooperThread" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [1747 1838])
+                            ("private" label nil (reparse-symbol classsubparts) [1841 1849])
+                            ("mLooper" variable (:type ("sp" type
+                                 (:template-specifier 
+                                    ( ("Looper" type nil nil nil))                                    
+                                  :type "class")
+                                  nil nil)) (reparse-symbol classsubparts) [1854 1873])
+                            ("readyToRun" function
+                               (:typemodifiers ("virtual")
+                                :type ("status_t" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [1879 1983])
+                            ("threadLoop" function
+                               (:typemodifiers ("virtual")
+                                :type "bool")
+                                (reparse-symbol classsubparts) [1989 2075]))                          
+                        :type "class")
+                        (reparse-symbol namespacesubparts) [1682 2078])
+                    ("PowerMessageHandler" type
+                       (:superclasses 
+                          ( ("MessageHandler" type
+                               (:protection "public"
+                                :type "class")
+                                nil nil))                          
+                        :members 
+                          ( ("public" label nil (reparse-symbol classsubparts) [2226 2233])
+                            ("PowerMessageHandler" function
+                               (:constructor-flag t
+                                :arguments 
+                                  ( ("mgr" variable
+                                       (:pointer 1
+                                        :type ("PowerManager" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [2258 2276]))                                  
+                                :type ("PowerMessageHandler" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [2238 2300])
+                            ("PowerMessageHandler" function
+                               (:destructor-flag t
+                                :type "void")
+                                (reparse-symbol classsubparts) [2305 2330])
+                            ("handleMessage" function
+                               (:arguments 
+                                  ( ("message" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("Message" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [2354 2377]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [2335 2524])
+                            ("private" label nil (reparse-symbol classsubparts) [2527 2535])
+                            ("mPowerManager" variable (:type ("wp" type
+                                 (:template-specifier 
+                                    ( ("PowerManager" type nil nil nil))                                    
+                                  :type "class")
+                                  nil nil)) (reparse-symbol classsubparts) [2540 2571]))                          
+                        :type "class")
+                        (reparse-symbol namespacesubparts) [2172 2574])
+                    ("PowerTvInputObserver" type
+                       (:superclasses 
+                          ( ("BnTvInputObserver" type
+                               (:protection "public"
+                                :type "class")
+                                nil nil))                          
+                        :members 
+                          ( ("public" label nil (reparse-symbol classsubparts) [2724 2731])
+                            ("PowerTvInputObserver" function
+                               (:constructor-flag t
+                                :arguments 
+                                  ( ("mgr" variable
+                                       (:pointer 1
+                                        :type ("PowerManager" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [2757 2775]))                                  
+                                :type ("PowerTvInputObserver" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [2736 2799])
+                            ("PowerTvInputObserver" function
+                               (:destructor-flag t
+                                :typemodifiers ("virtual")
+                                :type "void")
+                                (reparse-symbol classsubparts) [2804 2838])
+                            ("onNotify" function
+                               (:typemodifiers ("virtual")
+                                :arguments 
+                                  ( ("message" variable
+                                       (:constant-flag t
+                                        :type ("int32_t" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [2865 2887])
+                                    ("ext1" variable
+                                       (:constant-flag t
+                                        :type ("int32_t" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [2888 2907])
+                                    ("ext2" variable
+                                       (:constant-flag t
+                                        :type ("int32_t" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [2933 2952])
+                                    ("obj" variable
+                                       (:pointer 1
+                                        :constant-flag t
+                                        :type ("Parcel" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [2953 2971]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [2843 3132])
+                            ("private" label nil (reparse-symbol classsubparts) [3133 3141])
+                            ("mPowerManager" variable (:type ("wp" type
+                                 (:template-specifier 
+                                    ( ("PowerManager" type nil nil nil))                                    
+                                  :type "class")
+                                  nil nil)) (reparse-symbol classsubparts) [3146 3177]))                          
+                        :type "class")
+                        (reparse-symbol namespacesubparts) [2668 3180])
+                    ("PowerManager" function
+                       (:constructor-flag t
+                        :parent "PowerManager"
+                        :type ("PowerManager" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [3281 9454])
+                    ("PowerManager" function
+                       (:destructor-flag t
+                        :parent "PowerManager"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [9456 9749])
+                    ("initialize" function
+                       (:parent "PowerManager"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [9751 9918])
+                    ("keystandby" function
+                       (:parent "PowerManager"
+                        :arguments 
+                          ( ("standby_opt" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9951 9971]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [9921 11020])
+                    ("sleep" function
+                       (:parent "PowerManager"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [11022 12470])
+                    ("isInSleep" function
+                       (:parent "PowerManager"
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [12472 12553])
+                    ("wakeup" function
+                       (:parent "PowerManager"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [12555 13332])
+                    ("getCurrentSystemStatus" function
+                       (:parent "PowerManager"
+                        :type ("int32_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [13334 13414])
+                    ("BG2FGRun" function
+                       (:parent "PowerManager"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [13415 13916])
+                    ("getTimeIntervalForBGUpdate" function
+                       (:parent "PowerManager"
+                        :type ("int32_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [13917 15532])
+                    ("shutdown" function
+                       (:parent "PowerManager"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [15534 16021])
+                    ("setpoh" function
+                       (:parent "PowerManager"
+                        :arguments 
+                          ( ("keycode" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [16049 16065])
+                            ("on" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [16066 16077]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [16023 16160])
+                    ("getpoh" function
+                       (:parent "PowerManager"
+                        :type ("int32_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [16162 16269])
+                    ("ledflash" function
+                       (:parent "PowerManager"
+                        :arguments 
+                          ( ("hz" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [16299 16310]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [16271 16382])
+                    ("ledfade" function
+                       (:parent "PowerManager"
+                        :arguments 
+                          ( ("percent" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [16411 16427]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [16384 16503])
+                    ("ledon" function
+                       (:parent "PowerManager"
+                        :arguments 
+                          ( ("on" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [16530 16541]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [16505 16610])
+                    ("setusbpower" function
+                       (:parent "PowerManager"
+                        :arguments 
+                          ( ("on" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [16643 16654]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [16612 16733])
+                    ("getusbocstatus" function
+                       (:parent "PowerManager"
+                        :type ("int32_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [16735 16858])
+                    ("reboot" function
+                       (:parent "PowerManager"
+                        :arguments 
+                          ( ("reason" variable
+                               (:constant-flag t
+                                :type ("int32_t" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [16886 16907])
+                            ("path" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [16908 16925]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [16860 17317])
+                    ("setUserInactivityTimer" function
+                       (:parent "PowerManager"
+                        :arguments 
+                          ( ("sec" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [17361 17374]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [17319 17858])
+                    ("getUserInactivityTimer" function
+                       (:parent "PowerManager"
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [17860 17970])
+                    ("userActivity" function
+                       (:parent "PowerManager"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [17972 18171])
+                    ("isUserInactivity" function
+                       (:parent "PowerManager"
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [18173 18388])
+                    ("setSleepTimer" function
+                       (:parent "PowerManager"
+                        :arguments 
+                          ( ("min" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [18423 18435]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [18390 18664])
+                    ("setDcOnOffAutoAgingTestSleepTimer" function
+                       (:parent "PowerManager"
+                        :arguments 
+                          ( ("min" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [18719 18731]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [18666 19041])
+                    ("getSleepTimer" function
+                       (:parent "PowerManager"
+                        :type ("int32_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [19042 19133])
+                    ("setSleepTimerInterval" function
+                       (:parent "PowerManager"
+                        :arguments 
+                          ( ("seconds" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [19176 19193]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [19135 19670])
+                    ("getSleepTimerInterval" function
+                       (:parent "PowerManager"
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [19672 19780])
+                    ("setAutoPowerOffTimer" function
+                       (:parent "PowerManager"
+                        :arguments 
+                          ( ("min" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [19822 19834]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [19782 20319])
+                    ("getAutoPowerOffTimer" function
+                       (:parent "PowerManager"
+                        :type ("int32_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [20321 20426])
+                    ("disableAutoPowerOff" function
+                       (:parent "PowerManager"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [20428 20599])
+                    ("enableAutoPowerOff" function
+                       (:parent "PowerManager"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [20601 20770])
+                    ("setStandbyPolicy" function
+                       (:parent "PowerManager"
+                        :arguments 
+                          ( ("policy_mask" variable
+                               (:constant-flag t
+                                :type ("uint32_t" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [20808 20835]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [20772 21422])
+                    ("getStandbyPolicy" function
+                       (:parent "PowerManager"
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [21424 21519])
+                    ("setStandbyMode" function
+                       (:parent "PowerManager"
+                        :arguments 
+                          ( ("standbyMode" variable
+                               (:constant-flag t
+                                :type ("uint32_t" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [21555 21582]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [21521 21963])
+                    ("getStandbyMode" function
+                       (:parent "PowerManager"
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [21965 22128])
+                    ("storeSystemStatus" function
+                       (:parent "PowerManager"
+                        :arguments 
+                          ( ("systemState" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [22167 22188]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [22130 23876])
+                    ("getSystemStatus" function
+                       (:parent "PowerManager"
+                        :arguments 
+                          ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [23916 23921]))                          
+                        :type ("int32_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [23878 24683])
+                    ("postSleepOrShutdown" function
+                       (:parent "PowerManager"
+                        :arguments 
+                          ( ("reason" variable (:type ("MIDAS_SLEEP_REASON" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [24724 24750]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [24685 25132])
+                    ("registerPowerObserver" function
+                       (:parent "PowerManager"
+                        :arguments 
+                          ( ("observer" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("sp" type
+                                     (:template-specifier 
+                                        ( ("IPowerObserver" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [25179 25214]))                          
+                        :type ("status_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [25134 25394])
+                    ("unregisterPowerObserver" function
+                       (:parent "PowerManager"
+                        :arguments 
+                          ( ("observer" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("sp" type
+                                     (:template-specifier 
+                                        ( ("IPowerObserver" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [25443 25478]))                          
+                        :type ("status_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [25396 25742])
+                    ("onNotify" function
+                       (:parent "PowerManager"
+                        :arguments 
+                          ( ("message" variable
+                               (:constant-flag t
+                                :type ("int32_t" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [25772 25794])
+                            ("ext1" variable
+                               (:constant-flag t
+                                :type ("int32_t" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [25795 25814])
+                            ("ext2" variable
+                               (:constant-flag t
+                                :type ("int32_t" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [25842 25861])
+                            ("obj" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type ("Parcel" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [25862 25880]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [25744 27353])
+                    ("handleMessage" function
+                       (:parent "PowerManager"
+                        :arguments 
+                          ( ("message" variable
+                               (:constant-flag t
+                                :type "int")
+                                (reparse-symbol arg-sub-list) [27388 27406]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [27355 29925])
+                    ("binderDied" function
+                       (:parent "PowerManager"
+                        :arguments 
+                          ( ("who" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("wp" type
+                                     (:template-specifier 
+                                        ( ("IBinder" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [29957 29980]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [29927 30160])
+                    ("updateAutoPowerOffTimerLocked" function
+                       (:parent "PowerManager"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [30162 31172])
+                    ("updateSleepTimerLocked" function
+                       (:parent "PowerManager"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [31174 31898])
+                    ("updateUserInactivityTimerLocked" function
+                       (:parent "PowerManager"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [31900 32333])
+                    ("reportUsbOverCurrentLocked" function
+                       (:parent "PowerManager"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [32335 32461])
+                    ("notifyObservers" function
+                       (:parent "PowerManager"
+                        :arguments 
+                          ( ("event" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [32498 32512])
+                            ("value" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [32513 32527]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [32463 32680]))                  
+                :type "namespace")
+                nil [1449 32683]))          
+      :file "PowerManager.cpp"
+      :pointmax 32707
+      :fsize 32706
+      :lastmodtime '(22182 59469 889533 174000)
+      :unmatched-syntax '((EXPLICIT 1738 . 1746))
+      :lexical-table 
+        '(("LOG_NDEBUG" . ((number "0" 819 . 820)))
+          ("LOG_TAG" . ((string "\"PowerManager\"" 837 . 851)))
+          )
+)
+    (semanticdb-table "PowerManager.h"
+      :file "PowerManager.h"
+      :fsize 6736
+      :lastmodtime '(22182 59428 501534 502000)))
+  :file "!home!qichen!bg4dtv_20160121_rc7_a0!vendor!marvell!midas-tv!frameworks!midas_server!libs!power_manager!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

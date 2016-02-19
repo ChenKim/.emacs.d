@@ -1,0 +1,3605 @@
+;; Object midastv/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "midastv/"
+  :tables
+  (list
+    (semanticdb-table "kprMidasTV.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("LOG_NDEBUG" variable (:constant-flag t) nil [10 20])
+            ("LOG_TAG" variable (:constant-flag t) nil [31 38])
+            ("log.h" include (:system-flag t) nil [53 69])
+            ("kpr.h" include nil nil [71 87])
+            ("kprShell.h" include nil nil [88 109])
+            ("rest_common.h" include nil nil [110 134])
+            ("rest_input.h" include nil nil [135 158])
+            ("rest_tuner.h" include nil nil [159 182])
+            ("rest_audio.h" include nil nil [183 206])
+            ("rest_picture.h" include nil nil [207 232])
+            ("rest_timer.h" include nil nil [233 256])
+            ("rest_pc.h" include nil nil [257 277])
+            ("rest_network.h" include nil nil [278 303])
+            ("rest_closedcaption.h" include nil nil [304 335])
+            ("rest_keycommand.h" include nil nil [336 364])
+            ("rest_system.h" include nil nil [365 389])
+            ("rest_time.h" include nil nil [390 412])
+            ("rest_cast.h" include nil nil [413 435])
+            ("rest_bluetooth.h" include nil nil [436 463])
+            ("rest_state.h" include nil nil [464 487])
+            ("kprMidasUI.h" include nil nil [489 512])
+            ("kprMidasTVEvent.h" include nil nil [513 541])
+            ("OSAL_api.h" include nil nil [543 564])
+            ("REMOTE_UI_HTTP_SERVER" variable (:constant-flag t) nil [715 736])
+            ("REMOTE_OOBE_HTTP_SERVER" variable (:constant-flag t) nil [774 797])
+            ("MidasTV_Test_init" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [851 866]))                  
+                :type "void")
+                nil [828 867])
+            ("g_xsSlotShellObj" variable (:type ("xsSlot" type (:type "class") nil nil)) nil [1039 1063])
+            ("g_thexMachine" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :type ("xsMachine" type (:type "class") nil nil))
+                nil [1064 1096])
+            ("g_midasRemoteMsgQueue" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :default-value "NULL"
+                :type ("MidasEventQueue" type (:type "class") nil nil))
+                nil [1098 1151])
+            ("checkVolumeVariable" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :type ("REST_BOOL" type (:type "class") nil nil))
+                nil [1153 1192])
+            ("kprMidasTV_fskLoad" function
+               (:arguments 
+                  ( ("library" variable (:type ("FskLibrary" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1231 1250]))                  
+                :type "int")
+                nil [1212 1278])
+            ("kprMidasTV_fskUnload" function
+               (:arguments 
+                  ( ("library" variable (:type ("FskLibrary" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1319 1338]))                  
+                :type "int")
+                nil [1298 1366])
+            ("MidasTV_sendRemoteUIMessage" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("compType" variable (:type ("MidasTV_UI_CompType" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1408 1437])
+                    ("query" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1438 1450]))                  
+                :type "void")
+                nil [1368 2940])
+            ("MIDASTV_TUNER_INFO" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("tuner_mode" variable (:type ("REST_TUNER_MODE" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3134 3161])
+                          ("pref_analog_audio" variable (:type ("REST_ANALOG_AUDIO" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3166 3202])
+                          ("cur_analog_audio" variable (:type ("REST_ANALOG_AUDIO" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3207 3242])
+                          ("digital_language" variable (:type ("REST_LANGUAGE" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3247 3278])
+                          ("cur_channel" variable (:type ("REST_VALUE" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3283 3306])
+                          ("scan_analog" variable (:type ("REST_VALUE" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3331 3354])
+                          ("scan_digital" variable (:type ("REST_VALUE" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3359 3383])
+                          ("scan_progress" variable (:type ("REST_VALUE" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3388 3413])
+                          ("scan_mode" variable (:type ("REST_SCAN_MODE" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3449 3474])
+                          ("from_channel" variable (:type ("REST_VALUE" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3479 3503])
+                          ("to_channel" variable (:type ("REST_VALUE" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3508 3530])
+                          ("analog_channel" variable (:type ("REST_VALUE" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3558 3584])
+                          ("channel_num" variable (:type ("REST_VALUE" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3610 3633])
+                          ("list_num" variable (:type ("REST_VALUE" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3638 3658])
+                          ("channel_list" variable
+                             (:pointer 1
+                              :type ("REST_CHANNEL" type (:type "class") nil nil))
+                              (reparse-symbol classsubparts) [3663 3690]))                        
+                      :type "struct")
+                      nil nil)
+                :type "typedef")
+                nil [3113 3712])
+            ("g_tuner_info" variable
+               (:typemodifiers ("static")
+                :type ("MIDASTV_TUNER_INFO" type (:type "class") nil nil))
+                nil [3714 3753])
+            ("MidasTV_Tuner_resetScanStatus" function
+               (:typemodifiers ("static")
+                :type "void")
+                nil [3773 3925])
+            ("MidasTV_Tuner_ChannelScan_callback" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("pContext" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [3974 3989])
+                    ("scanType" variable (:type ("REST_TUNER_SCAN_TYPE" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4030 4060])
+                    ("analog" variable (:type ("REST_VALUE" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4101 4119])
+                    ("digital" variable (:type ("REST_VALUE" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4160 4179])
+                    ("progress" variable (:type ("REST_VALUE" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4220 4240]))                  
+                :type "void")
+                nil [3927 4423])
+            ("MidasTV_Tuner_init" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4449 4464]))                  
+                :type "void")
+                nil [4425 4803])
+            ("MidasTV_Tuner_channelUp" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4834 4849]))                  
+                :type "void")
+                nil [4805 4975])
+            ("MidasTV_Tuner_channelDown" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5008 5023]))                  
+                :type "void")
+                nil [4977 5153])
+            ("MidasTV_Tuner_startAutoChannelScan" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5195 5210]))                  
+                :type "void")
+                nil [5155 5769])
+            ("MidasTV_Tuner_stopAutoChannelScan" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5810 5825]))                  
+                :type "void")
+                nil [5771 5974])
+            ("MidasTV_Tuner_setTunerMode" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6008 6023]))                  
+                :type "void")
+                nil [5976 6203])
+            ("MidasTV_Tuner_getTunerMode" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6237 6252]))                  
+                :type "void")
+                nil [6205 6450])
+            ("MidasTV_Tuner_startPartialChannelScan" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6495 6510]))                  
+                :type "void")
+                nil [6452 7200])
+            ("MidasTV_Tuner_stopPartialChannelScan" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7244 7259]))                  
+                :type "void")
+                nil [7202 7411])
+            ("MidasTV_Tuner_setAutoChannelScan" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7451 7466]))                  
+                :type "void")
+                nil [7413 7801])
+            ("MidasTV_Tuner_getAutoChannelScan" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7841 7856]))                  
+                :type "void")
+                nil [7803 8060])
+            ("MidasTV_Tuner_startAddAnalogChannel" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [8103 8118]))                  
+                :type "void")
+                nil [8062 8320])
+            ("MidasTV_Tuner_stopAddAnalogChannel" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [8362 8377]))                  
+                :type "void")
+                nil [8322 8569])
+            ("MidasTV_Tuner_skipChannel" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [8602 8617]))                  
+                :type "void")
+                nil [8571 8815])
+            ("MidasTV_Tuner_unskipChannel" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [8850 8865]))                  
+                :type "void")
+                nil [8817 9067])
+            ("MidasTV_Tuner_isChannelSkipped" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [9105 9120]))                  
+                :type "void")
+                nil [9069 9374])
+            ("MidasTV_Tuner_isChannelLocked" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [9411 9426]))                  
+                :type "void")
+                nil [9376 9673])
+            ("MidasTV_Tuner_setChannelLock" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [9709 9724]))                  
+                :type "void")
+                nil [9675 9975])
+            ("MidasTV_Tuner_setUSTVPC" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [10006 10021]))                  
+                :type "void")
+                nil [9977 10393])
+            ("MidasTV_Tuner_getUSTVPC" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [10424 10439]))                  
+                :type "void")
+                nil [10395 10676])
+            ("MidasTV_Tuner_setUSMVPC" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [10707 10722]))                  
+                :type "void")
+                nil [10678 11108])
+            ("MidasTV_Tuner_getUSMVPC" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [11139 11154]))                  
+                :type "void")
+                nil [11110 11399])
+            ("MidasTV_Tuner_setCAENPC" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [11430 11445]))                  
+                :type "void")
+                nil [11401 11844])
+            ("MidasTV_Tuner_getCAENPC" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [11875 11890]))                  
+                :type "void")
+                nil [11846 12142])
+            ("MidasTV_Tuner_setCAFRPC" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [12173 12188]))                  
+                :type "void")
+                nil [12144 12587])
+            ("MidasTV_Tuner_getCAFRPC" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [12618 12633]))                  
+                :type "void")
+                nil [12589 12884])
+            ("MidasTV_Tuner_setPcLocks" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [12916 12931]))                  
+                :type "void")
+                nil [12886 13470])
+            ("MidasTV_Tuner_getPcLocks" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [13502 13517]))                  
+                :type "void")
+                nil [13472 13704])
+            ("MidasTV_Tuner_setPcBlockUnratedShows" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [13748 13763]))                  
+                :type "void")
+                nil [13706 14025])
+            ("MidasTV_Tuner_getPcBlockUnratedShows" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [14069 14084]))                  
+                :type "void")
+                nil [14027 14328])
+            ("MidasTV_Tuner_setPcPin" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [14358 14373]))                  
+                :type "void")
+                nil [14330 14568])
+            ("MidasTV_Tuner_getPcPin" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [14598 14613]))                  
+                :type "void")
+                nil [14570 14785])
+            ("MidasTV_Tuner_setScanAnalog" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [14820 14835]))                  
+                :type "void")
+                nil [14787 14893])
+            ("MidasTV_Tuner_getScanAnalog" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [14928 14943]))                  
+                :type "void")
+                nil [14895 15247])
+            ("MidasTV_Tuner_setScanDigital" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [15283 15298]))                  
+                :type "void")
+                nil [15249 15357])
+            ("MidasTV_Tuner_getScanDigital" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [15393 15408]))                  
+                :type "void")
+                nil [15359 15714])
+            ("MidasTV_Tuner_setScanProgress" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [15751 15766]))                  
+                :type "void")
+                nil [15716 15826])
+            ("MidasTV_Tuner_getScanProgress" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [15863 15878]))                  
+                :type "void")
+                nil [15828 16186])
+            ("MidasTV_Tuner_setScanMode" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [16219 16234]))                  
+                :type "void")
+                nil [16188 16290])
+            ("MidasTV_Tuner_getScanMode" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [16323 16338]))                  
+                :type "void")
+                nil [16292 16392])
+            ("MidasTV_Tuner_setFromChannel" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [16428 16443]))                  
+                :type "void")
+                nil [16394 16502])
+            ("MidasTV_Tuner_getFromChannel" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [16538 16553]))                  
+                :type "void")
+                nil [16504 16610])
+            ("MidasTV_Tuner_setToChannel" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [16644 16659]))                  
+                :type "void")
+                nil [16612 16716])
+            ("MidasTV_Tuner_getToChannel" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [16750 16765]))                  
+                :type "void")
+                nil [16718 16820])
+            ("MidasTV_Tuner_setAnalogChannel" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [16858 16873]))                  
+                :type "void")
+                nil [16822 16934])
+            ("MidasTV_Tuner_getAnalogChannel" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [16972 16987]))                  
+                :type "void")
+                nil [16936 17046])
+            ("MidasTV_Tuner_setAnalogAudio" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [17082 17097]))                  
+                :type "void")
+                nil [17048 17776])
+            ("MidasTV_Tuner_getAnalogAudio" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [17812 17827]))                  
+                :type "void")
+                nil [17778 18006])
+            ("MidasTV_Tuner_setDigitalLanguage" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [18046 18061]))                  
+                :type "void")
+                nil [18008 18779])
+            ("MidasTV_Tuner_getDigitalLanguage" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [18819 18834]))                  
+                :type "void")
+                nil [18781 19011])
+            ("MidasTV_Tuner_getChannelNum" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [19045 19060]))                  
+                :type "void")
+                nil [19012 19239])
+            ("MidasTV_Tuner_getChannelList" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [19275 19290]))                  
+                :type "void")
+                nil [19241 20988])
+            ("MidasTV_Tuner_getPhysicalChannel" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [21028 21043]))                  
+                :type "void")
+                nil [20990 21305])
+            ("MidasTV_Tuner_getFrequency" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [21339 21354]))                  
+                :type "void")
+                nil [21307 21598])
+            ("MidasTV_Tuner_getModulation" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [21633 21648]))                  
+                :type "void")
+                nil [21600 21899])
+            ("MidasTV_Tuner_getSignalStrength" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [21938 21953]))                  
+                :type "void")
+                nil [21901 22212])
+            ("MidasTV_Tuner_getPcLocked" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [22245 22260]))                  
+                :type "void")
+                nil [22214 22655])
+            ("MidasTV_Tuner_getChannelSetting" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [22694 22709]))                  
+                :type "void")
+                nil [22657 24959])
+            ("MidasTV_Tuner_resetLocks" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [24991 25006]))                  
+                :type "void")
+                nil [24961 25159])
+            ("cec_device_types" variable
+               (:pointer 1
+                :dereference 1
+                :default-value "{
+    \"TV\",
+    \"Recording Device\",
+    \"Tuner\",
+    \"Playback Device\",
+    \"Audio System\",
+    \"Pure CEC Switch\",
+    \"Processor\",
+}"
+                :type "char")
+                nil [25332 25493])
+            ("hdmi3_availability" variable
+               (:default-value "REST_FALSE"
+                :type ("REST_BOOL" type (:type "class") nil nil))
+                nil [25494 25536])
+            ("MidasTV_Input_init" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [25562 25577]))                  
+                :type "void")
+                nil [25538 26158])
+            ("MidasTV_Input_switchInput" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [26191 26206]))                  
+                :type "void")
+                nil [26160 26337])
+            ("MidasTV_Input_setCurInput" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [26370 26385]))                  
+                :type "void")
+                nil [26339 26930])
+            ("MidasTV_Input_getCurInput" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [26963 26978]))                  
+                :type "void")
+                nil [26932 27195])
+            ("MidasTV_Input_setDevice" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [27226 27241]))                  
+                :type "void")
+                nil [27197 28292])
+            ("MidasTV_Input_getDevice" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [28323 28338]))                  
+                :type "void")
+                nil [28294 29210])
+            ("MidasTV_Input_getHDMI3Availability" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [29252 29267]))                  
+                :type "void")
+                nil [29212 29317])
+            ("MidasTV_Input_setCECMode" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [29349 29364]))                  
+                :type "void")
+                nil [29319 29545])
+            ("MidasTV_Input_getCECMode" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [29577 29592]))                  
+                :type "void")
+                nil [29547 29747])
+            ("MidasTV_Input_getCECDeviceList" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [29785 29800]))                  
+                :type "void")
+                nil [29749 31468])
+            ("MidasTV_Input_CECDeviceDiscovery" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [31508 31523]))                  
+                :type "void")
+                nil [31470 31666])
+            ("MidasTV_Input_getSignalStatus" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [31703 31718]))                  
+                :type "void")
+                nil [31668 31892])
+            ("MidasTV_Audio_init" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [32089 32104]))                  
+                :type "void")
+                nil [32065 32184])
+            ("MidasTV_Audio_volumeUp" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [32214 32229]))                  
+                :type "void")
+                nil [32186 32302])
+            ("MidasTV_Audio_volumeDown" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [32334 32349]))                  
+                :type "void")
+                nil [32304 32453])
+            ("spk_map" variable
+               (:dereference 1
+                :default-value "{
+   REST_SPEAKER_AUTO,
+   REST_SPEAKER_ON,
+   REST_SPEAKER_OFF,
+}"
+                :type "unsigned int")
+                nil [32455 32548])
+            ("MidasTV_Audio_setTvSpeakers" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [32583 32598]))                  
+                :type "void")
+                nil [32550 32818])
+            ("MidasTV_Audio_getTvSpeakers" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [32853 32868]))                  
+                :type "void")
+                nil [32820 33201])
+            ("MidasTV_Audio_setSurroundSound" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [33239 33254]))                  
+                :type "void")
+                nil [33203 33480])
+            ("MidasTV_Audio_getSurroundSound" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [33518 33533]))                  
+                :type "void")
+                nil [33482 33713])
+            ("MidasTV_Audio_setVolumeLeveling" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [33752 33767]))                  
+                :type "void")
+                nil [33715 33998])
+            ("MidasTV_Audio_getVolumeLeveling" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [34037 34052]))                  
+                :type "void")
+                nil [34000 34234])
+            ("MidasTV_Audio_setBalance" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [34266 34281]))                  
+                :type "void")
+                nil [34236 34477])
+            ("MidasTV_Audio_getBalance" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [34509 34524]))                  
+                :type "void")
+                nil [34479 34709])
+            ("MidasTV_Audio_setLipSync" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [34741 34756]))                  
+                :type "void")
+                nil [34711 34955])
+            ("MidasTV_Audio_getLipSync" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [34987 35002]))                  
+                :type "void")
+                nil [34957 35187])
+            ("da_map" variable
+               (:dereference 1
+                :default-value "{
+   REST_DIGITAL_AUDIO_AUTO,
+   REST_DIGITAL_AUDIO_PCM,
+   REST_DIGITAL_AUDIO_DOLBY,
+   REST_DIGITAL_AUDIO_DTS,
+}"
+                :type "unsigned int")
+                nil [35189 35329])
+            ("MidasTV_Audio_setDigitalAudioOut" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [35369 35384]))                  
+                :type "void")
+                nil [35331 35613])
+            ("MidasTV_Audio_getDigitalAudioOut" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [35653 35668]))                  
+                :type "void")
+                nil [35615 35989])
+            ("MidasTV_Audio_setAnalogAudioOut" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [36028 36043]))                  
+                :type "void")
+                nil [35991 36259])
+            ("MidasTV_Audio_getAnalogAudioOut" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [36298 36313]))                  
+                :type "void")
+                nil [36261 36512])
+            ("MidasTV_Audio_setAudioMode" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [36546 36561]))                  
+                :type "void")
+                nil [36514 36767])
+            ("MidasTV_Audio_getAudioMode" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [36801 36816]))                  
+                :type "void")
+                nil [36769 36991])
+            ("MidasTV_Audio_setE100hz" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [37022 37037]))                  
+                :type "void")
+                nil [36993 37297])
+            ("MidasTV_Audio_getE100hz" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [37328 37343]))                  
+                :type "void")
+                nil [37299 37583])
+            ("MidasTV_Audio_setE300hz" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [37614 37629]))                  
+                :type "void")
+                nil [37585 37888])
+            ("MidasTV_Audio_getE300hz" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [37919 37934]))                  
+                :type "void")
+                nil [37890 38174])
+            ("MidasTV_Audio_setE1khz" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [38204 38219]))                  
+                :type "void")
+                nil [38176 38475])
+            ("MidasTV_Audio_getE1khz" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [38505 38520]))                  
+                :type "void")
+                nil [38477 38755])
+            ("MidasTV_Audio_setE3khz" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [38785 38800]))                  
+                :type "void")
+                nil [38757 39058])
+            ("MidasTV_Audio_getE3khz" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [39088 39103]))                  
+                :type "void")
+                nil [39060 39338])
+            ("MidasTV_Audio_setE10khz" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [39369 39384]))                  
+                :type "void")
+                nil [39340 39644])
+            ("MidasTV_Audio_getE10khz" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [39675 39690]))                  
+                :type "void")
+                nil [39646 39929])
+            ("checkVolumeVariable" function
+               (:typemodifiers ("static")
+                :type ("REST_BOOL" type (:type "class") nil nil))
+                nil [39931 40369])
+            ("MidasTV_Audio_setVolume" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [40400 40415]))                  
+                :type "void")
+                nil [40371 40680])
+            ("MidasTV_Audio_getVolume" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [40711 40726]))                  
+                :type "void")
+                nil [40682 40897])
+            ("MidasTV_Audio_setMute" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [40926 40941]))                  
+                :type "void")
+                nil [40899 41123])
+            ("MidasTV_Audio_getMute" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [41152 41167]))                  
+                :type "void")
+                nil [41125 41339])
+            ("MidasTV_Audio_deleteAudioMode" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [41376 41391]))                  
+                :type "void")
+                nil [41341 41523])
+            ("MidasTV_Audio_getDamAvailability" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [41563 41578]))                  
+                :type "void")
+                nil [41525 41781])
+            ("MidasTV_Audio_getEAvailability" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [41819 41834]))                  
+                :type "void")
+                nil [41783 42031])
+            ("MidasTV_Audio_isCustomerModeUpdated" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [42074 42089]))                  
+                :type "void")
+                nil [42033 42302])
+            ("MidasTV_sendKeyCommand" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [42507 42522]))                  
+                :type "void")
+                nil [42479 42921])
+            ("MidasTV_setPlatformType" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [43131 43146]))                  
+                :type "void")
+                nil [43102 43150])
+            ("MidasTV_getPlatformType" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [43181 43196]))                  
+                :type "void")
+                nil [43152 43234])
+            ("MidasTV_Picture_init" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [43436 43451]))                  
+                :type "void")
+                nil [43410 43456])
+            ("MidasTV_Picture_setPictureMode" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [43494 43509]))                  
+                :type "void")
+                nil [43458 43802])
+            ("MidasTV_Picture_getPictureMode" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [43840 43855]))                  
+                :type "void")
+                nil [43804 44109])
+            ("MidasTV_Picture_setAutoBrightnessControl" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [44157 44172]))                  
+                :type "void")
+                nil [44111 44415])
+            ("MidasTV_Picture_getAutoBrightnessControl" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [44463 44478]))                  
+                :type "void")
+                nil [44417 44746])
+            ("MidasTV_Picture_setBrightness" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [44783 44798]))                  
+                :type "void")
+                nil [44748 45009])
+            ("MidasTV_Picture_getBrightness" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [45046 45061]))                  
+                :type "void")
+                nil [45011 45308])
+            ("MidasTV_Picture_setBacklight" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [45344 45359]))                  
+                :type "void")
+                nil [45310 45565])
+            ("MidasTV_Picture_getBacklight" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [45601 45616]))                  
+                :type "void")
+                nil [45567 45778])
+            ("MidasTV_Picture_setTint" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [45809 45824]))                  
+                :type "void")
+                nil [45780 46005])
+            ("MidasTV_Picture_getTint" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [46036 46051]))                  
+                :type "void")
+                nil [46007 46280])
+            ("MidasTV_Picture_setContrast" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [46315 46330]))                  
+                :type "void")
+                nil [46282 46531])
+            ("MidasTV_Picture_getContrast" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [46566 46581]))                  
+                :type "void")
+                nil [46533 46821])
+            ("MidasTV_Picture_setColor" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [46853 46868]))                  
+                :type "void")
+                nil [46823 47054])
+            ("MidasTV_Picture_getColor" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [47086 47101]))                  
+                :type "void")
+                nil [47056 47333])
+            ("MidasTV_Picture_setSharpness" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [47369 47384]))                  
+                :type "void")
+                nil [47335 47590])
+            ("MidasTV_Picture_getSharpness" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [47626 47641]))                  
+                :type "void")
+                nil [47592 47885])
+            ("MidasTV_Picture_setUltraColorSpectrum" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [47930 47945]))                  
+                :type "void")
+                nil [47887 48048])
+            ("MidasTV_Picture_getUltraColorSpectrum" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [48093 48108]))                  
+                :type "void")
+                nil [48050 48211])
+            ("MidasTV_Picture_setColorTemperature" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [48254 48269]))                  
+                :type "void")
+                nil [48213 48480])
+            ("MidasTV_Picture_getColorTemperature" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [48523 48538]))                  
+                :type "void")
+                nil [48482 48783])
+            ("MidasTV_Picture_setBlackDetail" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [48821 48836]))                  
+                :type "void")
+                nil [48785 49045])
+            ("MidasTV_Picture_getBlackDetail" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [49083 49098]))                  
+                :type "void")
+                nil [49047 49271])
+            ("MidasTV_Picture_setBacklightControl" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [49314 49329]))                  
+                :type "void")
+                nil [49273 49534])
+            ("MidasTV_Picture_getBacklightControl" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [49577 49592]))                  
+                :type "void")
+                nil [49536 49765])
+            ("MidasTV_Picture_setActiveLEDZones" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [49806 49821]))                  
+                :type "void")
+                nil [49767 50023])
+            ("MidasTV_Picture_getActiveLEDZones" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [50064 50079]))                  
+                :type "void")
+                nil [50025 50331])
+            ("MidasTV_Picture_setReduceJudder" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [50370 50385]))                  
+                :type "void")
+                nil [50333 50448])
+            ("MidasTV_Picture_getReduceJudder" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [50487 50502]))                  
+                :type "void")
+                nil [50450 50555])
+            ("MidasTV_Picture_setReduceMotionBlur" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [50598 50613]))                  
+                :type "void")
+                nil [50557 50676])
+            ("MidasTV_Picture_getReduceMotionBlur" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [50719 50734]))                  
+                :type "void")
+                nil [50678 50787])
+            ("MidasTV_Picture_setClearAction" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [50825 50840]))                  
+                :type "void")
+                nil [50789 51035])
+            ("MidasTV_Picture_getClearAction" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [51073 51088]))                  
+                :type "void")
+                nil [51037 51263])
+            ("MidasTV_Picture_setReduceSignalNoise" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [51307 51322]))                  
+                :type "void")
+                nil [51265 51556])
+            ("MidasTV_Picture_getReduceSignalNoise" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [51600 51615]))                  
+                :type "void")
+                nil [51558 51873])
+            ("MidasTV_Picture_setReduceBlockNoise" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [51916 51931]))                  
+                :type "void")
+                nil [51875 52163])
+            ("MidasTV_Picture_getReduceBlockNoise" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [52206 52221]))                  
+                :type "void")
+                nil [52165 52477])
+            ("MidasTV_Picture_setGameLowLatency" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [52518 52533]))                  
+                :type "void")
+                nil [52479 52735])
+            ("MidasTV_Picture_getGameLowLatency" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [52776 52791]))                  
+                :type "void")
+                nil [52737 53043])
+            ("MidasTV_Picture_setHorizontalSize" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [53084 53099]))                  
+                :type "void")
+                nil [53045 53294])
+            ("MidasTV_Picture_getHorizontalSize" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [53335 53350]))                  
+                :type "void")
+                nil [53296 53605])
+            ("MidasTV_Picture_setVerticalSize" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [53644 53659]))                  
+                :type "void")
+                nil [53607 53852])
+            ("MidasTV_Picture_getVerticalSize" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [53891 53906]))                  
+                :type "void")
+                nil [53854 54159])
+            ("MidasTV_Picture_setHorizontalPosition" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [54204 54219]))                  
+                :type "void")
+                nil [54161 54419])
+            ("MidasTV_Picture_getHorizontalPosition" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [54464 54479]))                  
+                :type "void")
+                nil [54421 54732])
+            ("MidasTV_Picture_setVerticalPosition" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [54775 54790]))                  
+                :type "void")
+                nil [54734 54988])
+            ("MidasTV_Picture_getVerticalPosition" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [55031 55046]))                  
+                :type "void")
+                nil [54990 55297])
+            ("MidasTV_Picture_setFilmMode" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [55332 55347]))                  
+                :type "void")
+                nil [55299 55541])
+            ("MidasTV_Picture_getFilmMode" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [55576 55591]))                  
+                :type "void")
+                nil [55543 55841])
+            ("MidasTV_Picture_setColorSpace" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [55878 55893]))                  
+                :type "void")
+                nil [55843 56118])
+            ("MidasTV_Picture_getColorSpace" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [56155 56170]))                  
+                :type "void")
+                nil [56120 56273])
+            ("MidasTV_Picture_setGamma" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [56305 56320]))                  
+                :type "void")
+                nil [56275 56506])
+            ("MidasTV_Picture_getGamma" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [56538 56553]))                  
+                :type "void")
+                nil [56508 56796])
+            ("MidasTV_Picture_setSMPTETestPattern" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [56839 56854]))                  
+                :type "void")
+                nil [56798 57060])
+            ("MidasTV_Picture_getSMPTETestPattern" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [57103 57118]))                  
+                :type "void")
+                nil [57062 57375])
+            ("MidasTV_Picture_setFlatTestPattern" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [57417 57432]))                  
+                :type "void")
+                nil [57377 57649])
+            ("MidasTV_Picture_getFlatTestPattern" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [57691 57706]))                  
+                :type "void")
+                nil [57651 57966])
+            ("MidasTV_Picture_setRampTestPattern" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [58008 58023]))                  
+                :type "void")
+                nil [57968 58225])
+            ("MidasTV_Picture_getRampTestPattern" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [58267 58282]))                  
+                :type "void")
+                nil [58227 58537])
+            ("MidasTV_Picture_setUATestPattern" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [58577 58592]))                  
+                :type "void")
+                nil [58539 58808])
+            ("MidasTV_Picture_getUATestPattern" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [58848 58863]))                  
+                :type "void")
+                nil [58810 59130])
+            ("MidasTV_Picture_setLockPictureMode" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [59172 59187]))                  
+                :type "void")
+                nil [59132 59525])
+            ("MidasTV_Picture_getLockPictureMode" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [59567 59582]))                  
+                :type "void")
+                nil [59527 59767])
+            ("MidasTV_Picture_getPMLocked" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [59802 59817]))                  
+                :type "void")
+                nil [59769 60684])
+            ("MidasTV_Picture_getDeletePMEnabled" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [60726 60741]))                  
+                :type "void")
+                nil [60686 61247])
+            ("MidasTV_Picture_getResetPMEnabled" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [61288 61303]))                  
+                :type "void")
+                nil [61249 61880])
+            ("MidasTV_Picture_ifColorTempTouched" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [61922 61937]))                  
+                :type "void")
+                nil [61882 62178])
+            ("MidasTV_Picture_getPictureModeInfo" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [62220 62235]))                  
+                :type "void")
+                nil [62180 62876])
+            ("MidasTV_Picture_setPictureModeInfo" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [62918 62933]))                  
+                :type "void")
+                nil [62878 63274])
+            ("MidasTV_Picture_get11pWhiteBalance" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [63316 63331]))                  
+                :type "void")
+                nil [63276 63725])
+            ("MidasTV_Picture_set11pWhiteBalance" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [63767 63782]))                  
+                :type "void")
+                nil [63727 64199])
+            ("MidasTV_Picture_getColorTuner" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [64236 64251]))                  
+                :type "void")
+                nil [64201 64638])
+            ("MidasTV_Picture_setColorTuner" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [64675 64690]))                  
+                :type "void")
+                nil [64640 65101])
+            ("MidasTV_Picture_setPrimaryHeaderRed" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [65144 65159]))                  
+                :type "void")
+                nil [65103 65420])
+            ("MidasTV_Picture_getPrimaryHeaderRed" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [65463 65478]))                  
+                :type "void")
+                nil [65422 65661])
+            ("MidasTV_Picture_setPrimaryHeaderGreen" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [65706 65721]))                  
+                :type "void")
+                nil [65663 65986])
+            ("MidasTV_Picture_getPrimaryHeaderGreen" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [66031 66046]))                  
+                :type "void")
+                nil [65988 66233])
+            ("MidasTV_Picture_setPrimaryHeaderBlue" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [66277 66292]))                  
+                :type "void")
+                nil [66235 66556])
+            ("MidasTV_Picture_getPrimaryHeaderBlue" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [66600 66615]))                  
+                :type "void")
+                nil [66558 66800])
+            ("MidasTV_Picture_DVTestPattern" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [66837 66852]))                  
+                :type "void")
+                nil [66802 67045])
+            ("MidasTV_Picture_savePictureMode" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [67084 67099]))                  
+                :type "void")
+                nil [67047 67316])
+            ("MidasTV_Picture_togglePictureMode" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [67357 67372]))                  
+                :type "void")
+                nil [67318 67687])
+            ("MidasTV_Picture_deletePictureMode" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [67728 67743]))                  
+                :type "void")
+                nil [67689 67886])
+            ("MidasTV_Picture_resetPictureMode" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [67926 67941]))                  
+                :type "void")
+                nil [67888 68082])
+            ("MidasTV_Picture_resetColorTuner" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [68121 68136]))                  
+                :type "void")
+                nil [68084 68415])
+            ("MidasTV_Picture_getBlcAvailability" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [68457 68472]))                  
+                :type "void")
+                nil [68417 68611])
+            ("MidasTV_Picture_getAlzAvailability" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [68653 68668]))                  
+                :type "void")
+                nil [68613 68801])
+            ("MidasTV_Picture_getCaAvail" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [68835 68850]))                  
+                :type "void")
+                nil [68803 68989])
+            ("MidasTV_Picture_getBlAvail" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [69023 69038]))                  
+                :type "void")
+                nil [68991 69367])
+            ("MidasTV_Picture_backup" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [69397 69412]))                  
+                :type "void")
+                nil [69369 69555])
+            ("MidasTV_Picture_restore" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [69586 69601]))                  
+                :type "void")
+                nil [69557 69746])
+            ("MidasTV_Timer_init" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [69943 69958]))                  
+                :type "void")
+                nil [69919 69962])
+            ("MidasTV_Timer_setSleepTimer" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [69997 70012]))                  
+                :type "void")
+                nil [69964 70224])
+            ("MidasTV_Timer_getSleepTimer" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [70259 70274]))                  
+                :type "void")
+                nil [70226 70466])
+            ("MidasTV_Timer_setAutoPowerOff" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [70503 70518]))                  
+                :type "void")
+                nil [70468 70738])
+            ("MidasTV_Timer_getAutoPowerOff" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [70775 70790]))                  
+                :type "void")
+                nil [70740 70985])
+            ("MidasTV_Timer_setScreenSaver" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [71021 71036]))                  
+                :type "void")
+                nil [70987 71253])
+            ("MidasTV_Timer_getScreenSaver" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [71289 71304]))                  
+                :type "void")
+                nil [71255 71497])
+            ("MidasTV_Timer_setBlankScreenState" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [71538 71553]))                  
+                :type "void")
+                nil [71499 71606])
+            ("MidasTV_Timer_getBlankScreenState" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [71647 71662]))                  
+                :type "void")
+                nil [71608 71715])
+            ("MidasTV_Timer_blankScreen" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [71748 71763]))                  
+                :type "void")
+                nil [71717 71816])
+            ("MidasTV_Timer_userActivity" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [71850 71865]))                  
+                :type "void")
+                nil [71818 71953])
+            ("REST_GET_CCSETTING" variable (:constant-flag t) nil [72142 72160])
+            ("MidasTV_ClosedCaptions_callback" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("pContext" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [72534 72549])
+                    ("type" variable (:type ("REST_NOTIF_TYPE" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [72587 72608])
+                    ("prop" variable (:type ("REST_NOTIF_CC" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [72646 72665])
+                    ("pParam" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [72703 72716]))                  
+                :type "void")
+                nil [72490 76008])
+            ("MidasTV_ClosedCaptions_init" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [76043 76058]))                  
+                :type "void")
+                nil [76010 76486])
+            ("MidasTV_ClosedCaptions_setClosedCaptionsEnabled" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [76541 76556]))                  
+                :type "void")
+                nil [76488 76765])
+            ("MidasTV_ClosedCaptions_getClosedCaptionsEnabled" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [76820 76835]))                  
+                :type "void")
+                nil [76767 76879])
+            ("MidasTV_ClosedCaptions_setAnalogClosedCaption" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [76932 76947]))                  
+                :type "void")
+                nil [76881 77165])
+            ("MidasTV_ClosedCaptions_getAnalogClosedCaption" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [77218 77233]))                  
+                :type "void")
+                nil [77167 77284])
+            ("MidasTV_ClosedCaptions_setDigitalClosedCaptions" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [77339 77354]))                  
+                :type "void")
+                nil [77286 77577])
+            ("MidasTV_ClosedCaptions_getDigitalClosedCaptions" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [77632 77647]))                  
+                :type "void")
+                nil [77579 77699])
+            ("MidasTV_ClosedCaptions_setCaptionStyle" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [77745 77760]))                  
+                :type "void")
+                nil [77701 77968])
+            ("MidasTV_ClosedCaptions_getCaptionStyle" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [78014 78029]))                  
+                :type "void")
+                nil [77970 78086])
+            ("MidasTV_ClosedCaptions_setTextStyle" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [78129 78144]))                  
+                :type "void")
+                nil [78088 78349])
+            ("MidasTV_ClosedCaptions_getTextStyle" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [78392 78407]))                  
+                :type "void")
+                nil [78351 78461])
+            ("MidasTV_ClosedCaptions_setTextSize" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [78503 78518]))                  
+                :type "void")
+                nil [78463 78719])
+            ("MidasTV_ClosedCaptions_getTextSize" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [78761 78776]))                  
+                :type "void")
+                nil [78721 78829])
+            ("MidasTV_ClosedCaptions_setTextColor" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [78872 78887]))                  
+                :type "void")
+                nil [78831 79091])
+            ("MidasTV_ClosedCaptions_getTextColor" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [79134 79149]))                  
+                :type "void")
+                nil [79093 79203])
+            ("MidasTV_ClosedCaptions_setTextOpacity" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [79248 79263]))                  
+                :type "void")
+                nil [79205 79476])
+            ("MidasTV_ClosedCaptions_getTextOpacity" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [79521 79536]))                  
+                :type "void")
+                nil [79478 79592])
+            ("MidasTV_ClosedCaptions_setTextEdges" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [79635 79650]))                  
+                :type "void")
+                nil [79594 79855])
+            ("MidasTV_ClosedCaptions_getTextEdges" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [79898 79913]))                  
+                :type "void")
+                nil [79857 79967])
+            ("MidasTV_ClosedCaptions_setTextEdgesColor" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [80015 80030]))                  
+                :type "void")
+                nil [79969 80240])
+            ("MidasTV_ClosedCaptions_getTextEdgesColor" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [80288 80303]))                  
+                :type "void")
+                nil [80242 80363])
+            ("MidasTV_ClosedCaptions_setBackgroundColor" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [80412 80427]))                  
+                :type "void")
+                nil [80365 80638])
+            ("MidasTV_ClosedCaptions_getBackgroundColor" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [80687 80702]))                  
+                :type "void")
+                nil [80640 80762])
+            ("MidasTV_ClosedCaptions_setBackgroundOpacity" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [80813 80828]))                  
+                :type "void")
+                nil [80764 81047])
+            ("MidasTV_ClosedCaptions_getBackgroundOpacity" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [81098 81113]))                  
+                :type "void")
+                nil [81049 81175])
+            ("MidasTV_ClosedCaptions_setWindowColor" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [81220 81235]))                  
+                :type "void")
+                nil [81177 81442])
+            ("MidasTV_ClosedCaptions_getWindowColor" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [81487 81502]))                  
+                :type "void")
+                nil [81444 81558])
+            ("MidasTV_ClosedCaptions_setWindowOpacity" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [81605 81620]))                  
+                :type "void")
+                nil [81560 81835])
+            ("MidasTV_ClosedCaptions_getWindowOpacity" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [81882 81897]))                  
+                :type "void")
+                nil [81837 81955])
+            ("g_network_info" variable (:type ("REST_NETWORK_INFORMATION" type (:type "class") nil nil)) nil [82128 82168])
+            ("ap_num" variable
+               (:default-value "0"
+                :type ("REST_VALUE" type (:type "class") nil nil))
+                nil [82169 82191])
+            ("ap_list_size" variable
+               (:default-value "0"
+                :type ("REST_VALUE" type (:type "class") nil nil))
+                nil [82192 82220])
+            ("ap_list" variable
+               (:pointer 1
+                :default-value "NULL"
+                :type ("REST_AP" type (:type "class") nil nil))
+                nil [82221 82245])
+            ("cur_ap" variable (:type ("REST_AP" type (:type "class") nil nil)) nil [82246 82261])
+            ("wifiName" variable
+               (:dereference 1
+                :type "char")
+                nil [82262 82295])
+            ("wifiPasswd" variable
+               (:dereference 1
+                :type "char")
+                nil [82296 82331])
+            ("MidasTV_Network_init" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [82359 82374]))                  
+                :type "void")
+                nil [82333 82561])
+            ("MidasTV_Network_setConnectionType" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [82602 82617]))                  
+                :type "void")
+                nil [82563 82621])
+            ("MidasTV_Network_getConnectionType" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [82662 82677]))                  
+                :type "void")
+                nil [82623 82859])
+            ("MidasTV_Network_setConnectionStatus" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [82902 82917]))                  
+                :type "void")
+                nil [82861 82922])
+            ("MidasTV_Network_getConnectionStatus" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [82965 82980]))                  
+                :type "void")
+                nil [82924 83164])
+            ("dhcp_map" variable
+               (:dereference 1
+                :default-value "{
+   REST_DHCP_ON,
+   REST_DHCP_OFF,
+   REST_DHCP_MANUALDNS,
+}"
+                :type "unsigned int")
+                nil [83166 83256])
+            ("MidasTV_Network_setDHCPMode" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [83290 83305]))                  
+                :type "void")
+                nil [83257 83490])
+            ("MidasTV_Network_getDHCPMode" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [83525 83540]))                  
+                :type "void")
+                nil [83492 83843])
+            ("MidasTV_Network_setIPAddress" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [83879 83894]))                  
+                :type "void")
+                nil [83845 84168])
+            ("MidasTV_Network_getIPAddress" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [84204 84219]))                  
+                :type "void")
+                nil [84170 84387])
+            ("MidasTV_Network_setSubnetMask" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [84424 84439]))                  
+                :type "void")
+                nil [84389 84715])
+            ("MidasTV_Network_getSubnetMask" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [84752 84767]))                  
+                :type "void")
+                nil [84717 84937])
+            ("MidasTV_Network_setDefaltGateway" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [84977 84992]))                  
+                :type "void")
+                nil [84939 85276])
+            ("MidasTV_Network_getDefaultGateway" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [85317 85332]))                  
+                :type "void")
+                nil [85278 85510])
+            ("MidasTV_Network_setPrefDNSServer" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [85550 85565]))                  
+                :type "void")
+                nil [85512 85835])
+            ("MidasTV_Network_getPrefDNSServer" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [85875 85890]))                  
+                :type "void")
+                nil [85837 86068])
+            ("MidasTV_Network_setAltDNSServer" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [86107 86122]))                  
+                :type "void")
+                nil [86070 86391])
+            ("MidasTV_Network_getAltDNSServer" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [86430 86445]))                  
+                :type "void")
+                nil [86393 86622])
+            ("MidasTV_Network_setRJ45MACAddress" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [86663 86678]))                  
+                :type "void")
+                nil [86624 86682])
+            ("MidasTV_Network_getRJ45MACAddress" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [86723 86738]))                  
+                :type "void")
+                nil [86684 86909])
+            ("MidasTV_Network_setWiFiMACAddress" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [86950 86965]))                  
+                :type "void")
+                nil [86911 86969])
+            ("MidasTV_Network_getWiFiMACAddress" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [87009 87024]))                  
+                :type "void")
+                nil [86970 87195])
+            ("MidasTV_Network_setHiddenNetworkName" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [87239 87254]))                  
+                :type "void")
+                nil [87197 87545])
+            ("MidasTV_Network_getHiddenNetworkName" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [87589 87604]))                  
+                :type "void")
+                nil [87547 87637])
+            ("MidasTV_Network_setHiddenNetworkAuth" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [87681 87696]))                  
+                :type "void")
+                nil [87639 87891])
+            ("MidasTV_Network_getHiddenNetworkAuth" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [87935 87950]))                  
+                :type "void")
+                nil [87893 87983])
+            ("MidasTV_Network_setHiddenNetworkPwd" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [88026 88041]))                  
+                :type "void")
+                nil [87985 88340])
+            ("MidasTV_Network_getHiddenNetworkPwd" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [88383 88398]))                  
+                :type "void")
+                nil [88342 88432])
+            ("MidasTV_Network_setTestConnectionResults" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [88480 88495]))                  
+                :type "void")
+                nil [88434 88500])
+            ("MidasTV_Network_getTestConnectionResults" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [88548 88563]))                  
+                :type "void")
+                nil [88502 91091])
+            ("MidasTV_Network_setWiFiPassword" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [91130 91145]))                  
+                :type "void")
+                nil [91093 91418])
+            ("MidasTV_Network_getWiFiPassword" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [91457 91472]))                  
+                :type "void")
+                nil [91420 91477])
+            ("MidasTV_Network_setWiFiName" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [91512 91527]))                  
+                :type "void")
+                nil [91479 91675])
+            ("MidasTV_Network_getWiFiName" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [91710 91725]))                  
+                :type "void")
+                nil [91677 91729])
+            ("MidasTV_Network_setApList" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [91762 91777]))                  
+                :type "void")
+                nil [91731 91781])
+            ("MidasTV_Network_getApList" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [91814 91829]))                  
+                :type "void")
+                nil [91783 94552])
+            ("MidasTV_Network_setCurAp" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [94584 94599]))                  
+                :type "void")
+                nil [94554 94604])
+            ("MidasTV_Network_getCurAp" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [94636 94651]))                  
+                :type "void")
+                nil [94606 96804])
+            ("MidasTV_Network_setDownloadSpeed" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [96844 96859]))                  
+                :type "void")
+                nil [96806 96864])
+            ("MidasTV_Network_getDownloadSpeed" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [96904 96919]))                  
+                :type "void")
+                nil [96866 97144])
+            ("MidasTV_Network_setWiFiSignalStrength" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [97189 97204]))                  
+                :type "void")
+                nil [97146 97209])
+            ("MidasTV_Network_getWiFiSignalStrength" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [97254 97269]))                  
+                :type "void")
+                nil [97211 97548])
+            ("MidasTV_Network_setWiFiRssi" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [97583 97598]))                  
+                :type "void")
+                nil [97550 97603])
+            ("MidasTV_Network_getWiFiRssi" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [97638 97653]))                  
+                :type "void")
+                nil [97605 97798])
+            ("MidasTV_Network_setWiFiChannel" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [97836 97851]))                  
+                :type "void")
+                nil [97800 97855])
+            ("MidasTV_Network_getWiFiChannel" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [97893 97908]))                  
+                :type "void")
+                nil [97857 98294])
+            ("MidasTV_Network_testConnection" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [98332 98347]))                  
+                :type "void")
+                nil [98296 99168])
+            ("MidasTV_Network_startAPSearch" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [99205 99220]))                  
+                :type "void")
+                nil [99170 99349])
+            ("MidasTV_Network_stopAPSearch" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [99385 99400]))                  
+                :type "void")
+                nil [99351 99526])
+            ("MidasTV_Network_showPINCode" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [99561 99576]))                  
+                :type "void")
+                nil [99528 99830])
+            ("MidasTV_Network_removePINCode" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [99867 99882]))                  
+                :type "void")
+                nil [99832 100086])
+            ("g_tv_info" variable (:type ("REST_TV_INFORMATION" type (:type "class") nil nil)) nil [100258 100288])
+            ("REST_GET_TVINFO" variable (:constant-flag t) nil [100298 100313])
+            ("MidasTV_System_setCastName" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [100596 100611]))                  
+                :type "void")
+                nil [100564 100616])
+            ("MidasTV_System_getCastName" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [100650 100665]))                  
+                :type "void")
+                nil [100618 100701])
+            ("MidasTV_System_setSerialNumber" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [100739 100754]))                  
+                :type "void")
+                nil [100703 100759])
+            ("MidasTV_System_getSerialNumber" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [100797 100812]))                  
+                :type "void")
+                nil [100761 100852])
+            ("MidasTV_System_setModelName" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [100887 100902]))                  
+                :type "void")
+                nil [100854 100907])
+            ("MidasTV_System_getModelName" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [100942 100957]))                  
+                :type "void")
+                nil [100909 100994])
+            ("MidasTV_System_setVersion" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [101027 101042]))                  
+                :type "void")
+                nil [100996 101046])
+            ("MidasTV_System_getVersion" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [101079 101094]))                  
+                :type "void")
+                nil [101048 101128])
+            ("MidasTV_System_setCastVersion" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [101165 101180]))                  
+                :type "void")
+                nil [101130 101185])
+            ("MidasTV_System_getCastVersion" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [101222 101237]))                  
+                :type "void")
+                nil [101187 101276])
+            ("MidasTV_System_setSourceType" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [101312 101327]))                  
+                :type "void")
+                nil [101278 101331])
+            ("MidasTV_System_getSourceType" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [101367 101382]))                  
+                :type "void")
+                nil [101333 101420])
+            ("MidasTV_System_setResolution" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [101456 101471]))                  
+                :type "void")
+                nil [101422 101475])
+            ("MidasTV_System_getResolution" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [101511 101526]))                  
+                :type "void")
+                nil [101477 101563])
+            ("MidasTV_System_setVerticalFrequency" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [101606 101621]))                  
+                :type "void")
+                nil [101565 101625])
+            ("MidasTV_System_getVerticalFrequency" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [101668 101683]))                  
+                :type "void")
+                nil [101627 101728])
+            ("MidasTV_System_setHDR" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [101757 101772]))                  
+                :type "void")
+                nil [101730 101776])
+            ("MidasTV_System_getHDR" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [101805 101820]))                  
+                :type "void")
+                nil [101778 101850])
+            ("MidasTV_System_setAudioType" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [101885 101900]))                  
+                :type "void")
+                nil [101852 101904])
+            ("MidasTV_System_getAudioType" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [101939 101954]))                  
+                :type "void")
+                nil [101906 101991])
+            ("MidasTV_System_setFRCVersion" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [102027 102042]))                  
+                :type "void")
+                nil [101993 102046])
+            ("MidasTV_System_getFRCVersion" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [102082 102097]))                  
+                :type "void")
+                nil [102048 102135])
+            ("MidasTV_System_setNetflixESN" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [102171 102186]))                  
+                :type "void")
+                nil [102137 102190])
+            ("MidasTV_System_getNetflixESN" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [102226 102241]))                  
+                :type "void")
+                nil [102192 102279])
+            ("g_uli_info" variable (:type ("REST_ULI_INFORMATION" type (:type "class") nil nil)) nil [102281 102313])
+            ("REST_GET_ULIINFO_VAL" variable (:constant-flag t) nil [102323 102343])
+            ("REST_GET_ULIINFO_STR" variable (:constant-flag t) nil [102605 102625])
+            ("MidasTV_System_setUliESN" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [102908 102923]))                  
+                :type "void")
+                nil [102878 102927])
+            ("MidasTV_System_getUliESN" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [102959 102974]))                  
+                :type "void")
+                nil [102929 103009])
+            ("MidasTV_System_setUliUID" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [103041 103056]))                  
+                :type "void")
+                nil [103011 103060])
+            ("MidasTV_System_getUliUID" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [103092 103107]))                  
+                :type "void")
+                nil [103062 103142])
+            ("MidasTV_System_setUliMV" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [103173 103188]))                  
+                :type "void")
+                nil [103144 103192])
+            ("MidasTV_System_getUliMV" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [103223 103238]))                  
+                :type "void")
+                nil [103194 103272])
+            ("MidasTV_System_setUliSV" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [103303 103318]))                  
+                :type "void")
+                nil [103274 103322])
+            ("MidasTV_System_getUliSV" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [103353 103368]))                  
+                :type "void")
+                nil [103324 103402])
+            ("MidasTV_System_setUliREG" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [103434 103449]))                  
+                :type "void")
+                nil [103404 103453])
+            ("MidasTV_System_getUliREG" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [103485 103500]))                  
+                :type "void")
+                nil [103455 103535])
+            ("MidasTV_System_setUliFET" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [103567 103582]))                  
+                :type "void")
+                nil [103537 103586])
+            ("MidasTV_System_getUliFET" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [103618 103633]))                  
+                :type "void")
+                nil [103588 103668])
+            ("MidasTV_System_setUliLT" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [103699 103714]))                  
+                :type "void")
+                nil [103670 103718])
+            ("MidasTV_System_getUliLT" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [103749 103764]))                  
+                :type "void")
+                nil [103720 103798])
+            ("MidasTV_System_setUliNP" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [103829 103844]))                  
+                :type "void")
+                nil [103800 103848])
+            ("MidasTV_System_getUliNP" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [103879 103894]))                  
+                :type "void")
+                nil [103850 103928])
+            ("MidasTV_System_setUliLDT" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [103960 103975]))                  
+                :type "void")
+                nil [103930 103979])
+            ("MidasTV_System_getUliLDT" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [104011 104026]))                  
+                :type "void")
+                nil [103981 104061])
+            ("MidasTV_System_setUliLDM" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [104093 104108]))                  
+                :type "void")
+                nil [104063 104112])
+            ("MidasTV_System_getUliLDM" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [104144 104159]))                  
+                :type "void")
+                nil [104114 104194])
+            ("MidasTV_System_setUliEC" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [104225 104240]))                  
+                :type "void")
+                nil [104196 104244])
+            ("MidasTV_System_getUliEC" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [104275 104290]))                  
+                :type "void")
+                nil [104246 104324])
+            ("MidasTV_System_setUliLE" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [104355 104370]))                  
+                :type "void")
+                nil [104326 104374])
+            ("MidasTV_System_getUliLE" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [104405 104420]))                  
+                :type "void")
+                nil [104376 104454])
+            ("MidasTV_System_setUliLET" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [104486 104501]))                  
+                :type "void")
+                nil [104456 104505])
+            ("MidasTV_System_getUliLET" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [104537 104552]))                  
+                :type "void")
+                nil [104507 104587])
+            ("MidasTV_System_setUliRD" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [104618 104633]))                  
+                :type "void")
+                nil [104589 104637])
+            ("MidasTV_System_getUliRD" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [104668 104683]))                  
+                :type "void")
+                nil [104639 104717])
+            ("MidasTV_System_setDeviceClass" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [104754 104769]))                  
+                :type "void")
+                nil [104719 104773])
+            ("MidasTV_System_getDeviceClass" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [104810 104825]))                  
+                :type "void")
+                nil [104775 104869])
+            ("g_system_info" variable (:type ("REST_SYSTEM_SETTING" type (:type "class") nil nil)) nil [104871 104905])
+            ("MidasTV_System_setMenuLanguage" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [104942 104957]))                  
+                :type "void")
+                nil [104906 105150])
+            ("MidasTV_System_getMenuLanguage" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [105188 105203]))                  
+                :type "void")
+                nil [105152 105320])
+            ("MidasTV_System_setPowerIndicator" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [105360 105375]))                  
+                :type "void")
+                nil [105322 105566])
+            ("MidasTV_System_getPowerIndicator" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [105606 105621]))                  
+                :type "void")
+                nil [105568 105923])
+            ("MidasTV_System_setPowerMode" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [105958 105973]))                  
+                :type "void")
+                nil [105925 106506])
+            ("MidasTV_System_getPowerMode" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [106541 106556]))                  
+                :type "void")
+                nil [106508 106717])
+            ("MidasTV_System_getPoweState" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [106752 106767]))                  
+                :type "void")
+                nil [106719 106934])
+            ("MidasTV_System_setPrivacyPolicy" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [106973 106988]))                  
+                :type "void")
+                nil [106936 106992])
+            ("MidasTV_System_getPriviacyPolicy" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [107032 107047]))                  
+                :type "void")
+                nil [106994 107222])
+            ("MidasTV_System_setSmartInteractivity" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [107266 107281]))                  
+                :type "void")
+                nil [107224 107480])
+            ("MidasTV_System_getSmartInteractivity" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [107524 107539]))                  
+                :type "void")
+                nil [107482 107864])
+            ("MidasTV_System_setStoreDemo" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [107899 107914]))                  
+                :type "void")
+                nil [107866 108095])
+            ("MidasTV_System_getStoreDemo" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [108130 108145]))                  
+                :type "void")
+                nil [108097 108440])
+            ("MidasTV_System_getIsUliDeviceRegistered" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [108487 108502]))                  
+                :type "void")
+                nil [108442 108678])
+            ("MidasTV_System_getIsUliOwnerREgistered" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [108724 108739]))                  
+                :type "void")
+                nil [108680 108913])
+            ("MidasTV_System_uliRegister" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [108947 108962]))                  
+                :type "void")
+                nil [108915 110238])
+            ("MidasTV_System_getPinLocked" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [110273 110288]))                  
+                :type "void")
+                nil [110240 110683])
+            ("MidasTV_System_setSysPin" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [110715 110730]))                  
+                :type "void")
+                nil [110685 110991])
+            ("MidasTV_System_getSysPin" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [111023 111038]))                  
+                :type "void")
+                nil [110993 111228])
+            ("MidasTV_System_confirmPin" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [111261 111276]))                  
+                :type "void")
+                nil [111230 111571])
+            ("MidasTV_System_setPin" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [111600 111615]))                  
+                :type "void")
+                nil [111573 111876])
+            ("MidasTV_System_isPinDefault" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [111911 111926]))                  
+                :type "void")
+                nil [111878 112087])
+            ("MidasTV_System_serviceReset" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [112122 112137]))                  
+                :type "void")
+                nil [112089 112272])
+            ("MidasTV_System_serviceCheck" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [112307 112322]))                  
+                :type "void")
+                nil [112274 112458])
+            ("MidasTV_System_factoryReset" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [112493 112508]))                  
+                :type "void")
+                nil [112460 112866])
+            ("MidasTV_System_setUseInternetTime" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [112907 112922]))                  
+                :type "void")
+                nil [112868 113128])
+            ("MidasTV_System_getUseInternetTime" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [113169 113184]))                  
+                :type "void")
+                nil [113130 113376])
+            ("MidasTV_System_setDate" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [113406 113421]))                  
+                :type "void")
+                nil [113378 113425])
+            ("MidasTV_System_getDate" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [113455 113470]))                  
+                :type "void")
+                nil [113427 114912])
+            ("MidasTV_System_setDST" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [114941 114956]))                  
+                :type "void")
+                nil [114914 115164])
+            ("MidasTV_System_getDST" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [115193 115208]))                  
+                :type "void")
+                nil [115166 115416])
+            ("MidasTV_System_setTimeFormat" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [115452 115467]))                  
+                :type "void")
+                nil [115418 115668])
+            ("MidasTV_System_getTimeFormat" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [115704 115719]))                  
+                :type "void")
+                nil [115670 115922])
+            ("MidasTV_System_setTimeZone" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [115956 115971]))                  
+                :type "void")
+                nil [115924 116160])
+            ("MidasTV_System_getTimeZone" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [116194 116209]))                  
+                :type "void")
+                nil [116162 116372])
+            ("MidasTV_System_getAcrWhatson" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [116408 116423]))                  
+                :type "void")
+                nil [116374 116584])
+            ("MidasTV_System_SetUserTime" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [116618 116633]))                  
+                :type "void")
+                nil [116586 117171])
+            ("cast_dev_name" variable
+               (:dereference 1
+                :type "char")
+                nil [117340 117378])
+            ("cast_dev_id" variable
+               (:dereference 1
+                :type "char")
+                nil [117379 117415])
+            ("MidasTV_Cast_setDeviceName" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [117448 117463]))                  
+                :type "void")
+                nil [117416 117627])
+            ("MidasTV_Cast_getDeviceName" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [117661 117676]))                  
+                :type "void")
+                nil [117629 117887])
+            ("MidasTV_Cast_getDeviceId" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [117919 117934]))                  
+                :type "void")
+                nil [117889 118135])
+            ("MidasTV_Cast_setPrivacyPolicy" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [118172 118187]))                  
+                :type "void")
+                nil [118137 118385])
+            ("MidasTV_Cast_getPrivacyPolicy" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [118422 118437]))                  
+                :type "void")
+                nil [118387 118625])
+            ("MidasTV_Cast_setTosAccepted" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [118660 118675]))                  
+                :type "void")
+                nil [118627 118864])
+            ("MidasTV_Cast_getTosAccepted" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [118899 118914]))                  
+                :type "void")
+                nil [118866 119168])
+            ("MidasTV_Cast_setSoftAPName" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [119202 119218]))                  
+                :type "void")
+                nil [119170 119222])
+            ("MidasTV_Cast_getSoftAPName" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [119256 119272]))                  
+                :type "void")
+                nil [119224 119456])
+            ("MidasTV_Cast_setSoftAPMode" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [119490 119506]))                  
+                :type "void")
+                nil [119458 119700])
+            ("MidasTV_Cast_getSoftAPMode" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [119734 119750]))                  
+                :type "void")
+                nil [119702 119916])
+            ("MidasTV_Cast_setSoftAPStatus" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [119952 119968]))                  
+                :type "void")
+                nil [119918 119972])
+            ("MidasTV_Cast_getSoftAPStatus" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [120008 120024]))                  
+                :type "void")
+                nil [119974 120187])
+            ("MidasTV_Cast_startSoftAP" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [120219 120235]))                  
+                :type "void")
+                nil [120189 120367])
+            ("MidasTV_Cast_stopSoftAP" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [120398 120414]))                  
+                :type "void")
+                nil [120369 120544])
+            ("MidasTV_Blutooth_getMACAddress" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [120754 120769]))                  
+                :type "void")
+                nil [120718 120953])
+            ("MidasTV_Blutooth_getBTA2DP" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [120987 121002]))                  
+                :type "void")
+                nil [120955 121152])
+            ("MidasTV_Blutooth_setBTA2DP" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [121186 121201]))                  
+                :type "void")
+                nil [121154 121705])
+            ("MidasTV_Blutooth_startA2dpPairing" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [121746 121761]))                  
+                :type "void")
+                nil [121707 121898])
+            ("MidasTV_Blutooth_setRssiMeter" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [121935 121950]))                  
+                :type "void")
+                nil [121900 125639])
+            ("MidasTV_Blutooth_setStatus" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [125673 125688]))                  
+                :type "void")
+                nil [125641 125939])
+            ("MidasTV_Blutooth_setDevInfo" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [125974 125989]))                  
+                :type "void")
+                nil [125941 126248])
+            ("MidasTV_Blutooth_getBtAvail" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [126283 126298]))                  
+                :type "void")
+                nil [126250 126466])
+            ("MidasTV_OOBE_setCurState" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [126666 126681]))                  
+                :type "void")
+                nil [126636 126982])
+            ("MidasTV_OOBE_getCurState" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [127014 127029]))                  
+                :type "void")
+                nil [126984 127247])
+            ("MidasTV_OOBE_setIsComplete" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [127281 127296]))                  
+                :type "void")
+                nil [127249 127494])
+            ("MidasTV_OOBE_getIsComplete" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [127528 127543]))                  
+                :type "void")
+                nil [127496 127703])
+            ("MidasTV_hashVal" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [127916 127931]))                  
+                :type "void")
+                nil [127895 128182])
+            ("MidasTV_Test_init" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [128207 128222]))                  
+                :type "void")
+                nil [128184 128275])
+            ("MidasTV_Test_runTest" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [128303 128318]))                  
+                :type "void")
+                nil [128277 128371])
+            ("MidasTV_notImpl" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [128394 128409]))                  
+                :type "void")
+                nil [128373 128462])
+            ("MidasTV_init" function
+               (:arguments 
+                  ( ("the" variable
+                       (:pointer 1
+                        :type ("xsMachine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [128482 128497]))                  
+                :type "void")
+                nil [128464 128667]))          
+      :file "kprMidasTV.c"
+      :pointmax 128668
+      :fsize 128667
+      :lastmodtime '(22153 62324 326424 168000)
+      :unmatched-syntax '((semantic-list 1289 . 1297) (symbol 1280 . 1289) (semantic-list 1203 . 1211) (symbol 1194 . 1203))
+      :lexical-table 
+        '(("LOG_NDEBUG" . ((number "0" 21 . 22)))
+          ("REMOTE_OOBE_HTTP_SERVER" . ((string "\"http://127.0.0.1:9002/oobe\"" 798 . 826)))
+          ("REMOTE_UI_HTTP_SERVER" . ((string "\"http://127.0.0.1:9002/tvui\"" 737 . 765)))
+          ("REST_GET_ULIINFO_STR" (spp-arg-list ("_PROP") 102625 . 102632) . 
+              ((DO "do" 102639 . 102641) (semantic-list "{ \\
+        REST_RET_CODE retCode = REST_GetULIInfo(&g_uli_info); \\
+        if (retCode != REST_RET_OK) { \\
+            REST_LOGERR(\"Get TV Info failed!\\n\"); \\
+        } \\
+        xsResult = xsString(g_uli_info._PROP); \\
+    }" 102642 . 102868) (WHILE "while" 102868 . 102873) (semantic-list "(0)" 102873 . 102876)))
+          ("REST_GET_ULIINFO_VAL" (spp-arg-list ("_PROP") 102343 . 102350) . 
+              ((DO "do" 102357 . 102359) (semantic-list "{ \\
+        REST_RET_CODE retCode = REST_GetULIInfo(&g_uli_info); \\
+        if (retCode != REST_RET_OK) { \\
+            REST_LOGERR(\"Get TV Info failed!\\n\"); \\
+        } \\
+        xsResult = xsInteger(g_uli_info._PROP); \\
+    }" 102360 . 102587) (WHILE "while" 102587 . 102592) (semantic-list "(0)" 102592 . 102595)))
+          ("REST_GET_CCSETTING" (spp-arg-list ("_PROP") 72160 . 72167) . 
+              ((DO "do" 72174 . 72176) (semantic-list "{ \\
+        REST_CLOSEDCAPTION_SETTING setting; \\
+        REST_RET_CODE retCode = REST_GetClosedCaptionSetting(&setting);\\
+        if (retCode != REST_RET_OK) \\
+        { \\
+            REST_LOGERR(\"Get closedcaption setting failed\\n\"); \\
+        } \\
+        xsResult = xsInteger(setting._PROP); \\
+    }" 72177 . 72479) (WHILE "while" 72479 . 72484) (semantic-list "(0)" 72484 . 72487)))
+          ("LOG_TAG" . ((string "\"KPR_MIDASTV\"" 39 . 52)))
+          ("REST_GET_TVINFO" (spp-arg-list ("_PROP") 100313 . 100320) . 
+              ((DO "do" 100327 . 100329) (semantic-list "{ \\
+        REST_RET_CODE retCode = REST_GetTVInfo(&g_tv_info); \\
+        if (retCode != REST_RET_OK) { \\
+            REST_ERR_LOG(\"Get TV Info failed!\\n\"); \\
+        } \\
+        xsResult = xsString(g_tv_info._PROP); \\
+    }" 100330 . 100554) (WHILE "while" 100554 . 100559) (semantic-list "(0)" 100559 . 100562)))
+          )
+)
+    (semanticdb-table "kprMidasUI.h"
+      :file "kprMidasUI.h"
+      :fsize 1988
+      :lastmodtime '(22084 6026 757327 76000))
+    (semanticdb-table "kprMidasTVEvent.h"
+      :file "kprMidasTVEvent.h"
+      :fsize 837
+      :lastmodtime '(21969 40135 293035 964000)))
+  :file "!home!qichen!bg4dtv_20151231_rc3_a0!vendor!marvell!midas-tv!kinoma!kinoma!kinoma!kpr!extensions!midastv!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

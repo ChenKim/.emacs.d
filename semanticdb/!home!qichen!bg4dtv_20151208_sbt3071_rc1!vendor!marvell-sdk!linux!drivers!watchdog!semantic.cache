@@ -1,0 +1,357 @@
+;; Object watchdog/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "watchdog/"
+  :tables
+  (list
+    (semanticdb-table "dw_wdt.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("pr_fmt" variable (:constant-flag t) nil [865 871])
+            ("linux/bitops.h" include (:system-flag t) nil [902 927])
+            ("linux/clk.h" include (:system-flag t) nil [928 950])
+            ("linux/delay.h" include (:system-flag t) nil [951 975])
+            ("linux/device.h" include (:system-flag t) nil [976 1001])
+            ("linux/err.h" include (:system-flag t) nil [1002 1024])
+            ("linux/fs.h" include (:system-flag t) nil [1025 1046])
+            ("linux/io.h" include (:system-flag t) nil [1047 1068])
+            ("linux/kernel.h" include (:system-flag t) nil [1069 1094])
+            ("linux/miscdevice.h" include (:system-flag t) nil [1095 1124])
+            ("linux/module.h" include (:system-flag t) nil [1125 1150])
+            ("linux/moduleparam.h" include (:system-flag t) nil [1151 1181])
+            ("linux/notifier.h" include (:system-flag t) nil [1182 1209])
+            ("linux/of.h" include (:system-flag t) nil [1210 1231])
+            ("linux/pm.h" include (:system-flag t) nil [1232 1253])
+            ("linux/platform_device.h" include (:system-flag t) nil [1254 1288])
+            ("linux/reboot.h" include (:system-flag t) nil [1289 1314])
+            ("linux/timer.h" include (:system-flag t) nil [1315 1339])
+            ("linux/uaccess.h" include (:system-flag t) nil [1340 1366])
+            ("linux/watchdog.h" include (:system-flag t) nil [1367 1394])
+            ("WDOG_CONTROL_REG_OFFSET" variable (:constant-flag t) nil [1404 1427])
+            ("WDOG_CONTROL_REG_WDT_EN_MASK" variable (:constant-flag t) nil [1446 1474])
+            ("WDOG_TIMEOUT_RANGE_REG_OFFSET" variable (:constant-flag t) nil [1492 1521])
+            ("WDOG_TIMEOUT_RANGE_TOPINIT_SHIFT" variable (:constant-flag t) nil [1539 1571])
+            ("WDOG_CURRENT_COUNT_REG_OFFSET" variable (:constant-flag t) nil [1585 1614])
+            ("WDOG_COUNTER_RESTART_REG_OFFSET" variable (:constant-flag t) nil [1632 1663])
+            ("WDOG_COUNTER_RESTART_KICK_VALUE" variable (:constant-flag t) nil [1681 1712])
+            ("DW_WDT_MAX_TOP" variable (:constant-flag t) nil [1809 1823])
+            ("DW_WDT_DEFAULT_SECONDS" variable (:constant-flag t) nil [1837 1859])
+            ("nowayout" variable
+               (:typemodifiers ("static")
+                :default-value "WATCHDOG_NOWAYOUT"
+                :type "bool")
+                nil [1864 1905])
+            ("module_param" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("nowayout" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1919 1928])
+                    ("" variable (:type "bool") (reparse-symbol arg-sub-list) [1929 1934]))                  
+                :type "int")
+                nil [1906 1938])
+            ("MODULE_PARM_DESC" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("nowayout" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1956 1965])
+                    ("" variable (:type ("__MODULE_STRING" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2024 2058]))                  
+                :type "int")
+                nil [1939 2064])
+            ("WDT_TIMEOUT" variable (:constant-flag t) nil [2074 2085])
+            ("dw_wdt" variable
+               (:typemodifiers ("static")
+                :type ("" type
+                     (:members 
+                        ( ("regs" variable
+                             (:pointer 1
+                              :type ("__iomem" type (:type "class") nil nil))
+                              (reparse-symbol classsubparts) [2119 2134])
+                          ("clk" variable
+                             (:pointer 1
+                              :type ("clk" type
+                                   (:prototype t
+                                    :type "struct")
+                                    nil nil))
+                              (reparse-symbol classsubparts) [2136 2153])
+                          ("in_use" variable (:type "unsigned long") (reparse-symbol classsubparts) [2155 2177])
+                          ("next_heartbeat" variable (:type "unsigned long") (reparse-symbol classsubparts) [2179 2209])
+                          ("timer" variable (:type ("timer_list" type
+                               (:prototype t
+                                :type "struct")
+                                nil nil)) (reparse-symbol classsubparts) [2211 2235])
+                          ("expect_close" variable (:type "int") (reparse-symbol classsubparts) [2237 2256])
+                          ("restart_handler" variable (:type ("notifier_block" type
+                               (:prototype t
+                                :type "struct")
+                                nil nil)) (reparse-symbol classsubparts) [2258 2296]))                        
+                      :type "struct")
+                      nil nil))
+                nil [2097 2306])
+            ("dw_wdt_is_enabled" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [2344 2349]))                  
+                :type "int")
+                nil [2308 2440])
+            ("dw_wdt_top_in_seconds" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("top" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [2482 2495]))                  
+                :type "int")
+                nil [2442 2689])
+            ("dw_wdt_get_top" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [2717 2722]))                  
+                :type "int")
+                nil [2691 2832])
+            ("dw_wdt_set_next_heartbeat" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [2879 2884]))                  
+                :type "void")
+                nil [2834 2946])
+            ("dw_wdt_keepalive" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [2977 2982]))                  
+                :type "void")
+                nil [2948 3083])
+            ("dw_wdt_set_top" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("top_s" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [3111 3126]))                  
+                :type "int")
+                nil [3085 3975])
+            ("dw_wdt_restart_handle" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("this" variable
+                       (:pointer 1
+                        :type ("notifier_block" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4010 4038])
+                    ("mode" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [4043 4062])
+                    ("cmd" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [4063 4073]))                  
+                :type "int")
+                nil [3977 4498])
+            ("dw_wdt_ping" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("data" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [4524 4543]))                  
+                :type "void")
+                nil [4500 4771])
+            ("dw_wdt_open" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("inode" variable
+                       (:pointer 1
+                        :type ("inode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4796 4816])
+                    ("filp" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4817 4835]))                  
+                :type "int")
+                nil [4773 5320])
+            ("dw_wdt_write" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("filp" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5350 5368])
+                    ("__user" variable
+                       (:constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [5369 5388])
+                    ("" variable (:type ("buf" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5388 5392])
+                    ("len" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5400 5411])
+                    ("offset" variable
+                       (:pointer 1
+                        :type ("loff_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5412 5427]))                  
+                :type ("ssize_t" type (:type "class") nil nil))
+                nil [5322 5793])
+            ("dw_wdt_time_left" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [5823 5828]))                  
+                :type ("u32" type (:type "class") nil nil))
+                nil [5795 5921])
+            ("dw_wdt_ident" variable
+               (:typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+	.options	= WDIOF_KEEPALIVEPING | WDIOF_SETTIMEOUT |
+			  WDIOF_MAGICCLOSE,
+	.identity	= \"Synopsys DesignWare Watchdog\",
+}"
+                :type ("watchdog_info" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [5923 6097])
+            ("dw_wdt_ioctl" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("filp" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6124 6142])
+                    ("cmd" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [6143 6160])
+                    ("arg" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [6161 6179]))                  
+                :type "long")
+                nil [6099 6980])
+            ("dw_wdt_release" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("inode" variable
+                       (:pointer 1
+                        :type ("inode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7008 7028])
+                    ("filp" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7029 7047]))                  
+                :type "int")
+                nil [6982 7336])
+            ("SIMPLE_DEV_PM_OPS" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type ("dw_wdt_pm_ops" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7666 7680])
+                    ("" variable (:type ("dw_wdt_suspend" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7681 7696])
+                    ("" variable (:type ("dw_wdt_resume" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7697 7711]))                  
+                :type "int")
+                nil [7641 7712])
+            ("wdt_fops" variable
+               (:typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+	.owner		= THIS_MODULE,
+	.llseek		= no_llseek,
+	.open		= dw_wdt_open,
+	.write		= dw_wdt_write,
+	.unlocked_ioctl	= dw_wdt_ioctl,
+	.release	= dw_wdt_release
+}"
+                :type ("file_operations" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [7714 7920])
+            ("dw_wdt_miscdev" variable
+               (:typemodifiers ("static")
+                :default-value "{
+	.fops		= &wdt_fops,
+	.name		= \"watchdog\",
+	.minor		= WATCHDOG_MINOR,
+}"
+                :type ("miscdevice" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [7922 8038])
+            ("dw_wdt_drv_probe" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("pdev" variable
+                       (:pointer 1
+                        :type ("platform_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8068 8097]))                  
+                :type "int")
+                nil [8040 8962])
+            ("dw_wdt_drv_remove" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("pdev" variable
+                       (:pointer 1
+                        :type ("platform_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8993 9022]))                  
+                :type "int")
+                nil [8964 9165])
+            ("dw_wdt_driver" variable
+               (:typemodifiers ("static")
+                :default-value "{
+	.probe		= dw_wdt_drv_probe,
+	.remove		= dw_wdt_drv_remove,
+	.driver		= {
+		.name	= \"dw_wdt\",
+		.owner	= THIS_MODULE,
+		.of_match_table = of_match_ptr(dw_wdt_of_match),
+		.pm	= &dw_wdt_pm_ops,
+	},
+}"
+                :type ("platform_driver" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [9347 9594])
+            ("module_platform_driver" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("dw_wdt_driver" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9619 9633]))                  
+                :type "int")
+                nil [9596 9634])
+            ("MODULE_AUTHOR" function
+               (:prototype-flag t
+                :type "int")
+                nil [9636 9664])
+            ("MODULE_DESCRIPTION" function
+               (:prototype-flag t
+                :type "int")
+                nil [9665 9723])
+            ("MODULE_LICENSE" function
+               (:prototype-flag t
+                :type "int")
+                nil [9724 9746]))          
+      :file "dw_wdt.c"
+      :pointmax 9747
+      :fsize 9746
+      :lastmodtime '(21934 1135 247887 25000)
+      :unmatched-syntax '((string 9739 . 9744) (string 9684 . 9721) (string 9650 . 9662) (punctuation 5387 . 5388) (VOID 2114 . 2118) (string 2059 . 2062) (semantic-list 2039 . 2058) (string 2012 . 2023) (string 1966 . 2008) (number 1935 . 1936))
+      :lexical-table 
+        '(("WDOG_CONTROL_REG_WDT_EN_MASK" . ((number "0x01" 1479 . 1483)))
+          ("WDT_TIMEOUT" . ((semantic-list "(HZ / 2)" 2087 . 2095)))
+          ("WDOG_CONTROL_REG_OFFSET" . ((number "0x00" 1433 . 1437)))
+          ("WDOG_TIMEOUT_RANGE_REG_OFFSET" . ((number "0x04" 1526 . 1530)))
+          ("WDOG_TIMEOUT_RANGE_TOPINIT_SHIFT" . ((number "4" 1575 . 1576)))
+          ("DW_WDT_MAX_TOP" . ((number "15" 1825 . 1827)))
+          ("WDOG_CURRENT_COUNT_REG_OFFSET" . ((number "0x08" 1619 . 1623)))
+          ("WDOG_COUNTER_RESTART_KICK_VALUE" . ((number "0x76" 1717 . 1721)))
+          ("pr_fmt" (spp-arg-list ("fmt") 871 . 876) . 
+              ((symbol "KBUILD_MODNAME" 877 . 891) (string "\": \"" 892 . 896) (symbol "fmt" 897 . 900)))
+          ("WDOG_COUNTER_RESTART_REG_OFFSET" . ((number "0x0c" 1668 . 1672)))
+          ("DW_WDT_DEFAULT_SECONDS" . ((number "30" 1860 . 1862)))
+          )
+))
+  :file "!home!qichen!bg4dtv_20151208_sbt3071_rc1!vendor!marvell-sdk!linux!drivers!watchdog!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

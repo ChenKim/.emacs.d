@@ -1,0 +1,2205 @@
+;; Object include/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "include/"
+  :tables
+  (list
+    (semanticdb-table "IStateManager.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("MIDAS_ISTATE_MANAGER_H_" variable (:constant-flag t) nil [840 863])
+            ("binder/IInterface.h" include (:system-flag t) nil [865 895])
+            ("binder/IBinder.h" include (:system-flag t) nil [896 923])
+            ("utils/RefBase.h" include (:system-flag t) nil [924 950])
+            ("utils/String8.h" include (:system-flag t) nil [951 977])
+            ("utils/String16.h" include (:system-flag t) nil [978 1005])
+            ("input.h" include (:system-flag t) nil [1007 1025])
+            ("MidasStates.h" include (:system-flag t) nil [1026 1050])
+            ("marvell" type
+               (:members 
+                  ( ("android" using (:type ("android" type
+                         (:prototype t
+                          :type "namespace")
+                          nil nil)) (reparse-symbol namespacesubparts) [1072 1096])
+                    ("MIDAS_KEY_FILTERMODE" type
+                       (:typedef ("" type
+                             (:members 
+                                ( ("MIDAS_KEY_FILTERMODE_NONE" variable
+                                     (:constant-flag t
+                                      :type "int")
+                                      (reparse-symbol enumsubparts) [1316 1342])
+                                  ("MIDAS_KEY_FILTERMODE_BLACK" variable
+                                     (:constant-flag t
+                                      :type "int")
+                                      (reparse-symbol enumsubparts) [1383 1410])
+                                  ("MIDAS_KEY_FILTERMODE_WHITE" variable
+                                     (:constant-flag t
+                                      :type "int")
+                                      (reparse-symbol enumsubparts) [1492 1519])
+                                  ("MIDAS_KEY_FILTERMODE_CLEARALL" variable
+                                     (:constant-flag t
+                                      :type "int")
+                                      (reparse-symbol enumsubparts) [1631 1661]))                                
+                              :type "enum")
+                              nil nil)
+                        :type "typedef")
+                        (reparse-symbol namespacesubparts) [1150 1685])
+                    ("MIDAS_STANDBY_OPTION" type
+                       (:typedef ("" type
+                             (:members 
+                                ( ("MIDAS_STANDBY_NONE" variable
+                                     (:constant-flag t
+                                      :default-value (1727 1733)
+                                      :type "int")
+                                      (reparse-symbol enumsubparts) [1706 1733])
+                                  ("MIDAS_STANDBY_FAKE" variable
+                                     (:constant-flag t
+                                      :default-value (1760 1766)
+                                      :type "int")
+                                      (reparse-symbol enumsubparts) [1739 1766])
+                                  ("MIDAS_STANDBY_TRUE" variable
+                                     (:constant-flag t
+                                      :default-value (1793 1799)
+                                      :type "int")
+                                      (reparse-symbol enumsubparts) [1772 1799]))                                
+                              :type "enum")
+                              nil nil)
+                        :type "typedef")
+                        (reparse-symbol namespacesubparts) [1687 1824])
+                    ("IStateObserver" type
+                       (:superclasses 
+                          ( ("IInterface" type
+                               (:protection "public"
+                                :type "class")
+                                nil nil))                          
+                        :members 
+                          ( ("public" label nil (reparse-symbol classsubparts) [1871 1878])
+                            ("DECLARE_META_INTERFACE" function
+                               (:prototype-flag t
+                                :arguments 
+                                  ( ("" variable (:type ("StateObserver" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1907 1921]))                                  
+                                :type "int")
+                                (reparse-symbol classsubparts) [1884 1922])
+                            ("onStateChanged" function
+                               (:pure-virtual-flag t
+                                :prototype-flag t
+                                :typemodifiers ("virtual")
+                                :arguments 
+                                  ( ("message" variable
+                                       (:constant-flag t
+                                        :type ("int32_t" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [1956 1978])
+                                    ("ext1" variable
+                                       (:constant-flag t
+                                        :type ("int32_t" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [1979 1998])
+                                    ("ext2" variable
+                                       (:constant-flag t
+                                        :type ("int32_t" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [2030 2049])
+                                    ("obj" variable
+                                       (:pointer 1
+                                        :constant-flag t
+                                        :type ("Parcel" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [2050 2068]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [1928 2073]))                          
+                        :type "class")
+                        (reparse-symbol namespacesubparts) [1826 2076])
+                    ("IStateManager" type
+                       (:superclasses 
+                          ( ("IInterface" type
+                               (:protection "public"
+                                :type "class")
+                                nil nil))                          
+                        :members 
+                          ( ("public" label nil (reparse-symbol classsubparts) [2122 2129])
+                            ("DECLARE_META_INTERFACE" function
+                               (:prototype-flag t
+                                :arguments 
+                                  ( ("" variable (:type ("StateManager" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2157 2170]))                                  
+                                :type "int")
+                                (reparse-symbol classsubparts) [2134 2171])
+                            ("kServiceName" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String16" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [2177 2212])
+                            ("getCurrentState" function
+                               (:pure-virtual-flag t
+                                :prototype-flag t
+                                :typemodifiers ("virtual")
+                                :type ("MIDAS_STATE" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [2218 2260])
+                            ("registerStateObserver" function
+                               (:pure-virtual-flag t
+                                :prototype-flag t
+                                :typemodifiers ("virtual")
+                                :arguments 
+                                  ( ("observer" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("sp" type
+                                             (:template-specifier 
+                                                ( ("IStateObserver" type nil nil nil))                                                
+                                              :type "class")
+                                              nil nil))
+                                        (reparse-symbol arg-sub-list) [2305 2340]))                                  
+                                :type ("status_t" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [2266 2345])
+                            ("unregisterStateObserver" function
+                               (:pure-virtual-flag t
+                                :prototype-flag t
+                                :typemodifiers ("virtual")
+                                :arguments 
+                                  ( ("observer" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("sp" type
+                                             (:template-specifier 
+                                                ( ("IStateObserver" type nil nil nil))                                                
+                                              :type "class")
+                                              nil nil))
+                                        (reparse-symbol arg-sub-list) [2391 2426]))                                  
+                                :type ("status_t" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [2350 2431])
+                            ("postSleep" function
+                               (:pure-virtual-flag t
+                                :prototype-flag t
+                                :typemodifiers ("virtual")
+                                :arguments 
+                                  ( ("reason" variable
+                                       (:constant-flag t
+                                        :type ("MIDAS_SLEEP_REASON" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [2459 2491]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [2436 2496])
+                            ("wakeup" function
+                               (:pure-virtual-flag t
+                                :prototype-flag t
+                                :typemodifiers ("virtual")
+                                :type "void")
+                                (reparse-symbol classsubparts) [2571 2597])
+                            ("postShutdown" function
+                               (:pure-virtual-flag t
+                                :prototype-flag t
+                                :typemodifiers ("virtual")
+                                :type "void")
+                                (reparse-symbol classsubparts) [2602 2634])
+                            ("postSleepOrShutdown" function
+                               (:pure-virtual-flag t
+                                :prototype-flag t
+                                :typemodifiers ("virtual")
+                                :type "void")
+                                (reparse-symbol classsubparts) [2639 2678])
+                            ("postReboot" function
+                               (:pure-virtual-flag t
+                                :prototype-flag t
+                                :typemodifiers ("virtual")
+                                :arguments 
+                                  ( ("reason" variable
+                                       (:constant-flag t
+                                        :type ("MIDAS_REBOOT_REASON" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [2707 2740])
+                                    ("path" variable
+                                       (:pointer 1
+                                        :constant-flag t
+                                        :type "char")
+                                        (reparse-symbol arg-sub-list) [2741 2758]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [2683 2763])
+                            ("setStartingState" function
+                               (:pure-virtual-flag t
+                                :prototype-flag t
+                                :typemodifiers ("virtual")
+                                :arguments 
+                                  ( ("state" variable
+                                       (:constant-flag t
+                                        :type ("MIDAS_STATE" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [2798 2822]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [2768 2827])
+                            ("getStartingState" function
+                               (:pure-virtual-flag t
+                                :prototype-flag t
+                                :typemodifiers ("virtual")
+                                :type ("MIDAS_STATE" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [2832 2875])
+                            ("setSystemState" function
+                               (:pure-virtual-flag t
+                                :prototype-flag t
+                                :typemodifiers ("virtual")
+                                :arguments 
+                                  ( ("systemState" variable
+                                       (:constant-flag t
+                                        :type ("int32_t" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [2908 2934]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [2880 2939])
+                            ("injectKey" function
+                               (:pure-virtual-flag t
+                                :prototype-flag t
+                                :typemodifiers ("virtual")
+                                :arguments 
+                                  ( ("event" variable
+                                       (:reference 1
+                                        :type ("KeyEvent" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [2967 2983]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [2944 2988])
+                            ("sendCommand" function
+                               (:pure-virtual-flag t
+                                :prototype-flag t
+                                :typemodifiers ("virtual")
+                                :arguments 
+                                  ( ("message" variable
+                                       (:constant-flag t
+                                        :type ("int32_t" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [3019 3041])
+                                    ("ext1" variable
+                                       (:constant-flag t
+                                        :type ("int32_t" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [3042 3061])
+                                    ("ext2" variable
+                                       (:constant-flag t
+                                        :type ("int32_t" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [3090 3109])
+                                    ("obj" variable
+                                       (:pointer 1
+                                        :constant-flag t
+                                        :type ("Parcel" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [3110 3128]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [2994 3133])
+                            ("setKeyFilter" function
+                               (:pure-virtual-flag t
+                                :prototype-flag t
+                                :typemodifiers ("virtual")
+                                :arguments 
+                                  ( ("keycode" variable
+                                       (:constant-flag t
+                                        :type ("int32_t" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [3165 3187])
+                                    ("filterMode" variable
+                                       (:constant-flag t
+                                        :type ("int32_t" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [3188 3213]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [3139 3218])
+                            ("disableKey" function
+                               (:pure-virtual-flag t
+                                :prototype-flag t
+                                :typemodifiers ("virtual")
+                                :arguments 
+                                  ( ("disableKey" variable (:type "bool") (reparse-symbol arg-sub-list) [3248 3264]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [3224 3269])
+                            ("readLatestKey" function
+                               (:pure-virtual-flag t
+                                :prototype-flag t
+                                :typemodifiers ("virtual")
+                                :arguments 
+                                  ( ("latestKeyEvent" variable
+                                       (:pointer 1
+                                        :type ("KeyEvent" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [3301 3326]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [3274 3331])
+                            ("getKeyState" function
+                               (:pure-virtual-flag t
+                                :prototype-flag t
+                                :typemodifiers ("virtual")
+                                :arguments 
+                                  ( ("keyState" variable
+                                       (:pointer 1
+                                        :type "bool")
+                                        (reparse-symbol arg-sub-list) [3361 3376]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [3336 3381]))                          
+                        :type "class")
+                        (reparse-symbol namespacesubparts) [2078 3384])
+                    ("BnStateObserver" type
+                       (:superclasses 
+                          ( ("BnInterface" type
+                               (:protection "public"
+                                :type "class")
+                                nil nil))                          
+                        :members 
+                          ( ("public" label nil (reparse-symbol classsubparts) [3449 3456])
+                            ("onTransact" function
+                               (:prototype-flag t
+                                :typemodifiers ("virtual")
+                                :arguments 
+                                  ( ("code" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3489 3503])
+                                    ("data" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("Parcel" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [3504 3523])
+                                    ("reply" variable
+                                       (:pointer 1
+                                        :type ("Parcel" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [3524 3538])
+                                    ("flags" variable
+                                       (:default-value "0"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [3570 3588]))                                  
+                                :type ("status_t" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [3461 3590]))                          
+                        :type "class")
+                        (reparse-symbol namespacesubparts) [3386 3593])
+                    ("BnStateManager" type
+                       (:superclasses 
+                          ( ("BnInterface" type
+                               (:protection "public"
+                                :type "class")
+                                nil nil))                          
+                        :members 
+                          ( ("public" label nil (reparse-symbol classsubparts) [3656 3663])
+                            ("onTransact" function
+                               (:prototype-flag t
+                                :typemodifiers ("virtual")
+                                :arguments 
+                                  ( ("code" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3696 3710])
+                                    ("data" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("Parcel" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [3711 3730])
+                                    ("reply" variable
+                                       (:pointer 1
+                                        :type ("Parcel" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [3731 3745])
+                                    ("flags" variable
+                                       (:default-value "0"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [3777 3795]))                                  
+                                :type ("status_t" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [3668 3797]))                          
+                        :type "class")
+                        (reparse-symbol namespacesubparts) [3595 3800]))                  
+                :type "namespace")
+                nil [1052 3803]))          
+      :file "IStateManager.h"
+      :pointmax 3863
+      :fsize 3862
+      :lastmodtime '(22144 48593 229790 386000)
+      :unmatched-syntax '((spp-system-include "midas_common.h" 1124 . 1149))
+      :lexical-table 
+        '(("MIDAS_ISTATE_MANAGER_H_")
+          )
+)
+    (semanticdb-table "input.h"
+      :file "input.h"
+      :fsize 1326
+      :lastmodtime '(22109 26518 640098 361000))
+    (semanticdb-table "MidasStates.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("MIDAS_STATES_H_" variable (:constant-flag t) nil [832 847])
+            ("marvell" type
+               (:members 
+                  ( ("MIDAS_STATE" type
+                       (:typedef ("" type
+                             (:members 
+                                ( ("MIDAS_STATE_NONE" variable
+                                     (:constant-flag t
+                                      :default-value (908 910)
+                                      :type "int")
+                                      (reparse-symbol enumsubparts) [889 910])
+                                  ("MIDAS_STATE_NORMAL" variable
+                                     (:constant-flag t
+                                      :default-value (937 938)
+                                      :type "int")
+                                      (reparse-symbol enumsubparts) [916 938])
+                                  ("MIDAS_STATE_OOBE" variable
+                                     (:constant-flag t
+                                      :default-value (963 964)
+                                      :type "int")
+                                      (reparse-symbol enumsubparts) [944 964])
+                                  ("MIDAS_STATE_DEMO" variable
+                                     (:constant-flag t
+                                      :default-value (989 990)
+                                      :type "int")
+                                      (reparse-symbol enumsubparts) [970 990])
+                                  ("MIDAS_STATE_FACTORY" variable
+                                     (:constant-flag t
+                                      :default-value (1018 1019)
+                                      :type "int")
+                                      (reparse-symbol enumsubparts) [996 1019]))                                
+                              :type "enum")
+                              nil nil)
+                        :type "typedef")
+                        (reparse-symbol namespacesubparts) [870 1035])
+                    ("" type
+                       (:members 
+                          ( ("MIDAS_NOTIFY_STATE_CHANGE" variable
+                               (:constant-flag t
+                                :type "int")
+                                (reparse-symbol enumsubparts) [1048 1074])
+                            ("MIDAS_NOTIFY_NORMAL_STATE" variable
+                               (:constant-flag t
+                                :type "int")
+                                (reparse-symbol enumsubparts) [1079 1105])
+                            ("MIDAS_NOTIFY_OOBE_STATE" variable
+                               (:constant-flag t
+                                :type "int")
+                                (reparse-symbol enumsubparts) [1110 1134])
+                            ("MIDAS_NOTIFY_DEMO_STATE" variable
+                               (:constant-flag t
+                                :type "int")
+                                (reparse-symbol enumsubparts) [1139 1163])
+                            ("MIDAS_NOTIFY_FACTORY_STATE" variable
+                               (:constant-flag t
+                                :type "int")
+                                (reparse-symbol enumsubparts) [1168 1195]))                          
+                        :type "enum")
+                        (reparse-symbol namespacesubparts) [1037 1198])
+                    ("first_state_cmd" variable
+                       (:constant-flag t
+                        :default-value "1000"
+                        :type "int")
+                        (reparse-symbol namespacesubparts) [1200 1233])
+                    ("first_common_cmd" variable
+                       (:constant-flag t
+                        :default-value "500"
+                        :type "int")
+                        (reparse-symbol namespacesubparts) [1234 1267])
+                    ("" type
+                       (:members 
+                          ( ("kWhatCmdSoftAPTimeout" variable
+                               (:constant-flag t
+                                :default-value (1304 1320)
+                                :type "int")
+                                (reparse-symbol enumsubparts) [1280 1320]))                          
+                        :type "enum")
+                        (reparse-symbol namespacesubparts) [1269 1324])
+                    ("" type
+                       (:members 
+                          ( ("MIDAS_COMMAND_STATE_TIMEOUT" variable
+                               (:constant-flag t
+                                :default-value (1367 1371)
+                                :type "int")
+                                (reparse-symbol enumsubparts) [1337 1371])
+                            ("MIDAS_COMMAND_STATE_COMPLETE" variable
+                               (:constant-flag t
+                                :type "int")
+                                (reparse-symbol enumsubparts) [1377 1406])
+                            ("MIDAS_COMMAND_STATE_EXIT" variable
+                               (:constant-flag t
+                                :type "int")
+                                (reparse-symbol enumsubparts) [1411 1436])
+                            ("MIDAS_COMMAND_STATE_CONTROL" variable
+                               (:constant-flag t
+                                :type "int")
+                                (reparse-symbol enumsubparts) [1441 1469]))                          
+                        :type "enum")
+                        (reparse-symbol namespacesubparts) [1326 1472]))                  
+                :type "namespace")
+                nil [849 1475]))          
+      :file "MidasStates.h"
+      :pointmax 1526
+      :fsize 1525
+      :lastmodtime '(22084 6026 729327 76000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("MIDAS_STATES_H_")
+          )
+)
+    (semanticdb-table "midas_common.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("MIDAS_COMMON_H" variable (:constant-flag t) nil [33 47])
+            ("MIDAS_POWER_REBOOT_REASON" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "typedef"
+                :typedef ("" type
+                     (:members 
+                        ( ("MIDAS_POWER_REBOOT_REASON_REBOOT" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [1612 1645])
+                          ("MIDAS_POWER_REBOOT_REASON_OTA" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [1650 1680])
+                          ("MIDAS_POWER_REBOOT_REASON_REST" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [1685 1716])
+                          ("MIDAS_POWER_REBOOT_REASON_ACDIP" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [1721 1753]))                        
+                      :type "enum")
+                      nil nil))
+                (reparse-symbol extern-c-contents) [1593 1782])
+            ("MIDAS_POWER_BOOTUP_REASON" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "typedef"
+                :typedef ("" type
+                     (:members 
+                        ( ("MIDAS_POWER_BOOTUP_SOURCE_INVALID" variable
+                             (:constant-flag t
+                              :default-value (1408 1410)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [1372 1410])
+                          ("MIDAS_POWER_BOOTUP_SOURCE_AC_ON" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [1416 1448])
+                          ("MIDAS_POWER_BOOTUP_SOURCE_DC_ON" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [1453 1485])
+                          ("MIDAS_POWER_BOOTUP_SOURCE_REBOOT" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [1490 1523])
+                          ("MIDAS_POWER_BOOTUP_SOURCE_BGUPDATE" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [1528 1564]))                        
+                      :type "enum")
+                      nil nil))
+                (reparse-symbol extern-c-contents) [1353 1591])
+            ("MIDAS_POWER_WAKEUP_REASON" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "typedef"
+                :typedef ("" type
+                     (:members 
+                        ( ("MIDAS_POWER_WAKEUP_SOURCE_INVALID" variable
+                             (:constant-flag t
+                              :default-value (1037 1039)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [1001 1039])
+                          ("MIDAS_POWER_WAKEUP_SOURCE_IR" variable
+                             (:constant-flag t
+                              :default-value (1076 1077)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [1045 1077])
+                          ("MIDAS_POWER_WAKEUP_SOURCE_WIFI_BT" variable
+                             (:constant-flag t
+                              :default-value (1119 1120)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [1083 1120])
+                          ("MIDAS_POWER_WAKEUP_SOURCE_WOL" variable
+                             (:constant-flag t
+                              :default-value (1158 1159)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [1126 1159])
+                          ("MIDAS_POWER_WAKEUP_SOURCE_VGA" variable
+                             (:constant-flag t
+                              :default-value (1197 1198)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [1165 1198])
+                          ("MIDAS_POWER_WAKEUP_SOURCE_CEC" variable
+                             (:constant-flag t
+                              :default-value (1236 1237)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [1204 1237])
+                          ("MIDAS_POWER_WAKEUP_SOURCE_TIMER" variable
+                             (:constant-flag t
+                              :default-value (1277 1278)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [1243 1278])
+                          ("MIDAS_POWER_WAKEUP_SOURCE_BGUPDATE" variable
+                             (:constant-flag t
+                              :default-value (1321 1322)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [1284 1322]))                        
+                      :type "enum")
+                      nil nil))
+                (reparse-symbol extern-c-contents) [982 1351])
+            ("MIDAS_WAKEUP_REASON" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "typedef"
+                :typedef ("" type
+                     (:members 
+                        ( ("MIDAS_WAKEUP_REASON_FIRST_BOOT" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [755 786])
+                          ("MIDAS_WAKEUP_REASON_ACTIVE" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [791 818])
+                          ("MIDAS_WAKEUP_REASON_NORMAL" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [823 850])
+                          ("MIDAS_WAKEUP_REASON_OOBE_DEMO" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [855 885])
+                          ("MIDAS_WAKEUP_REASON_DEMO_PAUSE" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [890 921])
+                          ("MIDAS_WAKEUP_REASON_LINK_PROC" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [926 956]))                        
+                      :type "enum")
+                      nil nil))
+                (reparse-symbol extern-c-contents) [736 980])
+            ("MIDAS_SLEEP_REASON" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "typedef"
+                :typedef ("" type
+                     (:members 
+                        ( ("MIDAS_SLEEP_REASON_FIRST_STANBY" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [506 538])
+                          ("MIDAS_SLEEP_REASON_ACTIVE" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [543 569])
+                          ("MIDAS_SLEEP_REASON_NORMAL" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [574 600])
+                          ("MIDAS_SLEEP_REASON_DEMO_PAUSE" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [605 635])
+                          ("MIDAS_SLEEP_REASON_FINISH_STANDBY_OTA" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [640 678])
+                          ("MIDAS_SLEEP_REASON_LINK_PROC" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [683 712]))                        
+                      :type "enum")
+                      nil nil))
+                (reparse-symbol extern-c-contents) [487 734])
+            ("MIDAS_REBOOT_REASON" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "typedef"
+                :typedef ("" type
+                     (:members 
+                        ( ("MIDAS_REBOOT_REASON_REBOOT" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [345 372])
+                          ("MIDAS_REBOOT_REASON_OTA" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [377 401])
+                          ("MIDAS_REBOOT_REASON_REST" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [406 431])
+                          ("MIDAS_REBOOT_REASON_ACDIP" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [436 462]))                        
+                      :type "enum")
+                      nil nil))
+                (reparse-symbol extern-c-contents) [326 485])
+            ("MIDAS_SYSTEM_STATUS" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "typedef"
+                :typedef ("" type
+                     (:members 
+                        ( ("MIDAS_SYSTEM_STATUS_INVALID" variable
+                             (:constant-flag t
+                              :default-value (138 140)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [108 140])
+                          ("MIDAS_SYSTEM_STATUS_RUNNING" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [146 174])
+                          ("MIDAS_SYSTEM_STATUS_STANDBY" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [179 207])
+                          ("MIDAS_SYSTEM_STATUS_BGRUNNING" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [212 242])
+                          ("MIDAS_SYSTEM_STATUS_BGRSTANDBY" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [271 303]))                        
+                      :type "enum")
+                      nil nil))
+                (reparse-symbol extern-c-contents) [89 324]))          
+      :file "midas_common.h"
+      :pointmax 1841
+      :fsize 1840
+      :lastmodtime '(22144 48593 229790 386000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("MIDAS_COMMON_H")
+          )
+)
+    (semanticdb-table "IPowerManager.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("MIDAS_IPOWER_MANAGER_H_" variable (:constant-flag t) nil [840 863])
+            ("binder/IInterface.h" include (:system-flag t) nil [865 895])
+            ("binder/IBinder.h" include (:system-flag t) nil [896 923])
+            ("utils/RefBase.h" include (:system-flag t) nil [924 950])
+            ("utils/String8.h" include (:system-flag t) nil [951 977])
+            ("marvell" type
+               (:members 
+                  ( ("android" using (:type ("android" type
+                         (:prototype t
+                          :type "namespace")
+                          nil nil)) (reparse-symbol namespacesubparts) [999 1023])
+                    ("" type
+                       (:members 
+                          ( ("NOTIFY_SLEEP_TIMER" variable
+                               (:constant-flag t
+                                :type "int")
+                                (reparse-symbol enumsubparts) [1036 1055])
+                            ("NOTIFY_AUTO_POWER_OFF_TIMER" variable
+                               (:constant-flag t
+                                :type "int")
+                                (reparse-symbol enumsubparts) [1060 1088])
+                            ("NOTIFY_SLEEP_TIMER_CHANGED" variable
+                               (:constant-flag t
+                                :type "int")
+                                (reparse-symbol enumsubparts) [1093 1120])
+                            ("NOTIFY_AUTO_POWER_OFF_TIMER_CHANGED" variable
+                               (:constant-flag t
+                                :type "int")
+                                (reparse-symbol enumsubparts) [1125 1161])
+                            ("NOTIFY_STANDBY_POLICY_CHANGED" variable
+                               (:constant-flag t
+                                :type "int")
+                                (reparse-symbol enumsubparts) [1166 1196])
+                            ("NOTIFY_SLEEP_TIMER_INTERVAL_CHANGED" variable
+                               (:constant-flag t
+                                :type "int")
+                                (reparse-symbol enumsubparts) [1201 1237])
+                            ("NOTIFY_USER_INACTIVITY_TIMER_CHANGED" variable
+                               (:constant-flag t
+                                :type "int")
+                                (reparse-symbol enumsubparts) [1242 1279])
+                            ("NOTIFY_USER_INACTIVITY" variable
+                               (:constant-flag t
+                                :type "int")
+                                (reparse-symbol enumsubparts) [1284 1307])
+                            ("NOTIFY_USB_OVER_CURRENT" variable
+                               (:constant-flag t
+                                :type "int")
+                                (reparse-symbol enumsubparts) [1312 1336])
+                            ("NOTIFY_GO_TO_SLEEP" variable
+                               (:constant-flag t
+                                :type "int")
+                                (reparse-symbol enumsubparts) [1341 1360])
+                            ("NOTIFY_WAKE_UP" variable
+                               (:constant-flag t
+                                :type "int")
+                                (reparse-symbol enumsubparts) [1365 1380])
+                            ("NOTIFY_ABORT_DOWNLOAD" variable
+                               (:constant-flag t
+                                :type "int")
+                                (reparse-symbol enumsubparts) [1385 1407])
+                            ("NOTIFY_BG_UPDATECHECK" variable
+                               (:constant-flag t
+                                :type "int")
+                                (reparse-symbol enumsubparts) [1412 1435]))                          
+                        :type "enum")
+                        (reparse-symbol namespacesubparts) [1025 1436])
+                    ("POWER_STANDBY_POLICY_MASK" type
+                       (:typedef ("" type
+                             (:members 
+                                ( ("POWER_STANDBY_POLICY_AC_ON" variable
+                                     (:constant-flag t
+                                      :default-value (1486 1489)
+                                      :type "int")
+                                      (reparse-symbol enumsubparts) [1457 1489])
+                                  ("POWER_STANDBY_POLICY_POWER_OFF" variable
+                                     (:constant-flag t
+                                      :default-value (1528 1531)
+                                      :type "int")
+                                      (reparse-symbol enumsubparts) [1495 1531])
+                                  ("POWER_STANDBY_POLICY_SLEEP_TIMER" variable
+                                     (:constant-flag t
+                                      :default-value (1572 1575)
+                                      :type "int")
+                                      (reparse-symbol enumsubparts) [1537 1575])
+                                  ("POWER_STANDBY_POLICY_AUTO_POWER_OFF_TIMER" variable
+                                     (:constant-flag t
+                                      :default-value (1625 1628)
+                                      :type "int")
+                                      (reparse-symbol enumsubparts) [1581 1628])
+                                  ("POWER_STANDBY_POLICY_KEEP_LAST_STATUS" variable
+                                     (:constant-flag t
+                                      :default-value (1674 1678)
+                                      :type "int")
+                                      (reparse-symbol enumsubparts) [1634 1678]))                                
+                              :type "enum")
+                              nil nil)
+                        :type "typedef")
+                        (reparse-symbol namespacesubparts) [1438 1708])
+                    ("POWER_STANDBY_MODE" type
+                       (:typedef ("" type
+                             (:members 
+                                ( ("POWER_STANDBY_MODE_PASSIVE" variable
+                                     (:constant-flag t
+                                      :default-value (1758 1761)
+                                      :type "int")
+                                      (reparse-symbol enumsubparts) [1729 1761])
+                                  ("POWER_STANDBY_MODE_ACTIVE" variable
+                                     (:constant-flag t
+                                      :type "int")
+                                      (reparse-symbol enumsubparts) [1767 1793])
+                                  ("POWER_STANDBY_MODE_MAX" variable
+                                     (:constant-flag t
+                                      :type "int")
+                                      (reparse-symbol enumsubparts) [1798 1821]))                                
+                              :type "enum")
+                              nil nil)
+                        :type "typedef")
+                        (reparse-symbol namespacesubparts) [1710 1842])
+                    ("IPowerObserver" type
+                       (:superclasses 
+                          ( ("IInterface" type
+                               (:protection "public"
+                                :type "class")
+                                nil nil))                          
+                        :members 
+                          ( ("public" label nil (reparse-symbol classsubparts) [1889 1896])
+                            ("DECLARE_META_INTERFACE" function
+                               (:prototype-flag t
+                                :arguments 
+                                  ( ("" variable (:type ("PowerObserver" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1925 1939]))                                  
+                                :type "int")
+                                (reparse-symbol classsubparts) [1902 1940])
+                            ("onNotify" function
+                               (:pure-virtual-flag t
+                                :prototype-flag t
+                                :typemodifiers ("virtual")
+                                :arguments 
+                                  ( ("event" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1968 1982])
+                                    ("value" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1983 1997]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [1946 2002]))                          
+                        :type "class")
+                        (reparse-symbol namespacesubparts) [1844 2005])
+                    ("IPowerManager" type
+                       (:superclasses 
+                          ( ("IInterface" type
+                               (:protection "public"
+                                :type "class")
+                                nil nil))                          
+                        :members 
+                          ( ("public" label nil (reparse-symbol classsubparts) [2051 2058])
+                            ("DECLARE_META_INTERFACE" function
+                               (:prototype-flag t
+                                :arguments 
+                                  ( ("" variable (:type ("PowerManager" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2086 2099]))                                  
+                                :type "int")
+                                (reparse-symbol classsubparts) [2063 2100])
+                            ("kServiceName" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String16" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [2106 2141])
+                            ("sleep" function
+                               (:pure-virtual-flag t
+                                :prototype-flag t
+                                :typemodifiers ("virtual")
+                                :type "void")
+                                (reparse-symbol classsubparts) [2243 2268])
+                            ("isInSleep" function
+                               (:pure-virtual-flag t
+                                :prototype-flag t
+                                :typemodifiers ("virtual")
+                                :type "bool")
+                                (reparse-symbol classsubparts) [2310 2339])
+                            ("keystandby" function
+                               (:pure-virtual-flag t
+                                :prototype-flag t
+                                :typemodifiers ("virtual")
+                                :arguments 
+                                  ( ("standby_mode" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2399 2420]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [2375 2425])
+                            ("wakeup" function
+                               (:pure-virtual-flag t
+                                :prototype-flag t
+                                :typemodifiers ("virtual")
+                                :type "void")
+                                (reparse-symbol classsubparts) [2534 2560])
+                            ("shutdown" function
+                               (:pure-virtual-flag t
+                                :prototype-flag t
+                                :typemodifiers ("virtual")
+                                :type "void")
+                                (reparse-symbol classsubparts) [2664 2692])
+                            ("setpoh" function
+                               (:pure-virtual-flag t
+                                :prototype-flag t
+                                :typemodifiers ("virtual")
+                                :arguments 
+                                  ( ("keycode" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2777 2793])
+                                    ("on" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2794 2805]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [2757 2810])
+                            ("getpoh" function
+                               (:pure-virtual-flag t
+                                :prototype-flag t
+                                :typemodifiers ("virtual")
+                                :type ("int32_t" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [2876 2905])
+                            ("ledflash" function
+                               (:pure-virtual-flag t
+                                :prototype-flag t
+                                :typemodifiers ("virtual")
+                                :arguments 
+                                  ( ("hz" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2950 2961]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [2928 2966])
+                            ("ledfade" function
+                               (:pure-virtual-flag t
+                                :prototype-flag t
+                                :typemodifiers ("virtual")
+                                :arguments 
+                                  ( ("percent" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3008 3024]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [2987 3029])
+                            ("ledon" function
+                               (:pure-virtual-flag t
+                                :prototype-flag t
+                                :typemodifiers ("virtual")
+                                :arguments 
+                                  ( ("on" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3067 3078]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [3048 3083])
+                            ("setusbpower" function
+                               (:pure-virtual-flag t
+                                :prototype-flag t
+                                :typemodifiers ("virtual")
+                                :arguments 
+                                  ( ("on" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3173 3184]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [3148 3189])
+                            ("getusbocstatus" function
+                               (:pure-virtual-flag t
+                                :prototype-flag t
+                                :typemodifiers ("virtual")
+                                :type ("int32_t" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [3268 3305])
+                            ("reboot" function
+                               (:pure-virtual-flag t
+                                :prototype-flag t
+                                :typemodifiers ("virtual")
+                                :arguments 
+                                  ( ("reason" variable
+                                       (:constant-flag t
+                                        :type ("int32_t" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [3480 3501])
+                                    ("path" variable
+                                       (:pointer 1
+                                        :constant-flag t
+                                        :type "char")
+                                        (reparse-symbol arg-sub-list) [3502 3519]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [3460 3524])
+                            ("setUserInactivityTimer" function
+                               (:pure-virtual-flag t
+                                :prototype-flag t
+                                :typemodifiers ("virtual")
+                                :arguments 
+                                  ( ("sec" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3641 3654]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [3605 3659])
+                            ("getUserInactivityTimer" function
+                               (:pure-virtual-flag t
+                                :prototype-flag t
+                                :typemodifiers ("virtual")
+                                :type ("uint32_t" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [3698 3744])
+                            ("userActivity" function
+                               (:pure-virtual-flag t
+                                :prototype-flag t
+                                :typemodifiers ("virtual")
+                                :type "void")
+                                (reparse-symbol classsubparts) [3786 3818])
+                            ("isUserInactivity" function
+                               (:pure-virtual-flag t
+                                :prototype-flag t
+                                :typemodifiers ("virtual")
+                                :type "bool")
+                                (reparse-symbol classsubparts) [3886 3922])
+                            ("setSleepTimer" function
+                               (:pure-virtual-flag t
+                                :prototype-flag t
+                                :typemodifiers ("virtual")
+                                :arguments 
+                                  ( ("min" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4009 4021]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [3982 4026])
+                            ("getSleepTimer" function
+                               (:pure-virtual-flag t
+                                :prototype-flag t
+                                :typemodifiers ("virtual")
+                                :type ("int32_t" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [4056 4092])
+                            ("setSleepTimerInterval" function
+                               (:pure-virtual-flag t
+                                :prototype-flag t
+                                :typemodifiers ("virtual")
+                                :arguments 
+                                  ( ("seconds" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4219 4236]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [4184 4241])
+                            ("getSleepTimerInterval" function
+                               (:pure-virtual-flag t
+                                :prototype-flag t
+                                :typemodifiers ("virtual")
+                                :type ("uint32_t" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [4310 4355])
+                            ("setAutoPowerOffTimer" function
+                               (:pure-virtual-flag t
+                                :prototype-flag t
+                                :typemodifiers ("virtual")
+                                :arguments 
+                                  ( ("min" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4468 4480]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [4434 4485])
+                            ("getAutoPowerOffTimer" function
+                               (:pure-virtual-flag t
+                                :prototype-flag t
+                                :typemodifiers ("virtual")
+                                :type ("int32_t" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [4523 4566])
+                            ("disableAutoPowerOff" function
+                               (:pure-virtual-flag t
+                                :prototype-flag t
+                                :typemodifiers ("virtual")
+                                :type "void")
+                                (reparse-symbol classsubparts) [4823 4862])
+                            ("enableAutoPowerOff" function
+                               (:pure-virtual-flag t
+                                :prototype-flag t
+                                :typemodifiers ("virtual")
+                                :type "void")
+                                (reparse-symbol classsubparts) [4934 4972])
+                            ("setStandbyPolicy" function
+                               (:pure-virtual-flag t
+                                :prototype-flag t
+                                :typemodifiers ("virtual")
+                                :arguments 
+                                  ( ("policy_mask" variable
+                                       (:constant-flag t
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [5062 5089]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [5032 5094])
+                            ("getStandbyPolicy" function
+                               (:pure-virtual-flag t
+                                :prototype-flag t
+                                :typemodifiers ("virtual")
+                                :type ("uint32_t" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [5151 5191])
+                            ("setStandbyMode" function
+                               (:pure-virtual-flag t
+                                :prototype-flag t
+                                :typemodifiers ("virtual")
+                                :arguments 
+                                  ( ("mode" variable
+                                       (:constant-flag t
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [5277 5297]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [5249 5302])
+                            ("getStandbyMode" function
+                               (:pure-virtual-flag t
+                                :prototype-flag t
+                                :typemodifiers ("virtual")
+                                :type ("uint32_t" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [5357 5395])
+                            ("getCurrentSystemStatus" function
+                               (:pure-virtual-flag t
+                                :prototype-flag t
+                                :typemodifiers ("virtual")
+                                :type ("int32_t" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [5401 5446])
+                            ("BG2FGRun" function
+                               (:pure-virtual-flag t
+                                :prototype-flag t
+                                :typemodifiers ("virtual")
+                                :type "void")
+                                (reparse-symbol classsubparts) [5475 5502])
+                            ("registerPowerObserver" function
+                               (:pure-virtual-flag t
+                                :prototype-flag t
+                                :typemodifiers ("virtual")
+                                :arguments 
+                                  ( ("observer" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("sp" type
+                                             (:template-specifier 
+                                                ( ("IPowerObserver" type nil nil nil))                                                
+                                              :type "class")
+                                              nil nil))
+                                        (reparse-symbol arg-sub-list) [5547 5582]))                                  
+                                :type ("status_t" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [5508 5587])
+                            ("unregisterPowerObserver" function
+                               (:pure-virtual-flag t
+                                :prototype-flag t
+                                :typemodifiers ("virtual")
+                                :arguments 
+                                  ( ("observer" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("sp" type
+                                             (:template-specifier 
+                                                ( ("IPowerObserver" type nil nil nil))                                                
+                                              :type "class")
+                                              nil nil))
+                                        (reparse-symbol arg-sub-list) [5634 5669]))                                  
+                                :type ("status_t" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [5593 5674]))                          
+                        :type "class")
+                        (reparse-symbol namespacesubparts) [2007 5678])
+                    ("BnPowerObserver" type
+                       (:superclasses 
+                          ( ("BnInterface" type
+                               (:protection "public"
+                                :type "class")
+                                nil nil))                          
+                        :members 
+                          ( ("public" label nil (reparse-symbol classsubparts) [5743 5750])
+                            ("onTransact" function
+                               (:prototype-flag t
+                                :typemodifiers ("virtual")
+                                :arguments 
+                                  ( ("code" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5783 5797])
+                                    ("data" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("Parcel" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [5798 5817])
+                                    ("reply" variable
+                                       (:pointer 1
+                                        :type ("Parcel" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [5818 5832])
+                                    ("flags" variable
+                                       (:default-value "0"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [5864 5882]))                                  
+                                :type ("status_t" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [5755 5884]))                          
+                        :type "class")
+                        (reparse-symbol namespacesubparts) [5680 5887])
+                    ("BnPowerManager" type
+                       (:superclasses 
+                          ( ("BnInterface" type
+                               (:protection "public"
+                                :type "class")
+                                nil nil))                          
+                        :members 
+                          ( ("public" label nil (reparse-symbol classsubparts) [5950 5957])
+                            ("onTransact" function
+                               (:prototype-flag t
+                                :typemodifiers ("virtual")
+                                :arguments 
+                                  ( ("code" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5990 6004])
+                                    ("data" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("Parcel" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [6005 6024])
+                                    ("reply" variable
+                                       (:pointer 1
+                                        :type ("Parcel" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [6025 6039])
+                                    ("flags" variable
+                                       (:default-value "0"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [6071 6089]))                                  
+                                :type ("status_t" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [5962 6091]))                          
+                        :type "class")
+                        (reparse-symbol namespacesubparts) [5889 6094]))                  
+                :type "namespace")
+                nil [979 6097]))          
+      :file "IPowerManager.h"
+      :pointmax 6157
+      :fsize 6156
+      :lastmodtime '(22144 48593 229790 386000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("MIDAS_IPOWER_MANAGER_H_")
+          )
+)
+    (semanticdb-table "keycodes.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("_MIDAS_KEYCODES_H" variable (:constant-flag t) nil [834 851])
+            ("sys/types.h" include (:system-flag t) nil [853 875])
+            ("" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "enum"
+                :members 
+                  ( ("KEYCODE_CHANNEL_UP" variable
+                       (:constant-flag t
+                        :default-value (973 977)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [948 977])
+                    ("KEYCODE_CHANNEL_DOWN" variable
+                       (:constant-flag t
+                        :default-value (1008 1012)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [983 1012])
+                    ("KEYCODE_VOLUME_UP" variable
+                       (:constant-flag t
+                        :default-value (1043 1047)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1018 1047])
+                    ("KEYCODE_VOLUME_DOWN" variable
+                       (:constant-flag t
+                        :default-value (1078 1082)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1053 1082])
+                    ("KEYCODE_POWER" variable
+                       (:constant-flag t
+                        :default-value (1113 1117)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1088 1117])
+                    ("KEYCODE_MUTE" variable
+                       (:constant-flag t
+                        :default-value (1148 1152)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1123 1152])
+                    ("KEYCODE_BUTTON_0" variable
+                       (:constant-flag t
+                        :default-value (1183 1187)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1158 1187])
+                    ("KEYCODE_BUTTON_1" variable
+                       (:constant-flag t
+                        :default-value (1218 1222)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1193 1222])
+                    ("KEYCODE_BUTTON_2" variable
+                       (:constant-flag t
+                        :default-value (1253 1257)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1228 1257])
+                    ("KEYCODE_BUTTON_3" variable
+                       (:constant-flag t
+                        :default-value (1288 1292)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1263 1292])
+                    ("KEYCODE_BUTTON_4" variable
+                       (:constant-flag t
+                        :default-value (1323 1327)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1298 1327])
+                    ("KEYCODE_BUTTON_5" variable
+                       (:constant-flag t
+                        :default-value (1358 1362)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1333 1362])
+                    ("KEYCODE_BUTTON_6" variable
+                       (:constant-flag t
+                        :default-value (1393 1397)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1368 1397])
+                    ("KEYCODE_BUTTON_7" variable
+                       (:constant-flag t
+                        :default-value (1428 1432)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1403 1432])
+                    ("KEYCODE_BUTTON_8" variable
+                       (:constant-flag t
+                        :default-value (1463 1467)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1438 1467])
+                    ("KEYCODE_BUTTON_9" variable
+                       (:constant-flag t
+                        :default-value (1498 1502)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1473 1502])
+                    ("KEYCODE_LAST_CHANNEL" variable
+                       (:constant-flag t
+                        :default-value (1533 1537)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1508 1537])
+                    ("KEYCODE_INFO" variable
+                       (:constant-flag t
+                        :default-value (1568 1572)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1543 1572])
+                    ("KEYCODE_MUTE_ON" variable
+                       (:constant-flag t
+                        :default-value (1603 1607)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1578 1607])
+                    ("KEYCODE_MUTE_OFF" variable
+                       (:constant-flag t
+                        :default-value (1638 1642)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1613 1642])
+                    ("KEYCODE_PWR_OFF" variable
+                       (:constant-flag t
+                        :default-value (1673 1677)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1648 1677])
+                    ("KEYCODE_PWR_ON" variable
+                       (:constant-flag t
+                        :default-value (1708 1712)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1683 1712])
+                    ("KEYCODE_SKIP_REV" variable
+                       (:constant-flag t
+                        :default-value (1743 1747)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1718 1747])
+                    ("KEYCODE_INPUT" variable
+                       (:constant-flag t
+                        :default-value (1778 1782)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1753 1782])
+                    ("KEYCODE_STOP" variable
+                       (:constant-flag t
+                        :default-value (1813 1817)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1788 1817])
+                    ("KEYCODE_SKIP_FWD" variable
+                       (:constant-flag t
+                        :default-value (1848 1852)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1823 1852])
+                    ("KEYCODE_PLAY" variable
+                       (:constant-flag t
+                        :default-value (1883 1887)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1858 1887])
+                    ("KEYCODE_REW" variable
+                       (:constant-flag t
+                        :default-value (1918 1922)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1893 1922])
+                    ("KEYCODE_FWD" variable
+                       (:constant-flag t
+                        :default-value (1953 1957)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1928 1957])
+                    ("KEYCODE_PAUSE" variable
+                       (:constant-flag t
+                        :default-value (1988 1992)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1963 1992])
+                    ("KEYCODE_CC" variable
+                       (:constant-flag t
+                        :default-value (2023 2027)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1998 2027])
+                    ("KEYCODE_OK" variable
+                       (:constant-flag t
+                        :default-value (2058 2062)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [2033 2062])
+                    ("KEYCODE_UP" variable
+                       (:constant-flag t
+                        :default-value (2093 2097)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [2068 2097])
+                    ("KEYCODE_DOWN" variable
+                       (:constant-flag t
+                        :default-value (2128 2132)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [2103 2132])
+                    ("KEYCODE_LEFT" variable
+                       (:constant-flag t
+                        :default-value (2163 2167)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [2138 2167])
+                    ("KEYCODE_RIGHT" variable
+                       (:constant-flag t
+                        :default-value (2198 2202)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [2173 2202])
+                    ("KEYCODE_EXIT" variable
+                       (:constant-flag t
+                        :default-value (2233 2237)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [2208 2237])
+                    ("KEYCODE_AV" variable
+                       (:constant-flag t
+                        :default-value (2268 2272)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [2243 2272])
+                    ("KEYCODE_COMP" variable
+                       (:constant-flag t
+                        :default-value (2303 2307)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [2278 2307])
+                    ("KEYCODE_PIC_MODE_CYCLE" variable
+                       (:constant-flag t
+                        :default-value (2338 2342)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [2313 2342])
+                    ("KEYCODE_WIDE" variable
+                       (:constant-flag t
+                        :default-value (2373 2377)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [2348 2377])
+                    ("KEYCODE_HDMI_1" variable
+                       (:constant-flag t
+                        :default-value (2408 2412)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [2383 2412])
+                    ("KEYCODE_HDMI_2" variable
+                       (:constant-flag t
+                        :default-value (2443 2447)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [2418 2447])
+                    ("KEYCODE_HDMI_3" variable
+                       (:constant-flag t
+                        :default-value (2478 2482)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [2453 2482])
+                    ("KEYCODE_HDMI_4" variable
+                       (:constant-flag t
+                        :default-value (2513 2517)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [2488 2517])
+                    ("KEYCODE_HDMI_5" variable
+                       (:constant-flag t
+                        :default-value (2548 2552)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [2523 2552])
+                    ("KEYCODE_HDMI_6" variable
+                       (:constant-flag t
+                        :default-value (2583 2587)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [2558 2587])
+                    ("KEYCODE_HDMI_7" variable
+                       (:constant-flag t
+                        :default-value (2618 2622)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [2593 2622])
+                    ("KEYCODE_HDMI_8" variable
+                       (:constant-flag t
+                        :default-value (2653 2657)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [2628 2657])
+                    ("KEYCODE_CARET" variable
+                       (:constant-flag t
+                        :default-value (2688 2692)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [2663 2692])
+                    ("KEYCODE_FACTORY_AGING_MODE" variable
+                       (:constant-flag t
+                        :default-value (2727 2731)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [2698 2731])
+                    ("KEYCODE_VIDEO_DCR" variable
+                       (:constant-flag t
+                        :default-value (2766 2770)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [2737 2770])
+                    ("KEYCODE_VIDEO_LIGHTSENSOR" variable
+                       (:constant-flag t
+                        :default-value (2805 2809)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [2776 2809])
+                    ("KEYCODE_ARC" variable
+                       (:constant-flag t
+                        :default-value (2844 2848)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [2815 2848])
+                    ("KEYCODE_FACTORY_FW_VERSION" variable
+                       (:constant-flag t
+                        :default-value (2883 2887)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [2854 2887])
+                    ("KEYCODE_AUDIO_VOL" variable
+                       (:constant-flag t
+                        :default-value (2922 2926)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [2893 2926])
+                    ("KEYCODE_RES_7" variable
+                       (:constant-flag t
+                        :default-value (2961 2965)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [2932 2965])
+                    ("KEYCODE_VIDEO_CTC" variable
+                       (:constant-flag t
+                        :default-value (3000 3004)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [2971 3004])
+                    ("KEYCODE_RES_9" variable
+                       (:constant-flag t
+                        :default-value (3039 3043)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3010 3043])
+                    ("KEYCODE_RES_10" variable
+                       (:constant-flag t
+                        :default-value (3078 3082)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3049 3082])
+                    ("KEYCODE_VIDEO_TEST_PATTERN" variable
+                       (:constant-flag t
+                        :default-value (3117 3121)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3088 3121])
+                    ("KEYCODE_AUDIO_HW_BYPASS" variable
+                       (:constant-flag t
+                        :default-value (3156 3160)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3127 3160])
+                    ("KEYCODE_FACTORY_CHANNEL" variable
+                       (:constant-flag t
+                        :default-value (3195 3199)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3166 3199])
+                    ("KEYCODE_VIDEO_BACKLIGHT" variable
+                       (:constant-flag t
+                        :default-value (3234 3238)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3205 3238])
+                    ("KEYCODE_FACTORY_RESET" variable
+                       (:constant-flag t
+                        :default-value (3273 3277)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3244 3277])
+                    ("KEYCODE_DEMO" variable
+                       (:constant-flag t
+                        :default-value (3308 3312)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3283 3312])
+                    ("KEYCODE_HDMI" variable
+                       (:constant-flag t
+                        :default-value (3343 3347)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3318 3347])
+                    ("KEYCODE_SYNC" variable
+                       (:constant-flag t
+                        :default-value (3378 3382)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3353 3382])
+                    ("KEYCODE_RESET" variable
+                       (:constant-flag t
+                        :default-value (3413 3417)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3388 3417])
+                    ("KEYCODE_TUNER" variable
+                       (:constant-flag t
+                        :default-value (3448 3452)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3423 3452])
+                    ("KEYCODE_AUDIO_SPEAKER_BALANCE" variable
+                       (:constant-flag t
+                        :default-value (3495 3499)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3458 3499])
+                    ("KEYCODE_POH_RX0_ON" variable
+                       (:constant-flag t
+                        :default-value (3530 3534)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3505 3534])
+                    ("KEYCODE_POH_RX1_ON" variable
+                       (:constant-flag t
+                        :default-value (3565 3569)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3540 3569])
+                    ("KEYCODE_POH_RX2_ON" variable
+                       (:constant-flag t
+                        :default-value (3600 3604)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3575 3604])
+                    ("KEYCODE_POH_RX0_OFF" variable
+                       (:constant-flag t
+                        :default-value (3635 3639)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3610 3639])
+                    ("KEYCODE_POH_RX1_OFF" variable
+                       (:constant-flag t
+                        :default-value (3670 3674)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3645 3674])
+                    ("KEYCODE_POH_RX2_OFF" variable
+                       (:constant-flag t
+                        :default-value (3705 3709)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3680 3709])
+                    ("KEYCODE_AC_DIP" variable
+                       (:constant-flag t
+                        :default-value (3740 3744)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3715 3744])
+                    ("KEYCODE_SERVICE_INFO" variable
+                       (:constant-flag t
+                        :default-value (3775 3779)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3750 3779])
+                    ("KEYCODE_EXIT_OOBE" variable
+                       (:constant-flag t
+                        :default-value (3810 3814)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3785 3814])
+                    ("KEYCODE_NUMBER_DASH" variable
+                       (:constant-flag t
+                        :default-value (3845 3849)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3820 3849]))                  )
+                (reparse-symbol extern-c-contents) [937 3853]))          
+      :file "keycodes.h"
+      :pointmax 3912
+      :fsize 3911
+      :lastmodtime '(22144 48593 229790 386000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("_MIDAS_KEYCODES_H")
+          )
+)
+    (semanticdb-table "MidasSettingsConstants.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("MIDAS_SETTINGS_CONSTANTS_H_" variable (:constant-flag t) nil [844 871])
+            ("utils/String8.h" include (:system-flag t) nil [873 899])
+            ("marvell" type
+               (:members 
+                  ( ("android" using (:type ("android" type
+                         (:prototype t
+                          :type "namespace")
+                          nil nil)) (reparse-symbol namespacesubparts) [921 945])
+                    ("MidasSettingsConstants" type
+                       (:members 
+                          ( ("public" label nil (reparse-symbol classsubparts) [980 987])
+                            ("KEY_USER_LANGUAGE" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [1008 1048])
+                            ("VALUE_USER_LANGUAGE_ENGLISH" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [1053 1103])
+                            ("VALUE_USER_LANGUAGE_FRENCH" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [1108 1157])
+                            ("VALUE_USER_LANGUAGE_SPANISH" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [1162 1212])
+                            ("VALUE_VOLUME_STEP" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type "float")
+                                (reparse-symbol classsubparts) [1232 1269])
+                            ("VALUE_VOLUME_ADJ_INTERVAL" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("int32_t" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [1274 1321])
+                            ("VALUE_CHANNEL_ZAP_INTERVAL" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("int32_t" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [1342 1390])
+                            ("KEY_STARTING_STATE" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [1409 1449])
+                            ("KEY_DEMO_STATE_STATUS" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [1454 1497])
+                            ("VALUE_DEMO_STATE_STATUS_OFF" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [1502 1551])
+                            ("VALUE_DEMO_STATE_STATUS_ON" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [1556 1604])
+                            ("VALUE_DEMO_STATE_STATUS_VIDEO" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [1609 1660])
+                            ("KEY_OOBE_ONCE_ENTERED" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [1665 1708])
+                            ("KEY_NORMAL_ONCE_ENTERED" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [1713 1758])
+                            ("VALUE_TRUE" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [1779 1811])
+                            ("VALUE_FALSE" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [1816 1849])
+                            ("KEY_AUTO_POWER_OFF_TIMER" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [1868 1914])
+                            ("VALUE_DEFAULT_AUTO_POWER_OFF_TIMER" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [1919 1975])
+                            ("KEY_SLEEP_TIMER_INTERVAL" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [1980 2026])
+                            ("VALUE_DEFAULT_SLEEP_TIMER_INTERVAL" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [2031 2087])
+                            ("KEY_STANDBY_POLICY" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [2092 2132])
+                            ("VALUE_DEFAULT_STANDBY_POLICY" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [2137 2187])
+                            ("KEY_USER_INACTIVITY_TIMER" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [2192 2239])
+                            ("VALUE_DEFAULT_USER_INACTIVITY_TIMER" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [2244 2301])
+                            ("KEY_STANDBY_MODE" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [2306 2344])
+                            ("VALUE_DEFAULT_STANDBY_MODE" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [2349 2397])
+                            ("KEY_SYSTEM_STATUS" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [2402 2441])
+                            ("VALUE_SYSTEM_STATUS_RUNNING" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [2446 2495])
+                            ("VALUE_SYSTEM_STATUS_STANDBY" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [2500 2549])
+                            ("VALUE_SYSTEM_STATUS_BGRUNNING" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [2554 2605])
+                            ("VALUE_SYSTEM_STATUS_BGSTANDBY" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [2610 2661])
+                            ("KEY_POWER_INDICATOR" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [2688 2729])
+                            ("VALUE_POWER_INDICATOR_ON" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [2734 2780])
+                            ("VALUE_POWER_INDICATOR_OFF" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [2785 2832])
+                            ("KEY_TV_INPUT_LAST_URI" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [2851 2894])
+                            ("VALUE_DEFAULT_TV_INPUT_LAST_URI" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [2899 2952])
+                            ("KEY_TV_INPUT_HDMI1_NAME" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [2957 3002])
+                            ("VALUE_DEFAULT_TV_INPUT_HDMI1_NAME" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [3007 3062])
+                            ("KEY_TV_INPUT_HDMI2_NAME" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [3067 3112])
+                            ("VALUE_DEFAULT_TV_INPUT_HDMI2_NAME" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [3117 3172])
+                            ("KEY_TV_INPUT_HDMI3_NAME" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [3177 3222])
+                            ("VALUE_DEFAULT_TV_INPUT_HDMI3_NAME" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [3227 3282])
+                            ("KEY_TV_INPUT_HDMI4_NAME" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [3287 3332])
+                            ("VALUE_DEFAULT_TV_INPUT_HDMI4_NAME" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [3337 3392])
+                            ("KEY_TV_INPUT_HDMI5_NAME" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [3397 3442])
+                            ("VALUE_DEFAULT_TV_INPUT_HDMI5_NAME" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [3447 3502])
+                            ("KEY_TV_INPUT_COMP_NAME" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [3507 3551])
+                            ("VALUE_DEFAULT_TV_INPUT_COMP_NAME" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [3556 3610])
+                            ("KEY_TV_INPUT_CVBS_NAME" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [3615 3659])
+                            ("VALUE_DEFAULT_TV_INPUT_CVBS_NAME" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [3664 3718])
+                            ("KEY_TV_INPUT_TUNER_NAME" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [3723 3768])
+                            ("VALUE_DEFAULT_TV_INPUT_TUNER_NAME" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [3773 3828])
+                            ("KEY_TV_INPUT_CAST_NAME" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [3833 3877])
+                            ("VALUE_DEFAULT_TV_INPUT_CAST_NAME" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [3882 3936])
+                            ("KEY_TV_INPUT_HDMI1_META_DATA" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [3941 3991])
+                            ("KEY_TV_INPUT_HDMI2_META_DATA" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [3996 4046])
+                            ("KEY_TV_INPUT_HDMI3_META_DATA" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [4051 4101])
+                            ("KEY_TV_INPUT_HDMI4_META_DATA" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [4106 4156])
+                            ("KEY_TV_INPUT_HDMI5_META_DATA" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [4161 4211])
+                            ("KEY_TV_INPUT_COMP_META_DATA" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [4216 4265])
+                            ("KEY_TV_INPUT_CVBS_META_DATA" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [4270 4319])
+                            ("KEY_TV_INPUT_TUNER_META_DATA" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [4324 4374])
+                            ("KEY_TV_INPUT_CAST_META_DATA" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [4379 4428])
+                            ("KEY_TV_INPUT_ONCE_SELECTED" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [4433 4481])
+                            ("KEY_HDMI_CEC_ENABLED_STATUS" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [4498 4547])
+                            ("VALUE_DEFAULT_HDMI_CEC_ENABLED_STATUS" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [4552 4611])
+                            ("KEY_HDMI_CEC_MODE" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [4616 4655])
+                            ("VALUE_DEFAULT_HDMI_CEC_MODE" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [4660 4709])
+                            ("KEY_SILENT_UPDATE_BEGINNING" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [4729 4778])
+                            ("VALUE_DEFAULT_SILENT_UPDATE_BEGINNING" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [4783 4842])
+                            ("KEY_SILENT_UPDATE_ENDING" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [4847 4893])
+                            ("VALUE_DEFAULT_SILENT_UPDATE_ENDING" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [4898 4954])
+                            ("KEY_SMART_INTER_ACTIVITY" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [4986 5032])
+                            ("VALUE_SMART_INTER_ACTIVITY_ON" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [5037 5088])
+                            ("VALUE_SMART_INTER_ACTIVITY_OFF" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [5093 5145])
+                            ("KEY_TM_INTERNETTIME" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [5175 5216])
+                            ("VALUE_TM_INTERNETTIME_ON" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [5221 5267])
+                            ("VALUE_TM_INTERNETTIME_OFF" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [5272 5319])
+                            ("KEY_TM_TIMEZONE" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [5348 5385])
+                            ("KEY_TM_USER_DIFF_INTERNET" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [5465 5512])
+                            ("KEY_TM_DAYLIGHTSAVING" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [5547 5590])
+                            ("VALUE_TM_DAYLIGHTSAVING_AUTO" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [5595 5645])
+                            ("VALUE_TM_DAYLIGHTSAVING_ON" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [5650 5698])
+                            ("VALUE_TM_DAYLIGHTSAVING_OFF" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [5703 5752])
+                            ("KEY_TM_FORMAT_STYLE" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [5781 5822])
+                            ("VALUE_TM_FORMAT_12HOURS" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [5827 5872])
+                            ("VALUE_TM_FORMAT_24HOURS" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [5877 5922])
+                            ("KEY_OOBE_STATE" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [5944 5980])
+                            ("KEY_OOBE_ISCOMPLETE" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [6007 6048])
+                            ("VALUE_OOBE_ISCOMPLETE_ON" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [6053 6099])
+                            ("VALUE_OOBE_ISCOMPLETE_OFF" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [6104 6151])
+                            ("KEY_TUNER_WORK_STATE" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [6173 6215])
+                            ("VALUE_TUNER_INSCANING" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [6220 6263])
+                            ("VALUE_TUNER_INPLAY" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [6268 6308])
+                            ("VALUE_AUDIO_CUSTOMER_NAME" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [6313 6360])
+                            ("KEY_SYSTEM_PIN" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [6382 6418])
+                            ("KEY_AUDIO_BT_ISENABLE" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [6445 6488])
+                            ("VALUE_AUDIO_BT_ISENABLE_ON" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [6493 6541])
+                            ("VALUE_AUDIO_BT_ISENABLE_OFF" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [6546 6595])
+                            ("KEY_TUNER_SCAN_STATUS" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [6623 6666])
+                            ("KEY_SHOW_BT_RSSI_METER" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [6696 6740])
+                            ("VALUE_SHOW_BT_RSSI_METER_ON" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [6745 6794])
+                            ("VALUE_SHOW_BT_RSSI_METER_OFF" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [6799 6849]))                          
+                        :type "class")
+                        (reparse-symbol namespacesubparts) [947 6852]))                  
+                :type "namespace")
+                nil [901 6855]))          
+      :file "MidasSettingsConstants.h"
+      :pointmax 6919
+      :fsize 6918
+      :lastmodtime '(22153 62324 318424 168000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("MIDAS_SETTINGS_CONSTANTS_H_")
+          )
+))
+  :file "!home!qichen!bg4dtv_20151231_rc3_a0!vendor!marvell!midas-tv!frameworks!midas_server!include!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

@@ -1,10 +1,11 @@
 ;; Object source/
 ;; SEMANTICDB Tags save file
 (semanticdb-project-database-file "source/"
-  :tables (list 
-   (semanticdb-table "platform_config.c"
-    :major-mode 'c-mode
-    :tags 
+  :tables
+  (list
+    (semanticdb-table "platform_config.c"
+      :major-mode 'c-mode
+      :tags 
         '( ("com_type.h" include nil nil [1 22])
             ("platform_config.h" include nil nil [24 52])
             ("sm_def.h" include nil nil [54 73])
@@ -40,31 +41,156 @@
             ("tasks" variable
                (:dereference 1
                 :typemodifiers ("static")
+                :default-value "{
+#ifdef CONSOLEENABLE
+	{\"console task\", mv_sm_console_task, NULL, 0, 0},
+#endif
+	{\"power task\", mv_sm_power_task, NULL, 0, 0}, // mandatory task, don't change
+	{\"communication\", mv_sm_comm_task, NULL, 0, 0}, // mandatory task, don't change
+#ifdef IRENABLE
+	{\"ir_remote\", mv_sm_ir_task, NULL, 0, 0},
+#endif
+#ifdef WDTENABLE
+	{\"watchdog\", mv_sm_wdt_task, NULL, 2000, 0},
+#endif
+#ifdef CECENABLE
+	{\"cec task\", mv_sm_cec_task, NULL, 0, 0},
+#endif
+#ifdef TEMPENABLE
+	{\"temp task\", mv_sm_temp_task, NULL, 5000, 1000},
+	//{\"temp change task\", mv_sm_temp_print_change_task, NULL, 5000, 0},
+	{\"temp print task\", mv_sm_temp_print_task, NULL, 300000, 1000},
+#endif
+#ifdef CBTNENABLE
+	{\"cbtn task\", mv_sm_cbtn_task, NULL, 0, 0},
+#endif
+#ifdef FNBTNENABLE
+	{\"fnbtn task\", mv_sm_fnbtn_task, NULL, 0, 0},
+#endif
+#ifdef ADCKEYENABLE
+    {\"adckey task\", mv_sm_adckey_task, NULL, 0, 1000},
+#endif
+#ifdef POHENABLE
+    {\"poh task\", mv_sm_poh_task, NULL, 2000, 1000},
+#endif
+
+    //{\"misc task\", mv_sm_misc_task, NULL, 0, 0},
+    //{\"test task\", mv_sm_test_task, NULL, 60000, 1000},
+}"
                 :type ("sched_task_t" type (:type "class") nil nil))
                 nil [1043 2139])
             ("msgprocs" variable
                (:dereference 1
                 :typemodifiers ("static")
+                :default-value "{
+	{MV_SM_ID_POWER, mv_sm_process_power_msg}, // mandatory msg process, don't change
+#ifdef IRENABLE
+	{MV_SM_ID_IR, mv_sm_process_ir_msg},
+#endif
+#ifdef WDTENABLE
+	{MV_SM_ID_WDT, mv_sm_process_wdt_msg},
+#endif
+#ifdef CECENABLE
+	{MV_SM_ID_CEC, mv_sm_process_cec_msg},
+#endif
+#ifdef TEMPENABLE
+	{MV_SM_ID_TEMP, mv_sm_process_temp_msg},
+#endif
+#ifdef WOLENABLE
+	{MV_SM_ID_WOL, mv_sm_process_wol_msg},
+#endif
+	{MV_SM_ID_DEBUG, mv_sm_process_debug_msg},
+}"
                 :type ("msg_proc_t" type (:type "class") nil nil))
                 nil [2331 2813])
             ("internal_msgprocs" variable
                (:dereference 1
                 :typemodifiers ("static")
+                :default-value "{
+	{MV_SM_ID_ETH, mv_sm_process_internal_eth_phy_ctrl_msg},
+	{MV_SM_ID_UART, mv_sm_process_internal_uart_ctrl_msg},
+	{MV_SM_ID_DDR, mv_sm_process_internal_ddr_ctrl_msg},
+	{MV_SM_ID_DEBUG, mv_sm_process_debug_msg},
+#ifdef CONSOLEENABLE
+	{MV_SM_ID_CONSOLE, mv_sm_process_internal_console_msg},
+#endif
+#ifdef LEDENABLE
+	{MV_SM_ID_LED, mv_sm_process_internal_led_msg},
+#endif
+#ifdef CECENABLE
+	{MV_SM_ID_CEC, mv_sm_process_internal_cec_msg},
+#endif
+#ifdef WOLENABLE
+	{MV_SM_ID_WOL, mv_sm_process_internal_wol_msg},
+#endif
+#ifdef IRENABLE
+	{MV_SM_ID_IR, mv_sm_process_internal_ir_msg},
+#endif
+}"
                 :type ("msg_proc_t" type (:type "class") nil nil))
                 nil [2943 3573])
             ("isrs" variable
                (:dereference 1
                 :typemodifiers ("static")
+                :default-value "{
+	mv_sm_timer_isr,
+#ifdef WOLENABLE
+	mv_sm_wol_isr,
+#endif
+#ifdef WDTENABLE
+	mv_sm_wdt_isr,
+#endif
+#if (defined(CECENABLE) && defined(HWCEC))
+	mv_sm_cec_isr,
+#endif
+}"
                 :type ("isr_func" type (:type "class") nil nil))
                 nil [3945 4138])
             ("gpio_settings" variable
                (:dereference 1
                 :typemodifiers ("static")
+                :default-value "{
+	{SM_GPIO_PORT_WIFIBT, EDGE_SENSITIVE, FALLING_EDGE, mv_sm_wifibt_isr}, /* common feature */
+#ifdef IRENABLE
+	{SM_GPIO_PORT_IR, EDGE_SENSITIVE, FALLING_EDGE, mv_sm_ir_isr}, /* macro for gpio port */
+#endif
+#if (defined(CECENABLE) && !defined(HWCEC))
+	{SM_GPIO_PORT_CEC, EDGE_SENSITIVE, FALLING_EDGE, mv_sm_cec_isr},
+#endif
+#ifdef CBTNENABLE
+	{SM_GPIO_PORT_CBTN, EDGE_SENSITIVE, FALLING_EDGE, mv_sm_cbtn_isr},
+#endif
+}"
                 :type ("sm_gpio_setting_t" type (:type "class") nil nil))
                 nil [4375 4838])
             ("inits" variable
                (:dereference 1
                 :typemodifiers ("static")
+                :default-value "{
+	rom_api_init,
+#ifdef WDTENABLE
+	wdt_init,
+#endif
+#ifdef LEDENABLE
+	led_init,
+#endif
+#ifdef WOLENABLE
+	mv_sm_wol_init,
+#endif
+#ifdef CBTNENABLE
+	mv_sm_cbtn_init,
+#endif
+#ifdef CECENABLE
+	mv_sm_cec_init,
+#endif
+#ifdef CONSOLEENABLE
+	mv_sm_console_init,
+#endif
+#ifdef ADCKEYENABLE
+	mv_sm_adckey_init,
+#endif
+	mv_sm_power_init,
+}"
                 :type ("init_func" type (:type "class") nil nil))
                 nil [5317 5673])
             ("board_peripheral_assert" function
@@ -117,7 +243,6 @@
                         (reparse-symbol arg-sub-list) [6580 6591]))                  
                 :type ("msg_proc_t" type (:type "class") nil nil))
                 nil [6546 6660])
-            ("gpio_settings" variable (:type "int") nil [7030 7044])
             ("get_internal_msg_procs" function
                (:pointer 1
                 :typemodifiers ("inline")
@@ -148,33 +273,37 @@
                         (reparse-symbol arg-sub-list) [6949 6960]))                  
                 :type ("sm_gpio_setting_t" type (:type "class") nil nil))
                 nil [6904 7046])
-            ("inits" variable (:type "int") nil [7142 7148]))          
-    :file "platform_config.c"
-    :pointmax 7151
-    :fsize 7150
-    :lastmodtime '(22117 24734 515332 827000)
-    :unmatched-syntax 'nil
-    )
-   (semanticdb-table "sm_poh.c"
-    :major-mode 'c-mode
-    :tags nil
-    :file "sm_poh.c"
-    :pointmax 5005
-    :fsize 5004
-    :lastmodtime '(22109 11314 384586 219000)
-    :unmatched-syntax 'nil
-    )
-   (semanticdb-table "sm_adckey.c"
-    :major-mode 'c-mode
-    :tags nil
-    :file "sm_adckey.c"
-    :pointmax 8223
-    :fsize 8222
-    :lastmodtime '(22110 42161 597493 579000)
-    :unmatched-syntax 'nil
-    )
-   )
+            ("get_inits" function
+               (:pointer 1
+                :typemodifiers ("inline")
+                :arguments 
+                  ( ("num" variable
+                       (:pointer 1
+                        :type ("INT32" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7077 7088]))                  
+                :type ("init_func" type (:type "class") nil nil))
+                nil [7048 7150]))          
+      :file "platform_config.c"
+      :pointmax 7151
+      :fsize 7150
+      :lastmodtime '(22175 9301 733862 849000)
+      :unmatched-syntax nil)
+    (semanticdb-table "sm_poh.c"
+      :major-mode 'c-mode
+      :tags nil
+      :file "sm_poh.c"
+      :pointmax 4789
+      :fsize 4788
+      :lastmodtime '(22157 61766 258030 683000)
+      :unmatched-syntax nil)
+    (semanticdb-table "sm_adckey.c"
+      :major-mode 'c-mode
+      :tags nil
+      :file "sm_adckey.c"
+      :pointmax 8223
+      :fsize 8572
+      :lastmodtime '(22157 61800 690029 579000)
+      :unmatched-syntax nil))
   :file "!home!qichen!bg4dtv_release_clean!vendor!marvell-sdk!MV88DE3100_SDK!MV88DE3100_Tools!bsp!sm_rom!customization!bg4dtv_mk!source!semantic.cache"
   :semantic-tag-version "2.0"
-  :semanticdb-version "2.2"
-  )
+  :semanticdb-version "2.2")

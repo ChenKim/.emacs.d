@@ -1,0 +1,531 @@
+;; Object irq/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "irq/"
+  :tables
+  (list
+    (semanticdb-table "manage.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("pr_fmt" variable (:constant-flag t) nil [212 218])
+            ("linux/irq.h" include (:system-flag t) nil [240 262])
+            ("linux/kthread.h" include (:system-flag t) nil [263 289])
+            ("linux/module.h" include (:system-flag t) nil [290 315])
+            ("linux/random.h" include (:system-flag t) nil [316 341])
+            ("linux/interrupt.h" include (:system-flag t) nil [342 370])
+            ("linux/slab.h" include (:system-flag t) nil [371 394])
+            ("linux/sched.h" include (:system-flag t) nil [395 419])
+            ("linux/sched/rt.h" include (:system-flag t) nil [420 447])
+            ("linux/task_work.h" include (:system-flag t) nil [448 476])
+            ("internals.h" include nil nil [478 500])
+            ("synchronize_irq" function
+               (:arguments 
+                  ( ("irq" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [1133 1150]))                  
+                :type "void")
+                nil [1112 1922])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("synchronize_irq" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1937 1953]))                  
+                :type "int")
+                nil [1923 1954])
+            ("setup_affinity" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("irq" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [8999 9016])
+                    ("desc" variable
+                       (:pointer 1
+                        :type ("irq_desc" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9017 9039])
+                    ("mask" variable
+                       (:pointer 1
+                        :type ("cpumask" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9040 9061]))                  
+                :type "int")
+                nil [8966 9076])
+            ("__disable_irq" function
+               (:arguments 
+                  ( ("desc" variable
+                       (:pointer 1
+                        :type ("irq_desc" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9104 9126])
+                    ("irq" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [9127 9144])
+                    ("suspend" variable (:type "bool") (reparse-symbol arg-sub-list) [9145 9158]))                  
+                :type "void")
+                nil [9085 9333])
+            ("__disable_irq_nosync" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("irq" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [9367 9384]))                  
+                :type "int")
+                nil [9335 9611])
+            ("disable_irq_nosync" function
+               (:arguments 
+                  ( ("irq" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [9991 10008]))                  
+                :type "void")
+                nil [9967 10040])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("disable_irq_nosync" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10055 10074]))                  
+                :type "int")
+                nil [10041 10075])
+            ("disable_irq" function
+               (:arguments 
+                  ( ("irq" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [10535 10552]))                  
+                :type "void")
+                nil [10518 10613])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("disable_irq" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10628 10640]))                  
+                :type "int")
+                nil [10614 10641])
+            ("__enable_irq" function
+               (:arguments 
+                  ( ("desc" variable
+                       (:pointer 1
+                        :type ("irq_desc" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10661 10683])
+                    ("irq" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [10684 10701])
+                    ("resume" variable (:type "bool") (reparse-symbol arg-sub-list) [10702 10714]))                  
+                :type "void")
+                nil [10643 11329])
+            ("enable_irq" function
+               (:arguments 
+                  ( ("irq" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [11715 11732]))                  
+                :type "void")
+                nil [11699 12056])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("enable_irq" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12071 12082]))                  
+                :type "int")
+                nil [12057 12083])
+            ("set_irq_wake_real" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("irq" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [12114 12131])
+                    ("on" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [12132 12148]))                  
+                :type "int")
+                nil [12085 12408])
+            ("irq_set_irq_wake" function
+               (:arguments 
+                  ( ("irq" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [12835 12852])
+                    ("on" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [12853 12869]))                  
+                :type "int")
+                nil [12814 13654])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("irq_set_irq_wake" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [13669 13686]))                  
+                :type "int")
+                nil [13655 13687])
+            ("can_request_irq" function
+               (:arguments 
+                  ( ("irq" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [13864 13881])
+                    ("irqflags" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [13882 13905]))                  
+                :type "int")
+                nil [13844 14229])
+            ("__irq_set_trigger" function
+               (:arguments 
+                  ( ("desc" variable
+                       (:pointer 1
+                        :type ("irq_desc" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [14253 14275])
+                    ("irq" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [14276 14293])
+                    ("flags" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [14302 14322]))                  
+                :type "int")
+                nil [14231 15579])
+            ("irq_default_primary_handler" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("irq" variable (:type "int") (reparse-symbol arg-sub-list) [16105 16113])
+                    ("dev_id" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [16114 16127]))                  
+                :type ("irqreturn_t" type (:type "class") nil nil))
+                nil [16058 16156])
+            ("irq_nested_primary_handler" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("irq" variable (:type "int") (reparse-symbol arg-sub-list) [16289 16297])
+                    ("dev_id" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [16298 16311]))                  
+                :type ("irqreturn_t" type (:type "class") nil nil))
+                nil [16243 16394])
+            ("irq_wait_for_interrupt" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("action" variable
+                       (:pointer 1
+                        :type ("irqaction" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [16430 16455]))                  
+                :type "int")
+                nil [16396 16775])
+            ("irq_finalize_oneshot" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("desc" variable
+                       (:pointer 1
+                        :type ("irq_desc" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [16975 16997])
+                    ("action" variable
+                       (:pointer 1
+                        :type ("irqaction" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [17003 17028]))                  
+                :type "void")
+                nil [16942 18335])
+            ("irq_thread_check_affinity" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("desc" variable
+                       (:pointer 1
+                        :type ("irq_desc" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [19286 19308])
+                    ("action" variable
+                       (:pointer 1
+                        :type ("irqaction" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [19309 19334]))                  
+                :type "void")
+                nil [19241 19338])
+            ("irq_forced_thread_fn" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("desc" variable
+                       (:pointer 1
+                        :type ("irq_desc" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [19614 19636])
+                    ("action" variable
+                       (:pointer 1
+                        :type ("irqaction" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [19637 19662]))                  
+                :type ("irqreturn_t" type (:type "class") nil nil))
+                nil [19574 19831])
+            ("irq_thread_fn" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("desc" variable
+                       (:pointer 1
+                        :type ("irq_desc" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [20026 20048])
+                    ("action" variable
+                       (:pointer 1
+                        :type ("irqaction" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [20051 20076]))                  
+                :type ("irqreturn_t" type (:type "class") nil nil))
+                nil [19993 20204])
+            ("wake_threads_waitq" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("desc" variable
+                       (:pointer 1
+                        :type ("irq_desc" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [20237 20259]))                  
+                :type "void")
+                nil [20206 20348])
+            ("irq_thread_dtor" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("unused" variable
+                       (:pointer 1
+                        :type ("callback_head" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [20378 20407]))                  
+                :type "void")
+                nil [20350 21030])
+            ("irq_thread" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [21089 21100]))                  
+                :type "int")
+                nil [21067 22286])
+            ("irq_setup_forced_threading" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable
+                       (:pointer 1
+                        :type ("irqaction" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [22327 22348]))                  
+                :type "void")
+                nil [22288 22651])
+            ("__setup_irq" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("irq" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [22815 22832])
+                    ("desc" variable
+                       (:pointer 1
+                        :type ("irq_desc" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [22833 22855])
+                    ("" variable
+                       (:pointer 1
+                        :type ("irqaction" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [22856 22877]))                  
+                :type "int")
+                nil [22792 31178])
+            ("setup_irq" function
+               (:arguments 
+                  ( ("irq" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [31375 31392])
+                    ("act" variable
+                       (:pointer 1
+                        :type ("irqaction" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [31393 31415]))                  
+                :type "int")
+                nil [31361 31652])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("setup_irq" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [31671 31681]))                  
+                :type "int")
+                nil [31653 31682])
+            ("__free_irq" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("irq" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [31859 31876])
+                    ("dev_id" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [31877 31890]))                  
+                :type ("irqaction" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [31823 33673])
+            ("remove_irq" function
+               (:arguments 
+                  ( ("irq" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [33878 33895])
+                    ("act" variable
+                       (:pointer 1
+                        :type ("irqaction" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [33896 33918]))                  
+                :type "void")
+                nil [33862 34061])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("remove_irq" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [34080 34091]))                  
+                :type "int")
+                nil [34062 34092])
+            ("free_irq" function
+               (:arguments 
+                  ( ("irq" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [34661 34678])
+                    ("dev_id" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [34679 34692]))                  
+                :type "void")
+                nil [34647 34990])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("free_irq" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [35005 35014]))                  
+                :type "int")
+                nil [34991 35015])
+            ("request_threaded_irq" function
+               (:arguments 
+                  ( ("irq" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [36796 36813])
+                    ("handler" variable (:type ("irq_handler_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [36814 36836])
+                    ("thread_fn" variable (:type ("irq_handler_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [36841 36865])
+                    ("irqflags" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [36866 36889])
+                    ("devname" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [36894 36914])
+                    ("dev_id" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [36915 36928]))                  
+                :type "int")
+                nil [36771 38359])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("request_threaded_irq" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [38374 38395]))                  
+                :type "int")
+                nil [38360 38396])
+            ("request_any_context_irq" function
+               (:arguments 
+                  ( ("irq" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [39068 39085])
+                    ("handler" variable (:type ("irq_handler_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [39086 39108])
+                    ("flags" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [39116 39136])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [39137 39154])
+                    ("dev_id" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [39155 39168]))                  
+                :type "int")
+                nil [39040 39515])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("request_any_context_irq" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [39534 39558]))                  
+                :type "int")
+                nil [39516 39559])
+            ("enable_percpu_irq" function
+               (:arguments 
+                  ( ("irq" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [39584 39601])
+                    ("type" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [39602 39620]))                  
+                :type "void")
+                nil [39561 40067])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("enable_percpu_irq" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [40086 40104]))                  
+                :type "int")
+                nil [40068 40105])
+            ("disable_percpu_irq" function
+               (:arguments 
+                  ( ("irq" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [40131 40148]))                  
+                :type "void")
+                nil [40107 40389])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("disable_percpu_irq" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [40408 40427]))                  
+                :type "int")
+                nil [40390 40428])
+            ("__free_percpu_irq" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("irq" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [40535 40552])
+                    ("__percpu" variable (:type "void") (reparse-symbol arg-sub-list) [40553 40568])
+                    ("" variable (:type ("dev_id" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [40568 40575]))                  
+                :type ("irqaction" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [40492 41412])
+            ("remove_percpu_irq" function
+               (:arguments 
+                  ( ("irq" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [41638 41655])
+                    ("act" variable
+                       (:pointer 1
+                        :type ("irqaction" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [41656 41678]))                  
+                :type "void")
+                nil [41615 41825])
+            ("free_percpu_irq" function
+               (:arguments 
+                  ( ("irq" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [42323 42340])
+                    ("__percpu" variable (:type "void") (reparse-symbol arg-sub-list) [42341 42356])
+                    ("" variable (:type ("dev_id" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [42356 42363]))                  
+                :type "void")
+                nil [42302 42565])
+            ("setup_percpu_irq" function
+               (:arguments 
+                  ( ("irq" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [42791 42808])
+                    ("act" variable
+                       (:pointer 1
+                        :type ("irqaction" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [42809 42831]))                  
+                :type "int")
+                nil [42770 43069])
+            ("request_percpu_irq" function
+               (:arguments 
+                  ( ("irq" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [43676 43693])
+                    ("handler" variable (:type ("irq_handler_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [43694 43716])
+                    ("devname" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [43726 43746])
+                    ("__percpu" variable (:type "void") (reparse-symbol arg-sub-list) [43747 43762])
+                    ("" variable (:type ("dev_id" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [43762 43769]))                  
+                :type "int")
+                nil [43653 44374]))          
+      :file "manage.c"
+      :pointmax 44375
+      :fsize 44374
+      :lastmodtime '(21934 1136 747886 977000)
+      :unmatched-syntax '((punctuation 43761 . 43762) (punctuation 42355 . 42356) (punctuation 40567 . 40568) (NEW 22874 . 22877) (NEW 22345 . 22348))
+      :lexical-table 
+        '(("pr_fmt" (spp-arg-list ("fmt") 218 . 223) . ((string "\"genirq: \"" 224 . 234) (symbol "fmt" 235 . 238)))
+          )
+)
+    (semanticdb-table "internals.h"
+      :file "internals.h"
+      :fsize 5698
+      :lastmodtime '(21934 1136 747886 977000)))
+  :file "!home!qichen!bg4dtv_20151208_sbt3071_rc1!vendor!marvell-sdk!linux!kernel!irq!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

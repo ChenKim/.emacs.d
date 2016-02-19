@@ -1,0 +1,399 @@
+;; Object ir/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "ir/"
+  :tables
+  (list
+    (semanticdb-table "ir.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("linux/init.h" include (:system-flag t) nil [1 24])
+            ("linux/module.h" include (:system-flag t) nil [25 50])
+            ("linux/kernel.h" include (:system-flag t) nil [51 76])
+            ("linux/input.h" include (:system-flag t) nil [77 101])
+            ("linux/sort.h" include (:system-flag t) nil [102 125])
+            ("linux/platform_device.h" include (:system-flag t) nil [126 160])
+            ("ir_key_def.h" include nil nil [162 185])
+            ("sm.h" include nil nil [186 201])
+            ("HACK_FOR_PANELPOWEROFF" variable (:constant-flag t) nil [211 233])
+            ("linux/gpio.h" include (:system-flag t) nil [265 288])
+            ("linux/io.h" include (:system-flag t) nil [289 310])
+            ("BACKLIGHT_GPIO" variable (:constant-flag t) nil [320 334])
+            ("BOOTSTRAP_REG_ADDR" variable (:constant-flag t) nil [351 369])
+            ("BOOTSTRAP_REG_SIZE" variable (:constant-flag t) nil [391 409])
+            ("BOOTSTRAP_ODM_MASK" variable (:constant-flag t) nil [423 441])
+            ("BOOTSTRAP_ODM_OFFSET" variable (:constant-flag t) nil [463 483])
+            ("LVDS_TX_REG_BASE" variable (:constant-flag t) nil [497 513])
+            ("LVDS_TX_REG_SIZE" variable (:constant-flag t) nil [535 551])
+            ("LVDS_TX_CTRL_B3_OFFSET" variable (:constant-flag t) nil [569 591])
+            ("LVDS_TX_CTRL_B3_PU_BIT" variable (:constant-flag t) nil [607 629])
+            ("LVDS_TX_CTRL_A_OFFSET" variable (:constant-flag t) nil [644 665])
+            ("LVDS_TX_CTRL_A_PU_BIT" variable (:constant-flag t) nil [681 702])
+            ("bootstrap_addr" variable
+               (:pointer 1
+                :type ("__iomem" type (:type "class") nil nil))
+                nil [721 745])
+            ("lvds_tx_base" variable
+               (:pointer 1
+                :type ("__iomem" type (:type "class") nil nil))
+                nil [758 780])
+            ("sm_int_save" function
+               (:prototype-flag t
+                :function-pointer t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [816 821]))                  
+                :type "void")
+                nil [789 822])
+            ("ir_input" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :type ("input_dev" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [823 857])
+            ("ir_keymap" type
+               (:members 
+                  ( ("ircode" variable (:type ("MV_IR_KEY_CODE_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [879 903])
+                    ("keycode" variable (:type ("__u32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [905 919]))                  
+                :type "struct")
+                nil [859 922])
+            ("MAKE_KEYCODE" variable (:constant-flag t) nil [932 944])
+            ("MAKE_IR_KEYMAP" variable (:constant-flag t) nil [1000 1014])
+            ("galois_ir_get_modifier" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("keymap" variable
+                       (:pointer 1
+                        :type ("ir_keymap" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1116 1141]))                  
+                :type "int")
+                nil [1075 1187])
+            ("galois_ir_get_scancode" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("keymap" variable
+                       (:pointer 1
+                        :type ("ir_keymap" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1230 1255]))                  
+                :type "int")
+                nil [1189 1293])
+            ("galois_ir_cmp" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("x1" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [1320 1335])
+                    ("x2" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [1336 1351]))                  
+                :type "int")
+                nil [1295 1513])
+            ("galois_ir_bsearch" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("keymap" variable
+                       (:pointer 1
+                        :type ("ir_keymap" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1559 1584])
+                    ("nr_keymap" variable (:type "int") (reparse-symbol arg-sub-list) [1589 1603])
+                    ("ircode" variable (:type ("MV_IR_KEY_CODE_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1608 1632]))                  
+                :type ("ir_keymap" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1515 1864])
+            ("keymap_tab" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :default-value "{
+	MAKE_IR_KEYMAP(MV_IR_KEY_NULL,          0, KEY_RESERVED), /* no key */
+	MAKE_IR_KEYMAP(MV_IR_KEY_POWER,	        0, KEY_POWER),
+	MAKE_IR_KEYMAP(MV_IR_KEY_OPENCLOSE,     0, KEY_OPEN),
+
+	/* digital keys */
+	MAKE_IR_KEYMAP(MV_IR_KEY_DIGIT_1,       0, KEY_1),
+	MAKE_IR_KEYMAP(MV_IR_KEY_DIGIT_2,       0, KEY_2),
+	MAKE_IR_KEYMAP(MV_IR_KEY_DIGIT_3,       0, KEY_3),
+	MAKE_IR_KEYMAP(MV_IR_KEY_DIGIT_4,       0, KEY_4),
+	MAKE_IR_KEYMAP(MV_IR_KEY_DIGIT_5,       0, KEY_5),
+	MAKE_IR_KEYMAP(MV_IR_KEY_DIGIT_6,       0, KEY_6),
+	MAKE_IR_KEYMAP(MV_IR_KEY_DIGIT_7,       0, KEY_7),
+	MAKE_IR_KEYMAP(MV_IR_KEY_DIGIT_8,       0, KEY_8),
+	MAKE_IR_KEYMAP(MV_IR_KEY_DIGIT_9,       0, KEY_9),
+	MAKE_IR_KEYMAP(MV_IR_KEY_DIGIT_0,       0, KEY_0),
+	MAKE_IR_KEYMAP(MV_IR_KEY_DASH,      0, KEY_DASH),
+
+	/* for BD */
+	MAKE_IR_KEYMAP(MV_IR_KEY_HOME,          0, KEY_HOME),
+	MAKE_IR_KEYMAP(MV_IR_KEY_BACK,          0, KEY_BACK),
+	MAKE_IR_KEYMAP(MV_IR_KEY_INFO,          0, KEY_INFO),
+	MAKE_IR_KEYMAP(MV_IR_KEY_SETUPMENU,     0, KEY_HOME),
+	MAKE_IR_KEYMAP(MV_IR_KEY_CANCEL,        0, KEY_CANCEL), /* no key */
+
+	MAKE_IR_KEYMAP(MV_IR_KEY_DISCMENU,      0, KEY_CONTEXT_MENU),
+	MAKE_IR_KEYMAP(MV_IR_KEY_TITLEMENU,     0, KEY_TITLE),
+	MAKE_IR_KEYMAP(MV_IR_KEY_SUBTITLE,      0, KEY_SUBTITLE),
+	MAKE_IR_KEYMAP(MV_IR_KEY_ANGLE,         0, KEY_ANGLE),
+	MAKE_IR_KEYMAP(MV_IR_KEY_AUDIO,         0, KEY_AUDIO),
+	MAKE_IR_KEYMAP(MV_IR_KEY_SEARCH,        0, KEY_SEARCH),
+	MAKE_IR_KEYMAP(MV_IR_KEY_ZOOM,          0, KEY_ZOOM),
+	MAKE_IR_KEYMAP(MV_IR_KEY_DISPLAY,       0, KEY_SCREEN),
+
+	MAKE_IR_KEYMAP(MV_IR_KEY_REPEAT,        0, KEY_MEDIA_REPEAT),
+	MAKE_IR_KEYMAP(MV_IR_KEY_REPEAT_AB,     0, KEY_AB),
+	MAKE_IR_KEYMAP(MV_IR_KEY_EXIT,          0, KEY_EXIT),
+	MAKE_IR_KEYMAP(MV_IR_KEY_EXIT_OOBE,     0, KEY_EXIT_OOBE),
+	MAKE_IR_KEYMAP(MV_IR_KEY_A,             0, KEY_RED),
+	MAKE_IR_KEYMAP(MV_IR_KEY_B,             0, KEY_GREEN),
+	MAKE_IR_KEYMAP(MV_IR_KEY_C,             0, KEY_YELLOW),
+	MAKE_IR_KEYMAP(MV_IR_KEY_D,             0, KEY_BLUE),
+
+	/* IR misc around ENTER */
+	MAKE_IR_KEYMAP(MV_IR_KEY_CLEAR,         0, KEY_CLEAR),
+	MAKE_IR_KEYMAP(MV_IR_KEY_VIDEO_FORMAT,  0, KEY_VIDEO),
+	MAKE_IR_KEYMAP(MV_IR_KEY_RETURN,        0, KEY_ESC),
+
+	/* up down left right enter */
+	MAKE_IR_KEYMAP(MV_IR_KEY_UP,            0, KEY_UP),
+	MAKE_IR_KEYMAP(MV_IR_KEY_DOWN,          0, KEY_DOWN),
+	MAKE_IR_KEYMAP(MV_IR_KEY_LEFT,          0, KEY_LEFT),
+	MAKE_IR_KEYMAP(MV_IR_KEY_RIGHT,         0, KEY_RIGHT),
+	MAKE_IR_KEYMAP(MV_IR_KEY_ENTER,         0, KEY_ENTER),
+
+	/* for BD */
+	MAKE_IR_KEYMAP(MV_IR_KEY_SLOW,          0, KEY_SLOW),
+	MAKE_IR_KEYMAP(MV_IR_KEY_PAUSE,         0, KEY_PAUSE),
+	MAKE_IR_KEYMAP(MV_IR_KEY_PLAY,          0, KEY_PLAY),
+	MAKE_IR_KEYMAP(MV_IR_KEY_STOP,          0, KEY_STOP),
+	MAKE_IR_KEYMAP(MV_IR_KEY_PLAY_PAUSE,    0, KEY_PLAYPAUSE), /* no key */
+
+	MAKE_IR_KEYMAP(MV_IR_KEY_SKIP_BACKWARD, 0, KEY_PREVIOUS),
+	MAKE_IR_KEYMAP(MV_IR_KEY_SKIP_FORWARD,  0, KEY_NEXT),
+	MAKE_IR_KEYMAP(MV_IR_KEY_SLOW_BACKWARD, 0, KEY_RESERVED),  /* no key */
+	MAKE_IR_KEYMAP(MV_IR_KEY_SLOW_FORWARD,  0, KEY_RESERVED),  /* no key */
+	MAKE_IR_KEYMAP(MV_IR_KEY_FAST_BACKWARD, 0, KEY_REWIND),
+	MAKE_IR_KEYMAP(MV_IR_KEY_FAST_FORWARD,  0, KEY_FORWARD),
+
+	/* bottom keys */
+	MAKE_IR_KEYMAP(MV_IR_KEY_F1,            0, KEY_F1),
+	MAKE_IR_KEYMAP(MV_IR_KEY_F2,            0, KEY_F2),
+	MAKE_IR_KEYMAP(MV_IR_KEY_F3,            0, KEY_F3),
+	MAKE_IR_KEYMAP(MV_IR_KEY_F4,            0, KEY_F4),
+	MAKE_IR_KEYMAP(MV_IR_KEY_F5,            0, KEY_F5),
+	MAKE_IR_KEYMAP(MV_IR_KEY_F6,            0, KEY_F6),
+	MAKE_IR_KEYMAP(MV_IR_KEY_F7,            0, KEY_F7),
+	MAKE_IR_KEYMAP(MV_IR_KEY_F8,            0, KEY_F8),
+
+	/* for future */
+	MAKE_IR_KEYMAP(MV_IR_KEY_VOL_PLUS,      0, KEY_VOLUMEUP),   /* no key */
+	MAKE_IR_KEYMAP(MV_IR_KEY_VOL_MINUS,     0, KEY_VOLUMEDOWN), /* no key */
+	MAKE_IR_KEYMAP(MV_IR_KEY_VOL_MUTE,      0, KEY_MUTE),       /* no key */
+	MAKE_IR_KEYMAP(MV_IR_KEY_CHANNEL_PLUS,  0, KEY_CHANNELUP),  /* no key */
+	MAKE_IR_KEYMAP(MV_IR_KEY_CHANNEL_MINUS, 0, KEY_CHANNELDOWN),/* no key */
+
+	/* obsoleted keys */
+	MAKE_IR_KEYMAP(MV_IR_KEY_MENU,          0, KEY_MENU),
+	MAKE_IR_KEYMAP(MV_IR_KEY_ANYNET,        0, KEY_RESERVED),
+	MAKE_IR_KEYMAP(MV_IR_KEY_TELEVISION,    0, KEY_TV),
+	MAKE_IR_KEYMAP(MV_IR_KEY_CHANNEL_LIST,  0, KEY_RESERVED),
+	MAKE_IR_KEYMAP(MV_IR_KEY_TVPOWER,       0, KEY_RESERVED),
+	MAKE_IR_KEYMAP(MV_IR_KEY_PICTURE_MODE,      0, KEY_PICTURE_MODE),
+	MAKE_IR_KEYMAP(MV_IR_KEY_SYNC,      0, KEY_SYNC),
+	MAKE_IR_KEYMAP(MV_IR_KEY_WIDE,      0, KEY_WIDE),
+	MAKE_IR_KEYMAP(MV_IR_KEY_INPUTSEL,      0, KEY_INPUTSEL),
+	MAKE_IR_KEYMAP(MV_IR_KEY_CLOSEDCAPTION,      0, KEY_CLOSEDCAPTION),
+	MAKE_IR_KEYMAP(MV_IR_KEY_VIZIO,      0, KEY_VIZIO),
+	MAKE_IR_KEYMAP(MV_IR_KEY_RESET,      0, KEY_RESET),
+	MAKE_IR_KEYMAP(MV_IR_KEY_DEMO,      0, KEY_DEMO),
+
+	/* Vizio Factory IR keys*/
+	MAKE_IR_KEYMAP(MV_IR_KEY_VIDEO_CTC,      0, KEY_VIDEO_CTC),
+	MAKE_IR_KEYMAP(MV_IR_KEY_VIDEO_TEST_PATTERN,      0, KEY_VIDEO_TEST_PATTERN),
+	MAKE_IR_KEYMAP(MV_IR_KEY_VIDEO_BACKLIGHT,      0, KEY_VIDEO_BACKLIGHT),
+	MAKE_IR_KEYMAP(MV_IR_KEY_VIDEO_ARC,      0, KEY_VIDEO_ARC),
+	MAKE_IR_KEYMAP(MV_IR_KEY_VIDEO_LIGHTSENSOR,      0, KEY_VIDEO_LIGHTSENSOR),
+	MAKE_IR_KEYMAP(MV_IR_KEY_VIDEO_DCR,      0, KEY_VIDEO_DCR),
+	MAKE_IR_KEYMAP(MV_IR_KEY_AUDIO_SPEAKER_BALANCE,      0, KEY_AUDIO_SPEAKER_BALANCE),
+	MAKE_IR_KEYMAP(MV_IR_KEY_AUDIO_VOL,      0, KEY_AUDIO_VOL),
+	MAKE_IR_KEYMAP(MV_IR_KEY_AUDIO_HW_BYPASS,      0, KEY_AUDIO_HW_BYPASS),
+	MAKE_IR_KEYMAP(MV_IR_KEY_FACTORY_AGING_MODE,      0, KEY_FACTORY_AGING_MODE),
+	MAKE_IR_KEYMAP(MV_IR_KEY_FACTORY_FW_VERSION,      0, KEY_FACTORY_FW_VERSION),
+	MAKE_IR_KEYMAP(MV_IR_KEY_FACTORY_CHANNEL_TABLE,      0, KEY_FACTORY_CHANNEL),
+	MAKE_IR_KEYMAP(MV_IR_KEY_FACTORY_RESET,      0, KEY_FACTORY_RESET),
+	MAKE_IR_KEYMAP(MV_IR_KEY_FACTORY_INPUT_TUNER,      0, KEY_FACTORY_INPUT_TUNER),
+	MAKE_IR_KEYMAP(MV_IR_KEY_FACTORY_INPUT_COMP,      0, KEY_FACTORY_INPUT_COMP),
+	MAKE_IR_KEYMAP(MV_IR_KEY_FACTORY_INPUT_HDMI,      0, KEY_FACTORY_INPUT_HDMI),
+
+	/* POH fake key */
+	MAKE_IR_KEYMAP(POH_RX0_ON,      0, KEY_POH_RX0_ON),
+	MAKE_IR_KEYMAP(POH_RX1_ON,      0, KEY_POH_RX1_ON),
+	MAKE_IR_KEYMAP(POH_RX2_ON,      0, KEY_POH_RX2_ON),
+	MAKE_IR_KEYMAP(POH_RX0_OFF,     0, KEY_POH_RX0_OFF),
+	MAKE_IR_KEYMAP(POH_RX1_OFF,     0, KEY_POH_RX1_OFF),
+	MAKE_IR_KEYMAP(POH_RX2_OFF,     0, KEY_POH_RX2_OFF),
+	/* AC DIP fake key */
+	MAKE_IR_KEYMAP(AC_DIP,       0, KEY_AC_DIP),
+	/* SERVICE INFO fake key */
+	MAKE_IR_KEYMAP(SERVICE_INFO,       0, KEY_SERVICE_INFO),
+
+}"
+                :type ("ir_keymap" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1899 8423])
+            ("ir_input_open" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("input_dev" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8450 8472]))                  
+                :type "int")
+                nil [8425 8598])
+            ("panel_power_off" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [8658 8663]))                  
+                :type "void")
+                nil [8630 9493])
+            ("ir_report_key" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ir_key" variable (:type "int") (reparse-symbol arg-sub-list) [9528 9539]))                  
+                :type "void")
+                nil [9502 10339])
+            ("girl_sm_int" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [10365 10370]))                  
+                :type "void")
+                nil [10341 10532])
+            ("berlin_ir_probe" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("pdev" variable
+                       (:pointer 1
+                        :type ("platform_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10561 10590]))                  
+                :type "int")
+                nil [10534 11990])
+            ("berlin_ir_remove" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("pdev" variable
+                       (:pointer 1
+                        :type ("platform_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [12020 12049]))                  
+                :type "int")
+                nil [11992 12157])
+            ("berlin_ir_of_match" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+	{ .compatible = \"marvell,berlin-ir\", },
+	{},
+}"
+                :type ("of_device_id" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [12436 12542])
+            ("MODULE_DEVICE_TABLE" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("of" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12563 12566])
+                    ("" variable (:type ("berlin_ir_of_match" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12567 12586]))                  
+                :type "int")
+                nil [12543 12587])
+            ("berlin_ir_driver" variable
+               (:typemodifiers ("static")
+                :default-value "{
+	.probe		= berlin_ir_probe,
+	.remove		= berlin_ir_remove,
+	.driver	= {
+		.name	= \"berlin-ir\",
+		.owner  = THIS_MODULE,
+		.of_match_table = berlin_ir_of_match,
+#ifdef CONFIG_PM
+		.pm	= &ir_pm_ops,
+#endif
+	},
+}"
+                :type ("platform_driver" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [12589 12849])
+            ("module_platform_driver" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("berlin_ir_driver" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12873 12890]))                  
+                :type "int")
+                nil [12850 12891])
+            ("MODULE_AUTHOR" function
+               (:prototype-flag t
+                :type "int")
+                nil [12893 12925])
+            ("MODULE_DESCRIPTION" function
+               (:prototype-flag t
+                :type "int")
+                nil [12926 12972])
+            ("MODULE_LICENSE" function
+               (:prototype-flag t
+                :type "int")
+                nil [12973 12995]))          
+      :file "ir.c"
+      :pointmax 12996
+      :fsize 12995
+      :lastmodtime '(22167 18850 294379 247000)
+      :unmatched-syntax '((string 12988 . 12993) (string 12945 . 12970) (string 12907 . 12923) (VOID 753 . 757) (STATIC 746 . 752) (VOID 716 . 720) (STATIC 709 . 715))
+      :lexical-table 
+        '(("BACKLIGHT_GPIO" . ((semantic-list "(207)" 336 . 341)))
+          ("LVDS_TX_REG_BASE" . ((semantic-list "(0xF74D8000)" 514 . 526)))
+          ("BOOTSTRAP_REG_SIZE" . ((semantic-list "(4)" 410 . 413)))
+          ("BOOTSTRAP_REG_ADDR" . ((semantic-list "(0xF7EA000C)" 370 . 382)))
+          ("LVDS_TX_CTRL_A_OFFSET" . ((semantic-list "(0xD0)" 666 . 672)))
+          ("HACK_FOR_PANELPOWEROFF")
+          ("BOOTSTRAP_ODM_MASK" . ((semantic-list "(0x0000001C)" 442 . 454)))
+          ("LVDS_TX_REG_SIZE" . ((semantic-list "(0x400)" 552 . 559)))
+          ("LVDS_TX_CTRL_B3_OFFSET" . ((semantic-list "(0xA4)" 592 . 598)))
+          ("LVDS_TX_CTRL_A_PU_BIT" . ((semantic-list "(23)" 703 . 707)))
+          ("MAKE_KEYCODE" (spp-arg-list ("modifier" "scancode") 944 . 964) . ((semantic-list "((modifier<<16)|scancode)" 965 . 990)))
+          ("BOOTSTRAP_ODM_OFFSET" . ((semantic-list "(2)" 484 . 487)))
+          ("MAKE_IR_KEYMAP" (spp-arg-list ("i" "m" "s") 1014 . 1023) . ((semantic-list "{.ircode = i, .keycode = MAKE_KEYCODE(m, s) }" 1028 . 1073)))
+          ("LVDS_TX_CTRL_B3_PU_BIT" . ((semantic-list "(13)" 630 . 634)))
+          )
+)
+    (semanticdb-table "ir_key_def.h"
+      :file "ir_key_def.h"
+      :fsize 8979
+      :lastmodtime '(22167 18850 294379 247000)))
+  :file "!home!qichen!bg4dtv_20160114_rc2_a0!vendor!marvell-sdk!linux!drivers!soc!berlin!modules!ir!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

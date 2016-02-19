@@ -1,0 +1,903 @@
+;; Object kernel/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "kernel/"
+  :tables
+  (list
+    (semanticdb-table "reboot.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("pr_fmt" variable (:constant-flag t) nil [85 91])
+            ("linux/ctype.h" include (:system-flag t) nil [113 137])
+            ("linux/export.h" include (:system-flag t) nil [138 163])
+            ("linux/kexec.h" include (:system-flag t) nil [164 188])
+            ("linux/kmod.h" include (:system-flag t) nil [189 212])
+            ("linux/kmsg_dump.h" include (:system-flag t) nil [213 241])
+            ("linux/reboot.h" include (:system-flag t) nil [242 267])
+            ("linux/suspend.h" include (:system-flag t) nil [268 294])
+            ("linux/syscalls.h" include (:system-flag t) nil [295 322])
+            ("linux/syscore_ops.h" include (:system-flag t) nil [323 353])
+            ("linux/uaccess.h" include (:system-flag t) nil [354 380])
+            ("C_A_D" variable
+               (:default-value "1"
+                :type "int")
+                nil [469 483])
+            ("cad_pid" variable
+               (:pointer 1
+                :type ("pid" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [484 504])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("cad_pid" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [519 527]))                  
+                :type "int")
+                nil [505 528])
+            ("DEFAULT_REBOOT_MODE" variable (:constant-flag t) nil [640 659])
+            ("reboot_mode" variable (:type ("reboot_mode" type (:type "enum") nil nil)) nil [667 716])
+            ("reboot_default" variable
+               (:default-value "1"
+                :type "int")
+                nil [1059 1082])
+            ("reboot_cpu" variable (:type "int") nil [1083 1098])
+            ("reboot_type" variable
+               (:default-value "BOOT_ACPI"
+                :type ("reboot_type" type (:type "enum") nil nil))
+                nil [1099 1140])
+            ("reboot_force" variable (:type "int") nil [1141 1158])
+            ("pm_power_off_prepare" function
+               (:prototype-flag t
+                :function-pointer t
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1260 1265]))                  
+                :type "void")
+                nil [1231 1266])
+            ("emergency_restart" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1558 1563]))                  
+                :type "void")
+                nil [1535 1626])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("emergency_restart" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1645 1663]))                  
+                :type "int")
+                nil [1627 1664])
+            ("kernel_restart_prepare" function
+               (:arguments 
+                  ( ("cmd" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1694 1704]))                  
+                :type "void")
+                nil [1666 1859])
+            ("register_reboot_notifier" function
+               (:arguments 
+                  ( ("nb" variable
+                       (:pointer 1
+                        :type ("notifier_block" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2209 2235]))                  
+                :type "int")
+                nil [2180 2308])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("register_reboot_notifier" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2323 2348]))                  
+                :type "int")
+                nil [2309 2349])
+            ("unregister_reboot_notifier" function
+               (:arguments 
+                  ( ("nb" variable
+                       (:pointer 1
+                        :type ("notifier_block" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2629 2655]))                  
+                :type "int")
+                nil [2598 2730])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("unregister_reboot_notifier" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2745 2772]))                  
+                :type "int")
+                nil [2731 2773])
+            ("ATOMIC_NOTIFIER_HEAD" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type ("restart_handler_list" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2894 2915]))                  
+                :type "int")
+                nil [2866 2916])
+            ("register_restart_handler" function
+               (:arguments 
+                  ( ("nb" variable
+                       (:pointer 1
+                        :type ("notifier_block" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4709 4735]))                  
+                :type "int")
+                nil [4680 4806])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("register_restart_handler" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4821 4846]))                  
+                :type "int")
+                nil [4807 4847])
+            ("unregister_restart_handler" function
+               (:arguments 
+                  ( ("nb" variable
+                       (:pointer 1
+                        :type ("notifier_block" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5135 5161]))                  
+                :type "int")
+                nil [5104 5234])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("unregister_restart_handler" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5249 5276]))                  
+                :type "int")
+                nil [5235 5277])
+            ("do_kernel_restart" function
+               (:arguments 
+                  ( ("cmd" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [5645 5655]))                  
+                :type "void")
+                nil [5622 5729])
+            ("migrate_to_reboot_cpu" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [5758 5763]))                  
+                :type "void")
+                nil [5731 6191])
+            ("kernel_restart" function
+               (:arguments 
+                  ( ("cmd" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [6445 6455]))                  
+                :type "void")
+                nil [6425 6700])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("kernel_restart" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6719 6734]))                  
+                :type "int")
+                nil [6701 6735])
+            ("kernel_shutdown_prepare" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("state" variable (:type ("system_states" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [6773 6798]))                  
+                :type "void")
+                nil [6737 6985])
+            ("kernel_halt" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [7103 7108]))                  
+                :type "void")
+                nil [7086 7273])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("kernel_halt" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7292 7304]))                  
+                :type "int")
+                nil [7274 7305])
+            ("kernel_power_off" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [7444 7449]))                  
+                :type "void")
+                nil [7422 7678])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("kernel_power_off" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7697 7714]))                  
+                :type "int")
+                nil [7679 7715])
+            ("DEFINE_MUTEX" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type ("reboot_mutex" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7737 7750]))                  
+                :type "int")
+                nil [7717 7751])
+            ("SYSCALL_DEFINE4" function
+               (:arguments 
+                  ( ("" variable (:type ("reboot" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8104 8111])
+                    ("" variable (:type "int") (reparse-symbol arg-sub-list) [8112 8116])
+                    ("" variable (:type ("magic1" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8117 8124])
+                    ("" variable (:type "int") (reparse-symbol arg-sub-list) [8125 8129])
+                    ("" variable (:type ("magic2" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8130 8137])
+                    ("" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [8138 8151])
+                    ("" variable (:type ("cmd" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8152 8156])
+                    ("__user" variable (:type "void") (reparse-symbol arg-sub-list) [8159 8172])
+                    ("" variable (:type ("arg" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8174 8178]))                  
+                :type "int")
+                nil [8088 9978])
+            ("deferred_cad" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dummy" variable
+                       (:pointer 1
+                        :type ("work_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10005 10031]))                  
+                :type "void")
+                nil [9980 10058])
+            ("ctrl_alt_del" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [10297 10302]))                  
+                :type "void")
+                nil [10279 10426])
+            ("poweroff_cmd" variable
+               (:dereference 1
+                :default-value "\"/sbin/poweroff\""
+                :type "char")
+                nil [10428 10488])
+            ("__orderly_poweroff" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("force" variable (:type "bool") (reparse-symbol arg-sub-list) [10520 10531]))                  
+                :type "int")
+                nil [10490 11143])
+            ("poweroff_force" variable
+               (:typemodifiers ("static")
+                :type "bool")
+                nil [11145 11172])
+            ("poweroff_work_func" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("work" variable
+                       (:pointer 1
+                        :type ("work_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11205 11230]))                  
+                :type "void")
+                nil [11174 11271])
+            ("DECLARE_WORK" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type ("poweroff_work" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11293 11307])
+                    ("" variable (:type ("poweroff_work_func" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11308 11327]))                  
+                :type "int")
+                nil [11273 11328])
+            ("orderly_poweroff" function
+               (:arguments 
+                  ( ("force" variable (:type "bool") (reparse-symbol arg-sub-list) [11612 11623]))                  
+                :type "int")
+                nil [11591 11748])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("orderly_poweroff" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11767 11784]))                  
+                :type "int")
+                nil [11749 11785])
+            ("reboot_setup" function
+               (:arguments 
+                  ( ("str" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [11818 11828]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [11798 12713])
+            ("__setup" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("reboot_setup" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12733 12746]))                  
+                :type "int")
+                nil [12714 12747]))          
+      :file "reboot.c"
+      :pointmax 12748
+      :fsize 12747
+      :lastmodtime '(21934 1136 807886 975000)
+      :unmatched-syntax '((string 12722 . 12731) (INT 11794 . 11797) (STATIC 11787 . 11793) (punctuation 8171 . 8172))
+      :lexical-table 
+        '(("DEFAULT_REBOOT_MODE")
+          ("pr_fmt" (spp-arg-list ("fmt") 91 . 96) . ((string "\"reboot: \"" 97 . 107) (symbol "fmt" 108 . 111)))
+          )
+)
+    (semanticdb-table "notifier.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("linux/kdebug.h" include (:system-flag t) nil [1 26])
+            ("linux/kprobes.h" include (:system-flag t) nil [27 53])
+            ("linux/export.h" include (:system-flag t) nil [54 79])
+            ("linux/notifier.h" include (:system-flag t) nil [80 107])
+            ("linux/rcupdate.h" include (:system-flag t) nil [108 135])
+            ("linux/vmalloc.h" include (:system-flag t) nil [136 162])
+            ("linux/reboot.h" include (:system-flag t) nil [163 188])
+            ("BLOCKING_NOTIFIER_HEAD" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("reboot_notifier_list" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [358 379]))                  
+                :type "int")
+                nil [335 380])
+            ("notifier_chain_register" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("nl" variable
+                       (:pointer 2
+                        :type ("notifier_block" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [551 578])
+                    ("n" variable
+                       (:pointer 1
+                        :type ("notifier_block" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [581 606]))                  
+                :type "int")
+                nil [516 764])
+            ("notifier_chain_cond_register" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("nl" variable
+                       (:pointer 2
+                        :type ("notifier_block" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [806 833])
+                    ("n" variable
+                       (:pointer 1
+                        :type ("notifier_block" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [836 861]))                  
+                :type "int")
+                nil [766 1050])
+            ("notifier_chain_unregister" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("nl" variable
+                       (:pointer 2
+                        :type ("notifier_block" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1089 1116])
+                    ("n" variable
+                       (:pointer 1
+                        :type ("notifier_block" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1119 1144]))                  
+                :type "int")
+                nil [1052 1290])
+            ("notifier_call_chain" function
+               (:arguments 
+                  ( ("nl" variable
+                       (:pointer 2
+                        :type ("notifier_block" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1891 1918])
+                    ("val" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [1924 1942])
+                    ("v" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [1943 1951])
+                    ("nr_to_call" variable (:type "int") (reparse-symbol arg-sub-list) [1957 1972])
+                    ("nr_calls" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [1973 1987]))                  
+                :type ("__kprobes" type (:type "class") nil nil))
+                nil [1861 2518])
+            ("atomic_notifier_chain_register" function
+               (:arguments 
+                  ( ("nh" variable
+                       (:pointer 1
+                        :type ("atomic_notifier_head" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2961 2993])
+                    ("n" variable
+                       (:pointer 1
+                        :type ("notifier_block" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2996 3021]))                  
+                :type "int")
+                nil [2926 3198])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("atomic_notifier_chain_register" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3217 3248]))                  
+                :type "int")
+                nil [3199 3249])
+            ("atomic_notifier_chain_unregister" function
+               (:arguments 
+                  ( ("nh" variable
+                       (:pointer 1
+                        :type ("atomic_notifier_head" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3586 3618])
+                    ("n" variable
+                       (:pointer 1
+                        :type ("notifier_block" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3621 3646]))                  
+                :type "int")
+                nil [3549 3845])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("atomic_notifier_chain_unregister" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3864 3897]))                  
+                :type "int")
+                nil [3846 3898])
+            ("__atomic_notifier_call_chain" function
+               (:arguments 
+                  ( ("nh" variable
+                       (:pointer 1
+                        :type ("atomic_notifier_head" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4800 4832])
+                    ("val" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [4838 4856])
+                    ("v" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [4857 4865])
+                    ("nr_to_call" variable (:type "int") (reparse-symbol arg-sub-list) [4871 4886])
+                    ("nr_calls" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [4887 4901]))                  
+                :type ("__kprobes" type (:type "class") nil nil))
+                nil [4761 5036])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("__atomic_notifier_call_chain" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5055 5084]))                  
+                :type "int")
+                nil [5037 5085])
+            ("atomic_notifier_call_chain" function
+               (:arguments 
+                  ( ("nh" variable
+                       (:pointer 1
+                        :type ("atomic_notifier_head" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5128 5160])
+                    ("val" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [5163 5181])
+                    ("v" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [5182 5190]))                  
+                :type ("__kprobes" type (:type "class") nil nil))
+                nil [5091 5254])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("atomic_notifier_call_chain" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5273 5300]))                  
+                :type "int")
+                nil [5255 5301])
+            ("blocking_notifier_chain_register" function
+               (:arguments 
+                  ( ("nh" variable
+                       (:pointer 1
+                        :type ("blocking_notifier_head" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5747 5781])
+                    ("n" variable
+                       (:pointer 1
+                        :type ("notifier_block" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5784 5809]))                  
+                :type "int")
+                nil [5710 6206])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("blocking_notifier_chain_register" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6225 6258]))                  
+                :type "int")
+                nil [6207 6259])
+            ("blocking_notifier_chain_cond_register" function
+               (:arguments 
+                  ( ("nh" variable
+                       (:pointer 1
+                        :type ("blocking_notifier_head" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6663 6697])
+                    ("n" variable
+                       (:pointer 1
+                        :type ("notifier_block" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6700 6725]))                  
+                :type "int")
+                nil [6621 6852])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("blocking_notifier_chain_cond_register" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6871 6909]))                  
+                :type "int")
+                nil [6853 6910])
+            ("blocking_notifier_chain_unregister" function
+               (:arguments 
+                  ( ("nh" variable
+                       (:pointer 1
+                        :type ("blocking_notifier_head" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7295 7329])
+                    ("n" variable
+                       (:pointer 1
+                        :type ("notifier_block" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7332 7357]))                  
+                :type "int")
+                nil [7256 7758])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("blocking_notifier_chain_unregister" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7777 7812]))                  
+                :type "int")
+                nil [7759 7813])
+            ("__blocking_notifier_call_chain" function
+               (:arguments 
+                  ( ("nh" variable
+                       (:pointer 1
+                        :type ("blocking_notifier_head" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8645 8679])
+                    ("val" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [8687 8705])
+                    ("v" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [8706 8714])
+                    ("nr_to_call" variable (:type "int") (reparse-symbol arg-sub-list) [8722 8737])
+                    ("nr_calls" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [8738 8752]))                  
+                :type "int")
+                nil [8610 9155])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("__blocking_notifier_call_chain" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9174 9205]))                  
+                :type "int")
+                nil [9156 9206])
+            ("blocking_notifier_call_chain" function
+               (:arguments 
+                  ( ("nh" variable
+                       (:pointer 1
+                        :type ("blocking_notifier_head" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9241 9275])
+                    ("val" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [9278 9296])
+                    ("v" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [9297 9305]))                  
+                :type "int")
+                nil [9208 9371])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("blocking_notifier_call_chain" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9390 9419]))                  
+                :type "int")
+                nil [9372 9420])
+            ("raw_notifier_chain_register" function
+               (:arguments 
+                  ( ("nh" variable
+                       (:pointer 1
+                        :type ("raw_notifier_head" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9867 9896])
+                    ("n" variable
+                       (:pointer 1
+                        :type ("notifier_block" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9899 9924]))                  
+                :type "int")
+                nil [9835 9975])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("raw_notifier_chain_register" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9994 10022]))                  
+                :type "int")
+                nil [9976 10023])
+            ("raw_notifier_chain_unregister" function
+               (:arguments 
+                  ( ("nh" variable
+                       (:pointer 1
+                        :type ("raw_notifier_head" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10390 10419])
+                    ("n" variable
+                       (:pointer 1
+                        :type ("notifier_block" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10422 10447]))                  
+                :type "int")
+                nil [10356 10500])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("raw_notifier_chain_unregister" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10519 10549]))                  
+                :type "int")
+                nil [10501 10550])
+            ("__raw_notifier_call_chain" function
+               (:arguments 
+                  ( ("nh" variable
+                       (:pointer 1
+                        :type ("raw_notifier_head" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11376 11405])
+                    ("val" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [11415 11433])
+                    ("v" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [11434 11442])
+                    ("nr_to_call" variable (:type "int") (reparse-symbol arg-sub-list) [11452 11467])
+                    ("nr_calls" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [11468 11482]))                  
+                :type "int")
+                nil [11346 11556])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("__raw_notifier_call_chain" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11575 11601]))                  
+                :type "int")
+                nil [11557 11602])
+            ("raw_notifier_call_chain" function
+               (:arguments 
+                  ( ("nh" variable
+                       (:pointer 1
+                        :type ("raw_notifier_head" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11632 11661])
+                    ("val" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [11664 11682])
+                    ("v" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [11683 11691]))                  
+                :type "int")
+                nil [11604 11752])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("raw_notifier_call_chain" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11771 11795]))                  
+                :type "int")
+                nil [11753 11796])
+            ("srcu_notifier_chain_register" function
+               (:arguments 
+                  ( ("nh" variable
+                       (:pointer 1
+                        :type ("srcu_notifier_head" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [12265 12295])
+                    ("n" variable
+                       (:pointer 1
+                        :type ("notifier_block" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [12298 12323]))                  
+                :type "int")
+                nil [12232 12724])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("srcu_notifier_chain_register" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12743 12772]))                  
+                :type "int")
+                nil [12725 12773])
+            ("srcu_notifier_chain_unregister" function
+               (:arguments 
+                  ( ("nh" variable
+                       (:pointer 1
+                        :type ("srcu_notifier_head" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13140 13170])
+                    ("n" variable
+                       (:pointer 1
+                        :type ("notifier_block" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13173 13198]))                  
+                :type "int")
+                nil [13105 13633])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("srcu_notifier_chain_unregister" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [13652 13683]))                  
+                :type "int")
+                nil [13634 13684])
+            ("__srcu_notifier_call_chain" function
+               (:arguments 
+                  ( ("nh" variable
+                       (:pointer 1
+                        :type ("srcu_notifier_head" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [14496 14526])
+                    ("val" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [14537 14555])
+                    ("v" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [14556 14564])
+                    ("nr_to_call" variable (:type "int") (reparse-symbol arg-sub-list) [14575 14590])
+                    ("nr_calls" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [14591 14605]))                  
+                :type "int")
+                nil [14465 14781])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("__srcu_notifier_call_chain" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [14800 14827]))                  
+                :type "int")
+                nil [14782 14828])
+            ("srcu_notifier_call_chain" function
+               (:arguments 
+                  ( ("nh" variable
+                       (:pointer 1
+                        :type ("srcu_notifier_head" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [14859 14889])
+                    ("val" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [14892 14910])
+                    ("v" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [14911 14919]))                  
+                :type "int")
+                nil [14830 14981])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("srcu_notifier_call_chain" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15000 15025]))                  
+                :type "int")
+                nil [14982 15026])
+            ("srcu_init_notifier_head" function
+               (:arguments 
+                  ( ("nh" variable
+                       (:pointer 1
+                        :type ("srcu_notifier_head" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [15577 15607]))                  
+                :type "void")
+                nil [15548 15701])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("srcu_init_notifier_head" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15720 15744]))                  
+                :type "int")
+                nil [15702 15745])
+            ("ATOMIC_NOTIFIER_HEAD" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type ("die_chain" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15775 15785]))                  
+                :type "int")
+                nil [15747 15786])
+            ("notify_die" function
+               (:arguments 
+                  ( ("val" variable (:type ("die_val" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [15821 15838])
+                    ("str" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [15839 15855])
+                    ("regs" variable
+                       (:pointer 1
+                        :type ("pt_regs" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [15864 15885])
+                    ("err" variable (:type "long") (reparse-symbol arg-sub-list) [15886 15895])
+                    ("trap" variable (:type "int") (reparse-symbol arg-sub-list) [15896 15905])
+                    ("sig" variable (:type "int") (reparse-symbol arg-sub-list) [15906 15914]))                  
+                :type ("__kprobes" type (:type "class") nil nil))
+                nil [15800 16087])
+            ("register_die_notifier" function
+               (:arguments 
+                  ( ("nb" variable
+                       (:pointer 1
+                        :type ("notifier_block" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [16115 16141]))                  
+                :type "int")
+                nil [16089 16222])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("register_die_notifier" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [16241 16263]))                  
+                :type "int")
+                nil [16223 16264])
+            ("unregister_die_notifier" function
+               (:arguments 
+                  ( ("nb" variable
+                       (:pointer 1
+                        :type ("notifier_block" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [16294 16320]))                  
+                :type "int")
+                nil [16266 16382])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("unregister_die_notifier" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [16401 16425]))                  
+                :type "int")
+                nil [16383 16426]))          
+      :file "notifier.c"
+      :pointmax 16427
+      :fsize 16426
+      :lastmodtime '(21934 1136 759886 977000)
+      :unmatched-syntax '((symbol 15792 . 15799) (INT 15788 . 15791) (INT 5087 . 5090) (INT 4757 . 4760) (INT 1857 . 1860) (STATIC 1850 . 1856))))
+  :file "!home!qichen!bg4dtv_20151208_sbt3071_rc1!vendor!marvell-sdk!linux!kernel!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

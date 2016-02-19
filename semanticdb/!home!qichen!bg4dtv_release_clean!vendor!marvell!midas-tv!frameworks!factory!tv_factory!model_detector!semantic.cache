@@ -1,0 +1,133 @@
+;; Object model_detector/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "model_detector/"
+  :tables
+  (list
+    (semanticdb-table "modelDetector.cpp"
+      :major-mode 'c++-mode
+      :tags 
+        '( ("LOG_TAG" variable (:constant-flag t) nil [9 16])
+            ("stdio.h" include (:system-flag t) nil [34 52])
+            ("errno.h" include (:system-flag t) nil [53 71])
+            ("dirent.h" include (:system-flag t) nil [72 91])
+            ("stdlib.h" include (:system-flag t) nil [92 111])
+            ("string.h" include (:system-flag t) nil [112 131])
+            ("sys/stat.h" include (:system-flag t) nil [132 153])
+            ("sys/types.h" include (:system-flag t) nil [154 176])
+            ("fcntl.h" include (:system-flag t) nil [177 195])
+            ("sys/mman.h" include (:system-flag t) nil [196 217])
+            ("ErrorCode.h" include (:system-flag t) nil [218 240])
+            ("utils/Log.h" include (:system-flag t) nil [241 263])
+            ("modelDetector.h" include nil nil [265 291])
+            ("fmisl.h" include nil nil [292 310])
+            ("PWM_IOCTL_READ" variable (:constant-flag t) nil [321 335])
+            ("PWM_IOCTL_WRITE" variable (:constant-flag t) nil [362 377])
+            ("PWM_TERMINAL_COUNT" variable (:constant-flag t) nil [404 422])
+            ("_Pwm_RdWrData_" type
+               (:members 
+                  ( ("offset" variable (:type ("uint" type (:type "class") nil nil)) (reparse-symbol classsubparts) [475 491])
+                    ("data" variable (:type ("uint" type (:type "class") nil nil)) (reparse-symbol classsubparts) [539 553]))                  
+                :type "struct")
+                nil [435 626])
+            ("Pwm_RdWrData" type
+               (:typedef ("_Pwm_RdWrData_" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [435 626])
+            ("pwm_fd" variable
+               (:typemodifiers ("static")
+                :default-value "0"
+                :type "int")
+                nil [628 650])
+            ("defPanelPwmPinMuxRegVal" variable
+               (:typemodifiers ("static")
+                :default-value "0"
+                :type "int")
+                nil [651 690])
+            ("isPanelPwmPinEnabled" variable
+               (:typemodifiers ("static")
+                :default-value "false"
+                :type "bool")
+                nil [691 732])
+            ("defModelIndexPerOdm" variable
+               (:dereference 2
+                :typemodifiers ("static")
+                :default-value "{
+    {255,255},
+    {1300,1200},
+    {2100,2050},
+    {3999,3999},
+    {4000,4000},
+    {255,255}
+}"
+                :type ("int32_t" type (:type "class") nil nil))
+                nil [734 877])
+            ("MV_PwmDev_Open" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("pwmch" variable (:type "int") (reparse-symbol arg-sub-list) [906 916]))                  
+                :type "int")
+                nil [879 1289])
+            ("MV_PwmDev_Close" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1319 1324]))                  
+                :type "int")
+                nil [1291 1398])
+            ("MV_Pwm_Set" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("offset" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [1423 1443])
+                    ("data" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [1444 1462]))                  
+                :type "int")
+                nil [1400 1773])
+            ("startPanelPwm" function
+               (:arguments 
+                  ( ("channel" variable (:type "int") (reparse-symbol arg-sub-list) [1793 1805])
+                    ("hz" variable (:type "int") (reparse-symbol arg-sub-list) [1806 1814]))                  
+                :type "int")
+                nil [1775 2125])
+            ("stopPanelPwm" function
+               (:arguments 
+                  ( ("channel" variable (:type "int") (reparse-symbol arg-sub-list) [2144 2156]))                  
+                :type "int")
+                nil [2127 2316])
+            ("readBootStrap" function (:type ("uint32_t" type (:type "class") nil nil)) nil [2318 3316])
+            ("setPinMuxForPanelPwm" function
+               (:arguments 
+                  ( ("flag" variable (:type "bool") (reparse-symbol arg-sub-list) [3343 3353]))                  
+                :type "int")
+                nil [3318 5294])
+            ("modelIndexHook" function
+               (:arguments 
+                  ( ("modelIndex" variable (:type "int") (reparse-symbol arg-sub-list) [5315 5330]))                  
+                :type "int")
+                nil [5296 5479])
+            ("main" function
+               (:arguments 
+                  ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [5490 5499])
+                    ("argv" variable
+                       (:pointer 1
+                        :dereference 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [5500 5513]))                  
+                :type "int")
+                nil [5481 7009]))          
+      :file "modelDetector.cpp"
+      :pointmax 7012
+      :fsize 7011
+      :lastmodtime '(22129 19820 150256 341000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("PWM_IOCTL_WRITE" . ((number "0x4567" 388 . 394)))
+          ("PWM_TERMINAL_COUNT" . ((number "500" 430 . 433)))
+          ("PWM_IOCTL_READ" . ((number "0x1234" 347 . 353)))
+          ("LOG_TAG" . ((string "\"ModelDetector\"" 17 . 32)))
+          )
+)
+    (semanticdb-table "modelDetector.h"
+      :file "modelDetector.h"
+      :fsize 449
+      :lastmodtime '(22129 19820 150256 341000)))
+  :file "!home!qichen!bg4dtv_release_clean!vendor!marvell!midas-tv!frameworks!factory!tv_factory!model_detector!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

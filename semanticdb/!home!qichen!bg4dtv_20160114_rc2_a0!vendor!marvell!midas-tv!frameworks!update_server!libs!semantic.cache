@@ -1,0 +1,609 @@
+;; Object libs/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "libs/"
+  :tables
+  (list
+    (semanticdb-table "UpdateService.cpp"
+      :major-mode 'c++-mode
+      :tags 
+        '( ("LOG_NDEBUG" variable (:constant-flag t) nil [808 818])
+            ("LOG_TAG" variable (:constant-flag t) nil [829 836])
+            ("binder/Parcel.h" include (:system-flag t) nil [854 880])
+            ("utils/RefBase.h" include (:system-flag t) nil [881 907])
+            ("utils/String8.h" include (:system-flag t) nil [908 934])
+            ("utils/threads.h" include (:system-flag t) nil [935 961])
+            ("utils/Vector.h" include (:system-flag t) nil [962 987])
+            ("utils/Looper.h" include (:system-flag t) nil [988 1013])
+            ("binder/IServiceManager.h" include (:system-flag t) nil [1014 1049])
+            ("UpdateService.h" include nil nil [1051 1077])
+            ("MidasSettingsConstants.h" include (:system-flag t) nil [1078 1113])
+            ("openssl/rsa.h" include (:system-flag t) nil [1115 1138])
+            ("openssl/pem.h" include (:system-flag t) nil [1139 1162])
+            ("openssl/err.h" include (:system-flag t) nil [1163 1186])
+            ("AConUSBUpdateKey.h" include nil nil [1187 1216])
+            ("midas_common.h" include (:system-flag t) nil [1217 1242])
+            ("time.h" include (:system-flag t) nil [1244 1261])
+            ("marvell" type
+               (:members 
+                  ( ("android" using (:type ("android" type
+                         (:prototype t
+                          :type "namespace")
+                          nil nil)) (reparse-symbol namespacesubparts) [1283 1307])
+                    ("UpdateService::kCheckUpdateInterval" variable
+                       (:constant-flag t
+                        :default-value "3600"
+                        :type ("int32_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [1309 1366])
+                    ("UpdateService::kUpdateNotificatiopnDelay" variable
+                       (:constant-flag t
+                        :default-value "10"
+                        :type ("int32_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [1386 1446])
+                    ("UpdateService::kDownloadingPoolingInterval" variable
+                       (:constant-flag t
+                        :default-value "1"
+                        :type ("int32_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [1461 1522])
+                    ("kUpdateDirectoryPath" variable
+                       (:dereference 1
+                        :constant-flag t
+                        :default-value "\"/cache/recovery/\""
+                        :type "char")
+                        (reparse-symbol namespacesubparts) [1536 1591])
+                    ("kUpdatePackagePath" variable
+                       (:dereference 1
+                        :constant-flag t
+                        :default-value "\"/cache/recovery/midas-update.zip\""
+                        :type "char")
+                        (reparse-symbol namespacesubparts) [1592 1661])
+                    ("UpdateLooperThread" type
+                       (:superclasses 
+                          ( ("Thread" type
+                               (:protection "public"
+                                :type "class")
+                                nil nil))                          
+                        :members 
+                          ( ("public" label nil (reparse-symbol classsubparts) [1801 1808])
+                            ("UpdateLooperThread" function
+                               (:constructor-flag t
+                                :arguments 
+                                  ( ("looper" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("sp" type
+                                             (:template-specifier 
+                                                ( ("Looper" type nil nil nil))                                                
+                                              :type "class")
+                                              nil nil))
+                                        (reparse-symbol arg-sub-list) [1841 1866]))                                  
+                                :type ("UpdateLooperThread" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [1822 1914])
+                            ("private" label nil (reparse-symbol classsubparts) [1917 1925])
+                            ("mLooper" variable (:type ("sp" type
+                                 (:template-specifier 
+                                    ( ("Looper" type nil nil nil))                                    
+                                  :type "class")
+                                  nil nil)) (reparse-symbol classsubparts) [1930 1949])
+                            ("readyToRun" function
+                               (:typemodifiers ("virtual")
+                                :type ("status_t" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [1955 2059])
+                            ("threadLoop" function
+                               (:typemodifiers ("virtual")
+                                :type "bool")
+                                (reparse-symbol classsubparts) [2065 2151]))                          
+                        :type "class")
+                        (reparse-symbol namespacesubparts) [1756 2154])
+                    ("UpdateMessageHandler" type
+                       (:superclasses 
+                          ( ("MessageHandler" type
+                               (:protection "public"
+                                :type "class")
+                                nil nil))                          
+                        :members 
+                          ( ("public" label nil (reparse-symbol classsubparts) [2303 2310])
+                            ("UpdateMessageHandler" function
+                               (:constructor-flag t
+                                :arguments 
+                                  ( ("mgr" variable
+                                       (:pointer 1
+                                        :type ("UpdateService" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [2336 2355]))                                  
+                                :type ("UpdateMessageHandler" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [2315 2380])
+                            ("UpdateMessageHandler" function
+                               (:destructor-flag t
+                                :type "void")
+                                (reparse-symbol classsubparts) [2385 2411])
+                            ("handleMessage" function
+                               (:arguments 
+                                  ( ("message" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("Message" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [2435 2458]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [2416 2607])
+                            ("private" label nil (reparse-symbol classsubparts) [2610 2618])
+                            ("mUpdateService" variable (:type ("wp" type
+                                 (:template-specifier 
+                                    ( ("UpdateService" type nil nil nil))                                    
+                                  :type "class")
+                                  nil nil)) (reparse-symbol classsubparts) [2623 2656]))                          
+                        :type "class")
+                        (reparse-symbol namespacesubparts) [2248 2659])
+                    ("UpdateConnectionEventListener" type
+                       (:superclasses 
+                          ( ("ConnectionEventListener" type
+                               (:protection "public"
+                                :type "class")
+                                nil nil))                          
+                        :members 
+                          ( ("public" label nil (reparse-symbol classsubparts) [2826 2833])
+                            ("UpdateConnectionEventListener" function
+                               (:constructor-flag t
+                                :arguments 
+                                  ( ("mgr" variable
+                                       (:pointer 1
+                                        :type ("UpdateService" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [2868 2887]))                                  
+                                :type ("UpdateConnectionEventListener" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [2838 2912])
+                            ("UpdateConnectionEventListener" function
+                               (:destructor-flag t
+                                :typemodifiers ("virtual")
+                                :type "void")
+                                (reparse-symbol classsubparts) [2917 2960])
+                            ("onEventReceived" function
+                               (:typemodifiers ("virtual")
+                                :arguments 
+                                  ( ("type" variable (:type ("ConnectionType" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2994 3014])
+                                    ("event" variable (:type ("ConnectionEvent" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3015 3037]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [2965 3187])
+                            ("private" label nil (reparse-symbol classsubparts) [3190 3198])
+                            ("mUpdateService" variable (:type ("wp" type
+                                 (:template-specifier 
+                                    ( ("UpdateService" type nil nil nil))                                    
+                                  :type "class")
+                                  nil nil)) (reparse-symbol classsubparts) [3203 3236]))                          
+                        :type "class")
+                        (reparse-symbol namespacesubparts) [2753 3239])
+                    ("UpdateMountObserver" type
+                       (:superclasses 
+                          ( ("BnMountObserver" type
+                               (:protection "public"
+                                :type "class")
+                                nil nil))                          
+                        :members 
+                          ( ("public" label nil (reparse-symbol classsubparts) [3388 3395])
+                            ("UpdateMountObserver" function
+                               (:constructor-flag t
+                                :arguments 
+                                  ( ("mgr" variable
+                                       (:pointer 1
+                                        :type ("UpdateService" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [3420 3439]))                                  
+                                :type ("UpdateMountObserver" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [3400 3464])
+                            ("UpdateMountObserver" function
+                               (:destructor-flag t
+                                :typemodifiers ("virtual")
+                                :type "void")
+                                (reparse-symbol classsubparts) [3469 3502])
+                            ("onMountChanged" function
+                               (:typemodifiers ("virtual")
+                                :arguments 
+                                  ( ("path" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("String8" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [3535 3555])
+                                    ("event" variable (:type ("MIDAS_MOUNT_EVENT" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3556 3580]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [3507 3812])
+                            ("private" label nil (reparse-symbol classsubparts) [3815 3823])
+                            ("mUpdateService" variable (:type ("wp" type
+                                 (:template-specifier 
+                                    ( ("UpdateService" type nil nil nil))                                    
+                                  :type "class")
+                                  nil nil)) (reparse-symbol classsubparts) [3828 3861]))                          
+                        :type "class")
+                        (reparse-symbol namespacesubparts) [3333 3864])
+                    ("UpdatePowerObserver" type
+                       (:superclasses 
+                          ( ("BnPowerObserver" type
+                               (:protection "public"
+                                :type "class")
+                                nil nil))                          
+                        :members 
+                          ( ("public" label nil (reparse-symbol classsubparts) [4013 4020])
+                            ("UpdatePowerObserver" function
+                               (:constructor-flag t
+                                :arguments 
+                                  ( ("mgr" variable
+                                       (:pointer 1
+                                        :type ("UpdateService" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [4045 4064]))                                  
+                                :type ("UpdatePowerObserver" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [4025 4089])
+                            ("UpdatePowerObserver" function
+                               (:destructor-flag t
+                                :typemodifiers ("virtual")
+                                :type "void")
+                                (reparse-symbol classsubparts) [4094 4127])
+                            ("onNotify" function
+                               (:typemodifiers ("virtual")
+                                :arguments 
+                                  ( ("event" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4154 4168])
+                                    ("value" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4169 4183]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [4132 4617])
+                            ("private" label nil (reparse-symbol classsubparts) [4620 4628])
+                            ("mUpdateService" variable (:type ("wp" type
+                                 (:template-specifier 
+                                    ( ("UpdateService" type nil nil nil))                                    
+                                  :type "class")
+                                  nil nil)) (reparse-symbol classsubparts) [4633 4666]))                          
+                        :type "class")
+                        (reparse-symbol namespacesubparts) [3958 4669])
+                    ("UpdateService" function
+                       (:constructor-flag t
+                        :parent "UpdateService"
+                        :type ("UpdateService" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [4763 7667])
+                    ("UpdateService" function
+                       (:destructor-flag t
+                        :parent "UpdateService"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [7669 7788])
+                    ("UpdateService::mUpdateService" variable
+                       (:default-value "NULL"
+                        :type ("sp" type
+                             (:template-specifier 
+                                ( ("UpdateService" type nil nil nil))                                
+                              :type "class")
+                              nil nil))
+                        (reparse-symbol namespacesubparts) [7790 7845])
+                    ("initialize" function
+                       (:parent "UpdateService"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [7846 8022])
+                    ("instance" function
+                       (:parent "UpdateService"
+                        :type ("sp" type
+                             (:template-specifier 
+                                ( ("UpdateService" type nil nil nil))                                
+                              :type "class")
+                              nil nil))
+                        (reparse-symbol namespacesubparts) [8024 8184])
+                    ("checkUpdate" function
+                       (:parent "UpdateService"
+                        :arguments 
+                          ( ("type" variable
+                               (:reference 1
+                                :type ("UPDATE_TYPE" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [8226 8244]))                          
+                        :type ("CHECK_RESULT" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [8186 8572])
+                    ("abortUpdate" function
+                       (:parent "UpdateService"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [8573 8738])
+                    ("checkUpdateAsync" function
+                       (:parent "UpdateService"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [8740 8924])
+                    ("onUpdateInfo" function
+                       (:parent "UpdateService"
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [8926 9744])
+                    ("getAvailableUpdateInfo" function
+                       (:parent "UpdateService"
+                        :arguments 
+                          ( ("info" variable
+                               (:pointer 1
+                                :type ("Parcel" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [9789 9802]))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [9746 10282])
+                    ("doUpdate" function
+                       (:parent "UpdateService"
+                        :arguments 
+                          ( ("check" variable
+                               (:constant-flag t
+                                :type ("int32_t" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [10313 10333]))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [10284 10643])
+                    ("doBGUpdate" function
+                       (:parent "UpdateService"
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [10645 11090])
+                    ("cleanUpdateCache" function
+                       (:parent "UpdateService"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [11092 11223])
+                    ("setSilentUpdateTiming" function
+                       (:parent "UpdateService"
+                        :arguments 
+                          ( ("begin" variable
+                               (:constant-flag t
+                                :type ("int32_t" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [11267 11287])
+                            ("end" variable
+                               (:constant-flag t
+                                :type ("int32_t" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [11288 11306]))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [11225 12045])
+                    ("getSilentUpdateTiming" function
+                       (:parent "UpdateService"
+                        :arguments 
+                          ( ("begin" variable
+                               (:reference 1
+                                :type ("int32_t" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [12089 12104])
+                            ("end" variable
+                               (:reference 1
+                                :type ("int32_t" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [12105 12118]))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [12047 12199])
+                    ("getUpdateEngineInfo" function
+                       (:parent "UpdateService"
+                        :arguments 
+                          ( ("info" variable
+                               (:pointer 1
+                                :type ("Parcel" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [12241 12254]))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [12201 15500])
+                    ("getQueryPacingTime" function
+                       (:parent "UpdateService"
+                        :arguments 
+                          ( ("times" variable
+                               (:reference 1
+                                :type ("time_t" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [15541 15556]))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [15502 16289])
+                    ("registerObserver" function
+                       (:parent "UpdateService"
+                        :arguments 
+                          ( ("observer" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("sp" type
+                                     (:template-specifier 
+                                        ( ("IUpdateObserver" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [16331 16367]))                          
+                        :type ("status_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [16290 16547])
+                    ("unregisterObserver" function
+                       (:parent "UpdateService"
+                        :arguments 
+                          ( ("observer" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("sp" type
+                                     (:template-specifier 
+                                        ( ("IUpdateObserver" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [16592 16628]))                          
+                        :type ("status_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [16549 16892])
+                    ("binderDied" function
+                       (:parent "UpdateService"
+                        :arguments 
+                          ( ("who" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("wp" type
+                                     (:template-specifier 
+                                        ( ("IBinder" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [16925 16948]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [16894 17127])
+                    ("onEventReceived" function
+                       (:parent "UpdateService"
+                        :arguments 
+                          ( ("type" variable (:type ("ConnectionType" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [17165 17185])
+                            ("event" variable (:type ("ConnectionEvent" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [17186 17208]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [17129 17451])
+                    ("notifyObservers" function
+                       (:parent "UpdateService"
+                        :arguments 
+                          ( ("event" variable
+                               (:constant-flag t
+                                :type ("UPDATE_EVENT" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [17489 17514])
+                            ("ext1" variable
+                               (:constant-flag t
+                                :type ("int32_t" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [17515 17534])
+                            ("ext2" variable
+                               (:constant-flag t
+                                :type ("int32_t" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [17570 17589])
+                            ("obj" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type ("Parcel" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [17590 17608]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [17453 17783])
+                    ("sendNextUpdateLocked" function
+                       (:parent "UpdateService"
+                        :arguments 
+                          ( ("current" variable
+                               (:constant-flag t
+                                :type ("int32_t" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [17826 17848]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [17785 18331])
+                    ("getCurrentTime" function
+                       (:parent "UpdateService"
+                        :arguments 
+                          ( ("time_sync" variable (:type "bool") (reparse-symbol arg-sub-list) [18371 18386]))                          
+                        :type ("int32_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [18333 18458])
+                    ("getCurrentTimeLocked" function
+                       (:parent "UpdateService"
+                        :arguments 
+                          ( ("time_sync" variable (:type "bool") (reparse-symbol arg-sub-list) [18504 18519]))                          
+                        :type ("int32_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [18460 18854])
+                    ("checkUpdateLocked" function
+                       (:parent "UpdateService"
+                        :arguments 
+                          ( ("hard_check" variable (:type "bool") (reparse-symbol arg-sub-list) [18894 18910])
+                            ("time_sync" variable (:type "bool") (reparse-symbol arg-sub-list) [18911 18926])
+                            ("user" variable (:type "bool") (reparse-symbol arg-sub-list) [18927 18937]))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [18856 20097])
+                    ("checkUSBPathLocked" function
+                       (:parent "UpdateService"
+                        :arguments 
+                          ( ("path" variable
+                               (:pointer 1
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [20138 20149]))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [20099 20769])
+                    ("doUpdateInternal" function
+                       (:parent "UpdateService"
+                        :arguments 
+                          ( ("delay" variable (:type "bool") (reparse-symbol arg-sub-list) [20808 20819]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [20771 20951])
+                    ("doUpdateInternalLocked" function
+                       (:parent "UpdateService"
+                        :arguments 
+                          ( ("delay" variable (:type "bool") (reparse-symbol arg-sub-list) [20996 21007]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [20953 21295])
+                    ("downloadUpdateLocked" function
+                       (:parent "UpdateService"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [21297 21798])
+                    ("checkNetUpdateLocked" function
+                       (:parent "UpdateService"
+                        :arguments 
+                          ( ("forced" variable
+                               (:reference 1
+                                :type "bool")
+                                (reparse-symbol arg-sub-list) [21841 21854]))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [21800 22625])
+                    ("notifyDownloadResult" function
+                       (:parent "UpdateService"
+                        :arguments 
+                          ( ("sucess" variable (:type "bool") (reparse-symbol arg-sub-list) [22668 22680]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [22627 23345])
+                    ("userInactivity" function
+                       (:parent "UpdateService"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [23347 23489])
+                    ("handleMessage" function
+                       (:parent "UpdateService"
+                        :arguments 
+                          ( ("message" variable
+                               (:constant-flag t
+                                :type "int")
+                                (reparse-symbol arg-sub-list) [23525 23543]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [23491 26900])
+                    ("onMountChanged" function
+                       (:parent "UpdateService"
+                        :arguments 
+                          ( ("path" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [26937 26957])
+                            ("event" variable (:type ("MIDAS_MOUNT_EVENT" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [26958 26982]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [26902 27273])
+                    ("eventCallback" function
+                       (:parent "UpdateService"
+                        :arguments 
+                          ( ("pResultObject" variable
+                               (:pointer 1
+                                :type ("UTV_PUBLIC_RESULT_OBJECT" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [27309 27349]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [27275 29650])
+                    ("checkAConUSBUpdate" function
+                       (:parent "UpdateService"
+                        :arguments 
+                          ( ("path" variable
+                               (:pointer 1
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [29691 29702]))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [29652 31970])
+                    ("checkUpdateInstallResult" function
+                       (:parent "UpdateService"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [31972 33222])
+                    ("fadeLed" function
+                       (:parent "UpdateService"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [33224 33676])
+                    ("isNewImage" function
+                       (:parent "UpdateService"
+                        :arguments 
+                          ( ("path" variable
+                               (:pointer 1
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [33709 33720])
+                            ("pphash" variable
+                               (:pointer 2
+                                :type "unsigned char")
+                                (reparse-symbol arg-sub-list) [33720 33743])
+                            ("phash_len" variable
+                               (:pointer 1
+                                :type "unsigned int")
+                                (reparse-symbol arg-sub-list) [33743 33767]))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [33678 35571])
+                    ("verifyAConUpdate" function
+                       (:parent "UpdateService"
+                        :arguments 
+                          ( ("path" variable
+                               (:pointer 1
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [35610 35621]))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [35573 37261]))                  
+                :type "namespace")
+                nil [1263 37264]))          
+      :file "UpdateService.cpp"
+      :pointmax 37287
+      :fsize 37286
+      :lastmodtime '(22167 18859 438378 953000)
+      :unmatched-syntax '((EXPLICIT 1813 . 1821))
+      :lexical-table 
+        '(("LOG_NDEBUG" . ((number "0" 819 . 820)))
+          ("LOG_TAG" . ((string "\"UpdateService\"" 837 . 852)))
+          )
+)
+    (semanticdb-table "UpdateService.h"
+      :file "UpdateService.h"
+      :fsize 5036
+      :lastmodtime '(22167 18859 438378 953000))
+    (semanticdb-table "AConUSBUpdateKey.h"
+      :file "AConUSBUpdateKey.h"
+      :fsize 472
+      :lastmodtime '(22008 492 192296 927000)))
+  :file "!home!qichen!bg4dtv_20160114_rc2_a0!vendor!marvell!midas-tv!frameworks!update_server!libs!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

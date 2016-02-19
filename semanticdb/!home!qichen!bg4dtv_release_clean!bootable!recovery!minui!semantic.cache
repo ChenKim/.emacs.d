@@ -1,0 +1,368 @@
+;; Object minui/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "minui/"
+  :tables
+  (list
+    (semanticdb-table "minui.h"
+      :file "minui.h"
+      :fsize 2220
+      :lastmodtime '(21971 10747 709773 225000))
+    (semanticdb-table "graphics.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("stdbool.h" include (:system-flag t) nil [622 642])
+            ("stdlib.h" include (:system-flag t) nil [643 662])
+            ("unistd.h" include (:system-flag t) nil [663 682])
+            ("fcntl.h" include (:system-flag t) nil [684 702])
+            ("stdio.h" include (:system-flag t) nil [703 721])
+            ("sys/ioctl.h" include (:system-flag t) nil [723 745])
+            ("sys/mman.h" include (:system-flag t) nil [746 767])
+            ("sys/types.h" include (:system-flag t) nil [768 790])
+            ("linux/fb.h" include (:system-flag t) nil [792 813])
+            ("linux/kd.h" include (:system-flag t) nil [814 835])
+            ("pixelflinger/pixelflinger.h" include (:system-flag t) nil [837 875])
+            ("font_10x18.h" include nil nil [877 900])
+            ("minui.h" include nil nil [901 919])
+            ("PIXEL_FORMAT" variable (:constant-flag t) nil [1133 1145])
+            ("PIXEL_SIZE" variable (:constant-flag t) nil [1179 1189])
+            ("GRFont" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("texture" variable (:type ("GGLSurface" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1223 1242])
+                          ("cwidth" variable (:type "unsigned int") (reparse-symbol classsubparts) [1247 1263])
+                          ("cheight" variable (:type "unsigned int") (reparse-symbol classsubparts) [1268 1285])
+                          ("ascent" variable (:type "unsigned int") (reparse-symbol classsubparts) [1290 1306]))                        
+                      :type "struct")
+                      nil nil)
+                :type "typedef")
+                nil [1202 1316])
+            ("gr_font" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :default-value "0"
+                :type ("GRFont" type (:type "class") nil nil))
+                nil [1318 1345])
+            ("gr_context" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :default-value "0"
+                :type ("GGLContext" type (:type "class") nil nil))
+                nil [1346 1380])
+            ("gr_font_texture" variable
+               (:typemodifiers ("static")
+                :type ("GGLSurface" type (:type "class") nil nil))
+                nil [1381 1415])
+            ("gr_framebuffer" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :type ("GGLSurface" type (:type "class") nil nil))
+                nil [1416 1452])
+            ("gr_mem_surface" variable
+               (:typemodifiers ("static")
+                :type ("GGLSurface" type (:type "class") nil nil))
+                nil [1453 1486])
+            ("gr_active_fb" variable
+               (:typemodifiers ("static")
+                :default-value "0"
+                :type "unsigned int")
+                nil [1487 1520])
+            ("gr_fb_fd" variable
+               (:typemodifiers ("static")
+                :default-value "-1"
+                :type "int")
+                nil [1522 1547])
+            ("gr_vt_fd" variable
+               (:typemodifiers ("static")
+                :default-value "-1"
+                :type "int")
+                nil [1548 1573])
+            ("vi" variable
+               (:typemodifiers ("static")
+                :type ("fb_var_screeninfo" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1575 1610])
+            ("fi" variable
+               (:typemodifiers ("static")
+                :type ("fb_fix_screeninfo" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1611 1646])
+            ("get_framebuffer" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("fb" variable
+                       (:pointer 1
+                        :type ("GGLSurface" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1675 1690]))                  
+                :type "int")
+                nil [1648 3880])
+            ("get_memory_surface" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ms" variable
+                       (:pointer 1
+                        :type ("GGLSurface" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3913 3928]))                  
+                :type "void")
+                nil [3882 4126])
+            ("set_active_framebuffer" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("n" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [4163 4174]))                  
+                :type "void")
+                nil [4128 4419])
+            ("gr_flip" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [4434 4439]))                  
+                :type "void")
+                nil [4421 4839])
+            ("gr_color" function
+               (:arguments 
+                  ( ("r" variable (:type "unsigned char") (reparse-symbol arg-sub-list) [4855 4871])
+                    ("g" variable (:type "unsigned char") (reparse-symbol arg-sub-list) [4872 4888])
+                    ("b" variable (:type "unsigned char") (reparse-symbol arg-sub-list) [4889 4905])
+                    ("a" variable (:type "unsigned char") (reparse-symbol arg-sub-list) [4906 4922]))                  
+                :type "void")
+                nil [4841 5149])
+            ("gr_measure" function
+               (:arguments 
+                  ( ("s" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [5166 5180]))                  
+                :type "int")
+                nil [5151 5224])
+            ("gr_font_size" function
+               (:arguments 
+                  ( ("x" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [5244 5251])
+                    ("y" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [5252 5259]))                  
+                :type "void")
+                nil [5226 5316])
+            ("gr_text" function
+               (:arguments 
+                  ( ("x" variable (:type "int") (reparse-symbol arg-sub-list) [5330 5336])
+                    ("y" variable (:type "int") (reparse-symbol arg-sub-list) [5337 5343])
+                    ("s" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [5344 5358]))                  
+                :type "int")
+                nil [5318 6011])
+            ("gr_fill" function
+               (:arguments 
+                  ( ("x" variable (:type "int") (reparse-symbol arg-sub-list) [6026 6032])
+                    ("y" variable (:type "int") (reparse-symbol arg-sub-list) [6033 6039])
+                    ("w" variable (:type "int") (reparse-symbol arg-sub-list) [6040 6046])
+                    ("h" variable (:type "int") (reparse-symbol arg-sub-list) [6047 6053]))                  
+                :type "void")
+                nil [6013 6158])
+            ("gr_blit" function
+               (:arguments 
+                  ( ("source" variable (:type ("gr_surface" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6173 6191])
+                    ("sx" variable (:type "int") (reparse-symbol arg-sub-list) [6192 6199])
+                    ("sy" variable (:type "int") (reparse-symbol arg-sub-list) [6200 6207])
+                    ("w" variable (:type "int") (reparse-symbol arg-sub-list) [6208 6214])
+                    ("h" variable (:type "int") (reparse-symbol arg-sub-list) [6215 6221])
+                    ("dx" variable (:type "int") (reparse-symbol arg-sub-list) [6222 6229])
+                    ("dy" variable (:type "int") (reparse-symbol arg-sub-list) [6230 6237]))                  
+                :type "void")
+                nil [6160 6700])
+            ("gr_get_width" function
+               (:arguments 
+                  ( ("surface" variable (:type ("gr_surface" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6728 6747]))                  
+                :type "unsigned int")
+                nil [6702 6845])
+            ("gr_get_height" function
+               (:arguments 
+                  ( ("surface" variable (:type ("gr_surface" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6874 6893]))                  
+                :type "unsigned int")
+                nil [6847 6992])
+            ("gr_init_font" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [7019 7024]))                  
+                :type "void")
+                nil [6994 7693])
+            ("gr_init" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [7707 7712]))                  
+                :type "int")
+                nil [7695 8861])
+            ("gr_exit" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [8876 8881]))                  
+                :type "void")
+                nil [8863 9047])
+            ("gr_fb_width" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [9065 9070]))                  
+                :type "int")
+                nil [9049 9110])
+            ("gr_fb_height" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [9129 9134]))                  
+                :type "int")
+                nil [9112 9175])
+            ("gr_fb_data" function
+               (:pointer 1
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [9198 9203]))                  
+                :type ("gr_pixel" type (:type "class") nil nil))
+                nil [9177 9258])
+            ("gr_fb_blank" function
+               (:arguments 
+                  ( ("blank" variable (:type "bool") (reparse-symbol arg-sub-list) [9277 9288]))                  
+                :type "void")
+                nil [9260 9442]))          
+      :file "graphics.c"
+      :pointmax 9443
+      :fsize 9442
+      :lastmodtime '(21971 10747 709773 225000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("PIXEL_FORMAT" . ((symbol "GGL_PIXEL_FORMAT_RGB_565" 1146 . 1170)))
+          ("PIXEL_SIZE" . ((number "2" 1192 . 1193)))
+          )
+)
+    (semanticdb-table "font_10x18.h"
+      :file "font_10x18.h"
+      :fsize 15275
+      :lastmodtime '(21971 10747 709773 225000))
+    (semanticdb-table "events.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("stdio.h" include (:system-flag t) nil [622 640])
+            ("stdlib.h" include (:system-flag t) nil [641 660])
+            ("fcntl.h" include (:system-flag t) nil [661 679])
+            ("dirent.h" include (:system-flag t) nil [680 699])
+            ("sys/poll.h" include (:system-flag t) nil [700 721])
+            ("linux/input.h" include (:system-flag t) nil [723 747])
+            ("minui.h" include nil nil [749 767])
+            ("MAX_DEVICES" variable (:constant-flag t) nil [777 788])
+            ("MAX_MISC_FDS" variable (:constant-flag t) nil [800 812])
+            ("BITS_PER_LONG" variable (:constant-flag t) nil [825 838])
+            ("BITS_TO_LONGS" variable (:constant-flag t) nil [875 888])
+            ("test_bit" variable (:constant-flag t) nil [945 953])
+            ("fd_info" type
+               (:members 
+                  ( ("cb" variable (:type ("ev_callback" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1058 1073])
+                    ("data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol classsubparts) [1078 1089]))                  
+                :type "struct")
+                nil [1037 1092])
+            ("ev_fds" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :type ("pollfd" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1094 1150])
+            ("ev_fdinfo" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :type ("fd_info" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1151 1211])
+            ("ev_count" variable
+               (:typemodifiers ("static")
+                :default-value "0"
+                :type "unsigned int")
+                nil [1213 1242])
+            ("ev_dev_count" variable
+               (:typemodifiers ("static")
+                :default-value "0"
+                :type "unsigned int")
+                nil [1243 1276])
+            ("ev_misc_count" variable
+               (:typemodifiers ("static")
+                :default-value "0"
+                :type "unsigned int")
+                nil [1277 1311])
+            ("ev_init" function
+               (:arguments 
+                  ( ("input_cb" variable (:type ("ev_callback" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1325 1346])
+                    ("data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [1347 1358]))                  
+                :type "int")
+                nil [1313 2572])
+            ("ev_add_fd" function
+               (:arguments 
+                  ( ("fd" variable (:type "int") (reparse-symbol arg-sub-list) [2588 2595])
+                    ("cb" variable (:type ("ev_callback" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2596 2611])
+                    ("data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [2612 2623]))                  
+                :type "int")
+                nil [2574 2889])
+            ("ev_exit" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [2904 2909]))                  
+                :type "void")
+                nil [2891 3029])
+            ("ev_wait" function
+               (:arguments 
+                  ( ("timeout" variable (:type "int") (reparse-symbol arg-sub-list) [3043 3055]))                  
+                :type "int")
+                nil [3031 3161])
+            ("ev_dispatch" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [3180 3185]))                  
+                :type "void")
+                nil [3163 3430])
+            ("ev_get_input" function
+               (:arguments 
+                  ( ("fd" variable (:type "int") (reparse-symbol arg-sub-list) [3449 3456])
+                    ("revents" variable (:type "short") (reparse-symbol arg-sub-list) [3457 3471])
+                    ("ev" variable
+                       (:pointer 1
+                        :type ("input_event" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3472 3495]))                  
+                :type "int")
+                nil [3432 3651])
+            ("ev_sync_key_state" function
+               (:arguments 
+                  ( ("set_key_cb" variable (:type ("ev_set_key_callback" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3675 3706])
+                    ("data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [3707 3718]))                  
+                :type "int")
+                nil [3653 4440]))          
+      :file "events.c"
+      :pointmax 4441
+      :fsize 4440
+      :lastmodtime '(21971 10747 709773 225000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("MAX_MISC_FDS" . ((number "16" 813 . 815)))
+          ("test_bit" (spp-arg-list ("bit" "array") 953 . 965) . ((semantic-list "((array)[(bit)/BITS_PER_LONG] & (1 << ((bit) % BITS_PER_LONG)))" 972 . 1035)))
+          ("BITS_PER_LONG" . ((semantic-list "(sizeof(unsigned long) * 8)" 839 . 866)))
+          ("MAX_DEVICES" . ((number "16" 789 . 791)))
+          ("BITS_TO_LONGS" (spp-arg-list ("x") 888 . 891) . ((semantic-list "(((x) + BITS_PER_LONG - 1) / BITS_PER_LONG)" 892 . 935)))
+          )
+))
+  :file "!home!qichen!bg4dtv_release_clean!bootable!recovery!minui!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

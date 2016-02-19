@@ -1,0 +1,1038 @@
+;; Object recovery/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "recovery/"
+  :tables
+  (list
+    (semanticdb-table "recovery.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("ctype.h" include (:system-flag t) nil [622 640])
+            ("errno.h" include (:system-flag t) nil [641 659])
+            ("fcntl.h" include (:system-flag t) nil [660 678])
+            ("getopt.h" include (:system-flag t) nil [679 698])
+            ("limits.h" include (:system-flag t) nil [699 718])
+            ("linux/input.h" include (:system-flag t) nil [719 743])
+            ("stdio.h" include (:system-flag t) nil [744 762])
+            ("stdlib.h" include (:system-flag t) nil [763 782])
+            ("string.h" include (:system-flag t) nil [783 802])
+            ("sys/stat.h" include (:system-flag t) nil [803 824])
+            ("sys/types.h" include (:system-flag t) nil [825 847])
+            ("time.h" include (:system-flag t) nil [848 865])
+            ("unistd.h" include (:system-flag t) nil [866 885])
+            ("dirent.h" include (:system-flag t) nil [886 905])
+            ("bootloader.h" include nil nil [907 930])
+            ("common.h" include nil nil [931 950])
+            ("cutils/properties.h" include nil nil [951 981])
+            ("cutils/android_reboot.h" include nil nil [982 1016])
+            ("install.h" include nil nil [1017 1037])
+            ("minui/minui.h" include nil nil [1038 1062])
+            ("minzip/DirUtil.h" include nil nil [1063 1090])
+            ("roots.h" include nil nil [1091 1109])
+            ("recovery_ui.h" include nil nil [1110 1134])
+            ("sehandle" variable
+               (:pointer 1
+                :type ("selabel_handle" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1136 1168])
+            ("OPTIONS" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+  { \"send_intent\", required_argument, NULL, 's' },
+  { \"update_package\", required_argument, NULL, 'u' },
+  { \"wipe_data\", no_argument, NULL, 'w' },
+  { \"wipe_cache\", no_argument, NULL, 'c' },
+  { \"show_text\", no_argument, NULL, 't' },
+  { NULL, 0, NULL, 0 },
+}"
+                :type ("option" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1170 1472])
+            ("COMMAND_FILE" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"/cache/recovery/command\""
+                :type "char")
+                nil [1474 1534])
+            ("INTENT_FILE" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"/cache/recovery/intent\""
+                :type "char")
+                nil [1535 1593])
+            ("LOG_FILE" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"/cache/recovery/log\""
+                :type "char")
+                nil [1594 1646])
+            ("LAST_LOG_FILE" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"/cache/recovery/last_log\""
+                :type "char")
+                nil [1647 1709])
+            ("LAST_LOGCAT_FILE" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"/cache/recovery/last_logcat\""
+                :type "char")
+                nil [1710 1778])
+            ("LAST_INSTALL_FILE" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"/cache/recovery/last_install\""
+                :type "char")
+                nil [1779 1849])
+            ("LOG_DIRECTORY" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"/cache/recovery\""
+                :type "char")
+                nil [1850 1903])
+            ("CACHE_ROOT" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"/cache\""
+                :type "char")
+                nil [1904 1945])
+            ("SDCARD_ROOT" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"/sdcard\""
+                :type "char")
+                nil [1946 1989])
+            ("TEMPORARY_LOG_FILE" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"/tmp/recovery.log\""
+                :type "char")
+                nil [1990 2050])
+            ("TEMPORARY_INSTALL_FILE" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"/tmp/last_install\""
+                :type "char")
+                nil [2051 2115])
+            ("SIDELOAD_TEMP_DIR" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"/tmp/sideload\""
+                :type "char")
+                nil [2116 2171])
+            ("MINIMUM_RECOVERY_DURATION_S" variable
+               (:typemodifiers ("static")
+                :constant-flag t
+                :default-value "15"
+                :type "int")
+                nil [2172 2222])
+            ("ui_parameters" variable
+               (:typemodifiers ("extern")
+                :type ("UIParameters" type (:type "class") nil nil))
+                nil [2224 2258])
+            ("MAX_ARG_LENGTH" variable
+               (:typemodifiers ("static")
+                :constant-flag t
+                :default-value "4096"
+                :type "int")
+                nil [5340 5379])
+            ("MAX_ARGS" variable
+               (:typemodifiers ("static")
+                :constant-flag t
+                :default-value "100"
+                :type "int")
+                nil [5380 5412])
+            ("fopen_path" function
+               (:pointer 1
+                :arguments 
+                  ( ("path" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [5486 5503])
+                    ("mode" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [5504 5521]))                  
+                :type ("FILE" type (:type "class") nil nil))
+                nil [5469 5913])
+            ("check_and_fclose" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("fp" variable
+                       (:pointer 1
+                        :type ("FILE" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6004 6013])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [6014 6031]))                  
+                :type "void")
+                nil [5975 6139])
+            ("get_args" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("argc" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [6371 6381])
+                    ("argv" variable
+                       (:pointer 3
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [6382 6395]))                  
+                :type "void")
+                nil [6350 8802])
+            ("set_sdcard_update_bootloader_message" function
+               (:typemodifiers ("static")
+                :type "void")
+                nil [8804 9096])
+            ("tmplog_offset" variable
+               (:typemodifiers ("static")
+                :default-value "0"
+                :type "long")
+                nil [9163 9193])
+            ("copy_log_fp" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("fp" variable
+                       (:pointer 1
+                        :type ("FILE" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [9219 9228])
+                    ("destination" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [9229 9253])
+                    ("append" variable (:type "int") (reparse-symbol arg-sub-list) [9254 9265]))                  
+                :type "void")
+                nil [9195 9547])
+            ("copy_log_file" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("source" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [9575 9594])
+                    ("destination" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [9595 9619])
+                    ("append" variable (:type "int") (reparse-symbol arg-sub-list) [9620 9631]))                  
+                :type "void")
+                nil [9549 9978])
+            ("dump_logcat" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("destination" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [10004 10028]))                  
+                :type "void")
+                nil [9980 10238])
+            ("finish_recovery" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("send_intent" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [10554 10578]))                  
+                :type "void")
+                nil [10526 12018])
+            ("erase_volume" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("volume" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [12044 12063]))                  
+                :type "int")
+                nil [12020 12491])
+            ("copy_sideloaded_package" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("original_path" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [12530 12556]))                  
+                :type "char")
+                nil [12493 14865])
+            ("prepend_title" function
+               (:pointer 2
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("headers" variable
+                       (:pointer 2
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [14895 14916]))                  
+                :type "char")
+                nil [14867 15506])
+            ("get_menu_selection" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("headers" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [15538 15553])
+                    ("items" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [15554 15567])
+                    ("menu_only" variable (:type "int") (reparse-symbol arg-sub-list) [15568 15582])
+                    ("initial_selection" variable (:type "int") (reparse-symbol arg-sub-list) [15602 15624]))                  
+                :type "int")
+                nil [15508 17004])
+            ("compare_string" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("a" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [17032 17046])
+                    ("b" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [17047 17061]))                  
+                :type "int")
+                nil [17006 17120])
+            ("update_directory" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("path" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [17150 17167])
+                    ("unmount_when_done" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [17168 17198])
+                    ("wipe_cache" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [17216 17232]))                  
+                :type "int")
+                nil [17122 21385])
+            ("wipe_data" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("confirm" variable (:type "int") (reparse-symbol arg-sub-list) [21409 21421]))                  
+                :type "void")
+                nil [21387 22538])
+            ("prompt_and_wait" function
+               (:typemodifiers ("static")
+                :type "void")
+                nil [22540 25587])
+            ("print_property" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("key" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [25616 25632])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [25633 25650])
+                    ("cookie" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [25651 25664]))                  
+                :type "void")
+                nil [25589 25702])
+            ("target_recovery_extras" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [25842 25851])
+                    ("argv" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [25852 25864]))                  
+                :type "int")
+                nil [25801 25894])
+            ("main" function
+               (:arguments 
+                  ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [25912 25921])
+                    ("argv" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [25922 25934]))                  
+                :type "int")
+                nil [25903 30720]))          
+      :file "recovery.c"
+      :pointmax 30721
+      :fsize 30720
+      :lastmodtime '(21971 10747 713773 225000)
+      :unmatched-syntax nil)
+    (semanticdb-table "bootloader.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("_RECOVERY_BOOTLOADER_H" variable (:constant-flag t) nil [661 683])
+            ("bootloader_message" type
+               (:members 
+                  ( ("command" variable
+                       (:dereference 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [1389 1406])
+                    ("status" variable
+                       (:dereference 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [1411 1427])
+                    ("recovery" variable
+                       (:dereference 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [1432 1452]))                  
+                :type "struct")
+                nil [1357 1455])
+            ("set_bootloader_message" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "int"
+                :arguments 
+                  ( ("in" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("bootloader_message" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1688 1724]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [1661 1725])
+            ("get_bootloader_message" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "int"
+                :arguments 
+                  ( ("out" variable
+                       (:pointer 1
+                        :type ("bootloader_message" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1628 1659]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [1601 1660]))          
+      :file "bootloader.h"
+      :pointmax 1762
+      :fsize 1761
+      :lastmodtime '(21971 10747 657773 227000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("_RECOVERY_BOOTLOADER_H")
+          )
+)
+    (semanticdb-table "common.h"
+      :file "common.h"
+      :fsize 5088
+      :lastmodtime '(21971 10747 657773 227000))
+    (semanticdb-table "install.h"
+      :file "install.h"
+      :fsize 1054
+      :lastmodtime '(21971 10747 657773 227000))
+    (semanticdb-table "roots.h"
+      :file "roots.h"
+      :fsize 1387
+      :lastmodtime '(21971 10747 717773 225000))
+    (semanticdb-table "recovery_ui.h"
+      :file "recovery_ui.h"
+      :fsize 3424
+      :lastmodtime '(21971 10747 713773 225000))
+    (semanticdb-table "default_recovery_ui.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("linux/input.h" include (:system-flag t) nil [622 646])
+            ("recovery_ui.h" include nil nil [648 672])
+            ("common.h" include nil nil [673 692])
+            ("MENU_HEADERS" variable
+               (:pointer 1
+                :dereference 1
+                :default-value "{ \"Android system recovery utility\",
+                         \"\",
+                         NULL }"
+                :type "char")
+                nil [694 815])
+            ("MENU_ITEMS" variable
+               (:pointer 1
+                :dereference 1
+                :default-value "{ \"reboot system now\",
+                       \"apply update from external storage\",
+                       \"wipe data/factory reset\",
+                       \"wipe cache partition\",
+                       \"apply update from cache\",
+                       NULL }"
+                :type "char")
+                nil [817 1099])
+            ("device_ui_init" function
+               (:arguments 
+                  ( ("ui_parameters" variable
+                       (:pointer 1
+                        :type ("UIParameters" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1121 1149]))                  
+                :type "void")
+                nil [1101 1153])
+            ("device_recovery_start" function (:type "int") nil [1155 1200])
+            ("device_toggle_display" function
+               (:arguments 
+                  ( ("key_pressed" variable
+                       (:pointer 1
+                        :typemodifiers ("volatile")
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1228 1255])
+                    ("key_code" variable (:type "int") (reparse-symbol arg-sub-list) [1256 1269]))                  
+                :type "int")
+                nil [1202 1306])
+            ("device_reboot_now" function
+               (:arguments 
+                  ( ("key_pressed" variable
+                       (:pointer 1
+                        :typemodifiers ("volatile")
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1330 1357])
+                    ("key_code" variable (:type "int") (reparse-symbol arg-sub-list) [1358 1371]))                  
+                :type "int")
+                nil [1308 1389])
+            ("device_handle_key" function
+               (:arguments 
+                  ( ("key_code" variable (:type "int") (reparse-symbol arg-sub-list) [1413 1426])
+                    ("visible" variable (:type "int") (reparse-symbol arg-sub-list) [1427 1439]))                  
+                :type "int")
+                nil [1391 1787])
+            ("device_perform_action" function
+               (:arguments 
+                  ( ("which" variable (:type "int") (reparse-symbol arg-sub-list) [1815 1825]))                  
+                :type "int")
+                nil [1789 1847])
+            ("device_wipe_data" function (:type "int") nil [1849 1889]))          
+      :file "default_recovery_ui.c"
+      :pointmax 1890
+      :fsize 1889
+      :lastmodtime '(21971 10747 657773 227000)
+      :unmatched-syntax nil)
+    (semanticdb-table "ui.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("errno.h" include (:system-flag t) nil [622 640])
+            ("fcntl.h" include (:system-flag t) nil [641 659])
+            ("linux/input.h" include (:system-flag t) nil [660 684])
+            ("pthread.h" include (:system-flag t) nil [685 705])
+            ("stdarg.h" include (:system-flag t) nil [706 725])
+            ("stdio.h" include (:system-flag t) nil [726 744])
+            ("stdlib.h" include (:system-flag t) nil [745 764])
+            ("string.h" include (:system-flag t) nil [765 784])
+            ("sys/stat.h" include (:system-flag t) nil [785 806])
+            ("sys/time.h" include (:system-flag t) nil [807 828])
+            ("sys/types.h" include (:system-flag t) nil [829 851])
+            ("time.h" include (:system-flag t) nil [852 869])
+            ("unistd.h" include (:system-flag t) nil [870 889])
+            ("common.h" include nil nil [891 910])
+            ("cutils/android_reboot.h" include (:system-flag t) nil [911 945])
+            ("minui/minui.h" include nil nil [946 970])
+            ("recovery_ui.h" include nil nil [971 995])
+            ("MAX_COLS" variable (:constant-flag t) nil [1005 1013])
+            ("MAX_ROWS" variable (:constant-flag t) nil [1025 1033])
+            ("CHAR_WIDTH" variable (:constant-flag t) nil [1046 1056])
+            ("CHAR_HEIGHT" variable (:constant-flag t) nil [1068 1079])
+            ("UI_WAIT_KEY_TIMEOUT_SEC" variable (:constant-flag t) nil [1092 1115])
+            ("MAX_ASSET_FILENAME_LEN" variable (:constant-flag t) nil [1132 1154])
+            ("ui_parameters" variable
+               (:default-value "{
+    0,       // indeterminate progress bar frames
+    11,      // percentage progress bar frames
+    40,      // fps
+    160,     // installation icon frames (0 == static image)
+    495, 150,// installation icon overlay offset
+}"
+                :type ("UIParameters" type (:type "class") nil nil))
+                nil [1159 1419])
+            ("gUpdateMutex" variable
+               (:typemodifiers ("static")
+                :default-value "PTHREAD_MUTEX_INITIALIZER"
+                :type ("pthread_mutex_t" type (:type "class") nil nil))
+                nil [1421 1485])
+            ("gBackgroundIcon" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :type ("gr_surface" type (:type "class") nil nil))
+                nil [1486 1542])
+            ("gInstallationOverlay" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :type ("gr_surface" type (:type "class") nil nil))
+                nil [1543 1583])
+            ("gProgressBarIndeterminate" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :type ("gr_surface" type (:type "class") nil nil))
+                nil [1584 1629])
+            ("gProgressBarPercentage" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :type ("gr_surface" type (:type "class") nil nil))
+                nil [1630 1672])
+            ("BITMAPS" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+    { &gBackgroundIcon[BACKGROUND_ICON_INSTALLING], \"icon_installing\" },
+    { &gBackgroundIcon[BACKGROUND_ICON_ERROR],      \"icon_error\" },
+    { &gBackgroundIcon[BACKGROUND_ICON_FDR],        \"icon_fdr\" },
+    { &gBackgroundIcon[BACKGROUND_ICON_GENERIC],    \"icon_generic\" },
+    { NULL,                             NULL },
+}"
+                :type ("" type
+                     (:members 
+                        ( ("surface" variable
+                             (:pointer 1
+                              :type ("gr_surface" type (:type "class") nil nil))
+                              (reparse-symbol classsubparts) [1696 1716])
+                          ("name" variable
+                             (:pointer 1
+                              :constant-flag t
+                              :type "char")
+                              (reparse-symbol classsubparts) [1717 1734]))                        
+                      :type "struct")
+                      nil nil))
+                nil [1674 2078])
+            ("gCurrentIcon" variable
+               (:typemodifiers ("static")
+                :default-value "0"
+                :type "int")
+                nil [2080 2108])
+            ("gInstallingFrame" variable
+               (:typemodifiers ("static")
+                :default-value "0"
+                :type "int")
+                nil [2109 2141])
+            ("gProgressBarType" variable
+               (:typemodifiers ("static")
+                :default-value "PROGRESSBAR_TYPE_NONE"
+                :type ("ProgressBarType" type
+                     (:prototype t
+                      :type "enum")
+                      nil nil))
+                nil [2143 2308])
+            ("ProgressBarType" type
+               (:members 
+                  ( ("PROGRESSBAR_TYPE_NONE" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [2177 2199])
+                    ("PROGRESSBAR_TYPE_INDETERMINATE" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [2204 2235])
+                    ("PROGRESSBAR_TYPE_NORMAL" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [2240 2264]))                  
+                :type "enum")
+                nil [2143 2308])
+            ("gProgressScopeStart" variable
+               (:typemodifiers ("static")
+                :default-value "0"
+                :type "float")
+                nil [2353 2429])
+            ("gProgressScopeSize" variable
+               (:typemodifiers ("static")
+                :default-value "0"
+                :type "float")
+                nil [2353 2429])
+            ("gProgress" variable
+               (:typemodifiers ("static")
+                :default-value "0"
+                :type "float")
+                nil [2353 2429])
+            ("gProgressScopeTime" variable
+               (:typemodifiers ("static")
+                :type "double")
+                nil [2430 2487])
+            ("gProgressScopeDuration" variable
+               (:typemodifiers ("static")
+                :type "double")
+                nil [2430 2487])
+            ("gPagesIdentical" variable
+               (:typemodifiers ("static")
+                :default-value "0"
+                :type "int")
+                nil [2569 2600])
+            ("text" variable
+               (:dereference 2
+                :typemodifiers ("static")
+                :type "char")
+                nil [2661 2698])
+            ("text_cols" variable
+               (:typemodifiers ("static")
+                :default-value "0"
+                :type "int")
+                nil [2699 2739])
+            ("text_rows" variable
+               (:typemodifiers ("static")
+                :default-value "0"
+                :type "int")
+                nil [2699 2739])
+            ("text_col" variable
+               (:typemodifiers ("static")
+                :default-value "0"
+                :type "int")
+                nil [2740 2792])
+            ("text_row" variable
+               (:typemodifiers ("static")
+                :default-value "0"
+                :type "int")
+                nil [2740 2792])
+            ("text_top" variable
+               (:typemodifiers ("static")
+                :default-value "0"
+                :type "int")
+                nil [2740 2792])
+            ("show_text" variable
+               (:typemodifiers ("static")
+                :default-value "0"
+                :type "int")
+                nil [2793 2818])
+            ("show_text_ever" variable
+               (:typemodifiers ("static")
+                :default-value "0"
+                :type "int")
+                nil [2819 2849])
+            ("menu" variable
+               (:dereference 2
+                :typemodifiers ("static")
+                :type "char")
+                nil [2883 2920])
+            ("show_menu" variable
+               (:typemodifiers ("static")
+                :default-value "0"
+                :type "int")
+                nil [2921 2946])
+            ("menu_top" variable
+               (:typemodifiers ("static")
+                :default-value "0"
+                :type "int")
+                nil [2947 3001])
+            ("menu_items" variable
+               (:typemodifiers ("static")
+                :default-value "0"
+                :type "int")
+                nil [2947 3001])
+            ("menu_sel" variable
+               (:typemodifiers ("static")
+                :default-value "0"
+                :type "int")
+                nil [2947 3001])
+            ("key_queue_mutex" variable
+               (:typemodifiers ("static")
+                :default-value "PTHREAD_MUTEX_INITIALIZER"
+                :type ("pthread_mutex_t" type (:type "class") nil nil))
+                nil [3028 3095])
+            ("key_queue_cond" variable
+               (:typemodifiers ("static")
+                :default-value "PTHREAD_COND_INITIALIZER"
+                :type ("pthread_cond_t" type (:type "class") nil nil))
+                nil [3096 3160])
+            ("key_queue" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :type "int")
+                nil [3161 3206])
+            ("key_queue_len" variable
+               (:typemodifiers ("static")
+                :default-value "0"
+                :type "int")
+                nil [3161 3206])
+            ("key_pressed" variable
+               (:dereference 1
+                :typemodifiers ("static" "volatile")
+                :type "char")
+                nil [3207 3253])
+            ("now" function
+               (:typemodifiers ("static")
+                :type "double")
+                nil [3329 3451])
+            ("draw_install_overlay_locked" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("frame" variable (:type "int") (reparse-symbol arg-sub-list) [3810 3820]))                  
+                :type "void")
+                nil [3770 4167])
+            ("draw_background_locked" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("icon" variable (:type "int") (reparse-symbol arg-sub-list) [4333 4342]))                  
+                :type "void")
+                nil [4298 5022])
+            ("draw_progress_locked" function
+               (:typemodifiers ("static")
+                :type "void")
+                nil [5146 7493])
+            ("draw_text_line" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("row" variable (:type "int") (reparse-symbol arg-sub-list) [7522 7530])
+                    ("t" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [7531 7545]))                  
+                :type "void")
+                nil [7495 7617])
+            ("draw_screen_locked" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [7759 7764]))                  
+                :type "void")
+                nil [7728 8817])
+            ("update_screen_locked" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [8977 8982]))                  
+                :type "void")
+                nil [8944 9027])
+            ("update_progress_locked" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [9192 9197]))                  
+                :type "void")
+                nil [9157 9446])
+            ("progress_thread" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("cookie" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [9553 9566]))                  
+                :type "void")
+                nil [9524 11303])
+            ("rel_sum" variable
+               (:typemodifiers ("static")
+                :default-value "0"
+                :type "int")
+                nil [11305 11328])
+            ("input_callback" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("fd" variable (:type "int") (reparse-symbol arg-sub-list) [11356 11363])
+                    ("revents" variable (:type "short") (reparse-symbol arg-sub-list) [11364 11378])
+                    ("data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [11379 11390]))                  
+                :type "int")
+                nil [11330 13321])
+            ("input_thread" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("cookie" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [13425 13438]))                  
+                :type "void")
+                nil [13399 13533])
+            ("ui_init" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [13548 13553]))                  
+                :type "void")
+                nil [13535 16782])
+            ("ui_set_background" function
+               (:arguments 
+                  ( ("icon" variable (:type "int") (reparse-symbol arg-sub-list) [16807 16816]))                  
+                :type "void")
+                nil [16784 16953])
+            ("ui_show_indeterminate_progress" function (:type "void") nil [16955 17237])
+            ("ui_show_progress" function
+               (:arguments 
+                  ( ("portion" variable (:type "float") (reparse-symbol arg-sub-list) [17261 17275])
+                    ("seconds" variable (:type "int") (reparse-symbol arg-sub-list) [17276 17288]))                  
+                :type "void")
+                nil [17239 17620])
+            ("ui_set_progress" function
+               (:arguments 
+                  ( ("fraction" variable (:type "float") (reparse-symbol arg-sub-list) [17643 17658]))                  
+                :type "void")
+                nil [17622 18224])
+            ("ui_reset_progress" function (:type "void") nil [18226 18530])
+            ("ui_print" function
+               (:arguments 
+                  ( ("fmt" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [18546 18562])
+                    ("..." variable (:type "vararg") (reparse-symbol arg-sub-list) [18563 18567]))                  
+                :type "void")
+                nil [18532 19503])
+            ("ui_start_menu" function
+               (:arguments 
+                  ( ("headers" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [19524 19539])
+                    ("items" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [19540 19553])
+                    ("initial_selection" variable (:type "int") (reparse-symbol arg-sub-list) [19554 19576]))                  
+                :type "void")
+                nil [19505 20260])
+            ("ui_menu_select" function
+               (:arguments 
+                  ( ("sel" variable (:type "int") (reparse-symbol arg-sub-list) [20281 20289]))                  
+                :type "int")
+                nil [20262 20671])
+            ("ui_end_menu" function (:type "void") nil [20673 20906])
+            ("ui_text_visible" function (:type "int") nil [20908 21062])
+            ("ui_text_ever_visible" function (:type "int") nil [21064 21238])
+            ("ui_show_text" function
+               (:arguments 
+                  ( ("visible" variable (:type "int") (reparse-symbol arg-sub-list) [21258 21270]))                  
+                :type "void")
+                nil [21240 21517])
+            ("usb_connected" function
+               (:typemodifiers ("static")
+                :type "int")
+                nil [21555 22123])
+            ("ui_wait_key" function (:type "int") nil [22125 23000])
+            ("ui_key_pressed" function
+               (:arguments 
+                  ( ("key" variable (:type "int") (reparse-symbol arg-sub-list) [23021 23029]))                  
+                :type "int")
+                nil [23002 23123])
+            ("ui_clear_key_queue" function (:type "void") nil [23125 23263]))          
+      :file "ui.c"
+      :pointmax 23264
+      :fsize 23263
+      :lastmodtime '(21983 50567 363261 363000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("MAX_ROWS" . ((number "32" 1034 . 1036)))
+          ("UI_WAIT_KEY_TIMEOUT_SEC" . ((number "120" 1119 . 1122)))
+          ("MAX_ASSET_FILENAME_LEN" . ((number "40" 1155 . 1157)))
+          ("MAX_COLS" . ((number "96" 1014 . 1016)))
+          ("CHAR_WIDTH" . ((number "10" 1057 . 1059)))
+          ("CHAR_HEIGHT" . ((number "18" 1080 . 1082)))
+          )
+)
+    (semanticdb-table "roots.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("errno.h" include (:system-flag t) nil [622 640])
+            ("stdlib.h" include (:system-flag t) nil [641 660])
+            ("sys/mount.h" include (:system-flag t) nil [661 683])
+            ("sys/stat.h" include (:system-flag t) nil [684 705])
+            ("sys/types.h" include (:system-flag t) nil [706 728])
+            ("unistd.h" include (:system-flag t) nil [729 748])
+            ("ctype.h" include (:system-flag t) nil [749 767])
+            ("mtdutils/mtdutils.h" include nil nil [769 799])
+            ("mtdutils/mounts.h" include nil nil [800 828])
+            ("roots.h" include nil nil [829 847])
+            ("common.h" include nil nil [848 867])
+            ("num_volumes" variable
+               (:typemodifiers ("static")
+                :default-value "0"
+                :type "int")
+                nil [914 941])
+            ("device_volumes" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :default-value "NULL"
+                :type ("Volume" type (:type "class") nil nil))
+                nil [942 979])
+            ("sehandle" variable
+               (:pointer 1
+                :type ("selabel_handle" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [981 1013])
+            ("parse_options" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("options" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1040 1054])
+                    ("volume" variable
+                       (:pointer 1
+                        :type ("Volume" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1055 1070]))                  
+                :type "int")
+                nil [1015 1388])
+            ("load_volume_table" function (:type "void") nil [1390 4028])
+            ("volume_for_path" function
+               (:pointer 1
+                :arguments 
+                  ( ("path" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [4054 4071]))                  
+                :type ("Volume" type (:type "class") nil nil))
+                nil [4030 4371])
+            ("ensure_path_mounted" function
+               (:arguments 
+                  ( ("path" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [4397 4414]))                  
+                :type "int")
+                nil [4373 6336])
+            ("ensure_path_unmounted" function
+               (:arguments 
+                  ( ("path" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [6364 6381]))                  
+                :type "int")
+                nil [6338 7026])
+            ("format_volume" function
+               (:arguments 
+                  ( ("volume" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [7046 7065]))                  
+                :type "int")
+                nil [7028 8923]))          
+      :file "roots.c"
+      :pointmax 8924
+      :fsize 8923
+      :lastmodtime '(21971 10747 717773 225000)
+      :unmatched-syntax nil))
+  :file "!home!qichen!bg4dtv_release_clean!bootable!recovery!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

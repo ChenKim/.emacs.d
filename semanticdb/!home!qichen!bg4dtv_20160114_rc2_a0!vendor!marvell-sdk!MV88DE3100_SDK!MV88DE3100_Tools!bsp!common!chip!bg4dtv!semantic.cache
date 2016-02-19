@@ -1,0 +1,265 @@
+;; Object bg4dtv/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "bg4dtv/"
+  :tables
+  (list
+    (semanticdb-table "gpio.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("_GPIO_C_" variable (:constant-flag t) nil [9 17])
+            ("com_type.h" include nil nil [642 663])
+            ("apbRegBase.h" include nil nil [664 687])
+            ("io.h" include nil nil [688 703])
+            ("apb_gpio.h" include nil nil [704 725])
+            ("global.h" include nil nil [726 745])
+            ("debug.h" include nil nil [746 764])
+            ("gpio.h" include nil nil [765 782])
+            ("GPIO_PortWrite2" function
+               (:arguments 
+                  ( ("port" variable (:type "int") (reparse-symbol arg-sub-list) [804 813])
+                    ("value" variable (:type "int") (reparse-symbol arg-sub-list) [814 824]))                  
+                :type "int")
+                nil [784 1760])
+            ("GPIO_PortSetInOut2" function
+               (:arguments 
+                  ( ("port" variable (:type "int") (reparse-symbol arg-sub-list) [1785 1794])
+                    ("in" variable (:type "int") (reparse-symbol arg-sub-list) [1795 1802]))                  
+                :type "int")
+                nil [1762 2476])
+            ("GPIO_PortWrite" function
+               (:arguments 
+                  ( ("port" variable (:type "int") (reparse-symbol arg-sub-list) [2762 2771])
+                    ("value" variable (:type "int") (reparse-symbol arg-sub-list) [2772 2782]))                  
+                :type "int")
+                nil [2743 3718])
+            ("GPIO_PortSetInOut" function
+               (:arguments 
+                  ( ("port" variable (:type "int") (reparse-symbol arg-sub-list) [3994 4003])
+                    ("in" variable (:type "int") (reparse-symbol arg-sub-list) [4004 4011]))                  
+                :type "int")
+                nil [3972 4685])
+            ("SM_GPIO_PortWrite" function
+               (:arguments 
+                  ( ("port" variable (:type "int") (reparse-symbol arg-sub-list) [4991 5000])
+                    ("value" variable (:type "int") (reparse-symbol arg-sub-list) [5001 5011]))                  
+                :type "int")
+                nil [4969 5805])
+            ("SM_GPIO_PortSetInOut" function
+               (:arguments 
+                  ( ("port" variable (:type "int") (reparse-symbol arg-sub-list) [6101 6110])
+                    ("in" variable (:type "int") (reparse-symbol arg-sub-list) [6111 6118]))                  
+                :type "int")
+                nil [6076 6587]))          
+      :file "gpio.c"
+      :pointmax 6589
+      :fsize 6588
+      :lastmodtime '(22177 57383 964114 343000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("_GPIO_C_")
+          )
+)
+    (semanticdb-table "diag_clock.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("io.h" include nil nil [1 16])
+            ("debug.h" include nil nil [17 35])
+            ("diag_clock.h" include nil nil [36 59])
+            ("mem_map.h" include nil nil [60 80])
+            ("global.h" include nil nil [81 100])
+            ("SYSPLL_CTRL_BASE" variable (:constant-flag t) nil [116 132])
+            ("CPUPLL_CTRL_BASE" variable (:constant-flag t) nil [185 201])
+            ("MEMPLL_CTRL_BASE" variable (:constant-flag t) nil [254 270])
+            ("divider_index" type
+               (:members 
+                  ( ("DIVIDED_BY_2" variable
+                       (:constant-flag t
+                        :default-value (391 392)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [376 392])
+                    ("DIVIDED_BY_4" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [395 408])
+                    ("DIVIDED_BY_6" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [410 423])
+                    ("DIVIDED_BY_8" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [425 438])
+                    ("DIVIDED_BY_12" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [440 455]))                  
+                :type "enum")
+                nil [354 456])
+            ("AVPLL" variable
+               (:pointer 1
+                :dereference 1
+                :constant-flag t
+                :default-value "{
+	\"AVPllA2\",
+	\"AVPllA5\",
+	\"AVPllA6\",
+}"
+                :type "char")
+                nil [458 520])
+            ("VcoDiv" variable
+               (:dereference 1
+                :default-value "{
+	1,		/// * 000: 1
+	2,		/// * 001: 2
+	4,		/// * 010: 4
+	8,		/// * 011: 8
+	16,		/// * 100: 16
+	32,		/// * 101: 32
+	64,		/// * 110: 64
+	128		/// * 111:128
+
+}"
+                :type "float")
+                nil [562 738])
+            ("g_aClocks" variable
+               (:pointer 1
+                :dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+	\"cpufastRefClk\",
+	\"memfastRefClk\",
+	\"cfgClk\",
+	\"sysClk\",
+	\"v4gClk\",
+	\"gfx3DCoreClk\",
+	\"gfx3DSysClk\",
+	\"avioSysClk\",
+	\"vppSysClk\",
+	\"arcRefClk\",
+	\"hdmirxMClk\",
+	\"perifClk\",
+	\"tspClk\",
+	\"tspRefClk\",
+	\"atbClk\",
+	\"bcmClk\",
+	\"nfcEccClk\",
+	\"sd0Clk\",
+	\"usb2TestClk\",
+	\"sdio3DllMstRefClk\",
+	\"eddcClk\",
+	\"zspClk\",
+	\"avioBiuClk\",
+	\"apbCoreClk\",
+	\"pcieTestClk\",
+	\"avifSysClk\",
+	\"avif0Clk\",
+	\"avif1Clk\",
+	\"avif2Clk\",
+	\"ihbPhyOccClk\"
+}"
+                :type "char")
+                nil [1062 1521])
+            ("g_aClkOffset" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+	RA_Gbl_cpufastRefClk,
+	RA_Gbl_memfastRefClk,
+	RA_Gbl_cfgClk,
+	RA_Gbl_sysClk,
+	//RA_Gbl_g1CoreClk,
+    	RA_Gbl_v4gClk,
+	RA_Gbl_gfx3DCoreClk,
+	RA_Gbl_gfx3DSysClk,
+	RA_Gbl_avioSysClk,
+	RA_Gbl_vppSysClk,
+	RA_Gbl_arcRefClk,
+	RA_Gbl_hdmirxMClk,
+	RA_Gbl_perifClk,
+	RA_Gbl_tspClk,
+	RA_Gbl_tspRefClk,
+	RA_Gbl_atbClk,
+	RA_Gbl_bcmClk,
+	RA_Gbl_nfcEccClk,
+	RA_Gbl_sd0Clk,
+	RA_Gbl_usb2TestClk,
+	RA_Gbl_sdio3DllMstRefClk,
+	RA_Gbl_eddcClk,
+	RA_Gbl_zspClk,
+	RA_Gbl_avioBiuClk,
+	RA_Gbl_apbCoreClk,
+	RA_Gbl_pcieTestClk,
+	RA_Gbl_avifSysClk,
+	RA_Gbl_avif0Clk,
+	RA_Gbl_avif1Clk,
+	RA_Gbl_avif2Clk,
+	RA_Gbl_ihbPhyOccClk
+}"
+                :type "unsigned int")
+                nil [1523 2166])
+            ("clock_divider" variable
+               (:dereference 1
+                :constant-flag t
+                :default-value "{
+	1,
+	2,
+	4,
+	6,
+	8,
+	12,
+	1,
+	1
+}"
+                :type "unsigned int")
+                nil [2169 2242])
+            ("speed_cpu" variable (:type "int") nil [2251 2265])
+            ("RefClkIn" variable
+               (:default-value "25"
+                :type "unsigned int")
+                nil [2266 2293])
+            ("RefDiv" variable
+               (:default-value "2"
+                :type "unsigned int")
+                nil [2294 2318])
+            ("current_freq" variable
+               (:dereference 2
+                :default-value "{
+		{0, 0, 600, 0, 0, 700, 500, 0},
+		{0, 0, 0, 0, 0, 0, 0, 0},
+}"
+                :type "unsigned int")
+                nil [2319 2419])
+            ("get_divider" function
+               (:arguments 
+                  ( ("D3Switch" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [14323 14345])
+                    ("Switch" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [14346 14366])
+                    ("Select" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [14367 14387]))                  
+                :type "unsigned int")
+                nil [14298 14547])
+            ("list_speed" function
+               (:arguments 
+                  ( ("level" variable (:type "int") (reparse-symbol arg-sub-list) [15093 15103]))                  
+                :type "void")
+                nil [15077 19215])
+            ("diag_clock_list" function (:type "void") nil [19217 19333])
+            ("show_speed" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [19350 19355]))                  
+                :type "void")
+                nil [19334 19489]))          
+      :file "diag_clock.c"
+      :pointmax 19490
+      :fsize 20252
+      :lastmodtime '(21924 55567 299168 946000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("SYSPLL_CTRL_BASE" . ((semantic-list "(MEMMAP_CHIP_CTRL_REG_BASE + RA_Gbl_sysPll)" 133 . 176)))
+          ("CPUPLL_CTRL_BASE" . ((semantic-list "(MEMMAP_CA7_REG_BASE + RA_CA7PllReg_PllReg)" 202 . 245)))
+          ("MEMPLL_CTRL_BASE" . ((semantic-list "(MEMMAP_MCTRLSS_REG_BASE + RA_MctrlSS_memPll)" 271 . 316)))
+          )
+))
+  :file "!home!qichen!bg4dtv_20160114_rc2_a0!vendor!marvell-sdk!MV88DE3100_SDK!MV88DE3100_Tools!bsp!common!chip!bg4dtv!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

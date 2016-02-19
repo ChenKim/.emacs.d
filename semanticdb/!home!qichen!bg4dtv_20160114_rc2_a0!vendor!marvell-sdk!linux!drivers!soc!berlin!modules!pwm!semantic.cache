@@ -1,0 +1,185 @@
+;; Object pwm/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "pwm/"
+  :tables
+  (list
+    (semanticdb-table "pwm.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("linux/fs.h" include (:system-flag t) nil [1 22])
+            ("linux/init.h" include (:system-flag t) nil [23 46])
+            ("linux/io.h" include (:system-flag t) nil [47 68])
+            ("linux/kernel.h" include (:system-flag t) nil [69 94])
+            ("linux/module.h" include (:system-flag t) nil [95 120])
+            ("linux/platform_device.h" include (:system-flag t) nil [121 155])
+            ("linux/sched.h" include (:system-flag t) nil [156 180])
+            ("linux/slab.h" include (:system-flag t) nil [181 204])
+            ("linux/uaccess.h" include (:system-flag t) nil [205 231])
+            ("GALOIS_PWMCH_NUM" variable (:constant-flag t) nil [241 257])
+            ("ENABLE_REG_OFFSET" variable (:constant-flag t) nil [269 286])
+            ("CONTROL_REG_OFFSET" variable (:constant-flag t) nil [299 317])
+            ("DUTY_REG_OFFSET" variable (:constant-flag t) nil [330 345])
+            ("TERMCNT_REG_OFFSET" variable (:constant-flag t) nil [359 377])
+            ("PWM_IOCTL_READ" variable (:constant-flag t) nil [415 429])
+            ("PWM_IOCTL_WRITE" variable (:constant-flag t) nil [446 461])
+            ("galois_pwm_rw" type
+               (:members 
+                  ( ("offset" variable (:type ("uint" type (:type "class") nil nil)) (reparse-symbol classsubparts) [502 514])
+                    ("data" variable (:type ("uint" type (:type "class") nil nil)) (reparse-symbol classsubparts) [552 562]))                  
+                :type "struct")
+                nil [470 633])
+            ("galois_pwm_rw_t" type
+               (:typedef ("galois_pwm_rw" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [470 633])
+            ("pwmch_major" variable
+               (:typemodifiers ("static")
+                :type "int")
+                nil [635 658])
+            ("pwmch_class" variable
+               (:pointer 1
+                :type ("" type
+                     (:prototype t
+                      :type "class")
+                      nil nil))
+                nil [673 692])
+            ("pwmch_base" variable
+               (:pointer 1
+                :type ("__iomem" type (:type "class") nil nil))
+                nil [705 725])
+            ("galois_pwmch_ioctl" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("file" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [758 776])
+                    ("cmd" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [781 798])
+                    ("arg" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [799 817]))                  
+                :type "long")
+                nil [727 1946])
+            ("galois_pwmch_fops" variable
+               (:typemodifiers ("static")
+                :default-value "{
+	.owner		= THIS_MODULE,
+	.compat_ioctl	= galois_pwmch_ioctl,
+	.unlocked_ioctl	= galois_pwmch_ioctl,
+}"
+                :type ("file_operations" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1948 2102])
+            ("pwmchdev_list" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :default-value "{
+	{0, \"pwmch0\"},
+	{1, \"pwmch1\"},
+	{2, \"pwmch2\"},
+	{3, \"pwmch3\"},
+}"
+                :type ("" type
+                     (:members 
+                        ( ("minor" variable (:type ("uint" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2121 2132])
+                          ("name" variable
+                             (:pointer 1
+                              :type "char")
+                              (reparse-symbol classsubparts) [2134 2145]))                        
+                      :type "struct")
+                      nil nil))
+                nil [2104 2234])
+            ("pwmch_probe" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("pdev" variable
+                       (:pointer 1
+                        :type ("platform_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3495 3524]))                  
+                :type "int")
+                nil [3472 4082])
+            ("pwmch_remove" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("pdev" variable
+                       (:pointer 1
+                        :type ("platform_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4108 4137]))                  
+                :type "int")
+                nil [4084 4358])
+            ("pwmch_match" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :default-value "{
+	{ .compatible = \"marvell,berlin-pwm\", },
+	{},
+}"
+                :type ("of_device_id" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [4360 4454])
+            ("pwmch_driver" variable
+               (:typemodifiers ("static")
+                :default-value "{
+	.probe		= pwmch_probe,
+	.remove		= pwmch_remove,
+	.driver = {
+		.name	= \"marvell,berlin-pwm\",
+		.owner	= THIS_MODULE,
+		.of_match_table = pwmch_match,
+#ifdef CONFIG_PM
+		.pm	= &pwmch_pm_ops,
+#endif
+	},
+}"
+                :type ("platform_driver" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [4456 4708])
+            ("module_platform_driver" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("pwmch_driver" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4733 4746]))                  
+                :type "int")
+                nil [4710 4747])
+            ("MODULE_AUTHOR" function
+               (:prototype-flag t
+                :type "int")
+                nil [4749 4781])
+            ("MODULE_DESCRIPTION" function
+               (:prototype-flag t
+                :type "int")
+                nil [4782 4824])
+            ("MODULE_LICENSE" function
+               (:prototype-flag t
+                :type "int")
+                nil [4825 4847]))          
+      :file "pwm.c"
+      :pointmax 4848
+      :fsize 4847
+      :lastmodtime '(21915 34182 782780 739000)
+      :unmatched-syntax '((string 4840 . 4845) (string 4801 . 4822) (string 4763 . 4779) (VOID 700 . 704) (STATIC 693 . 699) (STRUCT 666 . 672) (STATIC 659 . 665))
+      :lexical-table 
+        '(("PWM_IOCTL_WRITE" . ((number "0x4567" 462 . 468)))
+          ("ENABLE_REG_OFFSET" . ((number "0x0" 287 . 290)))
+          ("CONTROL_REG_OFFSET" . ((number "0x4" 318 . 321)))
+          ("PWM_IOCTL_READ" . ((number "0x1234" 431 . 437)))
+          ("DUTY_REG_OFFSET" . ((number "0x8" 347 . 350)))
+          ("GALOIS_PWMCH_NUM" . ((number "4" 258 . 259)))
+          ("TERMCNT_REG_OFFSET" . ((number "0xC" 378 . 381)))
+          )
+))
+  :file "!home!qichen!bg4dtv_20160114_rc2_a0!vendor!marvell-sdk!linux!drivers!soc!berlin!modules!pwm!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

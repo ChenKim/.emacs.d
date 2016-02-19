@@ -1,0 +1,394 @@
+;; Object hardware/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "hardware/"
+  :tables
+  (list
+    (semanticdb-table "midas_power.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("MIDAS_HARDWARE_POWER_H" variable (:constant-flag t) nil [839 861])
+            ("stdint.h" include (:system-flag t) nil [863 882])
+            ("sys/cdefs.h" include (:system-flag t) nil [883 905])
+            ("sys/types.h" include (:system-flag t) nil [906 928])
+            ("hardware/hardware.h" include (:system-flag t) nil [930 960])
+            ("midas_common.h" include (:system-flag t) nil [961 986])
+            ("C" extern nil nil [988 1001])
+            ("POWER_HARDWARE_MODULE_ID" variable (:constant-flag t) nil [1044 1068])
+            ("POWER_HARDWARE_MODULE_NAME" variable (:constant-flag t) nil [1085 1111])
+            ("midas_power_module" type
+               (:members 
+                  ( ("common" variable (:type ("hw_module_t" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [1161 1187]))                  
+                :type "struct")
+                nil [1121 1211])
+            ("midas_power_module_t" type
+               (:typedef ("midas_power_module" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [1121 1211])
+            ("MIDAS_POWER_STANDBY_CHOICE" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("MIDAS_POWER_PASSIVE_FAKE_STANDBY" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [1233 1266])
+                          ("MIDAS_POWER_ACTIVE_FAKE_STANDBY" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [1271 1303])
+                          ("MIDAS_POWER_PASSIVE_TRUE_STANDBY" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [1308 1341])
+                          ("MIDAS_POWER_ACTIVE_TRUE_STANDBY" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [1346 1378]))                        
+                      :type "enum")
+                      nil nil)
+                :type "typedef")
+                nil [1214 1408])
+            ("midas_power_device" type
+               (:members 
+                  ( ("common" variable (:type ("hw_device_t" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [1450 1476])
+                    ("sleep" function
+                       (:prototype-flag t
+                        :function-pointer t
+                        :arguments 
+                          ( ("module" variable
+                               (:pointer 1
+                                :type ("midas_power_device" type
+                                     (:prototype t
+                                      :type "struct")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [1496 1530]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [1482 1531])
+                    ("wakeup" function
+                       (:prototype-flag t
+                        :function-pointer t
+                        :arguments 
+                          ( ("module" variable
+                               (:pointer 1
+                                :type ("midas_power_device" type
+                                     (:prototype t
+                                      :type "struct")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [1551 1585]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [1536 1586])
+                    ("shutdown" function
+                       (:prototype-flag t
+                        :function-pointer t
+                        :arguments 
+                          ( ("module" variable
+                               (:pointer 1
+                                :type ("midas_power_device" type
+                                     (:prototype t
+                                      :type "struct")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [1608 1642]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [1591 1643])
+                    ("reboot" function
+                       (:prototype-flag t
+                        :function-pointer t
+                        :arguments 
+                          ( ("module" variable
+                               (:pointer 1
+                                :type ("midas_power_device" type
+                                     (:prototype t
+                                      :type "struct")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [1663 1697])
+                            ("reason" variable
+                               (:constant-flag t
+                                :type "int")
+                                (reparse-symbol arg-sub-list) [1698 1715])
+                            ("path" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [1716 1733]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [1648 1734])
+                    ("getbootreason" function
+                       (:prototype-flag t
+                        :function-pointer t
+                        :arguments 
+                          ( ("module" variable
+                               (:pointer 1
+                                :type ("midas_power_device" type
+                                     (:prototype t
+                                      :type "struct")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [1761 1795])
+                            ("boot_reason" variable
+                               (:pointer 1
+                                :type ("int32_t" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [1796 1817]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [1739 1818])
+                    ("poweronscreen" function
+                       (:prototype-flag t
+                        :function-pointer t
+                        :arguments 
+                          ( ("module" variable
+                               (:pointer 1
+                                :type ("midas_power_device" type
+                                     (:prototype t
+                                      :type "struct")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [1845 1879]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [1823 1880])
+                    ("setpoh" function
+                       (:prototype-flag t
+                        :function-pointer t
+                        :arguments 
+                          ( ("module" variable
+                               (:pointer 1
+                                :type ("midas_power_device" type
+                                     (:prototype t
+                                      :type "struct")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [1900 1934])
+                            ("keycode" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1935 1951])
+                            ("on" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1952 1963]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [1885 1964])
+                    ("getpoh" function
+                       (:prototype-flag t
+                        :function-pointer t
+                        :arguments 
+                          ( ("module" variable
+                               (:pointer 1
+                                :type ("midas_power_device" type
+                                     (:prototype t
+                                      :type "struct")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [1987 2021]))                          
+                        :type ("int32_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1969 2022])
+                    ("getusbocstatus" function
+                       (:prototype-flag t
+                        :function-pointer t
+                        :arguments 
+                          ( ("module" variable
+                               (:pointer 1
+                                :type ("midas_power_device" type
+                                     (:prototype t
+                                      :type "struct")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [2053 2087]))                          
+                        :type ("int32_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2027 2088])
+                    ("setusbpower" function
+                       (:prototype-flag t
+                        :function-pointer t
+                        :arguments 
+                          ( ("module" variable
+                               (:pointer 1
+                                :type ("midas_power_device" type
+                                     (:prototype t
+                                      :type "struct")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [2113 2147])
+                            ("on" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2148 2159]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [2093 2160])
+                    ("standby" function
+                       (:prototype-flag t
+                        :function-pointer t
+                        :arguments 
+                          ( ("module" variable
+                               (:pointer 1
+                                :type ("midas_power_device" type
+                                     (:prototype t
+                                      :type "struct")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [2181 2215])
+                            ("standby_option" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2216 2239]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [2165 2240])
+                    ("wakeupforBgupdate" function
+                       (:prototype-flag t
+                        :function-pointer t
+                        :arguments 
+                          ( ("module" variable
+                               (:pointer 1
+                                :type ("midas_power_device" type
+                                     (:prototype t
+                                      :type "struct")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [2271 2305])
+                            ("time" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2306 2319]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [2245 2320])
+                    ("runinBG" function
+                       (:prototype-flag t
+                        :function-pointer t
+                        :arguments 
+                          ( ("module" variable
+                               (:pointer 1
+                                :type ("midas_power_device" type
+                                     (:prototype t
+                                      :type "struct")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [2341 2375]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [2325 2376])
+                    ("runtoFG" function
+                       (:prototype-flag t
+                        :function-pointer t
+                        :arguments 
+                          ( ("module" variable
+                               (:pointer 1
+                                :type ("midas_power_device" type
+                                     (:prototype t
+                                      :type "struct")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [2397 2431]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [2381 2432])
+                    ("oobe2sm" function
+                       (:prototype-flag t
+                        :function-pointer t
+                        :arguments 
+                          ( ("module" variable
+                               (:pointer 1
+                                :type ("midas_power_device" type
+                                     (:prototype t
+                                      :type "struct")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [2453 2487])
+                            ("status" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2488 2503]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [2437 2504]))                  
+                :type "struct")
+                nil [1410 2528])
+            ("midas_power_device_t" type
+               (:typedef ("midas_power_device" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [1410 2528]))          
+      :file "midas_power.h"
+      :pointmax 2578
+      :fsize 2577
+      :lastmodtime '(22167 25727 950158 564000)
+      :unmatched-syntax '((close-paren "}" 2531 . 2542))
+      :lexical-table 
+        '(("POWER_HARDWARE_MODULE_ID" . ((string "\"power\"" 1069 . 1076)))
+          ("MIDAS_HARDWARE_POWER_H")
+          ("POWER_HARDWARE_MODULE_NAME" . ((string "\"power\"" 1112 . 1119)))
+          )
+)
+    (semanticdb-table "led.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("MIDAS_HARDWARE_LED_H" variable (:constant-flag t) nil [837 857])
+            ("stdint.h" include (:system-flag t) nil [859 878])
+            ("sys/cdefs.h" include (:system-flag t) nil [879 901])
+            ("sys/types.h" include (:system-flag t) nil [902 924])
+            ("hardware/hardware.h" include (:system-flag t) nil [926 956])
+            ("C" extern nil nil [958 971])
+            ("LED_HARDWARE_MODULE_ID" variable (:constant-flag t) nil [1014 1036])
+            ("LED_HARDWARE_MODULE_NAME" variable (:constant-flag t) nil [1051 1075])
+            ("midas_led_module" type
+               (:members 
+                  ( ("common" variable (:type ("hw_module_t" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [1121 1147]))                  
+                :type "struct")
+                nil [1083 1169])
+            ("midas_led_module_t" type
+               (:typedef ("midas_led_module" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [1083 1169])
+            ("midas_led_device" type
+               (:members 
+                  ( ("common" variable (:type ("hw_device_t" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [1209 1235])
+                    ("LedOn" function
+                       (:prototype-flag t
+                        :function-pointer t
+                        :arguments 
+                          ( ("module" variable
+                               (:pointer 1
+                                :type ("midas_led_device" type
+                                     (:prototype t
+                                      :type "struct")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [1255 1287])
+                            ("on" variable (:type "int") (reparse-symbol arg-sub-list) [1288 1295]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [1241 1296])
+                    ("LedFade" function
+                       (:prototype-flag t
+                        :function-pointer t
+                        :arguments 
+                          ( ("module" variable
+                               (:pointer 1
+                                :type ("midas_led_device" type
+                                     (:prototype t
+                                      :type "struct")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [1317 1349])
+                            ("percent" variable (:type "int") (reparse-symbol arg-sub-list) [1350 1362]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [1301 1363])
+                    ("LedFlashOnce" function
+                       (:prototype-flag t
+                        :function-pointer t
+                        :arguments 
+                          ( ("module" variable
+                               (:pointer 1
+                                :type ("midas_led_device" type
+                                     (:prototype t
+                                      :type "struct")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [1389 1421])
+                            ("off" variable (:type "int") (reparse-symbol arg-sub-list) [1422 1430]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [1368 1431])
+                    ("LedFlash" function
+                       (:prototype-flag t
+                        :function-pointer t
+                        :arguments 
+                          ( ("module" variable
+                               (:pointer 1
+                                :type ("midas_led_device" type
+                                     (:prototype t
+                                      :type "struct")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [1453 1485])
+                            ("hz" variable (:type "int") (reparse-symbol arg-sub-list) [1486 1493]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [1436 1494]))                  
+                :type "struct")
+                nil [1171 1516])
+            ("midas_led_device_t" type
+               (:typedef ("midas_led_device" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [1171 1516]))          
+      :file "led.h"
+      :pointmax 1564
+      :fsize 1563
+      :lastmodtime '(22065 63839 92436 4000)
+      :unmatched-syntax '((close-paren "}" 1519 . 1530))
+      :lexical-table 
+        '(("LED_HARDWARE_MODULE_ID" . ((string "\"led\"" 1037 . 1042)))
+          ("LED_HARDWARE_MODULE_NAME" . ((string "\"led\"" 1076 . 1081)))
+          ("MIDAS_HARDWARE_LED_H")
+          )
+))
+  :file "!home!qichen!bg4dtv_20160114_rc2_a0!vendor!marvell!midas-tv!hardware!include!hardware!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

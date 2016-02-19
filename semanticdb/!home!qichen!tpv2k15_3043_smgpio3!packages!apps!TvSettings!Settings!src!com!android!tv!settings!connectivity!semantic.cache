@@ -1,0 +1,476 @@
+;; Object connectivity/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "connectivity/"
+  :tables
+  (list
+    (semanticdb-table "ConnectivityListener.java"
+      :major-mode 'java-mode
+      :tags 
+        '( ("com.android.tv.settings.connectivity" package nil nil [622 667])
+            ("android.content.BroadcastReceiver" include nil nil [669 710])
+            ("android.content.Context" include nil nil [711 742])
+            ("android.content.Intent" include nil nil [743 773])
+            ("android.content.IntentFilter" include nil nil [774 810])
+            ("android.net.ConnectivityManager" include nil nil [811 850])
+            ("android.net.EthernetManager" include nil nil [851 886])
+            ("android.net.IpConfiguration" include nil nil [887 922])
+            ("android.net.LinkAddress" include nil nil [923 954])
+            ("android.net.LinkProperties" include nil nil [955 989])
+            ("android.net.NetworkInfo" include nil nil [990 1021])
+            ("android.net.wifi.ScanResult" include nil nil [1022 1057])
+            ("android.net.wifi.WifiConfiguration" include nil nil [1058 1100])
+            ("android.net.wifi.WifiConfiguration.KeyMgmt" include nil nil [1101 1151])
+            ("android.net.wifi.WifiInfo" include nil nil [1152 1185])
+            ("android.net.wifi.WifiManager" include nil nil [1186 1222])
+            ("android.text.TextUtils" include nil nil [1223 1253])
+            ("android.util.Log" include nil nil [1254 1278])
+            ("android.util.Pair" include nil nil [1279 1304])
+            ("java.net.Inet4Address" include nil nil [1306 1335])
+            ("java.net.InetAddress" include nil nil [1336 1364])
+            ("java.util.ArrayList" include nil nil [1365 1392])
+            ("java.util.Collections" include nil nil [1393 1422])
+            ("java.util.HashMap" include nil nil [1423 1448])
+            ("java.util.List" include nil nil [1449 1471])
+            ("ConnectivityListener" type
+               (:typemodifiers ("public")
+                :members 
+                  ( ("Listener" type
+                       (:typemodifiers ("public")
+                        :members 
+                          ( ("onConnectivityChange" function
+                               (:arguments 
+                                  ( ("intent" variable (:type "Intent") (reparse-symbol formal_parameters) [1643 1656]))                                  
+                                :type "void")
+                                (reparse-symbol interface_member_declaration) [1617 1658]))                          
+                        :type "interface")
+                        (reparse-symbol class_member_declaration) [1581 1664])
+                    ("WifiNetworkListener" type
+                       (:typemodifiers ("public")
+                        :members 
+                          ( ("onWifiListChanged" function (:type "void") (reparse-symbol interface_member_declaration) [1717 1742]))                          
+                        :type "interface")
+                        (reparse-symbol class_member_declaration) [1670 1748])
+                    ("TAG" variable
+                       (:typemodifiers ("private" "static" "final")
+                        :type "String")
+                        (reparse-symbol class_member_declaration) [1754 1811])
+                    ("DEBUG" variable
+                       (:typemodifiers ("private" "static" "final")
+                        :type "boolean")
+                        (reparse-symbol class_member_declaration) [1816 1859])
+                    ("mContext" variable
+                       (:typemodifiers ("private" "final")
+                        :type "Context")
+                        (reparse-symbol class_member_declaration) [1865 1896])
+                    ("mListener" variable
+                       (:typemodifiers ("private" "final")
+                        :type "Listener")
+                        (reparse-symbol class_member_declaration) [1901 1934])
+                    ("mFilter" variable
+                       (:typemodifiers ("private" "final")
+                        :type "IntentFilter")
+                        (reparse-symbol class_member_declaration) [1939 1974])
+                    ("mReceiver" variable
+                       (:typemodifiers ("private" "final")
+                        :type "BroadcastReceiver")
+                        (reparse-symbol class_member_declaration) [1979 2021])
+                    ("mStarted" variable
+                       (:typemodifiers ("private")
+                        :type "boolean")
+                        (reparse-symbol class_member_declaration) [2026 2051])
+                    ("mConnectivityManager" variable
+                       (:typemodifiers ("private" "final")
+                        :type "ConnectivityManager")
+                        (reparse-symbol class_member_declaration) [2057 2112])
+                    ("mWifiManager" variable
+                       (:typemodifiers ("private" "final")
+                        :type "WifiManager")
+                        (reparse-symbol class_member_declaration) [2117 2156])
+                    ("mEthernetManager" variable
+                       (:typemodifiers ("private" "final")
+                        :type "EthernetManager")
+                        (reparse-symbol class_member_declaration) [2161 2208])
+                    ("mWifiListener" variable
+                       (:typemodifiers ("private")
+                        :type "WifiNetworkListener")
+                        (reparse-symbol class_member_declaration) [2213 2255])
+                    ("mWifiReceiver" variable
+                       (:typemodifiers ("private" "final")
+                        :type "BroadcastReceiver")
+                        (reparse-symbol class_member_declaration) [2260 2576])
+                    ("mEthernetListener" variable
+                       (:typemodifiers ("private" "final")
+                        :type "EthernetManager.Listener")
+                        (reparse-symbol class_member_declaration) [2581 2822])
+                    ("ConnectivityStatus" type
+                       (:typemodifiers ("public" "static")
+                        :members 
+                          ( ("NETWORK_NONE" variable
+                               (:typemodifiers ("public" "static" "final")
+                                :type "int")
+                                (reparse-symbol class_member_declaration) [2877 2918])
+                            ("NETWORK_WIFI_OPEN" variable
+                               (:typemodifiers ("public" "static" "final")
+                                :type "int")
+                                (reparse-symbol class_member_declaration) [2927 2973])
+                            ("NETWORK_WIFI_SECURE" variable
+                               (:typemodifiers ("public" "static" "final")
+                                :type "int")
+                                (reparse-symbol class_member_declaration) [2982 3030])
+                            ("NETWORK_ETHERNET" variable
+                               (:typemodifiers ("public" "static" "final")
+                                :type "int")
+                                (reparse-symbol class_member_declaration) [3039 3084])
+                            ("mNetworkType" variable
+                               (:typemodifiers ("public")
+                                :type "int")
+                                (reparse-symbol class_member_declaration) [3094 3118])
+                            ("mWifiSsid" variable
+                               (:typemodifiers ("public")
+                                :type "String")
+                                (reparse-symbol class_member_declaration) [3127 3151])
+                            ("mWifiSignalStrength" variable
+                               (:typemodifiers ("public")
+                                :type "int")
+                                (reparse-symbol class_member_declaration) [3160 3191])
+                            ("isEthernetConnected" function (:type "boolean") (reparse-symbol class_member_declaration) [3201 3275])
+                            ("isWifiConnected" function (:type "boolean") (reparse-symbol class_member_declaration) [3284 3415])
+                            ("toString" function
+                               (:typemodifiers ("public")
+                                :type "String")
+                                (reparse-symbol class_member_declaration) [3443 3746]))                          
+                        :type "class")
+                        (reparse-symbol class_member_declaration) [2828 3752])
+                    ("mConnectivityStatus" variable
+                       (:typemodifiers ("private")
+                        :type "ConnectivityStatus")
+                        (reparse-symbol class_member_declaration) [3759 3833])
+                    ("ConnectivityListener" function
+                       (:constructor-flag t
+                        :typemodifiers ("public")
+                        :arguments 
+                          ( ("context" variable (:type "Context") (reparse-symbol formal_parameters) [3867 3882])
+                            ("listener" variable (:type "Listener") (reparse-symbol formal_parameters) [3884 3901]))                          )
+                        (reparse-symbol class_member_declaration) [3839 4985])
+                    ("start" function
+                       (:typemodifiers ("public")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [5103 5490])
+                    ("stop" function
+                       (:typemodifiers ("public")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [5607 5903])
+                    ("scanWifiAccessPoints" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("callbackListener" variable (:type "WifiNetworkListener") (reparse-symbol formal_parameters) [6114 6150]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [6081 6301])
+                    ("getConnectivityStatus" function
+                       (:typemodifiers ("public")
+                        :type "ConnectivityStatus")
+                        (reparse-symbol class_member_declaration) [6307 6400])
+                    ("getWifiIpAddress" function
+                       (:typemodifiers ("public")
+                        :type "String")
+                        (reparse-symbol class_member_declaration) [6406 6799])
+                    ("getWifiMacAddress" function
+                       (:typemodifiers ("public")
+                        :type "String")
+                        (reparse-symbol class_member_declaration) [6887 7142])
+                    ("isEthernetAvailable" function
+                       (:typemodifiers ("public")
+                        :type "boolean")
+                        (reparse-symbol class_member_declaration) [7214 7432])
+                    ("getEthernetMacAddress" function
+                       (:typemodifiers ("public")
+                        :type "String")
+                        (reparse-symbol class_member_declaration) [7438 7755])
+                    ("getEthernetIpAddress" function
+                       (:typemodifiers ("public")
+                        :type "String")
+                        (reparse-symbol class_member_declaration) [7761 8292])
+                    ("getWifiSignalStrength" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("maxLevel" variable (:type "int") (reparse-symbol formal_parameters) [8331 8343]))                          
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [8298 8493])
+                    ("forgetWifiNetwork" function
+                       (:typemodifiers ("public")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [8499 8673])
+                    ("getWifiNetworkId" function
+                       (:typemodifiers ("public")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [8679 8904])
+                    ("getWifiConfiguration" function
+                       (:typemodifiers ("public")
+                        :type "WifiConfiguration")
+                        (reparse-symbol class_member_declaration) [8910 9537])
+                    ("getAvailableNetworks" function (:constructor-flag t) (reparse-symbol class_member_declaration) [9719 12108])
+                    ("getIpConfiguration" function
+                       (:typemodifiers ("public")
+                        :type "IpConfiguration")
+                        (reparse-symbol class_member_declaration) [12114 12217])
+                    ("isSecureWifi" function
+                       (:typemodifiers ("private")
+                        :arguments 
+                          ( ("wifiInfo" variable (:type "WifiInfo") (reparse-symbol formal_parameters) [12252 12269]))                          
+                        :type "boolean")
+                        (reparse-symbol class_member_declaration) [12223 12985])
+                    ("setNetworkType" function
+                       (:typemodifiers ("private")
+                        :arguments 
+                          ( ("networkType" variable (:type "int") (reparse-symbol formal_parameters) [13022 13037]))                          
+                        :type "boolean")
+                        (reparse-symbol class_member_declaration) [12991 13207])
+                    ("updateConnectivityStatus" function
+                       (:typemodifiers ("private")
+                        :type "boolean")
+                        (reparse-symbol class_member_declaration) [13213 15554]))                  
+                :type "class")
+                nil [1540 15556]))          
+      :file "ConnectivityListener.java"
+      :pointmax 15557
+      :fsize 15556
+      :lastmodtime '(21832 36009 650072 57000)
+      :unmatched-syntax '((GT 9717 . 9718) (PUBLIC 9695 . 9701) (LT 9706 . 9707) (SEMICOLON 3752 . 3753)))
+    (semanticdb-table "NetworkActivity.java"
+      :major-mode 'java-mode
+      :tags 
+        '( ("com.android.tv.settings.connectivity" package nil nil [622 667])
+            ("android.app.Activity" include nil nil [669 697])
+            ("android.content.Context" include nil nil [698 729])
+            ("android.content.Intent" include nil nil [730 760])
+            ("android.content.res.Resources" include nil nil [761 798])
+            ("android.net.IpConfiguration" include nil nil [799 834])
+            ("android.net.IpConfiguration.IpAssignment" include nil nil [835 883])
+            ("android.net.IpConfiguration.ProxySettings" include nil nil [884 933])
+            ("android.net.wifi.WifiConfiguration" include nil nil [934 976])
+            ("android.net.wifi.ScanResult" include nil nil [977 1012])
+            ("android.net.wifi.WifiInfo" include nil nil [1013 1046])
+            ("android.net.wifi.WifiManager" include nil nil [1047 1083])
+            ("android.os.Bundle" include nil nil [1084 1109])
+            ("android.os.Handler" include nil nil [1110 1136])
+            ("android.os.SystemClock" include nil nil [1137 1167])
+            ("android.text.TextUtils" include nil nil [1168 1198])
+            ("android.util.Pair" include nil nil [1199 1224])
+            ("com.android.tv.settings.dialog.SettingsLayoutActivity" include nil nil [1226 1287])
+            ("com.android.tv.settings.dialog.Layout" include nil nil [1288 1333])
+            ("com.android.tv.settings.dialog.Layout.Header" include nil nil [1334 1386])
+            ("com.android.tv.settings.dialog.Layout.Action" include nil nil [1387 1439])
+            ("com.android.tv.settings.dialog.Layout.Status" include nil nil [1440 1492])
+            ("com.android.tv.settings.dialog.Layout.Static" include nil nil [1493 1545])
+            ("com.android.tv.settings.dialog.Layout.StringGetter" include nil nil [1546 1604])
+            ("com.android.tv.settings.dialog.Layout.LayoutGetter" include nil nil [1605 1663])
+            ("com.android.tv.settings.R" include nil nil [1664 1697])
+            ("java.util.ArrayList" include nil nil [1699 1726])
+            ("java.util.Collections" include nil nil [1727 1756])
+            ("java.util.HashMap" include nil nil [1757 1782])
+            ("java.util.List" include nil nil [1783 1805])
+            ("NetworkActivity" type
+               (:typemodifiers ("public")
+                :interfaces ("ConnectivityListener.Listener" "ConnectivityListener.WifiNetworkListener")
+                :superclasses "SettingsLayoutActivity"
+                :members 
+                  ( ("REQUEST_CODE_ADVANCED_OPTIONS" variable
+                       (:typemodifiers ("private" "static" "final")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [2013 2072])
+                    ("WIFI_SCAN_INTERVAL_CAP_MILLIS" variable
+                       (:typemodifiers ("private" "static" "final")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [2077 2144])
+                    ("WIFI_UI_REFRESH_INTERVAL_CAP_MILLIS" variable
+                       (:typemodifiers ("private" "static" "final")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [2149 2222])
+                    ("mConnectivityListener" variable
+                       (:typemodifiers ("private")
+                        :type "ConnectivityListener")
+                        (reparse-symbol class_member_declaration) [2228 2279])
+                    ("mRes" variable
+                       (:typemodifiers ("private")
+                        :type "Resources")
+                        (reparse-symbol class_member_declaration) [2284 2307])
+                    ("mHandler" variable
+                       (:typemodifiers ("private")
+                        :type "Handler")
+                        (reparse-symbol class_member_declaration) [2312 2353])
+                    ("mRefreshWifiAccessPoints" variable
+                       (:typemodifiers ("private" "final")
+                        :type "Runnable")
+                        (reparse-symbol class_member_declaration) [2358 2720])
+                    ("onCreate" function
+                       (:typemodifiers ("protected")
+                        :arguments 
+                          ( ("savedInstanceState" variable (:type "Bundle") (reparse-symbol formal_parameters) [2764 2789]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [2740 3162])
+                    ("onResume" function
+                       (:typemodifiers ("public")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [3182 3566])
+                    ("onPause" function
+                       (:typemodifiers ("protected")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [3586 3741])
+                    ("onDestroy" function
+                       (:typemodifiers ("protected")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [3761 3859])
+                    ("onConnectivityChange" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("intent" variable (:type "Intent") (reparse-symbol formal_parameters) [3960 3973]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [3927 4113])
+                    ("onWifiListChanged" function
+                       (:typemodifiers ("public")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [4133 4270])
+                    ("mEthernetConnectedDescription" variable (:type "StringGetter") (reparse-symbol class_member_declaration) [4276 4968])
+                    ("mWifiConnectedDescription" variable (:type "StringGetter") (reparse-symbol class_member_declaration) [4974 5618])
+                    ("mEthernetIPAddress" variable (:type "StringGetter") (reparse-symbol class_member_declaration) [5624 6032])
+                    ("mEthernetMacAddress" variable (:type "StringGetter") (reparse-symbol class_member_declaration) [6038 6206])
+                    ("mEthernetAdvancedLayout" variable (:type "LayoutGetter") (reparse-symbol class_member_declaration) [6212 7857])
+                    ("mEthernetLayout" variable (:type "LayoutGetter") (reparse-symbol class_member_declaration) [7863 9476])
+                    ("NUMBER_SIGNAL_LEVELS" variable
+                       (:typemodifiers ("private" "static" "final")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [9482 9532])
+                    ("ACTION_WIFI_FORGET_NETWORK" variable
+                       (:typemodifiers ("private" "static" "final")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [9537 9593])
+                    ("ACTION_WIFI_PROXY_SETTINGS" variable
+                       (:typemodifiers ("private" "static" "final")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [9598 9654])
+                    ("ACTION_WIFI_IP_SETTINGS" variable
+                       (:typemodifiers ("private" "static" "final")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [9659 9712])
+                    ("ACTION_ETHERNET_PROXY_SETTINGS" variable
+                       (:typemodifiers ("private" "static" "final")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [9717 9777])
+                    ("ACTION_ETHERNET_IP_SETTINGS" variable
+                       (:typemodifiers ("private" "static" "final")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [9782 9839])
+                    ("mContext" variable
+                       (:typemodifiers ("private" "final")
+                        :type "Context")
+                        (reparse-symbol class_member_declaration) [9845 9883])
+                    ("getSignalStrength" function
+                       (:typemodifiers ("private")
+                        :type "String")
+                        (reparse-symbol class_member_declaration) [9889 10142])
+                    ("mWifiInfoLayout" variable (:type "LayoutGetter") (reparse-symbol class_member_declaration) [10148 11603])
+                    ("mWifiAdvancedLayout" variable (:type "LayoutGetter") (reparse-symbol class_member_declaration) [11609 13114])
+                    ("mWifiLayout" variable (:type "LayoutGetter") (reparse-symbol class_member_declaration) [13120 14290])
+                    ("addWifiConnectedHeader" function
+                       (:typemodifiers ("private")
+                        :arguments 
+                          ( ("layout" variable (:type "Layout") (reparse-symbol formal_parameters) [14332 14345])
+                            ("SSID" variable (:type "String") (reparse-symbol formal_parameters) [14347 14358])
+                            ("iconResId" variable (:type "int") (reparse-symbol formal_parameters) [14360 14373]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [14296 15370])
+                    ("WifiListLayout" type
+                       (:typemodifiers ("private")
+                        :superclasses "LayoutGetter"
+                        :members 
+                          ( ("mTop3EntriesOnly" variable
+                               (:typemodifiers ("private" "final")
+                                :type "boolean")
+                                (reparse-symbol class_member_declaration) [15436 15475])
+                            ("mSelectedTitle" variable
+                               (:typemodifiers ("private")
+                                :type "String")
+                                (reparse-symbol class_member_declaration) [15484 15514])
+                            ("mLastWifiRefresh" variable
+                               (:typemodifiers ("private")
+                                :type "long")
+                                (reparse-symbol class_member_declaration) [15523 15557])
+                            ("mRefreshViewRunnable" variable
+                               (:typemodifiers ("private" "final")
+                                :type "Runnable")
+                                (reparse-symbol class_member_declaration) [15567 15913])
+                            ("WifiListLayout" function
+                               (:constructor-flag t
+                                :arguments 
+                                  ( ("top3EntriesOnly" variable (:type "boolean") (reparse-symbol formal_parameters) [15938 15961]))                                  )
+                                (reparse-symbol class_member_declaration) [15923 16022])
+                            ("get" function
+                               (:typemodifiers ("public")
+                                :type "Layout")
+                                (reparse-symbol class_member_declaration) [16050 16339])
+                            ("onWifiListChanged" function
+                               (:typemodifiers ("public")
+                                :type "void")
+                                (reparse-symbol class_member_declaration) [16547 16910])
+                            ("onWifiListInvalidated" function
+                               (:typemodifiers ("public")
+                                :type "void")
+                                (reparse-symbol class_member_declaration) [17072 17228])
+                            ("initAvailableWifiNetworks" function
+                               (:typemodifiers ("private")
+                                :arguments 
+                                  ( ("top3EntriesOnly" variable (:type "boolean") (reparse-symbol formal_parameters) [17907 17930])
+                                    ("mustHave" variable (:type "String") (reparse-symbol formal_parameters) [17932 17947]))                                  
+                                :type "Layout")
+                                (reparse-symbol class_member_declaration) [17866 20871]))                          
+                        :type "class")
+                        (reparse-symbol class_member_declaration) [15376 20877])
+                    ("mWifiShortListLayout" variable
+                       (:typemodifiers ("private" "final")
+                        :type "WifiListLayout")
+                        (reparse-symbol class_member_declaration) [20884 20961])
+                    ("mWifiAllListLayout" variable
+                       (:typemodifiers ("private" "final")
+                        :type "WifiListLayout")
+                        (reparse-symbol class_member_declaration) [20967 21043])
+                    ("createLayout" function
+                       (:typemodifiers ("public")
+                        :type "Layout")
+                        (reparse-symbol class_member_declaration) [21063 22821])
+                    ("onActivityResult" function
+                       (:typemodifiers ("protected")
+                        :arguments 
+                          ( ("requestCode" variable (:type "int") (reparse-symbol formal_parameters) [22873 22888])
+                            ("resultCode" variable (:type "int") (reparse-symbol formal_parameters) [22890 22904])
+                            ("data" variable (:type "Intent") (reparse-symbol formal_parameters) [22906 22917]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [22841 23163])
+                    ("onActionFocused" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("item" variable (:type "Layout.LayoutRow") (reparse-symbol formal_parameters) [23211 23232]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [23183 23351])
+                    ("onActionClicked" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("action" variable (:type "Action") (reparse-symbol formal_parameters) [23399 23412]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [23371 25300])
+                    ("getNetworkIconRes" function
+                       (:typemodifiers ("private")
+                        :arguments 
+                          ( ("isOpen" variable (:type "boolean") (reparse-symbol formal_parameters) [25336 25350])
+                            ("signalLevel" variable (:type "int") (reparse-symbol formal_parameters) [25352 25367]))                          
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [25306 26568]))                  
+                :type "class")
+                nil [1855 26570]))          
+      :file "NetworkActivity.java"
+      :pointmax 26571
+      :fsize 26570
+      :lastmodtime '(21832 36009 654072 57000)
+      :unmatched-syntax '((SEMICOLON 20877 . 20878))))
+  :file "!home!qichen!tpv2k15_3043_smgpio3!packages!apps!TvSettings!Settings!src!com!android!tv!settings!connectivity!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

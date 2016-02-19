@@ -1,0 +1,215 @@
+;; Object flash/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "flash/"
+  :tables
+  (list
+    (semanticdb-table "load_vt.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("string.h" include nil nil [1 20])
+            ("debug.h" include nil nil [21 39])
+            ("util.h" include nil nil [40 57])
+            ("flash_adaptor.h" include nil nil [59 85])
+            ("load_vt.h" include nil nil [87 107])
+            ("CRC32_SIZE" variable (:constant-flag t) nil [117 127])
+            ("crc32" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("crc" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [163 180])
+                    ("buf" variable
+                       (:pointer 1
+                        :type "unsigned char")
+                        (reparse-symbol arg-sub-list) [181 200])
+                    ("len" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [201 218]))                  
+                :type "unsigned int")
+                nil [137 219])
+            ("MAX_VERSION_TABLE" variable (:constant-flag t) nil [247 264])
+            ("ver_table_t" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("num" variable (:type "int") (reparse-symbol classsubparts) [287 295])
+                          ("vt" variable
+                             (:dereference 1
+                              :type ("ver_table_entry_t" type (:type "class") nil nil))
+                              (reparse-symbol classsubparts) [297 337])
+                          ("dev_ids" variable
+                             (:dereference 1
+                              :type "unsigned int")
+                              (reparse-symbol classsubparts) [339 379]))                        
+                      :type "struct")
+                      nil nil)
+                :type "typedef")
+                nil [269 393])
+            ("vts" variable
+               (:typemodifiers ("static")
+                :type ("ver_table_t" type (:type "class") nil nil))
+                nil [394 417])
+            ("dump_version_entry" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("vte" variable
+                       (:pointer 1
+                        :type ("ver_table_entry_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [472 496]))                  
+                :type "void")
+                nil [441 1004])
+            ("i" variable
+               (:default-value "0"
+                :type "int")
+                nil [1049 1059])
+            ("i" variable (:type "unsigned int") nil [1302 1317])
+            ("dev_id" variable
+               (:default-value "0"
+                :type "unsigned int")
+                nil [1319 1343])
+            ("vt_size" variable
+               (:default-value "0"
+                :type "unsigned int")
+                nil [1346 1367])
+            ("vt_entry" variable
+               (:pointer 1
+                :type ("ver_table_entry_t" type (:type "class") nil nil))
+                nil [1370 1399])
+            ("vt" variable
+               (:pointer 1
+                :default-value "(version_table_t *)(buff)"
+                :type ("version_table_t" type (:type "class") nil nil))
+                nil [1401 1449])
+            ("dev_id" variable
+               (:default-value "0"
+                :type "int")
+                nil [1726 1737])
+            ("num" variable
+               (:default-value "0"
+                :type "int")
+                nil [1743 1751])
+            ("i" variable
+               (:default-value "0"
+                :type "int")
+                nil [2213 2223])
+            ("PARTITION_NOT_EXIST" variable (:type "int") nil [2470 2490])
+            ("PARTITION_NOT_EXIST" variable (:type "int") nil [2692 2712])
+            ("num" variable (:type "int") nil [2776 2780])
+            ("read_image_from_offset" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("vt" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2911 2914])
+                    ("" variable (:type ("image_size" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2918 2929])
+                    ("" variable (:type ("image_buff" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2930 2941]))                  
+                :type "int")
+                nil [2888 2942])
+            ("start" variable
+               (:default-value "0"
+                :type "long long")
+                nil [3074 3103])
+            ("end" variable
+               (:default-value "0"
+                :type "long long")
+                nil [3074 3103])
+            ("start" variable
+               (:default-value "vt->part1_start_blkind;"
+                :type "int")
+                nil [3106 3137])
+            ("get_block_size" function
+               (:prototype-flag t
+                :type "int")
+                nil [3148 3165])
+            ("pt_offset" variable (:type "int") nil [3176 3186])
+            ("end" variable
+               (:default-value "vt->part1_start_blkind + vt->part1_blks;"
+                :type "int")
+                nil [3188 3234])
+            ("get_block_size" function
+               (:prototype-flag t
+                :type "int")
+                nil [3243 3260])
+            ("switch_flash_part" function
+               (:prototype-flag t
+                :type "int")
+                nil [3549 3570])
+            ("read_flash" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("start" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3591 3597])
+                    ("" variable (:type ("size" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3598 3603])
+                    ("" variable (:type ("image_buf" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3604 3614]))                  
+                :type "int")
+                nil [3580 3615]))          
+      :file "load_vt.c"
+      :pointmax 4572
+      :fsize 4742
+      :lastmodtime '(21969 40018 253039 720000)
+      :unmatched-syntax '((close-paren 3616 . 3617) (RETURN 3573 . 3579) (number 3567 . 3568) (semantic-list 3340 . 3485) (semantic-list 3317 . 3339) (IF 3315 . 3317) (punctuation 3241 . 3242) (punctuation 3240 . 3241) (symbol 3236 . 3239) (punctuation 3174 . 3175) (punctuation 3173 . 3174) (symbol 3167 . 3172) (punctuation 3146 . 3147) (punctuation 3145 . 3146) (symbol 3139 . 3144) (open-paren 3071 . 3072) (close-paren 3069 . 3070) (symbol 3060 . 3069) (punctuation 3059 . 3060) (CHAR 3054 . 3058) (UNSIGNED 3045 . 3053) (punctuation 3043 . 3044) (symbol 3039 . 3043) (INT 3035 . 3038) (UNSIGNED 3026 . 3034) (punctuation 3024 . 3025) (symbol 3015 . 3024) (INT 3011 . 3014) (UNSIGNED 3002 . 3010) (punctuation 3000 . 3001) (symbol 2998 . 3000) (punctuation 2997 . 2998) (symbol 2979 . 2996) (open-paren 2978 . 2979) (symbol 2956 . 2978) (LONG 2951 . 2955) (LONG 2946 . 2950) (close-paren 2943 . 2944) (number 2915 . 2916) (RETURN 2881 . 2887) (open-paren 2878 . 2879) (close-paren 2876 . 2877) (symbol 2866 . 2876) (punctuation 2865 . 2866) (CHAR 2860 . 2864) (UNSIGNED 2851 . 2859) (punctuation 2850 . 2851) (symbol 2840 . 2850) (INT 2836 . 2839) (UNSIGNED 2827 . 2835) (punctuation 2826 . 2827) (symbol 2824 . 2826) (punctuation 2823 . 2824) (symbol 2805 . 2822) (open-paren 2804 . 2805) (symbol 2794 . 2804) (LONG 2789 . 2793) (LONG 2784 . 2788) (close-paren 2781 . 2782) (punctuation 2775 . 2776) (symbol 2772 . 2775) (RETURN 2765 . 2771) (open-paren 2762 . 2763) (close-paren 2760 . 2761) (open-paren 2759 . 2760) (symbol 2729 . 2759) (INT 2725 . 2728) (UNSIGNED 2716 . 2724) (close-paren 2713 . 2714) (RETURN 2685 . 2691) (semantic-list 2588 . 2683) (semantic-list 2556 . 2587) (IF 2554 . 2556) (open-paren 2551 . 2552) (close-paren 2549 . 2550) (symbol 2547 . 2549) (punctuation 2546 . 2547) (symbol 2528 . 2545) (punctuation 2526 . 2527) (symbol 2523 . 2526) (INT 2519 . 2522) (open-paren 2518 . 2519) (symbol 2498 . 2518) (INT 2494 . 2497) (close-paren 2491 . 2492) (RETURN 2463 . 2469) (semantic-list 2254 . 2460) (semantic-list 2228 . 2253) (FOR 2225 . 2228) (open-paren 2210 . 2211) (close-paren 2208 . 2209) (symbol 2204 . 2208) (punctuation 2203 . 2204) (VOID 2198 . 2202) (CONST 2192 . 2197) (open-paren 2191 . 2192) (symbol 2177 . 2191) (INT 2173 . 2176) (close-paren 2170 . 2171) (punctuation 2168 . 2169) (number 2167 . 2168) (RETURN 2160 . 2166) (semantic-list 1788 . 2158) (semantic-list 1756 . 1787) (FOR 1753 . 1756) (punctuation 1742 . 1743) (symbol 1739 . 1742) (semantic-list 1636 . 1723) (semantic-list 1537 . 1635) (IF 1535 . 1537) (punctuation 1531 . 1532) (semantic-list 1512 . 1531) (SIZEOF 1506 . 1512) (punctuation 1504 . 1505) (symbol 1492 . 1503) (punctuation 1491 . 1492) (punctuation 1490 . 1491) (symbol 1488 . 1490) (punctuation 1486 . 1487) (semantic-list 1468 . 1485) (SIZEOF 1462 . 1468) (punctuation 1460 . 1461) (symbol 1452 . 1459) (open-paren 1299 . 1300) (close-paren 1297 . 1298) (symbol 1293 . 1297) (punctuation 1291 . 1292) (CHAR 1287 . 1291) (UNSIGNED 1278 . 1286) (open-paren 1277 . 1278) (symbol 1258 . 1277) (INT 1254 . 1257) (close-paren 1190 . 1191) (semantic-list 1090 . 1189) (semantic-list 1064 . 1089) (FOR 1061 . 1064) (open-paren 1046 . 1047) (close-paren 1044 . 1045) (VOID 1040 . 1044) (open-paren 1039 . 1040) (symbol 1021 . 1039) (VOID 1016 . 1020) (close-paren 1013 . 1014) (punctuation 1004 . 1005))
+      :lexical-table 
+        '(("MAX_VERSION_TABLE" . ((number "32" 265 . 267)))
+          ("CRC32_SIZE" . ((semantic-list "(4)" 133 . 136)))
+          )
+)
+    (semanticdb-table "flash_adaptor.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("string.h" include nil nil [1 20])
+            ("debug.h" include nil nil [21 39])
+            ("util.h" include nil nil [40 57])
+            ("apb_watchdog.h" include nil nil [58 83])
+            ("flash_adaptor.h" include nil nil [85 111])
+            ("g_block_size" variable
+               (:typemodifiers ("static")
+                :default-value "0"
+                :type "int")
+                nil [113 141])
+            ("g_page_size" variable
+               (:typemodifiers ("static")
+                :default-value "0"
+                :type "int")
+                nil [142 169])
+            ("g_addr_cycle" variable
+               (:typemodifiers ("static")
+                :default-value "0"
+                :type "int")
+                nil [170 198])
+            ("set_flash_parameters" function
+               (:arguments 
+                  ( ("blocksize" variable (:type "int") (reparse-symbol arg-sub-list) [7235 7249])
+                    ("pagesize" variable (:type "int") (reparse-symbol arg-sub-list) [7250 7263])
+                    ("addrcycle" variable (:type "int") (reparse-symbol arg-sub-list) [7264 7278]))                  
+                :type "void")
+                nil [7209 7663])
+            ("get_block_size" function (:type "int") nil [7665 7711])
+            ("get_page_size" function (:type "int") nil [7713 7757])
+            ("get_addr_cycle" function (:type "int") nil [7759 7805])
+            ("get_boot_partition_number" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [7837 7842]))                  
+                :type "int")
+                nil [7807 7950])
+            ("init_flash" function (:type "void") nil [7952 8242])
+            ("switch_flash_part" function
+               (:arguments 
+                  ( ("part" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [8364 8382]))                  
+                :type "int")
+                nil [8342 8563])
+            ("read_flash" function
+               (:arguments 
+                  ( ("start" variable (:type "long long") (reparse-symbol arg-sub-list) [8586 8602])
+                    ("size" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [8603 8621])
+                    ("buff" variable
+                       (:pointer 1
+                        :type "unsigned char")
+                        (reparse-symbol arg-sub-list) [8622 8642]))                  
+                :type "long long")
+                nil [8565 8892])
+            ("flash_dev_id_inc" function
+               (:arguments 
+                  ( ("dev_id" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [8924 8944]))                  
+                :type "unsigned int")
+                nil [8894 9179]))          
+      :file "flash_adaptor.c"
+      :pointmax 9473
+      :fsize 9472
+      :lastmodtime '(21969 40018 253039 720000)
+      :unmatched-syntax nil))
+  :file "!home!qichen!bg4dtv_20151231_rc3_a0!vendor!marvell-sdk!MV88DE3100_SDK!MV88DE3100_Tools!bsp!common!driver!flash!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

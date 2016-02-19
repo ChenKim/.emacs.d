@@ -161,7 +161,16 @@
 ;; Package zygospore
 (global-set-key (kbd "C-x 1") 'zygospore-toggle-delete-other-windows)
 
-(load-theme 'tango-dark t)
+;;(require 'color-theme)
+;;(color-theme-initialize)
+;;(load-file "~/.emacs.d/themes/monokai-theme.el")
+;;(load-file "~/.emacs.d/themes/color-theme-molokai.el")
+(load-file "~/.emacs.d/themes/molokai-theme.el")
+;;(color-theme-molokai)
+;;(color-theme-monokai)
+;;(load-theme 'tango-dark t)
+;;(load-theme 'monokai t)
+(load-theme 'molokai t)
 
 ;; (setq-local imenu-create-index-function 'ggtags-build-imenu-index)
 ;; (setq speedbar-show-unknown-files t)
@@ -426,3 +435,17 @@
 ;;             (setq hide-ifdef-mode t)
 ;;             (hide-ifdefs)
 ;;             ))
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   (quote
+    ("5e7fd953d1ac6dc54dded0c0eb0512d0673a2715c3c3a8e88aebbca5a633e0bc" default))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )

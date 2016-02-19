@@ -1,0 +1,167 @@
+;; Object inc/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "inc/"
+  :tables
+  (list
+    (semanticdb-table "light_panel.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("LIGHT_PANEL_H_" variable (:constant-flag t) nil [32 46])
+            ("flash_ts.h" include nil nil [50 71])
+            ("sys/types.h" include (:system-flag t) nil [72 94])
+            ("sys/stat.h" include (:system-flag t) nil [95 116])
+            ("fcntl.h" include (:system-flag t) nil [117 135])
+            ("string.h" include (:system-flag t) nil [136 155])
+            ("cutils/log.h" include (:system-flag t) nil [156 179])
+            ("stdio.h" include (:system-flag t) nil [180 198])
+            ("sys/ioctl.h" include (:system-flag t) nil [199 221])
+            ("stdlib.h" include (:system-flag t) nil [222 241])
+            ("MIDAS_PANEL_ONFF_MODE" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("MIDAS_REOVERY_OFF_PANEL" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [262 286])
+                          ("MIDAS_RECOVERY_ON_PANEL" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [291 315])
+                          ("MIDAS_NORMAL_OFF_PANEL" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [320 343])
+                          ("MIDAS_NORMAL_ON_PANEL" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [348 370])
+                          ("MIDAS_STANDBY_OFF_PANEL" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [375 399]))                        
+                      :type "enum")
+                      nil nil)
+                :type "typedef")
+                nil [243 424])
+            ("ctrRecoveryPanel" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "void"
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [1176 1200])
+            ("powerPanel" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "void"
+                :arguments 
+                  ( ("on" variable (:type "int") (reparse-symbol arg-sub-list) [1167 1174]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [1151 1175])
+            ("powerOnReoveryPanel" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "void"
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [1123 1150])
+            ("saveMidasSettingToFts" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "int"
+                :arguments 
+                  ( ("key" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1086 1102])
+                    ("value" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1103 1121]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [1060 1122])
+            ("setPanelLightMode" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "int"
+                :arguments 
+                  ( ("mode" variable (:type ("MIDAS_PANEL_ONFF_MODE" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1031 1058]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [1009 1059])
+            ("getPanelLightMode" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("MIDAS_PANEL_ONFF_MODE" type (:type "class") nil nil)
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [966 1008])
+            ("rcvKeys" function
+               (:type "void"
+                :arguments 
+                  ( ("p" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [955 963]))                  
+                :typemodifiers ("extern" "\"C\"" "static")
+                :pointer 1
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [934 964])
+            ("keyPowerPanel" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "void"
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [912 933])
+            ("kOobeStatus" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :type "char"
+                :default-value "\"oobe.status\""
+                :constant-flag t
+                :dereference 1)
+                (reparse-symbol extern-c-contents) [863 910])
+            ("kLastSystemStatus" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :type "char"
+                :default-value "\"last.system.status\""
+                :constant-flag t
+                :dereference 1)
+                (reparse-symbol extern-c-contents) [801 861])
+            ("kPowerPolicyMask" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :type "char"
+                :default-value "\"power.policy.mask\""
+                :constant-flag t
+                :dereference 1)
+                (reparse-symbol extern-c-contents) [740 800])
+            ("kStandbyMode" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :type "char"
+                :default-value "\"standby.mode\""
+                :constant-flag t
+                :dereference 1)
+                (reparse-symbol extern-c-contents) [683 739])
+            ("kPanelOnOffVal" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :type "char"
+                :default-value "{
+    \"recovery.off.panel\",
+    \"recovery.on.panel\",
+    \"normal.off.panel\",
+    \"normal.on.panel\",
+    \"standby.off.panel\",
+}"
+                :constant-flag t
+                :dereference 1
+                :pointer 1)
+                (reparse-symbol extern-c-contents) [523 681])
+            ("kPanelOnOffKey" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :type "char"
+                :default-value "\"panel.control.onff\""
+                :constant-flag t
+                :dereference 1)
+                (reparse-symbol extern-c-contents) [467 522]))          
+      :file "light_panel.h"
+      :pointmax 1238
+      :fsize 1237
+      :lastmodtime '(22159 32459 894765 339000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("LIGHT_PANEL_H_")
+          )
+))
+  :file "!home!qichen!bg4dtv_20151231_rc3_a0!vendor!marvell!midas-tv!system!core!light_panel!inc!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

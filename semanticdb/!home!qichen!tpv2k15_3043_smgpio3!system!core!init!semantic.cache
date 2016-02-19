@@ -1,0 +1,710 @@
+;; Object init/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "init/"
+  :tables
+  (list
+    (semanticdb-table "init.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("stdio.h" include (:system-flag t) nil [622 640])
+            ("stdlib.h" include (:system-flag t) nil [641 660])
+            ("string.h" include (:system-flag t) nil [661 680])
+            ("unistd.h" include (:system-flag t) nil [681 700])
+            ("fcntl.h" include (:system-flag t) nil [701 719])
+            ("ctype.h" include (:system-flag t) nil [720 738])
+            ("signal.h" include (:system-flag t) nil [739 758])
+            ("sys/wait.h" include (:system-flag t) nil [759 780])
+            ("sys/mount.h" include (:system-flag t) nil [781 803])
+            ("sys/stat.h" include (:system-flag t) nil [804 825])
+            ("sys/poll.h" include (:system-flag t) nil [826 847])
+            ("errno.h" include (:system-flag t) nil [848 866])
+            ("stdarg.h" include (:system-flag t) nil [867 886])
+            ("mtd/mtd-user.h" include (:system-flag t) nil [887 912])
+            ("sys/types.h" include (:system-flag t) nil [913 935])
+            ("sys/socket.h" include (:system-flag t) nil [936 959])
+            ("sys/un.h" include (:system-flag t) nil [960 979])
+            ("selinux/selinux.h" include (:system-flag t) nil [981 1009])
+            ("selinux/label.h" include (:system-flag t) nil [1010 1036])
+            ("selinux/android.h" include (:system-flag t) nil [1037 1065])
+            ("libgen.h" include (:system-flag t) nil [1067 1086])
+            ("cutils/list.h" include (:system-flag t) nil [1088 1112])
+            ("cutils/android_reboot.h" include (:system-flag t) nil [1113 1147])
+            ("cutils/sockets.h" include (:system-flag t) nil [1148 1175])
+            ("cutils/iosched_policy.h" include (:system-flag t) nil [1176 1210])
+            ("cutils/fs.h" include (:system-flag t) nil [1211 1233])
+            ("private/android_filesystem_config.h" include (:system-flag t) nil [1234 1280])
+            ("termios.h" include (:system-flag t) nil [1281 1301])
+            ("devices.h" include nil nil [1303 1323])
+            ("init.h" include nil nil [1324 1341])
+            ("log.h" include nil nil [1342 1358])
+            ("property_service.h" include nil nil [1359 1388])
+            ("bootchart.h" include nil nil [1389 1411])
+            ("signal_handler.h" include nil nil [1412 1439])
+            ("keychords.h" include nil nil [1440 1462])
+            ("init_parser.h" include nil nil [1463 1487])
+            ("util.h" include nil nil [1488 1505])
+            ("ueventd.h" include nil nil [1506 1526])
+            ("watchdogd.h" include nil nil [1527 1549])
+            ("sehandle" variable
+               (:pointer 1
+                :type ("selabel_handle" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1551 1583])
+            ("sehandle_prop" variable
+               (:pointer 1
+                :type ("selabel_handle" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1584 1621])
+            ("property_triggers_enabled" variable
+               (:typemodifiers ("static")
+                :default-value "0"
+                :type "int")
+                nil [1623 1664])
+            ("console" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :type "char")
+                nil [1718 1742])
+            ("bootmode" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :type "char")
+                nil [1743 1768])
+            ("hardware" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :type "char")
+                nil [1769 1794])
+            ("revision" variable
+               (:typemodifiers ("static")
+                :default-value "0"
+                :type "unsigned int")
+                nil [1795 1824])
+            ("qemu" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :type "char")
+                nil [1825 1846])
+            ("cur_action" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :default-value "NULL"
+                :type ("action" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1848 1888])
+            ("cur_command" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :default-value "NULL"
+                :type ("command" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1889 1931])
+            ("command_queue" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :default-value "NULL"
+                :type ("listnode" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1932 1977])
+            ("notify_service_state" function
+               (:arguments 
+                  ( ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2005 2022])
+                    ("state" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2023 2041]))                  
+                :type "void")
+                nil [1979 2245])
+            ("have_console" variable
+               (:typemodifiers ("static")
+                :type "int")
+                nil [2247 2271])
+            ("console_name" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :default-value "\"/dev/console\""
+                :type "char")
+                nil [2272 2330])
+            ("process_needs_restart" variable
+               (:typemodifiers ("static")
+                :type ("time_t" type (:type "class") nil nil))
+                nil [2331 2367])
+            ("ENV" variable
+               (:pointer 1
+                :dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :type "char")
+                nil [2369 2396])
+            ("add_environment" function
+               (:arguments 
+                  ( ("key" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2485 2501])
+                    ("val" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2502 2518]))                  
+                :type "int")
+                nil [2465 3386])
+            ("zap_stdio" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [3410 3415]))                  
+                :type "void")
+                nil [3388 3533])
+            ("open_console" function
+               (:typemodifiers ("static")
+                :type "void")
+                nil [3535 3767])
+            ("publish_socket" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [3796 3813])
+                    ("fd" variable (:type "int") (reparse-symbol arg-sub-list) [3814 3821]))                  
+                :type "void")
+                nil [3769 4171])
+            ("max_file_handle" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [4200 4205]))                  
+                :type "int")
+                nil [4173 4333])
+            ("run_application" function
+               (:arguments 
+                  ( ("path" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [4355 4372])
+                    ("args" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [4373 4385]))                  
+                :type "int")
+                nil [4335 6635])
+            ("service_start" function
+               (:arguments 
+                  ( ("svc" variable
+                       (:pointer 1
+                        :type ("service" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6656 6676])
+                    ("dynamic_args" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [6677 6702]))                  
+                :type "void")
+                nil [6637 13066])
+            ("service_stop_or_reset" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("svc" variable
+                       (:pointer 1
+                        :type ("service" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13179 13199])
+                    ("how" variable (:type "int") (reparse-symbol arg-sub-list) [13200 13208]))                  
+                :type "void")
+                nil [13145 14094])
+            ("service_reset" function
+               (:arguments 
+                  ( ("svc" variable
+                       (:pointer 1
+                        :type ("service" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [14115 14135]))                  
+                :type "void")
+                nil [14096 14182])
+            ("service_stop" function
+               (:arguments 
+                  ( ("svc" variable
+                       (:pointer 1
+                        :type ("service" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [14202 14222]))                  
+                :type "void")
+                nil [14184 14272])
+            ("service_restart" function
+               (:arguments 
+                  ( ("svc" variable
+                       (:pointer 1
+                        :type ("service" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [14295 14315]))                  
+                :type "void")
+                nil [14274 14647])
+            ("property_changed" function
+               (:arguments 
+                  ( ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [14671 14688])
+                    ("value" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [14689 14707]))                  
+                :type "void")
+                nil [14649 14792])
+            ("restart_service_if_needed" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("svc" variable
+                       (:pointer 1
+                        :type ("service" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [14832 14852]))                  
+                :type "void")
+                nil [14794 15195])
+            ("restart_processes" function
+               (:typemodifiers ("static")
+                :type "void")
+                nil [15197 15361])
+            ("msg_start" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [15385 15402]))                  
+                :type "void")
+                nil [15363 15905])
+            ("msg_stop" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [15928 15945]))                  
+                :type "void")
+                nil [15907 16112])
+            ("msg_restart" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [16138 16155]))                  
+                :type "void")
+                nil [16114 16325])
+            ("handle_control_message" function
+               (:arguments 
+                  ( ("msg" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [16355 16371])
+                    ("arg" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [16372 16388]))                  
+                :type "void")
+                nil [16327 16645])
+            ("get_first_command" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("act" variable
+                       (:pointer 1
+                        :type ("action" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [16688 16707]))                  
+                :type ("command" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [16647 16897])
+            ("get_next_command" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("act" variable
+                       (:pointer 1
+                        :type ("action" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [16939 16958])
+                    ("cmd" variable
+                       (:pointer 1
+                        :type ("command" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [16959 16979]))                  
+                :type ("command" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [16899 17182])
+            ("is_last_command" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("act" variable
+                       (:pointer 1
+                        :type ("action" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [17211 17230])
+                    ("cmd" variable
+                       (:pointer 1
+                        :type ("command" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [17231 17251]))                  
+                :type "int")
+                nil [17184 17310])
+            ("execute_one_command" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [17337 17342]))                  
+                :type "void")
+                nil [17312 18393])
+            ("wait_for_coldboot_done_action" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("nargs" variable (:type "int") (reparse-symbol arg-sub-list) [18436 18446])
+                    ("args" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [18447 18459]))                  
+                :type "int")
+                nil [18395 18670])
+            ("mix_hwrng_into_linux_rng_action" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("nargs" variable (:type "int") (reparse-symbol arg-sub-list) [19409 19419])
+                    ("args" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [19420 19432]))                  
+                :type "int")
+                nil [19366 21223])
+            ("keychord_init_action" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("nargs" variable (:type "int") (reparse-symbol arg-sub-list) [21257 21267])
+                    ("args" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [21268 21280]))                  
+                :type "int")
+                nil [21225 21319])
+            ("console_init_action" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("nargs" variable (:type "int") (reparse-symbol arg-sub-list) [21352 21362])
+                    ("args" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [21363 21375]))                  
+                :type "int")
+                nil [21321 22015])
+            ("import_kernel_nv" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("name" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [22046 22057])
+                    ("for_emulator" variable (:type "int") (reparse-symbol arg-sub-list) [22058 22075]))                  
+                :type "void")
+                nil [22017 22952])
+            ("export_kernel_boot_props" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [22991 22996]))                  
+                :type "void")
+                nil [22954 24590])
+            ("process_kernel_cmdline" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [24627 24632]))                  
+                :type "void")
+                nil [24592 25199])
+            ("property_service_init_action" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("nargs" variable (:type "int") (reparse-symbol arg-sub-list) [25241 25251])
+                    ("args" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [25252 25264]))                  
+                :type "int")
+                nil [25201 25650])
+            ("signal_init_action" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("nargs" variable (:type "int") (reparse-symbol arg-sub-list) [25682 25692])
+                    ("args" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [25693 25705]))                  
+                :type "int")
+                nil [25652 25837])
+            ("queue_property_triggers_action" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("nargs" variable (:type "int") (reparse-symbol arg-sub-list) [25881 25891])
+                    ("args" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [25892 25904]))                  
+                :type "int")
+                nil [25839 26027])
+            ("seopts_prop" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+        { SELABEL_OPT_PATH, \"/property_contexts\" },
+        { SELABEL_OPT_PATH, \"/data/security/current/property_contexts\" },
+        { 0, NULL }
+}"
+                :type ("selinux_opt" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [26438 26636])
+            ("selinux_android_prop_context_handle" function
+               (:pointer 1
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [26697 26702]))                  
+                :type ("selabel_handle" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [26638 27190])
+            ("selinux_init_all_handles" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [27222 27227]))                  
+                :type "void")
+                nil [27192 27388])
+            ("selinux_is_disabled" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [27422 27427]))                  
+                :type "bool")
+                nil [27390 27932])
+            ("selinux_is_enforcing" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [27967 27972]))                  
+                :type "bool")
+                nil [27934 28501])
+            ("selinux_reload_policy" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [28529 28534]))                  
+                :type "int")
+                nil [28503 28891])
+            ("audit_callback" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [28919 28930])
+                    ("cls" variable (:type ("security_class_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [28931 28976])
+                    ("buf" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [28977 28987])
+                    ("len" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [28988 28999]))                  
+                :type "int")
+                nil [28893 29087])
+            ("log_callback" function
+               (:arguments 
+                  ( ("type" variable (:type "int") (reparse-symbol arg-sub-list) [29106 29115])
+                    ("fmt" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [29116 29132])
+                    ("..." variable (:type "vararg") (reparse-symbol arg-sub-list) [29133 29137]))                  
+                :type "int")
+                nil [29089 29494])
+            ("selinux_initialize" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [29527 29532]))                  
+                :type "void")
+                nil [29496 30053])
+            ("main" function
+               (:arguments 
+                  ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [30064 30073])
+                    ("argv" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [30074 30086]))                  
+                :type "int")
+                nil [30055 35758]))          
+      :file "init.c"
+      :pointmax 35759
+      :fsize 35758
+      :lastmodtime '(21832 37886 938162 913000)
+      :unmatched-syntax nil)
+    (semanticdb-table "devices.h"
+      :file "devices.h"
+      :fsize 1040
+      :lastmodtime '(21832 36276 78084 952000))
+    (semanticdb-table "init.h"
+      :file "init.h"
+      :fsize 4339
+      :lastmodtime '(21832 36276 78084 952000))
+    (semanticdb-table "log.h"
+      :file "log.h"
+      :fsize 888
+      :lastmodtime '(21832 36276 78084 952000))
+    (semanticdb-table "property_service.h"
+      :file "property_service.h"
+      :fsize 1672
+      :lastmodtime '(21832 36276 78084 952000))
+    (semanticdb-table "bootchart.h"
+      :file "bootchart.h"
+      :fsize 1118
+      :lastmodtime '(21832 36276 74084 951000))
+    (semanticdb-table "signal_handler.h"
+      :file "signal_handler.h"
+      :fsize 769
+      :lastmodtime '(21832 36276 78084 952000))
+    (semanticdb-table "keychords.h"
+      :file "keychords.h"
+      :fsize 830
+      :lastmodtime '(21832 36276 78084 952000))
+    (semanticdb-table "init_parser.h"
+      :file "init_parser.h"
+      :fsize 1254
+      :lastmodtime '(21832 36276 78084 952000))
+    (semanticdb-table "util.h"
+      :file "util.h"
+      :fsize 1672
+      :lastmodtime '(21832 36276 78084 952000))
+    (semanticdb-table "ueventd.h"
+      :file "ueventd.h"
+      :fsize 999
+      :lastmodtime '(21832 36276 78084 952000))
+    (semanticdb-table "watchdogd.h"
+      :file "watchdogd.h"
+      :fsize 727
+      :lastmodtime '(21832 36276 82084 952000))
+    (semanticdb-table "ueventd.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("poll.h" include (:system-flag t) nil [622 639])
+            ("fcntl.h" include (:system-flag t) nil [640 658])
+            ("string.h" include (:system-flag t) nil [659 678])
+            ("stdlib.h" include (:system-flag t) nil [679 698])
+            ("stdio.h" include (:system-flag t) nil [699 717])
+            ("ctype.h" include (:system-flag t) nil [718 736])
+            ("signal.h" include (:system-flag t) nil [737 756])
+            ("selinux/selinux.h" include (:system-flag t) nil [757 785])
+            ("private/android_filesystem_config.h" include (:system-flag t) nil [787 833])
+            ("ueventd.h" include nil nil [835 855])
+            ("log.h" include nil nil [856 872])
+            ("util.h" include nil nil [873 890])
+            ("devices.h" include nil nil [891 911])
+            ("ueventd_parser.h" include nil nil [912 939])
+            ("hardware" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :type "char")
+                nil [941 966])
+            ("revision" variable
+               (:typemodifiers ("static")
+                :default-value "0"
+                :type "unsigned int")
+                nil [967 996])
+            ("import_kernel_nv" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("name" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1027 1038])
+                    ("in_qemu" variable (:type "int") (reparse-symbol arg-sub-list) [1039 1051]))                  
+                :type "void")
+                nil [998 1334])
+            ("ueventd_main" function
+               (:arguments 
+                  ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [1353 1362])
+                    ("argv" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1363 1375]))                  
+                :type "int")
+                nil [1336 2966])
+            ("get_android_id" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("id" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2994 3009]))                  
+                :type "int")
+                nil [2968 3183])
+            ("set_device_permission" function
+               (:arguments 
+                  ( ("nargs" variable (:type "int") (reparse-symbol arg-sub-list) [3212 3222])
+                    ("args" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [3223 3235]))                  
+                :type "void")
+                nil [3185 4908]))          
+      :file "ueventd.c"
+      :pointmax 4909
+      :fsize 4908
+      :lastmodtime '(21832 36276 78084 952000)
+      :unmatched-syntax nil)
+    (semanticdb-table "ueventd_parser.h"
+      :file "ueventd_parser.h"
+      :fsize 925
+      :lastmodtime '(21832 36276 78084 952000)))
+  :file "!home!qichen!tpv2k15_3043_smgpio3!system!core!init!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

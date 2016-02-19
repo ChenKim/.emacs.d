@@ -1,0 +1,556 @@
+;; Object source/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "source/"
+  :tables
+  (list
+    (semanticdb-table "rest_system.cpp"
+      :major-mode 'c++-mode
+      :tags 
+        '( ("LOG_TAG" variable (:constant-flag t) nil [1144 1151])
+            ("LOG_NDEBUG" variable (:constant-flag t) nil [1174 1184])
+            ("rest_tuner.h" include nil nil [1188 1211])
+            ("rest_input.h" include nil nil [1212 1235])
+            ("rest_state.h" include nil nil [1236 1259])
+            ("rest_pvt.h" include nil nil [1260 1281])
+            ("utils/Log.h" include (:system-flag t) nil [1282 1304])
+            ("rest_system.h" include (:system-flag t) nil [1305 1329])
+            ("IMidasSettings.h" include (:system-flag t) nil [1330 1357])
+            ("MidasSettingsConstants.h" include (:system-flag t) nil [1358 1393])
+            ("rest_cast.h" include (:system-flag t) nil [1394 1416])
+            ("factoryagent.h" include nil nil [1417 1442])
+            ("rest_audio.h" include (:system-flag t) nil [1443 1466])
+            ("rest_update.h" include (:system-flag t) nil [1467 1491])
+            ("OSAL_api.h" include nil nil [1492 1513])
+            ("amp_client.h" include nil nil [1514 1537])
+            ("amp_client_support.h" include nil nil [1538 1569])
+            ("string.h" include (:system-flag t) nil [1570 1589])
+            ("TVIS_acr_iface.h" include nil nil [1590 1617])
+            ("OSAL_api.h" include nil nil [1618 1639])
+            ("IPowerManager.h" include (:system-flag t) nil [1640 1666])
+            ("rest_timer.h" include nil nil [1667 1690])
+            ("rest_time.h" include nil nil [1691 1713])
+            ("android" using (:type ("android" type
+                 (:prototype t
+                  :type "namespace")
+                  nil nil)) nil [1715 1739])
+            ("marvell" using (:type ("marvell" type
+                 (:prototype t
+                  :type "namespace")
+                  nil nil)) nil [1740 1764])
+            ("MV_NETFLIX_Get_ESN_Agent" function
+               (:type ("HRESULT" type (:type "class") nil nil)
+                :arguments 
+                  ( ("pbESN" variable
+                       (:pointer 1
+                        :type ("UINT8" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2369 2382])
+                    ("pESNSize" variable
+                       (:pointer 1
+                        :type ("UINT32" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2431 2448])
+                    ("pbKeyStoreHash" variable
+                       (:pointer 1
+                        :type ("UINT8" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2497 2519]))                  
+                :typemodifiers ("extern" "\"C\"" "extern")
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [2329 2520])
+            ("gPowerManager" variable
+               (:type ("sp" type
+                     (:template-specifier 
+                        ( ("IPowerManager" type nil nil nil))                        
+                      :type "class")
+                      nil nil)
+                :default-value "NULL"
+                :typemodifiers ("extern" "\"C\"" "static"))
+                (reparse-symbol extern-c-contents) [1806 1852])
+            ("g_MidasSetting" variable
+               (:typemodifiers ("static")
+                :type ("sp" type
+                     (:template-specifier 
+                        ( ("IMidasSettings" type nil nil nil))                        
+                      :type "class")
+                      nil nil))
+                nil [2552 2594])
+            ("g_platform" variable
+               (:typemodifiers ("static")
+                :default-value "REST_SYSTEM_PLATFORM_UNKNOWN"
+                :type ("REST_SYSTEM_PLATFORM" type (:type "class") nil nil))
+                nil [2595 2665])
+            ("gContext" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :default-value "NULL"
+                :type "void")
+                nil [2666 2695])
+            ("gSystemCallback" variable
+               (:typemodifiers ("static")
+                :default-value "NULL"
+                :type ("REST_NOTIF_SYSTEM_CALLBACK" type (:type "class") nil nil))
+                nil [2696 2753])
+            ("sys_timerHandle" variable
+               (:typemodifiers ("static")
+                :default-value "NULL"
+                :type ("MV_HANDLE_Timer_t" type (:type "class") nil nil))
+                nil [2754 2804])
+            ("pin_confirmed" variable
+               (:typemodifiers ("static")
+                :default-value "REST_FLAG_OFF"
+                :type ("REST_FLAG" type (:type "class") nil nil))
+                nil [2805 2852])
+            ("RESTPowerObserver" type
+               (:superclasses 
+                  ( ("BnPowerObserver" type
+                       (:protection "public"
+                        :type "class")
+                        nil nil))                  
+                :members 
+                  ( ("public" label nil (reparse-symbol classsubparts) [2908 2915])
+                    ("RESTPowerObserver" function
+                       (:constructor-flag t
+                        :type ("RESTPowerObserver" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2920 2942])
+                    ("RESTPowerObserver" function
+                       (:destructor-flag t
+                        :typemodifiers ("virtual")
+                        :type "void")
+                        (reparse-symbol classsubparts) [2948 2979])
+                    ("onNotify" function
+                       (:arguments 
+                          ( ("event" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2998 3012])
+                            ("value" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3013 3027]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [2984 3213]))                  
+                :type "class")
+                nil [2855 3216])
+            ("RESTSystemSettingsObserver" type
+               (:superclasses 
+                  ( ("BnMidasSettingsObserver" type
+                       (:protection "public"
+                        :type "class")
+                        nil nil))                  
+                :members 
+                  ( ("public" label nil (reparse-symbol classsubparts) [3288 3295])
+                    ("RESTSystemSettingsObserver" function
+                       (:constructor-flag t
+                        :type ("RESTSystemSettingsObserver" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3300 3331])
+                    ("onSettingsChanged" function
+                       (:typemodifiers ("virtual")
+                        :arguments 
+                          ( ("key" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [3367 3386])
+                            ("value" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [3387 3408]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [3336 7566]))                  
+                :type "class")
+                nil [3218 7569])
+            ("REST_GetMidasSetting" function (:type ("sp" type
+                 (:template-specifier 
+                    ( ("IMidasSettings" type nil nil nil))                    
+                  :type "class")
+                  nil nil)) nil [7701 8427])
+            ("REST_GetPlatform" function
+               (:arguments 
+                  ( ("pPlatform" variable
+                       (:pointer 1
+                        :type ("REST_SYSTEM_PLATFORM" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [8460 8492]))                  
+                :type ("REST_RET_CODE" type (:type "class") nil nil))
+                nil [8429 9205])
+            ("REST_GetTVInfo" function
+               (:arguments 
+                  ( ("pInfo" variable
+                       (:pointer 1
+                        :type ("REST_TV_INFORMATION" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [9400 9427]))                  
+                :type ("REST_RET_CODE" type (:type "class") nil nil))
+                nil [9371 15753])
+            ("REST_GetULIInfo" function
+               (:arguments 
+                  ( ("pInfo" variable
+                       (:pointer 1
+                        :type ("REST_ULI_INFORMATION" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [15951 15979]))                  
+                :type ("REST_RET_CODE" type (:type "class") nil nil))
+                nil [15921 18468])
+            ("REST_ServiceReset" function (:type ("REST_RET_CODE" type (:type "class") nil nil)) nil [18587 18692])
+            ("REST_ServiceCheck" function (:type ("REST_RET_CODE" type (:type "class") nil nil)) nil [18812 18960])
+            ("REST_GetMenuLanguage" function
+               (:arguments 
+                  ( ("lang" variable
+                       (:pointer 1
+                        :type ("REST_LANGUAGE" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [19420 19440]))                  
+                :type ("REST_RET_CODE" type (:type "class") nil nil))
+                nil [19385 20271])
+            ("REST_SetMenuLanguage" function
+               (:arguments 
+                  ( ("lang" variable (:type ("REST_LANGUAGE" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [20700 20719]))                  
+                :type ("REST_RET_CODE" type (:type "class") nil nil))
+                nil [20665 21541])
+            ("REST_GetCountry" function
+               (:arguments 
+                  ( ("pCountry" variable
+                       (:pointer 1
+                        :type ("REST_COUNTRY" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [21573 21596]))                  
+                :type ("REST_RET_CODE" type (:type "class") nil nil))
+                nil [21543 22362])
+            ("REST_SetCountry" function
+               (:arguments 
+                  ( ("country" variable (:type ("REST_COUNTRY" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [22394 22415]))                  
+                :type ("REST_RET_CODE" type (:type "class") nil nil))
+                nil [22364 23161])
+            ("delayResetToDefaultCB" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("param" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [23197 23209]))                  
+                :type "void")
+                nil [23163 23541])
+            ("DelayResetToDefault" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("timeinms" variable (:type "unsigned short") (reparse-symbol arg-sub-list) [23575 23599]))                  
+                :type "void")
+                nil [23543 24232])
+            ("REST_ResetToFactorySetting" function (:type ("REST_RET_CODE" type (:type "class") nil nil)) nil [24356 24839])
+            ("REST_SetPowerIndicator" function
+               (:arguments 
+                  ( ("onoff" variable (:type ("REST_FLAG" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [25321 25337]))                  
+                :type ("REST_RET_CODE" type (:type "class") nil nil))
+                nil [25284 25851])
+            ("REST_GetPowerIndicator" function
+               (:arguments 
+                  ( ("onoff" variable
+                       (:pointer 1
+                        :type ("REST_FLAG" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [25890 25907]))                  
+                :type ("REST_RET_CODE" type (:type "class") nil nil))
+                nil [25853 26478])
+            ("REST_SetPowerMode" function
+               (:arguments 
+                  ( ("mode" variable (:type ("REST_POWER_MODE" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [26512 26533]))                  
+                :type ("REST_RET_CODE" type (:type "class") nil nil))
+                nil [26480 26832])
+            ("REST_GetPowerMode" function
+               (:arguments 
+                  ( ("pMode" variable
+                       (:pointer 1
+                        :type ("REST_POWER_MODE" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [26866 26889]))                  
+                :type ("REST_RET_CODE" type (:type "class") nil nil))
+                nil [26834 27225])
+            ("REST_GetPowerState" function
+               (:arguments 
+                  ( ("pState" variable
+                       (:pointer 1
+                        :type ("REST_POWER_STATE" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [27260 27285]))                  
+                :type ("REST_RET_CODE" type (:type "class") nil nil))
+                nil [27227 27498])
+            ("REST_SetSmartInteractivity" function
+               (:arguments 
+                  ( ("onoff" variable (:type ("REST_FLAG" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [28104 28120]))                  
+                :type ("REST_RET_CODE" type (:type "class") nil nil))
+                nil [28063 28559])
+            ("REST_GetSmartInteractivity" function
+               (:arguments 
+                  ( ("onoff" variable
+                       (:pointer 1
+                        :type ("REST_FLAG" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [28602 28619]))                  
+                :type ("REST_RET_CODE" type (:type "class") nil nil))
+                nil [28561 29215])
+            ("REST_GetACRWhatson" function
+               (:arguments 
+                  ( ("pWhatson" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [29250 29266]))                  
+                :type ("REST_RET_CODE" type (:type "class") nil nil))
+                nil [29217 29801])
+            ("REST_SetStoreDemo" function
+               (:arguments 
+                  ( ("mode" variable (:type ("REST_SYSTEM_DEMO_MODE" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [29973 30000]))                  
+                :type ("REST_RET_CODE" type (:type "class") nil nil))
+                nil [29941 31034])
+            ("REST_GetStoreDemo" function
+               (:arguments 
+                  ( ("mode" variable
+                       (:pointer 1
+                        :type ("REST_SYSTEM_DEMO_MODE" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [31212 31240]))                  
+                :type ("REST_RET_CODE" type (:type "class") nil nil))
+                nil [31180 31840])
+            ("REST_RegisterSystemCallback" function
+               (:arguments 
+                  ( ("pContext" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [32122 32137])
+                    ("callback" variable (:type ("REST_NOTIF_SYSTEM_CALLBACK" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [32138 32174]))                  
+                :type ("REST_RET_CODE" type (:type "class") nil nil))
+                nil [32080 32260])
+            ("REST_GetSystemSetting" function
+               (:arguments 
+                  ( ("pSetting" variable
+                       (:pointer 1
+                        :type ("REST_SYSTEM_SETTING" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [32567 32597]))                  
+                :type ("REST_RET_CODE" type (:type "class") nil nil))
+                nil [32531 33303])
+            ("REST_ULIRegister" function
+               (:arguments 
+                  ( ("regIn" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [33538 33556])
+                    ("regOut" variable
+                       (:pointer 1
+                        :type ("REST_ULI_REGISTRATION" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [33557 33587]))                  
+                :type ("REST_RET_CODE" type (:type "class") nil nil))
+                nil [33507 33987])
+            ("REST_IsDeviceULIRegisered" function
+               (:arguments 
+                  ( ("pFlag" variable
+                       (:pointer 1
+                        :type ("REST_FLAG" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [34194 34211]))                  
+                :type ("REST_RET_CODE" type (:type "class") nil nil))
+                nil [34154 34509])
+            ("REST_IsULIUpdating" function
+               (:arguments 
+                  ( ("pFlag" variable
+                       (:pointer 1
+                        :type ("REST_FLAG" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [34544 34561]))                  
+                :type ("REST_RET_CODE" type (:type "class") nil nil))
+                nil [34511 34890])
+            ("REST_IsOwnerULIRegisered" function
+               (:arguments 
+                  ( ("pFlag" variable
+                       (:pointer 1
+                        :type ("REST_FLAG" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [35095 35112]))                  
+                :type ("REST_RET_CODE" type (:type "class") nil nil))
+                nil [35056 35224])
+            ("REST_getULIAvailUpdateInfo" function
+               (:arguments 
+                  ( ("pInfo" variable
+                       (:pointer 1
+                        :type ("REST_ULI_AVAIL_UPDATE_INFO" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [35267 35301]))                  
+                :type ("REST_RET_CODE" type (:type "class") nil nil))
+                nil [35226 35760])
+            ("REST_startULIUpdate" function (:type ("REST_RET_CODE" type (:type "class") nil nil)) nil [35887 35983])
+            ("REST_getULIUpdateStatus" function
+               (:arguments 
+                  ( ("pStatus" variable
+                       (:pointer 1
+                        :type ("REST_ULI_UPDATE_STATUS" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [36215 36247]))                  
+                :type ("REST_RET_CODE" type (:type "class") nil nil))
+                nil [36177 37696])
+            ("REST_GetOOBECurState" function
+               (:arguments 
+                  ( ("pState" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [37880 37893]))                  
+                :type ("REST_RET_CODE" type (:type "class") nil nil))
+                nil [37845 38265])
+            ("REST_SetOOBECurState" function
+               (:arguments 
+                  ( ("state" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [38517 38535]))                  
+                :type ("REST_RET_CODE" type (:type "class") nil nil))
+                nil [38482 39185])
+            ("REST_SetOOBECurState" function
+               (:arguments 
+                  ( ("state" variable (:type ("REST_OOBE_STATE" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [39222 39244]))                  
+                :type ("REST_RET_CODE" type (:type "class") nil nil))
+                nil [39187 39648])
+            ("REST_GetIsOOBEComplete" function
+               (:arguments 
+                  ( ("pFlag" variable
+                       (:pointer 1
+                        :type ("REST_FLAG" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [39920 39937]))                  
+                :type ("REST_RET_CODE" type (:type "class") nil nil))
+                nil [39883 40411])
+            ("REST_SetIsOOBEComplete" function
+               (:arguments 
+                  ( ("Flag" variable (:type ("REST_FLAG" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [40607 40622]))                  
+                :type ("REST_RET_CODE" type (:type "class") nil nil))
+                nil [40570 41124])
+            ("REST_SetIsBTPairSucc" function
+               (:arguments 
+                  ( ("Flag" variable (:type ("REST_FLAG_YN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [41161 41179]))                  
+                :type ("REST_RET_CODE" type (:type "class") nil nil))
+                nil [41126 41666])
+            ("REST_ConfirmPin" function
+               (:arguments 
+                  ( ("pin" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [41698 41714])
+                    ("pFlag" variable
+                       (:pointer 1
+                        :type ("REST_FLAG" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [41715 41732]))                  
+                :type ("REST_RET_CODE" type (:type "class") nil nil))
+                nil [41668 42621])
+            ("REST_SetPin" function
+               (:arguments 
+                  ( ("pin" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [42649 42665]))                  
+                :type ("REST_RET_CODE" type (:type "class") nil nil))
+                nil [42623 42968])
+            ("REST_GetPin" function
+               (:arguments 
+                  ( ("pin" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [42996 43006]))                  
+                :type ("REST_RET_CODE" type (:type "class") nil nil))
+                nil [42970 43390])
+            ("REST_IsPinDefault" function
+               (:arguments 
+                  ( ("pFlag" variable
+                       (:pointer 1
+                        :type ("REST_FLAG" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [43452 43469]))                  
+                :type ("REST_RET_CODE" type (:type "class") nil nil))
+                nil [43420 43986])
+            ("REST_IsPinConfirmed" function
+               (:arguments 
+                  ( ("pFlag" variable
+                       (:pointer 1
+                        :type ("REST_FLAG" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [44022 44039]))                  
+                :type ("REST_RET_CODE" type (:type "class") nil nil))
+                nil [43988 44095])
+            ("REST_IsPinSet" function
+               (:arguments 
+                  ( ("pFlag" variable
+                       (:pointer 1
+                        :type ("REST_FLAG" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [44125 44142]))                  
+                :type ("REST_RET_CODE" type (:type "class") nil nil))
+                nil [44097 44252])
+            ("REST_SetNativeDeviceName" function
+               (:arguments 
+                  ( ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [44293 44310]))                  
+                :type ("REST_RET_CODE" type (:type "class") nil nil))
+                nil [44254 44615])
+            ("REST_GetNativeDeviceName" function
+               (:arguments 
+                  ( ("name" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [44656 44667]))                  
+                :type ("REST_RET_CODE" type (:type "class") nil nil))
+                nil [44617 45028])
+            ("REST_SetNativeTosAccepted" function
+               (:arguments 
+                  ( ("flag" variable (:type ("REST_BOOL" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [45070 45085]))                  
+                :type ("REST_RET_CODE" type (:type "class") nil nil))
+                nil [45030 45407])
+            ("REST_GetNativeTosAccepted" function
+               (:arguments 
+                  ( ("pflag" variable
+                       (:pointer 1
+                        :type ("REST_BOOL" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [45449 45466]))                  
+                :type ("REST_RET_CODE" type (:type "class") nil nil))
+                nil [45409 45919])
+            ("REST_SaveTunerScanFlag" function
+               (:arguments 
+                  ( ("flag" variable (:type ("REST_VALUE" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [45958 45974]))                  
+                :type ("REST_RET_CODE" type (:type "class") nil nil))
+                nil [45921 46476])
+            ("REST_RestoreTunerScanFlag" function
+               (:arguments 
+                  ( ("pflag" variable
+                       (:pointer 1
+                        :type ("REST_VALUE" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [46517 46535]))                  
+                :type ("REST_RET_CODE" type (:type "class") nil nil))
+                nil [46477 47059])
+            ("REST_SetScanStatus" function
+               (:arguments 
+                  ( ("status" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [47094 47113]))                  
+                :type ("REST_RET_CODE" type (:type "class") nil nil))
+                nil [47061 47426])
+            ("REST_GetScanStatus" function
+               (:arguments 
+                  ( ("status" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [47461 47474]))                  
+                :type ("REST_RET_CODE" type (:type "class") nil nil))
+                nil [47428 47878])
+            ("REST_SaveInputPortSelected" function
+               (:arguments 
+                  ( ("port" variable (:type "int") (reparse-symbol arg-sub-list) [47921 47930])
+                    ("firstSelected" variable
+                       (:pointer 1
+                        :type ("REST_BOOL" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [47931 47956]))                  
+                :type ("REST_RET_CODE" type (:type "class") nil nil))
+                nil [47880 48835])
+            ("REST_GetFactorySetting" function
+               (:arguments 
+                  ( ("item" variable (:type "int") (reparse-symbol arg-sub-list) [48874 48883])
+                    ("val" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [48884 48893]))                  
+                :type ("REST_RET_CODE" type (:type "class") nil nil))
+                nil [48837 49201])
+            ("REST_SystemInit" function (:type "void") nil [49203 49582]))          
+      :file "rest_system.cpp"
+      :pointmax 49584
+      :fsize 49583
+      :lastmodtime '(22209 16945 658120 756000)
+      :unmatched-syntax '((punctuation 2979 . 2980) (punctuation 2942 . 2943))
+      :lexical-table 
+        '(("LOG_NDEBUG" . ((number "0" 1185 . 1186)))
+          ("LOG_TAG" . ((string "\"rest_system\"" 1152 . 1165)))
+          )
+)
+    (semanticdb-table "rest_pvt.h"
+      :file "rest_pvt.h"
+      :fsize 4885
+      :lastmodtime '(22186 58036 169167 786000)))
+  :file "!home!qichen!20160212_1800_V0.2.19!vendor!marvell!midas-tv!rest!source!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

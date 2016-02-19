@@ -1,0 +1,678 @@
+;; Object include/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "include/"
+  :tables
+  (list
+    (semanticdb-table "libfdt.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("__LIBFDT_H__" variable (:constant-flag t) nil [30 42])
+            ("com_type.h" include nil nil [2469 2490])
+            ("FDT_BEGIN_NODE" variable (:constant-flag t) nil [2500 2514])
+            ("FDT_END_NODE" variable (:constant-flag t) nil [2568 2580])
+            ("FDT_PROP" variable (:constant-flag t) nil [2623 2631])
+            ("FDT_NOP" variable (:constant-flag t) nil [2746 2753])
+            ("FDT_END" variable (:constant-flag t) nil [2796 2803])
+            ("FDT_FIRST_SUPPORTED_VERSION" variable (:constant-flag t) nil [2825 2852])
+            ("FDT_LAST_SUPPORTED_VERSION" variable (:constant-flag t) nil [2866 2892])
+            ("FDT_MAGIC" variable (:constant-flag t) nil [2907 2916])
+            ("FDT_SW_MAGIC" variable (:constant-flag t) nil [2979 2991])
+            ("FDT_TAGSIZE" variable (:constant-flag t) nil [3016 3027])
+            ("NR_BANKS" variable (:constant-flag t) nil [3062 3070])
+            ("FDT_ERR_NOTFOUND" variable (:constant-flag t) nil [3097 3113])
+            ("FDT_ERR_EXISTS" variable (:constant-flag t) nil [3124 3138])
+            ("FDT_ERR_NOSPACE" variable (:constant-flag t) nil [3150 3165])
+            ("FDT_ERR_BADOFFSET" variable (:constant-flag t) nil [3177 3194])
+            ("FDT_ERR_BADPATH" variable (:constant-flag t) nil [3205 3220])
+            ("FDT_ERR_BADPHANDLE" variable (:constant-flag t) nil [3232 3250])
+            ("FDT_ERR_BADSTATE" variable (:constant-flag t) nil [3261 3277])
+            ("FDT_ERR_TRUNCATED" variable (:constant-flag t) nil [3288 3305])
+            ("FDT_ERR_BADMAGIC" variable (:constant-flag t) nil [3316 3332])
+            ("FDT_ERR_BADVERSION" variable (:constant-flag t) nil [3343 3361])
+            ("FDT_ERR_BADSTRUCTURE" variable (:constant-flag t) nil [3373 3393])
+            ("FDT_ERR_BADLAYOUT" variable (:constant-flag t) nil [3405 3422])
+            ("FDT_ERR_INTERNAL" variable (:constant-flag t) nil [3434 3450])
+            ("FDT_ERR_MAX" variable (:constant-flag t) nil [3462 3473])
+            ("fdt_header" type
+               (:members 
+                  ( ("magic" variable (:type "unsigned int") (reparse-symbol classsubparts) [3500 3519])
+                    ("totalsize" variable (:type "unsigned int") (reparse-symbol classsubparts) [3561 3584])
+                    ("off_dt_struct" variable (:type "unsigned int") (reparse-symbol classsubparts) [3624 3651])
+                    ("off_dt_strings" variable (:type "unsigned int") (reparse-symbol classsubparts) [3684 3712])
+                    ("off_mem_rsvmap" variable (:type "unsigned int") (reparse-symbol classsubparts) [3742 3770])
+                    ("version" variable (:type "unsigned int") (reparse-symbol classsubparts) [3811 3832])
+                    ("last_comp_version" variable (:type "unsigned int") (reparse-symbol classsubparts) [3866 3897])
+                    ("boot_cpuid_phys" variable (:type "unsigned int") (reparse-symbol classsubparts) [3961 3990])
+                    ("size_dt_strings" variable (:type "unsigned int") (reparse-symbol classsubparts) [4107 4136])
+                    ("size_dt_struct" variable (:type "unsigned int") (reparse-symbol classsubparts) [4205 4233]))                  
+                :type "struct")
+                nil [3479 4274])
+            ("fdt_reserve_entry" type
+               (:members 
+                  ( ("address" variable (:type ("UINT64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4304 4319])
+                    ("size" variable (:type ("UINT64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4321 4333]))                  
+                :type "struct")
+                nil [4276 4336])
+            ("fdt_node_header" type
+               (:members 
+                  ( ("tag" variable (:type "unsigned int") (reparse-symbol classsubparts) [4364 4381])
+                    ("name" variable
+                       (:dereference 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [4383 4396]))                  
+                :type "struct")
+                nil [4338 4399])
+            ("fdt_property" type
+               (:members 
+                  ( ("tag" variable (:type "unsigned int") (reparse-symbol classsubparts) [4424 4441])
+                    ("len" variable (:type "unsigned int") (reparse-symbol classsubparts) [4443 4460])
+                    ("nameoff" variable (:type "unsigned int") (reparse-symbol classsubparts) [4462 4483])
+                    ("data" variable
+                       (:dereference 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [4485 4498]))                  
+                :type "struct")
+                nil [4401 4501])
+            ("swab32" variable (:constant-flag t) nil [4511 4517])
+            ("swab64" variable (:constant-flag t) nil [4931 4937])
+            ("swab32p" variable (:constant-flag t) nil [5600 5607])
+            ("cpu_to_be32" variable (:constant-flag t) nil [5631 5642])
+            ("be32_to_cpu" variable (:constant-flag t) nil [5664 5675])
+            ("cpu_to_be64" variable (:constant-flag t) nil [5697 5708])
+            ("be64_to_cpu" variable (:constant-flag t) nil [5730 5741])
+            ("cpu_to_fdt32" variable (:constant-flag t) nil [5764 5776])
+            ("fdt32_to_cpu" variable (:constant-flag t) nil [5811 5823])
+            ("fdt64_to_cpu" variable (:constant-flag t) nil [5858 5870])
+            ("cpu_to_fdt64" variable (:constant-flag t) nil [5905 5917])
+            ("FDT_ALIGN" variable (:constant-flag t) nil [5953 5962])
+            ("FDT_TAGALIGN" variable (:constant-flag t) nil [6016 6028])
+            ("fdt_offset_ptr" function
+               (:prototype-flag t
+                :pointer 1
+                :constant-flag t
+                :arguments 
+                  ( ("fdt" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [6098 6114])
+                    ("offset" variable (:type "int") (reparse-symbol arg-sub-list) [6115 6126])
+                    ("checklen" variable (:type "int") (reparse-symbol arg-sub-list) [6127 6140]))                  
+                :type "void")
+                nil [6071 6141])
+            ("fdt_offset_ptr_w" function
+               (:pointer 1
+                :typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("fdt" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [6180 6190])
+                    ("offset" variable (:type "int") (reparse-symbol arg-sub-list) [6191 6202])
+                    ("checklen" variable (:type "int") (reparse-symbol arg-sub-list) [6203 6216]))                  
+                :type "void")
+                nil [6143 6290])
+            ("fdt_next_tag" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("fdt" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [6318 6334])
+                    ("offset" variable (:type "int") (reparse-symbol arg-sub-list) [6335 6346])
+                    ("nextoffset" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [6347 6363]))                  
+                :type "unsigned int")
+                nil [6292 6364])
+            ("fdt_next_node" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("fdt" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [6384 6400])
+                    ("offset" variable (:type "int") (reparse-symbol arg-sub-list) [6401 6412])
+                    ("depth" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [6413 6424]))                  
+                :type "int")
+                nil [6366 6425])
+            ("fdt_get_header" variable (:constant-flag t) nil [6435 6449])
+            ("fdt_magic" variable (:constant-flag t) nil [6531 6540])
+            ("fdt_totalsize" variable (:constant-flag t) nil [6585 6598])
+            ("fdt_off_dt_struct" variable (:constant-flag t) nil [6646 6663])
+            ("fdt_off_dt_strings" variable (:constant-flag t) nil [6715 6733])
+            ("fdt_off_mem_rsvmap" variable (:constant-flag t) nil [6786 6804])
+            ("fdt_version" variable (:constant-flag t) nil [6857 6868])
+            ("fdt_last_comp_version" variable (:constant-flag t) nil [6914 6935])
+            ("fdt_boot_cpuid_phys" variable (:constant-flag t) nil [6990 7009])
+            ("fdt_size_dt_strings" variable (:constant-flag t) nil [7062 7081])
+            ("fdt_size_dt_struct" variable (:constant-flag t) nil [7134 7152])
+            ("__fdt_set_hdr" variable (:constant-flag t) nil [7206 7219])
+            ("fdt_set_magic" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("fdt" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) nil)
+                    ("val" variable (:type "unsigned int") (reparse-symbol arg-sub-list) nil))                  
+                :type "void")
+                nil [7374 7394])
+            ("fdt_set_totalsize" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("fdt" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) nil)
+                    ("val" variable (:type "unsigned int") (reparse-symbol arg-sub-list) nil))                  
+                :type "void")
+                nil [7396 7420])
+            ("fdt_set_off_dt_struct" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("fdt" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) nil)
+                    ("val" variable (:type "unsigned int") (reparse-symbol arg-sub-list) nil))                  
+                :type "void")
+                nil [7422 7450])
+            ("fdt_set_off_dt_strings" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("fdt" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) nil)
+                    ("val" variable (:type "unsigned int") (reparse-symbol arg-sub-list) nil))                  
+                :type "void")
+                nil [7452 7481])
+            ("fdt_set_off_mem_rsvmap" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("fdt" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) nil)
+                    ("val" variable (:type "unsigned int") (reparse-symbol arg-sub-list) nil))                  
+                :type "void")
+                nil [7483 7512])
+            ("fdt_set_version" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("fdt" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) nil)
+                    ("val" variable (:type "unsigned int") (reparse-symbol arg-sub-list) nil))                  
+                :type "void")
+                nil [7514 7536])
+            ("fdt_set_last_comp_version" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("fdt" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) nil)
+                    ("val" variable (:type "unsigned int") (reparse-symbol arg-sub-list) nil))                  
+                :type "void")
+                nil [7538 7570])
+            ("fdt_set_boot_cpuid_phys" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("fdt" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) nil)
+                    ("val" variable (:type "unsigned int") (reparse-symbol arg-sub-list) nil))                  
+                :type "void")
+                nil [7572 7602])
+            ("fdt_set_size_dt_strings" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("fdt" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) nil)
+                    ("val" variable (:type "unsigned int") (reparse-symbol arg-sub-list) nil))                  
+                :type "void")
+                nil [7604 7634])
+            ("fdt_set_size_dt_struct" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("fdt" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) nil)
+                    ("val" variable (:type "unsigned int") (reparse-symbol arg-sub-list) nil))                  
+                :type "void")
+                nil [7636 7665])
+            ("fdt_check_header" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("fdt" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [7689 7705]))                  
+                :type "int")
+                nil [7668 7706])
+            ("FDT_CHECK_HEADER" variable (:constant-flag t) nil [7716 7732])
+            ("_fdt_check_node_offset" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("fdt" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [7850 7866])
+                    ("offset" variable (:type "int") (reparse-symbol arg-sub-list) [7867 7878]))                  
+                :type "int")
+                nil [7823 7879])
+            ("_fdt_find_string" function
+               (:prototype-flag t
+                :pointer 1
+                :constant-flag t
+                :arguments 
+                  ( ("strtab" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [7910 7929])
+                    ("tabsize" variable (:type "int") (reparse-symbol arg-sub-list) [7930 7942])
+                    ("s" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [7943 7957]))                  
+                :type "char")
+                nil [7881 7958])
+            ("_fdt_offset_ptr" function
+               (:pointer 1
+                :typemodifiers ("static" "inline")
+                :constant-flag t
+                :arguments 
+                  ( ("fdt" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [8002 8018])
+                    ("offset" variable (:type "int") (reparse-symbol arg-sub-list) [8019 8030]))                  
+                :type "void")
+                nil [7960 8095])
+            ("_fdt_offset_ptr_w" function
+               (:pointer 1
+                :typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("fdt" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [8135 8145])
+                    ("offset" variable (:type "int") (reparse-symbol arg-sub-list) [8146 8157]))                  
+                :type "void")
+                nil [8097 8218])
+            ("_fdt_mem_rsv" function
+               (:pointer 1
+                :typemodifiers ("static" "inline")
+                :constant-flag t
+                :arguments 
+                  ( ("fdt" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [8279 8295])
+                    ("n" variable (:type "int") (reparse-symbol arg-sub-list) [8296 8302]))                  
+                :type ("fdt_reserve_entry" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [8220 8467])
+            ("fdt_move" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("fdt" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [8482 8498])
+                    ("buf" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [8499 8509])
+                    ("bufsize" variable (:type "int") (reparse-symbol arg-sub-list) [8510 8522]))                  
+                :type "int")
+                nil [8469 8523])
+            ("fdt_string" function
+               (:prototype-flag t
+                :pointer 1
+                :constant-flag t
+                :arguments 
+                  ( ("fdt" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [8548 8564])
+                    ("stroffset" variable (:type "int") (reparse-symbol arg-sub-list) [8565 8579]))                  
+                :type "char")
+                nil [8525 8580])
+            ("fdt_num_mem_rsv" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("fdt" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [8602 8618]))                  
+                :type "int")
+                nil [8582 8619])
+            ("fdt_subnode_offset_namelen" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("fdt" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [8652 8668])
+                    ("parentoffset" variable (:type "int") (reparse-symbol arg-sub-list) [8669 8686])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [8697 8714])
+                    ("namelen" variable (:type "int") (reparse-symbol arg-sub-list) [8715 8727]))                  
+                :type "int")
+                nil [8621 8728])
+            ("fdt_path_offset" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("fdt" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [8750 8766])
+                    ("path" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [8767 8784]))                  
+                :type "int")
+                nil [8730 8785])
+            ("fdt_get_property" function
+               (:prototype-flag t
+                :pointer 1
+                :constant-flag t
+                :arguments 
+                  ( ("fdt" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [8831 8847])
+                    ("nodeoffset" variable (:type "int") (reparse-symbol arg-sub-list) [8848 8863])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [8873 8890])
+                    ("lenp" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [8891 8901]))                  
+                :type ("fdt_property" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [8787 8902])
+            ("fdt_get_property_w" function
+               (:pointer 1
+                :typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("fdt" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [8957 8967])
+                    ("nodeoffset" variable (:type "int") (reparse-symbol arg-sub-list) [8968 8983])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [8996 9013])
+                    ("lenp" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [9026 9036]))                  
+                :type ("fdt_property" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [8903 9136])
+            ("fdt_open_into" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("fdt" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [9156 9172])
+                    ("buf" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [9173 9183])
+                    ("bufsize" variable (:type "int") (reparse-symbol arg-sub-list) [9184 9196]))                  
+                :type "int")
+                nil [9138 9197])
+            ("fdt_pack" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("fdt" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [9211 9221]))                  
+                :type "int")
+                nil [9198 9222])
+            ("fdt_setprop" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("fdt" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [9240 9250])
+                    ("nodeoffset" variable (:type "int") (reparse-symbol arg-sub-list) [9251 9266])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [9267 9284])
+                    ("val" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [9287 9303])
+                    ("len" variable (:type "int") (reparse-symbol arg-sub-list) [9304 9312]))                  
+                :type "int")
+                nil [9224 9313])
+            ("fdt_setprop_cell" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("fdt" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [9350 9360])
+                    ("nodeoffset" variable (:type "int") (reparse-symbol arg-sub-list) [9361 9376])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [9377 9394])
+                    ("val" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [9402 9419]))                  
+                :type "int")
+                nil [9315 9691])
+            ("fdt_setprop_string" variable (:constant-flag t) nil [9701 9719])
+            ("fdt_add_subnode_namelen" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("fdt" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [9843 9853])
+                    ("parentoffset" variable (:type "int") (reparse-symbol arg-sub-list) [9854 9871])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [9879 9896])
+                    ("namelen" variable (:type "int") (reparse-symbol arg-sub-list) [9897 9909]))                  
+                :type "int")
+                nil [9815 9910])
+            ("fdt_add_subnode" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("fdt" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [9931 9941])
+                    ("parentoffset" variable (:type "int") (reparse-symbol arg-sub-list) [9942 9959])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [9960 9977]))                  
+                :type "int")
+                nil [9911 9978])
+            ("set_fdt" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("fdt" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [9992 10002])
+                    ("total_space" variable (:type "int") (reparse-symbol arg-sub-list) [10003 10019])
+                    ("initrd_start" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [10019 10045])
+                    ("initrd_size" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [10045 10070])
+                    ("cmdline" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [10070 10085]))                  
+                :type "int")
+                nil [9980 10086])
+            ("fdt_set_reserved_mem" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("fdt" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [10114 10124])
+                    ("address" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [10125 10146])
+                    ("size" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [10147 10165]))                  
+                :type "void")
+                nil [10088 10166])
+            ("set_fdt_addr" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("fdt" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [10186 10203])
+                    ("total_space" variable (:type "int") (reparse-symbol arg-sub-list) [10204 10220]))                  
+                :type "void")
+                nil [10168 10221])
+            ("get_fdt_addr" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("fdt" variable
+                       (:pointer 1
+                        :type "unsigned int")
+                        (reparse-symbol arg-sub-list) [10239 10257])
+                    ("total_space" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [10258 10276]))                  
+                :type "int")
+                nil [10222 10277]))          
+      :file "libfdt.h"
+      :pointmax 10305
+      :fsize 10304
+      :lastmodtime '(21969 40018 141039 723000)
+      :unmatched-syntax '((punctuation 7665 . 7666) (punctuation 7634 . 7635) (punctuation 7602 . 7603) (punctuation 7570 . 7571) (punctuation 7536 . 7537) (punctuation 7512 . 7513) (punctuation 7481 . 7482) (punctuation 7450 . 7451) (punctuation 7420 . 7421) (punctuation 7394 . 7395))
+      :lexical-table 
+        '(("FDT_END_NODE" . ((number "0x2" 2584 . 2587)))
+          ("NR_BANKS" . ((number "8" 3086 . 3087)))
+          ("FDT_ERR_BADVERSION" . ((number "10" 3362 . 3364)))
+          ("swab32" (spp-arg-list ("x") 4517 . 4520) . ((semantic-list "((unsigned int)(                              \\
+                  (((unsigned int)(x) & (unsigned int)0x000000ffUL) << 24) |              \\
+                  (((unsigned int)(x) & (unsigned int)0x0000ff00UL) <<  8) |              \\
+                  (((unsigned int)(x) & (unsigned int)0x00ff0000UL) >>  8) |              \\
+                  (((unsigned int)(x) & (unsigned int)0xff000000UL) >> 24)))" 4521 . 4921)))
+          ("cpu_to_be64" (spp-arg-list ("x") 5708 . 5711) . ((symbol "swab64" 5712 . 5718) (semantic-list "(x)" 5718 . 5721)))
+          ("fdt_boot_cpuid_phys" (spp-arg-list ("fdt") 7009 . 7014) . ((semantic-list "(fdt_get_header(fdt, boot_cpuid_phys))" 7015 . 7053)))
+          ("FDT_ERR_NOSPACE" . ((number "3" 3167 . 3168)))
+          ("fdt_off_dt_struct" (spp-arg-list ("fdt") 6663 . 6668) . ((semantic-list "(fdt_get_header(fdt, off_dt_struct))" 6670 . 6706)))
+          ("fdt_off_dt_strings" (spp-arg-list ("fdt") 6733 . 6738) . ((semantic-list "(fdt_get_header(fdt, off_dt_strings))" 6740 . 6777)))
+          ("FDT_END" . ((number "0x9" 2812 . 2815)))
+          ("FDT_ERR_BADPATH" . ((number "5" 3222 . 3223)))
+          ("cpu_to_be32" (spp-arg-list ("x") 5642 . 5645) . ((symbol "swab32" 5646 . 5652) (semantic-list "(x)" 5652 . 5655)))
+          ("be32_to_cpu" (spp-arg-list ("x") 5675 . 5678) . ((symbol "swab32" 5679 . 5685) (semantic-list "(x)" 5685 . 5688)))
+          ("FDT_ALIGN" (spp-arg-list ("x" "a") 5962 . 5968) . ((semantic-list "(((x) + (a) - 1) & ~((a) - 1))" 5977 . 6007)))
+          ("fdt_magic" (spp-arg-list ("fdt") 6540 . 6545) . ((semantic-list "(fdt_get_header(fdt, magic))" 6548 . 6576)))
+          ("FDT_LAST_SUPPORTED_VERSION" . ((number "0x11" 2893 . 2897)))
+          ("cpu_to_fdt64" (spp-arg-list ("x") 5917 . 5920) . ((symbol "cpu_to_be64" 5929 . 5940) (semantic-list "(x)" 5940 . 5943)))
+          ("__fdt_set_hdr" (spp-arg-list ("name") 7219 . 7225) . 
+              ((STATIC "static" 7229 . 7235) (INLINE "inline" 7236 . 7242) (VOID "void" 7243 . 7247) (spp-symbol-merge ((symbol "fdt_set_" 7248 . 7256) (symbol "name" 7258 . 7262)) 7248 . 7262) (semantic-list "(void *fdt, unsigned int val)" 7262 . 7291) (semantic-list "{ \\
+		struct fdt_header *fdth = fdt; \\
+		fdth->name = cpu_to_fdt32(val); \\
+	}" 7295 . 7372)))
+          ("fdt_setprop_string" (spp-arg-list ("fdt" "nodeoffset" "name" "str") 9719 . 9747) . ((symbol "fdt_setprop" 9751 . 9762) (semantic-list "((fdt), (nodeoffset), (name), (str), strlen(str)+1)" 9762 . 9813)))
+          ("FDT_MAGIC" . ((number "0xd00dfeed" 2923 . 2933)))
+          ("FDT_TAGSIZE" . ((SIZEOF "sizeof" 3032 . 3038) (semantic-list "(unsigned int)" 3038 . 3052)))
+          ("fdt_size_dt_strings" (spp-arg-list ("fdt") 7081 . 7086) . ((semantic-list "(fdt_get_header(fdt, size_dt_strings))" 7087 . 7125)))
+          ("FDT_ERR_BADOFFSET" . ((number "4" 3195 . 3196)))
+          ("FDT_ERR_INTERNAL" . ((number "13" 3451 . 3453)))
+          ("cpu_to_fdt32" (spp-arg-list ("x") 5776 . 5779) . ((symbol "cpu_to_be32" 5788 . 5799) (semantic-list "(x)" 5799 . 5802)))
+          ("fdt32_to_cpu" (spp-arg-list ("x") 5823 . 5826) . ((symbol "be32_to_cpu" 5835 . 5846) (semantic-list "(x)" 5846 . 5849)))
+          ("fdt_version" (spp-arg-list ("fdt") 6868 . 6873) . ((semantic-list "(fdt_get_header(fdt, version))" 6875 . 6905)))
+          ("FDT_ERR_BADPHANDLE" . ((number "6" 3251 . 3252)))
+          ("fdt_get_header" (spp-arg-list ("fdt" "field") 6449 . 6461) . ((semantic-list "(fdt32_to_cpu(((const struct fdt_header *)(fdt))->field))" 6465 . 6522)))
+          ("__LIBFDT_H__")
+          ("FDT_NOP" . ((number "0x4" 2762 . 2765)))
+          ("FDT_ERR_BADMAGIC" . ((number "9" 3333 . 3334)))
+          ("FDT_ERR_BADLAYOUT" . ((number "12" 3423 . 3425)))
+          ("fdt_totalsize" (spp-arg-list ("fdt") 6598 . 6603) . ((semantic-list "(fdt_get_header(fdt, totalsize))" 6605 . 6637)))
+          ("swab32p" (spp-arg-list ("x") 5607 . 5610) . ((symbol "swab32" 5611 . 5617) (semantic-list "(*x)" 5617 . 5621)))
+          ("fdt_off_mem_rsvmap" (spp-arg-list ("fdt") 6804 . 6809) . ((semantic-list "(fdt_get_header(fdt, off_mem_rsvmap))" 6811 . 6848)))
+          ("FDT_ERR_EXISTS" . ((number "2" 3140 . 3141)))
+          ("be64_to_cpu" (spp-arg-list ("x") 5741 . 5744) . ((symbol "swab64" 5745 . 5751) (semantic-list "(x)" 5751 . 5754)))
+          ("FDT_TAGALIGN" (spp-arg-list ("x") 6028 . 6031) . ((semantic-list "(FDT_ALIGN((x), FDT_TAGSIZE))" 6040 . 6069)))
+          ("FDT_PROP" . ((number "0x3" 2639 . 2642)))
+          ("FDT_FIRST_SUPPORTED_VERSION" . ((number "0x10" 2853 . 2857)))
+          ("FDT_ERR_TRUNCATED" . ((number "8" 3306 . 3307)))
+          ("FDT_ERR_BADSTRUCTURE" . ((number "11" 3394 . 3396)))
+          ("fdt_size_dt_struct" (spp-arg-list ("fdt") 7152 . 7157) . ((semantic-list "(fdt_get_header(fdt, size_dt_struct))" 7159 . 7196)))
+          ("FDT_ERR_NOTFOUND" . ((number "1" 3114 . 3115)))
+          ("FDT_ERR_MAX" . ((number "13" 3475 . 3477)))
+          ("swab64" (spp-arg-list ("x") 4937 . 4940) . ((semantic-list "((UINT64)(                                \\
+                  (((UINT64)(x) & (UINT64)0x00000000000000ffULL) << 56) | \\
+                  (((UINT64)(x) & (UINT64)0x000000000000ff00ULL) << 40) | \\
+                  (((UINT64)(x) & (UINT64)0x0000000000ff0000ULL) << 24) | \\
+                  (((UINT64)(x) & (UINT64)0x00000000ff000000ULL) <<  8) | \\
+                  (((UINT64)(x) & (UINT64)0x000000ff00000000ULL) >>  8) | \\
+                  (((UINT64)(x) & (UINT64)0x0000ff0000000000ULL) >> 24) | \\
+                  (((UINT64)(x) & (UINT64)0x00ff000000000000ULL) >> 40) | \\
+                  (((UINT64)(x) & (UINT64)0xff00000000000000ULL) >> 56)))" 4941 . 5590)))
+          ("FDT_BEGIN_NODE" . ((number "0x1" 2516 . 2519)))
+          ("FDT_SW_MAGIC" . ((semantic-list "(~FDT_MAGIC)" 2995 . 3007)))
+          ("FDT_ERR_BADSTATE" . ((number "7" 3278 . 3279)))
+          ("fdt64_to_cpu" (spp-arg-list ("x") 5870 . 5873) . ((symbol "be64_to_cpu" 5882 . 5893) (semantic-list "(x)" 5893 . 5896)))
+          ("fdt_last_comp_version" (spp-arg-list ("fdt") 6935 . 6940) . ((semantic-list "(fdt_get_header(fdt, last_comp_version))" 6941 . 6981)))
+          ("FDT_CHECK_HEADER" (spp-arg-list ("fdt") 7732 . 7737) . ((semantic-list "{ \\
+		int err; \\
+		if ((err = fdt_check_header(fdt)) != 0) \\
+			return err; \\
+	}" 7741 . 7821)))
+          )
+))
+  :file "!home!qichen!bg4dtv_20151231_rc3_a0!vendor!marvell-sdk!MV88DE3100_SDK!MV88DE3100_Tools!bsp!bootloader!include!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

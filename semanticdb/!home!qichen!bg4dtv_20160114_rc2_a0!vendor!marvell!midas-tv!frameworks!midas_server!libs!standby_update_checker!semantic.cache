@@ -1,0 +1,221 @@
+;; Object standby_update_checker/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "standby_update_checker/"
+  :tables
+  (list
+    (semanticdb-table "StandbyUpdateChecker.cpp"
+      :major-mode 'c++-mode
+      :tags 
+        '( ("StandbyUpdateChecker.h" include nil nil [800 833])
+            ("light_panel.h" include nil nil [834 858])
+            ("marvell" type
+               (:members 
+                  ( ("android" using (:type ("android" type
+                         (:prototype t
+                          :type "namespace")
+                          nil nil)) (reparse-symbol namespacesubparts) [884 908])
+                    ("StandbyUpdateObserver" type
+                       (:superclasses 
+                          ( ("BnUpdateObserver" type
+                               (:protection "public"
+                                :type "class")
+                                nil nil))                          
+                        :members 
+                          ( ("public" label nil (reparse-symbol classsubparts) [979 986])
+                            ("StandbyUpdateObserver" function
+                               (:constructor-flag t
+                                :arguments 
+                                  ( ("mgr" variable
+                                       (:pointer 1
+                                        :type ("StandbyUpdateChecker" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [1021 1047]))                                  
+                                :type ("StandbyUpdateObserver" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [999 1079])
+                            ("StandbyUpdateObserver" function
+                               (:destructor-flag t
+                                :typemodifiers ("virtual")
+                                :type "void")
+                                (reparse-symbol classsubparts) [1092 1126])
+                            ("onUpdateStateChanged" function
+                               (:typemodifiers ("virtual")
+                                :arguments 
+                                  ( ("event" variable
+                                       (:constant-flag t
+                                        :type ("UPDATE_EVENT" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [1175 1200])
+                                    ("ext1" variable
+                                       (:constant-flag t
+                                        :type ("int32_t" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [1221 1240])
+                                    ("ext2" variable
+                                       (:constant-flag t
+                                        :type ("int32_t" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [1261 1280])
+                                    ("obj" variable
+                                       (:pointer 1
+                                        :constant-flag t
+                                        :type ("Parcel" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [1301 1319]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [1141 1805])
+                            ("private" label nil (reparse-symbol classsubparts) [1814 1822])
+                            ("mStandbyUpdateChecker" variable (:type ("wp" type
+                                 (:template-specifier 
+                                    ( ("StandbyUpdateChecker" type nil nil nil))                                    
+                                  :type "class")
+                                  nil nil)) (reparse-symbol classsubparts) [1835 1882]))                          
+                        :type "class")
+                        (reparse-symbol namespacesubparts) [914 1889])
+                    ("StandbyUpdateChecker" function
+                       (:constructor-flag t
+                        :parent "StandbyUpdateChecker"
+                        :type ("StandbyUpdateChecker" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [1895 3410])
+                    ("threadLoop" function
+                       (:parent "StandbyUpdateChecker"
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [3417 4178])
+                    ("abortUpdate" function
+                       (:parent "StandbyUpdateChecker"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [4259 5033])
+                    ("abortStandby" function
+                       (:parent "StandbyUpdateChecker"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [5040 6105])
+                    ("truelyStandby" function
+                       (:parent "StandbyUpdateChecker"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [6111 6421])
+                    ("fakeStandby" function
+                       (:parent "StandbyUpdateChecker"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [6427 6848])
+                    ("setStandbyOption" function
+                       (:parent "StandbyUpdateChecker"
+                        :arguments 
+                          ( ("standby_option" variable (:type ("MIDAS_STANDBY_OPTION" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6898 6934]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [6854 7010])
+                    ("getStandbyOption" function
+                       (:parent "StandbyUpdateChecker"
+                        :type ("MIDAS_STANDBY_OPTION" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [7016 7144]))                  
+                :type "namespace")
+                nil [860 7147]))          
+      :file "StandbyUpdateChecker.cpp"
+      :pointmax 7149
+      :fsize 7148
+      :lastmodtime '(22168 42983 731502 32000)
+      :unmatched-syntax nil)
+    (semanticdb-table "StandbyUpdateChecker.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("MIDAS_STANDBY_UPDATE_CHECKER_H_" variable (:constant-flag t) nil [1198 1229])
+            ("binder/IServiceManager.h" include (:system-flag t) nil [1231 1266])
+            ("utils/RefBase.h" include (:system-flag t) nil [1267 1293])
+            ("utils/threads.h" include (:system-flag t) nil [1294 1320])
+            ("IUpdateService.h" include (:system-flag t) nil [1321 1348])
+            ("IStateManager.h" include (:system-flag t) nil [1349 1375])
+            ("IPowerManager.h" include (:system-flag t) nil [1376 1402])
+            ("marvell" type
+               (:members 
+                  ( ("android" using (:type ("android" type
+                         (:prototype t
+                          :type "namespace")
+                          nil nil)) (reparse-symbol namespacesubparts) [1428 1452])
+                    ("StandbyUpdateChecker" type
+                       (:superclasses 
+                          ( ("Thread" type
+                               (:protection "public"
+                                :type "class")
+                                nil nil))                          
+                        :members 
+                          ( ("public" label nil (reparse-symbol classsubparts) [1510 1517])
+                            ("StandbyUpdateChecker" function
+                               (:prototype-flag t
+                                :constructor-flag t
+                                :type ("StandbyUpdateChecker" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [1530 1553])
+                            ("StandbyUpdateChecker" function
+                               (:destructor-flag t
+                                :typemodifiers ("virtual")
+                                :type "void")
+                                (reparse-symbol classsubparts) [1566 1599])
+                            ("fakeStandby" function
+                               (:prototype-flag t
+                                :typemodifiers ("virtual")
+                                :type "void")
+                                (reparse-symbol classsubparts) [1613 1640])
+                            ("truelyStandby" function
+                               (:prototype-flag t
+                                :typemodifiers ("virtual")
+                                :type "void")
+                                (reparse-symbol classsubparts) [1653 1682])
+                            ("abortStandby" function
+                               (:prototype-flag t
+                                :typemodifiers ("virtual")
+                                :type "void")
+                                (reparse-symbol classsubparts) [1695 1723])
+                            ("abortUpdate" function
+                               (:prototype-flag t
+                                :typemodifiers ("virtual")
+                                :type "void")
+                                (reparse-symbol classsubparts) [1736 1763])
+                            ("getStandbyOption" function
+                               (:prototype-flag t
+                                :typemodifiers ("virtual")
+                                :type ("MIDAS_STANDBY_OPTION" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [1777 1825])
+                            ("setStandbyOption" function
+                               (:prototype-flag t
+                                :typemodifiers ("virtual")
+                                :arguments 
+                                  ( ("standby_option" variable (:type ("MIDAS_STANDBY_OPTION" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1868 1904]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [1838 1905])
+                            ("isPassiveStandy" variable (:type "bool") (reparse-symbol classsubparts) [1919 1940])
+                            ("private" label nil (reparse-symbol classsubparts) [1950 1958])
+                            ("threadLoop" function
+                               (:prototype-flag t
+                                :typemodifiers ("virtual")
+                                :type "bool")
+                                (reparse-symbol classsubparts) [1972 1998])
+                            ("mLock" variable (:type ("Mutex" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2012 2024])
+                            ("mUpdateService" variable (:type ("sp" type
+                                 (:template-specifier 
+                                    ( ("IUpdateService" type nil nil nil))                                    
+                                  :type "class")
+                                  nil nil)) (reparse-symbol classsubparts) [2037 2073])
+                            ("mPowerManager" variable (:type ("sp" type
+                                 (:template-specifier 
+                                    ( ("IPowerManager" type nil nil nil))                                    
+                                  :type "class")
+                                  nil nil)) (reparse-symbol classsubparts) [2086 2121])
+                            ("mStateManager" variable (:type ("sp" type
+                                 (:template-specifier 
+                                    ( ("IStateManager" type nil nil nil))                                    
+                                  :type "class")
+                                  nil nil)) (reparse-symbol classsubparts) [2134 2169])
+                            ("mUpdateObserver" variable (:type ("sp" type
+                                 (:template-specifier 
+                                    ( ("BnUpdateObserver" type nil nil nil))                                    
+                                  :type "class")
+                                  nil nil)) (reparse-symbol classsubparts) [2182 2219])
+                            ("mStandyOption" variable (:type ("MIDAS_STANDBY_OPTION" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2233 2268]))                          
+                        :type "class")
+                        (reparse-symbol namespacesubparts) [1458 2275]))                  
+                :type "namespace")
+                nil [1404 2277]))          
+      :file "StandbyUpdateChecker.h"
+      :pointmax 2286
+      :fsize 2285
+      :lastmodtime '(22167 18859 434378 954000)
+      :unmatched-syntax '((punctuation 1599 . 1600))
+      :lexical-table 
+        '(("MIDAS_STANDBY_UPDATE_CHECKER_H_")
+          )
+))
+  :file "!home!qichen!bg4dtv_20160114_rc2_a0!vendor!marvell!midas-tv!frameworks!midas_server!libs!standby_update_checker!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

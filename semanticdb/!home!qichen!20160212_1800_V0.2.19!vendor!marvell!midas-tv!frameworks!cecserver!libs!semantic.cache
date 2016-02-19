@@ -1,0 +1,1010 @@
+;; Object libs/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "libs/"
+  :tables
+  (list
+    (semanticdb-table "HdmiCecService.cpp"
+      :major-mode 'c++-mode
+      :tags 
+        '( ("LOG_NDEBUG" variable (:constant-flag t) nil [630 640])
+            ("LOG_TAG" variable (:constant-flag t) nil [651 658])
+            ("stdio.h" include (:system-flag t) nil [677 695])
+            ("unistd.h" include (:system-flag t) nil [696 715])
+            ("utils/Log.h" include (:system-flag t) nil [716 738])
+            ("binder/IPCThreadState.h" include (:system-flag t) nil [740 774])
+            ("binder/ProcessState.h" include (:system-flag t) nil [775 807])
+            ("binder/IServiceManager.h" include (:system-flag t) nil [808 843])
+            ("binder/Parcel.h" include (:system-flag t) nil [844 870])
+            ("HdmiDeviceInfo.h" include nil nil [872 899])
+            ("HdmiPortInfo.h" include nil nil [900 925])
+            ("HdmiCecConstants.h" include nil nil [926 955])
+            ("HdmiCecMessageBuilder.h" include nil nil [956 990])
+            ("HdmiUtils.h" include nil nil [991 1013])
+            ("HdmiCecLocalDevice.h" include nil nil [1014 1045])
+            ("HdmiCecLocalDeviceTv.h" include nil nil [1046 1079])
+            ("MidasSettingsConstants.h" include nil nil [1080 1115])
+            ("HdmiCecService.h" include nil nil [1117 1144])
+            ("android" type
+               (:members 
+                  ( ("marvell" using (:type ("marvell" type
+                         (:prototype t
+                          :type "namespace")
+                          nil nil)) (reparse-symbol namespacesubparts) [1167 1191])
+                    ("HdmiCecService::AllocateAddressCallback::mAllocatedIdx" variable
+                       (:default-value "0"
+                        :type "int")
+                        (reparse-symbol namespacesubparts) [1193 1256])
+                    ("HdmiCecService::AllocateAddressCallback::mAllocatedDevices" variable (:type ("List" type
+                         (:template-specifier 
+                            ( ("sp" type nil nil nil))                            
+                          :type "class")
+                          nil nil)) (reparse-symbol namespacesubparts) [1257 1347])
+                    ("onAllocated" function
+                       (:parent "HdmiCecService::AllocateAddressCallback"
+                        :arguments 
+                          ( ("deviceType" variable (:type "int") (reparse-symbol arg-sub-list) [1407 1422])
+                            ("logicalAddress" variable (:type "int") (reparse-symbol arg-sub-list) [1481 1500]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [1349 3386])
+                    ("bufferMessage" function
+                       (:parent "HdmiCecService::CecMessageBuffer"
+                        :arguments 
+                          ( ("msg" variable
+                               (:reference 1
+                                :type ("sp" type
+                                     (:template-specifier 
+                                        ( ("HdmiCecMessage" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [3523 3547]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [3470 3911])
+                    ("processMessages" function
+                       (:parent "HdmiCecService::CecMessageBuffer"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [3913 4389])
+                    ("bufferActiveSource" function
+                       (:parent "HdmiCecService::CecMessageBuffer"
+                        :arguments 
+                          ( ("msg" variable
+                               (:reference 1
+                                :type ("sp" type
+                                     (:template-specifier 
+                                        ( ("HdmiCecMessage" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [4449 4473]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [4391 4598])
+                    ("bufferImageOrTextViewOn" function
+                       (:parent "HdmiCecService::CecMessageBuffer"
+                        :arguments 
+                          ( ("msg" variable
+                               (:reference 1
+                                :type ("sp" type
+                                     (:template-specifier 
+                                        ( ("HdmiCecMessage" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [4663 4687]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [4600 4894])
+                    ("replaceMessageIfBuffered" function
+                       (:parent "HdmiCecService::CecMessageBuffer"
+                        :arguments 
+                          ( ("msg" variable
+                               (:reference 1
+                                :type ("sp" type
+                                     (:template-specifier 
+                                        ( ("HdmiCecMessage" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [4960 4984])
+                            ("opcode" variable (:type "int") (reparse-symbol arg-sub-list) [5049 5060]))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [4896 5340])
+                    ("kServiceName" function
+                       (:prototype-flag t
+                        :parent "HdmiCecService"
+                        :constant-flag t
+                        :type ("String16" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [5424 5484])
+                    ("HdmiCecService::INITIATED_BY_ENABLE_CEC" variable
+                       (:constant-flag t
+                        :default-value "0"
+                        :type "int")
+                        (reparse-symbol namespacesubparts) [5485 5539])
+                    ("HdmiCecService::INITIATED_BY_BOOT_UP" variable
+                       (:constant-flag t
+                        :default-value "1"
+                        :type "int")
+                        (reparse-symbol namespacesubparts) [5540 5591])
+                    ("HdmiCecService::INITIATED_BY_SCREEN_ON" variable
+                       (:constant-flag t
+                        :default-value "2"
+                        :type "int")
+                        (reparse-symbol namespacesubparts) [5592 5645])
+                    ("HdmiCecService::INITIATED_BY_WAKE_UP_MESSAGE" variable
+                       (:constant-flag t
+                        :default-value "3"
+                        :type "int")
+                        (reparse-symbol namespacesubparts) [5646 5705])
+                    ("HdmiCecService::INITIATED_BY_HOTPLUG" variable
+                       (:constant-flag t
+                        :default-value "4"
+                        :type "int")
+                        (reparse-symbol namespacesubparts) [5706 5757])
+                    ("initialize" function
+                       (:parent "HdmiCecService"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [5772 5983])
+                    ("getPortConfiguration" function
+                       (:parent "HdmiCecService"
+                        :arguments 
+                          ( ("configs" variable
+                               (:reference 1
+                                :type ("List" type
+                                     (:template-specifier 
+                                        ( ("sp" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [6040 6076]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [5998 7258])
+                    ("HdmiCecService" function
+                       (:constructor-flag t
+                        :parent "HdmiCecService"
+                        :type ("HdmiCecService" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [7260 11777])
+                    ("HdmiCecService" function
+                       (:destructor-flag t
+                        :parent "HdmiCecService"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [11779 12370])
+                    ("binderDied" function
+                       (:parent "HdmiCecService"
+                        :arguments 
+                          ( ("who" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("android::wp" type
+                                     (:template-specifier 
+                                        ( ("android::IBinder" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [12404 12445]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [12372 12685])
+                    ("getCecStatus" function
+                       (:parent "HdmiCecService"
+                        :arguments 
+                          ( ("enabled" variable
+                               (:pointer 1
+                                :type "bool")
+                                (reparse-symbol arg-sub-list) [12725 12739]))                          
+                        :type ("status_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [12687 12896])
+                    ("enableCec" function
+                       (:parent "HdmiCecService"
+                        :arguments 
+                          ( ("enabled" variable (:type "bool") (reparse-symbol arg-sub-list) [12933 12946]))                          
+                        :type ("status_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [12898 13082])
+                    ("getDeviceList" function
+                       (:parent "HdmiCecService"
+                        :arguments 
+                          ( ("devices" variable
+                               (:reference 1
+                                :type ("List" type
+                                     (:template-specifier 
+                                        ( ("sp" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [13123 13155]))                          
+                        :type ("status_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [13084 14571])
+                    ("startDiscovery" function
+                       (:parent "HdmiCecService"
+                        :arguments 
+                          ( ("UNUSED" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [14613 14634]))                          
+                        :type ("status_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [14573 14941])
+                    ("getHotplugDevice" function
+                       (:parent "HdmiCecService"
+                        :arguments 
+                          ( ("portId" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [14985 15000])
+                            ("obj" variable
+                               (:pointer 1
+                                :type ("Parcel" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [15001 15013]))                          
+                        :type ("status_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [14943 15638])
+                    ("getCecMode" function
+                       (:parent "HdmiCecService"
+                        :arguments 
+                          ( ("pMode" variable
+                               (:pointer 1
+                                :type ("CEC_MODE" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [15676 15692]))                          
+                        :type ("status_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [15640 15839])
+                    ("setCecMode" function
+                       (:parent "HdmiCecService"
+                        :arguments 
+                          ( ("mode" variable (:type ("CEC_MODE" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15877 15891]))                          
+                        :type ("status_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [15841 16024])
+                    ("onStandby" function
+                       (:parent "HdmiCecService"
+                        :arguments 
+                          ( ("mode" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [16061 16074]))                          
+                        :type ("status_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [16026 17370])
+                    ("onWakeup" function
+                       (:parent "HdmiCecService"
+                        :arguments 
+                          ( ("reason" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [17406 17421])
+                            ("mode" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [17422 17435]))                          
+                        :type ("status_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [17372 19624])
+                    ("recallDevice" function
+                       (:parent "HdmiCecService"
+                        :type ("status_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [19626 20035])
+                    ("switchDevice" function
+                       (:parent "HdmiCecService"
+                        :arguments 
+                          ( ("deviceId" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [20075 20092]))                          
+                        :type ("status_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [20037 20507])
+                    ("getActiveDevice" function
+                       (:parent "HdmiCecService"
+                        :arguments 
+                          ( ("pDeviceId" variable
+                               (:pointer 1
+                                :type ("int32_t" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [20550 20569]))                          
+                        :type ("status_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [20509 20793])
+                    ("getAudioVolume" function
+                       (:parent "HdmiCecService"
+                        :arguments 
+                          ( ("pMuted" variable
+                               (:pointer 1
+                                :type "bool")
+                                (reparse-symbol arg-sub-list) [20835 20848])
+                            ("pVolume" variable
+                               (:pointer 1
+                                :type ("int32_t" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [20849 20866]))                          
+                        :type ("status_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [20795 21248])
+                    ("sendKey" function
+                       (:parent "HdmiCecService"
+                        :arguments 
+                          ( ("keyCode" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [21279 21295])
+                            ("down" variable (:type "bool") (reparse-symbol arg-sub-list) [21296 21306]))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [21250 21619])
+                    ("registerObserver" function
+                       (:parent "HdmiCecService"
+                        :arguments 
+                          ( ("observer" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("sp" type
+                                     (:template-specifier 
+                                        ( ("IHdmiCecObserver" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [21663 21700]))                          
+                        :type ("status_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [21621 22029])
+                    ("unregisterObserver" function
+                       (:parent "HdmiCecService"
+                        :arguments 
+                          ( ("observer" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("sp" type
+                                     (:template-specifier 
+                                        ( ("IHdmiCecObserver" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [22075 22112]))                          
+                        :type ("status_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [22031 22389])
+                    ("onMessageReceived" function
+                       (:parent "HdmiCecService"
+                        :arguments 
+                          ( ("msg" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("sp" type
+                                     (:template-specifier 
+                                        ( ("AMessage" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [22430 22454]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [22391 26188])
+                    ("loadCecSettings" function
+                       (:parent "HdmiCecService"
+                        :type ("status_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [26190 29573])
+                    ("saveCecSettings" function
+                       (:parent "HdmiCecService"
+                        :type ("status_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [29575 30246])
+                    ("getSystemAudioModeSetting" function
+                       (:parent "HdmiCecService"
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [30248 30352])
+                    ("setSystemAudioModeSetting" function
+                       (:parent "HdmiCecService"
+                        :arguments 
+                          ( ("enabled" variable (:type "bool") (reparse-symbol arg-sub-list) [30401 30414]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [30354 30473])
+                    ("onInitializeCecComplete" function
+                       (:parent "HdmiCecService"
+                        :arguments 
+                          ( ("UNUSED" variable (:type "int") (reparse-symbol arg-sub-list) [30520 30543]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [30475 31129])
+                    ("initializeCec" function
+                       (:parent "HdmiCecService"
+                        :arguments 
+                          ( ("initiatedBy" variable (:type "int") (reparse-symbol arg-sub-list) [31166 31182]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [31131 32274])
+                    ("initializeLocalDevices" function
+                       (:parent "HdmiCecService"
+                        :arguments 
+                          ( ("initiatedBy" variable (:type "int") (reparse-symbol arg-sub-list) [32320 32336]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [32276 33356])
+                    ("allocateLogicalAddress" function
+                       (:parent "HdmiCecService"
+                        :arguments 
+                          ( ("allocatingDevices" variable
+                               (:reference 1
+                                :type ("List" type
+                                     (:template-specifier 
+                                        ( ("sp" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [33402 33452])
+                            ("initiatedBy" variable (:type "int") (reparse-symbol arg-sub-list) [33497 33513]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [33358 34278])
+                    ("notifyAddressAllocated" function
+                       (:parent "HdmiCecService"
+                        :arguments 
+                          ( ("devices" variable
+                               (:reference 1
+                                :type ("List" type
+                                     (:template-specifier 
+                                        ( ("sp" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [34324 34364])
+                            ("initiatedBy" variable (:type "int") (reparse-symbol arg-sub-list) [34409 34425]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [34280 34859])
+                    ("initPortInfo" function
+                       (:parent "HdmiCecService"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [34861 35632])
+                    ("isAllocatedLocalDeviceAddress" function
+                       (:parent "HdmiCecService"
+                        :arguments 
+                          ( ("address" variable (:type "int") (reparse-symbol arg-sub-list) [35685 35697]))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [35634 36093])
+                    ("getPortInfo" function
+                       (:parent "HdmiCecService"
+                        :arguments 
+                          ( ("portId" variable (:type "int") (reparse-symbol arg-sub-list) [36140 36151]))                          
+                        :type ("sp" type
+                             (:template-specifier 
+                                ( ("HdmiPortInfo" type nil nil nil))                                
+                              :type "class")
+                              nil nil))
+                        (reparse-symbol namespacesubparts) [36095 36446])
+                    ("portIdToPath" function
+                       (:parent "HdmiCecService"
+                        :arguments 
+                          ( ("portId" variable (:type "int") (reparse-symbol arg-sub-list) [36481 36492]))                          
+                        :type "int")
+                        (reparse-symbol namespacesubparts) [36448 37030])
+                    ("pathToPortId" function
+                       (:parent "HdmiCecService"
+                        :arguments 
+                          ( ("path" variable (:type "int") (reparse-symbol arg-sub-list) [37065 37074])
+                            ("checkChild" variable (:type "bool") (reparse-symbol arg-sub-list) [37075 37091]))                          
+                        :type "int")
+                        (reparse-symbol namespacesubparts) [37032 38607])
+                    ("isValidPortId" function
+                       (:parent "HdmiCecService"
+                        :arguments 
+                          ( ("portId" variable (:type "int") (reparse-symbol arg-sub-list) [38644 38655]))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [38609 38955])
+                    ("getPhysicalAddress" function
+                       (:parent "HdmiCecService"
+                        :type "int")
+                        (reparse-symbol namespacesubparts) [38957 39195])
+                    ("getVendorId" function
+                       (:parent "HdmiCecService"
+                        :type "int")
+                        (reparse-symbol namespacesubparts) [39197 39425])
+                    ("getDeviceInfo" function
+                       (:parent "HdmiCecService"
+                        :arguments 
+                          ( ("logicalAddress" variable (:type "int") (reparse-symbol arg-sub-list) [39476 39495]))                          
+                        :type ("sp" type
+                             (:template-specifier 
+                                ( ("HdmiDeviceInfo" type nil nil nil))                                
+                              :type "class")
+                              nil nil))
+                        (reparse-symbol namespacesubparts) [39427 39674])
+                    ("getDeviceInfoByPort" function
+                       (:parent "HdmiCecService"
+                        :arguments 
+                          ( ("UNUSED" variable (:type "int") (reparse-symbol arg-sub-list) [39731 39747]))                          
+                        :type ("sp" type
+                             (:template-specifier 
+                                ( ("HdmiDeviceInfo" type nil nil nil))                                
+                              :type "class")
+                              nil nil))
+                        (reparse-symbol namespacesubparts) [39676 39782])
+                    ("getCecVersion" function
+                       (:parent "HdmiCecService"
+                        :type "int")
+                        (reparse-symbol namespacesubparts) [39784 39964])
+                    ("isConnectedToArcPort" function
+                       (:parent "HdmiCecService"
+                        :arguments 
+                          ( ("physicalAddress" variable (:type "int") (reparse-symbol arg-sub-list) [40008 40028]))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [39966 40383])
+                    ("sendCecCommand" function
+                       (:parent "HdmiCecService"
+                        :arguments 
+                          ( ("command" variable
+                               (:reference 1
+                                :type ("sp" type
+                                     (:template-specifier 
+                                        ( ("HdmiCecMessage" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [40421 40449])
+                            ("callback" variable
+                               (:reference 1
+                                :type ("sp" type
+                                     (:template-specifier 
+                                        ( ("SendMessageCallbackBase" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [40486 40524]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [40385 40934])
+                    ("maySendFeatureAbortCommand" function
+                       (:parent "HdmiCecService"
+                        :arguments 
+                          ( ("command" variable
+                               (:reference 1
+                                :type ("sp" type
+                                     (:template-specifier 
+                                        ( ("HdmiCecMessage" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [40984 41012])
+                            ("reason" variable (:type "int") (reparse-symbol arg-sub-list) [41013 41024]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [40936 41830])
+                    ("handleCecCommand" function
+                       (:parent "HdmiCecService"
+                        :arguments 
+                          ( ("message" variable
+                               (:reference 1
+                                :type ("sp" type
+                                     (:template-specifier 
+                                        ( ("HdmiCecMessage" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [41870 41898]))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [41832 42209])
+                    ("setAudioReturnChannel" function
+                       (:parent "HdmiCecService"
+                        :arguments 
+                          ( ("enabled" variable (:type "bool") (reparse-symbol arg-sub-list) [42254 42267]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [42211 42690])
+                    ("dispatchMessageToLocalDevice" function
+                       (:parent "HdmiCecService"
+                        :arguments 
+                          ( ("message" variable
+                               (:reference 1
+                                :type ("sp" type
+                                     (:template-specifier 
+                                        ( ("HdmiCecMessage" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [42742 42770]))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [42692 43395])
+                    ("onHotplug" function
+                       (:parent "HdmiCecService"
+                        :arguments 
+                          ( ("portId" variable (:type "int") (reparse-symbol arg-sub-list) [43428 43439])
+                            ("connected" variable (:type "bool") (reparse-symbol arg-sub-list) [43440 43455]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [43397 44931])
+                    ("pollDevices" function
+                       (:parent "HdmiCecService"
+                        :arguments 
+                          ( ("sourceAddress" variable (:type "int") (reparse-symbol arg-sub-list) [44966 44984])
+                            ("pickStrategy" variable (:type "int") (reparse-symbol arg-sub-list) [44985 45002])
+                            ("retryCount" variable (:type "int") (reparse-symbol arg-sub-list) [45003 45018])
+                            ("callback" variable
+                               (:reference 1
+                                :type ("sp" type
+                                     (:template-specifier 
+                                        ( ("DevicePollingCallbackBase" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [45052 45092]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [44933 45285])
+                    ("checkPollStrategy" function
+                       (:parent "HdmiCecService"
+                        :arguments 
+                          ( ("pickStrategy" variable (:type "int") (reparse-symbol arg-sub-list) [45325 45342]))                          
+                        :type "int")
+                        (reparse-symbol namespacesubparts) [45287 45804])
+                    ("getAllLocalDevices" function
+                       (:parent "HdmiCecService"
+                        :arguments 
+                          ( ("list" variable
+                               (:reference 1
+                                :type ("List" type
+                                     (:template-specifier 
+                                        ( ("sp" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [45846 45883]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [45806 46021])
+                    ("setAudioStatus" function
+                       (:parent "HdmiCecService"
+                        :arguments 
+                          ( ("mute" variable (:type "bool") (reparse-symbol arg-sub-list) [46059 46069])
+                            ("volume" variable (:type "int") (reparse-symbol arg-sub-list) [46070 46081]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [46023 47068])
+                    ("createDeviceInfo" function
+                       (:parent "HdmiCecService"
+                        :arguments 
+                          ( ("logicalAddress" variable (:type "int") (reparse-symbol arg-sub-list) [47122 47141])
+                            ("deviceType" variable (:type "int") (reparse-symbol arg-sub-list) [47142 47157])
+                            ("powerStatus" variable (:type "int") (reparse-symbol arg-sub-list) [47210 47226]))                          
+                        :type ("sp" type
+                             (:template-specifier 
+                                ( ("HdmiDeviceInfo" type nil nil nil))                                
+                              :type "class")
+                              nil nil))
+                        (reparse-symbol namespacesubparts) [47070 47506])
+                    ("announceCecModeChangedEvent" function
+                       (:parent "HdmiCecService"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [47508 47773])
+                    ("announceDeviceDiscoveredEvent" function
+                       (:parent "HdmiCecService"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [47775 48045])
+                    ("announceHotplugEvent" function
+                       (:parent "HdmiCecService"
+                        :arguments 
+                          ( ("portId" variable (:type "int") (reparse-symbol arg-sub-list) [48089 48100])
+                            ("connected" variable (:type "bool") (reparse-symbol arg-sub-list) [48101 48116]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [48047 48418])
+                    ("announceAudioVolumeEvent" function
+                       (:parent "HdmiCecService"
+                        :arguments 
+                          ( ("volume" variable (:type "int") (reparse-symbol arg-sub-list) [48466 48477]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [48420 48786])
+                    ("announceAudioCapacityChangedEvent" function
+                       (:parent "HdmiCecService"
+                        :arguments 
+                          ( ("cap" variable
+                               (:reference 1
+                                :type ("Vector" type
+                                     (:template-specifier 
+                                        ( ("int" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [48843 48860]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [48788 48916])
+                    ("announceActiveDeviceChangedEvent" function
+                       (:parent "HdmiCecService"
+                        :arguments 
+                          ( ("deviceId" variable (:type "int") (reparse-symbol arg-sub-list) [48972 48985]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [48918 49316])
+                    ("announceInputChangeEvent" function
+                       (:parent "HdmiCecService"
+                        :arguments 
+                          ( ("info" variable
+                               (:reference 1
+                                :type ("sp" type
+                                     (:template-specifier 
+                                        ( ("HdmiDeviceInfo" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [49364 49389]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [49318 50136])
+                    ("getLocalDeviceTV" function
+                       (:parent "HdmiCecService"
+                        :type ("sp" type
+                             (:template-specifier 
+                                ( ("HdmiCecLocalDevice" type nil nil nil))                                
+                              :type "class")
+                              nil nil))
+                        (reparse-symbol namespacesubparts) [50138 50348])
+                    ("isTvDevice" function
+                       (:parent "HdmiCecService"
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [50350 50636])
+                    ("isTvDeviceEnabled" function
+                       (:parent "HdmiCecService"
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [50638 50750])
+                    ("isControlEnabled" function
+                       (:parent "HdmiCecService"
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [50752 50874])
+                    ("isArcEnabled" function
+                       (:parent "HdmiCecService"
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [50876 50994])
+                    ("isArcOnlyMode" function
+                       (:parent "HdmiCecService"
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [50996 51092])
+                    ("getPowerStatus" function
+                       (:parent "HdmiCecService"
+                        :type "int")
+                        (reparse-symbol namespacesubparts) [51094 51172])
+                    ("isPowerOnOrTransient" function
+                       (:parent "HdmiCecService"
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [51174 51373])
+                    ("isPowerStandbyOrTransient" function
+                       (:parent "HdmiCecService"
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [51375 51589])
+                    ("isPowerStandby" function
+                       (:parent "HdmiCecService"
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [51591 51712])
+                    ("wakeUp" function
+                       (:parent "HdmiCecService"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [51714 51932])
+                    ("standby" function
+                       (:parent "HdmiCecService"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [51934 52193])
+                    ("canGoToStandby" function
+                       (:parent "HdmiCecService"
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [52195 52674])
+                    ("onLanguageChanged" function
+                       (:parent "HdmiCecService"
+                        :arguments 
+                          ( ("language" variable
+                               (:reference 1
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [52715 52733]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [52676 53310])
+                    ("getLanguage" function
+                       (:parent "HdmiCecService"
+                        :type ("String8" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [53312 53388])
+                    ("onTvSpeakersStatusChanged" function
+                       (:parent "HdmiCecService"
+                        :arguments 
+                          ( ("status" variable (:type "int") (reparse-symbol arg-sub-list) [53437 53448]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [53390 53944])
+                    ("disableDevices" function
+                       (:parent "HdmiCecService"
+                        :arguments 
+                          ( ("callback" variable
+                               (:reference 1
+                                :type ("sp" type
+                                     (:template-specifier 
+                                        ( ("PendingActionClearedCallbackBase" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [53982 54029]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [53946 54479])
+                    ("disableDevices" function
+                       (:parent "HdmiCecService"
+                        :arguments 
+                          ( ("devices" variable
+                               (:reference 1
+                                :type ("List" type
+                                     (:template-specifier 
+                                        ( ("sp" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [54517 54557]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [54481 54807])
+                    ("clearLocalDevices" function
+                       (:parent "HdmiCecService"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [54809 55045])
+                    ("onStandbyCompleted" function
+                       (:parent "HdmiCecService"
+                        :arguments 
+                          ( ("mode" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [55087 55100]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [55047 55835])
+                    ("isProhibitMode" function
+                       (:parent "HdmiCecService"
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [55837 55951])
+                    ("setProhibitMode" function
+                       (:parent "HdmiCecService"
+                        :arguments 
+                          ( ("enabled" variable (:type "bool") (reparse-symbol arg-sub-list) [55990 56003]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [55953 56096])
+                    ("setCecEnabled" function
+                       (:parent "HdmiCecService"
+                        :arguments 
+                          ( ("enabled" variable (:type "bool") (reparse-symbol arg-sub-list) [56133 56146]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [56098 57255])
+                    ("getCecMode" function
+                       (:parent "HdmiCecService"
+                        :type ("CEC_MODE" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [57257 57370])
+                    ("configCecMode" function
+                       (:parent "HdmiCecService"
+                        :arguments 
+                          ( ("mode" variable (:type ("CEC_MODE" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [57407 57421]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [57372 57946])
+                    ("setActivePortId" function
+                       (:parent "HdmiCecService"
+                        :arguments 
+                          ( ("portId" variable (:type "int") (reparse-symbol arg-sub-list) [57985 57996]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [57948 58054])
+                    ("setActiveDeviceId" function
+                       (:parent "HdmiCecService"
+                        :arguments 
+                          ( ("deviceId" variable (:type "int") (reparse-symbol arg-sub-list) [58095 58108]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [58056 58170])
+                    ("getActiveDeviceId" function
+                       (:parent "HdmiCecService"
+                        :type "int")
+                        (reparse-symbol namespacesubparts) [58172 58256])
+                    ("addLocalDevice" function
+                       (:parent "HdmiCecService"
+                        :arguments 
+                          ( ("deviceType" variable (:type "int") (reparse-symbol arg-sub-list) [58293 58308])
+                            ("device" variable
+                               (:reference 1
+                                :type ("sp" type
+                                     (:template-specifier 
+                                        ( ("HdmiCecLocalDevice" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [58309 58340]))                          
+                        :type "int")
+                        (reparse-symbol namespacesubparts) [58258 58477])
+                    ("addLogicAddr" function
+                       (:parent "HdmiCecService"
+                        :arguments 
+                          ( ("iLogicAddr" variable (:type "int") (reparse-symbol arg-sub-list) [58512 58527]))                          
+                        :type "int")
+                        (reparse-symbol namespacesubparts) [58479 58654])
+                    ("updateAddressAllocated" function
+                       (:parent "HdmiCecService"
+                        :arguments 
+                          ( ("allocated" variable (:type "bool") (reparse-symbol arg-sub-list) [58699 58714]))                          
+                        :type "int")
+                        (reparse-symbol namespacesubparts) [58656 58787])
+                    ("processAllBufferedMessages" function
+                       (:parent "HdmiCecService"
+                        :type "int")
+                        (reparse-symbol namespacesubparts) [58789 58977])
+                    ("getCurrentInputPortId" function
+                       (:parent "HdmiCecService"
+                        :type "int")
+                        (reparse-symbol namespacesubparts) [58979 59574])
+                    ("updateInputSourceChanged" function
+                       (:parent "HdmiCecService"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [59576 60931])
+                    ("postHotplugMsg" function
+                       (:parent "HdmiCecService"
+                        :arguments 
+                          ( ("ioType" variable (:type "int") (reparse-symbol arg-sub-list) [60969 60980])
+                            ("portId" variable (:type "int") (reparse-symbol arg-sub-list) [60981 60992])
+                            ("isConn" variable (:type "bool") (reparse-symbol arg-sub-list) [60993 61005])
+                            ("delayUs" variable (:type ("int64_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [61006 61022]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [60933 61356])
+                    ("postMsgReceivedMsg" function
+                       (:parent "HdmiCecService"
+                        :arguments 
+                          ( ("initiator" variable (:type "int") (reparse-symbol arg-sub-list) [61398 61412])
+                            ("destination" variable (:type "int") (reparse-symbol arg-sub-list) [61413 61429])
+                            ("body" variable
+                               (:reference 1
+                                :type ("Vector" type
+                                     (:template-specifier 
+                                        ( ("byte" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [61470 61489])
+                            ("delayUs" variable (:type ("int64_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [61490 61506]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [61358 61942])
+                    ("onCecMessageReceived" function
+                       (:parent "HdmiCecService"
+                        :arguments 
+                          ( ("initiator" variable (:type "int") (reparse-symbol arg-sub-list) [61986 62000])
+                            ("destination" variable (:type "int") (reparse-symbol arg-sub-list) [62001 62017])
+                            ("body" variable
+                               (:reference 1
+                                :type ("Vector" type
+                                     (:template-specifier 
+                                        ( ("byte" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [62060 62079]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [61944 63268])
+                    ("deviceInfoToCecDevice" function
+                       (:parent "HdmiCecService"
+                        :arguments 
+                          ( ("info" variable
+                               (:reference 1
+                                :type ("sp" type
+                                     (:template-specifier 
+                                        ( ("HdmiDeviceInfo" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [63323 63348]))                          
+                        :type ("sp" type
+                             (:template-specifier 
+                                ( ("CEC_DEVICE" type nil nil nil))                                
+                              :type "class")
+                              nil nil))
+                        (reparse-symbol namespacesubparts) [63270 64470])
+                    ("wakeupSystem" function
+                       (:parent "HdmiCecService"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [64472 65197])
+                    ("onNotify" function
+                       (:parent "HdmiCecService"
+                        :arguments 
+                          ( ("msg" variable (:type "int") (reparse-symbol arg-sub-list) [65229 65237])
+                            ("ext1" variable (:type "int") (reparse-symbol arg-sub-list) [65238 65247])
+                            ("UNUSED" variable (:type "int") (reparse-symbol arg-sub-list) [65248 65264])
+                            ("UNUSED" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type ("Parcel" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [65296 65321]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [65199 65666])
+                    ("onSettingsChanged" function
+                       (:parent "HdmiCecService"
+                        :arguments 
+                          ( ("key" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [65707 65726])
+                            ("value" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [65766 65787]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [65668 66927])
+                    ("onSettingUpdate" function
+                       (:parent "HdmiCecService"
+                        :arguments 
+                          ( ("name" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [66966 66983])
+                            ("value" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("AVSettingValue" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [66984 67012]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [66929 67954])
+                    ("onEventReceived" function
+                       (:parent "HdmiCecService"
+                        :arguments 
+                          ( ("event" variable
+                               (:reference 1
+                                :type ("sp" type
+                                     (:template-specifier 
+                                        ( ("HdmiCecEvent" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [67993 68017]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [67956 68465])
+                    ("onNotify" function
+                       (:parent "HdmiCecService"
+                        :arguments 
+                          ( ("event" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [68497 68511])
+                            ("value" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [68512 68526]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [68467 68727]))                  
+                :type "namespace")
+                nil [1146 68730]))          
+      :file "HdmiCecService.cpp"
+      :pointmax 68731
+      :fsize 68730
+      :lastmodtime '(22209 16924 34121 450000)
+      :unmatched-syntax '((semantic-list 65316 . 65321) (semantic-list 65258 . 65264) (semantic-list 39741 . 39747) (semantic-list 30530 . 30543) (semantic-list 14627 . 14634) (string 5468 . 5482))
+      :lexical-table 
+        '(("LOG_NDEBUG" . ((number "0" 641 . 642)))
+          ("LOG_TAG" . ((string "\"HdmiCecService\"" 659 . 675)))
+          )
+)
+    (semanticdb-table "HdmiPortInfo.h"
+      :file "HdmiPortInfo.h"
+      :fsize 2066
+      :lastmodtime '(21969 40135 201035 967000))
+    (semanticdb-table "HdmiCecConstants.h"
+      :file "HdmiCecConstants.h"
+      :fsize 10941
+      :lastmodtime '(22209 16924 34121 450000))
+    (semanticdb-table "HdmiCecMessageBuilder.h"
+      :file "HdmiCecMessageBuilder.h"
+      :fsize 5590
+      :lastmodtime '(22084 6026 717327 77000))
+    (semanticdb-table "HdmiUtils.h"
+      :file "HdmiUtils.h"
+      :fsize 2402
+      :lastmodtime '(22084 6026 717327 77000))
+    (semanticdb-table "HdmiCecLocalDevice.h"
+      :file "HdmiCecLocalDevice.h"
+      :fsize 10878
+      :lastmodtime '(22209 16924 34121 450000))
+    (semanticdb-table "HdmiCecLocalDeviceTv.h"
+      :file "HdmiCecLocalDeviceTv.h"
+      :fsize 10348
+      :lastmodtime '(22186 58036 137167 787000))
+    (semanticdb-table "HdmiCecService.h"
+      :file "HdmiCecService.h"
+      :fsize 12436
+      :lastmodtime '(22209 16924 34121 450000)))
+  :file "!home!qichen!20160212_1800_V0.2.19!vendor!marvell!midas-tv!frameworks!cecserver!libs!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

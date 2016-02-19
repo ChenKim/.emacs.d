@@ -1,0 +1,506 @@
+;; Object power/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "power/"
+  :tables
+  (list
+    (semanticdb-table "midas_power.cpp"
+      :major-mode 'c++-mode
+      :tags 
+        '( ("LOG_TAG" variable (:constant-flag t) nil [808 815])
+            ("hardware/hardware.h" include (:system-flag t) nil [824 854])
+            ("fcntl.h" include (:system-flag t) nil [856 874])
+            ("errno.h" include (:system-flag t) nil [875 893])
+            ("sys/stat.h" include (:system-flag t) nil [894 915])
+            ("cutils/log.h" include (:system-flag t) nil [917 940])
+            ("cutils/atomic.h" include (:system-flag t) nil [941 967])
+            ("cutils/properties.h" include (:system-flag t) nil [968 998])
+            ("cutils/android_reboot.h" include (:system-flag t) nil [999 1033])
+            ("bt_vendor_mrvl.h" include (:typemodifiers ("extern" "\"C\"")) (reparse-symbol extern-c-contents) [1156 1183])
+            ("config_wifi_wake.h" include (:typemodifiers ("extern" "\"C\"")) (reparse-symbol extern-c-contents) [1126 1155])
+            ("amp_client_support.h" include (:typemodifiers ("extern" "\"C\"")) (reparse-symbol extern-c-contents) [1094 1125])
+            ("amp_client.h" include (:typemodifiers ("extern" "\"C\"")) (reparse-symbol extern-c-contents) [1070 1093])
+            ("OSAL_api.h" include (:typemodifiers ("extern" "\"C\"")) (reparse-symbol extern-c-contents) [1048 1069])
+            ("binder/IInterface.h" include (:system-flag t) nil [1187 1217])
+            ("binder/IBinder.h" include (:system-flag t) nil [1218 1245])
+            ("utils/RefBase.h" include (:system-flag t) nil [1246 1272])
+            ("utils/String16.h" include (:system-flag t) nil [1273 1300])
+            ("utils/threads.h" include (:system-flag t) nil [1301 1327])
+            ("binder/IServiceManager.h" include (:system-flag t) nil [1328 1363])
+            ("hardware/midas_power.h" include (:system-flag t) nil [1364 1397])
+            ("hardware/sm_common.h" include (:system-flag t) nil [1398 1429])
+            ("keycodes.h" include (:system-flag t) nil [1431 1452])
+            ("HdmiCecManager.h" include nil nil [1534 1561])
+            ("IUSDTVService.h" include nil nil [1562 1588])
+            ("USDTVService.h" include nil nil [1589 1614])
+            ("SUSPEND_ATSC_INPUT" variable (:constant-flag t) nil [1623 1641])
+            ("com_type.h" include (:system-flag t) nil [1718 1739])
+            ("sm_agent.h" include (:system-flag t) nil [1740 1761])
+            ("aqserviceMVAPI.h" include nil nil [1762 1789])
+            ("fmisl.h" include (:system-flag t) nil [1791 1809])
+            ("ENABLE_ACTIVEHIGH" variable (:constant-flag t) nil [1878 1895])
+            ("USB_OC_DETECT_GPIO" variable (:constant-flag t) nil [1936 1954])
+            ("USB_5V_EN_GPIO" variable (:constant-flag t) nil [1968 1982])
+            ("POH_RX0_GPIO" variable (:constant-flag t) nil [2003 2015])
+            ("POH_RX1_GPIO" variable (:constant-flag t) nil [2031 2043])
+            ("POH_RX2_GPIO" variable (:constant-flag t) nil [2059 2071])
+            ("EXPORT" variable (:constant-flag t) nil [2087 2093])
+            ("DIRECTION" variable (:constant-flag t) nil [2137 2146])
+            ("VALUE" variable (:constant-flag t) nil [2200 2205])
+            ("MIDAS_STANDBY_PROP" variable (:constant-flag t) nil [2256 2274])
+            ("MIDAS_STANDBY_VALUE" variable (:constant-flag t) nil [2304 2323])
+            ("PSU_POWER_EN_GPIO" variable (:constant-flag t) nil [2343 2360])
+            ("psu_board_power_enable" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("on" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2403 2414]))                  
+                :type "void")
+                nil [2368 2415])
+            ("psu_board_init" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [2443 2448]))                  
+                :type "void")
+                nil [2416 2449])
+            ("poh_gpio" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{POH_RX0_GPIO, POH_RX1_GPIO, POH_RX2_GPIO}"
+                :type "int")
+                nil [2451 2525])
+            ("android" using (:type ("android" type
+                 (:prototype t
+                  :type "namespace")
+                  nil nil)) nil [2607 2631])
+            ("gMutex" variable (:type ("Mutex" type (:type "class") nil nil)) nil [2633 2646])
+            ("gUSDTVService" variable
+               (:default-value "NULL"
+                :type ("sp" type
+                     (:template-specifier 
+                        ( ("IUSDTVService" type nil nil nil))                        
+                      :type "class")
+                      nil nil))
+                nil [2647 2686])
+            ("USDTVDeathRecipient" type
+               (:superclasses 
+                  ( ("IBinder::DeathRecipient" type
+                       (:protection "public"
+                        :type "class")
+                        nil nil))                  
+                :members 
+                  ( ("public" label nil (reparse-symbol classsubparts) [2750 2757])
+                    ("USDTVDeathRecipient" function
+                       (:constructor-flag t
+                        :type ("USDTVDeathRecipient" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2762 2786])
+                    ("USDTVDeathRecipient" function
+                       (:destructor-flag t
+                        :typemodifiers ("virtual")
+                        :type "void")
+                        (reparse-symbol classsubparts) [2791 2824])
+                    ("binderDied" function
+                       (:typemodifiers ("virtual")
+                        :arguments 
+                          ( ("who" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("wp" type
+                                     (:template-specifier 
+                                        ( ("IBinder" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [2853 2876]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [2829 2943]))                  
+                :type "class")
+                nil [2688 2946])
+            ("get_usdtv_service" function
+               (:typemodifiers ("static")
+                :type ("sp" type
+                     (:template-specifier 
+                        ( ("IUSDTVService" type nil nil nil))                        
+                      :type "class")
+                      nil nil))
+                nil [2948 3547])
+            ("suspend_atsc" function
+               (:typemodifiers ("static")
+                :type "int")
+                nil [3549 3803])
+            ("resume_atsc" function
+               (:typemodifiers ("static")
+                :type "int")
+                nil [3805 4085])
+            ("power_sm_wake_for_BGUpdate" function
+               (:arguments 
+                  ( ("module" variable
+                       (:pointer 1
+                        :type ("midas_power_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4119 4153])
+                    ("time" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4154 4167]))                  
+                :type "void")
+                nil [4087 4716])
+            ("sm_ir_disable" function (:type "int") nil [4718 5277])
+            ("sm_ir_enable" function (:type "int") nil [5279 5834])
+            ("cast_wakeup_sm" function
+               (:typemodifiers ("static")
+                :type "int")
+                nil [5837 6351])
+            ("set_sm_power_active_to_suspend_request" function
+               (:typemodifiers ("static")
+                :type "int")
+                nil [6433 6970])
+            ("set_sm_power_normalstandby_request" function
+               (:typemodifiers ("static")
+                :type "int")
+                nil [7052 7586])
+            ("set_sm_power_standby_request" function
+               (:typemodifiers ("static")
+                :type "int")
+                nil [7668 8195])
+            ("set_sm_watchdog_status" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("disable" variable (:type "bool") (reparse-symbol arg-sub-list) [8311 8324]))                  
+                :type "int")
+                nil [8277 8977])
+            ("set_sm_warmup_timer" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [9090 9095]))                  
+                :type "int")
+                nil [9059 10075])
+            ("power_context_t" type
+               (:members 
+                  ( ("device" variable (:type ("midas_power_device_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [10105 10133])
+                    ("factory" variable (:type ("AMP_FACTORY" type (:type "class") nil nil)) (reparse-symbol classsubparts) [10138 10158])
+                    ("amp_lib" variable (:type ("AMP_LIB" type (:type "class") nil nil)) (reparse-symbol classsubparts) [10163 10179]))                  
+                :type "struct")
+                nil [10076 10182])
+            ("client_argv" variable
+               (:pointer 1
+                :dereference 1
+                :typemodifiers ("static")
+                :default-value "{
+    (char*)\"client\",
+    (char*)\"iiop:1.0//127.0.0.1:999/AMP::FACTORY/factory\" }"
+                :type "char")
+                nil [10184 10296])
+            ("midas_power_device_open" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("module" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("hw_module_t" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10333 10366])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [10367 10384])
+                    ("device" variable
+                       (:pointer 2
+                        :type ("hw_device_t" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10413 10441]))                  
+                :type "int")
+                nil [10298 10442])
+            ("midas_power_module_methods" variable
+               (:typemodifiers ("static")
+                :default-value "{
+    open: midas_power_device_open
+}"
+                :type ("hw_module_methods_t" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [10444 10545])
+            ("HAL_MODULE_INFO_SYM" variable
+               (:default-value "{
+    common: {
+        tag: HARDWARE_MODULE_TAG,
+        version_major: 1,
+        version_minor: 0,
+        id: POWER_HARDWARE_MODULE_ID,
+        name: \"Marvell MIDAS Power HAL\",
+        author: \"Marvell\",
+        methods: &midas_power_module_methods,
+    }
+}"
+                :type ("midas_power_module_t" type (:type "class") nil nil))
+                nil [10547 10852])
+            ("midas_power_device_close" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("hw_device_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [10890 10907]))                  
+                :type "int")
+                nil [10854 11160])
+            ("set_display_power" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("on" variable (:type "bool") (reparse-symbol arg-sub-list) [11192 11200]))                  
+                :type "void")
+                nil [11162 11429])
+            ("power_standby" function
+               (:arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("midas_power_device_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [11450 11476])
+                    ("standby_option" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11476 11499]))                  
+                :type "void")
+                nil [11431 12322])
+            ("power_create_amp_lib" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("midas_power_device_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [12357 12383]))                  
+                :type "bool")
+                nil [12324 12901])
+            ("power_run_inBG" function
+               (:arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("midas_power_device_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [12922 12948]))                  
+                :type "void")
+                nil [12902 13012])
+            ("power_run_toFG" function
+               (:arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("midas_power_device_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [13033 13059]))                  
+                :type "void")
+                nil [13013 13123])
+            ("power_sleep" function
+               (:arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("midas_power_device_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [13142 13168]))                  
+                :type "void")
+                nil [13125 14376])
+            ("power_wakeup" function
+               (:arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("midas_power_device_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [14396 14422]))                  
+                :type "void")
+                nil [14378 15164])
+            ("power_shutdown" function
+               (:arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("midas_power_device_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [15186 15212]))                  
+                :type "void")
+                nil [15166 15937])
+            ("export_gpio" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("gpio" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15963 15976]))                  
+                :type "void")
+                nil [15939 16069])
+            ("set_gpio_direction" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("gpio" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [16102 16115])
+                    ("direction" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [16116 16134]))                  
+                :type "void")
+                nil [16071 16252])
+            ("set_gpio_value" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("gpio" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [16281 16294])
+                    ("value" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [16295 16309]))                  
+                :type "void")
+                nil [16254 16408])
+            ("get_gpio_value" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("gpio" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [16440 16453]))                  
+                :type ("int32_t" type (:type "class") nil nil))
+                nil [16410 16875])
+            ("set_poh" function
+               (:arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("midas_power_device_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [16890 16916])
+                    ("keycode" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [16917 16933])
+                    ("on" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [16934 16945]))                  
+                :type "void")
+                nil [16877 17635])
+            ("get_poh" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("midas_power_device_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [17660 17686]))                  
+                :type ("int32_t" type (:type "class") nil nil))
+                nil [17637 17822])
+            ("poh_init" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [17845 17850]))                  
+                :type "void")
+                nil [17824 18037])
+            ("get_usb_oc_status" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("midas_power_device_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [18072 18098]))                  
+                :type ("int32_t" type (:type "class") nil nil))
+                nil [18039 18149])
+            ("set_usb_power" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("midas_power_device_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [18177 18203])
+                    ("on" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [18204 18215]))                  
+                :type "void")
+                nil [18151 18325])
+            ("usb_oc_detect_init" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [18358 18363]))                  
+                :type "void")
+                nil [18327 18437])
+            ("psu_board_power_enable" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("on" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [18474 18485]))                  
+                :type "void")
+                nil [18439 18601])
+            ("psu_board_init" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [18630 18635]))                  
+                :type "void")
+                nil [18603 18675])
+            ("write_command" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("command" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [18703 18723]))                  
+                :type "bool")
+                nil [18677 19108])
+            ("power_reboot" function
+               (:arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("midas_power_device_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [19128 19154])
+                    ("reason" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [19155 19172])
+                    ("path" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [19173 19190]))                  
+                :type "void")
+                nil [19110 20412])
+            ("power_get_boot_reason" function
+               (:arguments 
+                  ( ("module" variable
+                       (:pointer 1
+                        :type ("midas_power_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [20441 20475])
+                    ("boot_reason" variable
+                       (:pointer 1
+                        :type ("int32_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [20476 20497]))                  
+                :type "void")
+                nil [20414 22360])
+            ("power_on_screen" function
+               (:arguments 
+                  ( ("module" variable
+                       (:pointer 1
+                        :type ("midas_power_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [22383 22417]))                  
+                :type "void")
+                nil [22362 22500])
+            ("midas_power_device_open" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("module" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("hw_module_t" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [22617 22650])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [22651 22668])
+                    ("device" variable
+                       (:pointer 2
+                        :type ("hw_device_t" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [22697 22725]))                  
+                :type "int")
+                nil [22582 24074]))          
+      :file "midas_power.cpp"
+      :pointmax 24075
+      :fsize 24074
+      :lastmodtime '(22163 27924 646499 470000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("MIDAS_STANDBY_VALUE" . ((string "\"standby\"" 2324 . 2333)))
+          ("SUSPEND_ATSC_INPUT" . ((number "2" 1642 . 1643)))
+          ("ENABLE_ACTIVEHIGH" . ((symbol "TRUE" 1896 . 1900)))
+          ("USB_5V_EN_GPIO" . ((number "251" 1984 . 1987)))
+          ("POH_RX1_GPIO" . ((number "167" 2047 . 2050)))
+          ("EXPORT" . ((string "\"echo %d > /sys/class/gpio/export\"" 2094 . 2128)))
+          ("VALUE" . ((string "\"echo %d > /sys/class/gpio/gpio%d/value\"" 2206 . 2246)))
+          ("USB_OC_DETECT_GPIO" . ((number "250" 1956 . 1959)))
+          ("PSU_POWER_EN_GPIO" . ((number "206" 2364 . 2367)))
+          ("POH_RX0_GPIO" . ((number "184" 2019 . 2022)))
+          ("DIRECTION" . ((string "\"echo %s > /sys/class/gpio/gpio%d/direction\"" 2147 . 2191)))
+          ("LOG_TAG" . ((string "\"Power\"" 816 . 823)))
+          ("POH_RX2_GPIO" . ((number "165" 2075 . 2078)))
+          ("MIDAS_STANDBY_PROP" . ((string "\"ro.marvell.standby\"" 2275 . 2295)))
+          )
+))
+  :file "!home!qichen!bg4dtv_20151231_rc3_a0!vendor!marvell!midas-tv!hardware!modules!power!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

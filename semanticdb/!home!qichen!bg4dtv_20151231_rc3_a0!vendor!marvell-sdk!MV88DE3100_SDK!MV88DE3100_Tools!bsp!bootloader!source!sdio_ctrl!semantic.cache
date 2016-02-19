@@ -1,0 +1,690 @@
+;; Object sdio_ctrl/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "sdio_ctrl/"
+  :tables
+  (list
+    (semanticdb-table "sdio_diag.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("diag.h" include nil nil [1 18])
+            ("util.h" include nil nil [19 36])
+            ("global.h" include nil nil [37 56])
+            ("memmap.h" include nil nil [57 76])
+            ("apb_perf_base.h" include nil nil [77 103])
+            ("sdio_controller.h" include nil nil [104 132])
+            ("sdmmc_api.h" include nil nil [133 155])
+            ("irq.h" include nil nil [156 172])
+            ("io.h" include nil nil [173 188])
+            ("soc.h" include nil nil [232 248])
+            ("sys_mgr.h" include nil nil [279 299])
+            ("debug.h" include nil nil [300 318])
+            ("apb_timer.h" include nil nil [320 342])
+            ("MMC4CMDSWReset" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("pContext" variable (:type ("P_MM4_SDMMC_CONTEXT_T" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [435 466]))                  
+                :type "void")
+                nil [408 467])
+            ("MMC4SendDataCommandNoAuto12" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("pContext" variable (:type ("P_MM4_SDMMC_CONTEXT_T" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [508 539])
+                    ("Cmd" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [558 569])
+                    ("Argument" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [588 605])
+                    ("BlockType" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [624 641])
+                    ("DataDirection" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [660 681])
+                    ("ResType" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [700 715]))                  
+                :type "void")
+                nil [468 716])
+            ("SDIO_INTERNAL_DIV" variable (:constant-flag t) nil [753 770])
+            ("SD3_SLOT1_BASE_OFFSET" variable (:constant-flag t) nil [845 866])
+            ("SD3_SLOT2_BASE_OFFSET" variable (:constant-flag t) nil [889 910])
+            ("SD3_SLOT3_BASE_OFFSET" variable (:constant-flag t) nil [948 969])
+            ("LOG_REG" variable (:constant-flag t) nil [996 1003])
+            ("SDIO3_SLOT1_REG_BASE" variable (:constant-flag t) nil [1076 1096])
+            ("SDIO3_SLOT2_REG_BASE" variable (:constant-flag t) nil [1154 1174])
+            ("SDIO3_SLOT3_REG_BASE" variable (:constant-flag t) nil [1232 1252])
+            ("GLOBAL_SDIO_DLLMST_STATUS" variable (:constant-flag t) nil [1310 1335])
+            ("GLOBAL_SDIO_DLLMST_REF" variable (:constant-flag t) nil [1402 1424])
+            ("GLOBAL_SDIO_DLLMST_CTRL" variable (:constant-flag t) nil [1491 1514])
+            ("SDIO_ADMA_RXDESC_BASE" variable (:constant-flag t) nil [1582 1603])
+            ("SDIO_ADMA_TXDESC_BASE" variable (:constant-flag t) nil [1621 1642])
+            ("SDIO_BOOT_BUF" variable (:constant-flag t) nil [1660 1673])
+            ("SDIO_CARD_PRESENT_BIT" variable (:constant-flag t) nil [1696 1717])
+            ("SD_CE_ATA_2_OFFSET" variable (:constant-flag t) nil [1734 1752])
+            ("SD_CE_ATA_2_REG" variable (:constant-flag t) nil [1781 1796])
+            ("NoError" variable (:constant-flag t) nil [1943 1950])
+            ("NotFoundError" variable (:constant-flag t) nil [1995 2008])
+            ("GeneralError" variable (:constant-flag t) nil [2055 2067])
+            ("WriteError" variable (:constant-flag t) nil [2115 2125])
+            ("ReadError" variable (:constant-flag t) nil [2175 2184])
+            ("NotSupportedError" variable (:constant-flag t) nil [2251 2268])
+            ("InvalidPlatformConfigError" variable (:constant-flag t) nil [2319 2345])
+            ("PlatformBusy" variable (:constant-flag t) nil [2379 2391])
+            ("PlatformReady" variable (:constant-flag t) nil [2447 2460])
+            ("InvalidSizeError" variable (:constant-flag t) nil [2515 2531])
+            ("EraseError" variable (:constant-flag t) nil [2652 2662])
+            ("ProgramError" variable (:constant-flag t) nil [2729 2741])
+            ("InvalidBootTypeError" variable (:constant-flag t) nil [2798 2818])
+            ("ProtectionRegProgramError" variable (:constant-flag t) nil [2859 2884])
+            ("NoOTPFound" variable (:constant-flag t) nil [2920 2930])
+            ("BBTReadError" variable (:constant-flag t) nil [2997 3009])
+            ("MDOCInitFailed" variable (:constant-flag t) nil [3066 3080])
+            ("OneNandInitFailed" variable (:constant-flag t) nil [3135 3152])
+            ("MDOCFormatFailed" variable (:constant-flag t) nil [3184 3200])
+            ("BBTExhaustedError" variable (:constant-flag t) nil [3233 3250])
+            ("FlashDriverInitError" variable (:constant-flag t) nil [3282 3302])
+            ("FlashFuncNotDefined" variable (:constant-flag t) nil [3331 3350])
+            ("OTPError" variable (:constant-flag t) nil [3400 3408])
+            ("InvalidAddressRangeError" variable (:constant-flag t) nil [3477 3501])
+            ("FlashLockError" variable (:constant-flag t) nil [3538 3552])
+            ("ReadDisturbError" variable (:constant-flag t) nil [3607 3623])
+            ("WriteProtectError" variable (:constant-flag t) nil [3676 3693])
+            ("TimeOutError" variable (:constant-flag t) nil [3726 3738])
+            ("SDMMC_SWITCH_ERROR" variable (:constant-flag t) nil [3871 3889])
+            ("SDMMC_ERASE_RESET_ERROR" variable (:constant-flag t) nil [3940 3963])
+            ("SDMMC_CIDCSD_OVERWRITE_ERROR" variable (:constant-flag t) nil [4001 4029])
+            ("SDMMC_OVERRUN_ERROR" variable (:constant-flag t) nil [4054 4073])
+            ("SDMMC_UNDERUN_ERROR" variable (:constant-flag t) nil [4115 4134])
+            ("SDMMC_GENERAL_ERROR" variable (:constant-flag t) nil [4176 4195])
+            ("SDMMC_CC_ERROR" variable (:constant-flag t) nil [4237 4251])
+            ("SDMMC_ECC_ERROR" variable (:constant-flag t) nil [4306 4321])
+            ("SDMMC_ILL_CMD_ERROR" variable (:constant-flag t) nil [4367 4386])
+            ("SDMMC_COM_CRC_ERROR" variable (:constant-flag t) nil [4428 4447])
+            ("SDMMC_LOCK_ULOCK_ERRROR" variable (:constant-flag t) nil [4497 4520])
+            ("SDMMC_LOCK_ERROR" variable (:constant-flag t) nil [4558 4574])
+            ("SDMMC_WP_ERROR" variable (:constant-flag t) nil [4627 4641])
+            ("SDMMC_ERASE_PARAM_ERROR" variable (:constant-flag t) nil [4696 4719])
+            ("SDMMC_ERASE_SEQ_ERROR" variable (:constant-flag t) nil [4757 4778])
+            ("SDMMC_BLK_LEN_ERROR" variable (:constant-flag t) nil [4818 4837])
+            ("SDMMC_ADDR_MISALIGN_ERROR" variable (:constant-flag t) nil [4879 4904])
+            ("SDMMC_ADDR_RANGE_ERROR" variable (:constant-flag t) nil [4940 4962])
+            ("SDMMCDeviceNotReadyError" variable (:constant-flag t) nil [5001 5025])
+            ("SDMMCInitializationError" variable (:constant-flag t) nil [5062 5086])
+            ("SDMMCDeviceVoltageNotSupported" variable (:constant-flag t) nil [5123 5153])
+            ("SDIO_SD" type
+               (:members 
+                  ( ("dataBusWidth" variable (:type "unsigned char") (reparse-symbol classsubparts) [5198 5227])
+                    ("securedMode" variable (:type "unsigned char") (reparse-symbol classsubparts) [5232 5260])
+                    ("sdCardType" variable (:type "unsigned short") (reparse-symbol classsubparts) [5265 5292])
+                    ("sizeProtectedArea" variable (:type "unsigned int") (reparse-symbol classsubparts) [5297 5331])
+                    ("speedClass" variable (:type "unsigned char") (reparse-symbol classsubparts) [5336 5363])
+                    ("performanceMove" variable (:type "unsigned char") (reparse-symbol classsubparts) [5368 5400])
+                    ("auSize" variable (:type "unsigned short") (reparse-symbol classsubparts) [5405 5428]))                  
+                :type "struct")
+                nil [5169 5440])
+            ("SDIO_SD" type
+               (:typedef ("SDIO_SD" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [5169 5440])
+            ("SDIO_SCR" type
+               (:members 
+                  ( ("structure" variable (:type "unsigned char") (reparse-symbol classsubparts) [5471 5497])
+                    ("specVersion" variable (:type "unsigned char") (reparse-symbol classsubparts) [5502 5530])
+                    ("dataStatus" variable (:type "unsigned char") (reparse-symbol classsubparts) [5535 5562])
+                    ("security" variable (:type "unsigned char") (reparse-symbol classsubparts) [5567 5592])
+                    ("busWidth" variable (:type "unsigned char") (reparse-symbol classsubparts) [5597 5622])
+                    ("reserved" variable (:type "unsigned short") (reparse-symbol classsubparts) [5627 5652])
+                    ("manufatureReserved" variable (:type "unsigned long") (reparse-symbol classsubparts) [5657 5692]))                  
+                :type "struct")
+                nil [5441 5705])
+            ("SDIO_SCR" type
+               (:typedef ("SDIO_SCR" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [5441 5705])
+            ("SDIO_CID" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("manufactureID" variable (:type "unsigned char") (reparse-symbol classsubparts) [5834 5864])
+                          ("OEM" variable
+                             (:dereference 1
+                              :type "char")
+                              (reparse-symbol classsubparts) [5869 5892])
+                          ("name" variable
+                             (:dereference 1
+                              :type "char")
+                              (reparse-symbol classsubparts) [5897 5921])
+                          ("revision" variable (:type "unsigned char") (reparse-symbol classsubparts) [5978 6003])
+                          ("serialNumber" variable (:type "unsigned long") (reparse-symbol classsubparts) [6008 6037])
+                          ("manufactureDate" variable (:type "unsigned short") (reparse-symbol classsubparts) [6042 6074]))                        
+                      :type "struct")
+                      nil nil)
+                :type "typedef")
+                nil [5756 6127])
+            ("SDIO_CSD" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("structure" variable (:type "unsigned char") (reparse-symbol classsubparts) [6157 6183])
+                          ("specificationVersion" variable (:type "unsigned char") (reparse-symbol classsubparts) [6250 6287])
+                          ("dataReadAccessTime2" variable (:type "unsigned char") (reparse-symbol classsubparts) [6292 6328])
+                          ("dataReadAccessTime1" variable (:type "unsigned char") (reparse-symbol classsubparts) [6333 6369])
+                          ("maxDataTransferRate" variable (:type "unsigned char") (reparse-symbol classsubparts) [6374 6410])
+                          ("cardCommandClass" variable (:type "unsigned short") (reparse-symbol classsubparts) [6415 6448])
+                          ("readBlockLength" variable (:type "unsigned char") (reparse-symbol classsubparts) [6453 6485])
+                          ("partialReadFlag" variable (:type "unsigned char") (reparse-symbol classsubparts) [6490 6522])
+                          ("writeBlockMisalign" variable (:type "unsigned char") (reparse-symbol classsubparts) [6527 6562])
+                          ("readBlockMisalign" variable (:type "unsigned char") (reparse-symbol classsubparts) [6567 6601])
+                          ("DSR_implemented" variable (:type "unsigned char") (reparse-symbol classsubparts) [6606 6638])
+                          ("deviceSize" variable (:type "unsigned short") (reparse-symbol classsubparts) [6643 6670])
+                          ("maxreadCurrent_VddMin" variable (:type "unsigned char") (reparse-symbol classsubparts) [6675 6713])
+                          ("maxReadCurrent_VddMax" variable (:type "unsigned char") (reparse-symbol classsubparts) [6718 6756])
+                          ("maxWriteCurrent_VddMin" variable (:type "unsigned char") (reparse-symbol classsubparts) [6761 6800])
+                          ("maxWriteCurrent_VddMax" variable (:type "unsigned char") (reparse-symbol classsubparts) [6805 6844])
+                          ("deviceSizeMultiplier" variable (:type "unsigned char") (reparse-symbol classsubparts) [6849 6886])
+                          ("eraseBlockEnable" variable (:type "unsigned char") (reparse-symbol classsubparts) [6891 6924])
+                          ("eraseSectorSize" variable (:type "unsigned char") (reparse-symbol classsubparts) [6949 6981])
+                          ("eraseGroupSize" variable (:type "unsigned char") (reparse-symbol classsubparts) [7022 7053])
+                          ("WP_GroupSize" variable (:type "unsigned char") (reparse-symbol classsubparts) [7082 7111])
+                          ("WP_GroupEnable" variable (:type "unsigned char") (reparse-symbol classsubparts) [7155 7186])
+                          ("writeSpeedFactor" variable (:type "unsigned char") (reparse-symbol classsubparts) [7191 7224])
+                          ("writeBlockLength" variable (:type "unsigned char") (reparse-symbol classsubparts) [7229 7262])
+                          ("partialWriteFlag" variable (:type "unsigned char") (reparse-symbol classsubparts) [7267 7300])
+                          ("fileFormatGroup" variable (:type "unsigned char") (reparse-symbol classsubparts) [7305 7337])
+                          ("copyFlag" variable (:type "unsigned char") (reparse-symbol classsubparts) [7342 7367])
+                          ("WP_perm" variable (:type "unsigned char") (reparse-symbol classsubparts) [7372 7396])
+                          ("WP_temp" variable (:type "unsigned char") (reparse-symbol classsubparts) [7401 7425])
+                          ("fileFormat" variable (:type "unsigned char") (reparse-symbol classsubparts) [7430 7457]))                        
+                      :type "struct")
+                      nil nil)
+                :type "typedef")
+                nil [6136 7470])
+            ("SDMMC_Prop" variable (:type ("SDMMC_Properties_T" type (:type "class") nil nil)) nil [7472 7507])
+            ("MM4_Context" variable (:type ("MM4_SDMMC_CONTEXT_T" type (:type "class") nil nil)) nil [7508 7544])
+            ("emmc_inited" variable
+               (:default-value "0"
+                :type "int")
+                nil [7545 7570])
+            ("m_cid" variable (:type ("SDIO_CID" type (:type "class") nil nil)) nil [7571 7586])
+            ("ALIGNED" variable (:constant-flag t) nil [7596 7603])
+            ("ext_csd_buff" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :type "unsigned int")
+                nil [7670 7713])
+            ("p_ext_csd_32" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :type "unsigned int")
+                nil [7714 7748])
+            ("p_ext_csd_8" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :type "unsigned char")
+                nil [7749 7783])
+            ("MM4_MMCReadEXTCSD" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("pBuffer" variable
+                       (:pointer 1
+                        :type ("UINT32" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7811 7827]))                  
+                :type ("UINT32" type (:type "class") nil nil))
+                nil [7785 7828])
+            ("mmc4_switch" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("pSDMMCP" variable (:type ("P_SDMMC_Properties_T" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7852 7881])
+                    ("set" variable (:type "unsigned char") (reparse-symbol arg-sub-list) [7882 7900])
+                    ("index" variable (:type "unsigned char") (reparse-symbol arg-sub-list) [7901 7921])
+                    ("value" variable (:type "unsigned char") (reparse-symbol arg-sub-list) [7922 7942]))                  
+                :type "int")
+                nil [7829 7943])
+            ("mmc4_set_hs" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("pSDMMCP" variable (:type ("P_SDMMC_Properties_T" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7967 7996]))                  
+                :type "int")
+                nil [7944 7997])
+            ("mmc4_wait_card_ready" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("pSDMMCP" variable (:type ("P_SDMMC_Properties_T" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8030 8059]))                  
+                :type "int")
+                nil [7998 8060])
+            ("MM4_SendDataCommand" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("pSDMMCP" variable (:type ("P_SDMMC_Properties_T" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8087 8116])
+                    ("Cmd" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8135 8146])
+                    ("Argument" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8165 8182])
+                    ("BlockType" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8201 8218])
+                    ("DataDirection" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8237 8258])
+                    ("ResType" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8277 8292]))                  
+                :type "void")
+                nil [8061 8293])
+            ("MM4_SendStopCommand" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("pSDMMCP" variable (:type ("P_SDMMC_Properties_T" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8319 8348]))                  
+                :type "void")
+                nil [8294 8349])
+            ("MM4_SendSetupCommand" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("pSDMMCP" variable (:type ("P_SDMMC_Properties_T" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8377 8406])
+                    ("Cmd" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8425 8436])
+                    ("CmdType" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8455 8470])
+                    ("Argument" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8489 8505])
+                    ("ResType" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8524 8539]))                  
+                :type "void")
+                nil [8351 8540])
+            ("MM4_SendDataCommandNoAuto12" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("pSDMMCP" variable (:type ("P_SDMMC_Properties_T" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8574 8603])
+                    ("Cmd" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8622 8633])
+                    ("Argument" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8652 8669])
+                    ("BlockType" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8688 8705])
+                    ("DataDirection" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8724 8745])
+                    ("ResType" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8764 8779]))                  
+                :type "void")
+                nil [8541 8780])
+            ("MM4_CheckCardStatus" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("pSDMMCP" variable (:type ("P_SDMMC_Properties_T" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8809 8838])
+                    ("R1_Resp_Match" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8839 8860])
+                    ("Mask" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8861 8873]))                  
+                :type ("UINT32" type (:type "class") nil nil))
+                nil [8782 8874])
+            ("MM4_CheckCardStatus_with_Timeout" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("pSDMMCP" variable (:type ("P_SDMMC_Properties_T" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8915 8944])
+                    ("R1_Resp_Match" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8945 8966])
+                    ("Mask" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8967 8979])
+                    ("MaxWaitMSec" variable (:type ("INT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8980 8998]))                  
+                :type ("UINT32" type (:type "class") nil nil))
+                nil [8875 8999])
+            ("MM4_ReadFifo" function
+               (:arguments 
+                  ( ("pSDMMCP" variable (:type ("P_SDMMC_Properties_T" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9403 9432]))                  
+                :type "void")
+                nil [9385 10423])
+            ("MM4_WriteFifo" function
+               (:arguments 
+                  ( ("pSDMMCP" variable (:type ("P_SDMMC_Properties_T" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10773 10802]))                  
+                :type "void")
+                nil [10754 11736])
+            ("MM4_Interpret_Response" function
+               (:arguments 
+                  ( ("pSDMMCP" variable (:type ("P_SDMMC_Properties_T" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12533 12562])
+                    ("ResponseType" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12563 12583])
+                    ("ResponseTimeOut" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12584 12607]))                  
+                :type ("UINT32" type (:type "class") nil nil))
+                nil [12503 19214])
+            ("MM4_ReadOneBlock" function
+               (:arguments 
+                  ( ("pSDMMCP" variable (:type ("P_SDMMC_Properties_T" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [19623 19652]))                  
+                :type ("UINT32" type (:type "class") nil nil))
+                nil [19599 21389])
+            ("MM4_ReadBlocks" function
+               (:arguments 
+                  ( ("pSDMMCP" variable (:type ("P_SDMMC_Properties_T" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [21786 21815]))                  
+                :type ("UINT32" type (:type "class") nil nil))
+                nil [21764 23604])
+            ("SDIOReadOneBlk" function
+               (:arguments 
+                  ( ("pSDMMCP" variable (:type ("P_SDMMC_Properties_T" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [23630 23659])
+                    ("FlashOffset" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [23660 23679])
+                    ("LocalBuffer" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [23680 23699])
+                    ("Size" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [23700 23712]))                  
+                :type ("UINT32" type (:type "class") nil nil))
+                nil [23607 26369])
+            ("MM4_WriteOneBlock" function
+               (:arguments 
+                  ( ("pSDMMCP" variable (:type ("P_SDMMC_Properties_T" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [26768 26797]))                  
+                :type ("UINT32" type (:type "class") nil nil))
+                nil [26743 28833])
+            ("MM4_WriteBlocks" function
+               (:arguments 
+                  ( ("pSDMMCP" variable (:type ("P_SDMMC_Properties_T" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [29227 29256]))                  
+                :type ("UINT32" type (:type "class") nil nil))
+                nil [29204 31886])
+            ("SDIOWriteOneBlk" function
+               (:arguments 
+                  ( ("pSDMMCP" variable (:type ("P_SDMMC_Properties_T" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [32966 32995])
+                    ("FlashOffset" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [32996 33015])
+                    ("LocalBuffer" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [33016 33035])
+                    ("Size" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [33036 33048]))                  
+                :type ("UINT32" type (:type "class") nil nil))
+                nil [32942 35516])
+            ("SDIOErase" function
+               (:arguments 
+                  ( ("pSDMMCP" variable (:type ("P_SDMMC_Properties_T" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [35532 35561])
+                    ("start" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [35562 35581])
+                    ("end" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [35582 35599]))                  
+                :type "int")
+                nil [35518 37695])
+            ("SDIOWrite" function
+               (:arguments 
+                  ( ("pSDMMCP" variable (:type ("P_SDMMC_Properties_T" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [37711 37740])
+                    ("start" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [37741 37760])
+                    ("blk" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [37761 37778])
+                    ("puchWriteBuff" variable
+                       (:pointer 1
+                        :type "unsigned char")
+                        (reparse-symbol arg-sub-list) [37779 37808]))                  
+                :type "int")
+                nil [37697 37985])
+            ("MM4_Get_CID" function
+               (:arguments 
+                  ( ("pSDMMCP" variable (:type ("P_SDMMC_Properties_T" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [38925 38954]))                  
+                :type "void")
+                nil [38908 41054])
+            ("MM4_Get_SCR" function
+               (:arguments 
+                  ( ("pSDMMCP" variable (:type ("P_SDMMC_Properties_T" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [41075 41104]))                  
+                :type "void")
+                nil [41058 41881])
+            ("SDIORead" function
+               (:arguments 
+                  ( ("pSDMMCP" variable (:type ("P_SDMMC_Properties_T" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [41904 41933])
+                    ("start" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [41934 41953])
+                    ("blk" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [41954 41971])
+                    ("puchReadBuff" variable
+                       (:pointer 1
+                        :type "unsigned char")
+                        (reparse-symbol arg-sub-list) [41972 42000]))                  
+                :type "int")
+                nil [41891 42480])
+            ("MM4_SetControllerVoltage" function
+               (:arguments 
+                  ( ("pContext" variable (:type ("P_MM4_SDMMC_CONTEXT_T" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [43005 43036]))                  
+                :type ("UINT32" type (:type "class") nil nil))
+                nil [42972 43792])
+            ("MM4_CheckCardStatus" function
+               (:arguments 
+                  ( ("pSDMMCP" variable (:type ("P_SDMMC_Properties_T" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [44374 44403])
+                    ("R1_Resp_Match" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [44404 44425])
+                    ("Mask" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [44426 44438]))                  
+                :type ("UINT32" type (:type "class") nil nil))
+                nil [44347 45236])
+            ("MM4_CheckCardStatus_with_Timeout" function
+               (:arguments 
+                  ( ("pSDMMCP" variable (:type ("P_SDMMC_Properties_T" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [45831 45860])
+                    ("R1_Resp_Match" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [45861 45882])
+                    ("Mask" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [45883 45895])
+                    ("MaxWaitMSec" variable (:type ("INT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [45896 45914]))                  
+                :type ("UINT32" type (:type "class") nil nil))
+                nil [45791 46783])
+            ("MM4_CheckVoltageCompatibility" function
+               (:arguments 
+                  ( ("pSDMMCP" variable (:type ("P_SDMMC_Properties_T" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [47294 47323])
+                    ("ControllerVoltage" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [47324 47349]))                  
+                :type ("UINT32" type (:type "class") nil nil))
+                nil [47257 48283])
+            ("MM4SetBusWidth" function
+               (:arguments 
+                  ( ("pSDMMCP" variable (:type ("P_SDMMC_Properties_T" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [48664 48693]))                  
+                :type ("UINT32" type (:type "class") nil nil))
+                nil [48642 49418])
+            ("MM4_IDCard" function
+               (:arguments 
+                  ( ("pSDMMCP" variable (:type ("P_SDMMC_Properties_T" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [49796 49825])
+                    ("pControllerVoltage" variable
+                       (:pointer 1
+                        :type ("UINT32" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [49826 49853]))                  
+                :type "unsigned int")
+                nil [49772 53113])
+            ("MM4_Get_CSD" function
+               (:arguments 
+                  ( ("pSDMMCP" variable (:type ("P_SDMMC_Properties_T" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [53298 53327]))                  
+                :type "void")
+                nil [53281 58588])
+            ("mmc4_wait_card_ready" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("pSDMMCP" variable (:type ("P_SDMMC_Properties_T" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [58622 58651]))                  
+                :type "int")
+                nil [58590 59351])
+            ("mmc4_switch" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("pSDMMCP" variable (:type ("P_SDMMC_Properties_T" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [59376 59405])
+                    ("set" variable (:type "unsigned char") (reparse-symbol arg-sub-list) [59406 59424])
+                    ("index" variable (:type "unsigned char") (reparse-symbol arg-sub-list) [59425 59445])
+                    ("value" variable (:type "unsigned char") (reparse-symbol arg-sub-list) [59446 59466]))                  
+                :type "int")
+                nil [59353 60220])
+            ("mmc4_set_hs" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("pSDMMCP" variable (:type ("P_SDMMC_Properties_T" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [60245 60274]))                  
+                :type "int")
+                nil [60222 60414])
+            ("MM4_CardInit" function
+               (:arguments 
+                  ( ("pSDMMCP" variable (:type ("P_SDMMC_Properties_T" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [60725 60754]))                  
+                :type ("UINT32" type (:type "class") nil nil))
+                nil [60705 68007])
+            ("MM4_SendDataCommand" function
+               (:arguments 
+                  ( ("pSDMMCP" variable (:type ("P_SDMMC_Properties_T" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [68824 68853])
+                    ("Cmd" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [68872 68883])
+                    ("Argument" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [68902 68919])
+                    ("BlockType" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [68938 68955])
+                    ("DataDirection" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [68974 68995])
+                    ("ResType" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [69014 69029]))                  
+                :type "void")
+                nil [68798 69949])
+            ("MM4_SendDataCommandNoAuto12" function
+               (:arguments 
+                  ( ("pSDMMCP" variable (:type ("P_SDMMC_Properties_T" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [70764 70793])
+                    ("Cmd" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [70812 70823])
+                    ("Argument" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [70842 70859])
+                    ("BlockType" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [70878 70895])
+                    ("DataDirection" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [70914 70935])
+                    ("ResType" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [70954 70969]))                  
+                :type "void")
+                nil [70730 72001])
+            ("MM4_SendSetupCommand" function
+               (:arguments 
+                  ( ("pSDMMCP" variable (:type ("P_SDMMC_Properties_T" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [72766 72795])
+                    ("Cmd" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [72814 72825])
+                    ("CmdType" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [72844 72859])
+                    ("Argument" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [72878 72894])
+                    ("ResType" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [72913 72928]))                  
+                :type "void")
+                nil [72740 73541])
+            ("MM4_SendStopCommand" function
+               (:arguments 
+                  ( ("pSDMMCP" variable (:type ("P_SDMMC_Properties_T" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [73942 73971]))                  
+                :type "void")
+                nil [73917 74355])
+            ("MM4_ISR" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [74735 74740]))                  
+                :type "void")
+                nil [74722 81730])
+            ("SdioStart" function
+               (:arguments 
+                  ( ("pSDMMCP" variable (:type ("P_SDMMC_Properties_T" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [81753 81782]))                  
+                :type "int")
+                nil [81739 81824])
+            ("MM4SwitchPartitionForAlternateBootMode" function
+               (:arguments 
+                  ( ("partition" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [82300 82317]))                  
+                :type ("UINT32" type (:type "class") nil nil))
+                nil [82254 85612])
+            ("MM4_MMCAlternateBootModeReadBlocks" function
+               (:arguments 
+                  ( ("pSDMMCP" variable (:type ("P_SDMMC_Properties_T" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [86046 86075]))                  
+                :type ("UINT32" type (:type "class") nil nil))
+                nil [86004 88014])
+            ("MM4_MMCAlternateBootTest" function
+               (:arguments 
+                  ( ("pSDMMCP" variable (:type ("P_SDMMC_Properties_T" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [88662 88691]))                  
+                :type ("UINT32" type (:type "class") nil nil))
+                nil [88630 92521])
+            ("MM4SwitchPartition" function
+               (:arguments 
+                  ( ("pSDMMCP" variable (:type ("P_SDMMC_Properties_T" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [93076 93105])
+                    ("PartitionNumber" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [93106 93129]))                  
+                :type ("UINT32" type (:type "class") nil nil))
+                nil [93050 97199])
+            ("mmc4_init_irq" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [102192 102197]))                  
+                :type "void")
+                nil [102166 102445])
+            ("emmc_hardware_reset" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [102477 102482]))                  
+                :type "int")
+                nil [102446 103261])
+            ("do_emmcinit" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [103279 103284]))                  
+                :type "int")
+                nil [103263 108652])
+            ("do_emmc_switch_part" function
+               (:arguments 
+                  ( ("PartitionNumber" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [108678 108701]))                  
+                :type "int")
+                nil [108654 108885])
+            ("do_emmcread" function
+               (:arguments 
+                  ( ("start" variable (:type "unsigned long long") (reparse-symbol arg-sub-list) [108973 108998])
+                    ("blks" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [108999 109017])
+                    ("buffer" variable
+                       (:pointer 1
+                        :type "unsigned char")
+                        (reparse-symbol arg-sub-list) [109018 109041]))                  
+                :type "int")
+                nil [108957 110256])
+            ("do_emmcpart" function
+               (:arguments 
+                  ( ("part" variable (:type "int") (reparse-symbol arg-sub-list) [110344 110353]))                  
+                :type "int")
+                nil [110328 110891])
+            ("do_emmcerase" function
+               (:arguments 
+                  ( ("offset" variable (:type "unsigned long long") (reparse-symbol arg-sub-list) [110910 110936])
+                    ("blks" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [110937 110955]))                  
+                :type "int")
+                nil [110893 112809])
+            ("do_emmcwrite" function
+               (:arguments 
+                  ( ("offset" variable (:type "unsigned long long") (reparse-symbol arg-sub-list) [112828 112854])
+                    ("blks" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [112855 112873])
+                    ("emmc_buffer" variable
+                       (:pointer 1
+                        :type "unsigned char")
+                        (reparse-symbol arg-sub-list) [112874 112902]))                  
+                :type "int")
+                nil [112811 113998])
+            ("MM4_MMCReadEXTCSD" function
+               (:arguments 
+                  ( ("pBuffer" variable
+                       (:pointer 1
+                        :type ("UINT32" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [114328 114344]))                  
+                :type ("UINT32" type (:type "class") nil nil))
+                nil [114302 116494])
+            ("do_emmcexcsd" function
+               (:arguments 
+                  ( ("buffer" variable
+                       (:pointer 1
+                        :type "unsigned char")
+                        (reparse-symbol arg-sub-list) [116584 116607]))                  
+                :type "int")
+                nil [116567 117421]))          
+      :file "sdio_diag.c"
+      :pointmax 128077
+      :fsize 128076
+      :lastmodtime '(21987 48614 642912 629000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("FlashDriverInitError" . ((number "0x30" 3318 . 3322)))
+          ("SDMMC_GENERAL_ERROR" . ((number "0xD5" 4224 . 4228)))
+          ("SDMMC_ERASE_PARAM_ERROR" . ((number "0xDD" 4744 . 4748)))
+          ("SDIO3_SLOT1_REG_BASE" . ((semantic-list "(MEMMAP_SDIO3_REG_BASE+SD3_SLOT1_BASE_OFFSET)" 1100 . 1145)))
+          ("GLOBAL_SDIO_DLLMST_CTRL" . ((semantic-list "(MEMMAP_CHIP_CTRL_REG_BASE+RA_Gbl_sdioDllMstCtrl)" 1523 . 1572)))
+          ("OTPError" . ((number "0x32" 3464 . 3468)))
+          ("FlashLockError" . ((number "0x34" 3594 . 3598)))
+          ("SDMMC_OVERRUN_ERROR" . ((number "0xD3" 4102 . 4106)))
+          ("ALIGNED" (spp-arg-list ("val" "n") 7603 . 7611) . ((semantic-list "((((uintptr_t)val) + (n) - 1) & (~((uintptr_t)(n) - 1)))" 7613 . 7669)))
+          ("SDIO_INTERNAL_DIV" . ((symbol "SDCLK_SEL_DIV_2" 777 . 792)))
+          ("SDIO3_SLOT2_REG_BASE" . ((semantic-list "(MEMMAP_SDIO3_REG_BASE+SD3_SLOT2_BASE_OFFSET)" 1178 . 1223)))
+          ("PlatformBusy" . ((number "0x7" 2435 . 2438)))
+          ("BBTReadError" . ((number "0x25" 3053 . 3057)))
+          ("SDIO3_SLOT3_REG_BASE" . ((semantic-list "(MEMMAP_SDIO3_REG_BASE+SD3_SLOT3_BASE_OFFSET)" 1256 . 1301)))
+          ("SD_CE_ATA_2_REG" . ((semantic-list "(MEMMAP_SDIO3_REG_BASE + SD_CE_ATA_2_OFFSET)" 1813 . 1857)))
+          ("TimeOutError" . ((number "0x96" 3782 . 3786)))
+          ("SDMMC_SWITCH_ERROR" . ((number "0xD0" 3927 . 3931)))
+          ("SDMMC_COM_CRC_ERROR" . ((number "0xD9" 4484 . 4488)))
+          ("SDMMCDeviceVoltageNotSupported" . ((number "0xE4" 5163 . 5167)))
+          ("InvalidPlatformConfigError" . ((number "0x6" 2367 . 2370)))
+          ("FlashFuncNotDefined" . ((number "0x31" 3387 . 3391)))
+          ("SDMMC_CIDCSD_OVERWRITE_ERROR" . ((number "0xD2" 4041 . 4045)))
+          ("SDMMC_CC_ERROR" . ((number "0xD6" 4293 . 4297)))
+          ("SDMMC_ILL_CMD_ERROR" . ((number "0xD8" 4415 . 4419)))
+          ("SDMMC_ERASE_SEQ_ERROR" . ((number "0xDE" 4805 . 4809)))
+          ("SDMMC_ADDR_MISALIGN_ERROR" . ((number "0xE0" 4927 . 4931)))
+          ("SDMMC_ADDR_RANGE_ERROR" . ((number "0xE1" 4988 . 4992)))
+          ("LOG_REG" . ((semantic-list "(MEMMAP_CHIP_CTRL_REG_BASE+RA_Gbl_sw_generic3)" 1020 . 1066)))
+          ("SDIO_ADMA_RXDESC_BASE" . ((number "0xA80000" 1604 . 1612)))
+          ("GeneralError" . ((number "0x2" 2103 . 2106)))
+          ("InvalidSizeError" . ((number "0x9" 2571 . 2574)))
+          ("EraseError" . ((number "0x20" 2716 . 2720)))
+          ("InvalidAddressRangeError" . ((number "0x33" 3525 . 3529)))
+          ("WriteProtectError" . ((number "0x36" 3712 . 3716)))
+          ("SDMMC_LOCK_ULOCK_ERRROR" . ((number "0xDA" 4545 . 4549)))
+          ("SDMMCInitializationError" . ((number "0xE3" 5110 . 5114)))
+          ("SD_CE_ATA_2_OFFSET" . ((number "0x010E" 1766 . 1772)))
+          ("GLOBAL_SDIO_DLLMST_STATUS" . ((semantic-list "(MEMMAP_CHIP_CTRL_REG_BASE+RA_Gbl_sdioDllMstStatus)" 1342 . 1393)))
+          ("SDIO_BOOT_BUF" . ((number "0xF8080000" 1676 . 1686)))
+          ("NotFoundError" . ((number "0x1" 2043 . 2046)))
+          ("NotSupportedError" . ((number "0x5" 2307 . 2310)))
+          ("InvalidBootTypeError" . ((number "0x22" 2846 . 2850)))
+          ("GLOBAL_SDIO_DLLMST_REF" . ((semantic-list "(MEMMAP_CHIP_CTRL_REG_BASE+RA_Gbl_sdioDllMstRef)" 1434 . 1482)))
+          ("SDIO_CARD_PRESENT_BIT" . ((number "0x40000" 1718 . 1725)))
+          ("BBTExhaustedError" . ((number "0x29" 3269 . 3273)))
+          ("ReadDisturbError" . ((number "0x35" 3663 . 3667)))
+          ("SD3_SLOT1_BASE_OFFSET" . ((number "0x0" 877 . 880)))
+          ("WriteError" . ((number "0x3" 2163 . 2166)))
+          ("ProtectionRegProgramError" . ((number "0x23" 2907 . 2911)))
+          ("NoOTPFound" . ((number "0x24" 2984 . 2988)))
+          ("OneNandInitFailed" . ((number "0x27" 3171 . 3175)))
+          ("SDMMC_BLK_LEN_ERROR" . ((number "0xDF" 4866 . 4870)))
+          ("SD3_SLOT2_BASE_OFFSET" . ((number "0x800" 921 . 926)))
+          ("ReadError" . ((number "0x4" 2239 . 2242)))
+          ("ProgramError" . ((number "0x21" 2785 . 2789)))
+          ("MDOCInitFailed" . ((number "0x26" 3122 . 3126)))
+          ("SDMMC_UNDERUN_ERROR" . ((number "0xD4" 4163 . 4167)))
+          ("SDMMC_LOCK_ERROR" . ((number "0xDB" 4614 . 4618)))
+          ("SDMMCDeviceNotReadyError" . ((number "0xE2" 5049 . 5053)))
+          ("SD3_SLOT3_BASE_OFFSET" . ((number "0x1000" 980 . 986)))
+          ("SDIO_ADMA_TXDESC_BASE" . ((number "0xA80400" 1643 . 1651)))
+          ("NoError" . ((number "0x0" 1983 . 1986)))
+          ("SDMMC_ECC_ERROR" . ((number "0xD7" 4354 . 4358)))
+          ("PlatformReady" . ((number "0x8" 2503 . 2506)))
+          ("MDOCFormatFailed" . ((number "0x28" 3220 . 3224)))
+          ("SDMMC_ERASE_RESET_ERROR" . ((number "0xD1" 3988 . 3992)))
+          ("SDMMC_WP_ERROR" . ((number "0xDC" 4683 . 4687)))
+          )
+)
+    (semanticdb-table "diag.h"
+      :file "diag.h"
+      :fsize 3180
+      :lastmodtime '(21969 40018 177039 722000))
+    (semanticdb-table "sdio_controller.h"
+      :file "sdio_controller.h"
+      :fsize 25183
+      :lastmodtime '(21969 40018 177039 722000))
+    (semanticdb-table "sdmmc_api.h"
+      :file "sdmmc_api.h"
+      :fsize 22594
+      :lastmodtime '(21969 40018 177039 722000)))
+  :file "!home!qichen!bg4dtv_20151231_rc3_a0!vendor!marvell-sdk!MV88DE3100_SDK!MV88DE3100_Tools!bsp!bootloader!source!sdio_ctrl!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

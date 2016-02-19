@@ -1,0 +1,140 @@
+;; Object fastbootd/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "fastbootd/"
+  :tables
+  (list
+    (semanticdb-table "utils.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("sys/types.h" include (:system-flag t) nil [1583 1605])
+            ("sys/stat.h" include (:system-flag t) nil [1606 1627])
+            ("unistd.h" include (:system-flag t) nil [1628 1647])
+            ("stdio.h" include (:system-flag t) nil [1648 1666])
+            ("sys/ioctl.h" include (:system-flag t) nil [1667 1689])
+            ("linux/fs.h" include (:system-flag t) nil [1690 1711])
+            ("stdlib.h" include (:system-flag t) nil [1712 1731])
+            ("cutils/properties.h" include (:system-flag t) nil [1732 1762])
+            ("utils.h" include nil nil [1764 1782])
+            ("debug.h" include nil nil [1783 1801])
+            ("BLKDISCARD" variable (:constant-flag t) nil [1830 1840])
+            ("BLKSECDISCARD" variable (:constant-flag t) nil [1893 1906])
+            ("READ_BUF_SIZE" variable (:constant-flag t) nil [1937 1950])
+            ("get_stream_size" function
+               (:arguments 
+                  ( ("stream" variable
+                       (:pointer 1
+                        :type ("FILE" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1982 1995]))                  
+                :type "int")
+                nil [1962 2120])
+            ("get_block_device_size" function
+               (:arguments 
+                  ( ("fd" variable (:type "int") (reparse-symbol arg-sub-list) [2153 2160]))                  
+                :type ("uint64_t" type (:type "class") nil nil))
+                nil [2122 2293])
+            ("get_file_size" function
+               (:arguments 
+                  ( ("fd" variable (:type "int") (reparse-symbol arg-sub-list) [2318 2325]))                  
+                :type ("uint64_t" type (:type "class") nil nil))
+                nil [2295 2666])
+            ("get_file_size64" function
+               (:arguments 
+                  ( ("fd" variable (:type "int") (reparse-symbol arg-sub-list) [2693 2700]))                  
+                :type ("uint64_t" type (:type "class") nil nil))
+                nil [2668 3046])
+            ("strip" function
+               (:pointer 1
+                :arguments 
+                  ( ("str" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [3061 3071]))                  
+                :type "char")
+                nil [3049 3194])
+            ("wipe_block_device" function
+               (:arguments 
+                  ( ("fd" variable (:type "int") (reparse-symbol arg-sub-list) [3218 3225])
+                    ("len" variable (:type ("int64_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3226 3238]))                  
+                :type "int")
+                nil [3196 3706])
+            ("create_temp_file" function (:type "int") nil [3708 3900])
+            ("bulk_write" function
+               (:arguments 
+                  ( ("bulk_in" variable (:type "int") (reparse-symbol arg-sub-list) [3921 3933])
+                    ("buf" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [3934 3950])
+                    ("length" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3951 3965]))                  
+                :type ("ssize_t" type (:type "class") nil nil))
+                nil [3902 4435])
+            ("bulk_read" function
+               (:arguments 
+                  ( ("bulk_out" variable (:type "int") (reparse-symbol arg-sub-list) [4455 4468])
+                    ("buf" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [4469 4479])
+                    ("length" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4480 4494]))                  
+                :type ("ssize_t" type (:type "class") nil nil))
+                nil [4437 5141])
+            ("NAP_TIME" variable (:constant-flag t) nil [5151 5159])
+            ("wait_for_property" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [5218 5235])
+                    ("desired_value" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [5236 5262])
+                    ("maxwait" variable (:type "int") (reparse-symbol arg-sub-list) [5263 5275]))                  
+                :type "int")
+                nil [5189 5694])
+            ("service_start" function
+               (:arguments 
+                  ( ("service_name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [5714 5739]))                  
+                :type "int")
+                nil [5696 6116])
+            ("service_stop" function
+               (:arguments 
+                  ( ("service_name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [6135 6160]))                  
+                :type "int")
+                nil [6118 6356])
+            ("ssh_server_start" function (:type "int") nil [6358 6418]))          
+      :file "utils.c"
+      :pointmax 6419
+      :fsize 6418
+      :lastmodtime '(21832 36276 30084 949000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("BLKDISCARD" . ((symbol "_IO" 1841 . 1844) (semantic-list "(0x12,119)" 1844 . 1854)))
+          ("READ_BUF_SIZE" . ((semantic-list "(16*1024)" 1951 . 1960)))
+          ("NAP_TIME" . ((number "200" 5160 . 5163)))
+          ("BLKSECDISCARD" . ((symbol "_IO" 1907 . 1910) (semantic-list "(0x12,125)" 1910 . 1920)))
+          )
+)
+    (semanticdb-table "utils.h"
+      :file "utils.h"
+      :fsize 2287
+      :lastmodtime '(21832 36276 30084 949000))
+    (semanticdb-table "debug.h"
+      :file "debug.h"
+      :fsize 1172
+      :lastmodtime '(21832 36276 30084 949000)))
+  :file "!home!qichen!tpv2k15_3043_smgpio3!system!core!fastbootd!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

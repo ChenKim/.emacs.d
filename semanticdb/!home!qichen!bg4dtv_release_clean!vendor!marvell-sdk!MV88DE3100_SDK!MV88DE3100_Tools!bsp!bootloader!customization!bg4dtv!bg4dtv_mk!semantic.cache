@@ -1,0 +1,87 @@
+;; Object bg4dtv_mk/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "bg4dtv_mk/"
+  :tables
+  (list
+    (semanticdb-table "platform_customization.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("bootloader.h" include nil nil [1 24])
+            ("bootloader_customize.h" include nil nil [57 90])
+            ("gpio_defs.h" include nil nil [91 113])
+            ("debug.h" include nil nil [114 132])
+            ("global.h" include nil nil [133 152])
+            ("apb_perf_base.h" include nil nil [153 179])
+            ("apb_timer.h" include nil nil [203 225])
+            ("PWM_REG_BASE" variable (:constant-flag t) nil [236 248])
+            ("LED_PWM_CH" variable (:constant-flag t) nil [268 278])
+            ("pin_init" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :type "void")
+                nil [282 305])
+            ("uiBoot" variable
+               (:typemodifiers ("extern")
+                :type "unsigned int")
+                nil [306 333])
+            ("set_power_hdmi" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("value" variable (:type "int") (reparse-symbol arg-sub-list) [369 379]))                  
+                :type "void")
+                nil [335 432])
+            ("get_stages_bg2q_platform_initialize" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [483 488]))                  
+                :type "unsigned int")
+                nil [434 667])
+            ("platform_setup_kernel_param" function (:type "void") nil [669 738])
+            ("enable_led_pwm" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [813 818]))                  
+                :type "void")
+                nil [786 1164])
+            ("disable_avio_pwm" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1202 1207]))                  
+                :type "void")
+                nil [1166 1264])
+            ("bg2q_platform_initialize" function
+               (:arguments 
+                  ( ("boot_stage" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [1304 1328]))                  
+                :type "unsigned int")
+                nil [1266 3601])
+            ("platform_tasks" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :default-value "{
+    {\"bg2q_platform_initialize\", 0, bg2q_platform_initialize, get_stages_bg2q_platform_initialize},
+    //add more platform tasks here
+}"
+                :type ("bootloader_task_t" type (:type "class") nil nil))
+                nil [3603 3786])
+            ("get_platform_tasks" function
+               (:pointer 1
+                :typemodifiers ("inline")
+                :arguments 
+                  ( ("num" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [3949 3958]))                  
+                :type ("bootloader_task_t" type (:type "class") nil nil))
+                nil [3903 4046]))          
+      :file "platform_customization.c"
+      :pointmax 4048
+      :fsize 4047
+      :lastmodtime '(22177 57588 856107 769000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("PWM_REG_BASE" . ((number "0xF7F20000" 249 . 259)))
+          ("LED_PWM_CH" . ((number "0" 280 . 281)))
+          )
+))
+  :file "!home!qichen!bg4dtv_release_clean!vendor!marvell-sdk!MV88DE3100_SDK!MV88DE3100_Tools!bsp!bootloader!customization!bg4dtv!bg4dtv_mk!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")
