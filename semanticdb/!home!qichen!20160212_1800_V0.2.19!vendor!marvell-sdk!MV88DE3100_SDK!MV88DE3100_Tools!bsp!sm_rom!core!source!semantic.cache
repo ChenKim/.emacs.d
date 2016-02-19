@@ -378,17 +378,7 @@
       :pointmax 37337
       :fsize 37336
       :lastmodtime '(22213 14401 129791 11000)
-      :unmatched-syntax nil
-      :lexical-table 
-        '(("POWEROFF2POWERON" . ((number "300" 1006 . 1009)))
-          ("MS" . ((semantic-list "(SM_SYSTEM_HZ * 1000)" 959 . 980)))
-          ("TIMEOUT_POWERFLOW" . ((semantic-list "(10 * 1000 * 1000)" 1846 . 1864)))
-          ("ASSERT2DEASSERTTIME" . ((number "100" 1064 . 1067)))
-          ("WIFIBT_GAP_MAX" . ((number "256" 36343 . 36346)))
-          ("WIFIBT_GAP_MIN" . ((number "64" 36316 . 36318)))
-          ("POWERON2OKTIME" . ((number "60" 1033 . 1035)))
-          )
-)
+      :unmatched-syntax nil)
     (semanticdb-table "sm_devinit.c"
       :major-mode 'c-mode
       :tags 
@@ -537,6 +527,111 @@
       :pointmax 2083
       :fsize 2082
       :lastmodtime '(21969 40018 665039 706000)
+      :unmatched-syntax nil)
+    (semanticdb-table "sm_gpio.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("com_type.h" include nil nil [1 22])
+            ("sm_debug.h" include nil nil [24 45])
+            ("sm_timer.h" include nil nil [46 67])
+            ("sm_comm.h" include nil nil [68 88])
+            ("sm_rom_api.h" include nil nil [89 112])
+            ("sm_printf.h" include nil nil [113 135])
+            ("sm_common.h" include nil nil [136 158])
+            ("sm.h" include nil nil [159 174])
+            ("sm_apb_gpio_defs.h" include nil nil [175 204])
+            ("sm_def.h" include nil nil [205 224])
+            ("sm_gpio.h" include nil nil [225 245])
+            ("mv_sm_gpio_set_output" function
+               (:arguments 
+                  ( ("port" variable (:type ("INT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [654 665])
+                    ("value" variable (:type ("INT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [666 678]))                  
+                :type ("hresult" type (:type "class") nil nil))
+                nil [624 729])
+            ("mv_sm_gpio_set_input" function
+               (:arguments 
+                  ( ("port" variable (:type ("INT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [760 771]))                  
+                :type ("hresult" type (:type "class") nil nil))
+                nil [731 814])
+            ("mv_sm_gpio_read" function
+               (:arguments 
+                  ( ("port" variable (:type ("INT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [838 849]))                  
+                :type ("INT32" type (:type "class") nil nil))
+                nil [816 887])
+            ("mv_sm_gpio_set_int" function
+               (:arguments 
+                  ( ("gpio_port" variable (:type ("INT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [913 929])
+                    ("inttype" variable (:type ("sm_gpio_inttype_level" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [933 963])
+                    ("polarity" variable (:type ("sm_int_polarity" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [964 989]))                  
+                :type "void")
+                nil [889 1047])
+            ("mv_sm_gpio_set_polarity" function
+               (:arguments 
+                  ( ("gpio_port" variable (:type ("INT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1078 1094])
+                    ("polarity" variable (:type ("sm_int_polarity" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1095 1120]))                  
+                :type "void")
+                nil [1049 1174])
+            ("mv_sm_gpio_get_polarity" function
+               (:arguments 
+                  ( ("gpio_port" variable (:type ("INT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1207 1223]))                  
+                :type ("UINT32" type (:type "class") nil nil))
+                nil [1176 1274])
+            ("mv_sm_gpio_set_inttype" function
+               (:arguments 
+                  ( ("gpio_port" variable (:type ("INT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1304 1320])
+                    ("inttype" variable (:type ("sm_gpio_inttype_level" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1321 1351]))                  
+                :type "void")
+                nil [1276 1403])
+            ("mv_sm_gpio_set_debounce" function
+               (:arguments 
+                  ( ("gpio_port" variable (:type ("INT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1434 1450])
+                    ("deb" variable (:type ("sm_gpio_debounce" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1451 1472]))                  
+                :type "void")
+                nil [1405 1521])
+            ("mv_sm_gpio_int_enable" function
+               (:arguments 
+                  ( ("gpio_port" variable (:type ("INT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1550 1566]))                  
+                :type "void")
+                nil [1523 1608])
+            ("mv_sm_gpio_int_disable" function
+               (:arguments 
+                  ( ("gpio_port" variable (:type ("INT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1638 1654]))                  
+                :type "void")
+                nil [1610 1697])
+            ("mv_sm_gpio_clearint" function
+               (:arguments 
+                  ( ("gpio_port" variable (:type ("INT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1724 1740]))                  
+                :type "void")
+                nil [1699 1780])
+            ("mv_sm_process_gpio_msg" function
+               (:arguments 
+                  ( ("data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [1813 1824])
+                    ("len" variable (:type ("INT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1825 1835]))                  
+                :type ("hresult" type (:type "class") nil nil))
+                nil [1782 1885]))          
+      :file "sm_gpio.c"
+      :pointmax 1886
+      :fsize 1885
+      :lastmodtime '(21969 40018 665039 706000)
+      :unmatched-syntax nil)
+    (semanticdb-table "cec_core.c"
+      :major-mode 'c-mode
+      :tags nil
+      :file "cec_core.c"
+      :pointmax 1189
+      :fsize 1188
+      :lastmodtime '(22015 60857 675640 52000)
+      :unmatched-syntax nil)
+    (semanticdb-table "cec_srv.c"
+      :major-mode 'c-mode
+      :tags nil
+      :file "cec_srv.c"
+      :pointmax 700
+      :fsize 699
+      :lastmodtime '(22015 60857 675640 52000)
       :unmatched-syntax nil))
   :file "!home!qichen!20160212_1800_V0.2.19!vendor!marvell-sdk!MV88DE3100_SDK!MV88DE3100_Tools!bsp!sm_rom!core!source!semantic.cache"
   :semantic-tag-version "2.0"

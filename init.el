@@ -419,6 +419,7 @@
 
 ;; colors
 (set-face-foreground 'font-lock-comment-face "#585858")
+(set-background-color "Green")
 
 ;; treat underscore symbol as word
 (add-hook 'c-mode-hook
@@ -449,3 +450,9 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+
+(load-file "~/.emacs.d/custom/dirtree.el")
+
+;; neotree
+(global-set-key (kbd "<f8>") 'neotree)

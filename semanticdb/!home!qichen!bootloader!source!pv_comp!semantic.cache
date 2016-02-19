@@ -1,0 +1,133 @@
+;; Object pv_comp/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "pv_comp/"
+  :tables
+  (list
+    (semanticdb-table "one_wire.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("com_type.h" include nil nil [176 197])
+            ("memmap.h" include nil nil [198 217])
+            ("global.h" include nil nil [218 237])
+            ("apb_perf_base.h" include nil nil [238 264])
+            ("apb_gpio.h" include nil nil [265 286])
+            ("util.h" include nil nil [287 304])
+            ("gpio.h" include nil nil [305 322])
+            ("debug.h" include nil nil [323 341])
+            ("ONEWIRE_GPIO_PORT_NUM" variable (:constant-flag t) nil [351 372])
+            ("DELAY_LONG" variable (:constant-flag t) nil [386 396])
+            ("DELAY_SHORT" variable (:constant-flag t) nil [413 424])
+            ("GPIO_DDR_REG" variable (:constant-flag t) nil [440 452])
+            ("GPIO_DR_REG" variable (:constant-flag t) nil [509 520])
+            ("PG877_PREAMBLE" variable (:constant-flag t) nil [578 592])
+            ("PG877_DATA_BIT" variable (:constant-flag t) nil [608 622])
+            ("PG877_DEFAULT_DATA_FIELD" variable (:constant-flag t) nil [635 659])
+            ("PG877_PWM_MODE" variable (:constant-flag t) nil [673 687])
+            ("g_dr_high" variable (:type "int") nil [696 720])
+            ("g_dr_low" variable (:type "int") nil [696 720])
+            ("delay1ns" function
+               (:typemodifiers ("static" "inline")
+                :type "void")
+                nil [722 857])
+            ("spi_one_wire_write_frame" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("data" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [903 921])
+                    ("master_id" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [926 949])
+                    ("slave_id" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [950 972]))                  
+                :type "unsigned int")
+                nil [858 973])
+            ("one_wire_write_frame" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("value" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [1189 1208])
+                    ("bit" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [1209 1226]))                  
+                :type "void")
+                nil [1156 1934])
+            ("one_wire_init" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1962 1967]))                  
+                :type "void")
+                nil [1936 2510])
+            ("one_wire_stop" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [2538 2543]))                  
+                :type "void")
+                nil [2512 2870])
+            ("GpioOnewirePWMMode" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [2895 2900]))                  
+                :type "int")
+                nil [2872 3175])
+            ("SPIOnewirePWMMode" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [3339 3344]))                  
+                :type "int")
+                nil [3317 3515])
+            ("percent_table" variable
+               (:dereference 2
+                :typemodifiers ("static")
+                :default-value "{
+	{0x8, -100},
+	{0x9, -75},
+	{0xA, -50},
+	{0xB, -25},
+	{0xC, 25},
+	{0xD, 50},
+	{0xE, 75},
+	{0xF, 100},
+	{-1, -1},
+}"
+                :type "int")
+                nil [3517 3666])
+            ("voltage_table" variable
+               (:dereference 2
+                :typemodifiers ("static")
+                :default-value "{
+	{0x8, 800},
+	{0x9, 1000},
+	{0xA, 1200},
+	{0xB, 1500},
+	{0xC, 1800},
+	{0xD, 2500},
+	{0xE, 3000},
+	{0xF, 3300},
+	{-1, -1},
+}"
+                :type "int")
+                nil [3668 3826])
+            ("GpioOneWireVoltCtrl" function
+               (:arguments 
+                  ( ("vout" variable (:type "int") (reparse-symbol arg-sub-list) [3852 3861])
+                    ("default_vout" variable (:type "int") (reparse-symbol arg-sub-list) [3862 3879]))                  
+                :type "int")
+                nil [3828 5180])
+            ("SPIOneWireVoltCtrl" function
+               (:arguments 
+                  ( ("vout" variable (:type "int") (reparse-symbol arg-sub-list) [5288 5297])
+                    ("default_vout" variable (:type "int") (reparse-symbol arg-sub-list) [5298 5315]))                  
+                :type "int")
+                nil [5265 6511]))          
+      :file "one_wire.c"
+      :pointmax 6512
+      :fsize 6511
+      :lastmodtime '(22113 28332 407628 772000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("ONEWIRE_GPIO_PORT_NUM" . ((number "16" 375 . 377)))
+          ("DELAY_SHORT" . ((number "5" 429 . 430)))
+          ("DELAY_LONG" . ((number "26" 402 . 404)))
+          ("GPIO_DR_REG" . ((semantic-list "(APB_GPIO_INST2_BASE + APB_GPIO_SWPORTA_DR)" 525 . 568)))
+          ("PG877_PREAMBLE" . ((number "0x152" 594 . 599)))
+          ("PG877_DEFAULT_DATA_FIELD" . ((number "0x24" 660 . 664)))
+          ("PG877_PWM_MODE" . ((number "0x5050" 688 . 694)))
+          ("GPIO_DDR_REG" . ((semantic-list "(APB_GPIO_INST2_BASE + APB_GPIO_SWPORTA_DDR)" 456 . 500)))
+          ("PG877_DATA_BIT" . ((number "18" 624 . 626)))
+          )
+))
+  :file "!home!qichen!bootloader!source!pv_comp!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")
