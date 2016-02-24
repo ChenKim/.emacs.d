@@ -30,7 +30,7 @@
 (custom-theme-set-faces
  'molokai
 
- '(default ((t (:background "#121212" :foreground "#F8F8F2"))))
+ '(default ((t (:background "#121212" :foreground "Gainsboro"))))
  '(cursor ((t (:background "#F8F8F0"))))
 
  '(bold ((t (:weight bold))))
@@ -68,14 +68,14 @@
  '(font-lock-comment-delimiter-face ((t (:foreground "#465457" :slant italic))))
  '(font-lock-constant-face ((t (:foreground "#AE81FF"))))
  '(font-lock-doc-face ((t (:foreground "#E6DB74" :slant italic))))
- '(font-lock-function-name-face ((t (:foreground "#F92672" :slant italic))))
- '(font-lock-keyword-face ((t (:foreground "#66D9EF"))))
+ '(font-lock-function-name-face ((t (:foreground "Orange" :slant italic))))
+ '(font-lock-keyword-face ((t (:foreground "SandyBrown"))))
  '(font-lock-negation-char-face ((t (:weight bold))))
  '(font-lock-preprocessor-face ((t (:foreground "#87FF06"))))
  '(font-lock-regexp-grouping-backslash ((t (:weight bold))))
  '(font-lock-regexp-grouping-construct ((t (:weight bold))))
- '(font-lock-string-face ((t (:foreground "#E6DB74"))))
- '(font-lock-type-face ((t (:foreground "#66D9EF"))))
+ '(font-lock-string-face ((t (:foreground "Khaki1")))) ;;"Thistle"
+ '(font-lock-type-face ((t (:foreground "LightSkyBlue"))))
  '(font-lock-variable-name-face ((t (:foreground "#F92672"))))
  '(font-lock-warning-face ((t (:foreground "#FFFFFF" ':background "#333333"))))
  '(fringe ((t (:background "#232526"))))

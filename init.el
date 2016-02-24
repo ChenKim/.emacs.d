@@ -338,8 +338,26 @@
 (define-key (current-global-map) [remap sp-splice-sexp-killing-forward] 'enlarge-window)
 
 
-(define-key (current-global-map) [remap transpose-sexps] 'sr-speedbar-toggle)
+;; (define-key (current-global-map) [remap transpose-sexps] 'sr-speedbar-toggle)
+;; (defun select-next-window ()
+;;   (other-window 1))
 
+;; (defun my-sr-speedbar-open-hook ()
+;;   (add-hook 'speedbar-before-visiting-file-hook 'select-next-window t)
+;;   (add-hook 'speedbar-before-visiting-tag-hook 'select-next-window t)
+;;   )
+;; (advice-add 'sr-expand-curren-file :after #'sr-speedbar-toggle)
+
+;; (defun sb-expand-curren-file ()
+;;   "Expand current file in speedbar buffer"
+;;   (sr-speedbar-toggle)
+;;   (interactive)
+;;   (setq current-file (buffer-file-name))
+;;   (sr-speedbar-refresh)
+;;   ;; (switch-to-buffer-other-frame "*SPEEDBAR*")
+;;   (speedbar-find-selected-file current-file)
+;;   (speedbar-expand-line))
+(global-set-key (kbd "<f9>") 'sr-speedbar-toggle)
 
 ;; redo
 (require 'redo+)
@@ -419,13 +437,40 @@
 
 ;; colors
 (set-face-foreground 'font-lock-comment-face "#585858")
-(set-background-color "Green")
+;; (set-background-color "Green")
+(make-face 'font-lock-number-face)
+(set-face-attribute 'font-lock-number-face nil :inherit font-lock-constant-face)
+(setq font-lock-number-face 'font-lock-number-face)
+(defvar font-lock-number "[0-9]+\\([eE][+-]?[0-9]*\\)?")
+(defvar font-lock-hexnumber "0[xX][0-9a-fA-F]+")
+(defun add-font-lock-numbers ()
+  (font-lock-add-keywords nil (list
+                               (list (concat "\\<\\(" font-lock-number "\\)\\>" )
+                                     0 font-lock-number-face)
+                               (list (concat "\\<\\(" font-lock-hexnumber "\\)\\>" )
+                                     0 font-lock-number-face)
+                               )))
 
+(add-hook 'c-mode-hook 'add-font-lock-numbers)
+(add-hook 'c++-mode-hook 'add-font-lock-numbers)
+(add-hook 'c-mode-hook
+          (lambda ()
+            (font-lock-add-keywords nil (list (list "\\(%[xXUuLlDdPpSs]+\\)" '(0 font-lock-number-face t)) ))))
+(add-hook 'c++-mode-hook
+          (lambda ()
+            (font-lock-add-keywords nil (list (list "\\(%[xXUuLlDdPpSs]+\\)" '(0 font-lock-number-face t)) ))))
 ;; treat underscore symbol as word
 (add-hook 'c-mode-hook
           (lambda () (modify-syntax-entry ?_ "w")))
 (add-hook 'c++-mode-hook
           (lambda () (modify-syntax-entry ?_ "w")))
+
+;; (font-lock-add-keywords 'c-mode
+;;                         '(("\\<\\([A-Z_]*\\)?" 1 font-lock-type-face prepend)
+;;                           ("\\<\\(and\\|or\\|not\\)\\>" . font-lock-keyword-face)))
+;; color for macros
+;; (require 'prepaint)
+;; (prepaint-global-mode 1)
 
 ;; ifdef
 ;; (require 'hideif)
@@ -455,4 +500,10 @@
 (load-file "~/.emacs.d/custom/dirtree.el")
 
 ;; neotree
-(global-set-key (kbd "<f8>") 'neotree)
+(global-set-key (kbd "<f8>") 'neotree-toggle)
+
+;; (add-hook 'c-mode-hook
+;;           '(lambda () (font-lock-add-keywords
+;;                        nil
+;;                        '(("\\([0-9]+\\)"
+;;                           1 font-lock-warning-face prepend)))))

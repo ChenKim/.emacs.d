@@ -1,0 +1,172 @@
+;; Object include/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "include/"
+  :tables
+  (list
+    (semanticdb-table "sm_power.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("__SM_POWER_H__" variable (:constant-flag t) nil [32 46])
+            ("SM_POWER_FLOW" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("FLOW_ACTIVE_2_LOWPOWERSTANDBY" variable
+                             (:constant-flag t
+                              :default-value (112 113)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [80 113])
+                          ("FLOW_ACTIVE_2_NORMALSTANDBY" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [125 153])
+                          ("FLOW_ACTIVE_2_SUSPEND" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [155 177])
+                          ("FLOW_LOWPOWERSTANDBY_2_ACTIVE" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [194 224])
+                          ("FLOW_NORMALSTANDBY_2_ACTIVE" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [226 254])
+                          ("FLOW_SUSPEND_2_ACTIVE" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [256 278])
+                          ("FLOW_SYSRESET_2_LOWPOWERSTANDBY" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [294 326])
+                          ("FLOW_SYSRESET_2_NORMALSTANDBY" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [328 358])
+                          ("FLOW_SYSRESET_2_ACTIVE" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [360 383])
+                          ("FLOW_COLD_2_LOWPOWERSTANDBY" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [403 431])
+                          ("FLOW_IDLE" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [434 444]))                        
+                      :type "enum")
+                      nil nil)
+                :type "typedef")
+                nil [48 460])
+            ("POWER_STATUS" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("STA_ENTERFLOW" variable
+                             (:constant-flag t
+                              :default-value (494 495)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [478 495])
+                          ("STA_POWERON" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [523 535])
+                          ("STA_POWEROFF" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [570 583])
+                          ("STA_POWEROK" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [617 629])
+                          ("STA_ASSERT" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [669 680])
+                          ("STA_DEASSERT" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [714 727])
+                          ("STA_WAITRSP" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [761 773])
+                          ("STA_LEAVEFLOW" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [829 843])
+                          ("STA_INVALID" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [874 886]))                        
+                      :type "enum")
+                      nil nil)
+                :type "typedef")
+                nil [462 901])
+            ("mv_sm_get_linux_state" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [930 935]))                  
+                :type ("BOOL" type (:type "class") nil nil))
+                nil [903 936])
+            ("mv_sm_power_enterflow" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("flow" variable (:type ("SM_POWER_FLOW" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [967 986]))                  
+                :type ("hresult" type (:type "class") nil nil))
+                nil [937 987])
+            ("mv_sm_power_enterflow_bysmstate" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1028 1033]))                  
+                :type ("hresult" type (:type "class") nil nil))
+                nil [988 1034])
+            ("mv_sm_process_power_msg" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [1067 1079])
+                    ("len" variable (:type ("INT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1080 1090]))                  
+                :type ("hresult" type (:type "class") nil nil))
+                nil [1035 1091])
+            ("mv_sm_power_task" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [1117 1129]))                  
+                :type ("hresult" type (:type "class") nil nil))
+                nil [1092 1130])
+            ("mv_sm_power_setwakeupsource" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("ws" variable (:type ("INT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1167 1176]))                  
+                :type ("hresult" type (:type "class") nil nil))
+                nil [1131 1177])
+            ("mv_sm_power_init" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1200 1205]))                  
+                :type "void")
+                nil [1178 1206])
+            ("mv_sm_wifibt_isr" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1229 1234]))                  
+                :type "void")
+                nil [1207 1235]))          
+      :file "sm_power.h"
+      :pointmax 1244
+      :fsize 1243
+      :lastmodtime '(22144 48582 957790 715000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("__SM_POWER_H__")
+          )
+))
+  :file "!home!qichen!20160212_1800_V0.2.19!vendor!marvell-sdk!MV88DE3100_SDK!MV88DE3100_Tools!bsp!sm_rom!core!include!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")
