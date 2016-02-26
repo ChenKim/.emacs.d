@@ -1,0 +1,210 @@
+;; Object parse_pt/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "parse_pt/"
+  :tables
+  (list
+    (semanticdb-table "parse_pt.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("stdio.h" include (:system-flag t) nil [1 19])
+            ("sys/types.h" include (:system-flag t) nil [20 42])
+            ("sys/stat.h" include (:system-flag t) nil [43 64])
+            ("stdlib.h" include (:system-flag t) nil [65 84])
+            ("unistd.h" include (:system-flag t) nil [85 104])
+            ("_GNU_SOURCE" variable (:constant-flag t) nil [113 124])
+            ("string.h" include (:system-flag t) nil [125 144])
+            ("version_table.h" include (:system-flag t) nil [146 172])
+            ("image2_header.h" include (:system-flag t) nil [173 199])
+            ("MAGIC_NUMER" variable (:constant-flag t) nil [209 220])
+            ("PART_NAME_MAX_LEN" variable (:constant-flag t) nil [240 257])
+            ("OU_DONE" variable (:constant-flag t) nil [270 277])
+            ("SECTOR_SIZE" variable (:constant-flag t) nil [298 309])
+            ("ToM" variable (:constant-flag t) nil [322 325])
+            ("USE_ZERO_START" variable (:constant-flag t) nil [347 361])
+            ("block_size" variable (:type "int") nil [534 549])
+            ("chip_size" variable (:type "long long") nil [550 570])
+            ("EMMC_RESERVED_SIZE" variable (:constant-flag t) nil [579 597])
+            ("emmc_chip_reserved_size" variable
+               (:default-value "EMMC_RESERVED_SIZE"
+                :type "int")
+                nil [603 652])
+            ("half_size_entry" variable
+               (:default-value "-1"
+                :type "int")
+                nil [653 678])
+            ("table_entry" type
+               (:members 
+                  ( ("layout" variable
+                       (:dereference 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [701 734])
+                    ("name" variable
+                       (:dereference 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [736 767])
+                    ("start" variable (:type "long long") (reparse-symbol classsubparts) [769 785])
+                    ("size" variable (:type "unsigned long long") (reparse-symbol classsubparts) [787 811])
+                    ("invisible" variable (:type "int") (reparse-symbol classsubparts) [813 827])
+                    ("is_back_up" variable (:type "int") (reparse-symbol classsubparts) [829 844])
+                    ("has_back_up" variable (:type "int") (reparse-symbol classsubparts) [846 862])
+                    ("has_offset" variable (:type "int") (reparse-symbol classsubparts) [864 879])
+                    ("back_up_entry" variable
+                       (:pointer 1
+                        :type ("table_entry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [881 915])
+                    ("flash_plane" variable (:type "unsigned char") (reparse-symbol classsubparts) [917 943])
+                    ("flash_type" variable (:type "unsigned char") (reparse-symbol classsubparts) [945 970])
+                    ("emmc_operation" variable
+                       (:dereference 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [972 1015])
+                    ("emmc_burn_option" variable
+                       (:dereference 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [1017 1062])
+                    ("emmc_write_protection" variable
+                       (:dereference 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [1064 1114]))                  
+                :type "struct")
+                nil [680 1117])
+            ("cfg_table" variable
+               (:dereference 1
+                :type ("table_entry" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1118 1152])
+            ("entries" variable (:type "int") nil [1153 1165])
+            ("part_record" type
+               (:members 
+                  ( ("reserved1" variable
+                       (:dereference 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [1189 1207])
+                    ("flag" variable (:type "char") (reparse-symbol classsubparts) [1209 1219])
+                    ("reserved2" variable
+                       (:dereference 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [1221 1239])
+                    ("start" variable (:type "unsigned int") (reparse-symbol classsubparts) [1241 1260])
+                    ("size" variable (:type "unsigned int") (reparse-symbol classsubparts) [1262 1280]))                  
+                :type "struct")
+                nil [1167 1283])
+            ("usage" function
+               (:arguments 
+                  ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [1296 1305])
+                    ("argv" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1306 1318]))                  
+                :type "void")
+                nil [1285 1562])
+            ("parse_layout" function
+               (:arguments 
+                  ( ("entry" variable
+                       (:pointer 1
+                        :type ("table_entry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1581 1608]))                  
+                :type "int")
+                nil [1564 3249])
+            ("parse_name" function
+               (:arguments 
+                  ( ("entry" variable
+                       (:pointer 1
+                        :type ("table_entry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3266 3293]))                  
+                :type "int")
+                nil [3251 3932])
+            ("gen_emmc_part_table" function
+               (:arguments 
+                  ( ("part_table_path" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [4613 4635]))                  
+                :type "int")
+                nil [4589 6926])
+            ("gen_emmc_part_list" function
+               (:arguments 
+                  ( ("part_table_path" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [8218 8246])
+                    ("part_list_path" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [8247 8274]))                  
+                :type "int")
+                nil [8195 11185])
+            ("human_format" function
+               (:arguments 
+                  ( ("size" variable (:type "unsigned long long") (reparse-symbol arg-sub-list) [11211 11235])
+                    ("buf" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [11236 11246])
+                    ("buf_len" variable (:type "int") (reparse-symbol arg-sub-list) [11247 11259]))                  
+                :type "int")
+                nil [11194 11504])
+            ("parse_arg" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("input" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [11526 11538])
+                    ("len" variable (:type "int") (reparse-symbol arg-sub-list) [11539 11547])
+                    ("argc" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [11548 11558])
+                    ("argv" variable
+                       (:pointer 1
+                        :dereference 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [11559 11571]))                  
+                :type "int")
+                nil [11505 12055])
+            ("NAND_PARAM_COUNT" variable (:constant-flag t) nil [12065 12081])
+            ("EMMC_PARAM_COUNT" variable (:constant-flag t) nil [12095 12111])
+            ("main" function
+               (:arguments 
+                  ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [12128 12137])
+                    ("argv" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [12138 12150]))                  
+                :type "int")
+                nil [12119 26567]))          
+      :file "parse_pt.c"
+      :pointmax 26568
+      :fsize 26567
+      :lastmodtime '(21934 1004 107891 233000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("SECTOR_SIZE" . ((number "512" 310 . 313)))
+          ("NAND_PARAM_COUNT" . ((semantic-list "(9)" 12083 . 12086)))
+          ("_GNU_SOURCE")
+          ("OU_DONE" . ((number "0x55504544" 279 . 289)))
+          ("USE_ZERO_START")
+          ("EMMC_PARAM_COUNT" . ((semantic-list "(12)" 12113 . 12117)))
+          ("PART_NAME_MAX_LEN" . ((number "15" 258 . 260)))
+          ("ToM" . ((number "2048" 334 . 338)))
+          ("MAGIC_NUMER" . ((number "0xD2ADA3F1" 221 . 231)))
+          ("EMMC_RESERVED_SIZE" . ((semantic-list "(0)" 598 . 601)))
+          )
+))
+  :file "!home!qichen!20160223_rc1!vendor!marvell-sdk!MV88DE3100_SDK!MV88DE3100_Tools!BINARY!parse_pt!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

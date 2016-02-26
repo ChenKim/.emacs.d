@@ -1,0 +1,928 @@
+;; Object source/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "source/"
+  :tables
+  (list
+    (semanticdb-table "vop_panel_drv.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("maddr.h" include nil nil [1161 1179])
+            ("vpp.h" include nil nil [1180 1196])
+            ("com_type.h" include nil nil [1197 1218])
+            ("thinvpp_api.h" include nil nil [1243 1267])
+            ("io.h" include nil nil [1293 1308])
+            ("thinvpp_module.h" include nil nil [1309 1336])
+            ("global.h" include nil nil [1337 1356])
+            ("vop_panel_drv.h" include nil nil [1357 1383])
+            ("vop_lvds_priv.h" include nil nil [1384 1410])
+            ("vop_vbo_drv.h" include nil nil [1411 1435])
+            ("avioGbl.h" include nil nil [1464 1484])
+            ("vpp_4k.h" include nil nil [1486 1505])
+            ("vbyone.h" include nil nil [1549 1568])
+            ("lvtx.h" include nil nil [1569 1586])
+            ("mem_map.h" include nil nil [1594 1614])
+            ("printf.h" include nil nil [1615 1634])
+            ("VPPLVDS_DBG_INFO" variable (:constant-flag t) nil [1643 1659])
+            ("VOP_VBY1_PHY_PLL_TIMEOUT_LOOPCOUNT" variable (:constant-flag t) nil [1784 1818])
+            ("VDOP_LVDS_InitPhyAFE" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("vpp_obj" variable
+                       (:pointer 1
+                        :type ("VPP_OBJ" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2037 2054])
+                    ("pConfig" variable
+                       (:pointer 1
+                        :type ("LVDS_CONFIG" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2055 2076]))                  
+                :type "void")
+                nil [2004 2077])
+            ("currPanelConfig" variable (:type ("T32VDOP_LVTX_PANEL_CONFIG" type (:type "class") nil nil)) nil [2151 2193])
+            ("VDOP_LVTX_GetResolution" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("resolution" variable (:type ("VDOP_LVTX_RESOLUTION" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2651 2683])
+                    ("pHRes" variable
+                       (:pointer 1
+                        :type ("UINT32" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2684 2698])
+                    ("pVRes" variable
+                       (:pointer 1
+                        :type ("UINT32" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2699 2713]))                  
+                :type "void")
+                nil [2615 3410])
+            ("VDOP_LVTX_getLvdsConfig" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("pConfig" variable
+                       (:pointer 1
+                        :type ("LVDS_CONFIG" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3718 3739]))                  
+                :type "void")
+                nil [3682 5801])
+            ("VDOP_LVTX_Configure" function
+               (:arguments 
+                  ( ("pLvtxConfig" variable
+                       (:pointer 1
+                        :type ("VDOP_LVTX_CONFIG" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7072 7102]))                  
+                :type "void")
+                nil [7047 8472])
+            ("VDOP_LVTX_ConfigureTTLFrmt" function
+               (:arguments 
+                  ( ("eInputSel" variable (:type ("VDOP_INPUT_SEL" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8707 8732]))                  
+                :type "void")
+                nil [8675 14894])
+            ("VDOP_LVTX_Init" function
+               (:arguments 
+                  ( ("vpp_obj" variable
+                       (:pointer 1
+                        :type ("THINVPP_OBJ" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [14915 14936])
+                    ("pPanelConfig" variable
+                       (:pointer 1
+                        :type ("T32VDOP_LVTX_PANEL_CONFIG" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [14937 14977]))                  
+                :type ("INT" type (:type "class") nil nil))
+                nil [14896 20711])
+            ("VDOP_LVTX_InitSSC" function
+               (:arguments 
+                  ( ("pSSC_CTRL" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("VPP_LVTX_VOP_LVDS_SSC_CTRL" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [20736 20780]))                  
+                :type "void")
+                nil [20713 23162])
+            ("VDOP_LVTX_SetPhyPower" function
+               (:arguments 
+                  ( ("enable" variable (:type ("UNSG8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [23239 23252]))                  
+                :type "void")
+                nil [23212 25662])
+            ("VDOP_LVTX_InitPHY" function
+               (:arguments 
+                  ( ("pPLL_CTRL" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("VPP_LVTX_VOP_LVBY1_CTRL" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [25687 25728])
+                    ("u_REFDIV" variable (:type ("UNSG8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [25752 25767])
+                    ("PHY_POL_INV" variable
+                       (:pointer 1
+                        :type ("UNSG8" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [25767 25786]))                  
+                :type "void")
+                nil [25664 34590])
+            ("VDOP_LVTX_waitForPllLock" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [34622 34627]))                  
+                :type "void")
+                nil [34592 36731]))          
+      :file "vop_panel_drv.c"
+      :pointmax 36760
+      :fsize 36759
+      :lastmodtime '(22221 26054 928594 295000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("VOP_VBY1_PHY_PLL_TIMEOUT_LOOPCOUNT" . ((number "2000" 1820 . 1824)))
+          ("VPPLVDS_DBG_INFO" . ((symbol "printf" 1660 . 1666)))
+          )
+)
+    (semanticdb-table "vop_lvds_drv.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("maddr.h" include nil nil [91424 91442])
+            ("vpp.h" include nil nil [91443 91459])
+            ("com_type.h" include nil nil [91460 91481])
+            ("thinvpp_api.h" include nil nil [91506 91530])
+            ("io.h" include nil nil [91556 91571])
+            ("thinvpp_module.h" include nil nil [91572 91599])
+            ("global.h" include nil nil [91600 91619])
+            ("vpp_be_vop.h" include nil nil [91620 91643])
+            ("vop_panel_drv.h" include nil nil [91673 91699])
+            ("vop_lvds_priv.h" include nil nil [91700 91726])
+            ("vpp_4k.h" include nil nil [91869 91888])
+            ("lvtx.h" include nil nil [91939 91956])
+            ("vbyone.h" include nil nil [91957 91976])
+            ("mem_map.h" include nil nil [91977 91997])
+            ("printf.h" include nil nil [92006 92025])
+            ("VPPLVDS_DBG_INFO" variable (:constant-flag t) nil [92034 92050])
+            ("dbg_Out_Log" variable (:constant-flag t) nil [92066 92077])
+            ("VPP_VOP_CSC_MAX_COEFF_INDEX" variable (:constant-flag t) nil [92114 92141])
+            ("VPP_VOP_CSC_MAX_OFFSET_INDEX" variable (:constant-flag t) nil [92175 92203])
+            ("flush_dcache_range" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("start" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [92238 92258])
+                    ("stop" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [92259 92278]))                  
+                :type "void")
+                nil [92207 92279])
+            ("VppVopCscCoeff" variable
+               (:dereference 2
+                :typemodifiers ("extern")
+                :constant-flag t
+                :type ("UINT16" type (:type "class") nil nil))
+                nil [92280 92367])
+            ("VppVopCscOffset" variable
+               (:dereference 2
+                :typemodifiers ("extern")
+                :constant-flag t
+                :type ("UINT32" type (:type "class") nil nil))
+                nil [92369 92458])
+            ("currPanelConfig" variable
+               (:typemodifiers ("extern")
+                :type ("T32VDOP_LVTX_PANEL_CONFIG" type (:type "class") nil nil))
+                nil [92459 92508])
+            ("RA_Vpp_4K_LVDSVOP" variable (:type "int") nil [92629 92647])
+            ("avioVpp1baseAddr" variable
+               (:default-value "MEMMAP_AVIO_REG_BASE + AVIO_MEMMAP_VPP1_REG_BASE"
+                :type ("UNSG32" type (:type "class") nil nil))
+                nil [92648 92723])
+            ("lvdsVopBaseAddr" variable
+               (:default-value "MEMMAP_VPP_4K_REG_BASE + RA_Vpp_4K_LVDSVOP"
+                :type ("UNSG32" type (:type "class") nil nil))
+                nil [92769 92837])
+            ("avioVpp1baseAddr" variable
+               (:default-value "MEMMAP_VPP_4K_REG_BASE"
+                :type ("UNSG32" type (:type "class") nil nil))
+                nil [92838 92887])
+            ("VPP_LVDS_MAPPING_BYTES_PER_REGS" variable (:constant-flag t) nil [92953 92984])
+            ("VPP_LVDS_MAPPING_REGS_PER_LANE" variable (:constant-flag t) nil [93000 93030])
+            ("VPP_LVDS_MAPPING_LANE_PER_PHY" variable (:constant-flag t) nil [93047 93076])
+            ("VPP_LVDS_MAPPING_BITS_PER_LANE" variable (:constant-flag t) nil [93094 93124])
+            ("VPP_LVDS_MAPPING_PHY_MAX" variable (:constant-flag t) nil [93184 93208])
+            ("VPP_LVDS_MAPPING_BYTES_MAX" variable (:constant-flag t) nil [93364 93390])
+            ("VOP_VBY1_PHY_POL_INV_LVDS" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+#if (BERLIN_CHIP_VERSION == BERLIN_BG4DTV)
+    0x00, 0x3F, 0x00, 0x00
+#else
+    0x14, 0x27, 0x27, 0x14
+#endif
+}"
+                :type ("UNSG8" type (:type "class") nil nil))
+                nil [93502 93682])
+            ("_tagVPP_LVDS_MAPPING_REGS" type
+               (:members 
+                  ( ("u8" variable
+                       (:dereference 1
+                        :type ("UNSG8" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [93759 93798])
+                    ("PHY" variable
+                       (:dereference 1
+                        :type ("" type
+                             (:members 
+                                ( ("lvtx_map_BIT0_LANE0" variable (:type ("UNSG8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [93820 93846])
+                                  ("lvtx_map_BIT1_LANE0" variable (:type ("UNSG8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [93855 93881])
+                                  ("lvtx_map_BIT2_LANE0" variable (:type ("UNSG8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [93890 93916])
+                                  ("lvtx_map_BIT3_LANE0" variable (:type ("UNSG8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [93925 93951])
+                                  ("lvtx_map_BIT4_LANE0" variable (:type ("UNSG8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [93960 93986])
+                                  ("lvtx_map_BIT5_LANE0" variable (:type ("UNSG8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [93995 94021])
+                                  ("lvtx_map_BIT6_LANE0" variable (:type ("UNSG8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [94030 94056])
+                                  ("lvtx_map_BIT0_LANE1" variable (:type ("UNSG8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [94065 94091])
+                                  ("lvtx_map_BIT1_LANE1" variable (:type ("UNSG8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [94100 94126])
+                                  ("lvtx_map_BIT2_LANE1" variable (:type ("UNSG8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [94135 94161])
+                                  ("lvtx_map_BIT3_LANE1" variable (:type ("UNSG8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [94170 94196])
+                                  ("lvtx_map_BIT4_LANE1" variable (:type ("UNSG8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [94205 94231])
+                                  ("lvtx_map_BIT5_LANE1" variable (:type ("UNSG8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [94240 94266])
+                                  ("lvtx_map_BIT6_LANE1" variable (:type ("UNSG8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [94275 94301])
+                                  ("lvtx_map_BIT0_LANE2" variable (:type ("UNSG8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [94310 94336])
+                                  ("lvtx_map_BIT1_LANE2" variable (:type ("UNSG8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [94345 94371])
+                                  ("lvtx_map_BIT2_LANE2" variable (:type ("UNSG8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [94380 94406])
+                                  ("lvtx_map_BIT3_LANE2" variable (:type ("UNSG8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [94415 94441])
+                                  ("lvtx_map_BIT4_LANE2" variable (:type ("UNSG8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [94450 94476])
+                                  ("lvtx_map_BIT5_LANE2" variable (:type ("UNSG8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [94485 94511])
+                                  ("lvtx_map_BIT6_LANE2" variable (:type ("UNSG8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [94520 94546])
+                                  ("lvtx_map_BIT0_LANE3" variable (:type ("UNSG8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [94555 94581])
+                                  ("lvtx_map_BIT1_LANE3" variable (:type ("UNSG8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [94590 94616])
+                                  ("lvtx_map_BIT2_LANE3" variable (:type ("UNSG8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [94625 94651])
+                                  ("lvtx_map_BIT3_LANE3" variable (:type ("UNSG8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [94660 94686])
+                                  ("lvtx_map_BIT4_LANE3" variable (:type ("UNSG8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [94695 94721])
+                                  ("lvtx_map_BIT5_LANE3" variable (:type ("UNSG8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [94730 94756])
+                                  ("lvtx_map_BIT6_LANE3" variable (:type ("UNSG8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [94765 94791])
+                                  ("lvtx_map_BIT0_LANE4" variable (:type ("UNSG8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [94800 94826])
+                                  ("lvtx_map_BIT1_LANE4" variable (:type ("UNSG8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [94835 94861])
+                                  ("lvtx_map_BIT2_LANE4" variable (:type ("UNSG8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [94870 94896])
+                                  ("lvtx_map_BIT3_LANE4" variable (:type ("UNSG8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [94905 94931])
+                                  ("lvtx_map_BIT4_LANE4" variable (:type ("UNSG8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [94940 94966])
+                                  ("lvtx_map_BIT5_LANE4" variable (:type ("UNSG8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [94975 95001])
+                                  ("lvtx_map_BIT6_LANE4" variable (:type ("UNSG8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [95010 95036])
+                                  ("lvtx_map_BIT0_LANE5" variable (:type ("UNSG8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [95045 95071])
+                                  ("lvtx_map_BIT1_LANE5" variable (:type ("UNSG8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [95080 95106])
+                                  ("lvtx_map_BIT2_LANE5" variable (:type ("UNSG8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [95115 95141])
+                                  ("lvtx_map_BIT3_LANE5" variable (:type ("UNSG8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [95150 95176])
+                                  ("lvtx_map_BIT4_LANE5" variable (:type ("UNSG8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [95185 95211])
+                                  ("lvtx_map_BIT5_LANE5" variable (:type ("UNSG8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [95220 95246])
+                                  ("lvtx_map_BIT6_LANE5" variable (:type ("UNSG8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [95255 95281]))                                
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [93803 95317]))                  
+                :type "union")
+                nil [93713 95342])
+            ("VPP_LVDS_MAPPING_REGS" type
+               (:typedef ("_tagVPP_LVDS_MAPPING_REGS" type (:type "union") nil nil)
+                :type "typedef")
+                nil [93713 95342])
+            ("LVDS_CHANNEL_MAP" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :default-value "{
+    //All phys are usually to be programmed in the same way -
+    /*For dual lvds -
+     *   ch0 & ch3 mapping are same
+     *   ch1 & ch2 mapping are same
+     *   We can use (ch0,ch2) or (ch1,ch3) or (ch0, ch1) combination in packer mode '1'
+     *       with different packer sel configuration.
+     *   for 8 bit panel select MSB 8 bit from 10 bit ttl formater o/p
+     */
+#if (BERLIN_CHIP_VERSION == BERLIN_BG4DTV)
+    /* VESA_FHD_60_8BITS panel's mapping - START */
+    {
+        {
+        //PHY - 0
+               12,     7,     6,     5,     4,     3,     2,    //LANE0
+               23,    22,    17,    16,    15,    14,    13,    //LANE1
+               62,    61,    60,    27,    26,    25,    24,    //LANE2
+               65,    29,    28,    19,    18,     9,     8,    //LANE3
+               65,    65,    65,    65,    65,    65,    65,    //LANE4
+               64,    64,    63,    63,    63,    64,    64,    //LANE5
+        //PHY - 1
+               64,    64,    63,    63,    63,    64,    64,    //LANE5
+               65,    65,    65,    65,    65,    65,    65,    //LANE4
+               65,    59,    58,    49,    48,    39,    38,    //LANE3
+               62,    61,    60,    57,    56,    55,    54,    //LANE2
+               53,    52,    47,    46,    45,    44,    43,    //LANE1
+               42,    37,    36,    35,    34,    33,    32,    //LANE0
+        }
+    },
+    /* VESA_FHD_60_8BITS panel's mapping - END */
+    /* VESA_FHD_60_10BITS panel's mapping - START */
+    {
+        {
+        //PHY - 0
+               10,     5,     4,     3,     2,     1,     0,    //LANE0
+               21,    20,    15,    14,    13,    12,    11,    //LANE1
+               62,    61,    60,    25,    24,    23,    22,    //LANE2
+               65,    27,    26,    17,    16,     7,     6,    //LANE3
+               65,    29,    28,    19,    18,     9,     8,    //LANE4
+               64,    64,    63,    63,    63,    64,    64,    //LANE5
+        //PHY - 1
+               64,    64,    63,    63,    63,    64,    64,    //LANE5
+               65,    59,    58,    49,    48,    39,    38,    //LANE4
+               65,    57,    56,    47,    46,    37,    36,    //LANE3
+               62,   121,   120,    55,    54,    53,    52,    //LANE2
+               51,    50,    45,    44,    43,    42,    41,    //LANE1
+               40,    35,    34,    33,    32,    31,    30,    //LANE0
+        }
+    },
+    /* VESA_FHD_60_10BITS panel's mapping - END */
+    /* JIEDA_FHD_60_8BITS panel's mapping - START */
+    {
+        {
+        //PHY - 0
+               14,     9,     8,     7,     6,     5,     4,    //LANE0
+               25,    24,    19,    18,    17,    16,    15,    //LANE1
+               62,    61,    60,    29,    28,    27,    26,    //LANE2
+               65,    23,    22,    13,    12,     3,     2,    //LANE3
+               65,    65,    65,    65,    65,    65,    65,    //LANE4
+               64,    64,    63,    63,    63,    64,    64,    //LANE5
+        //PHY - 1
+               64,    64,    63,    63,    63,    64,    64,    //LANE5
+               65,    65,    65,    65,    65,    65,    65,    //LANE4
+               66,    53,    52,    43,    42,    33,    32,    //LANE3
+               62,    61,    60,    59,    58,    57,    56,    //LANE2
+               55,    54,    49,    48,    47,    46,    45,    //LANE1
+               44,    39,    38,    37,    36,    35,    34,    //LANE0
+        }
+    },
+    /* JIEDA_FHD_60_8BITS panel's mapping - END */
+    /* JIEDA_FHD_60_10BITS panel's mapping - START */
+    {
+        {
+        //PHY - 0
+               14,     9,     8,     7,     6,     5,     4,    //LANE0
+               25,    24,    19,    18,    17,    16,    15,    //LANE1
+               62,    61,    60,    29,    28,    27,    26,    //LANE2
+               65,    23,    22,    13,    12,     3,     2,    //LANE3
+               65,    21,    20,    11,    10,     1,     0,    //LANE4
+               64,    64,    63,    63,    63,    64,    64,    //LANE5
+        //PHY - 1
+               64,    64,    63,    63,    63,    64,    64,    //LANE5
+               65,    51,    50,    41,    40,    31,    30,    //LANE4
+               66,    53,    52,    43,    42,    33,    32,    //LANE3
+               62,    61,    60,    59,    58,    57,    56,    //LANE2
+               55,    54,    49,    48,    47,    46,    45,    //LANE1
+               44,    39,    38,    37,    36,    35,    34,    //LANE0
+        }
+    }
+    /* JIEDA_FHD_60_10BITS panel's mapping - END */
+#else
+    /* VESA_FHD_60_8BITS panel's mapping - START */
+    {
+        {
+        //PHY - 0
+        //LANE SWAPPING : 1<-3, 3<-1
+               12,     7,     6,     5,     4,     3,     2,    //LANE0
+              126,    29,    28,    19,    18,     9,     8,    //LANE3
+              122,   121,   120,    27,    26,    25,    24,    //LANE2
+               23,    22,    17,    16,    15,    14,    13,    //LANE1
+              125,   125,   125,   125,   125,   125,   125,    //LANE4
+              124,   124,   123,   123,   123,   124,   124,    //LANE5
+        //PHY - 1
+        //LANE SWAPPING : 0<-5, 5<-0, 1<-4, 3<-1, 4<-3
+              124,   124,   123,   123,   123,   124,   124,    //LANE5
+              125,   125,   125,   125,   125,   125,   125,    //LANE4
+              122,   121,   120,    57,    56,    55,    54,    //LANE2
+               53,    52,    47,    46,    45,    44,    43,    //LANE1
+              126,    59,    58,    49,    48,    39,    38,    //LANE3
+               42,    37,    36,    35,    34,    33,    32,    //LANE0
+        //PHY - 2
+        //LANE SWAPPING : 0<-5, 5<-0, 1<-4, 3<-1, 4<-3
+              124,   124,   123,   123,   123,   124,   124,    //LANE5
+              125,   125,   125,   125,   125,   125,   125,    //LANE4
+              122,   121,   120,    87,    86,    85,    84,    //LANE2
+               83,    82,    77,    76,    75,    74,    73,    //LANE1
+              126,    89,    88,    79,    78,    69,    68,    //LANE3
+               72,    67,    66,    65,    64,    63,    62,    //LANE0
+        //PHY - 3
+        //LANE SWAPPING : 1<-3, 3<-1
+              102,    97,    96,    95,    94,    93,    92,    //LANE0
+              126,   119,   118,   109,   108,    99,    98,    //LANE3
+              122,   121,   120,   117,   116,   115,   114,    //LANE2
+              113,   112,   107,   106,   105,   104,   103,    //LANE1
+              125,   125,   125,   125,   125,   125,   125,    //LANE4
+              124,   124,   123,   123,   123,   124,   124,    //LANE5
+        }
+    },
+    /* VESA_FHD_60_8BITS panel's mapping - END */
+
+    /* VESA_FHD_60_10BITS panel's mapping - START */
+    {
+        {
+        //PHY - 0
+        //LANE SWAPPING : 1<-3, 3<-1
+               10,     5,     4,     3,     2,     1,     0,    //LANE0
+              126,    27,    26,    17,    16,     7,     6,    //LANE3
+              122,   121,   120,    25,    24,    23,    22,    //LANE2
+               21,    20,    15,    14,    13,    12,    11,    //LANE1
+              125,    29,    28,    19,    18,     9,     8,    //LANE4
+              124,   124,   123,   123,   123,   124,   124,    //LANE5
+        //PHY - 1
+        //LANE SWAPPING : 0<-5, 5<-0, 1<-4, 3<-1, 4<-3
+              124,   124,   123,   123,   123,   124,   124,    //LANE5
+              125,    59,    58,    49,    48,    39,    38,    //LANE4
+              122,   121,   120,    55,    54,    53,    52,    //LANE2
+               51,    50,    45,    44,    43,    42,    41,    //LANE1
+              126,    57,    56,    47,    46,    37,    36,    //LANE3
+               40,    35,    34,    33,    32,    31,    30,    //LANE0
+        //PHY - 2
+        //LANE SWAPPING : 0<-5, 5<-0, 1<-4, 3<-1, 4<-3
+              124,   124,   123,   123,   123,   124,   124,    //LANE5
+              125,    89,    88,    79,    78,    69,    68,    //LANE4
+              122,   121,   120,    85,    84,    83,    82,    //LANE2
+               81,    80,    75,    74,    73,    72,    71,    //LANE1
+              126,    87,    86,    77,    76,    67,    66,    //LANE3
+               70,    65,    64,    63,    62,    61,    60,    //LANE0
+        //PHY - 3
+        //LANE SWAPPING : 1<-3, 3<-1
+              100,    95,    94,    93,    92,    91,    90,    //LANE0
+              126,   117,   116,   107,   106,    97,    96,    //LANE3
+              122,   121,   120,   115,   114,   113,   112,    //LANE2
+              111,   110,   105,   104,   103,   102,   101,    //LANE1
+              125,   119,   118,   109,   108,    99,    98,    //LANE4
+              124,   124,   123,   123,   123,   124,   124,    //LANE5
+        }
+    },
+    /* VESA_FHD_60_10BITS panel's mapping - END */
+
+    /* JIEDA_FHD_60_8BITS panel's mapping - START */
+    {
+        {
+        //PHY - 0
+        //LANE SWAPPING : 1<-3, 3<-1
+               14,     9,     8,     7,     6,     5,     4,    //LANE0
+              126,    23,    22,    13,    12,     3,     2,    //LANE3
+              122,   121,   120,    29,    28,    27,    26,    //LANE2
+               25,    24,    19,    18,    17,    16,    15,    //LANE1
+              125,   125,   125,   125,   125,   125,   125,    //LANE4
+              124,   124,   123,   123,   123,   124,   124,    //LANE5
+        //PHY - 1
+        //LANE SWAPPING : 0<-5, 5<-0, 1<-4, 3<-1, 4<-3
+              124,   124,   123,   123,   123,   124,   124,    //LANE5
+              125,   125,   125,   125,   125,   125,   125,    //LANE4
+              122,   121,   120,    59,    58,    57,    56,    //LANE2
+               55,    54,    49,    48,    47,    46,    45,    //LANE1
+              126,    53,    52,    43,    42,    33,    32,    //LANE3
+               44,    39,    38,    37,    36,    35,    34,    //LANE0
+        //PHY - 2
+        //LANE SWAPPING : 0<-5, 5<-0, 1<-4, 3<-1, 4<-3
+              124,   124,   123,   123,   123,   124,   124,    //LANE5
+              125,   125,   125,   125,   125,   125,   125,    //LANE4
+              122,   121,   120,    89,    88,    87,    86,    //LANE2
+               85,    84,    79,    78,    77,    76,    75,    //LANE1
+              126,    83,    82,    73,    72,    63,    62,    //LANE3
+               74,    69,    68,    67,    66,    65,    64,    //LANE0
+        //PHY - 3
+        //LANE SWAPPING : 1<-3, 3<-1
+              104,    99,    98,    97,    96,    95,    94,    //LANE0
+              126,   113,   112,   103,   102,    93,    92,    //LANE3
+              122,   121,   120,   119,   118,   117,   116,    //LANE2
+              115,   114,   109,   108,   107,   106,   105,    //LANE1
+              125,   125,   125,   125,   125,   125,   125,    //LANE4
+              124,   124,   123,   123,   123,   124,   124,    //LANE5
+        }
+    },
+    /* JIEDA_FHD_60_8BITS panel's mapping - END */
+    /* JIEDA_FHD_60_10BITS panel's mapping - START */
+    {
+        {
+        //PHY - 0
+        //LANE SWAPPING : 1<-3, 3<-1
+               14,     9,     8,     7,     6,     5,     4,    //LANE0
+              126,    23,    22,    13,    12,     3,     2,    //LANE3
+              122,   121,   120,    29,    28,    27,    26,    //LANE2
+               25,    24,    19,    18,    17,    16,    15,    //LANE1
+              125,    21,    20,    11,    10,     1,     0,    //LANE4
+              124,   124,   123,   123,   123,   124,   124,    //LANE5
+        //PHY - 1
+        //LANE SWAPPING : 0<-5, 5<-0, 1<-4, 3<-1, 4<-3
+              124,   124,   123,   123,   123,   124,   124,    //LANE5
+              125,    51,    50,    41,    40,    31,    30,    //LANE4
+              122,   121,   120,    59,    58,    57,    56,    //LANE2
+               55,    54,    49,    48,    47,    46,    45,    //LANE1
+              126,    53,    52,    43,    42,    33,    32,    //LANE3
+               44,    39,    38,    37,    36,    35,    34,    //LANE0
+        //PHY - 2
+        //LANE SWAPPING : 0<-5, 5<-0, 1<-4, 3<-1, 4<-3
+              124,   124,   123,   123,   123,   124,   124,    //LANE5
+              125,    81,    80,    71,    70,    61,    60,    //LANE4
+              122,   121,   120,    89,    88,    87,    86,    //LANE2
+               85,    84,    79,    78,    77,    76,    75,    //LANE1
+              126,    83,    82,    73,    72,    63,    62,    //LANE3
+               74,    69,    68,    67,    66,    65,    64,    //LANE0
+        //PHY - 3
+        //LANE SWAPPING : 1<-3, 3<-1
+              104,    99,    98,    97,    96,    95,    94,    //LANE0
+              126,   113,   112,   103,   102,    93,    92,    //LANE3
+              122,   121,   120,   119,   118,   117,   116,    //LANE2
+              115,   114,   109,   108,   107,   106,   105,    //LANE1
+              125,   111,   110,   101,   100,    91,    90,    //LANE4
+              124,   124,   123,   123,   123,   124,   124,    //LANE5
+        }
+    },
+    /* JIEDA_FHD_60_10BITS panel's mapping - END */
+#endif
+}"
+                :type ("VPP_LVDS_MAPPING_REGS" type (:type "class") nil nil))
+                nil [95345 108465])
+            ("VPP_LVTX_LVDS_SSC_CTRL_Init" variable
+               (:typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+    //amplitude: 2.5%, Freq: 30K
+#if (BERLIN_CHIP_VERSION == BERLIN_BG4DTV)
+    .u_SSC_EN       = 0x01,
+    .u_SSC_FREQ_DIV = 0x1828,
+    .u_SSC_MODE     = 0x00,
+    .u_SSC_RESET_EXT= 0x00,
+    .u_SSC_RNGE     = 0x21E,
+#else
+    .u_SSC_EN       = 0x01,
+    .u_SSC_FREQ_DIV = 0x43A8,
+    .u_SSC_MODE     = 0x00,
+    .u_SSC_RESET_EXT= 0x00,
+    .u_SSC_RNGE     = 0xC1,
+#endif
+    //.uSSC_INTPI   = 0x00,
+}"
+                :type ("VPP_LVTX_VOP_LVDS_SSC_CTRL" type (:type "class") nil nil))
+                nil [108496 108972])
+            ("LVDS_AFE_LVDS_PLL_VAL" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+    //LVDS_AFE_LVDS_PLL_148Dot5
+    {
+#if (BERLIN_CHIP_VERSION == BERLIN_BG4DTV)
+        .u_REFDIV     = 0x04,
+        .u_FBDIV      = 0x0E,
+        .u_PSDIV      = 0x03,
+        .u_KVCO       = 0x04,
+        .u_VCO_VRNG   = 0x00, //NA
+        .u_ICP        = 0x08,
+        .u_INTPI      = 0x06,
+        .u_INTPR      = 0x00, //NA
+        .uLVDS_REF_CLK_sel_ctrl = 0x01,
+
+        .u_TX_HR_EN   = 0x00, //NA
+        .u_D_NBITS    = 0x00, //NA
+#else
+        .u_REFDIV     = 0x10,
+        .u_FBDIV      = 0xE0,
+        .u_PSDIV      = 0x04,
+        .u_KVCO       = 0x05,
+        .u_VCO_VRNG   = 0x04,
+        .u_ICP        = 0x05,
+        .u_INTPI      = 0x05,
+        .u_INTPR      = 0x05,
+        .uLVDS_REF_CLK_sel_ctrl = 0x01,
+
+        .u_TX_HR_EN   = 0x00,
+        .u_D_NBITS    = 0x00,
+#endif
+    },
+    //LVDS_AFE_LVDS_PLL_594Dot0
+    {
+        .u_REFDIV     = 0x40,
+        .u_FBDIV      = 0xE0,
+        .u_PSDIV      = 0x02,
+        .u_KVCO       = 0x05,
+        .u_VCO_VRNG   = 0x04,
+        .u_ICP        = 0x05,
+        .u_INTPI      = 0x05,
+        .u_INTPR      = 0x05,
+        .uLVDS_REF_CLK_sel_ctrl = 0x00,
+
+        .u_TX_HR_EN   = 0x00,
+        .u_D_NBITS    = 0x00,
+    }
+}"
+                :type ("VPP_LVTX_VOP_LVBY1_CTRL" type (:type "class") nil nil))
+                nil [109028 110312])
+            ("VDOP_LVDS_InitPhyAFE" function
+               (:arguments 
+                  ( ("vpp_obj" variable
+                       (:pointer 1
+                        :type ("VPP_OBJ" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [110410 110427])
+                    ("pConfig" variable
+                       (:pointer 1
+                        :type ("LVDS_CONFIG" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [110428 110449]))                  
+                :type "void")
+                nil [110384 111597])
+            ("VDOP_LVDS_ChMapping" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("regs" variable
+                       (:pointer 1
+                        :type ("VPP_LVDS_MAPPING_REGS" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [111811 111839]))                  
+                :type "void")
+                nil [111779 113643])
+            ("VDOP_LVDS_ConfigurePacker" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("pConfig" variable
+                       (:pointer 1
+                        :type ("LVDS_CONFIG" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [113849 113870]))                  
+                :type "void")
+                nil [113811 114435])
+            ("VDOP_LVDS_InitDigInterface" function
+               (:arguments 
+                  ( ("vpp_obj" variable
+                       (:pointer 1
+                        :type ("VPP_OBJ" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [114468 114485])
+                    ("pConfig" variable
+                       (:pointer 1
+                        :type ("LVDS_CONFIG" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [114486 114507]))                  
+                :type ("INT" type (:type "class") nil nil))
+                nil [114437 115146])
+            ("VDOP_LVDS_PhyReset" function
+               (:arguments 
+                  ( ("vpp_obj" variable
+                       (:pointer 1
+                        :type ("VPP_OBJ" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [115525 115542]))                  
+                :type ("INT" type (:type "class") nil nil))
+                nil [115502 116178])
+            ("BE_LVDS_SetPower" function
+               (:arguments 
+                  ( ("vpp_obj" variable
+                       (:pointer 1
+                        :type ("VPP_OBJ" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [116482 116499])
+                    ("enable" variable (:type "int") (reparse-symbol arg-sub-list) [116500 116511])
+                    ("panelType" variable (:type "int") (reparse-symbol arg-sub-list) [116512 116526]))                  
+                :type ("INT" type (:type "class") nil nil))
+                nil [116461 116588])
+            ("VDOP_LVDS_SetInputChannel" function
+               (:arguments 
+                  ( ("vpp_obj" variable
+                       (:pointer 1
+                        :type ("VPP_OBJ" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [117269 117286])
+                    ("uChannel" variable (:type ("UNSG8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [117286 117301]))                  
+                :type ("INT" type (:type "class") nil nil))
+                nil [117239 117657])
+            ("VDOP_LVDS_Set3DFrmSeqEn" function
+               (:arguments 
+                  ( ("vpp_obj" variable
+                       (:pointer 1
+                        :type ("VPP_OBJ" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [118206 118223])
+                    ("Enable" variable (:type ("UNSG8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [118224 118237]))                  
+                :type ("INT" type (:type "class") nil nil))
+                nil [118178 119012])
+            ("VDOP_LVDS_Set3DFrmtEn" function
+               (:arguments 
+                  ( ("vpp_obj" variable
+                       (:pointer 1
+                        :type ("VPP_OBJ" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [120350 120367])
+                    ("Enable" variable (:type ("UNSG8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [120368 120381]))                  
+                :type ("INT" type (:type "class") nil nil))
+                nil [120324 121648])
+            ("VDOP_LVDS_Set3DFrmtPackingMode" function
+               (:arguments 
+                  ( ("vpp_obj" variable
+                       (:pointer 1
+                        :type ("VPP_OBJ" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [122400 122417])
+                    ("Mode" variable (:type ("UNSG8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [122417 122428])
+                    ("Enable" variable (:type ("UNSG8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [122429 122442]))                  
+                :type ("INT" type (:type "class") nil nil))
+                nil [122365 123179])
+            ("VDOP_LVDS_Set3DFrmtViewIDOneTime" function
+               (:arguments 
+                  ( ("vpp_obj" variable
+                       (:pointer 1
+                        :type ("VPP_OBJ" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [123735 123752])
+                    ("ViewID" variable (:type ("UNSG8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [123753 123766]))                  
+                :type ("INT" type (:type "class") nil nil))
+                nil [123698 124880])
+            ("VDOP_LVDS_Set3DFrmtViewIDContinuous" function
+               (:arguments 
+                  ( ("vpp_obj" variable
+                       (:pointer 1
+                        :type ("VPP_OBJ" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [125447 125464])
+                    ("ViewID" variable (:type ("UNSG8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [125464 125477]))                  
+                :type ("INT" type (:type "class") nil nil))
+                nil [125407 126591])
+            ("VDOP_LVDS_Set3DFrmtActSpaceData" function
+               (:arguments 
+                  ( ("vpp_obj" variable
+                       (:pointer 1
+                        :type ("VPP_OBJ" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [127325 127342])
+                    ("DataU" variable (:type ("UNSG32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [127342 127355])
+                    ("DataM" variable (:type ("UNSG32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [127356 127369])
+                    ("DataL" variable (:type ("UNSG32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [127370 127383]))                  
+                :type ("INT" type (:type "class") nil nil))
+                nil [127289 129195])
+            ("VDOP_LVDS_SetDitherMode" function
+               (:arguments 
+                  ( ("Mode" variable (:type ("UNSG8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [130354 130365]))                  
+                :type ("INT" type (:type "class") nil nil))
+                nil [130326 130601])
+            ("VDOP_LVDS_GetDitherMode" function
+               (:arguments 
+                  ( ("pMode" variable
+                       (:pointer 1
+                        :type ("UNSG8" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [131765 131778]))                  
+                :type ("INT" type (:type "class") nil nil))
+                nil [131737 132091])
+            ("VDOP_LVDS_SetDitherInpRes" function
+               (:arguments 
+                  ( ("Mode" variable (:type ("UNSG8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [132648 132659]))                  
+                :type ("INT" type (:type "class") nil nil))
+                nil [132618 133202])
+            ("VDOP_LVDS_SetDitherOutRes" function
+               (:arguments 
+                  ( ("vpp_obj" variable
+                       (:pointer 1
+                        :type ("VPP_OBJ" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [133749 133766])
+                    ("Mode" variable (:type ("UNSG8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [133767 133778]))                  
+                :type ("INT" type (:type "class") nil nil))
+                nil [133719 134385])
+            ("VDOP_LVDS_SetBlankEn" function
+               (:arguments 
+                  ( ("Enable" variable (:type ("UNSG8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [134900 134913]))                  
+                :type ("INT" type (:type "class") nil nil))
+                nil [134875 135367])
+            ("VDOP_LVDS_SetBlankData" function
+               (:arguments 
+                  ( ("DataB" variable (:type ("UNSG32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [136061 136074])
+                    ("DataG" variable (:type ("UNSG32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [136075 136088])
+                    ("DataR" variable (:type ("UNSG32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [136089 136102]))                  
+                :type ("INT" type (:type "class") nil nil))
+                nil [136034 136826])
+            ("VDOP_LVDS_SetSatEn" function
+               (:arguments 
+                  ( ("Enable" variable (:type ("UNSG8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [137476 137489]))                  
+                :type ("INT" type (:type "class") nil nil))
+                nil [137453 137959])
+            ("VDOP_LVDS_SetHiThr" function
+               (:arguments 
+                  ( ("DataB" variable (:type ("UNSG32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [138713 138726])
+                    ("DataG" variable (:type ("UNSG32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [138727 138740])
+                    ("DataR" variable (:type ("UNSG32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [138741 138754]))                  
+                :type ("INT" type (:type "class") nil nil))
+                nil [138690 139573])
+            ("VDOP_LVDS_SetLoThr" function
+               (:arguments 
+                  ( ("DataB" variable (:type ("UNSG32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [140323 140336])
+                    ("DataG" variable (:type ("UNSG32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [140337 140350])
+                    ("DataR" variable (:type ("UNSG32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [140351 140364]))                  
+                :type ("INT" type (:type "class") nil nil))
+                nil [140300 141184])
+            ("VDOP_LVDS_SetPackerEn" function
+               (:arguments 
+                  ( ("Enable" variable (:type ("UNSG8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [141694 141707]))                  
+                :type ("INT" type (:type "class") nil nil))
+                nil [141668 141944])
+            ("VDOP_LVDS_SetChMapping" function
+               (:arguments 
+                  ( ("vpp_obj" variable
+                       (:pointer 1
+                        :type ("VPP_OBJ" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [142393 142410]))                  
+                :type ("INT" type (:type "class") nil nil))
+                nil [142366 142611])
+            ("VDOP_LVDS_SetDefaultChMapping" function
+               (:arguments 
+                  ( ("vpp_obj" variable
+                       (:pointer 1
+                        :type ("VPP_OBJ" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [143108 143125])
+                    ("indLvdsMapTab" variable (:type ("UNSG8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [143126 143146]))                  
+                :type ("INT" type (:type "class") nil nil))
+                nil [143074 143320])
+            ("VDOP_LVDS_SetGammaDeGammaBypass" function
+               (:arguments 
+                  ( ("vpp_obj" variable
+                       (:pointer 1
+                        :type ("VPP_OBJ" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [143838 143855])
+                    ("Bypass" variable (:type ("UNSG8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [143855 143868]))                  
+                :type ("INT" type (:type "class") nil nil))
+                nil [143802 144320])
+            ("VDOP_LVDS_SetDeGammaIcscCoeff" function
+               (:arguments 
+                  ( ("vpp_obj" variable
+                       (:pointer 1
+                        :type ("VPP_OBJ" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [144870 144887])
+                    ("icsc_mode" variable (:type ("UNSG8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [144887 144903]))                  
+                :type ("INT" type (:type "class") nil nil))
+                nil [144836 147099])
+            ("VDOP_LVDS_SetGammaIcscCoeff" function
+               (:arguments 
+                  ( ("vpp_obj" variable
+                       (:pointer 1
+                        :type ("VPP_OBJ" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [147643 147660])
+                    ("icsc_mode" variable (:type ("UNSG8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [147660 147676]))                  
+                :type ("INT" type (:type "class") nil nil))
+                nil [147611 151421])
+            ("VDOP_LVDS_LoadDeGamma_GammaLUT" function
+               (:arguments 
+                  ( ("vpp_obj" variable
+                       (:pointer 1
+                        :type ("VPP_OBJ" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [151458 151475])
+                    ("deGamma_gamma" variable (:type ("UNSG8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [151475 151495])
+                    ("bitBGR" variable (:type ("UNSG8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [151496 151509]))                  
+                :type ("INT" type (:type "class") nil nil))
+                nil [151423 152099])
+            ("VDOP_LVDS_WriteDeGamma_GammaLUT" function
+               (:arguments 
+                  ( ("vpp_obj" variable
+                       (:pointer 1
+                        :type ("VPP_OBJ" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [152800 152817])
+                    ("deGamma_gamma" variable (:type ("UNSG8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [152817 152837])
+                    ("gamma_bitDepth" variable (:type ("UNSG8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [152838 152859]))                  
+                :type ("INT" type (:type "class") nil nil))
+                nil [152764 160541])
+            ("VDOP_LVDS_ReadDeGamma_GammaLUT" function
+               (:arguments 
+                  ( ("vpp_obj" variable
+                       (:pointer 1
+                        :type ("VPP_OBJ" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [161165 161182])
+                    ("deGamma_gamma" variable (:type ("UNSG8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [161183 161203])
+                    ("optBGR" variable (:type ("UNSG8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [161238 161251])
+                    ("pDataHolder" variable
+                       (:pointer 1
+                        :type ("UINT16" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [161252 161272]))                  
+                :type ("INT" type (:type "class") nil nil))
+                nil [161130 166529])
+            ("VDOP_LVDS_Gamma_LoadRegister" function
+               (:arguments 
+                  ( ("vpp_obj" variable
+                       (:pointer 1
+                        :type ("VPP_OBJ" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [166860 166877]))                  
+                :type ("INT" type (:type "class") nil nil))
+                nil [166827 167401])
+            ("VDOP_LVDS_SetDeGammaEn" function
+               (:arguments 
+                  ( ("vpp_obj" variable
+                       (:pointer 1
+                        :type ("VPP_OBJ" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [168088 168105])
+                    ("deGamma_gamma" variable (:type ("UNSG8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [168105 168125])
+                    ("Enable" variable (:type ("UNSG8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [168126 168139]))                  
+                :type ("INT" type (:type "class") nil nil))
+                nil [168061 169615])
+            ("VDOP_LVDS_SetSSC" function
+               (:arguments 
+                  ( ("vpp_obj" variable
+                       (:pointer 1
+                        :type ("VPP_OBJ" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [170185 170202])
+                    ("enable" variable (:type ("UNSG8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [170203 170216])
+                    ("ssc_mode" variable (:type ("UNSG8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [170217 170232])
+                    ("ssc_freq_div" variable (:type ("UNSG16" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [170251 170271])
+                    ("ssc_range" variable (:type ("UNSG16" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [170272 170289]))                  
+                :type ("INT" type (:type "class") nil nil))
+                nil [170164 173060])
+            ("VDOP_LVDS_SetPanelMode" function
+               (:arguments 
+                  ( ("mode" variable (:type ("UNSG8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [176358 176369]))                  
+                :type "void")
+                nil [176330 176545])
+            ("prog_pinmux_lvds_4k" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [176572 176577]))                  
+                :type "void")
+                nil [176547 177878])
+            ("VDOP_LVDS_SetBackLightCtrl" function (:type ("INT" type (:type "class") nil nil)) nil [177887 178594]))          
+      :file "vop_lvds_drv.c"
+      :pointmax 178602
+      :fsize 178602
+      :lastmodtime '(22221 26054 928594 295000)
+      :unmatched-syntax '((punctuation 92627 . 92628) (symbol 92601 . 92626) (punctuation 92599 . 92600) (symbol 92578 . 92598) (punctuation 92576 . 92577) (symbol 92560 . 92575) (symbol 92553 . 92559))
+      :lexical-table 
+        '(("dbg_Out_Log" . ((symbol "printf" 92078 . 92084)))
+          ("VPP_LVDS_MAPPING_REGS_PER_LANE" . ((number "2" 93037 . 93038)))
+          ("VPP_LVDS_MAPPING_BYTES_MAX" . ((semantic-list "( VPP_LVDS_MAPPING_PHY_MAX * \\
+            VPP_LVDS_MAPPING_LANE_PER_PHY * VPP_LVDS_MAPPING_BITS_PER_LANE )" 93393 . 93500)))
+          ("VPP_LVDS_MAPPING_BYTES_PER_REGS" . ((number "4" 92990 . 92991)))
+          ("VPP_LVDS_MAPPING_LANE_PER_PHY" . ((number "6" 93084 . 93085)))
+          ("VPP_VOP_CSC_MAX_COEFF_INDEX" . ((number "9" 92143 . 92144)))
+          ("VPPLVDS_DBG_INFO" . ((symbol "printf" 92051 . 92057)))
+          ("VPP_VOP_CSC_MAX_OFFSET_INDEX" . ((number "3" 92204 . 92205)))
+          ("VPP_LVDS_MAPPING_BITS_PER_LANE" . ((number "7" 93131 . 93132)))
+          ("VPP_LVDS_MAPPING_PHY_MAX" . ((number "2" 93221 . 93222)))
+          )
+))
+  :file "!home!qichen!20160223_rc1!vendor!marvell-sdk!MV88DE3100_SDK!MV88DE3100_Tools!bsp!bootloader!source!thinvpp!source!BE!source!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

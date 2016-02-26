@@ -1,0 +1,859 @@
+;; Object source/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "source/"
+  :tables
+  (list
+    (semanticdb-table "sys_init.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("io.h" include nil nil [79 94])
+            ("com_type.h" include nil nil [95 116])
+            ("memmap.h" include nil nil [117 136])
+            ("global.h" include nil nil [137 156])
+            ("debug.h" include nil nil [157 175])
+            ("string.h" include nil nil [176 195])
+            ("util.h" include nil nil [196 213])
+            ("system_manager.h" include nil nil [215 242])
+            ("apb_perf_base.h" include nil nil [243 269])
+            ("apb_timer.h" include nil nil [270 292])
+            ("apb_watchdog.h" include nil nil [293 318])
+            ("flash_adaptor.h" include nil nil [320 346])
+            ("load_fixed_images.h" include nil nil [347 377])
+            ("load_gih.h" include nil nil [378 399])
+            ("load_vt.h" include nil nil [400 420])
+            ("tz_boot_arg.h" include nil nil [422 446])
+            ("tz_boot_param.h" include nil nil [448 474])
+            ("driver_if.h" include nil nil [524 546])
+            ("IMG_MAX_SIZE" variable (:constant-flag t) nil [556 568])
+            ("LOAD_SUCC" variable (:constant-flag t) nil [598 607])
+            ("LOAD_FAIL" variable (:constant-flag t) nil [621 630])
+            ("LOAD_NONE" variable (:constant-flag t) nil [644 653])
+            ("BOOTFLAG_MAGIC" variable (:constant-flag t) nil [731 745])
+            ("BOOTFLAG_NORMAL" variable (:constant-flag t) nil [768 783])
+            ("BOOTFLAG_RECOVERY" variable (:constant-flag t) nil [806 823])
+            ("bootflag_t" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("magic" variable (:type "unsigned int") (reparse-symbol classsubparts) [856 875])
+                          ("flag" variable (:type "unsigned int") (reparse-symbol classsubparts) [877 895]))                        
+                      :type "struct")
+                      nil nil)
+                :type "typedef")
+                nil [838 908])
+            ("bootmode" variable
+               (:typemodifiers ("static")
+                :default-value "TZ_BOOT_MODE_NORMAL"
+                :type "unsigned long")
+                nil [910 962])
+            ("__sysinit_buf_start" variable
+               (:typemodifiers ("extern")
+                :type "int")
+                nil [1118 1149])
+            ("SYSINIT_BUF_ADDR" variable (:constant-flag t) nil [1158 1174])
+            ("SYSINIT_BUF_SIZE" variable (:constant-flag t) nil [1222 1238])
+            ("TZ_BOOTARG_BUF_SIZE" variable (:constant-flag t) nil [1260 1279])
+            ("TEMP_BUFFER_SIZE" variable (:constant-flag t) nil [1469 1485])
+            ("bl_boot_arg" type
+               (:members 
+                  ( ("param" variable
+                       (:dereference 1
+                        :type "unsigned long")
+                        (reparse-symbol classsubparts) [1600 1623]))                  
+                :type "struct")
+                nil [1578 1626])
+            ("boot_args" type
+               (:members 
+                  ( ("bl_exe_addr" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol classsubparts) [1708 1727])
+                    ("tz_exe_addr" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol classsubparts) [1729 1748])
+                    ("tzba" variable (:type ("tz_boot_arg" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [1750 1774])
+                    ("blba" variable (:type ("bl_boot_arg" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [1776 1800]))                  
+                :type "struct")
+                nil [1689 1803])
+            ("gd" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :default-value "(void *)(&__sysinit_buf_start)"
+                :type ("resume_data" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1805 2183])
+            ("resume_data" type
+               (:members 
+                  ( ("image_header" variable
+                       (:dereference 1
+                        :type "unsigned char")
+                        (reparse-symbol classsubparts) [1834 1878])
+                    ("custkey" variable
+                       (:dereference 1
+                        :type "unsigned char")
+                        (reparse-symbol classsubparts) [1880 1917])
+                    ("figo_fw" variable
+                       (:dereference 1
+                        :type "unsigned char")
+                        (reparse-symbol classsubparts) [1919 1956])
+                    ("" type
+                       (:members 
+                          ( ("reserved" variable
+                               (:dereference 1
+                                :type "unsigned char")
+                                (reparse-symbol classsubparts) [1968 2012])
+                            ("args" variable (:type ("boot_args" type
+                                 (:prototype t
+                                  :type "struct")
+                                  nil nil)) (reparse-symbol classsubparts) [2035 2057]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [1958 2061])
+                    ("temp" variable
+                       (:dereference 1
+                        :type "unsigned char")
+                        (reparse-symbol classsubparts) [2105 2142]))                  
+                :type "struct")
+                nil [1805 2183])
+            ("key_store_buff" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :default-value "NULL"
+                :type "char")
+                nil [2241 2277])
+            ("figo_fw_buff" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :default-value "NULL"
+                :type "char")
+                nil [2278 2312])
+            ("MV_DRMLIB_Load_Customer_Key" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2427 2434])
+                    ("" variable (:type "int") (reparse-symbol arg-sub-list) [2435 2439])
+                    ("" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2440 2447])
+                    ("" variable (:type "int") (reparse-symbol arg-sub-list) [2448 2452]))                  
+                :type "int")
+                nil [2388 2453])
+            ("MV_DRM_ReadComCusVersion" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("pComVersion" variable
+                       (:pointer 1
+                        :type ("UCHAR" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2492 2512])
+                    ("pCusVersion" variable
+                       (:pointer 1
+                        :type ("UCHAR" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2513 2533]))                  
+                :type ("INT32" type (:type "class") nil nil))
+                nil [2454 2534])
+            ("Jump" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("entry" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [2552 2564])
+                    ("param" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [2565 2577]))                  
+                :type "void")
+                nil [2535 2578])
+            ("VerifyImage" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("src" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [2602 2619])
+                    ("size" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [2620 2638])
+                    ("dst" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [2639 2656]))                  
+                :type "int")
+                nil [2579 2657])
+            ("parse_figo_custkey" function
+               (:arguments 
+                  ( ("figobuff" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [3029 3045])
+                    ("figo_size" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [3046 3062])
+                    ("key_store" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [3063 3080])
+                    ("key_size" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [3081 3096]))                  
+                :type "int")
+                nil [3006 4237])
+            ("disable_vmeta_sram" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [4603 4608]))                  
+                :type "void")
+                nil [4572 4841])
+            ("start_part2" function
+               (:arguments 
+                  ( ("part2_exe_addr" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [4859 4880])
+                    ("param" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [4881 4893]))                  
+                :type "int")
+                nil [4843 5443])
+            ("load_image_header" function
+               (:arguments 
+                  ( ("part" variable (:type "int") (reparse-symbol arg-sub-list) [5467 5476]))                  
+                :type "int")
+                nil [5445 6484])
+            ("load_figo_custkey" function
+               (:arguments 
+                  ( ("part" variable (:type "int") (reparse-symbol arg-sub-list) [6529 6538]))                  
+                :type "int")
+                nil [6507 7518])
+            ("load_bootloader_GIH_image" function
+               (:arguments 
+                  ( ("part" variable (:type "int") (reparse-symbol arg-sub-list) [8959 8968]))                  
+                :type "int")
+                nil [8929 10156])
+            ("load_verify_post_bl_pt" function
+               (:arguments 
+                  ( ("index" variable (:type "int") (reparse-symbol arg-sub-list) [10185 10195]))                  
+                :type "int")
+                nil [10158 11706])
+            ("load_bootloader" function (:type "int") nil [12884 13768])
+            ("load_partition_vt" function
+               (:arguments 
+                  ( ("part" variable (:type "int") (reparse-symbol arg-sub-list) [13792 13801]))                  
+                :type "int")
+                nil [13770 14572])
+            ("load_verify_tzk_pt" function
+               (:arguments 
+                  ( ("index" variable (:type "int") (reparse-symbol arg-sub-list) [14597 14607]))                  
+                :type "int")
+                nil [14574 16086])
+            ("do_tzk_bootflow" function (:type "int") nil [16088 18221])
+            ("load_tzk" function (:type "int") nil [18223 18922])
+            ("load_tzk_boot_param" function (:type "int") nil [18924 20260])
+            ("start_tz" function
+               (:arguments 
+                  ( ("mode" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [20276 20295]))                  
+                :type "void")
+                nil [20262 20718])
+            ("start_bl" function (:type "void") nil [20720 20791])
+            ("load_part2" function
+               (:arguments 
+                  ( ("driver_if" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [21588 21605]))                  
+                :type "void")
+                nil [21572 25259]))          
+      :file "sys_init.c"
+      :pointmax 25261
+      :fsize 25260
+      :lastmodtime '(22223 55437 771445 795000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("IMG_MAX_SIZE" . ((semantic-list "(1 << 20)" 569 . 578)))
+          ("SYSINIT_BUF_SIZE" . ((semantic-list "(512 << 10)" 1239 . 1250)))
+          ("SYSINIT_BUF_ADDR" . ((semantic-list "((unsigned int)(&__sysinit_buf_start))" 1175 . 1213)))
+          ("TZ_BOOTARG_BUF_SIZE" . ((semantic-list "(4 << 10)" 1281 . 1290)))
+          ("BOOTFLAG_MAGIC" . ((semantic-list "(0x5AA5BEAF)" 747 . 759)))
+          ("BOOTFLAG_NORMAL" . ((semantic-list "(0xBEAFBEAF)" 785 . 797)))
+          ("TEMP_BUFFER_SIZE" . ((semantic-list "(SYSINIT_BUF_SIZE - CUST_KEY_SIZE - DRM_FIGO_SIZE - TZ_BOOTARG_BUF_SIZE - IMG_HEADER_SIZE)" 1486 . 1576)))
+          ("LOAD_SUCC" . ((semantic-list "(0)" 609 . 612)))
+          ("BOOTFLAG_RECOVERY" . ((semantic-list "(0xDEADDEAD)" 824 . 836)))
+          ("LOAD_NONE" . ((semantic-list "(2)" 655 . 658)))
+          ("LOAD_FAIL" . ((semantic-list "(1)" 632 . 635)))
+          )
+)
+    (semanticdb-table "initialize.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("io.h" include nil nil [1 16])
+            ("debug.h" include nil nil [17 35])
+            ("global.h" include nil nil [36 55])
+            ("sys_mgr.h" include nil nil [56 76])
+            ("system_manager.h" include nil nil [77 104])
+            ("apb_perf_base.h" include nil nil [105 131])
+            ("apb_timer.h" include nil nil [132 154])
+            ("mem_map.h" include nil nil [155 175])
+            ("apb_watchdog.h" include nil nil [176 201])
+            ("gpio_defs.h" include nil nil [202 224])
+            ("genimg.h" include nil nil [226 245])
+            ("image_chunk.h" include nil nil [246 270])
+            ("flash_adaptor.h" include nil nil [271 297])
+            ("load_fixed_images.h" include nil nil [298 328])
+            ("date.h" include nil nil [330 347])
+            ("DBG" variable (:constant-flag t) nil [476 479])
+            ("__dram_part_entry" variable
+               (:typemodifiers ("extern")
+                :type ("uint32_t" type (:type "class") nil nil))
+                nil [502 536])
+            ("g_miniloader" variable
+               (:pointer 1
+                :default-value "NULL"
+                :type ("uint8_t" type (:type "class") nil nil))
+                nil [537 567])
+            ("VerifyImage" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("src" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [616 632])
+                    ("size" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [633 651])
+                    ("dst" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [652 662]))                  
+                :type ("int32_t" type (:type "class") nil nil))
+                nil [589 663])
+            ("init_clocks" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [795 800]))                  
+                :type "void")
+                nil [771 801])
+            ("init_ddr" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [823 828]))                  
+                :type "void")
+                nil [802 829])
+            ("init_dbg_port" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("uart_base" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [857 874]))                  
+                :type "void")
+                nil [831 875])
+            ("set_uart_pinmux" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :type "void")
+                nil [876 906])
+            ("CHIP_CTRL_BOOT_STRAP_REG" variable (:constant-flag t) nil [950 974])
+            ("system_start_print" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1054 1059]))                  
+                :type "void")
+                nil [1030 2954])
+            ("load_miniloader" function
+               (:arguments 
+                  ( ("part" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3004 3017]))                  
+                :type ("int32_t" type (:type "class") nil nil))
+                nil [2980 3904])
+            ("sys_init_load_miniloader" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [3936 3941]))                  
+                :type "void")
+                nil [3906 4138])
+            ("APB_GPIO0_BASE" variable (:constant-flag t) nil [4239 4253])
+            ("APB_GPIO1_BASE" variable (:constant-flag t) nil [4275 4289])
+            ("APB_GPIO_SWPORTA_DDR" variable (:constant-flag t) nil [4320 4340])
+            ("APB_GPIO_PORTA_CTL" variable (:constant-flag t) nil [4361 4379])
+            ("APB_GPIO_SWPORTA_DR" variable (:constant-flag t) nil [4398 4417])
+            ("GPIO_PortSetInOut" function
+               (:arguments 
+                  ( ("port" variable (:type "int") (reparse-symbol arg-sub-list) [4449 4458])
+                    ("in" variable (:type "int") (reparse-symbol arg-sub-list) [4459 4466]))                  
+                :type "int")
+                nil [4427 5236])
+            ("GPIO_PortWrite" function
+               (:arguments 
+                  ( ("port" variable (:type "int") (reparse-symbol arg-sub-list) [5257 5266])
+                    ("value" variable (:type "int") (reparse-symbol arg-sub-list) [5267 5277]))                  
+                :type "int")
+                nil [5238 6339])
+            ("set_drive_strength" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [6372 6377]))                  
+                :type "void")
+                nil [6341 6378])
+            ("initialization" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [6399 6404]))                  
+                :type "void")
+                nil [6379 7312]))          
+      :file "initialize.c"
+      :pointmax 7313
+      :fsize 7312
+      :lastmodtime '(22223 55355 3448 451000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("CHIP_CTRL_BOOT_STRAP_REG" . ((semantic-list "(RA_Gbl_bootStrap + MEMMAP_CHIP_CTRL_REG_BASE)" 974 . 1020)))
+          ("APB_GPIO_PORTA_CTL" . ((number "0x08" 4449 . 4453)))
+          ("APB_GPIO_SWPORTA_DDR" . ((number "0x04" 4412 . 4416)))
+          ("APB_GPIO0_BASE" . ((semantic-list "(0xF7E80400)" 4318 . 4330)))
+          ("DBG" (spp-arg-list ("fmt" "args...") 478 . 492))
+          ("APB_GPIO_SWPORTA_DR" . ((number "0x00" 4486 . 4490)))
+          ("APB_GPIO1_BASE" . ((semantic-list "(0xF7E80800)" 4363 . 4375)))
+          )
+)
+    (semanticdb-table "miniloader_init.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("io.h" include nil nil [79 94])
+            ("com_type.h" include nil nil [95 116])
+            ("memmap.h" include nil nil [117 136])
+            ("global.h" include nil nil [137 156])
+            ("debug.h" include nil nil [157 175])
+            ("string.h" include nil nil [176 195])
+            ("sys_mgr.h" include nil nil [197 217])
+            ("system_manager.h" include nil nil [218 245])
+            ("apb_perf_base.h" include nil nil [246 272])
+            ("apb_timer.h" include nil nil [273 295])
+            ("apb_watchdog.h" include nil nil [296 321])
+            ("flash_adaptor.h" include nil nil [323 349])
+            ("load_fixed_images.h" include nil nil [350 380])
+            ("load_gih.h" include nil nil [381 402])
+            ("load_vt.h" include nil nil [403 423])
+            ("tz_boot_arg.h" include nil nil [425 449])
+            ("tz_boot_param.h" include nil nil [451 477])
+            ("date.h" include nil nil [479 496])
+            ("IMG_MAX_SIZE" variable (:constant-flag t) nil [748 760])
+            ("LOAD_SUCC" variable (:constant-flag t) nil [790 799])
+            ("LOAD_FAIL" variable (:constant-flag t) nil [813 822])
+            ("LOAD_NONE" variable (:constant-flag t) nil [836 845])
+            ("BOOTFLAG_MAGIC" variable (:constant-flag t) nil [923 937])
+            ("BOOTFLAG_NORMAL" variable (:constant-flag t) nil [960 975])
+            ("BOOTFLAG_RECOVERY" variable (:constant-flag t) nil [998 1015])
+            ("boot_mode" type
+               (:members 
+                  ( ("BOOT_MODE_NORMAL" variable
+                       (:constant-flag t
+                        :default-value (1070 1071)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1048 1071])
+                    ("BOOT_MODE_RESUME" variable
+                       (:constant-flag t
+                        :default-value (1096 1097)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1074 1097])
+                    ("BOOT_MODE_RECOVERY" variable
+                       (:constant-flag t
+                        :default-value (1122 1126)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1100 1126])
+                    ("BOOT_MODE_MAX" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1129 1144]))                  
+                :type "enum")
+                nil [1030 1145])
+            ("bootflag_t" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("magic" variable (:type "unsigned int") (reparse-symbol classsubparts) [1165 1184])
+                          ("flag" variable (:type "unsigned int") (reparse-symbol classsubparts) [1186 1204]))                        
+                      :type "struct")
+                      nil nil)
+                :type "typedef")
+                nil [1147 1217])
+            ("bootmode" variable
+               (:typemodifiers ("static")
+                :default-value "BOOT_MODE_NORMAL"
+                :type "unsigned long")
+                nil [1219 1268])
+            ("__sysinit_buf_start" variable
+               (:typemodifiers ("extern")
+                :type "int")
+                nil [1424 1455])
+            ("SYSINIT_BUF_ADDR" variable (:constant-flag t) nil [1464 1480])
+            ("SYSINIT_BUF_SIZE" variable (:constant-flag t) nil [1528 1544])
+            ("TZ_BOOTARG_BUF_SIZE" variable (:constant-flag t) nil [1566 1585])
+            ("TEMP_BUFFER_SIZE" variable (:constant-flag t) nil [1934 1950])
+            ("bl_boot_arg" type
+               (:members 
+                  ( ("param" variable
+                       (:dereference 1
+                        :type "unsigned long")
+                        (reparse-symbol classsubparts) [2072 2095]))                  
+                :type "struct")
+                nil [2050 2098])
+            ("boot_args" type
+               (:members 
+                  ( ("bl_exe_addr" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol classsubparts) [2180 2199])
+                    ("tz_exe_addr" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol classsubparts) [2201 2220])
+                    ("tzba" variable (:type ("tz_boot_arg" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [2222 2246])
+                    ("blba" variable (:type ("bl_boot_arg" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [2248 2272]))                  
+                :type "struct")
+                nil [2161 2275])
+            ("gd" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :default-value "(void *)(&__sysinit_buf_start)"
+                :type ("resume_data" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2277 2709])
+            ("resume_data" type
+               (:members 
+                  ( ("image_header" variable
+                       (:dereference 1
+                        :type "unsigned char")
+                        (reparse-symbol classsubparts) [2306 2350])
+                    ("custkey" variable
+                       (:dereference 1
+                        :type "unsigned char")
+                        (reparse-symbol classsubparts) [2399 2436])
+                    ("figo_fw" variable
+                       (:dereference 1
+                        :type "unsigned char")
+                        (reparse-symbol classsubparts) [2438 2475])
+                    ("" type
+                       (:members 
+                          ( ("reserved" variable
+                               (:dereference 1
+                                :type "unsigned char")
+                                (reparse-symbol classsubparts) [2494 2538])
+                            ("args" variable (:type ("boot_args" type
+                                 (:prototype t
+                                  :type "struct")
+                                  nil nil)) (reparse-symbol classsubparts) [2561 2583]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [2484 2587])
+                    ("temp" variable
+                       (:dereference 1
+                        :type "unsigned char")
+                        (reparse-symbol classsubparts) [2631 2668]))                  
+                :type "struct")
+                nil [2277 2709])
+            ("key_store_buff" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :default-value "NULL"
+                :type "char")
+                nil [2814 2850])
+            ("figo_fw_buff" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :default-value "NULL"
+                :type "char")
+                nil [2851 2885])
+            ("MV_DRMLIB_Load_Customer_Key" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [3007 3014])
+                    ("" variable (:type "int") (reparse-symbol arg-sub-list) [3015 3019])
+                    ("" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [3020 3027])
+                    ("" variable (:type "int") (reparse-symbol arg-sub-list) [3028 3032]))                  
+                :type "int")
+                nil [2968 3033])
+            ("MV_DRM_ReadComCusVersion" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("pComVersion" variable
+                       (:pointer 1
+                        :type ("UCHAR" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3072 3092])
+                    ("pCusVersion" variable
+                       (:pointer 1
+                        :type ("UCHAR" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3093 3113]))                  
+                :type ("INT32" type (:type "class") nil nil))
+                nil [3034 3114])
+            ("Jump" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("entry" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [3132 3144])
+                    ("param" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [3145 3157]))                  
+                :type "void")
+                nil [3115 3158])
+            ("VerifyImage" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("src" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [3207 3223])
+                    ("size" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [3224 3242])
+                    ("dst" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [3243 3253]))                  
+                :type ("int32_t" type (:type "class") nil nil))
+                nil [3180 3254])
+            ("parse_figo_custkey" function
+               (:arguments 
+                  ( ("figobuff" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [3759 3775])
+                    ("figo_size" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [3776 3792])
+                    ("key_store" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [3793 3810])
+                    ("key_size" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [3811 3826]))                  
+                :type "int")
+                nil [3736 4959])
+            ("disable_vmeta_sram" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [5325 5330]))                  
+                :type "void")
+                nil [5294 5603])
+            ("start_part2" function
+               (:arguments 
+                  ( ("part2_exe_addr" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [5621 5642])
+                    ("param" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [5643 5655]))                  
+                :type "int")
+                nil [5605 6216])
+            ("load_image_header" function
+               (:arguments 
+                  ( ("part" variable (:type "int") (reparse-symbol arg-sub-list) [6240 6249]))                  
+                :type "int")
+                nil [6218 7377])
+            ("load_figo_custkey" function
+               (:arguments 
+                  ( ("part" variable (:type "int") (reparse-symbol arg-sub-list) [7448 7457]))                  
+                :type "int")
+                nil [7426 8437])
+            ("load_bootloader_GIH_image" function
+               (:arguments 
+                  ( ("part" variable (:type "int") (reparse-symbol arg-sub-list) [9878 9887]))                  
+                :type "int")
+                nil [9848 11523])
+            ("load_verify_post_bl_pt" function
+               (:arguments 
+                  ( ("index" variable (:type "int") (reparse-symbol arg-sub-list) [11552 11562]))                  
+                :type "int")
+                nil [11525 13312])
+            ("load_bootloader" function (:type "int") nil [14982 15873])
+            ("load_partition_vt" function
+               (:arguments 
+                  ( ("part" variable (:type "int") (reparse-symbol arg-sub-list) [15897 15906]))                  
+                :type "int")
+                nil [15875 16835])
+            ("load_verify_tzk_pt" function
+               (:arguments 
+                  ( ("index" variable (:type "int") (reparse-symbol arg-sub-list) [16860 16870]))                  
+                :type "int")
+                nil [16837 18585])
+            ("do_tzk_bootflow" function (:type "int") nil [18587 20720])
+            ("load_tzk" function (:type "int") nil [20722 21421])
+            ("load_tzk_boot_param" function (:type "int") nil [21423 23091])
+            ("start_tz" function
+               (:arguments 
+                  ( ("mode" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [23109 23128]))                  
+                :type "void")
+                nil [23095 23573])
+            ("load_and_start_bl_tz_images" function
+               (:arguments 
+                  ( ("mode" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [25352 25371])
+                    ("part" variable (:type "int") (reparse-symbol arg-sub-list) [25372 25381]))                  
+                :type "int")
+                nil [25320 27163])
+            ("get_bootmode" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [27970 27975]))                  
+                :type "unsigned long")
+                nil [27943 28260])
+            ("set_bootmode" function
+               (:arguments 
+                  ( ("bootflag" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [28314 28337]))                  
+                :type "int")
+                nil [28297 28735])
+            ("MIDAS_INIT_LED" variable (:constant-flag t) nil [28810 28824])
+            ("APB_GPIO0_BASE" variable (:constant-flag t) nil [28855 28869])
+            ("init_led" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [28897 28902]))                  
+                :type "void")
+                nil [28883 29631])
+            ("load_part2" function
+               (:arguments 
+                  ( ("ptr" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [29656 29667]))                  
+                :type "void")
+                nil [29640 33309]))          
+      :file "miniloader_init.c"
+      :pointmax 33311
+      :fsize 33310
+      :lastmodtime '(22223 55382 411447 572000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("IMG_MAX_SIZE" . ((semantic-list "(1 << 20)" 761 . 770)))
+          ("SYSINIT_BUF_SIZE" . ((semantic-list "(512 << 10)" 1545 . 1556)))
+          ("APB_GPIO0_BASE" . ((semantic-list "(0xF7E80400)" 28870 . 28882)))
+          ("SYSINIT_BUF_ADDR" . ((semantic-list "((unsigned int)(&__sysinit_buf_start))" 1481 . 1519)))
+          ("TZ_BOOTARG_BUF_SIZE" . ((semantic-list "(4 << 10)" 1587 . 1596)))
+          ("MIDAS_INIT_LED")
+          ("BOOTFLAG_MAGIC" . ((semantic-list "(0x5AA5BEAF)" 939 . 951)))
+          ("BOOTFLAG_NORMAL" . ((semantic-list "(0xBEAFBEAF)" 977 . 989)))
+          ("TEMP_BUFFER_SIZE" . ((semantic-list "(SYSINIT_BUF_SIZE - CUST_KEY_SIZE - DRM_FIGO_SIZE - TZ_BOOTARG_BUF_SIZE - IMG_HEADER_SIZE)" 1951 . 2041)))
+          ("LOAD_SUCC" . ((semantic-list "(0)" 801 . 804)))
+          ("BOOTFLAG_RECOVERY" . ((semantic-list "(0xDEADDEAD)" 1016 . 1028)))
+          ("LOAD_NONE" . ((semantic-list "(2)" 847 . 850)))
+          ("LOAD_FAIL" . ((semantic-list "(1)" 824 . 827)))
+          )
+)
+    (semanticdb-table "drm_verify.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("drm.h" include nil nil [1 17])
+            ("drm_reg.h" include nil nil [18 38])
+            ("io.h" include nil nil [39 54])
+            ("debug.h" include nil nil [55 73])
+            ("drm_decrypted_size" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("encrypted_data" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [917 944]))                  
+                :type "unsigned int")
+                nil [871 1173])
+            ("drm_encrypted_size" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("encrypted_data" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [1221 1248]))                  
+                :type "unsigned int")
+                nil [1175 1458])
+            ("drm_verify" function
+               (:arguments 
+                  ( ("src" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [1475 1491])
+                    ("dst" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [1492 1502])
+                    ("size" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [1503 1521])
+                    ("is_verify" variable (:type "int") (reparse-symbol arg-sub-list) [1522 1536]))                  
+                :type "int")
+                nil [1460 3670])
+            ("VerifyImage" function
+               (:arguments 
+                  ( ("src" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [6156 6172])
+                    ("size" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [6173 6191])
+                    ("dst" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [6192 6202]))                  
+                :type "int")
+                nil [6140 6498]))          
+      :file "drm_verify.c"
+      :pointmax 6499
+      :fsize 6498
+      :lastmodtime '(21934 1034 479890 259000)
+      :unmatched-syntax nil)
+    (semanticdb-table "ddr_scrambler.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("io.h" include nil nil [1231 1246])
+            ("debug.h" include nil nil [1247 1265])
+            ("global.h" include nil nil [1266 1285])
+            ("sys_mgr.h" include nil nil [1286 1306])
+            ("system_manager.h" include nil nil [1307 1334])
+            ("apb_perf_base.h" include nil nil [1335 1361])
+            ("apb_timer.h" include nil nil [1362 1384])
+            ("mem_map.h" include nil nil [1385 1405])
+            ("NOTICE" variable (:constant-flag t) nil [1415 1421])
+            ("ERR" variable (:constant-flag t) nil [1482 1485])
+            ("load_ddr_scrambler" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [10895 10900]))                  
+                :type "void")
+                nil [10871 11608]))          
+      :file "ddr_scrambler.c"
+      :pointmax 13318
+      :fsize 13317
+      :lastmodtime '(22220 12763 351123 629000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("NOTICE" (spp-arg-list ("fmt" "args...") 1421 . 1435) . ((symbol "dbg_printf" 1437 . 1447) (semantic-list "(PRN_NOTICE, fmt, ## args)" 1447 . 1473)))
+          ("ERR" (spp-arg-list ("fmt" "args...") 1485 . 1499) . ((symbol "dbg_printf" 1501 . 1511) (semantic-list "(PRN_ERR, fmt, ## args)" 1511 . 1534)))
+          )
+))
+  :file "!home!qichen!20160223_rc1!vendor!marvell-sdk!MV88DE3100_SDK!MV88DE3100_Tools!bsp!sys_init!source!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

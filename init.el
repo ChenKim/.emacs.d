@@ -459,6 +459,19 @@
 (add-hook 'c++-mode-hook
           (lambda ()
             (font-lock-add-keywords nil (list (list "\\(%[xXUuLlDdPpSs]+\\)" '(0 font-lock-number-face t)) ))))
+
+(add-hook 'c-mode-hook
+          (lambda ()
+            (font-lock-add-keywords nil (list (list "\\(\\#ifdef\\|#ifndef\\) *[a-zA-Z0-9_()]*" '(0 font-lock-preprocessor-face t)) ))))
+(add-hook 'c++-mode-hook
+          (lambda ()
+            (font-lock-add-keywords nil (list (list "\\(\\#ifdef\\|#ifndef\\) *[a-zA-Z0-9_()]*" '(0 font-lock-preprocessor-face t)) ))))
+
+;; color for #if 0  #endif
+(require 'never-comment)
+(never-comment-init)
+
+
 ;; treat underscore symbol as word
 (add-hook 'c-mode-hook
           (lambda () (modify-syntax-entry ?_ "w")))
@@ -507,3 +520,8 @@
 ;;                        nil
 ;;                        '(("\\([0-9]+\\)"
 ;;                           1 font-lock-warning-face prepend)))))
+
+;;serssion
+;; (require 'session)
+;; (add-hook 'after-init-hook
+;;                     'session-initialize)

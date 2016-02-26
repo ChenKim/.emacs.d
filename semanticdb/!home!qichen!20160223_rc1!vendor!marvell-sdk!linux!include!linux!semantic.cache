@@ -1,0 +1,414 @@
+;; Object linux/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "linux/"
+  :tables
+  (list
+    (semanticdb-table "export.h"
+      :file "export.h"
+      :fsize 2796
+      :lastmodtime '(21934 1136 147886 996000))
+    (semanticdb-table "sched.h"
+      :file "sched.h"
+      :fsize 86296
+      :lastmodtime '(21934 1136 339886 990000))
+    (semanticdb-table "kernel.h"
+      :file "kernel.h"
+      :fsize 27741
+      :lastmodtime '(21934 1136 195886 995000))
+    (semanticdb-table "mm.h"
+      :file "mm.h"
+      :fsize 67079
+      :lastmodtime '(21934 1136 267886 993000))
+    (semanticdb-table "stddef.h"
+      :file "stddef.h"
+      :fsize 342
+      :lastmodtime '(21934 1136 359886 990000))
+    (semanticdb-table "user.h"
+      :file "user.h"
+      :fsize 22
+      :lastmodtime '(21934 1136 383886 989000))
+    (semanticdb-table "delay.h"
+      :file "delay.h"
+      :fsize 1426
+      :lastmodtime '(21934 1136 139886 997000))
+    (semanticdb-table "reboot.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("_LINUX_REBOOT_H" variable (:constant-flag t) nil [33 48])
+            ("linux/notifier.h" include (:system-flag t) nil [51 78])
+            ("uapi/linux/reboot.h" include (:system-flag t) nil [79 109])
+            ("SYS_DOWN" variable (:constant-flag t) nil [119 127])
+            ("SYS_RESTART" variable (:constant-flag t) nil [171 182])
+            ("SYS_HALT" variable (:constant-flag t) nil [200 208])
+            ("SYS_POWER_OFF" variable (:constant-flag t) nil [252 265])
+            ("reboot_mode" type
+               (:members 
+                  ( ("REBOOT_COLD" variable
+                       (:constant-flag t
+                        :default-value (341 342)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [327 342])
+                    ("REBOOT_WARM" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [345 357])
+                    ("REBOOT_HARD" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [359 371])
+                    ("REBOOT_SOFT" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [373 385])
+                    ("REBOOT_GPIO" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [387 399]))                  
+                :type "enum")
+                nil [307 402])
+            ("reboot_mode" variable
+               (:typemodifiers ("extern")
+                :type ("reboot_mode" type (:type "enum") nil nil))
+                nil [403 439])
+            ("reboot_type" type
+               (:members 
+                  ( ("BOOT_TRIPLE" variable
+                       (:constant-flag t
+                        :default-value (475 478)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [461 478])
+                    ("BOOT_KBD" variable
+                       (:constant-flag t
+                        :default-value (492 495)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [481 495])
+                    ("BOOT_BIOS" variable
+                       (:constant-flag t
+                        :default-value (510 513)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [498 513])
+                    ("BOOT_ACPI" variable
+                       (:constant-flag t
+                        :default-value (528 531)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [516 531])
+                    ("BOOT_EFI" variable
+                       (:constant-flag t
+                        :default-value (545 548)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [534 548])
+                    ("BOOT_CF9" variable
+                       (:constant-flag t
+                        :default-value (562 565)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [551 565])
+                    ("BOOT_CF9_COND" variable
+                       (:constant-flag t
+                        :default-value (584 587)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [568 587]))                  
+                :type "enum")
+                nil [441 591])
+            ("reboot_type" variable
+               (:typemodifiers ("extern")
+                :type ("reboot_type" type (:type "enum") nil nil))
+                nil [592 628])
+            ("reboot_default" variable
+               (:typemodifiers ("extern")
+                :type "int")
+                nil [630 656])
+            ("reboot_cpu" variable
+               (:typemodifiers ("extern")
+                :type "int")
+                nil [657 679])
+            ("reboot_force" variable
+               (:typemodifiers ("extern")
+                :type "int")
+                nil [680 704])
+            ("register_reboot_notifier" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("" variable
+                       (:pointer 1
+                        :type ("notifier_block" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [743 767]))                  
+                :type "int")
+                nil [707 768])
+            ("unregister_reboot_notifier" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("" variable
+                       (:pointer 1
+                        :type ("notifier_block" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [807 831]))                  
+                :type "int")
+                nil [769 832])
+            ("register_restart_handler" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("" variable
+                       (:pointer 1
+                        :type ("notifier_block" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [870 894]))                  
+                :type "int")
+                nil [834 895])
+            ("unregister_restart_handler" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("" variable
+                       (:pointer 1
+                        :type ("notifier_block" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [934 958]))                  
+                :type "int")
+                nil [896 959])
+            ("do_kernel_restart" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("cmd" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [990 1000]))                  
+                :type "void")
+                nil [960 1001])
+            ("migrate_to_reboot_cpu" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1110 1115]))                  
+                :type "void")
+                nil [1076 1116])
+            ("machine_restart" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("cmd" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1145 1155]))                  
+                :type "void")
+                nil [1117 1156])
+            ("machine_halt" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1182 1187]))                  
+                :type "void")
+                nil [1157 1188])
+            ("machine_power_off" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1219 1224]))                  
+                :type "void")
+                nil [1189 1225])
+            ("machine_shutdown" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1256 1261]))                  
+                :type "void")
+                nil [1227 1262])
+            ("pt_regs" type
+               (:prototype t
+                :type "struct")
+                nil [1263 1278])
+            ("machine_crash_shutdown" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("" variable
+                       (:pointer 1
+                        :type ("pt_regs" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1314 1331]))                  
+                :type "void")
+                nil [1279 1332])
+            ("kernel_restart_prepare" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("cmd" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1444 1454]))                  
+                :type "void")
+                nil [1409 1455])
+            ("kernel_restart" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("cmd" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1483 1493]))                  
+                :type "void")
+                nil [1456 1494])
+            ("kernel_halt" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1519 1524]))                  
+                :type "void")
+                nil [1495 1525])
+            ("kernel_power_off" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1555 1560]))                  
+                :type "void")
+                nil [1526 1561])
+            ("C_A_D" variable
+               (:typemodifiers ("extern")
+                :type "int")
+                nil [1563 1580])
+            ("ctrl_alt_del" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1616 1621]))                  
+                :type "void")
+                nil [1598 1622])
+            ("POWEROFF_CMD_PATH_LEN" variable (:constant-flag t) nil [1632 1653])
+            ("poweroff_cmd" variable
+               (:dereference 1
+                :typemodifiers ("extern")
+                :type "char")
+                nil [1658 1706])
+            ("orderly_poweroff" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("force" variable (:type "bool") (reparse-symbol arg-sub-list) [1736 1747]))                  
+                :type "int")
+                nil [1708 1748])
+            ("emergency_restart" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1846 1851]))                  
+                :type "void")
+                nil [1816 1852])
+            ("asm/emergency-restart.h" include (:system-flag t) nil [1853 1887]))          
+      :file "reboot.h"
+      :pointmax 1918
+      :fsize 1917
+      :lastmodtime '(21934 1136 331886 991000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("SYS_POWER_OFF" . ((number "0x0003" 266 . 272)))
+          ("SYS_DOWN" . ((number "0x0001" 128 . 134)))
+          ("SYS_RESTART" . ((symbol "SYS_DOWN" 183 . 191)))
+          ("POWEROFF_CMD_PATH_LEN" . ((number "256" 1654 . 1657)))
+          ("_LINUX_REBOOT_H")
+          ("SYS_HALT" . ((number "0x0002" 209 . 215)))
+          )
+)
+    (semanticdb-table "interrupt.h"
+      :file "interrupt.h"
+      :fsize 19288
+      :lastmodtime '(21934 1136 183886 995000))
+    (semanticdb-table "kallsyms.h"
+      :file "kallsyms.h"
+      :fsize 3491
+      :lastmodtime '(21934 1136 191886 995000))
+    (semanticdb-table "init.h"
+      :file "init.h"
+      :fsize 11069
+      :lastmodtime '(21934 1136 179886 995000))
+    (semanticdb-table "cpu.h"
+      :file "cpu.h"
+      :fsize 7482
+      :lastmodtime '(21934 1136 131886 997000))
+    (semanticdb-table "elfcore.h"
+      :file "elfcore.h"
+      :fsize 2084
+      :lastmodtime '(21934 1136 147886 996000))
+    (semanticdb-table "pm.h"
+      :file "pm.h"
+      :fsize 30126
+      :lastmodtime '(21934 1136 319886 991000))
+    (semanticdb-table "tick.h"
+      :file "tick.h"
+      :fsize 6318
+      :lastmodtime '(21934 1136 367886 989000))
+    (semanticdb-table "utsname.h"
+      :file "utsname.h"
+      :fsize 1651
+      :lastmodtime '(21934 1136 383886 989000))
+    (semanticdb-table "uaccess.h"
+      :file "uaccess.h"
+      :fsize 3433
+      :lastmodtime '(21934 1136 371886 989000))
+    (semanticdb-table "random.h"
+      :file "random.h"
+      :fsize 2672
+      :lastmodtime '(21934 1136 331886 991000))
+    (semanticdb-table "hw_breakpoint.h"
+      :file "hw_breakpoint.h"
+      :fsize 3906
+      :lastmodtime '(21934 1136 163886 996000))
+    (semanticdb-table "cpuidle.h"
+      :file "cpuidle.h"
+      :fsize 6439
+      :lastmodtime '(21934 1136 135886 997000))
+    (semanticdb-table "leds.h"
+      :file "leds.h"
+      :fsize 8766
+      :lastmodtime '(21934 1136 199886 995000))
+    (semanticdb-table "console.h"
+      :file "console.h"
+      :fsize 6160
+      :lastmodtime '(21934 1136 131886 997000))
+    (semanticdb-table "ctype.h"
+      :file "ctype.h"
+      :fsize 1730
+      :lastmodtime '(21934 1136 135886 997000))
+    (semanticdb-table "kexec.h"
+      :file "kexec.h"
+      :fsize 6774
+      :lastmodtime '(21934 1136 195886 995000))
+    (semanticdb-table "kmod.h"
+      :file "kmod.h"
+      :fsize 3329
+      :lastmodtime '(21934 1136 195886 995000))
+    (semanticdb-table "kmsg_dump.h"
+      :file "kmsg_dump.h"
+      :fsize 2923
+      :lastmodtime '(21934 1136 195886 995000))
+    (semanticdb-table "suspend.h"
+      :file "suspend.h"
+      :fsize 16426
+      :lastmodtime '(21934 1136 363886 990000))
+    (semanticdb-table "syscalls.h"
+      :file "syscalls.h"
+      :fsize 37710
+      :lastmodtime '(21934 1136 367886 989000))
+    (semanticdb-table "syscore_ops.h"
+      :file "syscore_ops.h"
+      :fsize 635
+      :lastmodtime '(21934 1136 367886 989000))
+    (semanticdb-table "notifier.h"
+      :file "notifier.h"
+      :fsize 7838
+      :lastmodtime '(21934 1136 291886 992000)))
+  :file "!home!qichen!20160223_rc1!vendor!marvell-sdk!linux!include!linux!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

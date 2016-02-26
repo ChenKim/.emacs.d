@@ -1,0 +1,58 @@
+;; Object Scripts/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "Scripts/"
+  :tables
+  (list
+    (semanticdb-table "main.mk"
+      :major-mode 'makefile-gmake-mode
+      :tags 
+        '( ("SHELL" variable (:default-value ("/bin/bash")) nil [1 18])
+            ("all_modules" variable nil nil [465 480])
+            ("all_module_targets" variable nil nil [480 502])
+            ("all_module_clean_targets" variable nil nil [502 530])
+            (".PHONY" function (:arguments ("debu")) nil [568 581])
+            ("DEFAULT_GAOL" variable (:default-value ("debu")) nil [581 602])
+            ("$(DEFAULT_GAOL)" function nil nil [602 620])
+            ("subdirs" variable (:default-value ("SUB_IMAGE" "IMAGE" "BINARY")) nil [646 680])
+            ("abs_subdirs" variable (:default-value ("$(foreach dir, $(subdirs), $(top_tool_dir)/$(dir))")) nil [680 746])
+            ("subdir_makefiles" variable (:default-value ("$(shell find $(abs_subdirs) -name module.mk |\\
+   						egrep -v \"\\.svn\")")) nil [746 840])
+            ("$(subdir_makefiles)" include nil nil [905 933])
+            ("debu" function (:arguments ("$(all_modules)")) nil [1064 1085])
+            ("my_module" variable (:default-value ("$(strip $(shell awk -F \"\\=\" '/module_name/{print $$2}' module.mk | head -n 1))")) nil [1143 1235])
+            ("debu" function (:arguments ("$(my_module)")) nil [1352 1418])
+            (".PHONY" function (:arguments ("flash_type" "subimglayout" "version_table" "mtdparts" "reco_rootfs" "linux_param")) nil [1444 1523])
+            ("flash_type" function (:arguments ("$(temp_dir)/flash_type")) nil [1523 1558])
+            ("version_table" function (:arguments ("$(temp_dir)/version_table")) nil [1558 1599])
+            ("subimglayout" function (:arguments ("$(temp_dir)/subimglayout")) nil [1599 1638])
+            ("mtdparts" function (:arguments ("$(temp_dir)/mtdparts")) nil [1638 1669])
+            ("reco_rootfs" function (:arguments ("$(temp_dir)/reco_rootfs.cpio.gz")) nil [1669 1714])
+            ("linux_param" function (:arguments ("$(temp_dir)/linux_param" "$(temp_dir)/linux_param.h")) nil [1714 1777])
+            ("page_data_size" variable (:default-value ("$(shell head -n 2 $(temp_dir)/flash_type 2>/dev/null | tail -n 1)")) nil [1778 1861])
+            ("page_oob_size" variable (:default-value ("$(shell head -n 3 $(temp_dir)/flash_type 2>/dev/null | tail -n 1)")) nil [1861 1943])
+            ("pages_per_block" variable (:default-value ("$(shell head -n 4 $(temp_dir)/flash_type 2>/dev/null | tail -n 1)")) nil [1943 2027])
+            ("chip_size" variable (:default-value ("$(shell head -n 5 $(temp_dir)/flash_type 2>/dev/null | tail -n 1)")) nil [2027 2105])
+            ("block_size" variable (:default-value ("$(shell head -n 6 $(temp_dir)/flash_type 2>/dev/null | tail -n 1)")) nil [2105 2184])
+            ("aft_script" variable (:default-value ("$(top_tool_dir)/Scripts/analyse_flash_type.sh")) nil [2184 2243])
+            ("$(temp_dir)" function (:arguments ("$(config_file)" "$(aft_script)")) nil [2244 2676])
+            ("$(temp_dir)" function (:arguments ("$(config_file)" "$(top_data_dir)/$(PARTITION_TABLE_PATH)" "$(temp_dir)/flash_type" "$(temp_dir)/parse_pt" "$(temp_dir)/crc")) nil [2677 3469])
+            ("$(temp_dir)" function (:arguments ("$(config_file)" "$(top_data_dir)/$(PARTITION_TABLE_PATH)" "$(temp_dir)/flash_type" "$(temp_dir)/parse_pt" "$(temp_dir)/crc")) nil [2677 3469])
+            ("$(temp_dir)" function (:arguments ("$(temp_dir)/linux_param_commonpart" "$(temp_dir)/mtdparts")) nil [4170 4384])
+            ("$(temp_dir)" function (:arguments ("$(config_file)")) nil [4385 4480])
+            ("$(temp_dir)" function (:arguments ("$(temp_dir)/linux_param")) nil [4481 4616])
+            ("reco_rootfs_dir" variable (:default-value ("$(temp_dir)/reco_rootfs.tmp")) nil [4655 4702])
+            (".PHONY" function (:arguments ("$(temp_dir)/reco_rootfs.cpio.gz")) nil [4703 4743])
+            ("$(temp_dir)" function nil nil [4743 5269])
+            (".PHONY" function (:arguments ("clean")) nil [5270 5284])
+            ("clean" function (:arguments ("$(all_module_clean_targets)")) nil [5284 5572])
+            ("help" function (:arguments ("help_main" "help_local")) nil [5573 5600])
+            ("help_local" function nil nil [5601 5614])
+            ("help_main" function nil nil [5615 6206]))          
+      :file "main.mk"
+      :pointmax 6206
+      :fsize 6205
+      :lastmodtime '(21934 1008 383891 96000)
+      :unmatched-syntax '((shell-command 6200 . 6205) (bol 6199 . 6199) (semantic-list 1282 . 1351) (punctuation 1281 . 1282) (bol 1281 . 1281) (semantic-list 1236 . 1280) (punctuation 1235 . 1236) (bol 1235 . 1235) (semantic-list 1091 . 1142) (punctuation 1090 . 1091) (bol 1090 . 1090) (semantic-list 988 . 995) (punctuation 987 . 988) (bol 987 . 987) (semantic-list 943 . 986) (punctuation 942 . 943) (bol 942 . 942) (semantic-list 934 . 941) (punctuation 933 . 934) (bol 933 . 933) (semantic-list 441 . 457) (punctuation 440 . 441) (bol 440 . 440) (semantic-list 349 . 439) (punctuation 348 . 349) (bol 348 . 348) (semantic-list 290 . 347) (punctuation 289 . 290) (bol 289 . 289) (semantic-list 229 . 288) (punctuation 228 . 229) (bol 228 . 228) (semantic-list 137 . 227) (punctuation 136 . 137) (bol 136 . 136))))
+  :file "!home!qichen!20160223_rc1!vendor!marvell-sdk!MV88DE3100_SDK!MV88DE3100_Tools!Scripts!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

@@ -1,0 +1,1812 @@
+;; Object base/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "base/"
+  :tables
+  (list
+    (semanticdb-table "core.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("linux/device.h" include (:system-flag t) nil [319 344])
+            ("linux/err.h" include (:system-flag t) nil [345 367])
+            ("linux/init.h" include (:system-flag t) nil [368 391])
+            ("linux/module.h" include (:system-flag t) nil [392 417])
+            ("linux/slab.h" include (:system-flag t) nil [418 441])
+            ("linux/string.h" include (:system-flag t) nil [442 467])
+            ("linux/kdev_t.h" include (:system-flag t) nil [468 493])
+            ("linux/notifier.h" include (:system-flag t) nil [494 521])
+            ("linux/of.h" include (:system-flag t) nil [522 543])
+            ("linux/of_device.h" include (:system-flag t) nil [544 572])
+            ("linux/genhd.h" include (:system-flag t) nil [573 597])
+            ("linux/kallsyms.h" include (:system-flag t) nil [598 625])
+            ("linux/mutex.h" include (:system-flag t) nil [626 650])
+            ("linux/async.h" include (:system-flag t) nil [651 675])
+            ("linux/pm_runtime.h" include (:system-flag t) nil [676 705])
+            ("linux/netdevice.h" include (:system-flag t) nil [706 734])
+            ("linux/sysfs.h" include (:system-flag t) nil [735 759])
+            ("base.h" include nil nil [761 778])
+            ("power/power.h" include nil nil [779 803])
+            ("NULL" variable (:type "int") nil [1148 1153])
+            ("NULL" variable (:type "int") nil [1206 1211])
+            ("dev_kobj" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :type ("kobject" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1212 1244])
+            ("sysfs_dev_char_kobj" variable
+               (:pointer 1
+                :type ("kobject" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1245 1281])
+            ("sysfs_dev_block_kobj" variable
+               (:pointer 1
+                :type ("kobject" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1282 1319])
+            ("DEFINE_MUTEX" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type ("device_hotplug_lock" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1341 1361]))                  
+                :type "int")
+                nil [1321 1362])
+            ("lock_device_hotplug" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1389 1394]))                  
+                :type "void")
+                nil [1364 1433])
+            ("unlock_device_hotplug" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1462 1467]))                  
+                :type "void")
+                nil [1435 1508])
+            ("lock_device_hotplug_sysfs" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1540 1545]))                  
+                :type "int")
+                nil [1510 1696])
+            ("device_is_not_partition" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1868 1887]))                  
+                :type "int")
+                nil [1826 1902])
+            ("dev_driver_string" function
+               (:pointer 1
+                :constant-flag t
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2315 2340]))                  
+                :type "char")
+                nil [2285 2721])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("dev_driver_string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2736 2754]))                  
+                :type "int")
+                nil [2722 2755])
+            ("to_dev_attr" variable (:constant-flag t) nil [2765 2776])
+            ("dev_attr_show" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("kobj" variable
+                       (:pointer 1
+                        :type ("kobject" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2865 2886])
+                    ("attr" variable
+                       (:pointer 1
+                        :type ("attribute" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2887 2910])
+                    ("buf" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2919 2929]))                  
+                :type ("ssize_t" type (:type "class") nil nil))
+                nil [2836 3260])
+            ("dev_attr_store" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("kobj" variable
+                       (:pointer 1
+                        :type ("kobject" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3292 3313])
+                    ("attr" variable
+                       (:pointer 1
+                        :type ("attribute" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3314 3337])
+                    ("buf" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [3347 3363])
+                    ("count" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3364 3377]))                  
+                :type ("ssize_t" type (:type "class") nil nil))
+                nil [3262 3587])
+            ("dev_sysfs_ops" variable
+               (:typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+	.show	= dev_attr_show,
+	.store	= dev_attr_store,
+}"
+                :type ("sysfs_ops" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [3589 3689])
+            ("to_ext_attr" variable (:constant-flag t) nil [3699 3710])
+            ("device_store_ulong" function
+               (:arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3790 3809])
+                    ("attr" variable
+                       (:pointer 1
+                        :type ("device_attribute" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3816 3846])
+                    ("buf" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [3853 3869])
+                    ("size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3870 3882]))                  
+                :type ("ssize_t" type (:type "class") nil nil))
+                nil [3763 4152])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("device_store_ulong" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4171 4190]))                  
+                :type "int")
+                nil [4153 4191])
+            ("device_show_ulong" function
+               (:arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4219 4238])
+                    ("attr" variable
+                       (:pointer 1
+                        :type ("device_attribute" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4244 4274])
+                    ("buf" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [4280 4290]))                  
+                :type ("ssize_t" type (:type "class") nil nil))
+                nil [4193 4417])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("device_show_ulong" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4436 4454]))                  
+                :type "int")
+                nil [4418 4455])
+            ("device_store_int" function
+               (:arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4482 4501])
+                    ("attr" variable
+                       (:pointer 1
+                        :type ("device_attribute" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4506 4536])
+                    ("buf" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [4541 4557])
+                    ("size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4558 4570]))                  
+                :type ("ssize_t" type (:type "class") nil nil))
+                nil [4457 4854])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("device_store_int" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4873 4890]))                  
+                :type "int")
+                nil [4855 4891])
+            ("device_show_int" function
+               (:arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4917 4936])
+                    ("attr" variable
+                       (:pointer 1
+                        :type ("device_attribute" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4940 4970])
+                    ("buf" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [4974 4984]))                  
+                :type ("ssize_t" type (:type "class") nil nil))
+                nil [4893 5101])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("device_show_int" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5120 5136]))                  
+                :type "int")
+                nil [5102 5137])
+            ("device_store_bool" function
+               (:arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5165 5184])
+                    ("attr" variable
+                       (:pointer 1
+                        :type ("device_attribute" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5185 5215])
+                    ("buf" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [5221 5237])
+                    ("size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5238 5250]))                  
+                :type ("ssize_t" type (:type "class") nil nil))
+                nil [5139 5373])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("device_store_bool" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5392 5410]))                  
+                :type "int")
+                nil [5374 5411])
+            ("device_show_bool" function
+               (:arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5438 5457])
+                    ("attr" variable
+                       (:pointer 1
+                        :type ("device_attribute" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5458 5488])
+                    ("buf" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [5493 5503]))                  
+                :type ("ssize_t" type (:type "class") nil nil))
+                nil [5413 5621])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("device_show_bool" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5640 5657]))                  
+                :type "int")
+                nil [5622 5658])
+            ("device_release" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("kobj" variable
+                       (:pointer 1
+                        :type ("kobject" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5948 5969]))                  
+                :type "void")
+                nil [5921 6727])
+            ("device_namespace" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :arguments 
+                  ( ("kobj" variable
+                       (:pointer 1
+                        :type ("kobject" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6765 6786]))                  
+                :type "void")
+                nil [6729 6944])
+            ("device_ktype" variable
+               (:typemodifiers ("static")
+                :default-value "{
+	.release	= device_release,
+	.sysfs_ops	= &dev_sysfs_ops,
+	.namespace	= device_namespace,
+}"
+                :type ("kobj_type" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [6946 7079])
+            ("dev_uevent_filter" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("kset" variable
+                       (:pointer 1
+                        :type ("kset" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7111 7129])
+                    ("kobj" variable
+                       (:pointer 1
+                        :type ("kobject" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7130 7151]))                  
+                :type "int")
+                nil [7082 7347])
+            ("dev_uevent_name" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :arguments 
+                  ( ("kset" variable
+                       (:pointer 1
+                        :type ("kset" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7384 7402])
+                    ("kobj" variable
+                       (:pointer 1
+                        :type ("kobject" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7403 7424]))                  
+                :type "char")
+                nil [7349 7568])
+            ("dev_uevent" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("kset" variable
+                       (:pointer 1
+                        :type ("kset" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7592 7610])
+                    ("kobj" variable
+                       (:pointer 1
+                        :type ("kobject" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7611 7632])
+                    ("env" variable
+                       (:pointer 1
+                        :type ("kobj_uevent_env" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7641 7669]))                  
+                :type "int")
+                nil [7570 9497])
+            ("device_uevent_ops" variable
+               (:typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+	.filter =	dev_uevent_filter,
+	.name =		dev_uevent_name,
+	.uevent =	dev_uevent,
+}"
+                :type ("kset_uevent_ops" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [9499 9639])
+            ("uevent_show" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9668 9687])
+                    ("attr" variable
+                       (:pointer 1
+                        :type ("device_attribute" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9688 9718])
+                    ("buf" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [9725 9735]))                  
+                :type ("ssize_t" type (:type "class") nil nil))
+                nil [9641 10649])
+            ("uevent_store" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10679 10698])
+                    ("attr" variable
+                       (:pointer 1
+                        :type ("device_attribute" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10699 10729])
+                    ("buf" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [10737 10753])
+                    ("count" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10754 10767]))                  
+                :type ("ssize_t" type (:type "class") nil nil))
+                nil [10651 10963])
+            ("DEVICE_ATTR_RW" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type ("uevent" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10986 10993]))                  
+                :type "int")
+                nil [10964 10994])
+            ("online_show" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11023 11042])
+                    ("attr" variable
+                       (:pointer 1
+                        :type ("device_attribute" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11043 11073])
+                    ("buf" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [11080 11090]))                  
+                :type ("ssize_t" type (:type "class") nil nil))
+                nil [10996 11203])
+            ("online_store" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11233 11252])
+                    ("attr" variable
+                       (:pointer 1
+                        :type ("device_attribute" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11253 11283])
+                    ("buf" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [11291 11307])
+                    ("count" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11308 11321]))                  
+                :type ("ssize_t" type (:type "class") nil nil))
+                nil [11205 11578])
+            ("DEVICE_ATTR_RW" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type ("online" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11601 11608]))                  
+                :type "int")
+                nil [11579 11609])
+            ("device_add_groups" function
+               (:arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11633 11652])
+                    ("groups" variable
+                       (:pointer 2
+                        :constant-flag t
+                        :type ("attribute_group" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11653 11691]))                  
+                :type "int")
+                nil [11611 11744])
+            ("device_remove_groups" function
+               (:arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11772 11791])
+                    ("groups" variable
+                       (:pointer 2
+                        :constant-flag t
+                        :type ("attribute_group" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11797 11835]))                  
+                :type "void")
+                nil [11746 11881])
+            ("device_add_attrs" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11911 11930]))                  
+                :type "int")
+                nil [11883 12751])
+            ("device_remove_attrs" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [12785 12804]))                  
+                :type "void")
+                nil [12753 13090])
+            ("dev_show" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13116 13135])
+                    ("attr" variable
+                       (:pointer 1
+                        :type ("device_attribute" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13136 13166])
+                    ("buf" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [13170 13180]))                  
+                :type ("ssize_t" type (:type "class") nil nil))
+                nil [13092 13221])
+            ("DEVICE_ATTR_RO" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type ("dev" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [13244 13248]))                  
+                :type "int")
+                nil [13222 13249])
+            ("devices_kset" variable
+               (:pointer 1
+                :type ("kset" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [13271 13297])
+            ("device_create_file" function
+               (:arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13450 13469])
+                    ("attr" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("device_attribute" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13479 13515]))                  
+                :type "int")
+                nil [13427 13878])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("device_create_file" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [13897 13916]))                  
+                :type "int")
+                nil [13879 13917])
+            ("device_remove_file" function
+               (:arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [14060 14079])
+                    ("attr" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("device_attribute" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [14083 14119]))                  
+                :type "void")
+                nil [14036 14179])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("device_remove_file" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [14198 14217]))                  
+                :type "int")
+                nil [14180 14218])
+            ("device_create_bin_file" function
+               (:arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [14393 14412])
+                    ("attr" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("bin_attribute" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [14419 14452]))                  
+                :type "int")
+                nil [14366 14554])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("device_create_bin_file" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [14573 14596]))                  
+                :type "int")
+                nil [14555 14597])
+            ("device_remove_bin_file" function
+               (:arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [14761 14780])
+                    ("attr" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("bin_attribute" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [14788 14821]))                  
+                :type "void")
+                nil [14733 14878])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("device_remove_bin_file" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [14897 14920]))                  
+                :type "int")
+                nil [14879 14921])
+            ("device_schedule_callback_owner" function
+               (:arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [16111 16130])
+                    ("func" function
+                       (:function-pointer t
+                        :arguments 
+                          ( ("" variable
+                               (:pointer 1
+                                :type ("device" type
+                                     (:prototype t
+                                      :type "struct")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [16146 16162]))                          
+                        :type "void")
+                        nil nil)
+                    ("owner" variable
+                       (:pointer 1
+                        :type ("module" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [16164 16185]))                  
+                :type "int")
+                nil [16076 16274])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("device_schedule_callback_owner" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [16293 16324]))                  
+                :type "int")
+                nil [16275 16325])
+            ("klist_children_get" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("n" variable
+                       (:pointer 1
+                        :type ("klist_node" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [16358 16379]))                  
+                :type "void")
+                nil [16327 16492])
+            ("klist_children_put" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("n" variable
+                       (:pointer 1
+                        :type ("klist_node" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [16525 16546]))                  
+                :type "void")
+                nil [16494 16659])
+            ("device_initialize" function
+               (:arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [17451 17470]))                  
+                :type "void")
+                nil [17428 17770])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("device_initialize" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [17789 17807]))                  
+                :type "int")
+                nil [17771 17808])
+            ("virtual_device_parent" function
+               (:pointer 1
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [17848 17867]))                  
+                :type ("kobject" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [17810 18040])
+            ("class_dir" type
+               (:members 
+                  ( ("kobj" variable (:type ("kobject" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [18062 18082])
+                    ("" type
+                       (:prototype t
+                        :type "class")
+                        (reparse-symbol classsubparts) [18098 18104]))                  
+                :type "struct")
+                nil [18042 18107])
+            ("to_class_dir" variable (:constant-flag t) nil [18117 18129])
+            ("class_dir_release" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("kobj" variable
+                       (:pointer 1
+                        :type ("kobject" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [18208 18229]))                  
+                :type "void")
+                nil [18178 18291])
+            ("class_dir_child_ns_type" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :arguments 
+                  ( ("kobj" variable
+                       (:pointer 1
+                        :type ("kobject" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [18362 18383]))                  
+                :type ("kobj_ns_type_operations" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [18293 18461])
+            ("class_dir_ktype" variable
+               (:typemodifiers ("static")
+                :default-value "{
+	.release	= class_dir_release,
+	.sysfs_ops	= &kobj_sysfs_ops,
+	.child_ns_type	= class_dir_child_ns_type
+}"
+                :type ("kobj_type" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [18463 18613])
+            ("class_dir_create_and_add" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type ("" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [18664 18676])
+                    ("" variable
+                       (:pointer 1
+                        :type ("" type
+                             (:prototype t
+                              :type "class")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [18671 18683])
+                    ("" variable (:type ("" type
+                         (:prototype t
+                          :type "class")
+                          nil nil)) (reparse-symbol arg-sub-list) [18678 18684])
+                    ("parent_kobj" variable
+                       (:pointer 1
+                        :type ("kobject" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [18685 18713]))                  
+                :type ("kobject" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [18615 19083])
+            ("DEFINE_MUTEX" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type ("gdp_mutex" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [19105 19115]))                  
+                :type "int")
+                nil [19085 19116])
+            ("get_device_parent" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [19159 19178])
+                    ("parent" variable
+                       (:pointer 1
+                        :type ("device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [19185 19207]))                  
+                :type ("kobject" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [19118 20751])
+            ("cleanup_glue_dir" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [20782 20801])
+                    ("glue_dir" variable
+                       (:pointer 1
+                        :type ("kobject" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [20802 20827]))                  
+                :type "void")
+                nil [20753 21045])
+            ("cleanup_device_parent" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [21081 21100]))                  
+                :type "void")
+                nil [21047 21146])
+            ("device_add_class_symlinks" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [21185 21204]))                  
+                :type "int")
+                nil [21148 22016])
+            ("device_remove_class_symlinks" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [22059 22078]))                  
+                :type "void")
+                nil [22018 22415])
+            ("dev_set_name" function
+               (:arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [22539 22558])
+                    ("fmt" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [22559 22575])
+                    ("..." variable (:type "vararg") (reparse-symbol arg-sub-list) [22576 22580]))                  
+                :type "int")
+                nil [22522 22718])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("dev_set_name" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [22737 22750]))                  
+                :type "int")
+                nil [22719 22751])
+            ("device_to_dev_kobj" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [23231 23250]))                  
+                :type ("kobject" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [23189 23377])
+            ("device_create_sys_dev_entry" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [23418 23437]))                  
+                :type "int")
+                nil [23379 23653])
+            ("device_remove_sys_dev_entry" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [23695 23714]))                  
+                :type "void")
+                nil [23655 23878])
+            ("device_private_init" function
+               (:arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [23904 23923]))                  
+                :type "int")
+                nil [23880 24166])
+            ("device_add" function
+               (:arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [25148 25167]))                  
+                :type "int")
+                nil [25133 28499])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("device_add" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [28518 28529]))                  
+                :type "int")
+                nil [28500 28530])
+            ("device_register" function
+               (:arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [29275 29294]))                  
+                :type "int")
+                nil [29255 29348])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("device_register" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [29367 29383]))                  
+                :type "int")
+                nil [29349 29384])
+            ("get_device" function
+               (:pointer 1
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [29636 29655]))                  
+                :type ("device" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [29610 29718])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("get_device" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [29737 29748]))                  
+                :type "int")
+                nil [29719 29749])
+            ("put_device" function
+               (:arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [29847 29866]))                  
+                :type "void")
+                nil [29831 29929])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("put_device" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [29948 29959]))                  
+                :type "int")
+                nil [29930 29960])
+            ("device_del" function
+               (:arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [30408 30427]))                  
+                :type "void")
+                nil [30392 31764])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("device_del" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [31783 31794]))                  
+                :type "int")
+                nil [31765 31795])
+            ("device_unregister" function
+               (:arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [32296 32315]))                  
+                :type "void")
+                nil [32273 32413])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("device_unregister" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [32432 32450]))                  
+                :type "int")
+                nil [32414 32451])
+            ("next_device" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("i" variable
+                       (:pointer 1
+                        :type ("klist_iter" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [32487 32508]))                  
+                :type ("device" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [32453 32687])
+            ("device_get_devnode" function
+               (:pointer 1
+                :constant-flag t
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [33124 33143])
+                    ("mode" variable
+                       (:pointer 1
+                        :type ("umode_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [33154 33168])
+                    ("uid" variable
+                       (:pointer 1
+                        :type ("kuid_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [33169 33181])
+                    ("gid" variable
+                       (:pointer 1
+                        :type ("kgid_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [33182 33194])
+                    ("tmp" variable
+                       (:pointer 2
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [33205 33222]))                  
+                :type "char")
+                nil [33093 33860])
+            ("device_for_each_child" function
+               (:arguments 
+                  ( ("parent" variable
+                       (:pointer 1
+                        :type ("device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [34268 34290])
+                    ("data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [34291 34302])
+                    ("fn" function
+                       (:function-pointer t
+                        :arguments 
+                          ( ("dev" variable
+                               (:pointer 1
+                                :type ("device" type
+                                     (:prototype t
+                                      :type "struct")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [34318 34337])
+                            ("data" variable
+                               (:pointer 1
+                                :type "void")
+                                (reparse-symbol arg-sub-list) [34338 34349]))                          
+                        :type "int")
+                        nil nil))                  
+                :type "int")
+                nil [34242 34605])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("device_for_each_child" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [34624 34646]))                  
+                :type "int")
+                nil [34606 34647])
+            ("device_find_child" function
+               (:pointer 1
+                :arguments 
+                  ( ("parent" variable
+                       (:pointer 1
+                        :type ("device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [35407 35429])
+                    ("data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [35430 35441])
+                    ("match" function
+                       (:function-pointer t
+                        :arguments 
+                          ( ("dev" variable
+                               (:pointer 1
+                                :type ("device" type
+                                     (:prototype t
+                                      :type "struct")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [35460 35479])
+                            ("data" variable
+                               (:pointer 1
+                                :type "void")
+                                (reparse-symbol arg-sub-list) [35480 35491]))                          
+                        :type "int")
+                        nil nil))                  
+                :type ("device" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [35374 35751])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("device_find_child" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [35770 35788]))                  
+                :type "int")
+                nil [35752 35789])
+            ("devices_init" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [35815 35820]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [35795 36424])
+            ("device_check_offline" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [36458 36477])
+                    ("not_used" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [36478 36493]))                  
+                :type "int")
+                nil [36426 36664])
+            ("device_offline" function
+               (:arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [37076 37095]))                  
+                :type "int")
+                nil [37057 37511])
+            ("device_online" function
+               (:arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [37909 37928]))                  
+                :type "int")
+                nil [37891 38213])
+            ("root_device" type
+               (:members 
+                  ( ("dev" variable (:type ("device" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [38237 38255])
+                    ("owner" variable
+                       (:pointer 1
+                        :type ("module" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [38257 38278]))                  
+                :type "struct")
+                nil [38215 38281])
+            ("to_root_device" function
+               (:pointer 1
+                :typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("d" variable
+                       (:pointer 1
+                        :type ("device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [38332 38349]))                  
+                :type ("root_device" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [38283 38403])
+            ("root_device_release" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [38437 38456]))                  
+                :type "void")
+                nil [38405 38489])
+            ("__root_device_register" function
+               (:pointer 1
+                :arguments 
+                  ( ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [39355 39372])
+                    ("owner" variable
+                       (:pointer 1
+                        :type ("module" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [39373 39394]))                  
+                :type ("device" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [39317 40102])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("__root_device_register" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [40121 40144]))                  
+                :type "int")
+                nil [40103 40145])
+            ("root_device_unregister" function
+               (:arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [40374 40393]))                  
+                :type "void")
+                nil [40346 40539])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("root_device_unregister" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [40558 40581]))                  
+                :type "int")
+                nil [40540 40582])
+            ("device_create_release" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [40619 40638]))                  
+                :type "void")
+                nil [40585 40713])
+            ("device_create_groups_vargs" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type ("" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [40765 40777])
+                    ("" variable
+                       (:pointer 1
+                        :type ("" type
+                             (:prototype t
+                              :type "class")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [40772 40784])
+                    ("" variable (:type ("" type
+                         (:prototype t
+                          :type "class")
+                          nil nil)) (reparse-symbol arg-sub-list) [40779 40785])
+                    ("parent" variable
+                       (:pointer 1
+                        :type ("device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [40786 40808])
+                    ("devt" variable (:type ("dev_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [40815 40826])
+                    ("drvdata" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [40827 40841])
+                    ("groups" variable
+                       (:pointer 2
+                        :constant-flag t
+                        :type ("attribute_group" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [40848 40886])
+                    ("fmt" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [40893 40909])
+                    ("args" variable (:type ("va_list" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [40910 40923]))                  
+                :type ("device" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [40715 41511])
+            ("device_create_vargs" function
+               (:pointer 1
+                :arguments 
+                  ( ("" variable (:type ("" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [42689 42701])
+                    ("" variable
+                       (:pointer 1
+                        :type ("" type
+                             (:prototype t
+                              :type "class")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [42696 42708])
+                    ("" variable (:type ("" type
+                         (:prototype t
+                          :type "class")
+                          nil nil)) (reparse-symbol arg-sub-list) [42703 42709])
+                    ("parent" variable
+                       (:pointer 1
+                        :type ("device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [42710 42732])
+                    ("devt" variable (:type ("dev_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [42740 42751])
+                    ("drvdata" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [42752 42766])
+                    ("fmt" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [42767 42783])
+                    ("args" variable (:type ("va_list" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [42791 42804]))                  
+                :type ("device" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [42654 42898])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("device_create_vargs" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [42917 42937]))                  
+                :type "int")
+                nil [42899 42938])
+            ("device_create" function
+               (:pointer 1
+                :arguments 
+                  ( ("" variable (:type ("" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [44064 44076])
+                    ("" variable
+                       (:pointer 1
+                        :type ("" type
+                             (:prototype t
+                              :type "class")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [44071 44083])
+                    ("" variable (:type ("" type
+                         (:prototype t
+                          :type "class")
+                          nil nil)) (reparse-symbol arg-sub-list) [44078 44084])
+                    ("parent" variable
+                       (:pointer 1
+                        :type ("device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [44085 44107])
+                    ("devt" variable (:type ("dev_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [44116 44127])
+                    ("drvdata" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [44128 44142])
+                    ("fmt" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [44143 44159])
+                    ("..." variable (:type "vararg") (reparse-symbol arg-sub-list) [44160 44164]))                  
+                :type ("device" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [44035 44328])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("device_create" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [44347 44361]))                  
+                :type "int")
+                nil [44329 44362])
+            ("device_create_with_groups" function
+               (:pointer 1
+                :arguments 
+                  ( ("" variable (:type ("" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [45677 45689])
+                    ("" variable
+                       (:pointer 1
+                        :type ("" type
+                             (:prototype t
+                              :type "class")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [45684 45696])
+                    ("" variable (:type ("" type
+                         (:prototype t
+                          :type "class")
+                          nil nil)) (reparse-symbol arg-sub-list) [45691 45697])
+                    ("parent" variable
+                       (:pointer 1
+                        :type ("device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [45704 45726])
+                    ("devt" variable (:type ("dev_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [45727 45738])
+                    ("drvdata" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [45745 45759])
+                    ("groups" variable
+                       (:pointer 2
+                        :constant-flag t
+                        :type ("attribute_group" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [45766 45804])
+                    ("fmt" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [45811 45827])
+                    ("..." variable (:type "vararg") (reparse-symbol arg-sub-list) [45828 45832]))                  
+                :type ("device" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [45636 46017])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("device_create_with_groups" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [46036 46062]))                  
+                :type "int")
+                nil [46018 46063])
+            ("__match_devt" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [46089 46108])
+                    ("data" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [46109 46126]))                  
+                :type "int")
+                nil [46065 46186])
+            ("device_destroy" function
+               (:arguments 
+                  ( ("" variable (:type ("" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [46535 46547])
+                    ("" variable
+                       (:pointer 1
+                        :type ("" type
+                             (:prototype t
+                              :type "class")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [46542 46554])
+                    ("" variable (:type ("" type
+                         (:prototype t
+                          :type "class")
+                          nil nil)) (reparse-symbol arg-sub-list) [46549 46555])
+                    ("devt" variable (:type ("dev_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [46556 46567]))                  
+                :type "void")
+                nil [46515 46713])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("device_destroy" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [46732 46747]))                  
+                :type "int")
+                nil [46714 46748])
+            ("device_rename" function
+               (:arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [48843 48862])
+                    ("new_name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [48863 48884]))                  
+                :type "int")
+                nil [48825 49502])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("device_rename" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [49521 49535]))                  
+                :type "int")
+                nil [49503 49536])
+            ("device_move_class_links" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [49573 49592])
+                    ("old_parent" variable
+                       (:pointer 1
+                        :type ("device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [49600 49626])
+                    ("new_parent" variable
+                       (:pointer 1
+                        :type ("device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [49634 49660]))                  
+                :type "int")
+                nil [49538 49850])
+            ("device_move" function
+               (:arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [50080 50099])
+                    ("new_parent" variable
+                       (:pointer 1
+                        :type ("device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [50100 50126])
+                    ("dpm_order" variable (:type ("dpm_order" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [50129 50154]))                  
+                :type "int")
+                nil [50064 51936])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("device_move" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [51955 51967]))                  
+                :type "int")
+                nil [51937 51968])
+            ("device_shutdown" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [52066 52071]))                  
+                :type "void")
+                nil [52045 53540]))          
+      :file "core.c"
+      :pointmax 56528
+      :fsize 56527
+      :lastmodtime '(21934 1128 559887 240000)
+      :unmatched-syntax '((INT 35791 . 35794) (punctuation 18097 . 18098) (CLASS 18091 . 18096) (STRUCT 18084 . 18090) (punctuation 1204 . 1205) (semantic-list 1183 . 1203) (semantic-list 1158 . 1183) (INT 1154 . 1157) (punctuation 1146 . 1147) (semantic-list 1125 . 1145) (semantic-list 1107 . 1125) (INT 1103 . 1106))
+      :lexical-table 
+        '(("to_ext_attr" (spp-arg-list ("x") 3710 . 3713) . ((symbol "container_of" 3714 . 3726) (semantic-list "(x, struct dev_ext_attribute, attr)" 3726 . 3761)))
+          ("to_dev_attr" (spp-arg-list ("_attr") 2776 . 2783) . ((symbol "container_of" 2784 . 2796) (semantic-list "(_attr, struct device_attribute, attr)" 2796 . 2834)))
+          ("to_class_dir" (spp-arg-list ("obj") 18129 . 18134) . ((symbol "container_of" 18135 . 18147) (semantic-list "(obj, struct class_dir, kobj)" 18147 . 18176)))
+          )
+)
+    (semanticdb-table "base.h"
+      :file "base.h"
+      :fsize 5381
+      :lastmodtime '(21934 1128 559887 240000)))
+  :file "!home!qichen!20160223_rc1!vendor!marvell-sdk!linux!drivers!base!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")
