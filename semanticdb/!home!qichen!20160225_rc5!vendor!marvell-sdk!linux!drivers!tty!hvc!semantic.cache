@@ -1,0 +1,123 @@
+;; Object hvc/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "hvc/"
+  :tables
+  (list
+    (semanticdb-table "hvc_tile.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("linux/console.h" include (:system-flag t) nil [606 632])
+            ("linux/delay.h" include (:system-flag t) nil [633 657])
+            ("linux/err.h" include (:system-flag t) nil [658 680])
+            ("linux/init.h" include (:system-flag t) nil [681 704])
+            ("linux/interrupt.h" include (:system-flag t) nil [705 733])
+            ("linux/irq.h" include (:system-flag t) nil [734 756])
+            ("linux/moduleparam.h" include (:system-flag t) nil [757 787])
+            ("linux/platform_device.h" include (:system-flag t) nil [788 822])
+            ("linux/types.h" include (:system-flag t) nil [823 847])
+            ("asm/setup.h" include (:system-flag t) nil [849 871])
+            ("arch/sim_def.h" include (:system-flag t) nil [872 897])
+            ("hv/hypervisor.h" include (:system-flag t) nil [899 925])
+            ("hvc_console.h" include nil nil [927 951])
+            ("use_sim_console" variable
+               (:typemodifiers ("static")
+                :type "int")
+                nil [953 980])
+            ("sim_console" function
+               (:arguments 
+                  ( ("str" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1011 1021]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [992 1058])
+            ("early_param" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("sim_console" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1086 1098]))                  
+                :type "int")
+                nil [1059 1099])
+            ("tile_console_write" function
+               (:arguments 
+                  ( ("buf" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1124 1140])
+                    ("count" variable (:type "int") (reparse-symbol arg-sub-list) [1141 1151]))                  
+                :type "int")
+                nil [1101 1531])
+            ("hvc_tile_put_chars" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("vt" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1563 1575])
+                    ("buf" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1576 1592])
+                    ("count" variable (:type "int") (reparse-symbol arg-sub-list) [1593 1603]))                  
+                :type "int")
+                nil [1533 1647])
+            ("hvc_tile_get_chars" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("vt" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1679 1691])
+                    ("buf" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1692 1702])
+                    ("count" variable (:type "int") (reparse-symbol arg-sub-list) [1703 1713]))                  
+                :type "int")
+                nil [1649 1846])
+            ("hvc_tile_get_put_ops" variable
+               (:typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+	.get_chars = hvc_tile_get_chars,
+	.put_chars = hvc_tile_put_chars,
+#ifdef __tilegx__
+	.notifier_add = hvc_tile_notifier_add_irq,
+	.notifier_del = hvc_tile_notifier_del_irq,
+	.notifier_hangup = hvc_tile_notifier_hangup_irq,
+#endif
+}"
+                :type ("hv_ops" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2778 3063])
+            ("hvc_tile_console_init" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [4275 4280]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [4246 4382])
+            ("console_initcall" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("hvc_tile_console_init" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4400 4422]))                  
+                :type "int")
+                nil [4383 4423])
+            ("hvc_tile_init" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [4457 4462]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [4436 4706])
+            ("device_initcall" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("hvc_tile_init" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4723 4737]))                  
+                :type "int")
+                nil [4707 4738]))          
+      :file "hvc_tile.c"
+      :pointmax 4739
+      :fsize 4738
+      :lastmodtime '(21915 34183 438780 718000)
+      :unmatched-syntax '((INT 4432 . 4435) (STATIC 4425 . 4431) (INT 4242 . 4245) (STATIC 4235 . 4241) (string 1071 . 1084) (INT 988 . 991) (STATIC 981 . 987)))
+    (semanticdb-table "hvc_console.h"
+      :file "hvc_console.h"
+      :fsize 3912
+      :lastmodtime '(21915 34183 438780 718000)))
+  :file "!home!qichen!20160225_rc5!vendor!marvell-sdk!linux!drivers!tty!hvc!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

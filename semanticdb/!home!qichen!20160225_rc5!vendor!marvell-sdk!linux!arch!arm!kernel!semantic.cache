@@ -1,0 +1,370 @@
+;; Object kernel/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "kernel/"
+  :tables
+  (list
+    (semanticdb-table "process.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("stdarg.h" include (:system-flag t) nil [346 365])
+            ("linux/export.h" include (:system-flag t) nil [367 392])
+            ("linux/sched.h" include (:system-flag t) nil [393 417])
+            ("linux/kernel.h" include (:system-flag t) nil [418 443])
+            ("linux/mm.h" include (:system-flag t) nil [444 465])
+            ("linux/stddef.h" include (:system-flag t) nil [466 491])
+            ("linux/unistd.h" include (:system-flag t) nil [492 517])
+            ("linux/user.h" include (:system-flag t) nil [518 541])
+            ("linux/delay.h" include (:system-flag t) nil [542 566])
+            ("linux/reboot.h" include (:system-flag t) nil [567 592])
+            ("linux/interrupt.h" include (:system-flag t) nil [593 621])
+            ("linux/kallsyms.h" include (:system-flag t) nil [622 649])
+            ("linux/init.h" include (:system-flag t) nil [650 673])
+            ("linux/cpu.h" include (:system-flag t) nil [674 696])
+            ("linux/elfcore.h" include (:system-flag t) nil [697 723])
+            ("linux/pm.h" include (:system-flag t) nil [724 745])
+            ("linux/tick.h" include (:system-flag t) nil [746 769])
+            ("linux/utsname.h" include (:system-flag t) nil [770 796])
+            ("linux/uaccess.h" include (:system-flag t) nil [797 823])
+            ("linux/random.h" include (:system-flag t) nil [824 849])
+            ("linux/hw_breakpoint.h" include (:system-flag t) nil [850 882])
+            ("linux/cpuidle.h" include (:system-flag t) nil [883 909])
+            ("linux/leds.h" include (:system-flag t) nil [910 933])
+            ("linux/reboot.h" include (:system-flag t) nil [934 959])
+            ("linux/console.h" include (:system-flag t) nil [960 986])
+            ("asm/cacheflush.h" include (:system-flag t) nil [988 1015])
+            ("asm/idmap.h" include (:system-flag t) nil [1016 1038])
+            ("asm/processor.h" include (:system-flag t) nil [1039 1065])
+            ("asm/thread_notify.h" include (:system-flag t) nil [1066 1096])
+            ("asm/stacktrace.h" include (:system-flag t) nil [1097 1124])
+            ("asm/mach/time.h" include (:system-flag t) nil [1125 1151])
+            ("asm/tls.h" include (:system-flag t) nil [1152 1172])
+            ("processor_modes" variable
+               (:pointer 1
+                :dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+  \"USER_26\", \"FIQ_26\" , \"IRQ_26\" , \"SVC_26\" , \"UK4_26\" , \"UK5_26\" , \"UK6_26\" , \"UK7_26\" ,
+  \"UK8_26\" , \"UK9_26\" , \"UK10_26\", \"UK11_26\", \"UK12_26\", \"UK13_26\", \"UK14_26\", \"UK15_26\",
+  \"USER_32\", \"FIQ_32\" , \"IRQ_32\" , \"SVC_32\" , \"UK4_32\" , \"UK5_32\" , \"UK6_32\" , \"ABT_32\" ,
+  \"UK8_32\" , \"UK9_32\" , \"UK10_32\", \"UND_32\" , \"UK12_32\", \"UK13_32\", \"UK14_32\", \"SYS_32\"
+}"
+                :type "char")
+                nil [1329 1730])
+            ("isa_modes" variable
+               (:pointer 1
+                :dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+  \"ARM\" , \"Thumb\" , \"Jazelle\", \"ThumbEE\"
+}"
+                :type "char")
+                nil [1732 1810])
+            ("arch_trigger_all_cpu_backtrace" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1949 1954]))                  
+                :type "void")
+                nil [1913 1973])
+            ("call_with_stack" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("fn" function
+                       (:function-pointer t
+                        :arguments 
+                          ( ("" variable
+                               (:pointer 1
+                                :type "void")
+                                (reparse-symbol arg-sub-list) [2021 2028]))                          
+                        :type "void")
+                        nil nil)
+                    ("arg" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [2030 2040])
+                    ("sp" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [2041 2050]))                  
+                :type "void")
+                nil [1982 2051])
+            ("phys_reset_t" function
+               (:prototype-flag t
+                :function-pointer t
+                :arguments 
+                  ( ("" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [2081 2095]))                  
+                :type "void")
+                nil [2060 2096])
+            ("arm_machine_flush_console" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [2532 2537]))                  
+                :type "void")
+                nil [2501 2541])
+            ("soft_restart_stack" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :type ("u64" type (:type "class") nil nil))
+                nil [2844 2878])
+            ("__soft_restart" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("addr" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [2907 2918]))                  
+                :type "void")
+                nil [2880 3378])
+            ("soft_restart" function
+               (:arguments 
+                  ( ("addr" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [3398 3417]))                  
+                :type "void")
+                nil [3380 3831])
+            ("pm_power_off" function
+               (:prototype-flag t
+                :function-pointer t
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [3921 3926]))                  
+                :type "void")
+                nil [3900 3927])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("pm_power_off" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3942 3955]))                  
+                :type "int")
+                nil [3928 3956])
+            ("arm_pm_restart" function
+               (:prototype-flag t
+                :function-pointer t
+                :arguments 
+                  ( ("reboot_mode" variable (:type ("reboot_mode" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [3981 4010])
+                    ("cmd" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [4011 4027]))                  
+                :type "void")
+                nil [3958 4028])
+            ("arm_pm_idle" function
+               (:prototype-flag t
+                :function-pointer t
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [4095 4100]))                  
+                :type "void")
+                nil [4075 4101])
+            ("default_idle" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [4128 4133]))                  
+                :type "void")
+                nil [4103 4216])
+            ("arch_cpu_idle_prepare" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [4245 4250]))                  
+                :type "void")
+                nil [4218 4275])
+            ("arch_cpu_idle_enter" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [4302 4307]))                  
+                :type "void")
+                nil [4277 4433])
+            ("arch_cpu_idle_exit" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [4459 4464]))                  
+                :type "void")
+                nil [4435 4537])
+            ("arch_cpu_idle" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [4680 4685]))                  
+                :type "void")
+                nil [4661 4733])
+            ("machine_shutdown" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [5193 5198]))                  
+                :type "void")
+                nil [5171 5485])
+            ("machine_halt" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [5669 5674]))                  
+                :type "void")
+                nil [5651 5753])
+            ("machine_power_off" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [6015 6020]))                  
+                :type "void")
+                nil [5992 6102])
+            ("machine_restart" function
+               (:arguments 
+                  ( ("cmd" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [6820 6830]))                  
+                :type "void")
+                nil [6799 7316])
+            ("show_data" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("addr" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [7410 7429])
+                    ("nbytes" variable (:type "int") (reparse-symbol arg-sub-list) [7430 7441])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [7442 7459]))                  
+                :type "void")
+                nil [7388 8276])
+            ("show_extra_register_data" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("regs" variable
+                       (:pointer 1
+                        :type ("pt_regs" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8315 8336])
+                    ("nbytes" variable (:type "int") (reparse-symbol arg-sub-list) [8337 8348]))                  
+                :type "void")
+                nil [8278 9270])
+            ("__show_regs" function
+               (:arguments 
+                  ( ("regs" variable
+                       (:pointer 1
+                        :type ("pt_regs" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9289 9310]))                  
+                :type "void")
+                nil [9272 10988])
+            ("show_regs" function
+               (:arguments 
+                  ( ("regs" variable
+                       (:pointer 1
+                        :type ("pt_regs" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11005 11027]))                  
+                :type "void")
+                nil [10990 11081])
+            ("ATOMIC_NOTIFIER_HEAD" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("thread_notify_head" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11104 11123]))                  
+                :type "int")
+                nil [11083 11124])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("thread_notify_head" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11144 11163]))                  
+                :type "int")
+                nil [11126 11164])
+            ("exit_thread" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [11235 11240]))                  
+                :type "void")
+                nil [11218 11303])
+            ("flush_thread" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [11323 11328]))                  
+                :type "void")
+                nil [11305 11685])
+            ("release_thread" function
+               (:arguments 
+                  ( ("dead_task" variable
+                       (:pointer 1
+                        :type ("task_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11707 11737]))                  
+                :type "void")
+                nil [11687 11741])
+            ("__asm__" function
+               (:prototype-flag t
+                :type "int")
+                nil [11779 11804])
+            ("copy_thread" function
+               (:arguments 
+                  ( ("clone_flags" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [11822 11848])
+                    ("stack_start" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [11849 11875])
+                    ("stk_sz" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [11881 11902])
+                    ("p" variable
+                       (:pointer 1
+                        :type ("task_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11903 11925]))                  
+                :type "int")
+                nil [11806 12733])
+            ("dump_task_regs" function
+               (:arguments 
+                  ( ("t" variable
+                       (:pointer 1
+                        :type ("task_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [12818 12840])
+                    ("elfregs" variable
+                       (:pointer 1
+                        :type ("elf_gregset_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [12841 12864]))                  
+                :type "int")
+                nil [12799 12926])
+            ("dump_fpu" function
+               (:arguments 
+                  ( ("regs" variable
+                       (:pointer 1
+                        :type ("pt_regs" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [12997 13018])
+                    ("fp" variable
+                       (:pointer 1
+                        :type ("user_fp" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13019 13038]))                  
+                :type "int")
+                nil [12983 13246])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("dump_fpu" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [13261 13270]))                  
+                :type "int")
+                nil [13247 13271])
+            ("get_wchan" function
+               (:arguments 
+                  ( ("p" variable
+                       (:pointer 1
+                        :type ("task_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13297 13319]))                  
+                :type "unsigned long")
+                nil [13273 13873])
+            ("arch_randomize_brk" function
+               (:arguments 
+                  ( ("mm" variable
+                       (:pointer 1
+                        :type ("mm_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13908 13929]))                  
+                :type "unsigned long")
+                nil [13875 14042]))          
+      :file "process.c"
+      :pointmax 15822
+      :fsize 15821
+      :lastmodtime '(21915 34177 502780 908000)
+      :unmatched-syntax '((string 11787 . 11802) (semantic-list 11772 . 11778) (symbol 11759 . 11772) (VOID 11754 . 11758) (symbol 11743 . 11753) (TYPEDEF 2052 . 2059))))
+  :file "!home!qichen!20160225_rc5!vendor!marvell-sdk!linux!arch!arm!kernel!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

@@ -1,0 +1,96 @@
+;; Object timer/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "timer/"
+  :tables
+  (list
+    (semanticdb-table "apb_timer.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("com_type.h" include nil nil [1 22])
+            ("io.h" include nil nil [24 39])
+            ("apb_perf_base.h" include nil nil [40 66])
+            ("debug.h" include nil nil [67 85])
+            ("apb_timer.h" include nil nil [87 109])
+            ("DEFAULT_CFG_CLK" variable (:constant-flag t) nil [1387 1402])
+            ("TIMER_MS" variable (:constant-flag t) nil [1425 1433])
+            ("TIMER_US" variable (:constant-flag t) nil [1474 1482])
+            ("TIMER_10NS" variable (:constant-flag t) nil [1516 1526])
+            ("MAX_MS" variable (:constant-flag t) nil [1568 1574])
+            ("MAX_US" variable (:constant-flag t) nil [1624 1630])
+            ("MAX_10NS" variable (:constant-flag t) nil [1664 1672])
+            ("timer_setctrl" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("mask" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1723 1735])
+                    ("mode" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1736 1748])
+                    ("enable" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1749 1763]))                  
+                :type ("INT32" type (:type "class") nil nil))
+                nil [1696 2064])
+            ("timer_setloadcount" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("loadCount" variable (:type ("INT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2098 2114]))                  
+                :type ("INT32" type (:type "class") nil nil))
+                nil [2066 2184])
+            ("timer_getloadcount" function
+               (:typemodifiers ("static")
+                :type ("UINT32" type (:type "class") nil nil))
+                nil [2186 2271])
+            ("init_timer" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [2289 2294]))                  
+                :type "void")
+                nil [2273 2390])
+            ("delay_10ns" function
+               (:arguments 
+                  ( ("ns" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [2408 2424]))                  
+                :type "void")
+                nil [2392 2593])
+            ("udelay" function
+               (:arguments 
+                  ( ("us" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [2607 2623]))                  
+                :type "void")
+                nil [2595 2788])
+            ("delay_us" function
+               (:arguments 
+                  ( ("us" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [2804 2820]))                  
+                :type "void")
+                nil [2790 2837])
+            ("mdelay" function
+               (:arguments 
+                  ( ("ms" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [2851 2867]))                  
+                :type "void")
+                nil [2839 2920])
+            ("delay_ms" function
+               (:arguments 
+                  ( ("ms" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [2936 2952]))                  
+                :type "void")
+                nil [2922 2969])
+            ("get_time_ms" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [3022 3027]))                  
+                :type "unsigned int")
+                nil [2997 3095])
+            ("stop_timer" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [3113 3118]))                  
+                :type "void")
+                nil [3097 3150]))          
+      :file "apb_timer.c"
+      :pointmax 3332
+      :fsize 3331
+      :lastmodtime '(22118 47101 740512 284000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("MAX_MS" . ((semantic-list "(0xFFFFFFFF / (DEFAULT_CFG_CLK * 1000))" 1576 . 1615)))
+          ("MAX_10NS" . ((semantic-list "(MAX_US * 100)" 1680 . 1694)))
+          ("TIMER_10NS" (spp-arg-list ("x") 1526 . 1529) . ((semantic-list "((x * DEFAULT_CFG_CLK) / 100)" 1530 . 1559)))
+          ("TIMER_US" (spp-arg-list ("x") 1482 . 1485) . ((semantic-list "(x * DEFAULT_CFG_CLK)" 1486 . 1507)))
+          ("TIMER_MS" (spp-arg-list ("x") 1433 . 1436) . ((semantic-list "(x * 1000 * DEFAULT_CFG_CLK)" 1437 . 1465)))
+          ("MAX_US" . ((semantic-list "(MAX_MS * 1000)" 1640 . 1655)))
+          ("DEFAULT_CFG_CLK" . ((semantic-list "(200)" 1403 . 1408)))
+          )
+))
+  :file "!home!qichen!20160225_rc5!vendor!marvell-sdk!MV88DE3100_SDK!MV88DE3100_Tools!bsp!common!driver!timer!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

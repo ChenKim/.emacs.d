@@ -1,0 +1,119 @@
+;; Object libbt/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "libbt/"
+  :tables
+  (list
+    (semanticdb-table "bt_vendor_mrvl_ctl.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("stdio.h" include (:system-flag t) nil [1 19])
+            ("stdlib.h" include (:system-flag t) nil [20 39])
+            ("stdarg.h" include (:system-flag t) nil [40 59])
+            ("string.h" include (:system-flag t) nil [60 79])
+            ("assert.h" include (:system-flag t) nil [80 99])
+            ("unistd.h" include (:system-flag t) nil [100 119])
+            ("signal.h" include (:system-flag t) nil [120 139])
+            ("fcntl.h" include (:system-flag t) nil [140 158])
+            ("errno.h" include (:system-flag t) nil [159 177])
+            ("pthread.h" include (:system-flag t) nil [178 198])
+            ("sys/mman.h" include (:system-flag t) nil [199 220])
+            ("sys/stat.h" include (:system-flag t) nil [221 242])
+            ("sys/ioctl.h" include (:system-flag t) nil [243 265])
+            ("sys/socket.h" include (:system-flag t) nil [266 289])
+            ("sys/un.h" include (:system-flag t) nil [290 309])
+            ("bt_vendor_mrvl_ctl.h" include nil nil [311 342])
+            ("cutils/log.h" include (:system-flag t) nil [343 366])
+            ("LOG_TAG" variable (:constant-flag t) nil [413 420])
+            ("info" variable (:constant-flag t) nil [457 461])
+            ("debug" variable (:constant-flag t) nil [544 549])
+            ("warn" variable (:constant-flag t) nil [631 635])
+            ("error" variable (:constant-flag t) nil [734 739])
+            ("asrt" variable (:constant-flag t) nil [836 840])
+            ("command_perform" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("cmd" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [955 972])
+                    ("buf" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [973 983])
+                    ("len" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [984 1001]))                  
+                :type "int")
+                nil [928 2594])
+            ("bt_vendor_ctl_config_wakeup" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [2848 2853]))                  
+                :type "int")
+                nil [2816 3104]))          
+      :file "bt_vendor_mrvl_ctl.c"
+      :pointmax 3105
+      :fsize 3104
+      :lastmodtime '(22242 47769 719737 733000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("warn" (spp-arg-list ("fmt" "...") 635 . 645) . ((symbol "SLOGI" 652 . 657) (semantic-list "(\"WARNING : %s(L%d): \" fmt, __FUNCTION__, __LINE__, ## __VA_ARGS__)" 658 . 725)))
+          ("info" (spp-arg-list ("fmt" "...") 461 . 471) . ((symbol "SLOGI" 473 . 478) (semantic-list "(\"%s(L%d): \" fmt,__FUNCTION__, __LINE__, ## __VA_ARGS__)" 479 . 535)))
+          ("asrt" (spp-arg-list ("s") 840 . 843) . 
+              ((IF "if" 844 . 846) (semantic-list "(!(s))" 846 . 852) (symbol "SLOGI" 853 . 858) (semantic-list "(\"## %s assert %s failed at line: %d\", __FUNCTION__, #s, __LINE__)" 859 . 925)))
+          ("error" (spp-arg-list ("fmt" "...") 739 . 749) . ((symbol "SLOGI" 756 . 761) (semantic-list "(\"ERROR : %s(L%d): \" fmt, __FUNCTION__, __LINE__, ## __VA_ARGS__)" 762 . 827)))
+          ("debug" (spp-arg-list ("fmt" "...") 549 . 559) . ((symbol "SLOGI" 560 . 565) (semantic-list "(\"%s(L%d): \" fmt,__FUNCTION__, __LINE__, ## __VA_ARGS__)" 566 . 622)))
+          ("LOG_TAG" . ((string "\"bt-vendor-ctl\"" 432 . 447)))
+          )
+)
+    (semanticdb-table "bt_vendor_mrvl_ctl.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("__BT_VENDOR_CTL_H__" variable (:constant-flag t) nil [37 56])
+            ("F_BT_VENDOR_CTL_SOCKET" variable (:constant-flag t) nil [66 88])
+            ("F_MCHAR_PORT" variable (:constant-flag t) nil [137 149])
+            ("" type
+               (:members 
+                  ( ("BT_VENDOR_CTL_CMD_NULL" variable
+                       (:constant-flag t
+                        :default-value (256 257)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [224 257])
+                    ("BT_VENDOR_CTL_CMD_FEEDBACK" variable
+                       (:constant-flag t
+                        :default-value (295 296)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [263 296])
+                    ("BT_VENDOR_CTL_CMD_CONFIG_WAKEUP" variable
+                       (:constant-flag t
+                        :default-value (339 340)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [302 340])
+                    ("BT_VENDOR_CTL_CMD_NMAX" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [346 370]))                  
+                :type "enum")
+                nil [213 371])
+            ("BT_VENDOR_CTL_MSG_BUF_SIZE" variable (:constant-flag t) nil [443 469])
+            ("BT_VENDOR_CTL_MSG_DATA_SIZE" variable (:constant-flag t) nil [488 515])
+            ("bt_vendor_ctl_msg" type
+               (:members 
+                  ( ("command" variable (:type "char") (reparse-symbol classsubparts) [600 613])
+                    ("len_valid" variable (:type "char") (reparse-symbol classsubparts) [618 633])
+                    ("data" variable
+                       (:dereference 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [638 677]))                  
+                :type "struct")
+                nil [569 680]))          
+      :file "bt_vendor_mrvl_ctl.h"
+      :pointmax 715
+      :fsize 714
+      :lastmodtime '(22242 47769 719737 733000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("BT_VENDOR_CTL_MSG_DATA_SIZE" . ((semantic-list "(BT_VENDOR_CTL_MSG_BUF_SIZE - 2*sizeof(char))" 523 . 568)))
+          ("__BT_VENDOR_CTL_H__")
+          ("BT_VENDOR_CTL_MSG_BUF_SIZE" . ((number "32" 477 . 479)))
+          ("F_MCHAR_PORT" . ((string "\"/dev/mbtchar0\"" 163 . 178)))
+          ("F_BT_VENDOR_CTL_SOCKET" . ((string "\"/data/misc/bluetooth/.sbtvendorctl\"" 92 . 128)))
+          )
+))
+  :file "!home!qichen!20160310_rc2!vendor!marvell!midas-tv!test!bluetooth!libbt!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

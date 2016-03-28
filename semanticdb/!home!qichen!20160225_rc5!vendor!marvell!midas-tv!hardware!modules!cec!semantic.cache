@@ -1,0 +1,1238 @@
+;; Object cec/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "cec/"
+  :tables
+  (list
+    (semanticdb-table "hdmi_cec_hw.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("errno.h" include (:system-flag t) nil [1136 1154])
+            ("hardware/hdmi_cec.h" include (:system-flag t) nil [1155 1185])
+            ("hdmi_cec_util.h" include nil nil [1186 1212])
+            ("hdmi_cec_msg.h" include nil nil [1213 1238])
+            ("sm_agent.h" include nil nil [1239 1260])
+            ("CEC_VERSION_1_4" variable (:constant-flag t) nil [1299 1314])
+            ("MSGSIZE" variable (:constant-flag t) nil [1359 1366])
+            ("MSG_Q_ITEM_TYPE_CEC" variable (:constant-flag t) nil [1418 1437])
+            ("MSG_Q_ITEM_TYPE_HOTPLUG_TX" variable (:constant-flag t) nil [1474 1500])
+            ("MSG_Q_ITEM_TYPE_HOTPLUG_RX" variable (:constant-flag t) nil [1530 1556])
+            ("CEC_SEM_WAIT_TIMEOUT" variable (:constant-flag t) nil [1587 1607])
+            ("CEC_SM_SEM_WAIT_TIMEOUT" variable (:constant-flag t) nil [1660 1683])
+            ("CEC_PHYSICAL_ADDR_UNREGISTERED" variable (:constant-flag t) nil [1734 1764])
+            ("CEC_PHYSICAL_ADDR_ROOT" variable (:constant-flag t) nil [1795 1817])
+            ("CECSVS_FEATURE_ONE_TOUCH_PLAY" variable (:constant-flag t) nil [1857 1886])
+            ("CECSVS_FEATURE_ROUTING_CONTROL" variable (:constant-flag t) nil [1922 1952])
+            ("CECSVS_FEATURE_SYSTEM_STANDBY" variable (:constant-flag t) nil [1987 2016])
+            ("CECSVS_FEATURE_ONE_TOUCH_RECORD" variable (:constant-flag t) nil [2052 2083])
+            ("CECSVS_FEATURE_SYSTEM_INFO" variable (:constant-flag t) nil [2117 2143])
+            ("CECSVS_FEATURE_DECK_CONTROL" variable (:constant-flag t) nil [2182 2209])
+            ("CECSVS_FEATURE_TUNER_CONTROL" variable (:constant-flag t) nil [2247 2275])
+            ("CECSVS_FEATURE_VENDOR_SPEC_CMDS" variable (:constant-flag t) nil [2312 2343])
+            ("CECSVS_FEATURE_OSD_STATUS_DISPLAY" variable (:constant-flag t) nil [2377 2410])
+            ("CECSVS_FEATURE_DEVICE_OSD_NAME_TX" variable (:constant-flag t) nil [2442 2475])
+            ("CECSVS_FEATURE_DEVICE_MENU_CONTROL" variable (:constant-flag t) nil [2507 2541])
+            ("CECSVS_FEATURE_REMOTE_CONTROL_PASS_THRU" variable (:constant-flag t) nil [2572 2611])
+            ("CECSVS_FEATURE_DEVICE_POWER_STATUS" variable (:constant-flag t) nil [2637 2671])
+            ("CECSVS_FEATURE_SYSTEM_AUDIO_CONTROL" variable (:constant-flag t) nil [2702 2737])
+            ("CECSVS_FEATURE_AUDIO_RATE_CONTROL" variable (:constant-flag t) nil [2767 2800])
+            ("CECSVS_FEATURE_TIMER_PROGRAMMING" variable (:constant-flag t) nil [2832 2864])
+            ("CECSVS_FEATURE_AUDIO_RETURN_CHANNEL" variable (:constant-flag t) nil [2897 2932])
+            ("CEC_FEATURE_ALL" variable (:constant-flag t) nil [2963 2978])
+            ("BOX_FEATURES" variable (:constant-flag t) nil [4169 4181])
+            ("TV_FEATURES" variable (:constant-flag t) nil [4209 4220])
+            ("IS_HEX_CHAR" variable (:constant-flag t) nil [4270 4281])
+            ("" type
+               (:members 
+                  ( ("VPP_CEC_STATUS_SUCCESS" variable
+                       (:constant-flag t
+                        :default-value (4412 4416)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [4387 4416])
+                    ("VPP_CEC_STATUS_INVALID_PARAM" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [4422 4451])
+                    ("VPP_CEC_STATUS_ERR_INVALID_MODE" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [4456 4488])
+                    ("VPP_CEC_STATUS_ERR_MSG_UNSUPPORTED" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [4493 4528])
+                    ("VPP_CEC_STATUS_ERR_INVALID_FRAME_LEN" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [4533 4570])
+                    ("VPP_CEC_STATUS_ERR_MSG_IGNORED" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [4575 4606])
+                    ("VPP_CEC_STATUS_TX_ERR_COMM_FAIL" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [4611 4643])
+                    ("VPP_CEC_STATUS_RX_ERR_COMM_FAIL" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [4648 4680])
+                    ("VPP_CEC_STATUS_TX_ERR_WAIT_FAIL" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [4685 4717])
+                    ("VPP_CEC_STATUS_INFO_MAX" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [4722 4747]))                  
+                :type "enum")
+                nil [4376 4748])
+            ("client_argv" variable
+               (:pointer 1
+                :dereference 1
+                :typemodifiers ("static")
+                :default-value "{\"client\", \"iiop:1.0//127.0.0.1:999/AMP::FACTORY/factory\"}"
+                :type "char")
+                nil [4750 4842])
+            ("avin_connection_status_t" type
+               (:members 
+                  ( ("u32" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4889 4900])
+                    ("connection" variable (:type ("" type
+                         (:members 
+                            ( ("source" variable
+                                 (:suffix ":31"
+                                  :type ("UINT32" type (:type "class") nil nil))
+                                  (reparse-symbol classsubparts) [4922 4941])
+                              ("status" variable
+                                 (:suffix ":1"
+                                  :type ("UINT32" type (:type "class") nil nil))
+                                  (reparse-symbol classsubparts) [4950 4968]))                            
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [4905 4986]))                  
+                :type "union")
+                nil [4844 5014])
+            ("avin_connection_status_t" type
+               (:typedef ("avin_connection_status_t" type (:type "union") nil nil)
+                :type "typedef")
+                nil [4844 5014])
+            ("event_callback_item_t" type
+               (:members 
+                  ( ("callback" variable (:type ("event_callback_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5097 5123])
+                    ("arg" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol classsubparts) [5128 5138])
+                    ("next" variable
+                       (:pointer 1
+                        :type ("event_callback_item_t" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [5143 5178]))                  
+                :type "struct")
+                nil [5054 5203])
+            ("event_callback_item_t" type
+               (:typedef ("event_callback_item_t" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [5054 5203])
+            ("marvell_cec_device_t" type
+               (:members 
+                  ( ("device" variable (:type ("hdmi_cec_device_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5247 5272])
+                    ("bAmpClientOwner" variable (:type ("BOOL" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5278 5299])
+                    ("factory" variable (:type ("AMP_FACTORY" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5304 5324])
+                    ("hDisp" variable (:type ("AMP_DISP" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5329 5344])
+                    ("bAvinLoaded" variable (:type ("BOOL" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5349 5366])
+                    ("hAvin" variable (:type ("AMP_COMPONENT" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5371 5391])
+                    ("hVppListener" variable (:type ("HANDLE" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5434 5454])
+                    ("hAvinListener" variable (:type ("HANDLE" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5459 5480])
+                    ("cecLock" variable (:type ("MV_OSAL_HANDLE_MUTEX_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5485 5516])
+                    ("cecTxSemaphore" variable (:type ("MV_OSAL_HANDLE_SEM_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5521 5557])
+                    ("cecLogAddrSemaphore" variable (:type ("MV_OSAL_HANDLE_SEM_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5562 5603])
+                    ("cecMsgQ" variable
+                       (:pointer 1
+                        :type ("msg_q" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [5608 5623])
+                    ("hdmiCecTask" variable (:type ("MV_OSAL_HANDLE_TASK_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5628 5662])
+                    ("isHdmiCecTaskAlive" variable (:type ("BOOL" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5701 5725])
+                    ("hdmiCecSMTask" variable (:type ("MV_OSAL_HANDLE_TASK_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5731 5767])
+                    ("cecSMSemaphore" variable (:type ("MV_OSAL_HANDLE_SEM_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5772 5808])
+                    ("isHdmiCecSMTaskAlive" variable (:type ("BOOL" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5851 5877])
+                    ("powerMessageTask" variable (:type ("MV_OSAL_HANDLE_TASK_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5936 5975])
+                    ("pmSemaphore" variable (:type ("MV_OSAL_HANDLE_SEM_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5980 6013])
+                    ("isPowerMessageTaskAlive" variable (:type ("BOOL" type (:type "class") nil nil)) (reparse-symbol classsubparts) [6018 6047])
+                    ("powerMessage" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [6052 6073])
+                    ("cecEnabled" variable (:type ("BOOL" type (:type "class") nil nil)) (reparse-symbol classsubparts) [6079 6095])
+                    ("cecInited" variable (:type ("BOOL" type (:type "class") nil nil)) (reparse-symbol classsubparts) [6100 6115])
+                    ("featureInited" variable (:type ("BOOL" type (:type "class") nil nil)) (reparse-symbol classsubparts) [6120 6139])
+                    ("portInfoInited" variable (:type ("BOOL" type (:type "class") nil nil)) (reparse-symbol classsubparts) [6144 6164])
+                    ("optionWakeUp" variable (:type "int") (reparse-symbol classsubparts) [6170 6187])
+                    ("optionEnableCec" variable (:type "int") (reparse-symbol classsubparts) [6192 6212])
+                    ("optionSystemCecControl" variable (:type "int") (reparse-symbol classsubparts) [6217 6244])
+                    ("deviceType" variable (:type ("CEC_DEVICE_TYPE" type (:type "class") nil nil)) (reparse-symbol classsubparts) [6250 6277])
+                    ("LA" variable (:type "int") (reparse-symbol classsubparts) [6282 6289])
+                    ("PA" variable (:type "int") (reparse-symbol classsubparts) [6294 6301])
+                    ("isActiveSource" variable (:type ("BOOL" type (:type "class") nil nil)) (reparse-symbol classsubparts) [6306 6326])
+                    ("portConfigs" variable
+                       (:pointer 1
+                        :type ("hdmi_port_config_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [6331 6363])
+                    ("portInfos" variable
+                       (:pointer 1
+                        :type ("hdmi_port_info_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [6368 6396])
+                    ("portNumber" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [6401 6421])
+                    ("inputPortNum" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [6426 6448])
+                    ("callbackHeader" variable
+                       (:pointer 1
+                        :type ("event_callback_item_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [6519 6557])
+                    ("tx_status" variable (:type "int") (reparse-symbol classsubparts) [6563 6577])
+                    ("productType" variable (:type ("PRODUCT_TYPE" type (:type "class") nil nil)) (reparse-symbol classsubparts) [6627 6652])
+                    ("polling_address" variable (:type "int") (reparse-symbol classsubparts) [6658 6678])
+                    ("isSuspend" variable (:type ("BOOL" type (:type "class") nil nil)) (reparse-symbol classsubparts) [6684 6699]))                  
+                :type "struct")
+                nil [5205 6746])
+            ("marvell_cec_device_t" type
+               (:typedef ("marvell_cec_device_t" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [5205 6746])
+            ("gIsSMInited" variable
+               (:typemodifiers ("static")
+                :default-value "0"
+                :type "int")
+                nil [6748 6775])
+            ("dump_mrvl_device" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("mrvlDev" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("marvell_cec_device_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6806 6842]))                  
+                :type "void")
+                nil [6777 6843])
+            ("result" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("mrvlDev" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("marvell_cec_device_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6862 6898])
+                    ("ret" variable (:type "int") (reparse-symbol arg-sub-list) [6899 6907])
+                    ("function" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [6926 6947])
+                    ("message" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [6948 6968]))                  
+                :type "int")
+                nil [6844 6969])
+            ("cec_dev_open" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("module" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("hw_module_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6994 7020])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [7021 7038])
+                    ("device" variable
+                       (:pointer 2
+                        :type ("hw_device_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7063 7084]))                  
+                :type "int")
+                nil [6970 7085])
+            ("cec_dev_close" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("device" variable
+                       (:pointer 1
+                        :type ("hw_device_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7111 7131]))                  
+                :type "int")
+                nil [7086 7132])
+            ("cec_init" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("mrvlDev" variable
+                       (:pointer 1
+                        :type ("marvell_cec_device_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7153 7183]))                  
+                :type "int")
+                nil [7133 7184])
+            ("cec_deinit" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("mrvlDev" variable
+                       (:pointer 1
+                        :type ("marvell_cec_device_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7208 7238]))                  
+                :type "void")
+                nil [7185 7239])
+            ("cec_feature_init" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("mrvlDev" variable
+                       (:pointer 1
+                        :type ("marvell_cec_device_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7268 7298])
+                    ("featureID" variable (:type "int") (reparse-symbol arg-sub-list) [7299 7313]))                  
+                :type "int")
+                nil [7240 7314])
+            ("cec_feature_deinit" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("mrvlDev" variable
+                       (:pointer 1
+                        :type ("marvell_cec_device_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7346 7376])
+                    ("featureID" variable (:type "int") (reparse-symbol arg-sub-list) [7377 7391]))                  
+                :type "void")
+                nil [7315 7392])
+            ("cec_port_info_init" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("mrvlDev" variable
+                       (:pointer 1
+                        :type ("marvell_cec_device_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7423 7453]))                  
+                :type "int")
+                nil [7393 7454])
+            ("cec_port_info_deinit" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("mrvlDev" variable
+                       (:pointer 1
+                        :type ("marvell_cec_device_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7488 7518]))                  
+                :type "void")
+                nil [7455 7519])
+            ("cec_enable" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("mrvlDev" variable
+                       (:pointer 1
+                        :type ("marvell_cec_device_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7542 7572]))                  
+                :type "int")
+                nil [7520 7573])
+            ("cec_disable" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("mrvlDev" variable
+                       (:pointer 1
+                        :type ("marvell_cec_device_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7597 7627]))                  
+                :type "int")
+                nil [7574 7628])
+            ("allocate_address" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("mrvlDev" variable
+                       (:pointer 1
+                        :type ("marvell_cec_device_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7657 7687]))                  
+                :type "int")
+                nil [7629 7688])
+            ("deallocate_address" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("mrvlDev" variable
+                       (:pointer 1
+                        :type ("marvell_cec_device_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7719 7749]))                  
+                :type "int")
+                nil [7689 7750])
+            ("get_device_type" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("lAddr" variable (:type ("CEC_LOGICAL_ADDR_TYPE" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7778 7806]))                  
+                :type "int")
+                nil [7751 7807])
+            ("enable_cec_feature" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("mrvlDev" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("marvell_cec_device_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7838 7874])
+                    ("enable" variable (:type ("BOOL" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7875 7887])
+                    ("featureID" variable (:type "int") (reparse-symbol arg-sub-list) [7918 7932]))                  
+                :type "int")
+                nil [7808 7933])
+            ("vpp_cec_event_handler" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("hListener" variable (:type ("HANDLE" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7971 7988])
+                    ("pEvent" variable
+                       (:pointer 1
+                        :type ("AMP_EVENT" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7989 8007])
+                    ("pUserdata" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [8045 8061]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [7934 8062])
+            ("avin_event_handler" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("hListener" variable (:type ("HANDLE" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8097 8114])
+                    ("pEvent" variable
+                       (:pointer 1
+                        :type ("AMP_EVENT" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [8115 8133])
+                    ("pUserdata" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [8168 8184]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [8063 8185])
+            ("hdmi_cec_task_proc" function
+               (:prototype-flag t
+                :pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("pContext" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [8218 8233]))                  
+                :type "void")
+                nil [8186 8234])
+            ("hdmi_cec_sm_task_proc" function
+               (:prototype-flag t
+                :pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("pContext" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [8270 8285]))                  
+                :type "void")
+                nil [8235 8286])
+            ("process_tx_hotplug" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("mrvlDev" variable
+                       (:pointer 1
+                        :type ("marvell_cec_device_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [8318 8348])
+                    ("HdmiMsgID" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8380 8397]))                  
+                :type "void")
+                nil [8287 8398])
+            ("process_rx_hotplug" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("mrvlDev" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("marvell_cec_device_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [8430 8466])
+                    ("connInfo" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8498 8514]))                  
+                :type "void")
+                nil [8399 8515])
+            ("process_cec_message" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("mrvlDev" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("marvell_cec_device_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [8548 8584])
+                    ("pInfo" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [8617 8629]))                  
+                :type "void")
+                nil [8516 8630])
+            ("notify_callback" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("mrvlDev" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("marvell_cec_device_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [8659 8695])
+                    ("event" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("hdmi_event_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [8724 8750]))                  
+                :type "void")
+                nil [8631 8751])
+            ("box_get_port_info" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("mrvlDev" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("marvell_cec_device_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [8781 8817])
+                    ("pPhyAddr" variable
+                       (:pointer 1
+                        :type ("UINT16" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [8847 8864]))                  
+                :type "int")
+                nil [8752 8865])
+            ("init_sm_agent" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :type "void")
+                nil [8866 8894])
+            ("close_sm_agent" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :type "void")
+                nil [8895 8924])
+            ("sm_send_cec_appready" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :type "int")
+                nil [8925 8959])
+            ("sm_send_cec_info" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("mrvlDev" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("marvell_cec_device_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [8988 9024]))                  
+                :type "int")
+                nil [8960 9025])
+            ("sm_send_cec_hdmictrl_onoff" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("state" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [9064 9080]))                  
+                :type "int")
+                nil [9026 9081])
+            ("sm_get_wakeup_cec_message" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("mrvlDev" variable
+                       (:pointer 1
+                        :type ("marvell_cec_device_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [9119 9149]))                  
+                :type "int")
+                nil [9082 9150])
+            ("start_power_message_task" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("mrvlDev" variable
+                       (:pointer 1
+                        :type ("marvell_cec_device_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [9188 9218]))                  
+                :type "void")
+                nil [9151 9219])
+            ("stop_power_message_task" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("mrvlDev" variable
+                       (:pointer 1
+                        :type ("marvell_cec_device_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [9256 9286]))                  
+                :type "void")
+                nil [9220 9287])
+            ("power_message_task_proc" function
+               (:prototype-flag t
+                :pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("arg" variable
+                       (:pointer 1
+                        :type ("VOID" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [9325 9336]))                  
+                :type ("VOID" type (:type "class") nil nil))
+                nil [9288 9337])
+            ("updateAvinEdid" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("mrvlDev" variable
+                       (:pointer 1
+                        :type ("marvell_cec_device_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [9364 9394]))                  
+                :type "int")
+                nil [9338 9395])
+            ("mv_add_logical_address" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("hdmi_cec_device_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [9896 9925])
+                    ("addr" variable (:type ("CEC_LOGICAL_ADDR_TYPE" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9960 9987]))                  
+                :type "int")
+                nil [9862 13085])
+            ("mv_clear_logical_address" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("hdmi_cec_device_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [13399 13428]))                  
+                :type "void")
+                nil [13362 13716])
+            ("mv_get_physical_address" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("hdmi_cec_device_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [14192 14221])
+                    ("addr" variable
+                       (:pointer 1
+                        :type ("uint16_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [14222 14237]))                  
+                :type "int")
+                nil [14157 14796])
+            ("mv_send_message" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("hdmi_cec_device_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [15437 15466])
+                    ("msg" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("cec_message_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [15494 15519]))                  
+                :type "int")
+                nil [15410 18906])
+            ("mv_register_event_callback" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("hdmi_cec_device_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [19264 19293])
+                    ("callback" variable (:type ("event_callback_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [19333 19359])
+                    ("pArg" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [19360 19371]))                  
+                :type "void")
+                nil [19225 19741])
+            ("mv_get_version" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("hdmi_cec_device_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [19855 19884])
+                    ("version" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [19885 19898]))                  
+                :type "void")
+                nil [19828 20066])
+            ("parse_vendor_id" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("vendorStr" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [20128 20150]))                  
+                :type "int")
+                nil [20101 20721])
+            ("mv_get_vendor_id" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("hdmi_cec_device_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [20923 20952])
+                    ("vendor_id" variable
+                       (:pointer 1
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [20953 20973]))                  
+                :type "void")
+                nil [20894 21353])
+            ("mv_config_port" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("hdmi_cec_device_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [21683 21712])
+                    ("configs" variable
+                       (:pointer 1
+                        :type ("hdmi_port_config_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [21740 21768])
+                    ("total" variable (:type "int") (reparse-symbol arg-sub-list) [21769 21779]))                  
+                :type "void")
+                nil [21656 22575])
+            ("mv_get_port_info" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("hdmi_cec_device_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [22797 22826])
+                    ("list" variable
+                       (:pointer 1
+                        :dereference 1
+                        :type ("hdmi_port_info_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [22856 22881])
+                    ("total" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [22882 22893]))                  
+                :type "void")
+                nil [22768 23223])
+            ("mv_set_option" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("hdmi_cec_device_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [23469 23498])
+                    ("option" variable (:type "int") (reparse-symbol arg-sub-list) [23499 23510])
+                    ("value" variable (:type "int") (reparse-symbol arg-sub-list) [23511 23521]))                  
+                :type "void")
+                nil [23443 25682])
+            ("mv_set_audio_return_channel" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("hdmi_cec_device_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [25951 25980])
+                    ("enARC" variable (:type "int") (reparse-symbol arg-sub-list) [25981 25991]))                  
+                :type "void")
+                nil [25911 26277])
+            ("mv_is_connected" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("hdmi_cec_device_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [26539 26568])
+                    ("port_id" variable (:type "int") (reparse-symbol arg-sub-list) [26569 26581]))                  
+                :type "int")
+                nil [26512 27955])
+            ("mv_get_product_type" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("hdmi_cec_device_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [28184 28213])
+                    ("type" variable
+                       (:pointer 1
+                        :type ("int32_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [28214 28228]))                  
+                :type "void")
+                nil [28152 28366])
+            ("mv_update_power_status" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("hdmi_cec_device_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [28621 28650])
+                    ("message" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [28651 28667]))                  
+                :type "void")
+                nil [28586 28888])
+            ("hal_module_methods" variable
+               (:typemodifiers ("static")
+                :default-value "{
+    .open = cec_dev_open,
+}"
+                :type ("hw_module_methods_t" type (:type "class") nil nil))
+                nil [28890 28968])
+            ("HAL_MODULE_INFO_SYM" variable
+               (:default-value "{
+    .common = {
+        .tag = HARDWARE_MODULE_TAG,
+        .version_major = 1,
+        .version_minor = 0,
+        .id = HDMI_CEC_HARDWARE_MODULE_ID,
+        .name = \"MV ANDROID HDMI CEC HAL\",
+        .author = \"Marvell Technology Group Ltd.\",
+        .methods = &hal_module_methods,
+    },
+}"
+                :type ("hdmi_cec_module_t" type (:type "class") nil nil))
+                nil [28970 29306])
+            ("cec_dev_open" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("module" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("hw_module_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [29332 29358])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [29359 29376])
+                    ("device" variable
+                       (:pointer 2
+                        :type ("hw_device_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [29401 29422]))                  
+                :type "int")
+                nil [29308 32780])
+            ("cec_dev_close" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("device" variable
+                       (:pointer 1
+                        :type ("hw_device_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [32807 32827]))                  
+                :type "int")
+                nil [32782 33756])
+            ("cec_init" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("mrvlDev" variable
+                       (:pointer 1
+                        :type ("marvell_cec_device_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [33778 33808]))                  
+                :type "int")
+                nil [33758 37265])
+            ("cec_deinit" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("mrvlDev" variable
+                       (:pointer 1
+                        :type ("marvell_cec_device_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [37290 37320]))                  
+                :type "void")
+                nil [37267 38717])
+            ("cec_enable" function
+               (:arguments 
+                  ( ("mrvlDev" variable
+                       (:pointer 1
+                        :type ("marvell_cec_device_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [38734 38764]))                  
+                :type "int")
+                nil [38719 39263])
+            ("cec_disable" function
+               (:arguments 
+                  ( ("mrvlDev" variable
+                       (:pointer 1
+                        :type ("marvell_cec_device_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [39281 39311]))                  
+                :type "int")
+                nil [39265 39878])
+            ("allocate_address" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("mrvlDev" variable
+                       (:pointer 1
+                        :type ("marvell_cec_device_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [39908 39938]))                  
+                :type "int")
+                nil [39880 41736])
+            ("deallocate_address" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("mrvlDev" variable
+                       (:pointer 1
+                        :type ("marvell_cec_device_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [41768 41798]))                  
+                :type "int")
+                nil [41738 42428])
+            ("get_device_type" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("lAddr" variable (:type ("CEC_LOGICAL_ADDR_TYPE" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [42457 42485]))                  
+                :type "int")
+                nil [42430 43177])
+            ("cec_feature_init" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("mrvlDev" variable
+                       (:pointer 1
+                        :type ("marvell_cec_device_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [43207 43237])
+                    ("featureID" variable (:type "int") (reparse-symbol arg-sub-list) [43238 43252]))                  
+                :type "int")
+                nil [43179 43674])
+            ("cec_feature_deinit" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("mrvlDev" variable
+                       (:pointer 1
+                        :type ("marvell_cec_device_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [43707 43737])
+                    ("featureID" variable (:type "int") (reparse-symbol arg-sub-list) [43738 43752]))                  
+                :type "void")
+                nil [43676 44083])
+            ("enable_cec_feature" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("mrvlDev" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("marvell_cec_device_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [44115 44151])
+                    ("enable" variable (:type ("BOOL" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [44152 44164])
+                    ("featureID" variable (:type "int") (reparse-symbol arg-sub-list) [44195 44209]))                  
+                :type "int")
+                nil [44085 45146])
+            ("dump_mrvl_device" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("mrvlDev" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("marvell_cec_device_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [45177 45213]))                  
+                :type "void")
+                nil [45148 45892])
+            ("result" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("mrvlDev" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("marvell_cec_device_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [45912 45948])
+                    ("ret" variable (:type "int") (reparse-symbol arg-sub-list) [45949 45957])
+                    ("function" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [45976 45997])
+                    ("message" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [45998 46018]))                  
+                :type "int")
+                nil [45894 46255])
+            ("vpp_cec_event_handler" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("UNUSED" variable (:type ("HANDLE" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [46294 46318])
+                    ("pEvent" variable
+                       (:pointer 1
+                        :type ("AMP_EVENT" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [46320 46338])
+                    ("pUserdata" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [46376 46392]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [46257 52315])
+            ("avin_event_handler" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("UNUSED" variable (:type ("HANDLE" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [52351 52375])
+                    ("pEvent" variable
+                       (:pointer 1
+                        :type ("AMP_EVENT" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [52377 52395])
+                    ("pUserdata" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [52430 52446]))                  
+                :type ("HRESULT" type (:type "class") nil nil))
+                nil [52317 53407])
+            ("hdmi_cec_task_proc" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("pContext" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [53441 53456]))                  
+                :type "void")
+                nil [53409 55138])
+            ("hdmi_cec_sm_task_proc" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("pContext" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [55175 55190]))                  
+                :type "void")
+                nil [55140 56066])
+            ("process_tx_hotplug" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("mrvlDev" variable
+                       (:pointer 1
+                        :type ("marvell_cec_device_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [56099 56129])
+                    ("hdmiMsgID" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [56130 56147]))                  
+                :type "void")
+                nil [56068 57901])
+            ("process_rx_hotplug" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("mrvlDev" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("marvell_cec_device_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [57934 57970])
+                    ("connInfo" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [57971 57987]))                  
+                :type "void")
+                nil [57903 59399])
+            ("process_cec_message" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("mrvlDev" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("marvell_cec_device_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [59433 59469])
+                    ("pInfo" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [59470 59482]))                  
+                :type "void")
+                nil [59401 60161])
+            ("notify_callback" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("mrvlDev" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("marvell_cec_device_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [60191 60227])
+                    ("event" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("hdmi_event_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [60256 60282]))                  
+                :type "void")
+                nil [60163 60504])
+            ("EDID_FILE" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"/data/system/cec_phyaddr.bin\""
+                :type "char")
+                nil [60506 60568])
+            ("box_get_port_info" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("mrvlDev" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("marvell_cec_device_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [60599 60635])
+                    ("pPhyAddr" variable
+                       (:pointer 1
+                        :type ("UINT16" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [60665 60682]))                  
+                :type "int")
+                nil [60570 62148])
+            ("cec_port_info_init" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("mrvlDev" variable
+                       (:pointer 1
+                        :type ("marvell_cec_device_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [62180 62210]))                  
+                :type "int")
+                nil [62150 67342])
+            ("cec_port_info_deinit" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("mrvlDev" variable
+                       (:pointer 1
+                        :type ("marvell_cec_device_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [67377 67407]))                  
+                :type "void")
+                nil [67344 67669])
+            ("init_sm_agent" function
+               (:typemodifiers ("static")
+                :type "void")
+                nil [67671 67839])
+            ("close_sm_agent" function
+               (:typemodifiers ("static")
+                :type "void")
+                nil [67841 68010])
+            ("sm_send_cec_appready" function
+               (:typemodifiers ("static")
+                :type "int")
+                nil [68012 68367])
+            ("_smCECConfig" type
+               (:members 
+                  ( ("iDeviceType" variable (:type ("INT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [68403 68421])
+                    ("iLogicAddr" variable (:type ("INT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [68497 68514])
+                    ("uiPhyAddr" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [68593 68610])
+                    ("bActiveSource" variable (:type ("INT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [68662 68682])
+                    ("bValid" variable (:type ("INT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [68687 68700]))                  
+                :type "struct")
+                nil [68369 68715])
+            ("SMCECConfig" type
+               (:typedef ("_smCECConfig" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [68369 68715])
+            ("sm_send_cec_info" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("mrvlDev" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("marvell_cec_device_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [68745 68781]))                  
+                :type "int")
+                nil [68717 69584])
+            ("sm_send_cec_hdmictrl_onoff" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("state" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [69624 69640]))                  
+                :type "int")
+                nil [69586 70185])
+            ("start_power_message_task" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("mrvlDev" variable
+                       (:pointer 1
+                        :type ("marvell_cec_device_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [70224 70254]))                  
+                :type "void")
+                nil [70187 70554])
+            ("stop_power_message_task" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("mrvlDev" variable
+                       (:pointer 1
+                        :type ("marvell_cec_device_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [70592 70622]))                  
+                :type "void")
+                nil [70556 70880])
+            ("power_message_task_proc" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("arg" variable
+                       (:pointer 1
+                        :type ("VOID" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [70919 70930]))                  
+                :type ("VOID" type (:type "class") nil nil))
+                nil [70882 71774])
+            ("sm_get_wakeup_cec_message" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("mrvlDev" variable
+                       (:pointer 1
+                        :type ("marvell_cec_device_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [71813 71843]))                  
+                :type "int")
+                nil [71776 73283])
+            ("updateAvinEdid" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("UNUSED" variable
+                       (:pointer 1
+                        :type ("marvell_cec_device_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [80112 80150]))                  
+                :type "int")
+                nil [80086 80172]))          
+      :file "hdmi_cec_hw.c"
+      :pointmax 80181
+      :fsize 80180
+      :lastmodtime '(22229 24907 687808 325000)
+      :unmatched-syntax '((semantic-list 80141 . 80150) (semantic-list 52364 . 52375) (semantic-list 46307 . 46318))
+      :lexical-table 
+        '(("MSG_Q_ITEM_TYPE_CEC" . ((semantic-list "(1)" 1462 . 1465)))
+          ("MSG_Q_ITEM_TYPE_HOTPLUG_TX" . ((semantic-list "(2)" 1518 . 1521)))
+          ("CECSVS_FEATURE_TUNER_CONTROL" . ((semantic-list "(0x00000040)" 2291 . 2303)))
+          ("CECSVS_FEATURE_AUDIO_RATE_CONTROL" . ((semantic-list "(0x00004000)" 2811 . 2823)))
+          ("CEC_FEATURE_ALL" . 
+              ((symbol "CECSVS_FEATURE_ONE_TOUCH_PLAY" 2979 . 3008) (punctuation "|" 3019 . 3020) (symbol "CECSVS_FEATURE_ROUTING_CONTROL" 3047 . 3077) (punctuation "|" 3087 . 3088) (symbol "CECSVS_FEATURE_SYSTEM_STANDBY" 3115 . 3144) (punctuation "|" 3155 . 3156) (symbol "CECSVS_FEATURE_ONE_TOUCH_RECORD" 3183 . 3214) (punctuation "|" 3223 . 3224) (symbol "CECSVS_FEATURE_SYSTEM_INFO" 3251 . 3277) (punctuation "|" 3291 . 3292) (symbol "CECSVS_FEATURE_DECK_CONTROL" 3319 . 3346) (punctuation "|" 3359 . 3360) (symbol "CECSVS_FEATURE_TUNER_CONTROL" 3387 . 3415) (punctuation "|" 3427 . 3428) (symbol "CECSVS_FEATURE_VENDOR_SPEC_CMDS" 3455 . 3486) (punctuation "|" 3495 . 3496) (symbol "CECSVS_FEATURE_OSD_STATUS_DISPLAY" 3523 . 3556) (punctuation "|" 3563 . 3564) (symbol "CECSVS_FEATURE_DEVICE_OSD_NAME_TX" 3591 . 3624) (punctuation "|" 3631 . 3632) (symbol "CECSVS_FEATURE_DEVICE_MENU_CONTROL" 3659 . 3693) (punctuation "|" 3699 . 3700) (symbol "CECSVS_FEATURE_REMOTE_CONTROL_PASS_THRU" 3727 . 3766) (punctuation "|" 3767 . 3768) (symbol "CECSVS_FEATURE_DEVICE_POWER_STATUS" 3795 . 3829) (punctuation "|" 3835 . 3836) (symbol "CECSVS_FEATURE_SYSTEM_AUDIO_CONTROL" 3863 . 3898) (punctuation "|" 3903 . 3904) (symbol "CECSVS_FEATURE_AUDIO_RATE_CONTROL" 3931 . 3964) (punctuation "|" 3971 . 3972) (symbol "CECSVS_FEATURE_TIMER_PROGRAMMING" 3999 . 4031) (punctuation "|" 4039 . 4040) (symbol "CECSVS_FEATURE_AUDIO_RETURN_CHANNEL" 4067 . 4102)))
+          ("IS_HEX_CHAR" (spp-arg-list ("c") 4281 . 4284) . ((semantic-list "(('0' <= c && c <= '9') || ('a' <= c && c <= 'f') || ('A' <= c && c <= 'F'))" 4291 . 4367)))
+          ("CECSVS_FEATURE_ROUTING_CONTROL" . ((semantic-list "(0x00000002)" 1966 . 1978)))
+          ("CECSVS_FEATURE_VENDOR_SPEC_CMDS" . ((semantic-list "(0x00000080)" 2356 . 2368)))
+          ("CECSVS_FEATURE_OSD_STATUS_DISPLAY" . ((semantic-list "(0x00000100)" 2421 . 2433)))
+          ("CECSVS_FEATURE_REMOTE_CONTROL_PASS_THRU" . ((semantic-list "(0x00000800)" 2616 . 2628)))
+          ("CECSVS_FEATURE_DEVICE_OSD_NAME_TX" . ((semantic-list "(0x00000200)" 2486 . 2498)))
+          ("TV_FEATURES" . ((symbol "CEC_FEATURE_ALL" 4225 . 4240)))
+          ("CECSVS_FEATURE_DEVICE_MENU_CONTROL" . ((semantic-list "(0x00000400)" 2551 . 2563)))
+          ("CEC_SM_SEM_WAIT_TIMEOUT" . ((semantic-list "(1000000000u)" 1704 . 1717)))
+          ("CEC_PHYSICAL_ADDR_UNREGISTERED" . ((semantic-list "(0xFFFF)" 1778 . 1786)))
+          ("CECSVS_FEATURE_AUDIO_RETURN_CHANNEL" . ((semantic-list "(0x00010000)" 2941 . 2953)))
+          ("MSG_Q_ITEM_TYPE_HOTPLUG_RX" . ((semantic-list "(3)" 1574 . 1577)))
+          ("CECSVS_FEATURE_DEVICE_POWER_STATUS" . ((semantic-list "(0x00001000)" 2681 . 2693)))
+          ("CECSVS_FEATURE_SYSTEM_AUDIO_CONTROL" . ((semantic-list "(0x00002000)" 2746 . 2758)))
+          ("CEC_VERSION_1_4" . ((semantic-list "(0x05)" 1343 . 1349)))
+          ("MSGSIZE" . ((semantic-list "(128)" 1403 . 1408)))
+          ("CECSVS_FEATURE_SYSTEM_STANDBY" . ((semantic-list "(0x00000004)" 2031 . 2043)))
+          ("CECSVS_FEATURE_ONE_TOUCH_RECORD" . ((semantic-list "(0x00000008)" 2096 . 2108)))
+          ("CECSVS_FEATURE_TIMER_PROGRAMMING" . ((semantic-list "(0x00008000)" 2876 . 2888)))
+          ("CECSVS_FEATURE_DECK_CONTROL" . ((semantic-list "(0x00000020)" 2226 . 2238)))
+          ("CEC_SEM_WAIT_TIMEOUT" . ((semantic-list "(4000000000u)" 1631 . 1644)))
+          ("CEC_PHYSICAL_ADDR_ROOT" . ((semantic-list "(0x0000)" 1839 . 1847)))
+          ("CECSVS_FEATURE_ONE_TOUCH_PLAY" . ((semantic-list "(0x00000001)" 1901 . 1913)))
+          ("CECSVS_FEATURE_SYSTEM_INFO" . ((semantic-list "(0x00000010)" 2161 . 2173)))
+          ("BOX_FEATURES" . ((symbol "CEC_FEATURE_ALL" 4185 . 4200)))
+          )
+)
+    (semanticdb-table "hdmi_cec_util.h"
+      :file "hdmi_cec_util.h"
+      :fsize 3897
+      :lastmodtime '(22008 492 192296 927000))
+    (semanticdb-table "hdmi_cec_msg.h"
+      :file "hdmi_cec_msg.h"
+      :fsize 3853
+      :lastmodtime '(21915 34227 774779 295000)))
+  :file "!home!qichen!20160225_rc5!vendor!marvell!midas-tv!hardware!modules!cec!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

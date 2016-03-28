@@ -1,0 +1,225 @@
+;; Object leds/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "leds/"
+  :tables
+  (list
+    (semanticdb-table "leds-wm8350.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("linux/kernel.h" include (:system-flag t) nil [300 325])
+            ("linux/init.h" include (:system-flag t) nil [326 349])
+            ("linux/platform_device.h" include (:system-flag t) nil [350 384])
+            ("linux/leds.h" include (:system-flag t) nil [385 408])
+            ("linux/err.h" include (:system-flag t) nil [409 431])
+            ("linux/mfd/wm8350/pmic.h" include (:system-flag t) nil [432 466])
+            ("linux/regulator/consumer.h" include (:system-flag t) nil [467 504])
+            ("linux/slab.h" include (:system-flag t) nil [505 528])
+            ("linux/module.h" include (:system-flag t) nil [529 554])
+            ("isink_cur" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+	4,
+	5,
+	6,
+	7,
+	8,
+	10,
+	11,
+	14,
+	16,
+	19,
+	23,
+	27,
+	32,
+	39,
+	46,
+	54,
+	65,
+	77,
+	92,
+	109,
+	130,
+	154,
+	183,
+	218,
+	259,
+	308,
+	367,
+	436,
+	518,
+	616,
+	733,
+	872,
+	1037,
+	1233,
+	1466,
+	1744,
+	2073,
+	2466,
+	2933,
+	3487,
+	4147,
+	4932,
+	5865,
+	6975,
+	8294,
+	9864,
+	11730,
+	13949,
+	16589,
+	19728,
+	23460,
+	27899,
+	33178,
+	39455,
+	46920,
+	55798,
+	66355,
+	78910,
+	93840,
+	111596,
+	132710,
+	157820,
+	187681,
+	223191
+}"
+                :type "int")
+                nil [572 1021])
+            ("to_wm8350_led" variable (:constant-flag t) nil [1031 1044])
+            ("wm8350_led_enable" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("led" variable
+                       (:pointer 1
+                        :type ("wm8350_led" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1137 1160]))                  
+                :type "void")
+                nil [1107 1517])
+            ("wm8350_led_disable" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("led" variable
+                       (:pointer 1
+                        :type ("wm8350_led" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1550 1573]))                  
+                :type "void")
+                nil [1519 2024])
+            ("led_work" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("work" variable
+                       (:pointer 1
+                        :type ("work_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2047 2072]))                  
+                :type "void")
+                nil [2026 2969])
+            ("wm8350_led_set" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("led_cdev" variable
+                       (:pointer 1
+                        :type ("led_classdev" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2998 3028])
+                    ("value" variable (:type ("led_brightness" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [3035 3061]))                  
+                :type "void")
+                nil [2971 3283])
+            ("wm8350_led_shutdown" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("pdev" variable
+                       (:pointer 1
+                        :type ("platform_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3317 3346]))                  
+                :type "void")
+                nil [3285 3508])
+            ("wm8350_led_probe" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("pdev" variable
+                       (:pointer 1
+                        :type ("platform_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3538 3567]))                  
+                :type "int")
+                nil [3510 5099])
+            ("wm8350_led_remove" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("pdev" variable
+                       (:pointer 1
+                        :type ("platform_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5130 5159]))                  
+                :type "int")
+                nil [5101 5318])
+            ("wm8350_led_driver" variable
+               (:typemodifiers ("static")
+                :default-value "{
+	.driver = {
+		   .name = \"wm8350-led\",
+		   .owner = THIS_MODULE,
+		   },
+	.probe = wm8350_led_probe,
+	.remove = wm8350_led_remove,
+	.shutdown = wm8350_led_shutdown,
+}"
+                :type ("platform_driver" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [5320 5541])
+            ("module_platform_driver" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("wm8350_led_driver" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5566 5584]))                  
+                :type "int")
+                nil [5543 5585])
+            ("MODULE_AUTHOR" function
+               (:prototype-flag t
+                :type "int")
+                nil [5587 5615])
+            ("MODULE_DESCRIPTION" function
+               (:prototype-flag t
+                :type "int")
+                nil [5616 5656])
+            ("MODULE_LICENSE" function
+               (:prototype-flag t
+                :type "int")
+                nil [5657 5679])
+            ("MODULE_ALIAS" function
+               (:prototype-flag t
+                :type "int")
+                nil [5680 5716]))          
+      :file "leds-wm8350.c"
+      :pointmax 5717
+      :fsize 5716
+      :lastmodtime '(21915 34180 522780 811000)
+      :unmatched-syntax '((string 5693 . 5714) (string 5672 . 5677) (string 5635 . 5654) (string 5601 . 5613))
+      :lexical-table 
+        '(("to_wm8350_led" (spp-arg-list ("led_cdev") 1044 . 1054) . ((symbol "container_of" 1058 . 1070) (semantic-list "(led_cdev, struct wm8350_led, cdev)" 1070 . 1105)))
+          )
+))
+  :file "!home!qichen!20160225_rc5!vendor!marvell-sdk!linux!drivers!leds!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

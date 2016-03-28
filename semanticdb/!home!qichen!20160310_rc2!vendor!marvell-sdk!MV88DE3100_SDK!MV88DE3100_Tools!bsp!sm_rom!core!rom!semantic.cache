@@ -1,0 +1,144 @@
+;; Object rom/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "rom/"
+  :tables
+  (list
+    (semanticdb-table "sm_printf_rom.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("com_type.h" include nil nil [1 22])
+            ("sm_uart.h" include nil nil [23 43])
+            ("BUF_LEN" variable (:constant-flag t) nil [53 60])
+            ("POS_RIGHT" variable (:constant-flag t) nil [73 82])
+            ("POS_ZERO" variable (:constant-flag t) nil [93 101])
+            ("rom_sm_putchar" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("c" variable (:type "int") (reparse-symbol arg-sub-list) [124 130]))                  
+                :type "int")
+                nil [105 131])
+            ("printchar" function
+               (:typemodifiers ("inline" "static")
+                :arguments 
+                  ( ("ppstrout" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [161 177])
+                    ("outc" variable (:type "int") (reparse-symbol arg-sub-list) [178 187]))                  
+                :type "void")
+                nil [132 280])
+            ("prints" function
+               (:typemodifiers ("inline" "static")
+                :arguments 
+                  ( ("ppstrout" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [307 323])
+                    ("strin" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [324 342])
+                    ("len" variable (:type "int") (reparse-symbol arg-sub-list) [343 351])
+                    ("pos" variable (:type "int") (reparse-symbol arg-sub-list) [352 360]))                  
+                :type "int")
+                nil [282 883])
+            ("printdigit" function
+               (:typemodifiers ("inline" "static")
+                :arguments 
+                  ( ("ppstrout" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [914 930])
+                    ("pstr" variable (:type "int") (reparse-symbol arg-sub-list) [931 940])
+                    ("n" variable (:type "int") (reparse-symbol arg-sub-list) [941 947])
+                    ("p" variable (:type "int") (reparse-symbol arg-sub-list) [948 954])
+                    ("len" variable (:type "int") (reparse-symbol arg-sub-list) [955 963])
+                    ("pos" variable (:type "int") (reparse-symbol arg-sub-list) [964 972])
+                    ("ref" variable (:type "int") (reparse-symbol arg-sub-list) [973 981]))                  
+                :type "int")
+                nil [885 1598])
+            ("printstr" function
+               (:typemodifiers ("inline" "static")
+                :arguments 
+                  ( ("ppstrout" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1627 1643])
+                    ("ppstrin" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [1644 1657]))                  
+                :type "int")
+                nil [1600 3038])
+            ("rom_sm_printf" function
+               (:arguments 
+                  ( ("pstrin" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [3088 3107])
+                    ("..." variable (:type "vararg") (reparse-symbol arg-sub-list) [3108 3112]))                  
+                :type "int")
+                nil [3070 3185])
+            ("rom_sm_sprintf" function
+               (:arguments 
+                  ( ("pstrout" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [3248 3262])
+                    ("pstrin" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [3262 3281])
+                    ("..." variable (:type "vararg") (reparse-symbol arg-sub-list) [3282 3286]))                  
+                :type "int")
+                nil [3229 3366]))          
+      :file "sm_printf_rom.c"
+      :pointmax 3367
+      :fsize 3366
+      :lastmodtime '(22242 47673 239740 828000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("POS_RIGHT" . ((number "1" 83 . 84)))
+          ("POS_ZERO" . ((number "2" 102 . 103)))
+          ("BUF_LEN" . ((number "12" 62 . 64)))
+          )
+)
+    (semanticdb-table "sm_uart_rom.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("sm_common.h" include nil nil [1 23])
+            ("sm.h" include nil nil [24 39])
+            ("com_type.h" include nil nil [40 61])
+            ("sm_def.h" include nil nil [63 82])
+            ("sm_apb_uart_defs.h" include nil nil [83 112])
+            ("sm_gpio.h" include nil nil [114 134])
+            ("sys_mgr.h" include nil nil [136 156])
+            ("sm_power.h" include nil nil [157 178])
+            ("sm_uart.h" include nil nil [179 199])
+            ("uart_putc" function
+               (:typemodifiers ("inline" "static")
+                :arguments 
+                  ( ("c" variable (:type ("UCHAR" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [230 238]))                  
+                :type "void")
+                nil [201 409])
+            ("rom_sm_putchar" function
+               (:arguments 
+                  ( ("c" variable (:type "int") (reparse-symbol arg-sub-list) [473 479]))                  
+                :type "int")
+                nil [454 516])
+            ("rom_sm_getchar" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [538 543]))                  
+                :type ("CHAR" type (:type "class") nil nil))
+                nil [518 704]))          
+      :file "sm_uart_rom.c"
+      :pointmax 705
+      :fsize 704
+      :lastmodtime '(22242 47673 239740 828000)
+      :unmatched-syntax nil))
+  :file "!home!qichen!20160310_rc2!vendor!marvell-sdk!MV88DE3100_SDK!MV88DE3100_Tools!bsp!sm_rom!core!rom!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

@@ -1,0 +1,430 @@
+;; Object include/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "include/"
+  :tables
+  (list
+    (semanticdb-table "sm_debug.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("__SM_DEBUG_H__" variable (:constant-flag t) nil [32 46])
+            ("sm_printf.h" include nil nil [48 70])
+            ("get_dbg_level" function
+               (:prototype-flag t
+                :typemodifiers ("inline")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [100 105]))                  
+                :type ("UINT32" type (:type "class") nil nil))
+                nil [72 106])
+            ("BIT" variable (:constant-flag t) nil [116 119])
+            ("DBG_DEBUG" variable (:constant-flag t) nil [217 226])
+            ("DBG_INFO" variable (:constant-flag t) nil [278 286])
+            ("DBG_WARN" variable (:constant-flag t) nil [333 341])
+            ("DBG_ERROR" variable (:constant-flag t) nil [386 395])
+            ("DBG_FATAL" variable (:constant-flag t) nil [440 449])
+            ("PRT_DEBUG" variable (:constant-flag t) nil [497 506])
+            ("PRT_INFO" variable (:constant-flag t) nil [680 688])
+            ("PRT_WARN" variable (:constant-flag t) nil [858 866])
+            ("PRT_ERROR" variable (:constant-flag t) nil [1034 1043])
+            ("PRT_FATAL" variable (:constant-flag t) nil [1212 1221])
+            ("PRT_DATA" variable (:constant-flag t) nil [1390 1398])
+            ("DBG_DEBUG3" variable (:constant-flag t) nil [1614 1624])
+            ("DBG_DEBUG2" variable (:constant-flag t) nil [1670 1680])
+            ("DBG_DEBUG1" variable (:constant-flag t) nil [1726 1736])
+            ("PRT_DEBUG1" variable (:constant-flag t) nil [1783 1793])
+            ("PRT_DEBUG2" variable (:constant-flag t) nil [1937 1947])
+            ("PRT_DEBUG3" variable (:constant-flag t) nil [2091 2101])
+            ("set_dbg_level" function
+               (:prototype-flag t
+                :typemodifiers ("inline")
+                :arguments 
+                  ( ("level" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2265 2278]))                  
+                :type "void")
+                nil [2239 2279])
+            ("mv_sm_process_debug_msg" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [2312 2324])
+                    ("len" variable (:type ("INT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2325 2335]))                  
+                :type ("hresult" type (:type "class") nil nil))
+                nil [2280 2336]))          
+      :file "sm_debug.h"
+      :pointmax 2366
+      :fsize 2365
+      :lastmodtime '(22242 47673 235740 828000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("BIT" (spp-arg-list ("x") 119 . 122) . ((semantic-list "(1 << (x))" 124 . 134)))
+          ("DBG_ERROR" . ((symbol "BIT" 399 . 402) (semantic-list "(1)" 402 . 405)))
+          ("PRT_ERROR" (spp-arg-list ("msg...") 1043 . 1051) . 
+              ((DO "do" 1052 . 1054) (semantic-list "{if (get_dbg_level() & DBG_ERROR)\\
+	{mv_sm_printf(\"[%8d]E(SM): \", mv_sm_timer_gettimems()); mv_sm_printf(msg);}}" 1055 . 1167) (WHILE "while" 1168 . 1173) (semantic-list "(0)" 1173 . 1176)))
+          ("DBG_DEBUG" . ((symbol "BIT" 230 . 233) (semantic-list "(4)" 233 . 236)))
+          ("PRT_DEBUG" (spp-arg-list ("msg...") 506 . 514) . 
+              ((DO "do" 515 . 517) (semantic-list "{if (get_dbg_level() & DBG_DEBUG)\\
+	{mv_sm_printf(\"[%8d]D(SM): \", mv_sm_timer_gettimems()); mv_sm_printf(msg);}}" 518 . 630) (WHILE "while" 631 . 636) (semantic-list "(0)" 636 . 639)))
+          ("__SM_DEBUG_H__")
+          ("DBG_WARN" . ((symbol "BIT" 345 . 348) (semantic-list "(2)" 348 . 351)))
+          ("PRT_WARN" (spp-arg-list ("msg...") 866 . 874) . 
+              ((DO "do" 875 . 877) (semantic-list "{if (get_dbg_level() & DBG_WARN)\\
+	{mv_sm_printf(\"[%8d]W(SM): \", mv_sm_timer_gettimems()); mv_sm_printf(msg);}}" 878 . 989) (WHILE "while" 990 . 995) (semantic-list "(0)" 995 . 998)))
+          ("PRT_DATA" (spp-arg-list ("msg...") 1398 . 1406) . 
+              ((DO "do" 1407 . 1409) (semantic-list "{mv_sm_printf(msg);}" 1410 . 1430) (WHILE "while" 1431 . 1436) (semantic-list "(0)" 1436 . 1439)))
+          ("DBG_INFO" . ((symbol "BIT" 290 . 293) (semantic-list "(3)" 293 . 296)))
+          ("DBG_FATAL" . ((symbol "BIT" 453 . 456) (semantic-list "(0)" 456 . 459)))
+          ("PRT_INFO" (spp-arg-list ("msg...") 688 . 696) . 
+              ((DO "do" 697 . 699) (semantic-list "{if (get_dbg_level() & DBG_INFO)\\
+	{mv_sm_printf(\"[%8d]I(SM): \", mv_sm_timer_gettimems()); mv_sm_printf(msg);}}" 700 . 811) (WHILE "while" 812 . 817) (semantic-list "(0)" 817 . 820)))
+          ("PRT_FATAL" (spp-arg-list ("msg...") 1221 . 1229) . 
+              ((DO "do" 1230 . 1232) (semantic-list "{if (get_dbg_level() & DBG_FATAL)\\
+	{mv_sm_printf(\"[%8d]F(SM): \", mv_sm_timer_gettimems()); mv_sm_printf(msg);}}" 1233 . 1345) (WHILE "while" 1346 . 1351) (semantic-list "(0)" 1351 . 1354)))
+          ("DBG_DEBUG1" . ((symbol "BIT" 1740 . 1743) (semantic-list "(5)" 1743 . 1746)))
+          ("PRT_DEBUG1" (spp-arg-list ("msg...") 1793 . 1801) . 
+              ((DO "do" 1802 . 1804) (semantic-list "{if (get_dbg_level() & DBG_DEBUG1)\\
+	{mv_sm_printf(\"[%8d]D1(SM): \", mv_sm_timer_gettimems()); mv_sm_printf(msg);}}" 1805 . 1919) (WHILE "while" 1920 . 1925) (semantic-list "(0)" 1925 . 1928)))
+          ("DBG_DEBUG2" . ((symbol "BIT" 1684 . 1687) (semantic-list "(6)" 1687 . 1690)))
+          ("PRT_DEBUG2" (spp-arg-list ("msg...") 1947 . 1955) . 
+              ((DO "do" 1956 . 1958) (semantic-list "{if (get_dbg_level() & DBG_DEBUG2)\\
+	{mv_sm_printf(\"[%8d]D2(SM): \", mv_sm_timer_gettimems()); mv_sm_printf(msg);}}" 1959 . 2073) (WHILE "while" 2074 . 2079) (semantic-list "(0)" 2079 . 2082)))
+          ("DBG_DEBUG3" . ((symbol "BIT" 1628 . 1631) (semantic-list "(7)" 1631 . 1634)))
+          ("PRT_DEBUG3" (spp-arg-list ("msg...") 2101 . 2109) . 
+              ((DO "do" 2110 . 2112) (semantic-list "{if (get_dbg_level() & DBG_DEBUG3)\\
+	{mv_sm_printf(\"[%8d]D3(SM): \", mv_sm_timer_gettimems()); mv_sm_printf(msg);}}" 2113 . 2227) (WHILE "while" 2228 . 2233) (semantic-list "(0)" 2233 . 2236)))
+          )
+)
+    (semanticdb-table "sm_printf.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("__PRINTF_H__" variable (:constant-flag t) nil [30 42])
+            ("mv_sm_printf" variable (:constant-flag t) nil [52 64])
+            ("mv_sm_sprintf" variable (:constant-flag t) nil [102 115])
+            ("mv_sm_sprintf" variable (:constant-flag t) nil [102 115])
+            ("mv_sm_sprintf" variable (:constant-flag t) nil [102 115])
+            ("mv_sm_sprintf" variable (:constant-flag t) nil [102 115])
+            ("mv_sm_sprintf" variable (:constant-flag t) nil [102 115])
+            ("mv_sm_sprintf" variable (:constant-flag t) nil [102 115])
+            ("mv_sm_sprintf" variable (:constant-flag t) nil [102 115]))          
+      :file "sm_printf.h"
+      :pointmax 173
+      :fsize 172
+      :lastmodtime '(22242 47673 235740 828000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("__PRINTF_H__")
+          ("mv_sm_printf" (spp-arg-list ("msg...") 64 . 72) . 
+              ((symbol "__" 73 . 75) (symbol "rom_sm_printf" 76 . 89) (semantic-list "(msg)" 89 . 94)))
+          ("mv_sm_sprintf" (spp-arg-list ("msg...") 115 . 123) . ((symbol "__rom_sm_sprintf" 124 . 140) (semantic-list "(msg)" 140 . 145)))
+          )
+)
+    (semanticdb-table "sm_common.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("__SM_COMMON_H__" variable (:constant-flag t) nil [33 48])
+            ("SM_MSG_SIZE" variable (:constant-flag t) nil [58 69])
+            ("SM_MSG_BODY_SIZE" variable (:constant-flag t) nil [85 101])
+            ("SM_MSGQ_TOTAL_SIZE" variable (:constant-flag t) nil [145 163])
+            ("SM_MSGQ_HEADER_SIZE" variable (:constant-flag t) nil [177 196])
+            ("SM_MSGQ_SIZE" variable (:constant-flag t) nil [217 229])
+            ("SM_MSGQ_MSG_COUNT" variable (:constant-flag t) nil [288 305])
+            ("MV_SM_Message" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("m_iModuleID" variable (:type "short") (reparse-symbol classsubparts) [357 377])
+                          ("m_iMsgLen" variable (:type "short") (reparse-symbol classsubparts) [382 400])
+                          ("m_pucMsgBody" variable
+                             (:dereference 1
+                              :type "char")
+                              (reparse-symbol classsubparts) [405 444]))                        
+                      :type "struct")
+                      nil nil)
+                :type "typedef")
+                nil [336 461])
+            ("MV_SM_MsgQ" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("m_iWrite" variable (:type "int") (reparse-symbol classsubparts) [484 497])
+                          ("m_iRead" variable (:type "int") (reparse-symbol classsubparts) [502 514])
+                          ("m_iWriteTotal" variable (:type "int") (reparse-symbol classsubparts) [519 537])
+                          ("m_iReadTotal" variable (:type "int") (reparse-symbol classsubparts) [542 559])
+                          ("m_Padding" variable
+                             (:dereference 1
+                              :type "char")
+                              (reparse-symbol classsubparts) [564 619])
+                          ("m_Queue" variable
+                             (:dereference 1
+                              :type "char")
+                              (reparse-symbol classsubparts) [624 654]))                        
+                      :type "struct")
+                      nil nil)
+                :type "typedef")
+                nil [463 668])
+            ("MV_SM_RSTFLAG_COLD" variable (:constant-flag t) nil [779 797])
+            ("MV_SoC_STATE_SYSPOWERON" variable (:constant-flag t) nil [846 869])
+            ("MV_SoC_STATE_COLDBOOT" variable (:constant-flag t) nil [886 907])
+            ("MV_SM_POWER_FASTBOOT_ENABLE" variable (:constant-flag t) nil [927 954])
+            ("MV_SM_POWER_FASTBOOT_DISABLE" variable (:constant-flag t) nil [968 996])
+            ("MV_SM_POWER_INSPECT_REQUEST" variable (:constant-flag t) nil [1013 1040])
+            ("MV_SM_POWER_WAKEUP_SOURCE_REQUEST" variable (:constant-flag t) nil [1055 1088])
+            ("MV_SM_POWER_WARMDOWN_TIME" variable (:constant-flag t) nil [1099 1124])
+            ("MV_SM_POWER_WARMUP_TIME" variable (:constant-flag t) nil [1142 1165])
+            ("MV_SM_POWER_WARMUP_TIME_REQUEST" variable (:constant-flag t) nil [1185 1216])
+            ("MV_SM_POWER_WAKEUP_FOR_BGUPDATE" variable (:constant-flag t) nil [1228 1259])
+            ("MV_SM_GPIO_SET" variable (:constant-flag t) nil [1301 1315])
+            ("MV_SM_GPIO_GET" variable (:constant-flag t) nil [1337 1351])
+            ("MV_SM_IR_Linuxready" variable (:constant-flag t) nil [1398 1417])
+            ("MV_SM_INPUT_DISABLE" variable (:constant-flag t) nil [1481 1500])
+            ("MV_SM_INPUT_ENABLE" variable (:constant-flag t) nil [1517 1535])
+            ("MV_SM_INPUT_SEND_KEY" variable (:constant-flag t) nil [1553 1573])
+            ("MV_SM_WD_APP_START" variable (:constant-flag t) nil [1728 1746])
+            ("MV_SM_WD_APP_EXIT" variable (:constant-flag t) nil [1765 1782])
+            ("MV_SM_WD_APP_CONTINUE" variable (:constant-flag t) nil [1802 1823])
+            ("MV_SM_WD_Kickoff" variable (:constant-flag t) nil [1843 1859])
+            ("MV_SM_TEMP_SAMPLE" variable (:constant-flag t) nil [1914 1931])
+            ("MV_SM_TEMP_CPU_TYPE" variable (:constant-flag t) nil [1951 1970])
+            ("MV_SM_TEMP_CPU_TYPE_B0" variable (:constant-flag t) nil [1988 2010])
+            ("MV_SM_CEC_APPREADY" variable (:constant-flag t) nil [2055 2073])
+            ("MV_SM_CEC_INFO" variable (:constant-flag t) nil [2091 2105])
+            ("MV_SM_CEC_OSD_INFO" variable (:constant-flag t) nil [2127 2145])
+            ("MV_SM_CEC_HDMICTRL_ONOFF" variable (:constant-flag t) nil [2163 2187])
+            ("MV_SM_CEC_APP_REQUESTED" variable (:constant-flag t) nil [2203 2226])
+            ("MV_SM_CEC_NO_APP_REQUESTED" variable (:constant-flag t) nil [2243 2269])
+            ("MV_SM_CEC_ACTIVE_SOURCE_EVENT" variable (:constant-flag t) nil [2283 2312])
+            ("MV_SM_CEC_STREAM_PATH_EVENT" variable (:constant-flag t) nil [2327 2354])
+            ("MV_SM_CEC_UC_PRESSED_EVENT" variable (:constant-flag t) nil [2367 2393])
+            ("MV_SM_CEC_WAKEUP_MSG" variable (:constant-flag t) nil [2407 2427])
+            ("MV_SM_CEC_COLD_BOOT" variable (:constant-flag t) nil [2447 2466])
+            ("MV_SM_MODULE_ID" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("MV_SM_ID_SYS" variable
+                             (:constant-flag t
+                              :default-value (2510 2511)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [2495 2511])
+                          ("MV_SM_ID_COMM" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [2517 2531])
+                          ("MV_SM_ID_IR" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [2536 2548])
+                          ("MV_SM_ID_KEY" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [2553 2566])
+                          ("MV_SM_ID_POWER" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [2571 2586])
+                          ("MV_SM_ID_WDT" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [2591 2604])
+                          ("MV_SM_ID_TEMP" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [2609 2623])
+                          ("MV_SM_ID_VFD" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [2628 2641])
+                          ("MV_SM_ID_SPI" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [2646 2659])
+                          ("MV_SM_ID_I2C" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [2664 2677])
+                          ("MV_SM_ID_UART" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [2682 2696])
+                          ("MV_SM_ID_CEC" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [2701 2714])
+                          ("MV_SM_ID_WOL" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [2719 2732])
+                          ("MV_SM_ID_LED" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [2737 2750])
+                          ("MV_SM_ID_ETH" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [2755 2768])
+                          ("MV_SM_ID_DDR" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [2773 2786])
+                          ("MV_SM_ID_WIFIBT" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [2791 2807])
+                          ("MV_SM_ID_DEBUG" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [2845 2860])
+                          ("MV_SM_ID_CONSOLE" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [2865 2882])
+                          ("MV_SM_ID_MAX" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [2887 2900]))                        
+                      :type "enum")
+                      nil nil)
+                :type "typedef")
+                nil [2476 2919])
+            ("MAX_MSG_TYPE" variable (:constant-flag t) nil [2929 2941])
+            ("SM_READ" variable (:constant-flag t) nil [2996 3003])
+            ("SM_WRITE" variable (:constant-flag t) nil [3024 3032])
+            ("SM_RDWR" variable (:constant-flag t) nil [3052 3059])
+            ("SM_Enable_WaitQueue" variable (:constant-flag t) nil [3080 3099])
+            ("SM_Disable_WaitQueue" variable (:constant-flag t) nil [3115 3135])
+            ("_MV_SM_WAKEUP_SOURCE_TYPE" type
+               (:members 
+                  ( ("MV_SM_WAKEUP_SOURCE_INVALID" variable
+                       (:constant-flag t
+                        :default-value (3222 3224)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3192 3224])
+                    ("MV_SM_WAKEUP_SOURCE_IR" variable
+                       (:constant-flag t
+                        :default-value (3255 3256)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3230 3256])
+                    ("MV_SM_WAKEUP_SOURCE_WIFI_BT" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3262 3290])
+                    ("MV_SM_WAKEUP_SOURCE_WOL" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3295 3319])
+                    ("MV_SM_WAKEUP_SOURCE_VGA" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3324 3348])
+                    ("MV_SM_WAKEUP_SOURCE_CEC" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3353 3377])
+                    ("MV_SM_WAKEUP_SOURCE_TIMER" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3382 3408])
+                    ("MV_SM_WAKEUP_SOURCE_CAST" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3413 3438])
+                    ("MV_SM_WAKEUP_SOURCE_BGUPDATE" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3443 3472])
+                    ("MV_SM_WAKEUP_SOURCE_NUM" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3477 3501]))                  
+                :type "enum")
+                nil [3147 3529])
+            ("MV_SM_WAKEUP_SOURCE_TYPE" type
+               (:typedef ("_MV_SM_WAKEUP_SOURCE_TYPE" type (:type "enum") nil nil)
+                :type "typedef")
+                nil [3147 3529])
+            ("_MV_SM_BOOTUP_REASON" type
+               (:members 
+                  ( ("POWER_BOOTUP_SOURCE_INVALID" variable
+                       (:constant-flag t
+                        :default-value (3601 3603)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3571 3603])
+                    ("POWER_BOOTUP_SOURCE_ACON" variable
+                       (:constant-flag t
+                        :default-value (3636 3637)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3609 3637])
+                    ("POWER_BOOTUP_SOURCE_DCON" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3643 3668])
+                    ("POWER_BOOTUP_SOURCE_REBOOT" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3673 3700])
+                    ("POWER_BOOTUP_SOURCE_BGUPDATE" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3705 3734]))                  
+                :type "enum")
+                nil [3531 3758])
+            ("MV_SM_BOOTUP_REASON" type
+               (:typedef ("_MV_SM_BOOTUP_REASON" type (:type "enum") nil nil)
+                :type "typedef")
+                nil [3531 3758]))          
+      :file "sm_common.h"
+      :pointmax 3790
+      :fsize 3789
+      :lastmodtime '(22242 47673 235740 828000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("MV_SM_CEC_OSD_INFO" . ((number "0x3" 2151 . 2154)))
+          ("SM_MSG_SIZE" . ((number "32" 74 . 76)))
+          ("MV_SM_TEMP_CPU_TYPE_B0" . ((number "0xB0" 2016 . 2020)))
+          ("MV_SM_CEC_NO_APP_REQUESTED" . ((number "0x6" 2271 . 2274)))
+          ("SM_Enable_WaitQueue" . ((number "0x1234" 3100 . 3106)))
+          ("SM_MSGQ_HEADER_SIZE" . ((symbol "SM_MSG_SIZE" 197 . 208)))
+          ("SM_MSGQ_MSG_COUNT" . ((semantic-list "(SM_MSGQ_SIZE/SM_MSG_SIZE)" 308 . 334)))
+          ("MV_SM_POWER_WAKEUP_SOURCE_REQUEST" . ((number "3" 1089 . 1090)))
+          ("MV_SM_GPIO_GET" . ((number "0x7" 1361 . 1364)))
+          ("MV_SM_CEC_UC_PRESSED_EVENT" . ((number "0x9" 2395 . 2398)))
+          ("SM_Disable_WaitQueue" . ((number "0x3456" 3139 . 3145)))
+          ("MV_SM_POWER_FASTBOOT_DISABLE" . ((number "0x0E" 1000 . 1004)))
+          ("MV_SM_POWER_WARMDOWN_TIME" . ((number "11" 1131 . 1133)))
+          ("MV_SM_POWER_WARMUP_TIME" . ((number "12" 1174 . 1176)))
+          ("MV_SM_IR_Linuxready" . ((number "30" 1422 . 1424)))
+          ("MV_SM_POWER_WAKEUP_FOR_BGUPDATE" . ((number "0xde" 1260 . 1264)))
+          ("MV_SM_RSTFLAG_COLD" . ((number "0xFFFF" 803 . 809)))
+          ("MV_SM_POWER_FASTBOOT_ENABLE" . ((number "0x0F" 955 . 959)))
+          ("MV_SM_CEC_HDMICTRL_ONOFF" . ((number "0x4" 2191 . 2194)))
+          ("SM_RDWR" . ((number "0x3" 3068 . 3071)))
+          ("SM_MSGQ_TOTAL_SIZE" . ((number "512" 165 . 168)))
+          ("SM_MSGQ_SIZE" . ((semantic-list "(SM_MSGQ_TOTAL_SIZE - SM_MSGQ_HEADER_SIZE)" 237 . 279)))
+          ("MV_SM_GPIO_SET" . ((number "0x6" 1325 . 1328)))
+          ("MV_SM_INPUT_DISABLE" . ((number "0x1" 1505 . 1508)))
+          ("MV_SM_WD_APP_EXIT" . ((number "0x36" 1789 . 1793)))
+          ("MV_SM_TEMP_CPU_TYPE" . ((number "0xCC" 1975 . 1979)))
+          ("SM_WRITE" . ((number "0x2" 3040 . 3043)))
+          ("MV_SoC_STATE_COLDBOOT" . ((number "0x21" 914 . 918)))
+          ("MV_SM_POWER_INSPECT_REQUEST" . ((number "0xED" 1041 . 1045)))
+          ("SM_MSG_BODY_SIZE" . ((semantic-list "(SM_MSG_SIZE - sizeof(short)*2)" 105 . 136)))
+          ("MV_SM_CEC_WAKEUP_MSG" . ((number "0xA" 2435 . 2438)))
+          ("MV_SoC_STATE_SYSPOWERON" . ((number "0x0" 874 . 877)))
+          ("MV_SM_WD_APP_CONTINUE" . ((number "0x63" 1830 . 1834)))
+          ("MV_SM_WD_Kickoff" . ((number "0x24" 1867 . 1871)))
+          ("MV_SM_CEC_APP_REQUESTED" . ((number "0x5" 2231 . 2234)))
+          ("MV_SM_CEC_ACTIVE_SOURCE_EVENT" . ((number "0x7" 2315 . 2318)))
+          ("MV_SM_CEC_STREAM_PATH_EVENT" . ((number "0x8" 2355 . 2358)))
+          ("MV_SM_TEMP_SAMPLE" . ((number "0xF0" 1938 . 1942)))
+          ("MV_SM_INPUT_ENABLE" . ((number "0x2" 1541 . 1544)))
+          ("MV_SM_CEC_APPREADY" . ((number "0x1" 2079 . 2082)))
+          ("__SM_COMMON_H__")
+          ("MV_SM_POWER_WARMUP_TIME_REQUEST" . ((number "13" 1217 . 1219)))
+          ("MV_SM_INPUT_SEND_KEY" . ((number "0x4" 1581 . 1584)))
+          ("MV_SM_WD_APP_START" . ((number "0x12" 1752 . 1756)))
+          ("MV_SM_CEC_INFO" . ((number "0x2" 2115 . 2118)))
+          ("MV_SM_CEC_COLD_BOOT" . ((number "0xB" 2471 . 2474)))
+          ("MAX_MSG_TYPE" . ((semantic-list "(MV_SM_ID_MAX - 1)" 2942 . 2960)))
+          ("SM_READ" . ((number "0x1" 3012 . 3015)))
+          )
+))
+  :file "!home!qichen!20160310_rc2!vendor!marvell-sdk!MV88DE3100_SDK!MV88DE3100_Tools!bsp!sm_rom!core!include!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

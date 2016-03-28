@@ -1,0 +1,1462 @@
+;; Object berlin/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "berlin/"
+  :tables
+  (list
+    (semanticdb-table "berlin_ion.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("linux/module.h" include (:system-flag t) nil [244 269])
+            ("linux/file.h" include (:system-flag t) nil [270 293])
+            ("linux/err.h" include (:system-flag t) nil [294 316])
+            ("linux/fs.h" include (:system-flag t) nil [317 338])
+            ("linux/platform_device.h" include (:system-flag t) nil [339 373])
+            ("linux/list.h" include (:system-flag t) nil [374 397])
+            ("linux/kthread.h" include (:system-flag t) nil [398 424])
+            ("linux/mm.h" include (:system-flag t) nil [425 446])
+            ("linux/mm_types.h" include (:system-flag t) nil [447 474])
+            ("linux/slab.h" include (:system-flag t) nil [475 498])
+            ("linux/rbtree.h" include (:system-flag t) nil [499 524])
+            ("linux/of.h" include (:system-flag t) nil [525 546])
+            ("linux/of_address.h" include (:system-flag t) nil [547 576])
+            ("linux/seq_file.h" include (:system-flag t) nil [577 604])
+            ("linux/uaccess.h" include (:system-flag t) nil [605 631])
+            ("asm/cacheflush.h" include (:system-flag t) nil [632 659])
+            ("linux/debugfs.h" include (:system-flag t) nil [660 686])
+            ("linux/list.h" include (:system-flag t) nil [687 710])
+            ("linux/dma-buf.h" include (:system-flag t) nil [711 737])
+            ("linux/string.h" include (:system-flag t) nil [738 763])
+            ("linux/miscdevice.h" include (:system-flag t) nil [764 793])
+            ("linux/idr.h" include (:system-flag t) nil [794 816])
+            ("linux/netlink.h" include (:system-flag t) nil [817 843])
+            ("net/sock.h" include (:system-flag t) nil [844 865])
+            ("../ion.h" include nil nil [867 886])
+            ("../ion_priv.h" include nil nil [887 911])
+            ("ion_handle" type
+               (:members 
+                  ( ("ref" variable (:type ("kref" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [935 951])
+                    ("client" variable
+                       (:pointer 1
+                        :type ("ion_client" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [953 979])
+                    ("buffer" variable
+                       (:pointer 1
+                        :type ("ion_buffer" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [981 1007])
+                    ("node" variable (:type ("rb_node" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [1009 1029])
+                    ("kmap_cnt" variable (:type "unsigned int") (reparse-symbol classsubparts) [1031 1053])
+                    ("id" variable (:type "int") (reparse-symbol classsubparts) [1055 1062]))                  
+                :type "struct")
+                nil [914 1065])
+            ("ion_device" type
+               (:members 
+                  ( ("dev" variable (:type ("miscdevice" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [1088 1110])
+                    ("buffers" variable (:type ("rb_root" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [1112 1135])
+                    ("buffer_lock" variable (:type ("mutex" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [1137 1162])
+                    ("lock" variable (:type ("rw_semaphore" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [1164 1189])
+                    ("heaps" variable (:type ("plist_head" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [1191 1215])
+                    ("custom_ioctl" function
+                       (:prototype-flag t
+                        :function-pointer t
+                        :arguments 
+                          ( ("client" variable
+                               (:pointer 1
+                                :type ("ion_client" type
+                                     (:prototype t
+                                      :type "struct")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [1239 1265])
+                            ("cmd" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [1266 1283])
+                            ("arg" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [1293 1311]))                          
+                        :type "long")
+                        (reparse-symbol classsubparts) [1217 1312])
+                    ("clients" variable (:type ("rb_root" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [1314 1337])
+                    ("debug_root" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [1339 1365])
+                    ("heaps_debug_root" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [1367 1399])
+                    ("clients_debug_root" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [1401 1435]))                  
+                :type "struct")
+                nil [1067 1438])
+            ("ion_client" type
+               (:members 
+                  ( ("node" variable (:type ("rb_node" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [1461 1481])
+                    ("dev" variable
+                       (:pointer 1
+                        :type ("ion_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [1483 1506])
+                    ("handles" variable (:type ("rb_root" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [1508 1531])
+                    ("idr" variable (:type ("idr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [1533 1548])
+                    ("lock" variable (:type ("mutex" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [1550 1568])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol classsubparts) [1570 1587])
+                    ("display_name" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [1589 1608])
+                    ("display_serial" variable (:type "int") (reparse-symbol classsubparts) [1610 1629])
+                    ("task" variable
+                       (:pointer 1
+                        :type ("task_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [1631 1656])
+                    ("pid" variable (:type ("pid_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1658 1668])
+                    ("debug_root" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [1670 1696])
+                    ("cc_list" variable (:type ("list_head" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [1698 1723]))                  
+                :type "struct")
+                nil [1440 1726])
+            ("berlin_ion_info" type
+               (:members 
+                  ( ("heap_mun" variable (:type "int") (reparse-symbol classsubparts) [1754 1767])
+                    ("heaps_data" variable
+                       (:pointer 1
+                        :type ("ion_platform_heap" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [1769 1806])
+                    ("heaps" variable
+                       (:pointer 2
+                        :type ("ion_heap" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [1808 1832])
+                    ("debug_root" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [1834 1860]))                  
+                :type "struct")
+                nil [1728 1863])
+            ("ion_vma_list" type
+               (:members 
+                  ( ("list" variable (:type ("list_head" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [1888 1910])
+                    ("vma" variable
+                       (:pointer 1
+                        :type ("vm_area_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [1912 1939]))                  
+                :type "struct")
+                nil [1865 1942])
+            ("berlin_gid_root" type
+               (:members 
+                  ( ("rwsem" variable (:type ("rw_semaphore" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [1970 1996])
+                    ("root" variable (:type ("rb_root" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [1998 2018])
+                    ("debug_root" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [2020 2046]))                  
+                :type "struct")
+                nil [1944 2049])
+            ("berlin_gid_node" type
+               (:members 
+                  ( ("gid_node" variable (:type ("rb_node" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [2077 2101])
+                    ("gid" variable (:type "unsigned int") (reparse-symbol classsubparts) [2103 2120])
+                    ("threadid" variable (:type ("pid_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2122 2137])
+                    ("threadname" variable
+                       (:dereference 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [2139 2170])
+                    ("pid" variable (:type ("pid_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2172 2182])
+                    ("task_comm" variable
+                       (:dereference 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [2184 2214])
+                    ("data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol classsubparts) [2216 2227])
+                    ("ref" variable (:type "int") (reparse-symbol classsubparts) [2229 2237])
+                    ("list" variable (:type ("list_head" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [2239 2261]))                  
+                :type "struct")
+                nil [2051 2264])
+            ("secure_heap" type
+               (:members 
+                  ( ("heap_num" variable (:type "int") (reparse-symbol classsubparts) [2288 2301])
+                    ("heap_id" variable
+                       (:dereference 1
+                        :type "int")
+                        (reparse-symbol classsubparts) [2303 2319]))                  
+                :type "struct")
+                nil [2266 2322])
+            ("BERLIN_CC_DYNAMIC_ID" variable (:constant-flag t) nil [2332 2352])
+            ("BERLIN_CC_START_ID" variable (:constant-flag t) nil [2374 2392])
+            ("BERLIN_CC_DEBUG_LEVEL" variable (:constant-flag t) nil [2414 2435])
+            ("NETLINK_BERLIN_CC" variable (:constant-flag t) nil [2450 2467])
+            ("NETLINK_BERLIN_CC_GROUP" variable (:constant-flag t) nil [2483 2506])
+            ("BERLIN_CC_ICCFIFO_FRAME_SIZE" variable (:constant-flag t) nil [2520 2548])
+            ("dma_buf_ops" variable
+               (:typemodifiers ("extern")
+                :type ("dma_buf_ops" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2558 2596])
+            ("ion_buffer_get" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("buffer" variable
+                       (:pointer 1
+                        :type ("ion_buffer" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2624 2650]))                  
+                :type "void")
+                nil [2597 2651])
+            ("ion_buffer_put" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("buffer" variable
+                       (:pointer 1
+                        :type ("ion_buffer" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2678 2704]))                  
+                :type "int")
+                nil [2652 2705])
+            ("ion_handle_lookup" function
+               (:prototype-flag t
+                :pointer 1
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("client" variable
+                       (:pointer 1
+                        :type ("ion_client" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2750 2776])
+                    ("buffer" variable
+                       (:pointer 1
+                        :type ("ion_buffer" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2781 2807]))                  
+                :type ("ion_handle" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2706 2808])
+            ("ion_handle_get" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("handle" variable
+                       (:pointer 1
+                        :type ("ion_handle" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2836 2862]))                  
+                :type "void")
+                nil [2809 2863])
+            ("ion_handle_put" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("handle" variable
+                       (:pointer 1
+                        :type ("ion_handle" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2890 2916]))                  
+                :type "int")
+                nil [2864 2917])
+            ("ion_handle_add" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("client" variable
+                       (:pointer 1
+                        :type ("ion_client" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2944 2970])
+                    ("handle" variable
+                       (:pointer 1
+                        :type ("ion_handle" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2971 2997]))                  
+                :type "int")
+                nil [2918 2998])
+            ("ion_handle_create" function
+               (:prototype-flag t
+                :pointer 1
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("client" variable
+                       (:pointer 1
+                        :type ("ion_client" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3043 3069])
+                    ("buffer" variable
+                       (:pointer 1
+                        :type ("ion_buffer" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3079 3105]))                  
+                :type ("ion_handle" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2999 3106])
+            ("berlin_idev" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :default-value "NULL"
+                :type ("ion_device" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [3109 3154])
+            ("berlin_info" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :default-value "NULL"
+                :type ("berlin_ion_info" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [3155 3205])
+            ("berlin_gid" variable
+               (:typemodifiers ("static")
+                :type ("berlin_gid_root" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [3206 3247])
+            ("berlin_cc" variable
+               (:typemodifiers ("static")
+                :type ("berlin_gid_root" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [3248 3288])
+            ("berlin_secure" variable
+               (:typemodifiers ("static")
+                :type ("secure_heap" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [3289 3329])
+            ("berlin_socket" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :type ("sock" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [3330 3364])
+            ("ion_kill_size" variable
+               (:default-value "2048"
+                :type "int")
+                nil [3367 3392])
+            ("module_param_named" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("debug_kill_size" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3418 3434])
+                    ("" variable (:type ("ion_kill_size" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3435 3449])
+                    ("" variable (:type "int") (reparse-symbol arg-sub-list) [3450 3454])
+                    ("" variable (:type ("S_IRUGO" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3455 3464])
+                    ("" variable (:type ("S_IWUSR" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3465 3473]))                  
+                :type "int")
+                nil [3399 3474])
+            ("ion_lowmem_start_oom_adj" variable
+               (:default-value "0"
+                :type "int")
+                nil [3476 3509])
+            ("module_param_named" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("start_oom_adj" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3529 3543])
+                    ("" variable (:type ("ion_lowmem_start_oom_adj" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3544 3569])
+                    ("" variable (:type "int") (reparse-symbol arg-sub-list) [3570 3574])
+                    ("" variable (:type ("S_IRUGO" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3575 3584])
+                    ("" variable (:type ("S_IWUSR" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3585 3593]))                  
+                :type "int")
+                nil [3510 3594])
+            ("ion_alloc_retry_count" variable
+               (:default-value "10"
+                :type "int")
+                nil [3596 3627])
+            ("module_param_named" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("alloc_retry_count" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3647 3665])
+                    ("" variable (:type ("ion_alloc_retry_count" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3666 3688])
+                    ("" variable (:type "int") (reparse-symbol arg-sub-list) [3689 3693])
+                    ("" variable (:type ("S_IRUGO" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3694 3703])
+                    ("" variable (:type ("S_IWUSR" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3704 3712]))                  
+                :type "int")
+                nil [3628 3713])
+            ("ion_debug_level" variable
+               (:typemodifiers ("static")
+                :default-value "3"
+                :type "int")
+                nil [3715 3746])
+            ("module_param_named" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("debug_print_level" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3766 3784])
+                    ("" variable (:type ("ion_debug_level" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3785 3801])
+                    ("" variable (:type "int") (reparse-symbol arg-sub-list) [3802 3806])
+                    ("" variable (:type ("S_IRUGO" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3807 3816])
+                    ("" variable (:type ("S_IWUSR" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3817 3825]))                  
+                :type "int")
+                nil [3747 3826])
+            ("ion_debug_flag" variable
+               (:typemodifiers ("static")
+                :default-value "0"
+                :type "int")
+                nil [3828 3858])
+            ("module_param_named" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("debug_print_flag" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3878 3895])
+                    ("" variable (:type ("ion_debug_flag" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3896 3911])
+                    ("" variable (:type "int") (reparse-symbol arg-sub-list) [3912 3916])
+                    ("" variable (:type ("S_IRUGO" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3917 3926])
+                    ("" variable (:type ("S_IWUSR" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3927 3935]))                  
+                :type "int")
+                nil [3859 3936])
+            ("ion_debug_heap_details" variable
+               (:typemodifiers ("static")
+                :default-value "0"
+                :type "int")
+                nil [3938 3976])
+            ("module_param_named" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("debug_heap_details" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3996 4015])
+                    ("" variable (:type ("ion_debug_heap_details" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4016 4039])
+                    ("" variable (:type "int") (reparse-symbol arg-sub-list) [4040 4044])
+                    ("" variable (:type ("S_IRUGO" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4045 4054])
+                    ("" variable (:type ("S_IWUSR" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4055 4063]))                  
+                :type "int")
+                nil [3977 4064])
+            ("berlin_debug" variable (:constant-flag t) nil [4076 4088])
+            ("berlin_ion_malloc_info" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4355 4374])
+                    ("heap_num" variable (:type "int") (reparse-symbol arg-sub-list) [4375 4388]))                  
+                :type "void")
+                nil [4319 5044])
+            ("berlin_ion_get_info" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5078 5097])
+                    ("info" variable
+                       (:pointer 2
+                        :type ("berlin_ion_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5098 5128]))                  
+                :type "int")
+                nil [5047 6738])
+            ("berlin_ion_print_info" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("info" variable
+                       (:pointer 1
+                        :type ("berlin_ion_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6774 6803]))                  
+                :type "int")
+                nil [6741 7215])
+            ("berlin_get_heap_num" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("heap_num" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [7249 7263]))                  
+                :type "int")
+                nil [7218 7314])
+            ("berlin_get_heap_detail_info" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("info" variable
+                       (:pointer 1
+                        :type ("ion_heap_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7356 7383]))                  
+                :type "int")
+                nil [7317 7812])
+            ("berlin_get_secure_heap_info" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [7855 7860]))                  
+                :type "void")
+                nil [7815 8348])
+            ("berlin_check_secure_heap" function
+               (:arguments 
+                  ( ("heap" variable
+                       (:pointer 1
+                        :type ("ion_heap" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8381 8403]))                  
+                :type "int")
+                nil [8352 8538])
+            ("berlin_get_heap_size" function
+               (:arguments 
+                  ( ("heap_id" variable (:type "int") (reparse-symbol arg-sub-list) [8569 8581]))                  
+                :type ("size_t" type (:type "class") nil nil))
+                nil [8541 8636])
+            ("berlin_get_heap_addr" function
+               (:arguments 
+                  ( ("heap_id" variable (:type "int") (reparse-symbol arg-sub-list) [8667 8679]))                  
+                :type ("size_t" type (:type "class") nil nil))
+                nil [8639 8734])
+            ("berlin_get_heap_print_details" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [8771 8776]))                  
+                :type "int")
+                nil [8737 8812])
+            ("berlin_ion_find_vma" function
+               (:pointer 1
+                :arguments 
+                  ( ("buffer" variable
+                       (:pointer 1
+                        :type ("ion_buffer" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8858 8884])
+                    ("virtaddr" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8890 8908])
+                    ("len" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8910 8921]))                  
+                :type ("vm_area_struct" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [8815 9487])
+            ("berlin_get_heap_status" function
+               (:arguments 
+                  ( ("heap" variable
+                       (:pointer 1
+                        :type ("ion_heap" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9517 9539])
+                    ("status" variable
+                       (:pointer 1
+                        :type ("heap_status" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9540 9567]))                  
+                :type "int")
+                nil [9490 11307])
+            ("berlin_print_heap_status" function
+               (:arguments 
+                  ( ("heap" variable
+                       (:pointer 1
+                        :type ("ion_heap" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11339 11361])
+                    ("status" variable
+                       (:pointer 1
+                        :type ("heap_status" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11362 11389]))                  
+                :type "int")
+                nil [11310 12239])
+            ("berlin_get_buffer" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("share_fd" variable (:type "int") (reparse-symbol arg-sub-list) [12286 12299]))                  
+                :type ("ion_buffer" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [12242 12690])
+            ("berlin_gid_insert" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("gid_root" variable
+                       (:pointer 1
+                        :type ("rb_root" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [12723 12748])
+                    ("gid_node" variable
+                       (:pointer 1
+                        :type ("berlin_gid_node" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [12752 12785]))                  
+                :type "void")
+                nil [12693 13189])
+            ("berlin_gid_lookup" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("gid_root" variable
+                       (:pointer 1
+                        :type ("rb_root" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13245 13270])
+                    ("gid" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [13271 13288]))                  
+                :type ("berlin_gid_node" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [13192 13597])
+            ("berlin_gid_delete" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("gid_root" variable
+                       (:pointer 1
+                        :type ("rb_root" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13630 13655])
+                    ("gid_node" variable
+                       (:pointer 1
+                        :type ("berlin_gid_node" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13659 13692]))                  
+                :type "void")
+                nil [13600 13738])
+            ("berlin_alloc_gid" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("gid_root" variable
+                       (:pointer 1
+                        :type ("rb_root" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13769 13794])
+                    ("min_gid" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [13797 13818])
+                    ("gid" variable
+                       (:pointer 1
+                        :type "unsigned int")
+                        (reparse-symbol arg-sub-list) [13819 13837]))                  
+                :type "int")
+                nil [13741 14412])
+            ("berlin_ion_gid_create" function
+               (:arguments 
+                  ( ("buffer" variable
+                       (:pointer 1
+                        :type ("ion_buffer" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [14441 14467]))                  
+                :type "int")
+                nil [14415 15392])
+            ("berlin_ion_gid_destroy" function
+               (:arguments 
+                  ( ("buffer" variable
+                       (:pointer 1
+                        :type ("ion_buffer" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [15422 15448]))                  
+                :type "int")
+                nil [15395 15971])
+            ("berlin_ion_get_gid" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("region" variable
+                       (:pointer 1
+                        :type ("ion_berlin_data" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [16004 16035]))                  
+                :type "int")
+                nil [15974 16288])
+            ("berlin_ion_get_sfd" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("region" variable
+                       (:pointer 1
+                        :type ("ion_berlin_data" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [16321 16352]))                  
+                :type "int")
+                nil [16291 17243])
+            ("berlin_ion_phys" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("region" variable
+                       (:pointer 1
+                        :type ("ion_berlin_data" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [17273 17304]))                  
+                :type "int")
+                nil [17246 17959])
+            ("berlin_ion_sync_exec" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("region" variable
+                       (:pointer 1
+                        :type ("ion_berlin_data" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [17994 18025])
+                    ("buffer" variable
+                       (:pointer 1
+                        :type ("ion_buffer" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [18030 18056]))                  
+                :type "int")
+                nil [17962 19427])
+            ("berlin_ion_sync" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("region" variable
+                       (:pointer 1
+                        :type ("ion_berlin_data" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [19457 19488]))                  
+                :type "int")
+                nil [19430 20208])
+            ("berlin_cc_reg" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("client" variable
+                       (:pointer 1
+                        :type ("ion_client" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [20236 20262])
+                    ("info" variable
+                       (:pointer 1
+                        :type ("berlin_cc_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [20266 20294]))                  
+                :type "int")
+                nil [20211 21640])
+            ("berlin_cc_free" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("info" variable
+                       (:pointer 1
+                        :type ("berlin_cc_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [21669 21697]))                  
+                :type "int")
+                nil [21643 22213])
+            ("berlin_cc_inquiry" function
+               (:arguments 
+                  ( ("info" variable
+                       (:pointer 1
+                        :type ("berlin_cc_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [22237 22265]))                  
+                :type "int")
+                nil [22215 22783])
+            ("berlin_cc_update" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("info" variable
+                       (:pointer 1
+                        :type ("berlin_cc_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [22814 22842]))                  
+                :type "int")
+                nil [22786 23475])
+            ("berlin_cc_cmd" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("client" variable
+                       (:pointer 1
+                        :type ("ion_client" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [23503 23529])
+                    ("data" variable
+                       (:pointer 1
+                        :type ("berlin_cc_data" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [23533 23561]))                  
+                :type "int")
+                nil [23478 24013])
+            ("berlin_cc_release_by_taskid" function
+               (:arguments 
+                  ( ("client" variable
+                       (:pointer 1
+                        :type ("ion_client" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [24048 24074]))                  
+                :type "int")
+                nil [24016 24737])
+            ("berlin_udp_recvmsg_handle" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("skb" variable
+                       (:pointer 1
+                        :type ("sk_buff" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [24778 24798]))                  
+                :type "void")
+                nil [24740 24851])
+            ("berlin_udp_init" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [24881 24886]))                  
+                :type "int")
+                nil [24854 25253])
+            ("berlin_udp_exit" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [25283 25288]))                  
+                :type "int")
+                nil [25256 25344])
+            ("berlin_udp_sendmsg" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("port" variable
+                       (:pointer 1
+                        :type ("sock" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [25377 25395])
+                    ("dstserviceID" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [25399 25425])
+                    ("msgbuff" variable
+                       (:pointer 1
+                        :type "unsigned char")
+                        (reparse-symbol arg-sub-list) [25429 25452])
+                    ("msglen" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [25456 25477]))                  
+                :type "int")
+                nil [25347 26225])
+            ("berlin_ion_ioctl" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("client" variable
+                       (:pointer 1
+                        :type ("ion_client" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [26257 26283])
+                    ("cmd" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [26284 26301])
+                    ("arg" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [26308 26326]))                  
+                :type "long")
+                nil [26228 28766])
+            ("MV_CC_MsgQ_PostMsgByID" function
+               (:arguments 
+                  ( ("ServiceID" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [28796 28819])
+                    ("msgbuf" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [28825 28838]))                  
+                :type "int")
+                nil [28769 29141])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("MV_CC_MsgQ_PostMsgByID" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [29156 29179]))                  
+                :type "int")
+                nil [29142 29180])
+            ("ion_get_heap_num" function
+               (:arguments 
+                  ( ("heap_num" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [29204 29218]))                  
+                :type "int")
+                nil [29183 29261])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("ion_get_heap_num" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [29276 29293]))                  
+                :type "int")
+                nil [29262 29294])
+            ("ion_get_heap_info" function
+               (:arguments 
+                  ( ("info" variable
+                       (:pointer 1
+                        :type ("ion_heap_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [29319 29346]))                  
+                :type "int")
+                nil [29297 29393])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("ion_get_heap_info" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [29408 29426]))                  
+                :type "int")
+                nil [29394 29427])
+            ("ion_get_dev" function
+               (:pointer 1
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [29461 29466]))                  
+                :type ("ion_device" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [29430 29548])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("ion_get_dev" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [29563 29575]))                  
+                :type "int")
+                nil [29549 29576])
+            ("ion_cleancache" function
+               (:arguments 
+                  ( ("handle" variable
+                       (:pointer 1
+                        :type ("ion_handle" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [29598 29624])
+                    ("virtaddr" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [29625 29640])
+                    ("size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [29641 29653]))                  
+                :type "int")
+                nil [29579 29956])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("ion_cleancache" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [29971 29986]))                  
+                :type "int")
+                nil [29957 29987])
+            ("ion_flushcache" function
+               (:arguments 
+                  ( ("handle" variable
+                       (:pointer 1
+                        :type ("ion_handle" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [30009 30035])
+                    ("virtaddr" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [30036 30051])
+                    ("size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [30052 30064]))                  
+                :type "int")
+                nil [29990 30367])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("ion_flushcache" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [30382 30397]))                  
+                :type "int")
+                nil [30368 30398])
+            ("ion_invalidatecache" function
+               (:arguments 
+                  ( ("handle" variable
+                       (:pointer 1
+                        :type ("ion_handle" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [30425 30451])
+                    ("virtaddr" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [30452 30467])
+                    ("size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [30468 30480]))                  
+                :type "int")
+                nil [30401 30788])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("ion_invalidatecache" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [30803 30823]))                  
+                :type "int")
+                nil [30789 30824])
+            ("ion_getgid" function
+               (:arguments 
+                  ( ("handle" variable
+                       (:pointer 1
+                        :type ("ion_handle" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [30842 30868])
+                    ("gid" variable
+                       (:pointer 1
+                        :type "unsigned int")
+                        (reparse-symbol arg-sub-list) [30869 30887]))                  
+                :type "int")
+                nil [30827 31120])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("ion_getgid" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [31135 31146]))                  
+                :type "int")
+                nil [31121 31147])
+            ("ion_getsfd" function
+               (:arguments 
+                  ( ("gid" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [31165 31182])
+                    ("share_fd" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [31183 31197]))                  
+                :type "int")
+                nil [31150 31412])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("ion_getsfd" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [31427 31438]))                  
+                :type "int")
+                nil [31413 31439])
+            ("ion_gethandle" function
+               (:pointer 1
+                :arguments 
+                  ( ("client" variable
+                       (:pointer 1
+                        :type ("ion_client" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [31475 31501])
+                    ("gid" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [31502 31519]))                  
+                :type ("ion_handle" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [31442 32468])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("ion_gethandle" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [32483 32497]))                  
+                :type "int")
+                nil [32469 32498])
+            ("ion_debug_cc_show" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("s" variable
+                       (:pointer 1
+                        :type ("seq_file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [32530 32549])
+                    ("unused" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [32550 32563]))                  
+                :type "int")
+                nil [32501 33339])
+            ("ion_debug_cc_open" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("inode" variable
+                       (:pointer 1
+                        :type ("inode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [33371 33391])
+                    ("file" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [33392 33410]))                  
+                :type "int")
+                nil [33342 33478])
+            ("debug_cc_fops" variable
+               (:typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+	.open = ion_debug_cc_open,
+	.read = seq_read,
+	.llseek = seq_lseek,
+	.release = single_release,
+}"
+                :type ("file_operations" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [33481 33634])
+            ("berlin_cc_init" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [33663 33668]))                  
+                :type "int")
+                nil [33637 33867])
+            ("berlin_cc_exit" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [33896 33901]))                  
+                :type "int")
+                nil [33870 33965])
+            ("ion_debug_gid_show" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("s" variable
+                       (:pointer 1
+                        :type ("seq_file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [33998 34017])
+                    ("unused" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [34018 34031]))                  
+                :type "int")
+                nil [33968 35119])
+            ("ion_debug_gid_open" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("inode" variable
+                       (:pointer 1
+                        :type ("inode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [35152 35172])
+                    ("file" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [35173 35191]))                  
+                :type "int")
+                nil [35122 35260])
+            ("debug_gid_fops" variable
+               (:typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+	.open = ion_debug_gid_open,
+	.read = seq_read,
+	.llseek = seq_lseek,
+	.release = single_release,
+}"
+                :type ("file_operations" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [35263 35418])
+            ("berlin_gid_init" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [35448 35453]))                  
+                :type "int")
+                nil [35421 35658])
+            ("berlin_gid_exit" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [35688 35693]))                  
+                :type "int")
+                nil [35661 35758])
+            ("ion_debug_meminfo_show" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("s" variable
+                       (:pointer 1
+                        :type ("seq_file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [35795 35814])
+                    ("unused" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [35815 35828]))                  
+                :type "int")
+                nil [35761 37130])
+            ("ion_debug_meminfo_open" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("inode" variable
+                       (:pointer 1
+                        :type ("inode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [37167 37187])
+                    ("file" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [37188 37206]))                  
+                :type "int")
+                nil [37133 37279])
+            ("debug_meminfo_fops" variable
+               (:typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+	.open = ion_debug_meminfo_open,
+	.read = seq_read,
+	.llseek = seq_lseek,
+	.release = single_release,
+}"
+                :type ("file_operations" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [37282 37445])
+            ("berlin_meminfo_init" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [37479 37484]))                  
+                :type "int")
+                nil [37448 37638])
+            ("berlin_meminfo_exit" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [37672 37677]))                  
+                :type "int")
+                nil [37641 37744])
+            ("berlin_ion_probe" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("pdev" variable
+                       (:pointer 1
+                        :type ("platform_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [37775 37804]))                  
+                :type "int")
+                nil [37747 38763])
+            ("berlin_ion_remove" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("pdev" variable
+                       (:pointer 1
+                        :type ("platform_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [38794 38823]))                  
+                :type "int")
+                nil [38765 39146])
+            ("berlin_ion_of_match" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+	{.compatible = \"marvell,berlin-ion\",},
+	{},
+}"
+                :type ("of_device_id" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [39149 39255])
+            ("berlin_ion_driver" variable
+               (:typemodifiers ("static")
+                :default-value "{
+	.probe = berlin_ion_probe,
+	.remove = berlin_ion_remove,
+	.driver = {
+		.name	= \"berlin-ion\",
+		.of_match_table = berlin_ion_of_match,
+	},
+}"
+                :type ("platform_driver" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [39257 39451])
+            ("module_platform_driver" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("berlin_ion_driver" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [39476 39494]))                  
+                :type "int")
+                nil [39453 39495])
+            ("MODULE_LICENSE" function
+               (:prototype-flag t
+                :type "int")
+                nil [39497 39522]))          
+      :file "berlin_ion.c"
+      :pointmax 39524
+      :fsize 39523
+      :lastmodtime '(21915 34182 878780 736000)
+      :unmatched-syntax '((string 39512 . 39520) (punctuation 4053 . 4054) (punctuation 3925 . 3926) (punctuation 3815 . 3816) (punctuation 3702 . 3703) (punctuation 3583 . 3584) (punctuation 3463 . 3464))
+      :lexical-table 
+        '(("BERLIN_CC_DYNAMIC_ID" . ((semantic-list "(0x80000000)" 2353 . 2365)))
+          ("BERLIN_CC_ICCFIFO_FRAME_SIZE" . ((semantic-list "(128)" 2550 . 2555)))
+          ("NETLINK_BERLIN_CC" . ((semantic-list "(29)" 2470 . 2474)))
+          ("NETLINK_BERLIN_CC_GROUP" . ((semantic-list "(0)" 2508 . 2511)))
+          ("BERLIN_CC_START_ID" . ((semantic-list "(0x80000001)" 2393 . 2405)))
+          ("BERLIN_CC_DEBUG_LEVEL" . ((semantic-list "(20)" 2436 . 2440)))
+          ("berlin_debug" (spp-arg-list ("level" "x...") 4088 . 4101) . 
+              ((DO "do" 4107 . 4109) (semantic-list "{                                \\
+		if (((ion_debug_level > (level)) && (ion_debug_flag == 0)) || \\
+			((ion_debug_level == (level)) && (ion_debug_flag == 1))) \\
+			printk(x);                  \\
+	}" 4110 . 4308) (WHILE "while" 4308 . 4313) (semantic-list "(0)" 4313 . 4316)))
+          )
+))
+  :file "!home!qichen!20160225_rc5!vendor!marvell-sdk!linux!drivers!staging!android!ion!berlin!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

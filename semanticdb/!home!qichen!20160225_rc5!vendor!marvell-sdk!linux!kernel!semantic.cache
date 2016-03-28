@@ -1,0 +1,314 @@
+;; Object kernel/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "kernel/"
+  :tables
+  (list
+    (semanticdb-table "reboot.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("pr_fmt" variable (:constant-flag t) nil [85 91])
+            ("linux/ctype.h" include (:system-flag t) nil [113 137])
+            ("linux/export.h" include (:system-flag t) nil [138 163])
+            ("linux/kexec.h" include (:system-flag t) nil [164 188])
+            ("linux/kmod.h" include (:system-flag t) nil [189 212])
+            ("linux/kmsg_dump.h" include (:system-flag t) nil [213 241])
+            ("linux/reboot.h" include (:system-flag t) nil [242 267])
+            ("linux/suspend.h" include (:system-flag t) nil [268 294])
+            ("linux/syscalls.h" include (:system-flag t) nil [295 322])
+            ("linux/syscore_ops.h" include (:system-flag t) nil [323 353])
+            ("linux/uaccess.h" include (:system-flag t) nil [354 380])
+            ("C_A_D" variable
+               (:default-value "1"
+                :type "int")
+                nil [469 483])
+            ("cad_pid" variable
+               (:pointer 1
+                :type ("pid" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [484 504])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("cad_pid" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [519 527]))                  
+                :type "int")
+                nil [505 528])
+            ("DEFAULT_REBOOT_MODE" variable (:constant-flag t) nil [640 659])
+            ("reboot_mode" variable (:type ("reboot_mode" type (:type "enum") nil nil)) nil [667 716])
+            ("reboot_default" variable
+               (:default-value "1"
+                :type "int")
+                nil [1059 1082])
+            ("reboot_cpu" variable (:type "int") nil [1083 1098])
+            ("reboot_type" variable
+               (:default-value "BOOT_ACPI"
+                :type ("reboot_type" type (:type "enum") nil nil))
+                nil [1099 1140])
+            ("reboot_force" variable (:type "int") nil [1141 1158])
+            ("pm_power_off_prepare" function
+               (:prototype-flag t
+                :function-pointer t
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1260 1265]))                  
+                :type "void")
+                nil [1231 1266])
+            ("emergency_restart" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1558 1563]))                  
+                :type "void")
+                nil [1535 1626])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("emergency_restart" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1645 1663]))                  
+                :type "int")
+                nil [1627 1664])
+            ("kernel_restart_prepare" function
+               (:arguments 
+                  ( ("cmd" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1694 1704]))                  
+                :type "void")
+                nil [1666 1859])
+            ("register_reboot_notifier" function
+               (:arguments 
+                  ( ("nb" variable
+                       (:pointer 1
+                        :type ("notifier_block" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2209 2235]))                  
+                :type "int")
+                nil [2180 2308])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("register_reboot_notifier" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2323 2348]))                  
+                :type "int")
+                nil [2309 2349])
+            ("unregister_reboot_notifier" function
+               (:arguments 
+                  ( ("nb" variable
+                       (:pointer 1
+                        :type ("notifier_block" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2629 2655]))                  
+                :type "int")
+                nil [2598 2730])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("unregister_reboot_notifier" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2745 2772]))                  
+                :type "int")
+                nil [2731 2773])
+            ("ATOMIC_NOTIFIER_HEAD" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type ("restart_handler_list" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2894 2915]))                  
+                :type "int")
+                nil [2866 2916])
+            ("register_restart_handler" function
+               (:arguments 
+                  ( ("nb" variable
+                       (:pointer 1
+                        :type ("notifier_block" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4709 4735]))                  
+                :type "int")
+                nil [4680 4806])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("register_restart_handler" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4821 4846]))                  
+                :type "int")
+                nil [4807 4847])
+            ("unregister_restart_handler" function
+               (:arguments 
+                  ( ("nb" variable
+                       (:pointer 1
+                        :type ("notifier_block" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5135 5161]))                  
+                :type "int")
+                nil [5104 5234])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("unregister_restart_handler" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5249 5276]))                  
+                :type "int")
+                nil [5235 5277])
+            ("do_kernel_restart" function
+               (:arguments 
+                  ( ("cmd" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [5645 5655]))                  
+                :type "void")
+                nil [5622 5729])
+            ("migrate_to_reboot_cpu" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [5758 5763]))                  
+                :type "void")
+                nil [5731 6191])
+            ("kernel_restart" function
+               (:arguments 
+                  ( ("cmd" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [6445 6455]))                  
+                :type "void")
+                nil [6425 6700])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("kernel_restart" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6719 6734]))                  
+                :type "int")
+                nil [6701 6735])
+            ("kernel_shutdown_prepare" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("state" variable (:type ("system_states" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [6773 6798]))                  
+                :type "void")
+                nil [6737 6985])
+            ("kernel_halt" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [7103 7108]))                  
+                :type "void")
+                nil [7086 7273])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("kernel_halt" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7292 7304]))                  
+                :type "int")
+                nil [7274 7305])
+            ("kernel_power_off" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [7444 7449]))                  
+                :type "void")
+                nil [7422 7678])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("kernel_power_off" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7697 7714]))                  
+                :type "int")
+                nil [7679 7715])
+            ("DEFINE_MUTEX" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type ("reboot_mutex" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7737 7750]))                  
+                :type "int")
+                nil [7717 7751])
+            ("SYSCALL_DEFINE4" function
+               (:arguments 
+                  ( ("" variable (:type ("reboot" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8104 8111])
+                    ("" variable (:type "int") (reparse-symbol arg-sub-list) [8112 8116])
+                    ("" variable (:type ("magic1" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8117 8124])
+                    ("" variable (:type "int") (reparse-symbol arg-sub-list) [8125 8129])
+                    ("" variable (:type ("magic2" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8130 8137])
+                    ("" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [8138 8151])
+                    ("" variable (:type ("cmd" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8152 8156])
+                    ("__user" variable (:type "void") (reparse-symbol arg-sub-list) [8159 8172])
+                    ("" variable (:type ("arg" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8174 8178]))                  
+                :type "int")
+                nil [8088 9978])
+            ("deferred_cad" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dummy" variable
+                       (:pointer 1
+                        :type ("work_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10005 10031]))                  
+                :type "void")
+                nil [9980 10058])
+            ("ctrl_alt_del" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [10297 10302]))                  
+                :type "void")
+                nil [10279 10426])
+            ("poweroff_cmd" variable
+               (:dereference 1
+                :default-value "\"/sbin/poweroff\""
+                :type "char")
+                nil [10428 10488])
+            ("__orderly_poweroff" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("force" variable (:type "bool") (reparse-symbol arg-sub-list) [10520 10531]))                  
+                :type "int")
+                nil [10490 11143])
+            ("poweroff_force" variable
+               (:typemodifiers ("static")
+                :type "bool")
+                nil [11145 11172])
+            ("poweroff_work_func" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("work" variable
+                       (:pointer 1
+                        :type ("work_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11205 11230]))                  
+                :type "void")
+                nil [11174 11271])
+            ("DECLARE_WORK" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type ("poweroff_work" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11293 11307])
+                    ("" variable (:type ("poweroff_work_func" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11308 11327]))                  
+                :type "int")
+                nil [11273 11328])
+            ("orderly_poweroff" function
+               (:arguments 
+                  ( ("force" variable (:type "bool") (reparse-symbol arg-sub-list) [11612 11623]))                  
+                :type "int")
+                nil [11591 11748])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("orderly_poweroff" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11767 11784]))                  
+                :type "int")
+                nil [11749 11785])
+            ("reboot_setup" function
+               (:arguments 
+                  ( ("str" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [11818 11828]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [11798 12713])
+            ("__setup" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("reboot_setup" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12733 12746]))                  
+                :type "int")
+                nil [12714 12747]))          
+      :file "reboot.c"
+      :pointmax 12748
+      :fsize 12747
+      :lastmodtime '(21915 34184 650780 679000)
+      :unmatched-syntax '((string 12722 . 12731) (INT 11794 . 11797) (STATIC 11787 . 11793) (punctuation 8171 . 8172))
+      :lexical-table 
+        '(("DEFAULT_REBOOT_MODE")
+          ("pr_fmt" (spp-arg-list ("fmt") 91 . 96) . ((string "\"reboot: \"" 97 . 107) (symbol "fmt" 108 . 111)))
+          )
+))
+  :file "!home!qichen!20160225_rc5!vendor!marvell-sdk!linux!kernel!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

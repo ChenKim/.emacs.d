@@ -1,0 +1,95 @@
+;; Object ctrl_recovery_panel/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "ctrl_recovery_panel/"
+  :tables
+  (list
+    (semanticdb-table "dummy_recovery_ui.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("recovery_ui.h" include nil nil [623 647])
+            ("common.h" include nil nil [648 667])
+            ("linux/input.h" include (:system-flag t) nil [668 692])
+            ("MENU_HEADERS" variable
+               (:pointer 1
+                :dereference 1
+                :default-value "{ \"Android system recovery utility\",
+    \"\",
+    NULL }"
+                :type "char")
+                nil [694 773])
+            ("MENU_ITEMS" variable
+               (:pointer 1
+                :dereference 1
+                :default-value "{ \"reboot system now\",
+    \"apply update from external storage\",
+    \"wipe data/factory reset\",
+    \"wipe cache partition\",
+    \"apply update from cache\",
+    NULL }"
+                :type "char")
+                nil [775 962])
+            ("device_ui_init" function
+               (:arguments 
+                  ( ("ui_parameters" variable
+                       (:pointer 1
+                        :type ("UIParameters" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [984 1012]))                  
+                :type "void")
+                nil [964 1045])
+            ("device_recovery_start" function (:type "int") nil [1049 1095])
+            ("device_toggle_display" function
+               (:arguments 
+                  ( ("key_pressed" variable
+                       (:pointer 1
+                        :typemodifiers ("volatile")
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1123 1150])
+                    ("key_code" variable (:type "int") (reparse-symbol arg-sub-list) [1151 1164]))                  
+                :type "int")
+                nil [1097 1201])
+            ("device_reboot_now" function
+               (:arguments 
+                  ( ("key_pressed" variable
+                       (:pointer 1
+                        :typemodifiers ("volatile")
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1225 1252])
+                    ("key_code" variable (:type "int") (reparse-symbol arg-sub-list) [1253 1266]))                  
+                :type "int")
+                nil [1203 1284])
+            ("device_handle_key" function
+               (:arguments 
+                  ( ("key_code" variable (:type "int") (reparse-symbol arg-sub-list) [1308 1321])
+                    ("visible" variable (:type "int") (reparse-symbol arg-sub-list) [1322 1334]))                  
+                :type "int")
+                nil [1286 1682])
+            ("device_perform_action" function
+               (:arguments 
+                  ( ("which" variable (:type "int") (reparse-symbol arg-sub-list) [1710 1720]))                  
+                :type "int")
+                nil [1684 1742])
+            ("device_wipe_data" function (:type "int") nil [1744 1784]))          
+      :file "dummy_recovery_ui.c"
+      :pointmax 1785
+      :fsize 1784
+      :lastmodtime '(22242 47769 571737 737000)
+      :unmatched-syntax nil)
+    (semanticdb-table "Android.mk"
+      :major-mode 'makefile-gmake-mode
+      :tags 
+        '( ("LOCAL_PATH" variable (:default-value ("$(call my-dir)")) nil [52 80])
+            ("$(CLEAR_VARS)" include nil nil [123 145])
+            ("LOCAL_SRC_FILES" variable (:default-value ("dummy_recovery_ui.c" "../light_panel/libs/light_panel.c")) nil [146 230])
+            ("LOCAL_C_INCLUDES" variable (:default-value ("bootable/recovery" "vendor/marvell/midas-tv/system/core/flash_ts" "vendor/marvell/midas-tv/system/core/light_panel/inc")) nil [231 384])
+            ("LOCAL_CFLAGS" variable (:default-value ("-Wall")) nil [385 407])
+            ("LOCAL_MODULE" variable (:default-value ("librecovery_ctrlpanel")) nil [407 445])
+            ("LOCAL_MODULE_TAGS" variable (:default-value ("optional")) nil [445 475])
+            ("$(BUILD_STATIC_LIBRARY)" include nil nil [476 508]))          
+      :file "Android.mk"
+      :pointmax 514
+      :fsize 513
+      :lastmodtime '(22242 47769 571737 737000)
+      :unmatched-syntax nil))
+  :file "!home!qichen!20160310_rc2!vendor!marvell!midas-tv!system!core!ctrl_recovery_panel!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

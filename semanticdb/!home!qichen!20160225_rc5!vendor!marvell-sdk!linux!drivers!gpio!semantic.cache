@@ -1,0 +1,382 @@
+;; Object gpio/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "gpio/"
+  :tables
+  (list
+    (semanticdb-table "gpio-dwapb.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("linux/init.h" include (:system-flag t) nil [275 298])
+            ("linux/io.h" include (:system-flag t) nil [299 320])
+            ("linux/ioport.h" include (:system-flag t) nil [321 346])
+            ("linux/irq.h" include (:system-flag t) nil [347 369])
+            ("linux/irqdomain.h" include (:system-flag t) nil [370 398])
+            ("linux/module.h" include (:system-flag t) nil [399 424])
+            ("linux/basic_mmio_gpio.h" include (:system-flag t) nil [425 459])
+            ("linux/of.h" include (:system-flag t) nil [460 481])
+            ("linux/of_address.h" include (:system-flag t) nil [482 511])
+            ("linux/of_irq.h" include (:system-flag t) nil [512 537])
+            ("linux/platform_device.h" include (:system-flag t) nil [538 572])
+            ("linux/interrupt.h" include (:system-flag t) nil [573 601])
+            ("INT_EN_REG_OFFS" variable (:constant-flag t) nil [611 626])
+            ("INT_MASK_REG_OFFS" variable (:constant-flag t) nil [640 657])
+            ("INT_TYPE_REG_OFFS" variable (:constant-flag t) nil [671 688])
+            ("INT_POLARITY_REG_OFFS" variable (:constant-flag t) nil [702 723])
+            ("INT_STATUS_REG_OFFS" variable (:constant-flag t) nil [737 756])
+            ("EOI_REG_OFFS" variable (:constant-flag t) nil [770 782])
+            ("EXT_PORT_OFFS" variable (:constant-flag t) nil [797 810])
+            ("DW_MAX_BANK" variable (:constant-flag t) nil [825 836])
+            ("dwapb_gpio" type
+               (:prototype t
+                :type "struct")
+                nil [841 859])
+            ("dwapb_gpio_bank" type
+               (:members 
+                  ( ("bgc" variable (:type ("bgpio_chip" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [887 909])
+                    ("is_registered" variable (:type "bool") (reparse-symbol classsubparts) [911 932])
+                    ("gpio" variable
+                       (:pointer 1
+                        :type ("dwapb_gpio" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [934 958])
+                    ("domain" variable
+                       (:pointer 1
+                        :type ("irq_domain" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [960 986]))                  
+                :type "struct")
+                nil [861 989])
+            ("dwapb_gpio" type
+               (:members 
+                  ( ("of_node" variable
+                       (:pointer 1
+                        :type ("device_node" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [1012 1040])
+                    ("dev" variable
+                       (:pointer 1
+                        :type ("device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [1042 1062])
+                    ("regs" variable
+                       (:pointer 1
+                        :type ("__iomem" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1069 1084])
+                    ("banks" variable
+                       (:pointer 1
+                        :type ("dwapb_gpio_bank" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [1086 1116])
+                    ("nr_banks" variable (:type "unsigned int") (reparse-symbol classsubparts) [1118 1141])
+                    ("irq_gc" variable
+                       (:pointer 1
+                        :type ("irq_chip_generic" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [1143 1175])
+                    ("toggle_edge" variable (:type "unsigned long") (reparse-symbol classsubparts) [1177 1204])
+                    ("volatile_bits" variable (:type "unsigned int") (reparse-symbol classsubparts) [1206 1234])
+                    ("num_shutdown_gpios" variable (:type "unsigned int") (reparse-symbol classsubparts) [1236 1269])
+                    ("shutdown_gpios" variable
+                       (:pointer 1
+                        :type "unsigned int")
+                        (reparse-symbol classsubparts) [1271 1301]))                  
+                :type "struct")
+                nil [991 1436])
+            ("dwapb_gpio_nr_banks" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("of_node" variable
+                       (:pointer 1
+                        :type ("device_node" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1478 1506]))                  
+                :type "unsigned int")
+                nil [1438 1634])
+            ("dwapb_gpio_to_irq" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("gc" variable
+                       (:pointer 1
+                        :type ("gpio_chip" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1665 1686])
+                    ("offset" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [1687 1703]))                  
+                :type "int")
+                nil [1636 1863])
+            ("dwapb_toggle_trigger" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("gpio" variable
+                       (:pointer 1
+                        :type ("dwapb_gpio" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1898 1922])
+                    ("offs" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [1923 1941]))                  
+                :type "void")
+                nil [1865 2156])
+            ("dwapb_irq_get_bank" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("gpio" variable
+                       (:pointer 1
+                        :type ("dwapb_gpio" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2208 2232])
+                    ("irq" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2233 2241]))                  
+                :type ("dwapb_gpio_bank" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2158 2270])
+            ("dwapb_irq_handler" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("irq" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2302 2310])
+                    ("desc" variable
+                       (:pointer 1
+                        :type ("irq_desc" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2311 2333]))                  
+                :type "void")
+                nil [2272 2808])
+            ("dwapb_irq_enable" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("d" variable
+                       (:pointer 1
+                        :type ("irq_data" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2839 2858]))                  
+                :type "void")
+                nil [2810 3080])
+            ("dwapb_irq_disable" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("d" variable
+                       (:pointer 1
+                        :type ("irq_data" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3112 3131]))                  
+                :type "void")
+                nil [3082 3356])
+            ("dwapb_irq_set_type" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("d" variable
+                       (:pointer 1
+                        :type ("irq_data" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3388 3407])
+                    ("type" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3408 3417]))                  
+                :type "int")
+                nil [3358 4552])
+            ("dwapb_create_irqchip" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("gpio" variable
+                       (:pointer 1
+                        :type ("dwapb_gpio" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4586 4610])
+                    ("bank" variable
+                       (:pointer 1
+                        :type ("dwapb_gpio_bank" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4615 4644])
+                    ("irq_base" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [4649 4671]))                  
+                :type "int")
+                nil [4554 5424])
+            ("dwapb_configure_irqs" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("gpio" variable
+                       (:pointer 1
+                        :type ("dwapb_gpio" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5458 5482])
+                    ("bank" variable
+                       (:pointer 1
+                        :type ("dwapb_gpio_bank" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5487 5516]))                  
+                :type "int")
+                nil [5426 6406])
+            ("dwapb_gpio_add_bank" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("gpio" variable
+                       (:pointer 1
+                        :type ("dwapb_gpio" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6439 6463])
+                    ("bank_np" variable
+                       (:pointer 1
+                        :type ("device_node" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6474 6502])
+                    ("offs" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [6513 6531]))                  
+                :type "int")
+                nil [6408 7819])
+            ("dwapb_gpio_unregister" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("gpio" variable
+                       (:pointer 1
+                        :type ("dwapb_gpio" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7855 7879]))                  
+                :type "void")
+                nil [7821 8057])
+            ("dwapb_gpio_shutdown" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("pdev" variable
+                       (:pointer 1
+                        :type ("platform_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9418 9447]))                  
+                :type "void")
+                nil [9386 9759])
+            ("dwapb_gpio_pm_ops" variable
+               (:typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+	SET_SYSTEM_SLEEP_PM_OPS(dwapb_gpio_suspend, dwapb_gpio_resume)
+}"
+                :type ("dev_pm_ops" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [9761 9880])
+            ("dwapb_gpio_probe" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("pdev" variable
+                       (:pointer 1
+                        :type ("platform_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9910 9939]))                  
+                :type "int")
+                nil [9882 11565])
+            ("dwapb_of_match_table" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+	{ .compatible = \"snps,dw-apb-gpio\" },
+	{ /* Sentinel */ }
+}"
+                :type ("of_device_id" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [11567 11688])
+            ("dwapb_gpio_driver" variable
+               (:typemodifiers ("static")
+                :default-value "{
+	.driver		= {
+		.name	= \"gpio-dwapb\",
+		.owner	= THIS_MODULE,
+		.pm	= &dwapb_gpio_pm_ops,
+		.of_match_table = dwapb_of_match_table,
+	},
+	.probe		= dwapb_gpio_probe,
+	.shutdown = dwapb_gpio_shutdown,
+}"
+                :type ("platform_driver" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [11690 11943])
+            ("dwapb_gpio_init" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [11979 11984]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [11956 12042])
+            ("postcore_initcall" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("dwapb_gpio_init" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12061 12077]))                  
+                :type "int")
+                nil [12043 12078])
+            ("MODULE_LICENSE" function
+               (:prototype-flag t
+                :type "int")
+                nil [12080 12102])
+            ("MODULE_AUTHOR" function
+               (:prototype-flag t
+                :type "int")
+                nil [12103 12131])
+            ("MODULE_DESCRIPTION" function
+               (:prototype-flag t
+                :type "int")
+                nil [12132 12181]))          
+      :file "gpio-dwapb.c"
+      :pointmax 12182
+      :fsize 12181
+      :lastmodtime '(22231 60804 2450 828000)
+      :unmatched-syntax '((string 12151 . 12179) (string 12117 . 12129) (string 12095 . 12100) (INT 11952 . 11955) (STATIC 11945 . 11951) (VOID 1064 . 1068))
+      :lexical-table 
+        '(("EXT_PORT_OFFS" . ((number "0x50" 812 . 816)))
+          ("INT_POLARITY_REG_OFFS" . ((number "0x3c" 724 . 728)))
+          ("INT_STATUS_REG_OFFS" . ((number "0x40" 757 . 761)))
+          ("DW_MAX_BANK" . ((number "4" 838 . 839)))
+          ("EOI_REG_OFFS" . ((number "0x4c" 784 . 788)))
+          ("INT_EN_REG_OFFS" . ((number "0x30" 627 . 631)))
+          ("INT_MASK_REG_OFFS" . ((number "0x34" 658 . 662)))
+          ("INT_TYPE_REG_OFFS" . ((number "0x38" 689 . 693)))
+          )
+))
+  :file "!home!qichen!20160225_rc5!vendor!marvell-sdk!linux!drivers!gpio!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

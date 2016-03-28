@@ -1,0 +1,194 @@
+;; Object cube/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "cube/"
+  :tables
+  (list
+    (semanticdb-table "cube.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("stdio.h" include (:system-flag t) nil [1 19])
+            ("termio.h" include (:system-flag t) nil [20 39])
+            ("unistd.h" include (:system-flag t) nil [40 59])
+            ("stdlib.h" include (:system-flag t) nil [60 79])
+            ("time.h" include (:system-flag t) nil [80 97])
+            ("key.h" include nil nil [98 114])
+            ("KEY_UP" variable (:constant-flag t) nil [124 130])
+            ("KEY_DOWN" variable (:constant-flag t) nil [149 157])
+            ("KEY_RIGHT" variable (:constant-flag t) nil [174 183])
+            ("KEY_LEFT" variable (:constant-flag t) nil [199 207])
+            ("SCREEN_XMAX" variable (:constant-flag t) nil [225 236])
+            ("SCREEN_YMAX" variable (:constant-flag t) nil [254 265])
+            ("SHAPE_L" variable (:constant-flag t) nil [279 286])
+            ("SHAPE_O" variable (:constant-flag t) nil [298 305])
+            ("SHAPE_I" variable (:constant-flag t) nil [317 324])
+            ("SHAPE_T" variable (:constant-flag t) nil [336 343])
+            ("SHAPE_N" variable (:constant-flag t) nil [355 362])
+            ("matrix_l" variable
+               (:dereference 2
+                :default-value "{
+    {1,0,0},
+    {1,0,0},
+    {1,1,0},
+}"
+                :type "int")
+                nil [367 431])
+            ("matrix_o" variable
+               (:dereference 2
+                :default-value "{
+    {0,0,0},
+    {1,1,0},
+    {1,1,0},
+}"
+                :type "int")
+                nil [433 497])
+            ("matrix_t" variable
+               (:dereference 2
+                :default-value "{
+    {1,1,1},
+    {0,1,0},
+    {0,0,0},
+}"
+                :type "int")
+                nil [499 563])
+            ("matrix_n" variable
+               (:dereference 2
+                :default-value "{
+    {0,1,0},
+    {1,1,0},
+    {1,0,0},
+}"
+                :type "int")
+                nil [565 629])
+            ("scr_buf" variable
+               (:dereference 2
+                :default-value "{0}"
+                :type "int")
+                nil [631 675])
+            ("oldt" variable (:type ("termios" type
+                 (:prototype t
+                  :type "struct")
+                  nil nil)) nil [677 697])
+            ("test_color" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [714 719]))                  
+                :type "void")
+                nil [698 959])
+            ("color_label" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [978 983]))                  
+                :type "void")
+                nil [961 1267])
+            ("test_key" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1283 1288]))                  
+                :type "void")
+                nil [1269 1451])
+            ("test_key1" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1468 1473]))                  
+                :type "void")
+                nil [1453 2454])
+            ("fill_scr" function
+               (:arguments 
+                  ( ("color" variable (:type "int") (reparse-symbol arg-sub-list) [2470 2480]))                  
+                :type "void")
+                nil [2456 2629])
+            ("display_scr" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [2648 2653]))                  
+                :type "void")
+                nil [2631 3047])
+            ("test_scr" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [3063 3068]))                  
+                :type "void")
+                nil [3049 3208])
+            ("CUBE" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("x" variable (:type "int") (reparse-symbol classsubparts) [3231 3237])
+                          ("y" variable (:type "int") (reparse-symbol classsubparts) [3242 3248])
+                          ("shape" variable (:type "int") (reparse-symbol classsubparts) [3253 3263])
+                          ("direction" variable (:type "int") (reparse-symbol classsubparts) [3268 3282])
+                          ("speed" variable (:type "int") (reparse-symbol classsubparts) [3287 3297])
+                          ("color" variable (:type "int") (reparse-symbol classsubparts) [3302 3312]))                        
+                      :type "struct")
+                      nil nil)
+                :type "typedef")
+                nil [3210 3319])
+            ("draw_point" function
+               (:arguments 
+                  ( ("x" variable (:type "int") (reparse-symbol arg-sub-list) [3337 3343])
+                    ("y" variable (:type "int") (reparse-symbol arg-sub-list) [3344 3350])
+                    ("color" variable (:type "int") (reparse-symbol arg-sub-list) [3351 3361]))                  
+                :type "void")
+                nil [3321 3392])
+            ("draw_cube" function
+               (:arguments 
+                  ( ("cb" variable (:type ("CUBE" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3409 3417]))                  
+                :type "void")
+                nil [3394 4395])
+            ("clear_cube" function
+               (:arguments 
+                  ( ("cb" variable (:type ("CUBE" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4413 4421]))                  
+                :type "void")
+                nil [4397 4575])
+            ("test_cube" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [4592 4597]))                  
+                :type "void")
+                nil [4577 4974])
+            ("test_cube_falling" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [4999 5004]))                  
+                :type "void")
+                nil [4976 5280])
+            ("test_cube_move_by_key" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [5309 5314]))                  
+                :type "void")
+                nil [5282 6503])
+            ("draw_random_point" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [6528 6533]))                  
+                :type "void")
+                nil [6505 6913])
+            ("ncurses.h" include (:system-flag t) nil [6914 6934])
+            ("main" function
+               (:arguments 
+                  ( ("argc" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [6944 6955])
+                    ("argv" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [6956 6968]))                  
+                :type "int")
+                nil [6935 7011]))          
+      :file "cube.c"
+      :pointmax 7012
+      :fsize 7011
+      :lastmodtime '(22250 29067 63515 61000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("SCREEN_XMAX" . ((semantic-list "(157/2)" 238 . 245)))
+          ("SHAPE_N" . ((number "4" 364 . 365)))
+          ("KEY_DOWN" . ((number "0xe050" 159 . 165)))
+          ("SCREEN_YMAX" . ((number "47" 267 . 269)))
+          ("SHAPE_O" . ((number "1" 307 . 308)))
+          ("KEY_UP" . ((number "0xe048" 134 . 140)))
+          ("KEY_RIGHT" . ((number "0xe04d" 184 . 190)))
+          ("KEY_LEFT" . ((number "0xe04b" 209 . 215)))
+          ("SHAPE_T" . ((number "3" 345 . 346)))
+          ("SHAPE_I" . ((number "2" 326 . 327)))
+          ("SHAPE_L" . ((number "0" 288 . 289)))
+          )
+)
+    (semanticdb-table "key.h"
+      :file "key.h"
+      :fsize 137
+      :lastmodtime '(22006 39667 687245 602000)))
+  :file "!home!qichen!test!cube!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

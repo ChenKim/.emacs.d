@@ -1,0 +1,1231 @@
+;; Object locking/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "locking/"
+  :tables
+  (list
+    (semanticdb-table "lockdep.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("DISABLE_BRANCH_PROFILING" variable (:constant-flag t) nil [950 974])
+            ("linux/mutex.h" include (:system-flag t) nil [975 999])
+            ("linux/sched.h" include (:system-flag t) nil [1000 1024])
+            ("linux/delay.h" include (:system-flag t) nil [1025 1049])
+            ("linux/module.h" include (:system-flag t) nil [1050 1075])
+            ("linux/proc_fs.h" include (:system-flag t) nil [1076 1102])
+            ("linux/seq_file.h" include (:system-flag t) nil [1103 1130])
+            ("linux/spinlock.h" include (:system-flag t) nil [1131 1158])
+            ("linux/kallsyms.h" include (:system-flag t) nil [1159 1186])
+            ("linux/interrupt.h" include (:system-flag t) nil [1187 1215])
+            ("linux/stacktrace.h" include (:system-flag t) nil [1216 1245])
+            ("linux/debug_locks.h" include (:system-flag t) nil [1246 1276])
+            ("linux/irqflags.h" include (:system-flag t) nil [1277 1304])
+            ("linux/utsname.h" include (:system-flag t) nil [1305 1331])
+            ("linux/hash.h" include (:system-flag t) nil [1332 1355])
+            ("linux/ftrace.h" include (:system-flag t) nil [1356 1381])
+            ("linux/stringify.h" include (:system-flag t) nil [1382 1410])
+            ("linux/bitops.h" include (:system-flag t) nil [1411 1436])
+            ("linux/gfp.h" include (:system-flag t) nil [1437 1459])
+            ("linux/kmemcheck.h" include (:system-flag t) nil [1460 1488])
+            ("asm/sections.h" include (:system-flag t) nil [1490 1515])
+            ("lockdep_internals.h" include nil nil [1517 1547])
+            ("CREATE_TRACE_POINTS" variable (:constant-flag t) nil [1557 1576])
+            ("trace/events/lock.h" include (:system-flag t) nil [1577 1607])
+            ("prove_locking" variable (:constant-flag t) nil [1714 1727])
+            ("lock_stat" variable (:constant-flag t) nil [1831 1840])
+            ("lockdep_lock" variable
+               (:typemodifiers ("static")
+                :default-value "(arch_spinlock_t)__ARCH_SPIN_LOCK_UNLOCKED"
+                :type ("arch_spinlock_t" type (:type "class") nil nil))
+                nil [2138 2219])
+            ("graph_lock" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [2243 2248]))                  
+                :type "int")
+                nil [2221 2662])
+            ("graph_unlock" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [2695 2700]))                  
+                :type "int")
+                nil [2664 2984])
+            ("debug_locks_off_graph_unlock" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [3144 3149]))                  
+                :type "int")
+                nil [3097 3232])
+            ("lockdep_initialized" variable
+               (:typemodifiers ("static")
+                :type "int")
+                nil [3234 3265])
+            ("nr_list_entries" variable (:type "unsigned long") nil [3267 3297])
+            ("list_entries" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :type ("lock_list" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [3298 3356])
+            ("nr_lock_classes" variable (:type "unsigned long") nil [3572 3602])
+            ("lock_classes" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :type ("lock_class" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [3603 3659])
+            ("hlock_class" function
+               (:pointer 1
+                :typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("hlock" variable
+                       (:pointer 1
+                        :type ("held_lock" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3706 3730]))                  
+                :type ("lock_class" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [3661 3904])
+            ("lock_release_holdtime" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("hlock" variable
+                       (:pointer 1
+                        :type ("held_lock" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6701 6725]))                  
+                :type "void")
+                nil [6660 6729])
+            ("LIST_HEAD" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("all_lock_classes" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6906 6923]))                  
+                :type "int")
+                nil [6896 6924])
+            ("CLASSHASH_BITS" variable (:constant-flag t) nil [7010 7024])
+            ("CLASSHASH_SIZE" variable (:constant-flag t) nil [7062 7076])
+            ("__classhashfn" variable (:constant-flag t) nil [7110 7123])
+            ("classhashentry" variable (:constant-flag t) nil [7183 7197])
+            ("classhash_table" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :type ("list_head" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [7245 7301])
+            ("CHAINHASH_BITS" variable (:constant-flag t) nil [7411 7425])
+            ("CHAINHASH_SIZE" variable (:constant-flag t) nil [7463 7477])
+            ("__chainhashfn" variable (:constant-flag t) nil [7511 7524])
+            ("chainhashentry" variable (:constant-flag t) nil [7573 7587])
+            ("chainhash_table" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :type ("list_head" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [7639 7695])
+            ("iterate_chain_key" variable (:constant-flag t) nil [7928 7945])
+            ("lockdep_off" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [8071 8076]))                  
+                :type "void")
+                nil [8054 8111])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("lockdep_off" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8126 8138]))                  
+                :type "int")
+                nil [8112 8139])
+            ("lockdep_on" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [8157 8162]))                  
+                :type "void")
+                nil [8141 8197])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("lockdep_on" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8212 8223]))                  
+                :type "int")
+                nil [8198 8224])
+            ("VERBOSE" variable (:constant-flag t) nil [8265 8272])
+            ("VERY_VERBOSE" variable (:constant-flag t) nil [8285 8297])
+            ("HARDIRQ_VERBOSE" variable (:constant-flag t) nil [8410 8425])
+            ("SOFTIRQ_VERBOSE" variable (:constant-flag t) nil [8437 8452])
+            ("RECLAIM_VERBOSE" variable (:constant-flag t) nil [8464 8479])
+            ("verbose" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable
+                       (:pointer 1
+                        :type ("lock_class" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8970 8994])
+                    ("" variable (:type ("" type
+                         (:prototype t
+                          :type "class")
+                          nil nil)) (reparse-symbol arg-sub-list) [8989 8995]))                  
+                :type "int")
+                nil [8951 9058])
+            ("nr_stack_trace_entries" variable (:type "unsigned long") nil [9166 9203])
+            ("stack_trace" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :type "unsigned long")
+                nil [9204 9262])
+            ("print_lockdep_off" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("bug_msg" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [9294 9314]))                  
+                :type "void")
+                nil [9264 9514])
+            ("save_trace" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("trace" variable
+                       (:pointer 1
+                        :type ("stack_trace" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9538 9564]))                  
+                :type "int")
+                nil [9516 10455])
+            ("nr_hardirq_chains" variable (:type "unsigned int") nil [10457 10488])
+            ("nr_softirq_chains" variable (:type "unsigned int") nil [10489 10520])
+            ("nr_process_chains" variable (:type "unsigned int") nil [10521 10552])
+            ("max_lockdep_depth" variable (:type "unsigned int") nil [10553 10584])
+            ("__USAGE" variable (:constant-flag t) nil [11188 11195])
+            ("usage_str" variable
+               (:pointer 1
+                :dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+#define LOCKDEP_STATE(__STATE) __USAGE(__STATE)
+#include \"lockdep_states.h\"
+#undef LOCKDEP_STATE
+	[LOCK_USED] = \"INITIAL USE\",
+}"
+                :type "char")
+                nil [11465 11629])
+            ("__get_key_name" function
+               (:pointer 1
+                :constant-flag t
+                :arguments 
+                  ( ("key" variable
+                       (:pointer 1
+                        :type ("lockdep_subclass_key" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11659 11692])
+                    ("str" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [11693 11703]))                  
+                :type "char")
+                nil [11631 11775])
+            ("lock_flag" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("bit" variable (:type ("lock_usage_bit" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [11815 11839]))                  
+                :type "unsigned long")
+                nil [11777 11863])
+            ("get_usage_char" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable
+                       (:pointer 1
+                        :type ("lock_class" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11892 11916])
+                    ("" variable (:type ("" type
+                         (:prototype t
+                          :type "class")
+                          nil nil)) (reparse-symbol arg-sub-list) [11911 11917])
+                    ("bit" variable (:type ("lock_usage_bit" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [11918 11942]))                  
+                :type "char")
+                nil [11865 12145])
+            ("get_usage_chars" function
+               (:arguments 
+                  ( ("" variable
+                       (:pointer 1
+                        :type ("lock_class" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [12168 12192])
+                    ("" variable (:type ("" type
+                         (:prototype t
+                          :type "class")
+                          nil nil)) (reparse-symbol arg-sub-list) [12187 12193])
+                    ("usage" variable
+                       (:dereference 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [12194 12223]))                  
+                :type "void")
+                nil [12147 12478])
+            ("__print_lock_name" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable
+                       (:pointer 1
+                        :type ("lock_class" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [12510 12534])
+                    ("" variable (:type ("" type
+                         (:prototype t
+                          :type "class")
+                          nil nil)) (reparse-symbol arg-sub-list) [12529 12535]))                  
+                :type "void")
+                nil [12480 12847])
+            ("print_lock_name" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable
+                       (:pointer 1
+                        :type ("lock_class" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [12877 12901])
+                    ("" variable (:type ("" type
+                         (:prototype t
+                          :type "class")
+                          nil nil)) (reparse-symbol arg-sub-list) [12896 12902]))                  
+                :type "void")
+                nil [12849 13038])
+            ("print_lockdep_cache" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("lock" variable
+                       (:pointer 1
+                        :type ("lockdep_map" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13072 13097]))                  
+                :type "void")
+                nil [13040 13251])
+            ("print_lock" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("hlock" variable
+                       (:pointer 1
+                        :type ("held_lock" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13276 13300]))                  
+                :type "void")
+                nil [13253 13395])
+            ("lockdep_print_held_locks" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("curr" variable
+                       (:pointer 1
+                        :type ("task_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13434 13459]))                  
+                :type "void")
+                nil [13397 13794])
+            ("print_kernel_ident" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [13827 13832]))                  
+                :type "void")
+                nil [13796 13978])
+            ("very_verbose" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable
+                       (:pointer 1
+                        :type ("lock_class" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [14004 14028])
+                    ("" variable (:type ("" type
+                         (:prototype t
+                          :type "class")
+                          nil nil)) (reparse-symbol arg-sub-list) [14023 14029]))                  
+                :type "int")
+                nil [13980 14097])
+            ("static_obj" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("obj" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [14189 14199]))                  
+                :type "int")
+                nil [14167 14648])
+            ("count_matching_names" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("new_class" variable
+                       (:pointer 1
+                        :type ("lock_class" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [14800 14829]))                  
+                :type "int")
+                nil [14768 15190])
+            ("look_up_lock_class" function
+               (:pointer 1
+                :typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("lock" variable
+                       (:pointer 1
+                        :type ("lockdep_map" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [15470 15495])
+                    ("subclass" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [15496 15518]))                  
+                :type ("lock_class" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [15417 17203])
+            ("register_lock_class" function
+               (:pointer 1
+                :typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("lock" variable
+                       (:pointer 1
+                        :type ("lockdep_map" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [17484 17509])
+                    ("subclass" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [17510 17532])
+                    ("force" variable (:type "int") (reparse-symbol arg-sub-list) [17533 17543]))                  
+                :type ("lock_class" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [17430 20168])
+            ("validate_chain" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("curr" variable
+                       (:pointer 1
+                        :type ("task_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [54141 54166])
+                    ("lock" variable
+                       (:pointer 1
+                        :type ("lockdep_map" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [54176 54201])
+                    ("hlock" variable
+                       (:pointer 1
+                        :type ("held_lock" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [54202 54226])
+                    ("chain_head" variable (:type "int") (reparse-symbol arg-sub-list) [54229 54244])
+                    ("chain_key" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [54245 54259]))                  
+                :type "int")
+                nil [54108 54274])
+            ("check_chain_key" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("curr" variable
+                       (:pointer 1
+                        :type ("task_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [54442 54467]))                  
+                :type "void")
+                nil [54414 55738])
+            ("print_usage_bug_scenario" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("lock" variable
+                       (:pointer 1
+                        :type ("held_lock" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [55777 55800]))                  
+                :type "void")
+                nil [55740 56149])
+            ("print_usage_bug" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("curr" variable
+                       (:pointer 1
+                        :type ("task_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [56178 56203])
+                    ("this" variable
+                       (:pointer 1
+                        :type ("held_lock" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [56204 56227])
+                    ("prev_bit" variable (:type ("lock_usage_bit" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [56230 56259])
+                    ("new_bit" variable (:type ("lock_usage_bit" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [56260 56288]))                  
+                :type "int")
+                nil [56151 57294])
+            ("valid_state" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("curr" variable
+                       (:pointer 1
+                        :type ("task_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [57381 57406])
+                    ("this" variable
+                       (:pointer 1
+                        :type ("held_lock" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [57407 57430])
+                    ("new_bit" variable (:type ("lock_usage_bit" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [57436 57464])
+                    ("bad_bit" variable (:type ("lock_usage_bit" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [57465 57493]))                  
+                :type "int")
+                nil [57351 57627])
+            ("mark_lock" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("curr" variable
+                       (:pointer 1
+                        :type ("task_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [57650 57675])
+                    ("this" variable
+                       (:pointer 1
+                        :type ("held_lock" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [57676 57699])
+                    ("new_bit" variable (:type ("lock_usage_bit" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [57707 57735]))                  
+                :type "int")
+                nil [57629 57736])
+            ("mark_lock_irq" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("curr" variable
+                       (:pointer 1
+                        :type ("task_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [71997 72022])
+                    ("this" variable
+                       (:pointer 1
+                        :type ("held_lock" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [72023 72046])
+                    ("new_bit" variable (:type ("lock_usage_bit" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [72049 72077]))                  
+                :type "int")
+                nil [71965 72162])
+            ("mark_irqflags" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("curr" variable
+                       (:pointer 1
+                        :type ("task_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [72196 72221])
+                    ("hlock" variable
+                       (:pointer 1
+                        :type ("held_lock" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [72224 72248]))                  
+                :type "int")
+                nil [72164 72263])
+            ("separate_irq_context" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("curr" variable
+                       (:pointer 1
+                        :type ("task_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [72304 72329])
+                    ("hlock" variable
+                       (:pointer 1
+                        :type ("held_lock" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [72332 72356]))                  
+                :type "int")
+                nil [72265 72371])
+            ("lockdep_trace_alloc" function
+               (:arguments 
+                  ( ("gfp_mask" variable (:type ("gfp_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [72398 72413]))                  
+                :type "void")
+                nil [72373 72417])
+            ("mark_lock" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("curr" variable
+                       (:pointer 1
+                        :type ("task_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [72593 72618])
+                    ("this" variable
+                       (:pointer 1
+                        :type ("held_lock" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [72619 72642])
+                    ("new_bit" variable (:type ("lock_usage_bit" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [72651 72679]))                  
+                :type "int")
+                nil [72572 73878])
+            ("lockdep_init_map" function
+               (:arguments 
+                  ( ("lock" variable
+                       (:pointer 1
+                        :type ("lockdep_map" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [73966 73991])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [73992 74009])
+                    ("key" variable
+                       (:pointer 1
+                        :type ("lock_class_key" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [74018 74045])
+                    ("subclass" variable (:type "int") (reparse-symbol arg-sub-list) [74046 74059]))                  
+                :type "void")
+                nil [73944 74891])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("lockdep_init_map" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [74910 74927]))                  
+                :type "int")
+                nil [74892 74928])
+            ("__lockdep_no_validate__" variable (:type ("lock_class_key" type
+                 (:prototype t
+                  :type "struct")
+                  nil nil)) nil [74930 74976])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("__lockdep_no_validate__" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [74995 75019]))                  
+                :type "int")
+                nil [74977 75020])
+            ("print_lock_nested_lock_not_held" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("curr" variable
+                       (:pointer 1
+                        :type ("task_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [75065 75090])
+                    ("hlock" variable
+                       (:pointer 1
+                        :type ("held_lock" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [75095 75119])
+                    ("ip" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [75124 75141]))                  
+                :type "int")
+                nil [75022 75786])
+            ("__lock_is_held" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("lock" variable
+                       (:pointer 1
+                        :type ("lockdep_map" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [75814 75839]))                  
+                :type "int")
+                nil [75788 75840])
+            ("__lock_acquire" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("lock" variable
+                       (:pointer 1
+                        :type ("lockdep_map" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [76012 76037])
+                    ("subclass" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [76038 76060])
+                    ("trylock" variable (:type "int") (reparse-symbol arg-sub-list) [76066 76078])
+                    ("read" variable (:type "int") (reparse-symbol arg-sub-list) [76079 76088])
+                    ("check" variable (:type "int") (reparse-symbol arg-sub-list) [76089 76099])
+                    ("hardirqs_off" variable (:type "int") (reparse-symbol arg-sub-list) [76100 76117])
+                    ("nest_lock" variable
+                       (:pointer 1
+                        :type ("lockdep_map" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [76123 76153])
+                    ("ip" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [76154 76171])
+                    ("references" variable (:type "int") (reparse-symbol arg-sub-list) [76177 76192]))                  
+                :type "int")
+                nil [75986 80183])
+            ("print_unlock_imbalance_bug" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("curr" variable
+                       (:pointer 1
+                        :type ("task_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [80223 80248])
+                    ("lock" variable
+                       (:pointer 1
+                        :type ("lockdep_map" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [80249 80274])
+                    ("ip" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [80281 80298]))                  
+                :type "int")
+                nil [80185 80923])
+            ("check_unlock" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("curr" variable
+                       (:pointer 1
+                        :type ("task_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [81022 81047])
+                    ("lock" variable
+                       (:pointer 1
+                        :type ("lockdep_map" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [81048 81073])
+                    ("ip" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [81077 81094]))                  
+                :type "int")
+                nil [80998 81372])
+            ("match_held_lock" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("hlock" variable
+                       (:pointer 1
+                        :type ("held_lock" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [81401 81425])
+                    ("lock" variable
+                       (:pointer 1
+                        :type ("lockdep_map" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [81426 81451]))                  
+                :type "int")
+                nil [81374 82222])
+            ("__lock_set_class" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("lock" variable
+                       (:pointer 1
+                        :type ("lockdep_map" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [82252 82277])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [82278 82295])
+                    ("key" variable
+                       (:pointer 1
+                        :type ("lock_class_key" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [82299 82326])
+                    ("subclass" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [82327 82349])
+                    ("ip" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [82353 82370]))                  
+                :type "int")
+                nil [82224 83776])
+            ("lock_release_non_nested" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("curr" variable
+                       (:pointer 1
+                        :type ("task_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [84047 84072])
+                    ("lock" variable
+                       (:pointer 1
+                        :type ("lockdep_map" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [84076 84101])
+                    ("ip" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [84102 84119]))                  
+                :type "int")
+                nil [84012 85894])
+            ("lock_release_nested" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("curr" variable
+                       (:pointer 1
+                        :type ("task_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [86194 86219])
+                    ("lock" variable
+                       (:pointer 1
+                        :type ("lockdep_map" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [86230 86255])
+                    ("ip" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [86256 86273]))                  
+                :type "int")
+                nil [86163 86992])
+            ("__lock_release" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("lock" variable
+                       (:pointer 1
+                        :type ("lockdep_map" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [87288 87313])
+                    ("nested" variable (:type "int") (reparse-symbol arg-sub-list) [87314 87325])
+                    ("ip" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [87326 87343]))                  
+                :type "void")
+                nil [87261 87599])
+            ("__lock_is_held" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("lock" variable
+                       (:pointer 1
+                        :type ("lockdep_map" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [87627 87652]))                  
+                :type "int")
+                nil [87601 87862])
+            ("check_flags" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("flags" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [87953 87973]))                  
+                :type "void")
+                nil [87929 88863])
+            ("lock_set_class" function
+               (:arguments 
+                  ( ("lock" variable
+                       (:pointer 1
+                        :type ("lockdep_map" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [88885 88910])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [88911 88928])
+                    ("key" variable
+                       (:pointer 1
+                        :type ("lock_class_key" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [88935 88962])
+                    ("subclass" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [88963 88985])
+                    ("ip" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [88992 89009]))                  
+                :type "void")
+                nil [88865 89318])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("lock_set_class" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [89337 89352]))                  
+                :type "int")
+                nil [89319 89353])
+            ("lock_acquire" function
+               (:arguments 
+                  ( ("lock" variable
+                       (:pointer 1
+                        :type ("lockdep_map" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [89480 89505])
+                    ("subclass" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [89506 89528])
+                    ("trylock" variable (:type "int") (reparse-symbol arg-sub-list) [89534 89546])
+                    ("read" variable (:type "int") (reparse-symbol arg-sub-list) [89547 89556])
+                    ("check" variable (:type "int") (reparse-symbol arg-sub-list) [89557 89567])
+                    ("nest_lock" variable
+                       (:pointer 1
+                        :type ("lockdep_map" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [89573 89603])
+                    ("ip" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [89604 89621]))                  
+                :type "void")
+                nil [89462 90033])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("lock_acquire" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [90052 90065]))                  
+                :type "int")
+                nil [90034 90066])
+            ("lock_release" function
+               (:arguments 
+                  ( ("lock" variable
+                       (:pointer 1
+                        :type ("lockdep_map" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [90086 90111])
+                    ("nested" variable (:type "int") (reparse-symbol arg-sub-list) [90112 90123])
+                    ("ip" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [90129 90146]))                  
+                :type "void")
+                nil [90068 90439])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("lock_release" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [90458 90471]))                  
+                :type "int")
+                nil [90440 90472])
+            ("lock_is_held" function
+               (:arguments 
+                  ( ("lock" variable
+                       (:pointer 1
+                        :type ("lockdep_map" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [90491 90516]))                  
+                :type "int")
+                nil [90474 90852])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("lock_is_held" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [90871 90884]))                  
+                :type "int")
+                nil [90853 90885])
+            ("lockdep_set_current_reclaim_state" function
+               (:arguments 
+                  ( ("gfp_mask" variable (:type ("gfp_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [90926 90941]))                  
+                :type "void")
+                nil [90887 90987])
+            ("lockdep_clear_current_reclaim_state" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [91030 91035]))                  
+                :type "void")
+                nil [90989 91074])
+            ("lockdep_reset" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [95520 95525]))                  
+                :type "void")
+                nil [95501 95952])
+            ("zap_class" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable
+                       (:pointer 1
+                        :type ("lock_class" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [95976 96000])
+                    ("" variable (:type ("" type
+                         (:prototype t
+                          :type "class")
+                          nil nil)) (reparse-symbol arg-sub-list) [95995 96001]))                  
+                :type "void")
+                nil [95954 96371])
+            ("within" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("addr" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [96398 96415])
+                    ("start" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [96416 96428])
+                    ("size" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [96429 96448]))                  
+                :type "int")
+                nil [96373 96498])
+            ("lockdep_free_key_range" function
+               (:arguments 
+                  ( ("start" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [96528 96540])
+                    ("size" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [96541 96560]))                  
+                :type "void")
+                nil [96500 97153])
+            ("lockdep_reset_lock" function
+               (:arguments 
+                  ( ("lock" variable
+                       (:pointer 1
+                        :type ("lockdep_map" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [97179 97204]))                  
+                :type "void")
+                nil [97155 98240])
+            ("lockdep_init" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [98260 98265]))                  
+                :type "void")
+                nil [98242 98718])
+            ("lockdep_info" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [98745 98750]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [98725 100072])
+            ("print_freed_lock_bug" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("curr" variable
+                       (:pointer 1
+                        :type ("task_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [100107 100132])
+                    ("mem_from" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [100133 100154])
+                    ("mem_to" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [100162 100181])
+                    ("hlock" variable
+                       (:pointer 1
+                        :type ("held_lock" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [100182 100206]))                  
+                :type "void")
+                nil [100074 100669])
+            ("not_in_range" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("mem_from" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [100702 100723])
+                    ("mem_len" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [100724 100746])
+                    ("lock_from" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [100751 100773])
+                    ("lock_len" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [100774 100797]))                  
+                :type "int")
+                nil [100671 100880])
+            ("debug_check_no_locks_freed" function
+               (:arguments 
+                  ( ("mem_from" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [101112 101133])
+                    ("mem_len" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [101134 101156]))                  
+                :type "void")
+                nil [101080 101603])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("debug_check_no_locks_freed" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [101622 101649]))                  
+                :type "int")
+                nil [101604 101650])
+            ("print_held_locks_bug" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [101685 101690]))                  
+                :type "void")
+                nil [101652 102087])
+            ("debug_check_no_locks_held" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [102120 102125]))                  
+                :type "void")
+                nil [102089 102198])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("debug_check_no_locks_held" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [102217 102243]))                  
+                :type "int")
+                nil [102199 102244])
+            ("debug_show_all_locks" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [102290 102295]))                  
+                :type "void")
+                nil [102264 103559])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("debug_show_all_locks" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [103578 103599]))                  
+                :type "int")
+                nil [103560 103600])
+            ("debug_show_held_locks" function
+               (:arguments 
+                  ( ("task" variable
+                       (:pointer 1
+                        :type ("task_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [103735 103760]))                  
+                :type "void")
+                nil [103708 103885])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("debug_show_held_locks" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [103904 103926]))                  
+                :type "int")
+                nil [103886 103927])
+            ("lockdep_sys_exit" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [103951 103956]))                  
+                :type "void")
+                nil [103929 104435])
+            ("lockdep_rcu_suspicious" function
+               (:arguments 
+                  ( ("file" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [104465 104482])
+                    ("line" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [104483 104498])
+                    ("s" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [104499 104513]))                  
+                :type "void")
+                nil [104437 106422])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("lockdep_rcu_suspicious" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [106441 106464]))                  
+                :type "int")
+                nil [106423 106465]))          
+      :file "lockdep.c"
+      :pointmax 106466
+      :fsize 106465
+      :lastmodtime '(21971 11102 481761 842000)
+      :unmatched-syntax '((VOID 98720 . 98724))
+      :lexical-table 
+        '(("__classhashfn" (spp-arg-list ("key") 7123 . 7128) . ((symbol "hash_long" 7129 . 7138) (semantic-list "((unsigned long)key, CLASSHASH_BITS)" 7138 . 7174)))
+          ("__chainhashfn" (spp-arg-list ("chain") 7524 . 7531) . ((symbol "hash_long" 7532 . 7541) (semantic-list "(chain, CHAINHASH_BITS)" 7541 . 7564)))
+          ("CREATE_TRACE_POINTS")
+          ("CLASSHASH_BITS" . ((semantic-list "(MAX_LOCKDEP_KEYS_BITS - 1)" 7026 . 7053)))
+          ("CHAINHASH_BITS" . ((semantic-list "(MAX_LOCKDEP_CHAINS_BITS-1)" 7427 . 7454)))
+          ("prove_locking" . ((number "0" 1728 . 1729)))
+          ("lock_stat" . ((number "0" 1841 . 1842)))
+          ("VERBOSE" . ((number "0" 8275 . 8276)))
+          ("classhashentry" (spp-arg-list ("key") 7197 . 7202) . ((semantic-list "(classhash_table + __classhashfn((key)))" 7203 . 7243)))
+          ("chainhashentry" (spp-arg-list ("chain") 7587 . 7594) . ((semantic-list "(chainhash_table + __chainhashfn((chain)))" 7595 . 7637)))
+          ("iterate_chain_key" (spp-arg-list ("key1" "key2") 7945 . 7957) . ((semantic-list "(((key1) << MAX_LOCKDEP_KEYS_BITS) ^ \\
+	((key1) >> (64-MAX_LOCKDEP_KEYS_BITS)) ^ \\
+	(key2))" 7961 . 8052)))
+          ("DISABLE_BRANCH_PROFILING")
+          ("__USAGE" (spp-arg-list ("__STATE") 11195 . 11204) . 
+              ((semantic-list "[LOCK_USED_IN_##__STATE]" 11213 . 11237) (punctuation "=" 11238 . 11239) (string "\"IN-\"" 11240 . 11245) (symbol "__stringify" 11245 . 11256) (semantic-list "(__STATE)" 11256 . 11265) (string "\"-W\"" 11265 . 11269) (punctuation "," 11269 . 11270) (semantic-list "[LOCK_ENABLED_##__STATE]" 11274 . 11298) (punctuation "=" 11299 . 11300) (symbol "__stringify" 11301 . 11312) (semantic-list "(__STATE)" 11312 . 11321) (string "\"-ON-W\"" 11321 . 11328) (punctuation "," 11328 . 11329) (semantic-list "[LOCK_USED_IN_##__STATE##_READ]" 11334 . 11365) (punctuation "=" 11366 . 11367) (string "\"IN-\"" 11368 . 11373) (symbol "__stringify" 11373 . 11384) (semantic-list "(__STATE)" 11384 . 11393) (string "\"-R\"" 11393 . 11397) (punctuation "," 11397 . 11398) (semantic-list "[LOCK_ENABLED_##__STATE##_READ]" 11401 . 11432) (punctuation "=" 11433 . 11434) (symbol "__stringify" 11435 . 11446) (semantic-list "(__STATE)" 11446 . 11455) (string "\"-ON-R\"" 11455 . 11462) (punctuation "," 11462 . 11463)))
+          ("CLASSHASH_SIZE" . ((semantic-list "(1UL << CLASSHASH_BITS)" 7078 . 7101)))
+          ("CHAINHASH_SIZE" . ((semantic-list "(1UL << CHAINHASH_BITS)" 7479 . 7502)))
+          ("VERY_VERBOSE" . ((number "0" 8299 . 8300)))
+          ("RECLAIM_VERBOSE" . ((number "0" 8480 . 8481)))
+          ("HARDIRQ_VERBOSE" . ((number "0" 8426 . 8427)))
+          ("SOFTIRQ_VERBOSE" . ((number "0" 8453 . 8454)))
+          )
+)
+    (semanticdb-table "lockdep_internals.h"
+      :file "lockdep_internals.h"
+      :fsize 4587
+      :lastmodtime '(21971 11102 481761 842000)))
+  :file "!home!qichen!bg4dtv_release_clean!vendor!marvell-sdk!linux!kernel!locking!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

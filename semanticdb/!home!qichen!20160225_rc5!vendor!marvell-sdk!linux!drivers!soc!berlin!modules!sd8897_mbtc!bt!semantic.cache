@@ -1,0 +1,625 @@
+;; Object bt/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "bt/"
+  :tables
+  (list
+    (semanticdb-table "bt_sdiommc.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("linux/firmware.h" include (:system-flag t) nil [963 990])
+            ("linux/mmc/sdio_func.h" include (:system-flag t) nil [991 1023])
+            ("bt_drv.h" include nil nil [1025 1044])
+            ("bt_sdio.h" include nil nil [1045 1065])
+            ("MARVELL_VENDOR_ID" variable (:constant-flag t) nil [1107 1124])
+            ("MAX_WRITE_IOMEM_RETRY" variable (:constant-flag t) nil [1180 1201])
+            ("fw_name" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :type "char")
+                nil [1225 1246])
+            ("bt_fw_serial" variable
+               (:typemodifiers ("static")
+                :default-value "1"
+                :type "int")
+                nil [1278 1306])
+            ("bt_intmode" variable
+               (:default-value "INT_MODE_SDIO"
+                :type "int")
+                nil [1308 1339])
+            ("bt_req_fw_nowait" variable (:type "int") nil [1371 1392])
+            ("multi_fn" variable
+               (:typemodifiers ("static")
+                :default-value "BIT(2)"
+                :type "int")
+                nil [1393 1422])
+            ("DEFAULT_FW_NAME" variable (:constant-flag t) nil [1432 1447])
+            ("FW_CRC_HEADER_RB2" variable (:constant-flag t) nil [1506 1523])
+            ("fw_crc_header_rb_2" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :default-value "{
+	0x05, 0x00, 0x00, 0x00,
+	0x00, 0x00, 0x00, 0x00, 0x0c, 0x00, 0x00, 0x00,
+	0x9d, 0x32, 0xbb, 0x11, 0x01, 0x00, 0x00, 0x7f,
+	0x00, 0x00, 0x00, 0x00, 0x67, 0xd6, 0xfc, 0x25
+}"
+                :type ("u8" type (:type "class") nil nil))
+                nil [1568 1793])
+            ("FW_CRC_HEADER_RB" variable (:constant-flag t) nil [1849 1865])
+            ("fw_crc_header_rb_1" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :default-value "{
+	0x01, 0x00, 0x00, 0x00, 0x04, 0xfd, 0x00, 0x04,
+	0x08, 0x00, 0x00, 0x00, 0x26, 0x52, 0x2a, 0x7b,
+	0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+}"
+                :type ("u8" type (:type "class") nil nil))
+                nil [1910 2109])
+            ("DEFAULT_FW_NAME_8777" variable (:constant-flag t) nil [2148 2168])
+            ("DEFAULT_FW_NAME_8787" variable (:constant-flag t) nil [2202 2222])
+            ("DEFAULT_FW_NAME_8797" variable (:constant-flag t) nil [2256 2276])
+            ("DEFAULT_FW_NAME_8887" variable (:constant-flag t) nil [2310 2330])
+            ("DEFAULT_FW_NAME_8897" variable (:constant-flag t) nil [2364 2384])
+            ("DEFAULT_FW_NAME_8977" variable (:constant-flag t) nil [2418 2438])
+            ("SD8787_W0" variable (:constant-flag t) nil [2505 2514])
+            ("SD8787_W1" variable (:constant-flag t) nil [2533 2542])
+            ("SD8787_A0_A1" variable (:constant-flag t) nil [2561 2573])
+            ("SD8797_A0" variable (:constant-flag t) nil [2620 2629])
+            ("SD8797_B0" variable (:constant-flag t) nil [2649 2658])
+            ("SD8897_A0" variable (:constant-flag t) nil [2709 2718])
+            ("SD8897_B0" variable (:constant-flag t) nil [2738 2747])
+            ("SD8887_A0" variable (:constant-flag t) nil [2799 2808])
+            ("SD8887_A2" variable (:constant-flag t) nil [2827 2836])
+            ("SD8887_A0_FW_NAME" variable (:constant-flag t) nil [2855 2872])
+            ("SD8887_A2_FW_NAME" variable (:constant-flag t) nil [2906 2923])
+            ("SD8887_A2_BT_FW_NAME" variable (:constant-flag t) nil [2960 2980])
+            ("SD8897_A0_FW_NAME" variable (:constant-flag t) nil [3014 3031])
+            ("SD8897_B0_FW_NAME" variable (:constant-flag t) nil [3068 3085])
+            ("SD8787_W1_FW_NAME" variable (:constant-flag t) nil [3120 3137])
+            ("SD8787_AX_FW_NAME" variable (:constant-flag t) nil [3174 3191])
+            ("SD8797_A0_FW_NAME" variable (:constant-flag t) nil [3225 3242])
+            ("SD8797_B0_FW_NAME" variable (:constant-flag t) nil [3279 3296])
+            ("SD8977_V0" variable (:constant-flag t) nil [3362 3371])
+            ("SD8977_V1" variable (:constant-flag t) nil [3390 3399])
+            ("SD8977_V0_FW_NAME" variable (:constant-flag t) nil [3418 3435])
+            ("SD8977_V0_BT_FW_NAME" variable (:constant-flag t) nil [3470 3490])
+            ("SD8977_V1_FW_NAME" variable (:constant-flag t) nil [3520 3537])
+            ("SD8977_V1_BT_FW_NAME" variable (:constant-flag t) nil [3575 3595])
+            ("FN2" variable (:constant-flag t) nil [3654 3657])
+            ("SD_DEVICE_ID_8787_BT_FN2" variable (:constant-flag t) nil [3702 3726])
+            ("SD_DEVICE_ID_8787_BT_FN3" variable (:constant-flag t) nil [3777 3801])
+            ("SD_DEVICE_ID_8777_BT_FN2" variable (:constant-flag t) nil [3852 3876])
+            ("SD_DEVICE_ID_8777_BT_FN3" variable (:constant-flag t) nil [3927 3951])
+            ("SD_DEVICE_ID_8887_BT_FN2" variable (:constant-flag t) nil [4002 4026])
+            ("SD_DEVICE_ID_8887_BT_FN3" variable (:constant-flag t) nil [4077 4101])
+            ("SD_DEVICE_ID_8897_BT_FN2" variable (:constant-flag t) nil [4152 4176])
+            ("SD_DEVICE_ID_8897_BT_FN3" variable (:constant-flag t) nil [4227 4251])
+            ("SD_DEVICE_ID_8797_BT_FN2" variable (:constant-flag t) nil [4302 4326])
+            ("SD_DEVICE_ID_8797_BT_FN3" variable (:constant-flag t) nil [4377 4401])
+            ("SD_DEVICE_ID_8977_BT_FN2" variable (:constant-flag t) nil [4452 4476])
+            ("bt_ids" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+	{SDIO_DEVICE(MARVELL_VENDOR_ID, SD_DEVICE_ID_8787_BT_FN2)},
+	{SDIO_DEVICE(MARVELL_VENDOR_ID, SD_DEVICE_ID_8777_BT_FN2)},
+	{SDIO_DEVICE(MARVELL_VENDOR_ID, SD_DEVICE_ID_8887_BT_FN2)},
+	{SDIO_DEVICE(MARVELL_VENDOR_ID, SD_DEVICE_ID_8897_BT_FN2)},
+	{SDIO_DEVICE(MARVELL_VENDOR_ID, SD_DEVICE_ID_8797_BT_FN2)},
+	{SDIO_DEVICE(MARVELL_VENDOR_ID, SD_DEVICE_ID_8977_BT_FN2)},
+	{}
+}"
+                :type ("sdio_device_id" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [4539 4959])
+            ("MODULE_DEVICE_TABLE" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("sdio" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4981 4986])
+                    ("" variable (:type ("bt_ids" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4987 4994]))                  
+                :type "int")
+                nil [4961 4995])
+            ("unregister" variable
+               (:typemodifiers ("static")
+                :type ("u8" type (:type "class") nil nil))
+                nil [5165 5186])
+            ("sd_get_rx_unit" function
+               (:arguments 
+                  ( ("priv" variable
+                       (:pointer 1
+                        :type ("bt_private" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5593 5610]))                  
+                :type "int")
+                nil [5574 5940])
+            ("sd_read_firmware_status" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("priv" variable
+                       (:pointer 1
+                        :type ("bt_private" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6199 6216])
+                    ("dat" variable
+                       (:pointer 1
+                        :type ("u16" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6217 6227]))                  
+                :type "int")
+                nil [6164 6812])
+            ("sd_read_rx_len" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("priv" variable
+                       (:pointer 1
+                        :type ("bt_private" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7051 7068])
+                    ("dat" variable
+                       (:pointer 1
+                        :type ("u16" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7069 7079]))                  
+                :type "int")
+                nil [7025 7420])
+            ("sd_enable_host_int_mask" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("priv" variable
+                       (:pointer 1
+                        :type ("bt_private" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7675 7692])
+                    ("mask" variable (:type ("u8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7693 7701]))                  
+                :type "int")
+                nil [7640 8069])
+            ("sd_disable_host_int_mask" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("priv" variable
+                       (:pointer 1
+                        :type ("bt_private" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [8321 8338])
+                    ("mask" variable (:type ("u8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8339 8347]))                  
+                :type "int")
+                nil [8285 8982])
+            ("sd_poll_card_status" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("priv" variable
+                       (:pointer 1
+                        :type ("bt_private" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [9228 9245])
+                    ("bits" variable (:type ("u8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9246 9254]))                  
+                :type "int")
+                nil [9197 9831])
+            ("sd_read_cmd52_val" function
+               (:arguments 
+                  ( ("priv" variable
+                       (:pointer 1
+                        :type ("bt_private" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [10049 10066]))                  
+                :type "int")
+                nil [10027 10602])
+            ("sd_write_cmd52_val" function
+               (:arguments 
+                  ( ("priv" variable
+                       (:pointer 1
+                        :type ("bt_private" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [10954 10971])
+                    ("func" variable (:type "int") (reparse-symbol arg-sub-list) [10972 10981])
+                    ("reg" variable (:type "int") (reparse-symbol arg-sub-list) [10982 10990])
+                    ("val" variable (:type "int") (reparse-symbol arg-sub-list) [10991 10999]))                  
+                :type "int")
+                nil [10931 11679])
+            ("sd_write_reg" function
+               (:arguments 
+                  ( ("priv" variable
+                       (:pointer 1
+                        :type ("bt_private" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [11968 11985])
+                    ("reg" variable (:type "int") (reparse-symbol arg-sub-list) [11986 11994])
+                    ("val" variable (:type ("u8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11995 12002]))                  
+                :type "int")
+                nil [11951 12246])
+            ("sd_read_reg" function
+               (:arguments 
+                  ( ("priv" variable
+                       (:pointer 1
+                        :type ("bt_private" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [12495 12512])
+                    ("reg" variable (:type "int") (reparse-symbol arg-sub-list) [12513 12521])
+                    ("data" variable
+                       (:pointer 1
+                        :type ("u8" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [12522 12531]))                  
+                :type "int")
+                nil [12479 12798])
+            ("sd_probe_card" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("func" variable
+                       (:pointer 1
+                        :type ("sdio_func" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13061 13084])
+                    ("id" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("sdio_device_id" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13085 13117]))                  
+                :type "int")
+                nil [13036 14069])
+            ("sd_verify_fw_download" function
+               (:arguments 
+                  ( ("priv" variable
+                       (:pointer 1
+                        :type ("bt_private" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [14362 14379])
+                    ("pollnum" variable (:type "int") (reparse-symbol arg-sub-list) [14380 14392]))                  
+                :type "int")
+                nil [14336 14956])
+            ("sd_init_fw_dpc" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("priv" variable
+                       (:pointer 1
+                        :type ("bt_private" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [15241 15258])
+                    ("fw" variable
+                       (:pointer 1
+                        :type ("u8" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [15259 15266])
+                    ("fw_len" variable (:type "int") (reparse-symbol arg-sub-list) [15267 15278]))                  
+                :type "int")
+                nil [15215 19790])
+            ("sd_request_fw_dpc" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("fw_firmware" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("firmware" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [20042 20077])
+                    ("context" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [20078 20092]))                  
+                :type "int")
+                nil [20013 22888])
+            ("sd_request_fw_callback" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("firmware" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("firmware" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [23187 23219])
+                    ("context" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [23220 23234]))                  
+                :type "void")
+                nil [23152 23306])
+            ("sd_download_firmware_w_helper" function
+               (:arguments 
+                  ( ("priv" variable
+                       (:pointer 1
+                        :type ("bt_private" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [23545 23562]))                  
+                :type "int")
+                nil [23511 25942])
+            ("sd_card_to_host" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("priv" variable
+                       (:pointer 1
+                        :type ("bt_private" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [26146 26163]))                  
+                :type "int")
+                nil [26119 32729])
+            ("sd_remove_card" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("func" variable
+                       (:pointer 1
+                        :type ("sdio_func" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [32886 32909]))                  
+                :type "void")
+                nil [32859 33246])
+            ("sd_interrupt" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("func" variable
+                       (:pointer 1
+                        :type ("sdio_func" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [33403 33426]))                  
+                :type "void")
+                nil [33378 35316])
+            ("sd_check_winner_status" function
+               (:arguments 
+                  ( ("priv" variable
+                       (:pointer 1
+                        :type ("bt_private" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [35634 35651])
+                    ("val" variable
+                       (:pointer 1
+                        :type ("u8" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [35652 35660]))                  
+                :type "int")
+                nil [35607 36041])
+            ("sdio_bt" variable
+               (:typemodifiers ("static")
+                :default-value "{
+	.name = \"sdio_bt\",
+	.id_table = bt_ids,
+	.probe = sd_probe_card,
+	.remove = sd_remove_card,
+#ifdef SDIO_SUSPEND_RESUME
+#ifdef MMC_PM_KEEP_POWER
+	.drv = {
+		.pm = &bt_sdio_pm_ops,
+		.shutdown = bt_sdio_shutdown,
+		}
+#endif
+#endif
+}"
+                :type ("sdio_driver" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [41399 41669])
+            ("sbi_register" function
+               (:pointer 1
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [41821 41826]))                  
+                :type "int")
+                nil [41802 42029])
+            ("sbi_unregister" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [42152 42157]))                  
+                :type "void")
+                nil [42132 42236])
+            ("sbi_register_dev" function
+               (:arguments 
+                  ( ("priv" variable
+                       (:pointer 1
+                        :type ("bt_private" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [42428 42445]))                  
+                :type "int")
+                nil [42407 45834])
+            ("sbi_unregister_dev" function
+               (:arguments 
+                  ( ("priv" variable
+                       (:pointer 1
+                        :type ("bt_private" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [46010 46027]))                  
+                :type "int")
+                nil [45987 46327])
+            ("sd_enable_host_int" function
+               (:arguments 
+                  ( ("priv" variable
+                       (:pointer 1
+                        :type ("bt_private" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [46528 46545]))                  
+                :type "int")
+                nil [46505 46850])
+            ("sd_disable_host_int" function
+               (:arguments 
+                  ( ("priv" variable
+                       (:pointer 1
+                        :type ("bt_private" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [47069 47086]))                  
+                :type "int")
+                nil [47045 47370])
+            ("sbi_host_to_card" function
+               (:arguments 
+                  ( ("priv" variable
+                       (:pointer 1
+                        :type ("bt_private" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [47654 47671])
+                    ("payload" variable
+                       (:pointer 1
+                        :type ("u8" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [47672 47684])
+                    ("nb" variable (:type ("u16" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [47685 47692]))                  
+                :type "int")
+                nil [47633 49304])
+            ("sbi_download_fw" function
+               (:arguments 
+                  ( ("priv" variable
+                       (:pointer 1
+                        :type ("bt_private" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [49492 49509]))                  
+                :type "int")
+                nil [49472 51297])
+            ("sbi_get_int_status" function
+               (:arguments 
+                  ( ("priv" variable
+                       (:pointer 1
+                        :type ("bt_private" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [51503 51520]))                  
+                :type "int")
+                nil [51480 52279])
+            ("sbi_wakeup_firmware" function
+               (:arguments 
+                  ( ("priv" variable
+                       (:pointer 1
+                        :type ("bt_private" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [52484 52501]))                  
+                :type "int")
+                nil [52460 52910])
+            ("sdio_update_card_type" function
+               (:arguments 
+                  ( ("priv" variable
+                       (:pointer 1
+                        :type ("bt_private" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [53122 53139])
+                    ("card" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [53140 53151]))                  
+                :type "void")
+                nil [53095 54090])
+            ("sdio_get_sdio_device" function
+               (:arguments 
+                  ( ("priv" variable
+                       (:pointer 1
+                        :type ("bt_private" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [54307 54324]))                  
+                :type "int")
+                nil [54282 54989])
+            ("bt_dump_sdio_regs" function
+               (:arguments 
+                  ( ("priv" variable
+                       (:pointer 1
+                        :type ("bt_private" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [55154 55171]))                  
+                :type "void")
+                nil [55131 56893])
+            ("module_param" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("fw_name" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [56908 56916])
+                    ("" variable (:type ("charp" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [56917 56923]))                  
+                :type "int")
+                nil [56895 56927])
+            ("MODULE_PARM_DESC" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("fw_name" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [56945 56953]))                  
+                :type "int")
+                nil [56928 56971])
+            ("module_param" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("bt_req_fw_nowait" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [56985 57002])
+                    ("" variable (:type "int") (reparse-symbol arg-sub-list) [57003 57007]))                  
+                :type "int")
+                nil [56972 57011])
+            ("MODULE_PARM_DESC" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("bt_req_fw_nowait" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [57029 57046]))                  
+                :type "int")
+                nil [57012 57117])
+            ("module_param" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("multi_fn" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [57131 57140])
+                    ("" variable (:type "int") (reparse-symbol arg-sub-list) [57141 57145]))                  
+                :type "int")
+                nil [57118 57149])
+            ("MODULE_PARM_DESC" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("multi_fn" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [57167 57176]))                  
+                :type "int")
+                nil [57150 57192])
+            ("module_param" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("bt_fw_serial" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [57206 57219])
+                    ("" variable (:type "int") (reparse-symbol arg-sub-list) [57220 57224]))                  
+                :type "int")
+                nil [57193 57228])
+            ("MODULE_PARM_DESC" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("bt_fw_serial" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [57246 57259]))                  
+                :type "int")
+                nil [57229 57329])
+            ("module_param" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("bt_intmode" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [57344 57355])
+                    ("" variable (:type "int") (reparse-symbol arg-sub-list) [57356 57360]))                  
+                :type "int")
+                nil [57331 57364])
+            ("MODULE_PARM_DESC" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("bt_intmode" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [57382 57393]))                  
+                :type "int")
+                nil [57365 57432]))          
+      :file "bt_sdiommc.c"
+      :pointmax 57433
+      :fsize 57432
+      :lastmodtime '(22229 24896 663808 679000)
+      :unmatched-syntax '((string 57394 . 57430) (number 57361 . 57362) (string 57263 . 57327) (number 57225 . 57226) (string 57177 . 57190) (number 57146 . 57147) (string 57050 . 57115) (number 57008 . 57009) (string 56954 . 56969) (number 56924 . 56925))
+      :lexical-table 
+        '(("DEFAULT_FW_NAME_8777" . ((string "\"mrvl/sd8777_uapsta.bin\"" 2169 . 2193)))
+          ("SD8887_A2" . ((number "0x2" 2843 . 2846)))
+          ("SD_DEVICE_ID_8777_BT_FN3" . ((number "0x9133" 3955 . 3961)))
+          ("SD8897_A0" . ((number "0x10" 2725 . 2729)))
+          ("SD8977_V0_BT_FW_NAME" . ((string "\"mrvl/sd8977_bt.bin\"" 3491 . 3511)))
+          ("SD_DEVICE_ID_8977_BT_FN2" . ((number "0x9146" 4480 . 4486)))
+          ("DEFAULT_FW_NAME_8897" . ((string "\"mrvl/sd8897_uapsta.bin\"" 2385 . 2409)))
+          ("SD8887_A2_FW_NAME" . ((string "\"mrvl/sd8887_uapsta_a2.bin\"" 2924 . 2951)))
+          ("SD8977_V0" . ((number "0x0" 3378 . 3381)))
+          ("DEFAULT_FW_NAME_8787" . ((string "\"mrvl/sd8787_uapsta.bin\"" 2223 . 2247)))
+          ("SD8787_W0" . ((number "0x30" 2520 . 2524)))
+          ("SD8787_AX_FW_NAME" . ((string "\"mrvl/sd8787_uapsta.bin\"" 3192 . 3216)))
+          ("SD8977_V1" . ((number "0x8" 3406 . 3409)))
+          ("SD8977_V1_FW_NAME" . ((string "\"mrvl/sdsd8977_combo_v1.bin\"" 3538 . 3566)))
+          ("SD8787_W1" . ((number "0x31" 2548 . 2552)))
+          ("SD8897_B0" . ((number "0x20" 2754 . 2758)))
+          ("FN2" . ((number "2" 3660 . 3661)))
+          ("SD_DEVICE_ID_8797_BT_FN2" . ((number "0x912A" 4330 . 4336)))
+          ("DEFAULT_FW_NAME_8977" . ((string "\"mrvl/sdsd8977_combo.bin\"" 2439 . 2464)))
+          ("SD8797_A0" . ((number "0x00" 2636 . 2640)))
+          ("SD_DEVICE_ID_8897_BT_FN2" . ((number "0x912E" 4180 . 4186)))
+          ("SD_DEVICE_ID_8797_BT_FN3" . ((number "0x912B" 4405 . 4411)))
+          ("FW_CRC_HEADER_RB" . ((number "24" 1868 . 1870)))
+          ("DEFAULT_FW_NAME_8797" . ((string "\"mrvl/sd8797_uapsta.bin\"" 2277 . 2301)))
+          ("SD_DEVICE_ID_8897_BT_FN3" . ((number "0x912F" 4255 . 4261)))
+          ("DEFAULT_FW_NAME" . ((string "\"\"" 1448 . 1450)))
+          ("FW_CRC_HEADER_RB2" . ((number "28" 1526 . 1528)))
+          ("SD8977_V0_FW_NAME" . ((string "\"mrvl/sdsd8977_combo.bin\"" 3436 . 3461)))
+          ("MARVELL_VENDOR_ID" . ((number "0x02df" 1125 . 1131)))
+          ("SD8797_B0" . ((number "0x10" 2665 . 2669)))
+          ("SD8797_A0_FW_NAME" . ((string "\"mrvl/sd8797_uapsta_a0.bin\"" 3243 . 3270)))
+          ("SD_DEVICE_ID_8787_BT_FN2" . ((number "0x911A" 3730 . 3736)))
+          ("SD8787_A0_A1" . ((number "0x40" 2576 . 2580)))
+          ("SD8797_B0_FW_NAME" . ((string "\"mrvl/sd8797_uapsta.bin\"" 3297 . 3321)))
+          ("SD_DEVICE_ID_8787_BT_FN3" . ((number "0x911B" 3805 . 3811)))
+          ("SD_DEVICE_ID_8887_BT_FN2" . ((number "0x9136" 4030 . 4036)))
+          ("SD8887_A0_FW_NAME" . ((string "\"mrvl/sd8887_uapsta.bin\"" 2873 . 2897)))
+          ("SD8977_V1_BT_FW_NAME" . ((string "\"mrvl/sd8977_bt_v1.bin\"" 3596 . 3619)))
+          ("SD_DEVICE_ID_8887_BT_FN3" . ((number "0x9137" 4105 . 4111)))
+          ("MAX_WRITE_IOMEM_RETRY" . ((number "2" 1202 . 1203)))
+          ("SD8887_A0" . ((number "0x0" 2815 . 2818)))
+          ("SD8887_A2_BT_FW_NAME" . ((string "\"mrvl/sd8887_bt_a2.bin\"" 2981 . 3004)))
+          ("SD8897_A0_FW_NAME" . ((string "\"mrvl/sd8897_uapsta_a0.bin\"" 3032 . 3059)))
+          ("DEFAULT_FW_NAME_8887" . ((string "\"mrvl/sd8887_uapsta.bin\"" 2331 . 2355)))
+          ("SD8897_B0_FW_NAME" . ((string "\"mrvl/sd8897_uapsta.bin\"" 3086 . 3110)))
+          ("SD8787_W1_FW_NAME" . ((string "\"mrvl/sd8787_uapsta_w1.bin\"" 3138 . 3165)))
+          ("SD_DEVICE_ID_8777_BT_FN2" . ((number "0x9132" 3880 . 3886)))
+          )
+)
+    (semanticdb-table "bt_drv.h"
+      :file "bt_drv.h"
+      :fsize 21946
+      :lastmodtime '(22229 24896 663808 679000))
+    (semanticdb-table "bt_sdio.h"
+      :file "bt_sdio.h"
+      :fsize 14696
+      :lastmodtime '(22229 24896 663808 679000)))
+  :file "!home!qichen!20160225_rc5!vendor!marvell-sdk!linux!drivers!soc!berlin!modules!sd8897_mbtc!bt!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

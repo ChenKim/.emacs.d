@@ -1,0 +1,92 @@
+;; Object libs/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "libs/"
+  :tables
+  (list
+    (semanticdb-table "Android.mk"
+      :major-mode 'makefile-gmake-mode
+      :tags 
+        '( ("LOCAL_PATH" variable (:default-value ("$(call my-dir)")) nil [1 29])
+            ("$(CLEAR_VARS)" include nil nil [30 52])
+            ("LOCAL_MODULE" variable (:default-value ("libpanelctr")) nil [53 80])
+            ("LOCAL_SRC_FILES" variable (:default-value ("light_panel.c")) nil [80 118])
+            ("LOCAL_C_INCLUDES" variable (:default-value ("$(VENDOR_SDK_INCLUDES)" "vendor/marvell/midas-tv/system/core/flash_ts" "vendor/marvell/midas-tv/system/core/light_panel/inc")) nil [119 277])
+            ("LOCAL_SHARED_LIBRARIES" variable (:default-value ("libcutils" "liblog")) nil [278 333])
+            ("$(BUILD_SHARED_LIBRARY)" include nil nil [334 366]))          
+      :file "Android.mk"
+      :pointmax 366
+      :fsize 365
+      :lastmodtime '(22242 47769 579737 737000)
+      :unmatched-syntax nil)
+    (semanticdb-table "light_panel.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("sys/types.h" include (:system-flag t) nil [1 23])
+            ("sys/stat.h" include (:system-flag t) nil [24 45])
+            ("fcntl.h" include (:system-flag t) nil [46 64])
+            ("string.h" include (:system-flag t) nil [65 84])
+            ("cutils/log.h" include (:system-flag t) nil [85 108])
+            ("stdio.h" include (:system-flag t) nil [109 127])
+            ("sys/ioctl.h" include (:system-flag t) nil [128 150])
+            ("stdlib.h" include (:system-flag t) nil [151 170])
+            ("utils/threads.h" include (:system-flag t) nil [171 197])
+            ("sys/poll.h" include (:system-flag t) nil [198 219])
+            ("linux/input.h" include (:system-flag t) nil [220 244])
+            ("light_panel.h" include nil nil [245 269])
+            ("EVENT_BUFFER_SIZE" variable (:constant-flag t) nil [279 296])
+            ("DEVICE_PATH" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"/dev/input/event0\""
+                :type "char")
+                nil [307 360])
+            ("rcvKeys" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("p" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [383 391]))                  
+                :type "void")
+                nil [362 1509])
+            ("keyPowerRecoveryPanel" function (:type "void") nil [1511 1615])
+            ("getPanelLightMode" function (:type ("MIDAS_PANEL_ONFF_MODE" type (:type "class") nil nil)) nil [1618 3002])
+            ("setPanelLightMode" function
+               (:arguments 
+                  ( ("mode" variable (:type ("MIDAS_PANEL_ONFF_MODE" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3026 3053]))                  
+                :type "int")
+                nil [3004 3631])
+            ("saveMidasSettingToFts" function
+               (:arguments 
+                  ( ("key" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [3659 3675])
+                    ("value" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [3676 3694]))                  
+                :type "int")
+                nil [3633 4223])
+            ("powerPanel" function
+               (:arguments 
+                  ( ("on" variable (:type "int") (reparse-symbol arg-sub-list) [4242 4249]))                  
+                :type "void")
+                nil [4226 4378])
+            ("powerOnReoveryPanel" function (:type "void") nil [4380 4610]))          
+      :file "light_panel.c"
+      :pointmax 4613
+      :fsize 4612
+      :lastmodtime '(22242 47769 579737 737000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("EVENT_BUFFER_SIZE" . ((semantic-list "(64)" 301 . 305)))
+          )
+))
+  :file "!home!qichen!20160310_rc2!vendor!marvell!midas-tv!system!core!light_panel!libs!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

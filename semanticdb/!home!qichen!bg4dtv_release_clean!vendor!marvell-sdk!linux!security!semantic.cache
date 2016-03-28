@@ -1,0 +1,2273 @@
+;; Object security/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "security/"
+  :tables
+  (list
+    (semanticdb-table "security.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("linux/capability.h" include (:system-flag t) nil [500 529])
+            ("linux/dcache.h" include (:system-flag t) nil [530 555])
+            ("linux/module.h" include (:system-flag t) nil [556 581])
+            ("linux/init.h" include (:system-flag t) nil [582 605])
+            ("linux/kernel.h" include (:system-flag t) nil [606 631])
+            ("linux/security.h" include (:system-flag t) nil [632 659])
+            ("linux/integrity.h" include (:system-flag t) nil [660 688])
+            ("linux/ima.h" include (:system-flag t) nil [689 711])
+            ("linux/evm.h" include (:system-flag t) nil [712 734])
+            ("linux/fsnotify.h" include (:system-flag t) nil [735 762])
+            ("linux/mman.h" include (:system-flag t) nil [763 786])
+            ("linux/mount.h" include (:system-flag t) nil [787 811])
+            ("linux/personality.h" include (:system-flag t) nil [812 842])
+            ("linux/backing-dev.h" include (:system-flag t) nil [843 873])
+            ("net/flow.h" include (:system-flag t) nil [874 895])
+            ("MAX_LSM_EVM_XATTR" variable (:constant-flag t) nil [905 922])
+            ("chosen_lsm" variable
+               (:dereference 1
+                :default-value "CONFIG_DEFAULT_SECURITY"
+                :type "char")
+                nil [976 1042])
+            ("security_ops" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :type ("security_operations" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1044 1092])
+            ("default_security_ops" variable
+               (:typemodifiers ("static")
+                :default-value "{
+	.name	= \"default\",
+}"
+                :type ("security_operations" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1093 1174])
+            ("verify" function
+               (:arguments 
+                  ( ("ops" variable
+                       (:pointer 1
+                        :type ("security_operations" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1208 1240]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [1194 1365])
+            ("do_security_initcalls" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1408 1413]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [1379 1540])
+            ("security_init" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1702 1707]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [1681 1888])
+            ("reset_security_ops" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1914 1919]))                  
+                :type "void")
+                nil [1890 1962])
+            ("choose_lsm" function
+               (:arguments 
+                  ( ("str" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2020 2030]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [2002 2091])
+            ("__setup" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("choose_lsm" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2113 2124]))                  
+                :type "int")
+                nil [2092 2125])
+            ("security_module_enable" function
+               (:arguments 
+                  ( ("ops" variable
+                       (:pointer 1
+                        :type ("security_operations" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2752 2784]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [2722 2828])
+            ("register_security" function
+               (:arguments 
+                  ( ("ops" variable
+                       (:pointer 1
+                        :type ("security_operations" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3451 3483]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [3426 3724])
+            ("security_binder_set_context_mgr" function
+               (:arguments 
+                  ( ("mgr" variable
+                       (:pointer 1
+                        :type ("task_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3789 3813]))                  
+                :type "int")
+                nil [3753 3868])
+            ("security_binder_transaction" function
+               (:arguments 
+                  ( ("from" variable
+                       (:pointer 1
+                        :type ("task_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3902 3927])
+                    ("to" variable
+                       (:pointer 1
+                        :type ("task_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3928 3951]))                  
+                :type "int")
+                nil [3870 4007])
+            ("security_binder_transfer_binder" function
+               (:arguments 
+                  ( ("from" variable
+                       (:pointer 1
+                        :type ("task_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4045 4070])
+                    ("to" variable
+                       (:pointer 1
+                        :type ("task_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4071 4094]))                  
+                :type "int")
+                nil [4009 4154])
+            ("security_binder_transfer_file" function
+               (:arguments 
+                  ( ("from" variable
+                       (:pointer 1
+                        :type ("task_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4190 4215])
+                    ("to" variable
+                       (:pointer 1
+                        :type ("task_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4216 4239])
+                    ("file" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4240 4258]))                  
+                :type "int")
+                nil [4156 4322])
+            ("security_ptrace_access_check" function
+               (:arguments 
+                  ( ("child" variable
+                       (:pointer 1
+                        :type ("task_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4357 4383])
+                    ("mode" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [4384 4402]))                  
+                :type "int")
+                nil [4324 4581])
+            ("security_ptrace_traceme" function
+               (:arguments 
+                  ( ("parent" variable
+                       (:pointer 1
+                        :type ("task_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4611 4638]))                  
+                :type "int")
+                nil [4583 4797])
+            ("security_capget" function
+               (:arguments 
+                  ( ("target" variable
+                       (:pointer 1
+                        :type ("task_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4819 4846])
+                    ("effective" variable
+                       (:pointer 1
+                        :type ("kernel_cap_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4854 4878])
+                    ("inheritable" variable
+                       (:pointer 1
+                        :type ("kernel_cap_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4886 4912])
+                    ("permitted" variable
+                       (:pointer 1
+                        :type ("kernel_cap_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4920 4944]))                  
+                :type "int")
+                nil [4799 5021])
+            ("security_capset" function
+               (:arguments 
+                  ( ("" variable
+                       (:pointer 1
+                        :type ("cred" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5043 5059])
+                    ("old" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("cred" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5061 5084])
+                    ("effective" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("kernel_cap_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5091 5121])
+                    ("inheritable" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("kernel_cap_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5128 5160])
+                    ("permitted" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("kernel_cap_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5167 5197]))                  
+                :type "int")
+                nil [5023 5284])
+            ("security_capable" function
+               (:arguments 
+                  ( ("cred" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("cred" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5307 5331])
+                    ("ns" variable
+                       (:pointer 1
+                        :type ("user_namespace" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5332 5358])
+                    ("cap" variable (:type "int") (reparse-symbol arg-sub-list) [5366 5374]))                  
+                :type "int")
+                nil [5286 5444])
+            ("security_capable_noaudit" function
+               (:arguments 
+                  ( ("cred" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("cred" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5475 5499])
+                    ("ns" variable
+                       (:pointer 1
+                        :type ("user_namespace" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5500 5526])
+                    ("cap" variable (:type "int") (reparse-symbol arg-sub-list) [5535 5543]))                  
+                :type "int")
+                nil [5446 5615])
+            ("security_quotactl" function
+               (:arguments 
+                  ( ("cmds" variable (:type "int") (reparse-symbol arg-sub-list) [5639 5648])
+                    ("type" variable (:type "int") (reparse-symbol arg-sub-list) [5649 5658])
+                    ("id" variable (:type "int") (reparse-symbol arg-sub-list) [5659 5666])
+                    ("sb" variable
+                       (:pointer 1
+                        :type ("super_block" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5667 5690]))                  
+                :type "int")
+                nil [5617 5746])
+            ("security_quota_on" function
+               (:arguments 
+                  ( ("dentry" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5770 5792]))                  
+                :type "int")
+                nil [5748 5836])
+            ("security_syslog" function
+               (:arguments 
+                  ( ("type" variable (:type "int") (reparse-symbol arg-sub-list) [5858 5867]))                  
+                :type "int")
+                nil [5838 5907])
+            ("security_settime" function
+               (:arguments 
+                  ( ("ts" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("timespec" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5930 5956])
+                    ("tz" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("timezone" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5957 5983]))                  
+                :type "int")
+                nil [5909 6026])
+            ("security_vm_enough_memory_mm" function
+               (:arguments 
+                  ( ("mm" variable
+                       (:pointer 1
+                        :type ("mm_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6061 6082])
+                    ("pages" variable (:type "long") (reparse-symbol arg-sub-list) [6083 6094]))                  
+                :type "int")
+                nil [6028 6149])
+            ("security_bprm_set_creds" function
+               (:arguments 
+                  ( ("bprm" variable
+                       (:pointer 1
+                        :type ("linux_binprm" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6179 6205]))                  
+                :type "int")
+                nil [6151 6253])
+            ("security_bprm_check" function
+               (:arguments 
+                  ( ("bprm" variable
+                       (:pointer 1
+                        :type ("linux_binprm" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6279 6305]))                  
+                :type "int")
+                nil [6255 6422])
+            ("security_bprm_committing_creds" function
+               (:arguments 
+                  ( ("bprm" variable
+                       (:pointer 1
+                        :type ("linux_binprm" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6460 6486]))                  
+                :type "void")
+                nil [6424 6534])
+            ("security_bprm_committed_creds" function
+               (:arguments 
+                  ( ("bprm" variable
+                       (:pointer 1
+                        :type ("linux_binprm" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6571 6597]))                  
+                :type "void")
+                nil [6536 6644])
+            ("security_bprm_secureexec" function
+               (:arguments 
+                  ( ("bprm" variable
+                       (:pointer 1
+                        :type ("linux_binprm" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6675 6701]))                  
+                :type "int")
+                nil [6646 6750])
+            ("security_sb_alloc" function
+               (:arguments 
+                  ( ("sb" variable
+                       (:pointer 1
+                        :type ("super_block" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6774 6797]))                  
+                :type "int")
+                nil [6752 6846])
+            ("security_sb_free" function
+               (:arguments 
+                  ( ("sb" variable
+                       (:pointer 1
+                        :type ("super_block" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6870 6893]))                  
+                :type "void")
+                nil [6848 6934])
+            ("security_sb_copy_data" function
+               (:arguments 
+                  ( ("orig" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [6962 6973])
+                    ("copy" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [6974 6985]))                  
+                :type "int")
+                nil [6936 7037])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("security_sb_copy_data" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7052 7074]))                  
+                :type "int")
+                nil [7038 7075])
+            ("security_sb_remount" function
+               (:arguments 
+                  ( ("sb" variable
+                       (:pointer 1
+                        :type ("super_block" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7101 7124])
+                    ("data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [7125 7136]))                  
+                :type "int")
+                nil [7077 7184])
+            ("security_sb_kern_mount" function
+               (:arguments 
+                  ( ("sb" variable
+                       (:pointer 1
+                        :type ("super_block" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7213 7236])
+                    ("flags" variable (:type "int") (reparse-symbol arg-sub-list) [7237 7247])
+                    ("data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [7248 7259]))                  
+                :type "int")
+                nil [7186 7317])
+            ("security_sb_show_options" function
+               (:arguments 
+                  ( ("m" variable
+                       (:pointer 1
+                        :type ("seq_file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7348 7367])
+                    ("sb" variable
+                       (:pointer 1
+                        :type ("super_block" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7368 7391]))                  
+                :type "int")
+                nil [7319 7441])
+            ("security_sb_statfs" function
+               (:arguments 
+                  ( ("dentry" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7466 7488]))                  
+                :type "int")
+                nil [7443 7533])
+            ("security_sb_mount" function
+               (:arguments 
+                  ( ("dev_name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [7557 7578])
+                    ("path" variable
+                       (:pointer 1
+                        :type ("path" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7579 7597])
+                    ("type" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [7621 7638])
+                    ("flags" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [7639 7659])
+                    ("data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [7660 7671]))                  
+                :type "int")
+                nil [7535 7742])
+            ("security_sb_umount" function
+               (:arguments 
+                  ( ("mnt" variable
+                       (:pointer 1
+                        :type ("vfsmount" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7767 7788])
+                    ("flags" variable (:type "int") (reparse-symbol arg-sub-list) [7789 7799]))                  
+                :type "int")
+                nil [7744 7848])
+            ("security_sb_pivotroot" function
+               (:arguments 
+                  ( ("old_path" variable
+                       (:pointer 1
+                        :type ("path" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7876 7898])
+                    ("new_path" variable
+                       (:pointer 1
+                        :type ("path" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7899 7921]))                  
+                :type "int")
+                nil [7850 7981])
+            ("security_sb_set_mnt_opts" function
+               (:arguments 
+                  ( ("sb" variable
+                       (:pointer 1
+                        :type ("super_block" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8012 8035])
+                    ("opts" variable
+                       (:pointer 1
+                        :type ("security_mnt_opts" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8040 8071])
+                    ("kern_flags" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [8076 8101])
+                    ("set_kern_flags" variable
+                       (:pointer 1
+                        :type "unsigned long")
+                        (reparse-symbol arg-sub-list) [8106 8136]))                  
+                :type "int")
+                nil [7983 8223])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("security_sb_set_mnt_opts" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8238 8263]))                  
+                :type "int")
+                nil [8224 8264])
+            ("security_sb_clone_mnt_opts" function
+               (:arguments 
+                  ( ("oldsb" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("super_block" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8297 8329])
+                    ("newsb" variable
+                       (:pointer 1
+                        :type ("super_block" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8334 8360]))                  
+                :type "int")
+                nil [8266 8419])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("security_sb_clone_mnt_opts" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8434 8461]))                  
+                :type "int")
+                nil [8420 8462])
+            ("security_sb_parse_opts_str" function
+               (:arguments 
+                  ( ("options" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [8495 8509])
+                    ("opts" variable
+                       (:pointer 1
+                        :type ("security_mnt_opts" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8510 8541]))                  
+                :type "int")
+                nil [8464 8601])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("security_sb_parse_opts_str" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8616 8643]))                  
+                :type "int")
+                nil [8602 8644])
+            ("security_inode_alloc" function
+               (:arguments 
+                  ( ("inode" variable
+                       (:pointer 1
+                        :type ("inode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8671 8691]))                  
+                :type "int")
+                nil [8646 8773])
+            ("security_inode_free" function
+               (:arguments 
+                  ( ("inode" variable
+                       (:pointer 1
+                        :type ("inode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8800 8820]))                  
+                :type "void")
+                nil [8775 8897])
+            ("security_dentry_init_security" function
+               (:arguments 
+                  ( ("dentry" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8933 8955])
+                    ("mode" variable (:type "int") (reparse-symbol arg-sub-list) [8956 8965])
+                    ("name" variable
+                       (:pointer 1
+                        :type ("qstr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8971 8989])
+                    ("ctx" variable
+                       (:pointer 2
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [8990 9001])
+                    ("ctxlen" variable
+                       (:pointer 1
+                        :type ("u32" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [9007 9019]))                  
+                :type "int")
+                nil [8899 9107])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("security_dentry_init_security" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9122 9152]))                  
+                :type "int")
+                nil [9108 9153])
+            ("security_inode_init_security" function
+               (:arguments 
+                  ( ("inode" variable
+                       (:pointer 1
+                        :type ("inode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9188 9208])
+                    ("dir" variable
+                       (:pointer 1
+                        :type ("inode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9209 9227])
+                    ("qstr" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("qstr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9233 9257])
+                    ("initxattrs" variable
+                       (:constant-flag t
+                        :type ("initxattrs" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [9263 9291])
+                    ("fs_data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [9292 9306]))                  
+                :type "int")
+                nil [9155 10082])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("security_inode_init_security" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10097 10126]))                  
+                :type "int")
+                nil [10083 10127])
+            ("security_old_inode_init_security" function
+               (:arguments 
+                  ( ("inode" variable
+                       (:pointer 1
+                        :type ("inode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10166 10186])
+                    ("dir" variable
+                       (:pointer 1
+                        :type ("inode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10187 10205])
+                    ("qstr" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("qstr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10215 10239])
+                    ("name" variable
+                       (:pointer 2
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [10240 10258])
+                    ("value" variable
+                       (:pointer 2
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [10268 10281])
+                    ("len" variable
+                       (:pointer 1
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [10282 10294]))                  
+                :type "int")
+                nil [10129 10440])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("security_old_inode_init_security" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10455 10488]))                  
+                :type "int")
+                nil [10441 10489])
+            ("security_inode_create" function
+               (:arguments 
+                  ( ("dir" variable
+                       (:pointer 1
+                        :type ("inode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [12878 12896])
+                    ("dentry" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [12897 12919])
+                    ("mode" variable (:type ("umode_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12920 12933]))                  
+                :type "int")
+                nil [12852 13036])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("security_inode_create" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [13055 13077]))                  
+                :type "int")
+                nil [13037 13078])
+            ("security_inode_link" function
+               (:arguments 
+                  ( ("old_dentry" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13104 13130])
+                    ("dir" variable
+                       (:pointer 1
+                        :type ("inode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13131 13149])
+                    ("new_dentry" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13154 13180]))                  
+                :type "int")
+                nil [13080 13307])
+            ("security_inode_unlink" function
+               (:arguments 
+                  ( ("dir" variable
+                       (:pointer 1
+                        :type ("inode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13335 13353])
+                    ("dentry" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13354 13376]))                  
+                :type "int")
+                nil [13309 13485])
+            ("security_inode_symlink" function
+               (:arguments 
+                  ( ("dir" variable
+                       (:pointer 1
+                        :type ("inode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13514 13532])
+                    ("dentry" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13533 13555])
+                    ("old_name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [13563 13584]))                  
+                :type "int")
+                nil [13487 13692])
+            ("security_inode_mkdir" function
+               (:arguments 
+                  ( ("dir" variable
+                       (:pointer 1
+                        :type ("inode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13719 13737])
+                    ("dentry" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13738 13760])
+                    ("mode" variable (:type ("umode_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [13761 13774]))                  
+                :type "int")
+                nil [13694 13876])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("security_inode_mkdir" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [13895 13916]))                  
+                :type "int")
+                nil [13877 13917])
+            ("security_inode_rmdir" function
+               (:arguments 
+                  ( ("dir" variable
+                       (:pointer 1
+                        :type ("inode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13944 13962])
+                    ("dentry" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13963 13985]))                  
+                :type "int")
+                nil [13919 14093])
+            ("security_inode_mknod" function
+               (:arguments 
+                  ( ("dir" variable
+                       (:pointer 1
+                        :type ("inode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [14120 14138])
+                    ("dentry" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [14139 14161])
+                    ("mode" variable (:type ("umode_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [14162 14175])
+                    ("dev" variable (:type ("dev_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [14176 14186]))                  
+                :type "int")
+                nil [14095 14293])
+            ("security_inode_rename" function
+               (:arguments 
+                  ( ("old_dir" variable
+                       (:pointer 1
+                        :type ("inode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [14321 14343])
+                    ("old_dentry" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [14344 14370])
+                    ("new_dir" variable
+                       (:pointer 1
+                        :type ("inode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [14377 14399])
+                    ("new_dentry" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [14400 14426]))                  
+                :type "int")
+                nil [14295 14655])
+            ("security_inode_readlink" function
+               (:arguments 
+                  ( ("dentry" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [14685 14707]))                  
+                :type "int")
+                nil [14657 14813])
+            ("security_inode_follow_link" function
+               (:arguments 
+                  ( ("dentry" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [14846 14868])
+                    ("nd" variable
+                       (:pointer 1
+                        :type ("nameidata" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [14869 14890]))                  
+                :type "int")
+                nil [14815 15003])
+            ("security_inode_permission" function
+               (:arguments 
+                  ( ("inode" variable
+                       (:pointer 1
+                        :type ("inode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [15035 15055])
+                    ("mask" variable (:type "int") (reparse-symbol arg-sub-list) [15056 15065]))                  
+                :type "int")
+                nil [15005 15168])
+            ("security_inode_setattr" function
+               (:arguments 
+                  ( ("dentry" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [15197 15219])
+                    ("attr" variable
+                       (:pointer 1
+                        :type ("iattr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [15220 15239]))                  
+                :type "int")
+                nil [15170 15425])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("security_inode_setattr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15444 15467]))                  
+                :type "int")
+                nil [15426 15468])
+            ("security_inode_getattr" function
+               (:arguments 
+                  ( ("mnt" variable
+                       (:pointer 1
+                        :type ("vfsmount" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [15497 15518])
+                    ("dentry" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [15519 15541]))                  
+                :type "int")
+                nil [15470 15651])
+            ("security_inode_setxattr" function
+               (:arguments 
+                  ( ("dentry" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [15681 15703])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [15704 15721])
+                    ("value" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [15729 15747])
+                    ("size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15748 15760])
+                    ("flags" variable (:type "int") (reparse-symbol arg-sub-list) [15761 15771]))                  
+                :type "int")
+                nil [15653 16070])
+            ("security_inode_post_setxattr" function
+               (:arguments 
+                  ( ("dentry" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [16106 16128])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [16129 16146])
+                    ("value" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [16153 16171])
+                    ("size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [16172 16184])
+                    ("flags" variable (:type "int") (reparse-symbol arg-sub-list) [16185 16195]))                  
+                :type "void")
+                nil [16072 16376])
+            ("security_inode_getxattr" function
+               (:arguments 
+                  ( ("dentry" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [16406 16428])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [16429 16446]))                  
+                :type "int")
+                nil [16378 16558])
+            ("security_inode_listxattr" function
+               (:arguments 
+                  ( ("dentry" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [16589 16611]))                  
+                :type "int")
+                nil [16560 16718])
+            ("security_inode_removexattr" function
+               (:arguments 
+                  ( ("dentry" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [16751 16773])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [16774 16791]))                  
+                :type "int")
+                nil [16720 17053])
+            ("security_inode_need_killpriv" function
+               (:arguments 
+                  ( ("dentry" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [17088 17110]))                  
+                :type "int")
+                nil [17055 17165])
+            ("security_inode_killpriv" function
+               (:arguments 
+                  ( ("dentry" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [17195 17217]))                  
+                :type "int")
+                nil [17167 17267])
+            ("security_inode_getsecurity" function
+               (:arguments 
+                  ( ("inode" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("inode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [17300 17326])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [17327 17344])
+                    ("buffer" variable
+                       (:pointer 2
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [17345 17359])
+                    ("alloc" variable (:type "bool") (reparse-symbol arg-sub-list) [17360 17371]))                  
+                :type "int")
+                nil [17269 17500])
+            ("security_inode_setsecurity" function
+               (:arguments 
+                  ( ("inode" variable
+                       (:pointer 1
+                        :type ("inode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [17533 17553])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [17554 17571])
+                    ("value" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [17572 17590])
+                    ("size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [17591 17603])
+                    ("flags" variable (:type "int") (reparse-symbol arg-sub-list) [17604 17614]))                  
+                :type "int")
+                nil [17502 17748])
+            ("security_inode_listsecurity" function
+               (:arguments 
+                  ( ("inode" variable
+                       (:pointer 1
+                        :type ("inode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [17782 17802])
+                    ("buffer" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [17803 17816])
+                    ("buffer_size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [17817 17836]))                  
+                :type "int")
+                nil [17750 17956])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("security_inode_listsecurity" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [17971 17999]))                  
+                :type "int")
+                nil [17957 18000])
+            ("security_inode_getsecid" function
+               (:arguments 
+                  ( ("inode" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("inode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [18031 18057])
+                    ("secid" variable
+                       (:pointer 1
+                        :type ("u32" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [18058 18069]))                  
+                :type "void")
+                nil [18002 18118])
+            ("security_file_permission" function
+               (:arguments 
+                  ( ("file" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [18149 18167])
+                    ("mask" variable (:type "int") (reparse-symbol arg-sub-list) [18168 18177]))                  
+                :type "int")
+                nil [18120 18302])
+            ("security_file_alloc" function
+               (:arguments 
+                  ( ("file" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [18328 18346]))                  
+                :type "int")
+                nil [18304 18399])
+            ("security_file_free" function
+               (:arguments 
+                  ( ("file" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [18425 18443]))                  
+                :type "void")
+                nil [18401 18488])
+            ("security_file_ioctl" function
+               (:arguments 
+                  ( ("file" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [18514 18532])
+                    ("cmd" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [18533 18550])
+                    ("arg" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [18551 18569]))                  
+                :type "int")
+                nil [18490 18623])
+            ("mmap_prot" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("file" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [18663 18681])
+                    ("prot" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [18682 18701]))                  
+                :type "unsigned long")
+                nil [18625 19581])
+            ("security_mmap_file" function
+               (:arguments 
+                  ( ("file" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [19606 19624])
+                    ("prot" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [19625 19644])
+                    ("flags" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [19648 19668]))                  
+                :type "int")
+                nil [19583 19820])
+            ("security_mmap_addr" function
+               (:arguments 
+                  ( ("addr" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [19845 19864]))                  
+                :type "int")
+                nil [19822 19907])
+            ("security_file_mprotect" function
+               (:arguments 
+                  ( ("vma" variable
+                       (:pointer 1
+                        :type ("vm_area_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [19936 19963])
+                    ("reqprot" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [19964 19986])
+                    ("prot" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [19994 20013]))                  
+                :type "int")
+                nil [19909 20074])
+            ("security_file_lock" function
+               (:arguments 
+                  ( ("file" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [20099 20117])
+                    ("cmd" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [20118 20135]))                  
+                :type "int")
+                nil [20076 20183])
+            ("security_file_fcntl" function
+               (:arguments 
+                  ( ("file" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [20209 20227])
+                    ("cmd" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [20228 20245])
+                    ("arg" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [20246 20264]))                  
+                :type "int")
+                nil [20185 20318])
+            ("security_file_set_fowner" function
+               (:arguments 
+                  ( ("file" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [20349 20367]))                  
+                :type "int")
+                nil [20320 20416])
+            ("security_file_send_sigiotask" function
+               (:arguments 
+                  ( ("tsk" variable
+                       (:pointer 1
+                        :type ("task_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [20451 20475])
+                    ("fown" variable
+                       (:pointer 1
+                        :type ("fown_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [20482 20507])
+                    ("sig" variable (:type "int") (reparse-symbol arg-sub-list) [20508 20516]))                  
+                :type "int")
+                nil [20418 20579])
+            ("security_file_receive" function
+               (:arguments 
+                  ( ("file" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [20607 20625]))                  
+                :type "int")
+                nil [20581 20671])
+            ("security_file_open" function
+               (:arguments 
+                  ( ("file" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [20696 20714])
+                    ("cred" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("cred" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [20715 20739]))                  
+                :type "int")
+                nil [20673 20862])
+            ("security_task_create" function
+               (:arguments 
+                  ( ("clone_flags" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [20889 20915]))                  
+                :type "int")
+                nil [20864 20967])
+            ("security_task_free" function
+               (:arguments 
+                  ( ("task" variable
+                       (:pointer 1
+                        :type ("task_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [20993 21018]))                  
+                :type "void")
+                nil [20969 21120])
+            ("security_cred_alloc_blank" function
+               (:arguments 
+                  ( ("cred" variable
+                       (:pointer 1
+                        :type ("cred" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [21152 21170])
+                    ("gfp" variable (:type ("gfp_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [21171 21181]))                  
+                :type "int")
+                nil [21122 21236])
+            ("security_cred_free" function
+               (:arguments 
+                  ( ("cred" variable
+                       (:pointer 1
+                        :type ("cred" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [21262 21280]))                  
+                :type "void")
+                nil [21238 21316])
+            ("security_prepare_creds" function
+               (:arguments 
+                  ( ("" variable
+                       (:pointer 1
+                        :type ("cred" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [21345 21361])
+                    ("old" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("cred" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [21363 21386])
+                    ("gfp" variable (:type ("gfp_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [21387 21397]))                  
+                :type "int")
+                nil [21318 21452])
+            ("security_transfer_creds" function
+               (:arguments 
+                  ( ("" variable
+                       (:pointer 1
+                        :type ("cred" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [21483 21499])
+                    ("old" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("cred" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [21501 21524]))                  
+                :type "void")
+                nil [21454 21568])
+            ("security_kernel_act_as" function
+               (:arguments 
+                  ( ("" variable
+                       (:pointer 1
+                        :type ("cred" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [21597 21613])
+                    ("secid" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [21615 21625]))                  
+                :type "int")
+                nil [21570 21678])
+            ("security_kernel_create_files_as" function
+               (:arguments 
+                  ( ("" variable
+                       (:pointer 1
+                        :type ("cred" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [21716 21732])
+                    ("inode" variable
+                       (:pointer 1
+                        :type ("inode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [21734 21754]))                  
+                :type "int")
+                nil [21680 21816])
+            ("security_kernel_module_request" function
+               (:arguments 
+                  ( ("kmod_name" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [21853 21869]))                  
+                :type "int")
+                nil [21818 21929])
+            ("security_kernel_module_from_file" function
+               (:arguments 
+                  ( ("file" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [21968 21986]))                  
+                :type "int")
+                nil [21931 22109])
+            ("security_task_fix_setuid" function
+               (:arguments 
+                  ( ("" variable
+                       (:pointer 1
+                        :type ("cred" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [22140 22156])
+                    ("old" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("cred" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [22158 22181])
+                    ("flags" variable (:type "int") (reparse-symbol arg-sub-list) [22190 22200]))                  
+                :type "int")
+                nil [22111 22260])
+            ("security_task_setpgid" function
+               (:arguments 
+                  ( ("p" variable
+                       (:pointer 1
+                        :type ("task_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [22288 22310])
+                    ("pgid" variable (:type ("pid_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [22311 22322]))                  
+                :type "int")
+                nil [22262 22371])
+            ("security_task_getpgid" function
+               (:arguments 
+                  ( ("p" variable
+                       (:pointer 1
+                        :type ("task_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [22399 22421]))                  
+                :type "int")
+                nil [22373 22464])
+            ("security_task_getsid" function
+               (:arguments 
+                  ( ("p" variable
+                       (:pointer 1
+                        :type ("task_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [22491 22513]))                  
+                :type "int")
+                nil [22466 22555])
+            ("security_task_getsecid" function
+               (:arguments 
+                  ( ("p" variable
+                       (:pointer 1
+                        :type ("task_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [22585 22607])
+                    ("secid" variable
+                       (:pointer 1
+                        :type ("u32" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [22608 22619]))                  
+                :type "void")
+                nil [22557 22663])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("security_task_getsecid" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [22678 22701]))                  
+                :type "int")
+                nil [22664 22702])
+            ("security_task_setnice" function
+               (:arguments 
+                  ( ("p" variable
+                       (:pointer 1
+                        :type ("task_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [22730 22752])
+                    ("nice" variable (:type "int") (reparse-symbol arg-sub-list) [22753 22762]))                  
+                :type "int")
+                nil [22704 22811])
+            ("security_task_setioprio" function
+               (:arguments 
+                  ( ("p" variable
+                       (:pointer 1
+                        :type ("task_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [22841 22863])
+                    ("ioprio" variable (:type "int") (reparse-symbol arg-sub-list) [22864 22875]))                  
+                :type "int")
+                nil [22813 22928])
+            ("security_task_getioprio" function
+               (:arguments 
+                  ( ("p" variable
+                       (:pointer 1
+                        :type ("task_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [22958 22980]))                  
+                :type "int")
+                nil [22930 23025])
+            ("security_task_setrlimit" function
+               (:arguments 
+                  ( ("p" variable
+                       (:pointer 1
+                        :type ("task_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [23055 23077])
+                    ("resource" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [23078 23100])
+                    ("new_rlim" variable
+                       (:pointer 1
+                        :type ("rlimit" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [23103 23127]))                  
+                :type "int")
+                nil [23027 23192])
+            ("security_task_setscheduler" function
+               (:arguments 
+                  ( ("p" variable
+                       (:pointer 1
+                        :type ("task_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [23225 23247]))                  
+                :type "int")
+                nil [23194 23295])
+            ("security_task_getscheduler" function
+               (:arguments 
+                  ( ("p" variable
+                       (:pointer 1
+                        :type ("task_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [23328 23350]))                  
+                :type "int")
+                nil [23297 23398])
+            ("security_task_movememory" function
+               (:arguments 
+                  ( ("p" variable
+                       (:pointer 1
+                        :type ("task_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [23429 23451]))                  
+                :type "int")
+                nil [23400 23497])
+            ("security_task_kill" function
+               (:arguments 
+                  ( ("p" variable
+                       (:pointer 1
+                        :type ("task_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [23522 23544])
+                    ("info" variable
+                       (:pointer 1
+                        :type ("siginfo" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [23545 23566])
+                    ("sig" variable (:type "int") (reparse-symbol arg-sub-list) [23570 23578])
+                    ("secid" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [23579 23589]))                  
+                :type "int")
+                nil [23499 23647])
+            ("security_task_wait" function
+               (:arguments 
+                  ( ("p" variable
+                       (:pointer 1
+                        :type ("task_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [23672 23694]))                  
+                :type "int")
+                nil [23649 23734])
+            ("security_task_prctl" function
+               (:arguments 
+                  ( ("option" variable (:type "int") (reparse-symbol arg-sub-list) [23760 23771])
+                    ("arg2" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [23772 23791])
+                    ("arg3" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [23792 23811])
+                    ("arg4" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [23816 23835])
+                    ("arg5" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [23836 23855]))                  
+                :type "int")
+                nil [23736 24065])
+            ("security_task_to_inode" function
+               (:arguments 
+                  ( ("p" variable
+                       (:pointer 1
+                        :type ("task_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [24095 24117])
+                    ("inode" variable
+                       (:pointer 1
+                        :type ("inode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [24118 24138]))                  
+                :type "void")
+                nil [24067 24182])
+            ("security_ipc_permission" function
+               (:arguments 
+                  ( ("ipcp" variable
+                       (:pointer 1
+                        :type ("kern_ipc_perm" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [24212 24239])
+                    ("flag" variable (:type "short") (reparse-symbol arg-sub-list) [24240 24251]))                  
+                :type "int")
+                nil [24184 24305])
+            ("security_ipc_getsecid" function
+               (:arguments 
+                  ( ("ipcp" variable
+                       (:pointer 1
+                        :type ("kern_ipc_perm" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [24334 24361])
+                    ("secid" variable
+                       (:pointer 1
+                        :type ("u32" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [24362 24373]))                  
+                :type "void")
+                nil [24307 24419])
+            ("security_msg_msg_alloc" function
+               (:arguments 
+                  ( ("msg" variable
+                       (:pointer 1
+                        :type ("msg_msg" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [24448 24468]))                  
+                :type "int")
+                nil [24421 24523])
+            ("security_msg_msg_free" function
+               (:arguments 
+                  ( ("msg" variable
+                       (:pointer 1
+                        :type ("msg_msg" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [24552 24572]))                  
+                :type "void")
+                nil [24525 24619])
+            ("security_msg_queue_alloc" function
+               (:arguments 
+                  ( ("msq" variable
+                       (:pointer 1
+                        :type ("msg_queue" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [24650 24672]))                  
+                :type "int")
+                nil [24621 24729])
+            ("security_msg_queue_free" function
+               (:arguments 
+                  ( ("msq" variable
+                       (:pointer 1
+                        :type ("msg_queue" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [24760 24782]))                  
+                :type "void")
+                nil [24731 24831])
+            ("security_msg_queue_associate" function
+               (:arguments 
+                  ( ("msq" variable
+                       (:pointer 1
+                        :type ("msg_queue" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [24866 24888])
+                    ("msqflg" variable (:type "int") (reparse-symbol arg-sub-list) [24889 24900]))                  
+                :type "int")
+                nil [24833 24960])
+            ("security_msg_queue_msgctl" function
+               (:arguments 
+                  ( ("msq" variable
+                       (:pointer 1
+                        :type ("msg_queue" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [24992 25014])
+                    ("cmd" variable (:type "int") (reparse-symbol arg-sub-list) [25015 25023]))                  
+                :type "int")
+                nil [24962 25077])
+            ("security_msg_queue_msgsnd" function
+               (:arguments 
+                  ( ("msq" variable
+                       (:pointer 1
+                        :type ("msg_queue" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [25109 25131])
+                    ("msg" variable
+                       (:pointer 1
+                        :type ("msg_msg" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [25142 25162])
+                    ("msqflg" variable (:type "int") (reparse-symbol arg-sub-list) [25163 25174]))                  
+                :type "int")
+                nil [25079 25236])
+            ("security_msg_queue_msgrcv" function
+               (:arguments 
+                  ( ("msq" variable
+                       (:pointer 1
+                        :type ("msg_queue" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [25268 25290])
+                    ("msg" variable
+                       (:pointer 1
+                        :type ("msg_msg" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [25291 25311])
+                    ("target" variable
+                       (:pointer 1
+                        :type ("task_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [25322 25349])
+                    ("type" variable (:type "long") (reparse-symbol arg-sub-list) [25350 25360])
+                    ("mode" variable (:type "int") (reparse-symbol arg-sub-list) [25361 25370]))                  
+                :type "int")
+                nil [25238 25444])
+            ("security_shm_alloc" function
+               (:arguments 
+                  ( ("shp" variable
+                       (:pointer 1
+                        :type ("shmid_kernel" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [25469 25494]))                  
+                :type "int")
+                nil [25446 25545])
+            ("security_shm_free" function
+               (:arguments 
+                  ( ("shp" variable
+                       (:pointer 1
+                        :type ("shmid_kernel" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [25570 25595]))                  
+                :type "void")
+                nil [25547 25638])
+            ("security_shm_associate" function
+               (:arguments 
+                  ( ("shp" variable
+                       (:pointer 1
+                        :type ("shmid_kernel" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [25667 25692])
+                    ("shmflg" variable (:type "int") (reparse-symbol arg-sub-list) [25693 25704]))                  
+                :type "int")
+                nil [25640 25758])
+            ("security_shm_shmctl" function
+               (:arguments 
+                  ( ("shp" variable
+                       (:pointer 1
+                        :type ("shmid_kernel" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [25784 25809])
+                    ("cmd" variable (:type "int") (reparse-symbol arg-sub-list) [25810 25818]))                  
+                :type "int")
+                nil [25760 25866])
+            ("security_shm_shmat" function
+               (:arguments 
+                  ( ("shp" variable
+                       (:pointer 1
+                        :type ("shmid_kernel" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [25891 25916])
+                    ("__user" variable (:type "char") (reparse-symbol arg-sub-list) [25917 25930])
+                    ("" variable (:type ("shmaddr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [25930 25938])
+                    ("shmflg" variable (:type "int") (reparse-symbol arg-sub-list) [25939 25950]))                  
+                :type "int")
+                nil [25868 26009])
+            ("security_sem_alloc" function
+               (:arguments 
+                  ( ("sma" variable
+                       (:pointer 1
+                        :type ("sem_array" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [26034 26056]))                  
+                :type "int")
+                nil [26011 26107])
+            ("security_sem_free" function
+               (:arguments 
+                  ( ("sma" variable
+                       (:pointer 1
+                        :type ("sem_array" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [26132 26154]))                  
+                :type "void")
+                nil [26109 26197])
+            ("security_sem_associate" function
+               (:arguments 
+                  ( ("sma" variable
+                       (:pointer 1
+                        :type ("sem_array" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [26226 26248])
+                    ("semflg" variable (:type "int") (reparse-symbol arg-sub-list) [26249 26260]))                  
+                :type "int")
+                nil [26199 26314])
+            ("security_sem_semctl" function
+               (:arguments 
+                  ( ("sma" variable
+                       (:pointer 1
+                        :type ("sem_array" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [26340 26362])
+                    ("cmd" variable (:type "int") (reparse-symbol arg-sub-list) [26363 26371]))                  
+                :type "int")
+                nil [26316 26419])
+            ("security_sem_semop" function
+               (:arguments 
+                  ( ("sma" variable
+                       (:pointer 1
+                        :type ("sem_array" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [26444 26466])
+                    ("sops" variable
+                       (:pointer 1
+                        :type ("sembuf" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [26467 26487])
+                    ("nsops" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [26491 26506])
+                    ("alter" variable (:type "int") (reparse-symbol arg-sub-list) [26507 26517]))                  
+                :type "int")
+                nil [26421 26579])
+            ("security_d_instantiate" function
+               (:arguments 
+                  ( ("dentry" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [26609 26631])
+                    ("inode" variable
+                       (:pointer 1
+                        :type ("inode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [26632 26652]))                  
+                :type "void")
+                nil [26581 26754])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("security_d_instantiate" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [26769 26792]))                  
+                :type "int")
+                nil [26755 26793])
+            ("security_getprocattr" function
+               (:arguments 
+                  ( ("p" variable
+                       (:pointer 1
+                        :type ("task_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [26820 26842])
+                    ("name" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [26843 26854])
+                    ("value" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [26855 26868]))                  
+                :type "int")
+                nil [26795 26923])
+            ("security_setprocattr" function
+               (:arguments 
+                  ( ("p" variable
+                       (:pointer 1
+                        :type ("task_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [26950 26972])
+                    ("name" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [26973 26984])
+                    ("value" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [26985 26997])
+                    ("size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [26998 27010]))                  
+                :type "int")
+                nil [26925 27071])
+            ("security_netlink_send" function
+               (:arguments 
+                  ( ("sk" variable
+                       (:pointer 1
+                        :type ("sock" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [27099 27115])
+                    ("skb" variable
+                       (:pointer 1
+                        :type ("sk_buff" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [27116 27136]))                  
+                :type "int")
+                nil [27073 27185])
+            ("security_ismaclabel" function
+               (:arguments 
+                  ( ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [27211 27228]))                  
+                :type "int")
+                nil [27187 27272])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("security_ismaclabel" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [27287 27307]))                  
+                :type "int")
+                nil [27273 27308])
+            ("security_secid_to_secctx" function
+               (:arguments 
+                  ( ("secid" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [27339 27349])
+                    ("secdata" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [27350 27365])
+                    ("seclen" variable
+                       (:pointer 1
+                        :type ("u32" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [27366 27378]))                  
+                :type "int")
+                nil [27310 27445])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("security_secid_to_secctx" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [27460 27485]))                  
+                :type "int")
+                nil [27446 27486])
+            ("security_secctx_to_secid" function
+               (:arguments 
+                  ( ("secdata" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [27517 27537])
+                    ("seclen" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [27538 27549])
+                    ("secid" variable
+                       (:pointer 1
+                        :type ("u32" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [27550 27561]))                  
+                :type "int")
+                nil [27488 27628])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("security_secctx_to_secid" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [27643 27668]))                  
+                :type "int")
+                nil [27629 27669])
+            ("security_release_secctx" function
+               (:arguments 
+                  ( ("secdata" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [27700 27714])
+                    ("seclen" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [27715 27726]))                  
+                :type "void")
+                nil [27671 27778])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("security_release_secctx" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [27793 27817]))                  
+                :type "int")
+                nil [27779 27818])
+            ("security_inode_notifysecctx" function
+               (:arguments 
+                  ( ("inode" variable
+                       (:pointer 1
+                        :type ("inode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [27852 27872])
+                    ("ctx" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [27873 27883])
+                    ("ctxlen" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [27884 27895]))                  
+                :type "int")
+                nil [27820 27961])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("security_inode_notifysecctx" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [27976 28004]))                  
+                :type "int")
+                nil [27962 28005])
+            ("security_inode_setsecctx" function
+               (:arguments 
+                  ( ("dentry" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [28036 28058])
+                    ("ctx" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [28059 28069])
+                    ("ctxlen" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [28070 28081]))                  
+                :type "int")
+                nil [28007 28145])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("security_inode_setsecctx" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [28160 28185]))                  
+                :type "int")
+                nil [28146 28186])
+            ("security_inode_getsecctx" function
+               (:arguments 
+                  ( ("inode" variable
+                       (:pointer 1
+                        :type ("inode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [28217 28237])
+                    ("ctx" variable
+                       (:pointer 2
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [28238 28249])
+                    ("ctxlen" variable
+                       (:pointer 1
+                        :type ("u32" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [28250 28262]))                  
+                :type "int")
+                nil [28188 28325])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("security_inode_getsecctx" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [28340 28365]))                  
+                :type "int")
+                nil [28326 28366]))          
+      :file "security.c"
+      :pointmax 37112
+      :fsize 37111
+      :lastmodtime '(21971 11103 93761 822000)
+      :unmatched-syntax '((punctuation 25929 . 25930) (NEW 22153 . 22156) (NEW 21729 . 21732) (NEW 21610 . 21613) (NEW 21496 . 21499) (NEW 21358 . 21361) (NEW 5056 . 5059) (INT 3422 . 3425) (INT 2718 . 2721) (string 2100 . 2111) (INT 1998 . 2001) (STATIC 1991 . 1997) (INT 1677 . 1680) (VOID 1374 . 1378) (STATIC 1367 . 1373) (INT 1190 . 1193) (INLINE 1183 . 1189) (STATIC 1176 . 1182) (symbol 965 . 975) (STATIC 958 . 964))
+      :lexical-table 
+        '(("MAX_LSM_EVM_XATTR" . ((number "2" 923 . 924)))
+          )
+))
+  :file "!home!qichen!bg4dtv_release_clean!vendor!marvell-sdk!linux!security!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

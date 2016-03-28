@@ -71,14 +71,14 @@
     {\"adckey task\", mv_sm_adckey_task, NULL, 0, 1000},
 #endif
 #ifdef POHENABLE
-    {\"poh task\", mv_sm_poh_task, NULL, 2000, 1000},
+    {\"poh task\", mv_sm_poh_task, NULL, 100, 1000},
 #endif
 
     //{\"misc task\", mv_sm_misc_task, NULL, 0, 0},
     //{\"test task\", mv_sm_test_task, NULL, 60000, 1000},
 }"
                 :type ("sched_task_t" type (:type "class") nil nil))
-                nil [1043 2139])
+                nil [1043 2138])
             ("msgprocs" variable
                (:dereference 1
                 :typemodifiers ("static")
@@ -102,7 +102,7 @@
 	{MV_SM_ID_DEBUG, mv_sm_process_debug_msg},
 }"
                 :type ("msg_proc_t" type (:type "class") nil nil))
-                nil [2331 2813])
+                nil [2330 2812])
             ("internal_msgprocs" variable
                (:dereference 1
                 :typemodifiers ("static")
@@ -128,7 +128,7 @@
 #endif
 }"
                 :type ("msg_proc_t" type (:type "class") nil nil))
-                nil [2943 3573])
+                nil [2942 3572])
             ("isrs" variable
                (:dereference 1
                 :typemodifiers ("static")
@@ -145,7 +145,7 @@
 #endif
 }"
                 :type ("isr_func" type (:type "class") nil nil))
-                nil [3945 4138])
+                nil [3944 4137])
             ("gpio_settings" variable
                (:dereference 1
                 :typemodifiers ("static")
@@ -162,7 +162,7 @@
 #endif
 }"
                 :type ("sm_gpio_setting_t" type (:type "class") nil nil))
-                nil [4375 4838])
+                nil [4374 4837])
             ("inits" variable
                (:dereference 1
                 :typemodifiers ("static")
@@ -190,39 +190,42 @@
 	mv_sm_adckey_init,
 #endif
 	mv_sm_power_init,
+#ifdef POHENABLE
+	mv_sm_poh_init,
+#endif
 }"
                 :type ("init_func" type (:type "class") nil nil))
-                nil [5317 5673])
+                nil [5316 5713])
             ("board_peripheral_assert" function
                (:typemodifiers ("inline")
                 :arguments 
-                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [5912 5917]))                  
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [5952 5957]))                  
                 :type "void")
-                nil [5876 5972])
+                nil [5916 6101])
             ("board_peripheral_deassert" function
                (:typemodifiers ("inline")
                 :arguments 
-                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [6012 6017]))                  
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [6141 6146]))                  
                 :type "void")
-                nil [5974 6072])
+                nil [6103 6201])
             ("board_soc_poweron" function
                (:typemodifiers ("inline")
                 :arguments 
-                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [6104 6109]))                  
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [6233 6238]))                  
                 :type "void")
-                nil [6074 6164])
+                nil [6203 6293])
             ("board_soc_poweroff" function
                (:typemodifiers ("inline")
                 :arguments 
-                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [6197 6202]))                  
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [6326 6331]))                  
                 :type "void")
-                nil [6166 6257])
+                nil [6295 6386])
             ("board_soc_power_status" function
                (:typemodifiers ("inline")
                 :arguments 
-                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [6295 6300]))                  
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [6424 6429]))                  
                 :type ("INT32" type (:type "class") nil nil))
-                nil [6259 6318])
+                nil [6388 6447])
             ("get_tasks" function
                (:pointer 1
                 :typemodifiers ("inline")
@@ -230,9 +233,9 @@
                   ( ("num" variable
                        (:pointer 1
                         :type ("INT32" type (:type "class") nil nil))
-                        (reparse-symbol arg-sub-list) [6468 6479]))                  
+                        (reparse-symbol arg-sub-list) [6597 6608]))                  
                 :type ("sched_task_t" type (:type "class") nil nil))
-                nil [6436 6544])
+                nil [6565 6673])
             ("get_msg_procs" function
                (:pointer 1
                 :typemodifiers ("inline")
@@ -240,9 +243,9 @@
                   ( ("num" variable
                        (:pointer 1
                         :type ("INT32" type (:type "class") nil nil))
-                        (reparse-symbol arg-sub-list) [6580 6591]))                  
+                        (reparse-symbol arg-sub-list) [6709 6720]))                  
                 :type ("msg_proc_t" type (:type "class") nil nil))
-                nil [6546 6660])
+                nil [6675 6789])
             ("get_internal_msg_procs" function
                (:pointer 1
                 :typemodifiers ("inline")
@@ -250,9 +253,9 @@
                   ( ("num" variable
                        (:pointer 1
                         :type ("INT32" type (:type "class") nil nil))
-                        (reparse-symbol arg-sub-list) [6705 6716]))                  
+                        (reparse-symbol arg-sub-list) [6834 6845]))                  
                 :type ("msg_proc_t" type (:type "class") nil nil))
-                nil [6662 6803])
+                nil [6791 6932])
             ("get_isrs" function
                (:pointer 1
                 :typemodifiers ("inline")
@@ -260,9 +263,9 @@
                   ( ("num" variable
                        (:pointer 1
                         :type ("INT32" type (:type "class") nil nil))
-                        (reparse-symbol arg-sub-list) [6832 6843]))                  
+                        (reparse-symbol arg-sub-list) [6961 6972]))                  
                 :type ("isr_func" type (:type "class") nil nil))
-                nil [6805 6902])
+                nil [6934 7031])
             ("get_gpio_settings" function
                (:pointer 1
                 :typemodifiers ("inline")
@@ -270,9 +273,9 @@
                   ( ("num" variable
                        (:pointer 1
                         :type ("INT32" type (:type "class") nil nil))
-                        (reparse-symbol arg-sub-list) [6949 6960]))                  
+                        (reparse-symbol arg-sub-list) [7078 7089]))                  
                 :type ("sm_gpio_setting_t" type (:type "class") nil nil))
-                nil [6904 7046])
+                nil [7033 7175])
             ("get_inits" function
                (:pointer 1
                 :typemodifiers ("inline")
@@ -280,21 +283,21 @@
                   ( ("num" variable
                        (:pointer 1
                         :type ("INT32" type (:type "class") nil nil))
-                        (reparse-symbol arg-sub-list) [7077 7088]))                  
+                        (reparse-symbol arg-sub-list) [7206 7217]))                  
                 :type ("init_func" type (:type "class") nil nil))
-                nil [7048 7150]))          
+                nil [7177 7279]))          
       :file "platform_config.c"
-      :pointmax 7151
-      :fsize 7150
-      :lastmodtime '(22175 9301 733862 849000)
+      :pointmax 7280
+      :fsize 7279
+      :lastmodtime '(22223 56955 659397 91000)
       :unmatched-syntax nil)
     (semanticdb-table "sm_poh.c"
       :major-mode 'c-mode
       :tags nil
       :file "sm_poh.c"
       :pointmax 4789
-      :fsize 4788
-      :lastmodtime '(22157 61766 258030 683000)
+      :fsize 4967
+      :lastmodtime '(22193 45085 378863 403000)
       :unmatched-syntax nil)
     (semanticdb-table "sm_adckey.c"
       :major-mode 'c-mode
@@ -302,7 +305,7 @@
       :file "sm_adckey.c"
       :pointmax 8223
       :fsize 8572
-      :lastmodtime '(22157 61800 690029 579000)
+      :lastmodtime '(22239 55512 893797 821000)
       :unmatched-syntax nil))
   :file "!home!qichen!bg4dtv_release_clean!vendor!marvell-sdk!MV88DE3100_SDK!MV88DE3100_Tools!bsp!sm_rom!customization!bg4dtv_mk!source!semantic.cache"
   :semantic-tag-version "2.0"

@@ -1,0 +1,88 @@
+;; Object libs/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "libs/"
+  :tables
+  (list
+    (semanticdb-table "light_panel.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("sys/types.h" include (:system-flag t) nil [1 23])
+            ("sys/stat.h" include (:system-flag t) nil [24 45])
+            ("fcntl.h" include (:system-flag t) nil [46 64])
+            ("string.h" include (:system-flag t) nil [65 84])
+            ("cutils/log.h" include (:system-flag t) nil [85 108])
+            ("stdio.h" include (:system-flag t) nil [109 127])
+            ("sys/ioctl.h" include (:system-flag t) nil [128 150])
+            ("stdlib.h" include (:system-flag t) nil [151 170])
+            ("utils/threads.h" include (:system-flag t) nil [171 197])
+            ("sys/poll.h" include (:system-flag t) nil [198 219])
+            ("linux/input.h" include (:system-flag t) nil [220 244])
+            ("light_panel.h" include nil nil [245 269])
+            ("EVENT_BUFFER_SIZE" variable (:constant-flag t) nil [279 296])
+            ("DEVICE_PATH" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"/dev/input/event0\""
+                :type "char")
+                nil [307 360])
+            ("rcvKeys" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("p" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [383 391]))                  
+                :type "void")
+                nil [362 1509])
+            ("keyPowerRecoveryPanel" function (:type "void") nil [1511 1615])
+            ("kBootstrapKey" variable
+               (:dereference 1
+                :constant-flag t
+                :default-value "\"factory.bootstrap\""
+                :type "char")
+                nil [1617 1670])
+            ("getBootstrap" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1688 1693]))                  
+                :type "int")
+                nil [1671 2251])
+            ("getPanelLightMode" function (:type ("MIDAS_PANEL_ONFF_MODE" type (:type "class") nil nil)) nil [2253 3637])
+            ("setPanelLightMode" function
+               (:arguments 
+                  ( ("mode" variable (:type ("MIDAS_PANEL_ONFF_MODE" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3661 3688]))                  
+                :type "int")
+                nil [3639 4266])
+            ("saveMidasSettingToFts" function
+               (:arguments 
+                  ( ("key" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [4294 4310])
+                    ("value" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [4311 4329]))                  
+                :type "int")
+                nil [4268 4858])
+            ("powerPanel" function
+               (:arguments 
+                  ( ("on" variable (:type "int") (reparse-symbol arg-sub-list) [4877 4884]))                  
+                :type "void")
+                nil [4861 5013])
+            ("powerOnReoveryPanel" function (:type "void") nil [5015 5245]))          
+      :file "light_panel.c"
+      :pointmax 5248
+      :fsize 5247
+      :lastmodtime '(22242 15992 676757 360000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("EVENT_BUFFER_SIZE" . ((semantic-list "(64)" 301 . 305)))
+          )
+))
+  :file "!home!qichen!20160225_rc5!vendor!marvell!midas-tv!system!core!light_panel!libs!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

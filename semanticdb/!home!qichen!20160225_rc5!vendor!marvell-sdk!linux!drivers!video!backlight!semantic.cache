@@ -1,0 +1,937 @@
+;; Object backlight/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "backlight/"
+  :tables
+  (list
+    (semanticdb-table "ld9040.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("linux/backlight.h" include (:system-flag t) nil [441 469])
+            ("linux/delay.h" include (:system-flag t) nil [470 494])
+            ("linux/fb.h" include (:system-flag t) nil [495 516])
+            ("linux/gpio.h" include (:system-flag t) nil [517 540])
+            ("linux/interrupt.h" include (:system-flag t) nil [541 569])
+            ("linux/irq.h" include (:system-flag t) nil [570 592])
+            ("linux/kernel.h" include (:system-flag t) nil [593 618])
+            ("linux/lcd.h" include (:system-flag t) nil [619 641])
+            ("linux/module.h" include (:system-flag t) nil [642 667])
+            ("linux/regulator/consumer.h" include (:system-flag t) nil [668 705])
+            ("linux/spi/spi.h" include (:system-flag t) nil [706 732])
+            ("linux/wait.h" include (:system-flag t) nil [733 756])
+            ("ld9040_gamma.h" include nil nil [758 783])
+            ("SLEEPMSEC" variable (:constant-flag t) nil [793 802])
+            ("ENDDEF" variable (:constant-flag t) nil [819 825])
+            ("DEFMASK" variable (:constant-flag t) nil [843 850])
+            ("COMMAND_ONLY" variable (:constant-flag t) nil [868 880])
+            ("DATA_ONLY" variable (:constant-flag t) nil [895 904])
+            ("MIN_BRIGHTNESS" variable (:constant-flag t) nil [920 934])
+            ("MAX_BRIGHTNESS" variable (:constant-flag t) nil [946 960])
+            ("ld9040" type
+               (:members 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [983 1004])
+                    ("spi" variable
+                       (:pointer 1
+                        :type ("spi_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [1006 1030])
+                    ("power" variable (:type "unsigned int") (reparse-symbol classsubparts) [1032 1053])
+                    ("current_brightness" variable (:type "unsigned int") (reparse-symbol classsubparts) [1055 1089])
+                    ("ld" variable
+                       (:pointer 1
+                        :type ("lcd_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [1092 1115])
+                    ("bd" variable
+                       (:pointer 1
+                        :type ("backlight_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [1117 1146])
+                    ("lcd_pd" variable
+                       (:pointer 1
+                        :type ("lcd_platform_data" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [1148 1181])
+                    ("lock" variable (:type ("mutex" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [1184 1204])
+                    ("enabled" variable (:type "bool") (reparse-symbol classsubparts) [1206 1220]))                  
+                :type "struct")
+                nil [966 1223])
+            ("supplies" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :default-value "{
+	{ .supply = \"vdd3\", },
+	{ .supply = \"vci\", },
+}"
+                :type ("regulator_bulk_data" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1225 1323])
+            ("ld9040_regulator_enable" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("lcd" variable
+                       (:pointer 1
+                        :type ("ld9040" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1361 1380]))                  
+                :type "void")
+                nil [1325 1678])
+            ("ld9040_regulator_disable" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("lcd" variable
+                       (:pointer 1
+                        :type ("ld9040" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1717 1736]))                  
+                :type "void")
+                nil [1680 1949])
+            ("seq_swreset" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+	0x01, COMMAND_ONLY,
+	ENDDEF, 0x00
+}"
+                :type "unsigned short")
+                nil [1951 2034])
+            ("seq_user_setting" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+	0xF0, 0x5A,
+
+	DATA_ONLY, 0x5A,
+	ENDDEF, 0x00
+}"
+                :type "unsigned short")
+                nil [2036 2135])
+            ("seq_elvss_on" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+	0xB1, 0x0D,
+
+	DATA_ONLY, 0x00,
+	DATA_ONLY, 0x16,
+	ENDDEF, 0x00
+}"
+                :type "unsigned short")
+                nil [2137 2250])
+            ("seq_gtcon" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+	0xF7, 0x09,
+
+	DATA_ONLY, 0x00,
+	DATA_ONLY, 0x00,
+	ENDDEF, 0x00
+}"
+                :type "unsigned short")
+                nil [2252 2362])
+            ("seq_panel_condition" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+	0xF8, 0x05,
+
+	DATA_ONLY, 0x65,
+	DATA_ONLY, 0x96,
+	DATA_ONLY, 0x71,
+	DATA_ONLY, 0x7D,
+	DATA_ONLY, 0x19,
+	DATA_ONLY, 0x3B,
+	DATA_ONLY, 0x0D,
+	DATA_ONLY, 0x19,
+	DATA_ONLY, 0x7E,
+	DATA_ONLY, 0x0D,
+	DATA_ONLY, 0xE2,
+	DATA_ONLY, 0x00,
+	DATA_ONLY, 0x00,
+	DATA_ONLY, 0x7E,
+	DATA_ONLY, 0x7D,
+	DATA_ONLY, 0x07,
+	DATA_ONLY, 0x07,
+	DATA_ONLY, 0x20,
+	DATA_ONLY, 0x20,
+	DATA_ONLY, 0x20,
+	DATA_ONLY, 0x02,
+	DATA_ONLY, 0x02,
+	ENDDEF, 0x00
+}"
+                :type "unsigned short")
+                nil [2364 2844])
+            ("seq_gamma_set1" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+	0xF9, 0x00,
+
+	DATA_ONLY, 0xA7,
+	DATA_ONLY, 0xB4,
+	DATA_ONLY, 0xAE,
+	DATA_ONLY, 0xBF,
+	DATA_ONLY, 0x00,
+	DATA_ONLY, 0x91,
+	DATA_ONLY, 0x00,
+	DATA_ONLY, 0xB2,
+	DATA_ONLY, 0xB4,
+	DATA_ONLY, 0xAA,
+	DATA_ONLY, 0xBB,
+	DATA_ONLY, 0x00,
+	DATA_ONLY, 0xAC,
+	DATA_ONLY, 0x00,
+	DATA_ONLY, 0xB3,
+	DATA_ONLY, 0xB1,
+	DATA_ONLY, 0xAA,
+	DATA_ONLY, 0xBC,
+	DATA_ONLY, 0x00,
+	DATA_ONLY, 0xB3,
+	ENDDEF, 0x00
+}"
+                :type "unsigned short")
+                nil [2846 3285])
+            ("seq_gamma_ctrl" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+	0xFB, 0x02,
+
+	DATA_ONLY, 0x5A,
+	ENDDEF, 0x00
+}"
+                :type "unsigned short")
+                nil [3287 3384])
+            ("seq_gamma_start" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+	0xF9, COMMAND_ONLY,
+
+	ENDDEF, 0x00
+}"
+                :type "unsigned short")
+                nil [3386 3474])
+            ("seq_apon" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+	0xF3, 0x00,
+
+	DATA_ONLY, 0x00,
+	DATA_ONLY, 0x00,
+	DATA_ONLY, 0x0A,
+	DATA_ONLY, 0x02,
+	ENDDEF, 0x00
+}"
+                :type "unsigned short")
+                nil [3476 3621])
+            ("seq_display_ctrl" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+	0xF2, 0x02,
+
+	DATA_ONLY, 0x08,
+	DATA_ONLY, 0x08,
+	DATA_ONLY, 0x10,
+	DATA_ONLY, 0x10,
+	ENDDEF, 0x00
+}"
+                :type "unsigned short")
+                nil [3623 3776])
+            ("seq_manual_pwr" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+	0xB0, 0x04,
+	ENDDEF, 0x00
+}"
+                :type "unsigned short")
+                nil [3778 3856])
+            ("seq_pwr_ctrl" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+	0xF4, 0x0A,
+
+	DATA_ONLY, 0x87,
+	DATA_ONLY, 0x25,
+	DATA_ONLY, 0x6A,
+	DATA_ONLY, 0x44,
+	DATA_ONLY, 0x02,
+	DATA_ONLY, 0x88,
+	ENDDEF, 0x00
+}"
+                :type "unsigned short")
+                nil [3858 4043])
+            ("seq_sleep_out" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+	0x11, COMMAND_ONLY,
+	ENDDEF, 0x00
+}"
+                :type "unsigned short")
+                nil [4045 4130])
+            ("seq_sleep_in" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+	0x10, COMMAND_ONLY,
+	ENDDEF, 0x00
+}"
+                :type "unsigned short")
+                nil [4132 4216])
+            ("seq_display_on" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+	0x29, COMMAND_ONLY,
+	ENDDEF, 0x00
+}"
+                :type "unsigned short")
+                nil [4218 4304])
+            ("seq_display_off" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+	0x28, COMMAND_ONLY,
+	ENDDEF, 0x00
+}"
+                :type "unsigned short")
+                nil [4306 4393])
+            ("seq_vci1_1st_en" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+	0xF3, 0x10,
+
+	DATA_ONLY, 0x00,
+	DATA_ONLY, 0x00,
+	DATA_ONLY, 0x00,
+	DATA_ONLY, 0x02,
+	ENDDEF, 0x00
+}"
+                :type "unsigned short")
+                nil [4395 4547])
+            ("seq_vl1_en" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+	0xF3, 0x11,
+
+	DATA_ONLY, 0x00,
+	DATA_ONLY, 0x00,
+	DATA_ONLY, 0x00,
+	DATA_ONLY, 0x02,
+	ENDDEF, 0x00
+}"
+                :type "unsigned short")
+                nil [4549 4696])
+            ("seq_vl2_en" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+	0xF3, 0x13,
+
+	DATA_ONLY, 0x00,
+	DATA_ONLY, 0x00,
+	DATA_ONLY, 0x00,
+	DATA_ONLY, 0x02,
+	ENDDEF, 0x00
+}"
+                :type "unsigned short")
+                nil [4698 4845])
+            ("seq_vci1_2nd_en" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+	0xF3, 0x33,
+
+	DATA_ONLY, 0x00,
+	DATA_ONLY, 0x00,
+	DATA_ONLY, 0x00,
+	DATA_ONLY, 0x02,
+	ENDDEF, 0x00
+}"
+                :type "unsigned short")
+                nil [4847 4999])
+            ("seq_vl3_en" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+	0xF3, 0x37,
+
+	DATA_ONLY, 0x00,
+	DATA_ONLY, 0x00,
+	DATA_ONLY, 0x00,
+	DATA_ONLY, 0x02,
+	ENDDEF, 0x00
+}"
+                :type "unsigned short")
+                nil [5001 5148])
+            ("seq_vreg1_amp_en" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+	0xF3, 0x37,
+
+	DATA_ONLY, 0x01,
+	DATA_ONLY, 0x00,
+	DATA_ONLY, 0x00,
+	DATA_ONLY, 0x02,
+	ENDDEF, 0x00
+}"
+                :type "unsigned short")
+                nil [5150 5303])
+            ("seq_vgh_amp_en" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+	0xF3, 0x37,
+
+	DATA_ONLY, 0x11,
+	DATA_ONLY, 0x00,
+	DATA_ONLY, 0x00,
+	DATA_ONLY, 0x02,
+	ENDDEF, 0x00
+}"
+                :type "unsigned short")
+                nil [5305 5456])
+            ("seq_vgl_amp_en" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+	0xF3, 0x37,
+
+	DATA_ONLY, 0x31,
+	DATA_ONLY, 0x00,
+	DATA_ONLY, 0x00,
+	DATA_ONLY, 0x02,
+	ENDDEF, 0x00
+}"
+                :type "unsigned short")
+                nil [5458 5609])
+            ("seq_vmos_amp_en" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+	0xF3, 0x37,
+
+	DATA_ONLY, 0xB1,
+	DATA_ONLY, 0x00,
+	DATA_ONLY, 0x00,
+	DATA_ONLY, 0x03,
+	ENDDEF, 0x00
+}"
+                :type "unsigned short")
+                nil [5611 5763])
+            ("seq_vint_amp_en" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+	0xF3, 0x37,
+
+	DATA_ONLY, 0xF1,
+	/* DATA_ONLY, 0x71,	VMOS/VBL/VBH not used */
+	DATA_ONLY, 0x00,
+	DATA_ONLY, 0x00,
+	DATA_ONLY, 0x03,
+	/* DATA_ONLY, 0x02,	VMOS/VBL/VBH not used */
+	ENDDEF, 0x00
+}"
+                :type "unsigned short")
+                nil [5765 6009])
+            ("seq_vbh_amp_en" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+	0xF3, 0x37,
+
+	DATA_ONLY, 0xF9,
+	DATA_ONLY, 0x00,
+	DATA_ONLY, 0x00,
+	DATA_ONLY, 0x03,
+	ENDDEF, 0x00
+}"
+                :type "unsigned short")
+                nil [6011 6162])
+            ("seq_vbl_amp_en" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+	0xF3, 0x37,
+
+	DATA_ONLY, 0xFD,
+	DATA_ONLY, 0x00,
+	DATA_ONLY, 0x00,
+	DATA_ONLY, 0x03,
+	ENDDEF, 0x00
+}"
+                :type "unsigned short")
+                nil [6164 6315])
+            ("seq_gam_amp_en" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+	0xF3, 0x37,
+
+	DATA_ONLY, 0xFF,
+	/* DATA_ONLY, 0x73,	VMOS/VBL/VBH not used */
+	DATA_ONLY, 0x00,
+	DATA_ONLY, 0x00,
+	DATA_ONLY, 0x03,
+	/* DATA_ONLY, 0x02,	VMOS/VBL/VBH not used */
+	ENDDEF, 0x00
+}"
+                :type "unsigned short")
+                nil [6317 6560])
+            ("seq_sd_amp_en" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+	0xF3, 0x37,
+
+	DATA_ONLY, 0xFF,
+	/* DATA_ONLY, 0x73,	VMOS/VBL/VBH not used */
+	DATA_ONLY, 0x80,
+	DATA_ONLY, 0x00,
+	DATA_ONLY, 0x03,
+	/* DATA_ONLY, 0x02,	VMOS/VBL/VBH not used */
+	ENDDEF, 0x00
+}"
+                :type "unsigned short")
+                nil [6562 6804])
+            ("seq_gls_en" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+	0xF3, 0x37,
+
+	DATA_ONLY, 0xFF,
+	/* DATA_ONLY, 0x73,	VMOS/VBL/VBH not used */
+	DATA_ONLY, 0x81,
+	DATA_ONLY, 0x00,
+	DATA_ONLY, 0x03,
+	/* DATA_ONLY, 0x02,	VMOS/VBL/VBH not used */
+	ENDDEF, 0x00
+}"
+                :type "unsigned short")
+                nil [6806 7045])
+            ("seq_els_en" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+	0xF3, 0x37,
+
+	DATA_ONLY, 0xFF,
+	/* DATA_ONLY, 0x73,	VMOS/VBL/VBH not used */
+	DATA_ONLY, 0x83,
+	DATA_ONLY, 0x00,
+	DATA_ONLY, 0x03,
+	/* DATA_ONLY, 0x02,	VMOS/VBL/VBH not used */
+	ENDDEF, 0x00
+}"
+                :type "unsigned short")
+                nil [7047 7286])
+            ("seq_el_on" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+	0xF3, 0x37,
+
+	DATA_ONLY, 0xFF,
+	/* DATA_ONLY, 0x73,	VMOS/VBL/VBH not used */
+	DATA_ONLY, 0x87,
+	DATA_ONLY, 0x00,
+	DATA_ONLY, 0x03,
+	/* DATA_ONLY, 0x02,	VMOS/VBL/VBH not used */
+	ENDDEF, 0x00
+}"
+                :type "unsigned short")
+                nil [7288 7526])
+            ("ld9040_spi_write_byte" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("lcd" variable
+                       (:pointer 1
+                        :type ("ld9040" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7561 7580])
+                    ("addr" variable (:type "int") (reparse-symbol arg-sub-list) [7581 7590])
+                    ("data" variable (:type "int") (reparse-symbol arg-sub-list) [7591 7600]))                  
+                :type "int")
+                nil [7528 7836])
+            ("ld9040_spi_write" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("lcd" variable
+                       (:pointer 1
+                        :type ("ld9040" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7866 7885])
+                    ("address" variable (:type "unsigned char") (reparse-symbol arg-sub-list) [7886 7908])
+                    ("command" variable (:type "unsigned char") (reparse-symbol arg-sub-list) [7910 7932]))                  
+                :type "int")
+                nil [7838 8122])
+            ("ld9040_panel_send_sequence" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("lcd" variable
+                       (:pointer 1
+                        :type ("ld9040" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8162 8181])
+                    ("wbuf" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "unsigned short")
+                        (reparse-symbol arg-sub-list) [8183 8210]))                  
+                :type "int")
+                nil [8124 8458])
+            ("_ld9040_gamma_ctl" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("lcd" variable
+                       (:pointer 1
+                        :type ("ld9040" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8489 8508])
+                    ("gamma" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "unsigned int")
+                        (reparse-symbol arg-sub-list) [8509 8535]))                  
+                :type "int")
+                nil [8460 9131])
+            ("ld9040_gamma_ctl" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("lcd" variable
+                       (:pointer 1
+                        :type ("ld9040" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9161 9180])
+                    ("gamma" variable (:type "int") (reparse-symbol arg-sub-list) [9181 9191]))                  
+                :type "int")
+                nil [9133 9262])
+            ("ld9040_ldi_init" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("lcd" variable
+                       (:pointer 1
+                        :type ("ld9040" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9291 9310]))                  
+                :type "int")
+                nil [9264 9764])
+            ("ld9040_ldi_enable" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("lcd" variable
+                       (:pointer 1
+                        :type ("ld9040" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9795 9814]))                  
+                :type "int")
+                nil [9766 9875])
+            ("ld9040_ldi_disable" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("lcd" variable
+                       (:pointer 1
+                        :type ("ld9040" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9907 9926]))                  
+                :type "int")
+                nil [9877 10066])
+            ("ld9040_power_is_on" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("power" variable (:type "int") (reparse-symbol arg-sub-list) [10098 10108]))                  
+                :type "int")
+                nil [10068 10146])
+            ("ld9040_power_on" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("lcd" variable
+                       (:pointer 1
+                        :type ("ld9040" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10175 10194]))                  
+                :type "int")
+                nil [10148 10688])
+            ("ld9040_power_off" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("lcd" variable
+                       (:pointer 1
+                        :type ("ld9040" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10718 10737]))                  
+                :type "int")
+                nil [10690 11008])
+            ("ld9040_power" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("lcd" variable
+                       (:pointer 1
+                        :type ("ld9040" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11034 11053])
+                    ("power" variable (:type "int") (reparse-symbol arg-sub-list) [11054 11064]))                  
+                :type "int")
+                nil [11010 11331])
+            ("ld9040_set_power" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ld" variable
+                       (:pointer 1
+                        :type ("lcd_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11361 11383])
+                    ("power" variable (:type "int") (reparse-symbol arg-sub-list) [11384 11394]))                  
+                :type "int")
+                nil [11333 11649])
+            ("ld9040_get_power" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ld" variable
+                       (:pointer 1
+                        :type ("lcd_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11679 11701]))                  
+                :type "int")
+                nil [11651 11766])
+            ("ld9040_get_brightness" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("bd" variable
+                       (:pointer 1
+                        :type ("backlight_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11801 11829]))                  
+                :type "int")
+                nil [11768 11863])
+            ("ld9040_set_brightness" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("bd" variable
+                       (:pointer 1
+                        :type ("backlight_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11898 11926]))                  
+                :type "int")
+                nil [11865 12369])
+            ("ld9040_lcd_ops" variable
+               (:typemodifiers ("static")
+                :default-value "{
+	.set_power = ld9040_set_power,
+	.get_power = ld9040_get_power,
+}"
+                :type ("lcd_ops" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [12371 12478])
+            ("ld9040_backlight_ops" variable
+               (:typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+	.get_brightness = ld9040_get_brightness,
+	.update_status = ld9040_set_brightness,
+}"
+                :type ("backlight_ops" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [12480 12625])
+            ("ld9040_probe" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("spi" variable
+                       (:pointer 1
+                        :type ("spi_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [12651 12674]))                  
+                :type "int")
+                nil [12627 14430])
+            ("ld9040_remove" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("spi" variable
+                       (:pointer 1
+                        :type ("spi_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [14457 14480]))                  
+                :type "int")
+                nil [14432 14580])
+            ("SIMPLE_DEV_PM_OPS" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type ("ld9040_pm_ops" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15092 15106])
+                    ("" variable (:type ("ld9040_suspend" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15107 15122])
+                    ("" variable (:type ("ld9040_resume" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15123 15137]))                  
+                :type "int")
+                nil [15067 15138])
+            ("ld9040_shutdown" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("spi" variable
+                       (:pointer 1
+                        :type ("spi_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [15227 15250]))                  
+                :type "void")
+                nil [15199 15339])
+            ("ld9040_driver" variable
+               (:typemodifiers ("static")
+                :default-value "{
+	.driver = {
+		.name	= \"ld9040\",
+		.owner	= THIS_MODULE,
+		.pm	= &ld9040_pm_ops,
+	},
+	.probe		= ld9040_probe,
+	.remove		= ld9040_remove,
+	.shutdown	= ld9040_shutdown,
+}"
+                :type ("spi_driver" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [15341 15553])
+            ("module_spi_driver" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("ld9040_driver" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15573 15587]))                  
+                :type "int")
+                nil [15555 15588])
+            ("MODULE_AUTHOR" function
+               (:prototype-flag t
+                :type "int")
+                nil [15590 15642])
+            ("MODULE_DESCRIPTION" function
+               (:prototype-flag t
+                :type "int")
+                nil [15643 15683])
+            ("MODULE_LICENSE" function
+               (:prototype-flag t
+                :type "int")
+                nil [15684 15706]))          
+      :file "ld9040.c"
+      :pointmax 15707
+      :fsize 15706
+      :lastmodtime '(21915 34183 618780 712000)
+      :unmatched-syntax '((string 15699 . 15704) (string 15662 . 15681) (string 15604 . 15640))
+      :lexical-table 
+        '(("SLEEPMSEC" . ((number "0x1000" 804 . 810)))
+          ("DEFMASK" . ((number "0xFF00" 853 . 859)))
+          ("MIN_BRIGHTNESS" . ((number "0" 936 . 937)))
+          ("COMMAND_ONLY" . ((number "0xFE" 882 . 886)))
+          ("MAX_BRIGHTNESS" . ((number "24" 962 . 964)))
+          ("ENDDEF" . ((number "0x2000" 828 . 834)))
+          ("DATA_ONLY" . ((number "0xFF" 906 . 910)))
+          )
+)
+    (semanticdb-table "ld9040_gamma.h"
+      :file "ld9040_gamma.h"
+      :fsize 6418
+      :lastmodtime '(21915 34183 618780 712000)))
+  :file "!home!qichen!20160225_rc5!vendor!marvell-sdk!linux!drivers!video!backlight!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

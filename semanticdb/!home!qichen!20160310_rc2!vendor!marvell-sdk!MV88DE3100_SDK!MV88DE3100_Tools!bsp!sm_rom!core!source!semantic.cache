@@ -1,0 +1,499 @@
+;; Object source/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "source/"
+  :tables
+  (list
+    (semanticdb-table "sm_power.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("com_type.h" include nil nil [1 22])
+            ("sys_mgr.h" include nil nil [23 43])
+            ("sm_common.h" include nil nil [44 66])
+            ("sm.h" include nil nil [67 82])
+            ("platform_config.h" include nil nil [84 112])
+            ("sm_apb_gpio_defs.h" include nil nil [114 143])
+            ("sm_comm.h" include nil nil [144 164])
+            ("sm_state.h" include nil nil [166 187])
+            ("sm_timer.h" include nil nil [188 209])
+            ("sm_rom_api.h" include nil nil [210 233])
+            ("sm_printf.h" include nil nil [234 256])
+            ("sm_mem.h" include nil nil [257 276])
+            ("sm_debug.h" include nil nil [277 298])
+            ("sm_state.h" include nil nil [300 321])
+            ("sm_def.h" include nil nil [322 341])
+            ("sm_gpio.h" include nil nil [342 362])
+            ("sm_adc.h" include nil nil [363 382])
+            ("sm_temperature.h" include nil nil [383 410])
+            ("sm_power.h" include nil nil [411 432])
+            ("sm_ir_key_def.h" include nil nil [433 459])
+            ("MV_SM_wakeuptimer" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("wakeup_source" variable (:type ("INT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [522 542])
+                          ("wmup_timer_enable" variable (:type ("INT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [547 571])
+                          ("cur_wakeup_time" variable (:type ("INT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [576 598])
+                          ("wmup_timer_begin" variable (:type ("INT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [717 740])
+                          ("wmup_timer_interval" variable (:type ("INT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [745 771]))                        
+                      :type "struct")
+                      nil nil)
+                :type "typedef")
+                nil [501 819])
+            ("bFastboot" variable
+               (:default-value "FALSE"
+                :type ("BOOL" type (:type "class") nil nil))
+                nil [822 845])
+            ("bFastboot_Standby" variable
+               (:default-value "FALSE"
+                :type ("BOOL" type (:type "class") nil nil))
+                nil [846 877])
+            ("bRequest_Poweron" variable
+               (:default-value "FALSE"
+                :type ("BOOL" type (:type "class") nil nil))
+                nil [878 908])
+            ("MS" variable (:constant-flag t) nil [956 958])
+            ("POWEROFF2POWERON" variable (:constant-flag t) nil [989 1005])
+            ("POWERON2OKTIME" variable (:constant-flag t) nil [1018 1032])
+            ("ASSERT2DEASSERTTIME" variable (:constant-flag t) nil [1044 1063])
+            ("power_mystatus" variable
+               (:typemodifiers ("static")
+                :default-value "STA_INVALID"
+                :type ("UINT32" type (:type "class") nil nil))
+                nil [1099 1142])
+            ("power_myflow" variable
+               (:typemodifiers ("static")
+                :default-value "FLOW_IDLE"
+                :type ("UINT32" type (:type "class") nil nil))
+                nil [1143 1182])
+            ("flow_name" variable
+               (:pointer 1
+                :dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+    \"---Active to Lowpower Standby---\",
+    \"---Active to Normal Standby---\",
+    \"---Active to Suspend---\",
+
+    \"---Lowpower Standby to Active---\",
+    \"---Normal Standby to Active---\",
+    \"---Suspend to Active---\",
+
+    \"---Sysreset to Lowpower Standby---\",
+    \"---Sysreset to Normal Standby---\",
+    \"---Sysreset to Active---\",
+
+    \"---Cold to Lowpower Standby---\",
+
+    \"---Active to Active High---\",
+    \"---Active High to Active---\",
+
+    \"---Idle---\",
+}"
+                :type "char")
+                nil [1208 1708])
+            ("power_lasttime" variable
+               (:typemodifiers ("static")
+                :default-value "0"
+                :type ("INT32" type (:type "class") nil nil))
+                nil [1717 1749])
+            ("is_get_rsp" variable
+               (:typemodifiers ("static")
+                :default-value "FALSE"
+                :type ("BOOL" type (:type "class") nil nil))
+                nil [1750 1781])
+            ("is_linux_ready" variable
+               (:typemodifiers ("static")
+                :default-value "FALSE"
+                :type ("BOOL" type (:type "class") nil nil))
+                nil [1783 1818])
+            ("TIMEOUT_POWERFLOW" variable (:constant-flag t) nil [1828 1845])
+            ("timer_id" variable
+               (:typemodifiers ("static")
+                :default-value "-1"
+                :type ("INT32" type (:type "class") nil nil))
+                nil [1872 1899])
+            ("wmdn_timer_enable" variable
+               (:typemodifiers ("static")
+                :default-value "0"
+                :type ("INT32" type (:type "class") nil nil))
+                nil [1900 1935])
+            ("wmdn_timer_begin" variable
+               (:typemodifiers ("static")
+                :type ("INT32" type (:type "class") nil nil))
+                nil [2056 2107])
+            ("wmdn_timer_interval" variable
+               (:typemodifiers ("static")
+                :type ("INT32" type (:type "class") nil nil))
+                nil [2056 2107])
+            ("nomal_wakeup_timer" variable
+               (:typemodifiers ("static")
+                :default-value "{0,0,0,0,0}"
+                :type ("MV_SM_wakeuptimer" type (:type "class") nil nil))
+                nil [2134 2192])
+            ("BGULI_wakeup_timer" variable
+               (:typemodifiers ("static")
+                :default-value "{0,0,0,0,0}"
+                :type ("MV_SM_wakeuptimer" type (:type "class") nil nil))
+                nil [2193 2251])
+            ("is_wakeup" variable
+               (:typemodifiers ("volatile" "static")
+                :default-value "FALSE"
+                :type ("BOOL" type (:type "class") nil nil))
+                nil [2252 2291])
+            ("standby_type" variable
+               (:typemodifiers ("static")
+                :default-value "DEFAULT_STANDBY_REQUEST_TYPE"
+                :type ("MSG_LINUX_2_SM" type (:type "class") nil nil))
+                nil [2292 2358])
+            ("linux_resume_addr" variable
+               (:typemodifiers ("volatile")
+                :default-value "0xFFFFFFFF"
+                :type ("UINT32" type (:type "class") nil nil))
+                nil [2360 2407])
+            ("wakeup_source" variable
+               (:typemodifiers ("static" "volatile")
+                :default-value "MV_SM_WAKEUP_SOURCE_INVALID"
+                :type ("MV_SM_WAKEUP_SOURCE_TYPE" type (:type "class") nil nil))
+                nil [2409 2494])
+            ("power_bootup_source" variable
+               (:typemodifiers ("static" "volatile")
+                :default-value "POWER_BOOTUP_SOURCE_ACON"
+                :type ("UINT32" type (:type "class") nil nil))
+                nil [2495 2565])
+            ("g_opPhyAddr" variable
+               (:typemodifiers ("extern")
+                :type ("uint16_t" type (:type "class") nil nil))
+                nil [2566 2594])
+            ("chip_subver" variable
+               (:typemodifiers ("extern")
+                :type ("INT32" type (:type "class") nil nil))
+                nil [2596 2621])
+            ("board_peripheral_assert" function
+               (:prototype-flag t
+                :typemodifiers ("extern" "inline")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [2666 2671]))                  
+                :type "void")
+                nil [2623 2672])
+            ("board_peripheral_deassert" function
+               (:prototype-flag t
+                :typemodifiers ("extern" "inline")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [2718 2723]))                  
+                :type "void")
+                nil [2673 2724])
+            ("board_soc_poweron" function
+               (:prototype-flag t
+                :typemodifiers ("extern" "inline")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [2762 2767]))                  
+                :type "void")
+                nil [2725 2768])
+            ("board_soc_poweroff" function
+               (:prototype-flag t
+                :typemodifiers ("extern" "inline")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [2807 2812]))                  
+                :type "void")
+                nil [2769 2813])
+            ("board_soc_power_status" function
+               (:prototype-flag t
+                :typemodifiers ("extern" "inline")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [2857 2862]))                  
+                :type ("INT32" type (:type "class") nil nil))
+                nil [2814 2863])
+            ("mv_sm_power_init" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [2887 2892]))                  
+                :type "void")
+                nil [2865 3073])
+            ("waittime" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("interval" variable (:type ("INT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3103 3118]))                  
+                :type ("BOOL" type (:type "class") nil nil))
+                nil [3075 3286])
+            ("soc_assert" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [3400 3405]))                  
+                :type ("hresult" type (:type "class") nil nil))
+                nil [3374 4037])
+            ("soc_deassert" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [4067 4072]))                  
+                :type ("hresult" type (:type "class") nil nil))
+                nil [4039 4853])
+            ("peripheral_assert" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [4888 4893]))                  
+                :type ("hresult" type (:type "class") nil nil))
+                nil [4855 5013])
+            ("peripheral_deassert" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [5050 5055]))                  
+                :type ("hresult" type (:type "class") nil nil))
+                nil [5015 5183])
+            ("mv_sm_get_linux_state" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [5212 5217]))                  
+                :type ("BOOL" type (:type "class") nil nil))
+                nil [5185 5248])
+            ("mv_sm_power_socpoweron" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [5281 5286]))                  
+                :type ("hresult" type (:type "class") nil nil))
+                nil [5250 5400])
+            ("mv_sm_power_socpoweroff" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [5434 5439]))                  
+                :type ("hresult" type (:type "class") nil nil))
+                nil [5402 5597])
+            ("mv_sm_power_soc_power_status" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [5634 5639]))                  
+                :type ("INT32" type (:type "class") nil nil))
+                nil [5599 5680])
+            ("mv_sm_power_broadcast_power_state" function
+               (:typemodifiers ("static")
+                :type "void")
+                nil [5721 5956])
+            ("mv_sm_power_enterflow" function
+               (:arguments 
+                  ( ("flow" variable (:type ("SM_POWER_FLOW" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5989 6008]))                  
+                :type ("hresult" type (:type "class") nil nil))
+                nil [5959 6470])
+            ("mv_sm_power_up_ontime" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("wakeuptimer" variable
+                       (:pointer 1
+                        :type ("MV_SM_wakeuptimer" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6506 6537]))                  
+                :type "void")
+                nil [6472 9968])
+            ("mv_sm_power_down_ontime" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [10006 10011]))                  
+                :type "void")
+                nil [9970 12420])
+            ("mv_sm_power_enterflow_bysmstate" function (:type ("hresult" type (:type "class") nil nil)) nil [12432 13029])
+            ("mv_sm_power_leaveflow" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [13059 13064]))                  
+                :type "void")
+                nil [13032 13268])
+            ("mv_sm_power_soc_poweron_2_powerok" function
+               (:typemodifiers ("static")
+                :type ("hresult" type (:type "class") nil nil))
+                nil [13270 14124])
+            ("mv_sm_power_soc_assert_2_deassert" function
+               (:typemodifiers ("static")
+                :type ("hresult" type (:type "class") nil nil))
+                nil [14126 15078])
+            ("mv_sm_power_flow_warmdown" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("flow" variable (:type ("SM_POWER_FLOW" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15249 15268]))                  
+                :type ("hresult" type (:type "class") nil nil))
+                nil [15208 17643])
+            ("mv_sm_power_flow_colddown" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("flow" variable (:type ("SM_POWER_FLOW" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [17746 17765]))                  
+                :type ("hresult" type (:type "class") nil nil))
+                nil [17705 18735])
+            ("mv_sm_send_power_key" function
+               (:typemodifiers ("static")
+                :type "void")
+                nil [18737 19159])
+            ("mv_sm_power_flow_warmup" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("flow" variable (:type ("SM_POWER_FLOW" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [19257 19276]))                  
+                :type ("hresult" type (:type "class") nil nil))
+                nil [19218 21798])
+            ("mv_sm_power_flow_sysreset" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("flow" variable (:type ("SM_POWER_FLOW" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [21841 21860]))                  
+                :type ("hresult" type (:type "class") nil nil))
+                nil [21800 23384])
+            ("mv_sm_power_flow_idle" function
+               (:typemodifiers ("static")
+                :type ("hresult" type (:type "class") nil nil))
+                nil [23386 24272])
+            ("mv_sm_power_task" function
+               (:arguments 
+                  ( ("data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [24299 24311]))                  
+                :type ("hresult" type (:type "class") nil nil))
+                nil [24274 25585])
+            ("mv_sm_power_setwakeupsource" function
+               (:arguments 
+                  ( ("ws" variable (:type ("INT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [25624 25633]))                  
+                :type ("hresult" type (:type "class") nil nil))
+                nil [25588 26773])
+            ("mv_sm_process_power_msg" function
+               (:arguments 
+                  ( ("data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [26807 26819])
+                    ("len" variable (:type ("INT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [26820 26830]))                  
+                :type ("hresult" type (:type "class") nil nil))
+                nil [26775 37346])
+            ("WIFIBT_GAP_MIN" variable (:constant-flag t) nil [37356 37370])
+            ("WIFIBT_GAP_MAX" variable (:constant-flag t) nil [37383 37397])
+            ("wifibt_gpio_data" variable
+               (:default-value "0"
+                :type ("INT32" type (:type "class") nil nil))
+                nil [37404 37431])
+            ("wifibt_falling_time" variable
+               (:default-value "0"
+                :type ("INT32" type (:type "class") nil nil))
+                nil [37432 37462])
+            ("wifibt_gap" variable
+               (:default-value "0"
+                :type ("INT32" type (:type "class") nil nil))
+                nil [37463 37484])
+            ("wifibt_timer_id" variable
+               (:default-value "0"
+                :type ("INT32" type (:type "class") nil nil))
+                nil [37485 37511])
+            ("mv_sm_wifibt_timer_isr" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [37541 37546]))                  
+                :type "void")
+                nil [37513 37988])
+            ("mv_sm_wifibt_isr" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [38012 38017]))                  
+                :type "void")
+                nil [37990 38297]))          
+      :file "sm_power.c"
+      :pointmax 38298
+      :fsize 38297
+      :lastmodtime '(22256 54356 606086 512000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("POWEROFF2POWERON" . ((number "300" 1006 . 1009)))
+          ("MS" . ((semantic-list "(SM_SYSTEM_HZ * 1000)" 959 . 980)))
+          ("TIMEOUT_POWERFLOW" . ((semantic-list "(10 * 1000 * 1000)" 1846 . 1864)))
+          ("ASSERT2DEASSERTTIME" . ((number "100" 1064 . 1067)))
+          ("WIFIBT_GAP_MAX" . ((number "256" 36886 . 36889)))
+          ("WIFIBT_GAP_MIN" . ((number "64" 36859 . 36861)))
+          ("POWERON2OKTIME" . ((number "60" 1033 . 1035)))
+          )
+)
+    (semanticdb-table "sm_watchdog.c"
+      :major-mode 'c-mode
+      :tags nil
+      :file "sm_watchdog.c"
+      :pointmax 4880
+      :fsize 4879
+      :lastmodtime '(22242 47673 243740 828000)
+      :unmatched-syntax nil)
+    (semanticdb-table "sm_devinit.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("com_type.h" include nil nil [1 22])
+            ("sm_apb_uart_defs.h" include nil nil [23 52])
+            ("sm_apb_ictl_defs.h" include nil nil [53 82])
+            ("sm_apb_timers_defs.h" include nil nil [83 114])
+            ("sm_apb_gpio_defs.h" include nil nil [115 144])
+            ("sys_mgr.h" include nil nil [145 165])
+            ("platform_config.h" include nil nil [167 195])
+            ("sm_common.h" include nil nil [197 219])
+            ("sm.h" include nil nil [220 235])
+            ("sm_def.h" include nil nil [237 256])
+            ("sm_timer.h" include nil nil [257 278])
+            ("sm_rom_api.h" include nil nil [279 302])
+            ("sm_printf.h" include nil nil [303 325])
+            ("sm_debug.h" include nil nil [326 347])
+            ("sm_gpio.h" include nil nil [349 369])
+            ("sm_watchdog.h" include nil nil [371 395])
+            ("sm_adc.h" include nil nil [397 416])
+            ("sm_temperature.h" include nil nil [417 444])
+            ("sm_uart.h" include nil nil [445 465])
+            ("sm_rom_api.h" include nil nil [467 490])
+            ("sm_devinit.h" include nil nil [491 514])
+            ("apb_sysctl_init" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [677 682]))                  
+                :type ("hresult" type (:type "class") nil nil))
+                nil [646 815])
+            ("apb_ictl_init" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [846 851]))                  
+                :type ("hresult" type (:type "class") nil nil))
+                nil [817 2472])
+            ("get_gpio_settings" function
+               (:prototype-flag t
+                :pointer 1
+                :typemodifiers ("extern" "inline")
+                :arguments 
+                  ( ("num" variable
+                       (:pointer 1
+                        :type ("INT32" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2573 2584]))                  
+                :type ("sm_gpio_setting_t" type (:type "class") nil nil))
+                nil [2521 2585])
+            ("apb_gpio_init" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [2615 2620]))                  
+                :type ("hresult" type (:type "class") nil nil))
+                nil [2586 3675])
+            ("apb_timer_init" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [3708 3713]))                  
+                :type ("hresult" type (:type "class") nil nil))
+                nil [3678 3975])
+            ("apb_watchdog_init" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [4010 4015]))                  
+                :type ("hresult" type (:type "class") nil nil))
+                nil [3977 4830])
+            ("apb_spi_init" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [4860 4865]))                  
+                :type ("hresult" type (:type "class") nil nil))
+                nil [4832 4926])
+            ("apb_twsi_iit" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [5006 5011]))                  
+                :type ("hresult" type (:type "class") nil nil))
+                nil [4978 5200])
+            ("apb_uart_init" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [5225 5230]))                  
+                :type ("hresult" type (:type "class") nil nil))
+                nil [5203 5231])
+            ("mv_sm_apb_init" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [5255 5260]))                  
+                :type ("hresult" type (:type "class") nil nil))
+                nil [5232 5724]))          
+      :file "sm_devinit.c"
+      :pointmax 5725
+      :fsize 5724
+      :lastmodtime '(22255 39815 380655 942000)
+      :unmatched-syntax nil))
+  :file "!home!qichen!20160310_rc2!vendor!marvell-sdk!MV88DE3100_SDK!MV88DE3100_Tools!bsp!sm_rom!core!source!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

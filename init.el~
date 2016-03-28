@@ -326,9 +326,6 @@
 
 ;; (cua-mode t)
 
-(global-set-key "\M-#" 'cua-set-rectangle-mark)
-
-
 ;; resize buffer size
 ;;(global-set-key (kbd "<M-up>") 'shrink-window)
 ;;(global-set-key (kbd "<M-down>") 'enlarge-window)
@@ -336,7 +333,6 @@
 (global-set-key (kbd "<M-right>") 'enlarge-window-horizontally)
 (define-key (current-global-map) [remap sp-splice-sexp-killing-backward] 'shrink-window)
 (define-key (current-global-map) [remap sp-splice-sexp-killing-forward] 'enlarge-window)
-
 
 ;; (define-key (current-global-map) [remap transpose-sexps] 'sr-speedbar-toggle)
 ;; (defun select-next-window ()
@@ -522,6 +518,72 @@
 ;;                           1 font-lock-warning-face prepend)))))
 
 ;;serssion
-(require 'session)
-(add-hook 'after-init-hook
-                    'session-initialize)
+;; (require 'session)
+;; (add-hook 'after-init-hook
+;;                     'session-initialize)
+
+;; (global-set-key "\M-#" 'cua-set-rectangle-mark)
+
+;;multiple-cursors
+(require 'multiple-cursors)
+(global-set-key "\M-#" 'mc/edit-lines)
+(global-set-key "\M-$" 'mc/mark-all-like-this)
+
+;;helm-swoop
+(define-key (current-global-map) [remap list-matching-lines] 'helm-swoop)
+
+;; #ifdef matching
+(defun bc-bounce-cpp ()
+  (interactive)
+  (block nil
+    (let ((counter (save-excursion
+                     (beginning-of-line)
+                     (cond ((looking-at "\s*#\s*if") (bc-bounce-cpp-if))
+                           ((looking-at "\s*#\s*endif") (bc-bounce-cpp-endif))
+                           (t (message "Not on a preprocessor conditional")
+                              (return))))))
+      (if (eq counter 0)
+          (goto-char (match-beginning 0))
+        (message "Unbalanced conditional")))))
+
+(defun bc-bounce-cpp-if ()
+  (let ((counter 1)
+        (limit (1+ (save-excursion
+                     (goto-char (point-max))
+                     (or (re-search-backward "[ \t]**#[ \t]*endif" nil t 1)
+                         (point))))))
+    (next-line)
+    (while (not (or (eq (point) limit) (eq counter 0)))
+      (re-search-forward "\s*#" nil t 1)
+      (setq counter (cond ((looking-at "if")
+                           (1+ counter))
+                          ((looking-at "endif")
+                           (1- counter))
+                          (t counter))))
+    (re-search-backward "\s*#" nil t 1) counter))
+
+(defun bc-bounce-cpp-endif ()
+  (let ((counter 1)
+        (limit (1+ (save-excursion
+                     (goto-char (point-min))
+                     (or (re-search-forward "[ \t]**#[ \t]*if" nil t 1)
+                         (point))))))
+    (previous-line) (while (not (or (eq (point) limit) (eq counter 0)))
+                      (re-search-backward "\s*#" nil t 1)
+                      (setq counter (cond ((looking-at "#endif")
+                                           (1+ counter))
+                                          ((looking-at "#if")
+                                           (1- counter))
+                                          (t counter))))
+    counter))
+
+(define-key (current-global-map) [remap abort-recursive-edit] 'bc-bounce-cpp)
+
+;; hide block
+(define-key (current-global-map) [remap kmacro-end-or-call-macro] 'hs-toggle-hiding)
+
+;; scroll move
+(global-set-key "\M-=" 'scroll-up-line)
+(global-set-key "\M--" 'scroll-down-line)
+(global-set-key (kbd "C-d") 'scroll-up-command)
+(global-set-key (kbd "C-v") 'scroll-down-command)
