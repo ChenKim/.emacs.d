@@ -1,0 +1,813 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("ui.h" include (:system-flag t) nil [1457 1472])
+            ("lib.h" include nil nil [1474 1490])
+            ("ux.h" include nil nil [1491 1506])
+            ("vars.h" include nil nil [1507 1524])
+            ("FIRST_TIMEOUT_SECS" variable (:constant-flag t) nil [1583 1601])
+            ("SECOND_TIMEOUT_SECS" variable (:constant-flag t) nil [1612 1631])
+            ("PRESS_TO_PAUSE_FMT" variable (:constant-flag t) nil [1644 1662])
+            ("PRESS_TO_CONTINUE_FMT" variable (:constant-flag t) nil [1695 1716])
+            ("red_state" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+	{ &COLOR_LIGHTGRAY,	\"Your device has failed verification.\",	FALSE },
+	{ &COLOR_LIGHTGRAY,	\"It is corrupt. It can't be trusted \",	FALSE },
+	{ &COLOR_LIGHTGRAY,	\"and will not boot.\",			FALSE },
+	{ NULL, NULL, FALSE}
+}"
+                :type ("ui_textline_t" type (:type "class") nil nil))
+                nil [1743 2003])
+            ("bad_recovery" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+	{ &COLOR_LIGHTGRAY,	\"Your device has failed verification\",	FALSE },
+	{ &COLOR_LIGHTGRAY,	\"of Recovery Console. It is corrupt.\",	FALSE },
+	{ &COLOR_LIGHTGRAY,	\"It can't be trusted and will not\",	FALSE },
+	{ &COLOR_LIGHTGRAY,	\"boot.\",				FALSE },
+	{ NULL, NULL, FALSE }
+}"
+                :type ("ui_textline_t" type (:type "class") nil nil))
+                nil [2005 2322])
+            ("device_altered_unlocked" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+	{ &COLOR_LIGHTGRAY, 	\"Your device has been unlocked and\",	FALSE },
+	{ &COLOR_LIGHTGRAY, 	\"can't be trusted.\",			FALSE },
+	{ NULL, NULL, FALSE }
+}"
+                :type ("ui_textline_t" type (:type "class") nil nil))
+                nil [2324 2528])
+            ("secure_boot_off" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+	{ &COLOR_LIGHTGRAY,	\"Your device has been altered\",		FALSE },
+	{ &COLOR_LIGHTGRAY,	\"from its factory configuration.\",	FALSE },
+	{ &COLOR_LIGHTGRAY,	\"and is no longer in a locked state\",	FALSE },
+	{ &COLOR_LIGHTGRAY,	\"due to UEFI Secure Boot being\",	FALSE },
+	{ &COLOR_LIGHTGRAY,	\"disabled\",				FALSE },
+	{ &COLOR_LIGHTGRAY,	\"\",					FALSE },
+	{ &COLOR_LIGHTGRAY,	\"If you were not responsible for\",	FALSE },
+	{ &COLOR_LIGHTGRAY,	\"these changes, the security of\",	FALSE },
+	{ &COLOR_LIGHTGRAY,	\"your device may be at risk.\",		FALSE },
+	{ NULL, NULL, FALSE }
+}"
+                :type ("ui_textline_t" type (:type "class") nil nil))
+                nil [2530 3137])
+            ("device_untrusted_bootimage" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+	{ &COLOR_LIGHTGRAY,	\"Your device has loaded a different\",	FALSE },
+	{ &COLOR_LIGHTGRAY,	\"operating system.\",			FALSE },
+	{ NULL, NULL, FALSE }
+}"
+                :type ("ui_textline_t" type (:type "class") nil nil))
+                nil [3139 3345])
+            ("CRASHMODE_TIMEOUT_SECS" variable (:constant-flag t) nil [3355 3377])
+            ("crash_event_message" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+	{ &COLOR_LIGHTRED,	\"WARNING:\",				TRUE },
+	{ &COLOR_LIGHTGRAY,	\"Multiple crash events have been\",	FALSE },
+	{ &COLOR_LIGHTGRAY,	\"reported.\",				FALSE },
+	{ &COLOR_LIGHTGRAY,	\"\",					FALSE },
+	{ &COLOR_LIGHTGRAY,	\"Use the above menu to select\",		FALSE },
+	{ &COLOR_LIGHTGRAY,	\"the next boot option.\",		FALSE },
+	{ &COLOR_LIGHTGRAY,	\"If the problem persists, please\",	FALSE },
+	{ &COLOR_LIGHTGRAY,	\"contact the technical assistance.\",	FALSE },
+#ifndef CRASHMODE_USE_ADB
+	{ &COLOR_LIGHTGRAY,	\"\",					FALSE },
+	{ &COLOR_LIGHTGRAY,	\"The device will power off in 5\",	FALSE },
+	{ &COLOR_LIGHTGRAY,	\"minutes.\",				FALSE },
+#endif
+	{ NULL, NULL, FALSE }
+}"
+                :type ("ui_textline_t" type (:type "class") nil nil))
+                nil [3387 4088])
+            ("not_bootable_message" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+	{ &COLOR_LIGHTRED,	\"WARNING:\",				TRUE },
+	{ &COLOR_LIGHTGRAY,	\"No valid boot image found.\",		FALSE },
+	{ &COLOR_LIGHTGRAY,	\"\",					FALSE },
+	{ &COLOR_LIGHTGRAY,	\"Use the above menu to select\",		FALSE },
+	{ &COLOR_LIGHTGRAY,	\"the next boot option.\",		FALSE },
+	{ &COLOR_LIGHTGRAY,	\"If the problem persists, please\",	FALSE },
+	{ &COLOR_LIGHTGRAY,	\"contact the technical assistance.\",	FALSE },
+#ifndef CRASHMODE_USE_ADB
+	{ &COLOR_LIGHTGRAY,	\"\",					FALSE },
+	{ &COLOR_LIGHTGRAY,	\"The device will power off in 5\",	FALSE },
+	{ &COLOR_LIGHTGRAY,	\"minutes.\",				FALSE },
+#endif
+	{ NULL, NULL, FALSE }
+}"
+                :type ("ui_textline_t" type (:type "class") nil nil))
+                nil [4089 4741])
+            ("UX_PROMPT" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+	[RED_STATE_CODE]		=	{ &COLOR_RED,		red_state },
+	[BAD_RECOVERY_CODE]		=	{ &COLOR_RED,		bad_recovery },
+	[DEVICE_UNLOCKED_CODE]		=	{ &COLOR_ORANGE,	device_altered_unlocked },
+	[SECURE_BOOT_CODE]		=	{ &COLOR_ORANGE,	secure_boot_off },
+	[BOOTIMAGE_UNTRUSTED_CODE]	=	{ &COLOR_YELLOW,	device_untrusted_bootimage},
+	[CRASH_EVENT_CODE]		=	{ &COLOR_LIGHTRED,	crash_event_message},
+	[NOT_BOOTABLE_CODE]		=	{ &COLOR_LIGHTRED,	not_bootable_message}
+}"
+                :type ("ux_prompt" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [5878 6450])
+            ("ux_prompt" type
+               (:members 
+                  ( ("color" variable
+                       (:pointer 1
+                        :type ("EFI_GRAPHICS_OUTPUT_BLT_PIXEL" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [5911 5948])
+                    ("text" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("ui_textline_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [5950 5976]))                  
+                :type "struct")
+                nil [5878 6450])
+            ("VENDOR_IMG_NAME" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"splash_intel\""
+                :type "char")
+                nil [6452 6504])
+            ("LOW_BATTERY_IMG_NAME" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"low_battery\""
+                :type "char")
+                nil [6505 6561])
+            ("EMPTY_BATTERY_IMG_NAME" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"empty_battery\""
+                :type "char")
+                nil [6562 6622])
+            ("swidth" variable
+               (:typemodifiers ("static")
+                :type ("UINTN" type (:type "class") nil nil))
+                nil [6624 6644])
+            ("sheight" variable
+               (:typemodifiers ("static")
+                :type ("UINTN" type (:type "class") nil nil))
+                nil [6645 6666])
+            ("wmargin" variable
+               (:typemodifiers ("static")
+                :type ("UINTN" type (:type "class") nil nil))
+                nil [6667 6688])
+            ("hmargin" variable
+               (:typemodifiers ("static")
+                :type ("UINTN" type (:type "class") nil nil))
+                nil [6689 6710])
+            ("ux_init_screen" function
+               (:typemodifiers ("static")
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [6712 7388])
+            ("build_error_code_text" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("ecolor" variable
+                       (:pointer 1
+                        :type ("EFI_GRAPHICS_OUTPUT_BLT_PIXEL" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7434 7472])
+                    ("error_code" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7482 7500]))                  
+                :type ("ui_textline_t" type (:type "class") nil nil))
+                nil [7390 7797])
+            ("display_text" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("error_code" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7830 7848])
+                    ("ecolor" variable
+                       (:pointer 1
+                        :type ("EFI_GRAPHICS_OUTPUT_BLT_PIXEL" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7859 7897])
+                    ("text1" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("ui_textline_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7908 7935])
+                    ("text2" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("ui_textline_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7946 7973])
+                    ("text3" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("ui_textline_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7984 8011]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [7799 9280])
+            ("clear_text" function
+               (:typemodifiers ("static")
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [9282 9588])
+            ("HASH_FORMAT" variable (:constant-flag t) nil [9598 9609])
+            ("MIN_HASH_SIZE" variable (:constant-flag t) nil [9647 9660])
+            ("format_hash" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :arguments 
+                  ( ("hash" variable
+                       (:pointer 1
+                        :type ("UINT8" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [9704 9716])
+                    ("hash_size" variable (:type ("UINTN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9717 9733]))                  
+                :type ("ui_textline_t" type (:type "class") nil nil))
+                nil [9664 10129])
+            ("empty_text" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+	{ NULL, NULL, FALSE }
+}"
+                :type ("ui_textline_t" type (:type "class") nil nil))
+                nil [10131 10200])
+            ("ux_prompt_user" function
+               (:arguments 
+                  ( ("code" variable (:type ("ux_error_code" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [10234 10258])
+                    ("power_off" variable (:type ("BOOLEAN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10259 10277])
+                    ("boot_state" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10278 10295])
+                    ("hash" variable
+                       (:pointer 1
+                        :type ("UINT8" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [10300 10312])
+                    ("hash_size" variable (:type ("UINTN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10313 10329]))                  
+                :type ("boot_target" type (:type "enum") nil nil))
+                nil [10202 12304])
+            ("CRASH_IMG_NAME" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"crash_event\""
+                :type "char")
+                nil [12306 12356])
+            ("BOOT_ACTIONS" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :default-value "{
+	{ \"start\",		NULL,	NORMAL_BOOT },
+	{ \"bootloader\",		NULL,	FASTBOOT },
+	{ \"recoverymode\",	NULL,	RECOVERY },
+	{ \"reboot\",		NULL,	NORMAL_BOOT },
+	{ \"power_off\",		NULL,	POWER_OFF },
+	{ NULL,			NULL,	UNKNOWN_TARGET }
+}"
+                :type ("ui_boot_action_t" type (:type "class") nil nil))
+                nil [12357 12614])
+            ("ux_prompt_user_for_boot_target" function
+               (:arguments 
+                  ( ("code" variable (:type ("ux_error_code" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [12664 12688]))                  
+                :type ("boot_target" type (:type "enum") nil nil))
+                nil [12616 16854])
+            ("ux_display_img_battery" function
+               (:arguments 
+                  ( ("battery_img_name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [16885 16914])
+                    ("delay" variable (:type ("UINTN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [16915 16927]))                  
+                :type ("VOID" type (:type "class") nil nil))
+                nil [16857 17366])
+            ("ux_display_low_battery" function
+               (:arguments 
+                  ( ("delay" variable (:type ("UINTN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [17396 17408]))                  
+                :type ("VOID" type (:type "class") nil nil))
+                nil [17368 17466])
+            ("ux_display_empty_battery" function
+               (:arguments 
+                  ( ("" variable (:type ("VOID" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [17498 17503]))                  
+                :type ("VOID" type (:type "class") nil nil))
+                nil [17468 17559])
+            ("ux_display_vendor_splash" function
+               (:arguments 
+                  ( ("" variable (:type ("VOID" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [17591 17596]))                  
+                :type ("VOID" type (:type "class") nil nil))
+                nil [17561 17709]))          
+      :file "ux.c"
+      :pointmax 17710
+      :fsize 17709
+      :lastmodtime '(22813 3865 590460 227000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("FIRST_TIMEOUT_SECS" . ((number "5" 1602 . 1603)))
+          ("SECOND_TIMEOUT_SECS" . ((number "30" 1632 . 1634)))
+          ("PRESS_TO_PAUSE_FMT" . ((string "\"Press %a to pause %a\"" 1664 . 1686)))
+          ("CRASHMODE_TIMEOUT_SECS" . ((semantic-list "(5 * 60)" 3378 . 3386)))
+          ("PRESS_TO_CONTINUE_FMT" . ((string "\"Press %a to continue\"" 1718 . 1740)))
+          ("HASH_FORMAT" . ((string "\"%02x%02x-%02x%02x-%02x%02x\"" 9610 . 9638)))
+          ("MIN_HASH_SIZE" . ((number "6" 9661 . 9662)))
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("_UX_H_" variable (:constant-flag t) nil [1480 1486])
+            ("efi.h" include (:system-flag t) nil [1488 1504])
+            ("efilib.h" include (:system-flag t) nil [1505 1524])
+            ("targets.h" include nil nil [1526 1546])
+            ("ux_error_code" type
+               (:members 
+                  ( ("MIN_ERROR_CODE" variable
+                       (:constant-flag t
+                        :default-value (1594 1595)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1577 1595])
+                    ("NO_ERROR_CODE" variable
+                       (:constant-flag t
+                        :default-value (1621 1622)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1605 1622])
+                    ("RED_STATE_CODE" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1632 1647])
+                    ("BAD_RECOVERY_CODE" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1656 1674])
+                    ("DEVICE_UNLOCKED_CODE" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1683 1704])
+                    ("SECURE_BOOT_CODE" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1713 1730])
+                    ("BOOTIMAGE_UNTRUSTED_CODE" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1739 1764])
+                    ("CRASH_EVENT_CODE" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1773 1790])
+                    ("NOT_BOOTABLE_CODE" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1799 1817])
+                    ("MAX_ERROR_CODE" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1826 1842]))                  
+                :type "enum")
+                nil [1548 1843])
+            ("ux_prompt_user" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("error_code" variable (:type ("ux_error_code" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [2205 2235])
+                    ("power_off" variable (:type ("BOOLEAN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2240 2258])
+                    ("boot_state" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2259 2276])
+                    ("hash" variable
+                       (:pointer 1
+                        :type ("UINT8" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2281 2293])
+                    ("hash_size" variable (:type ("UINTN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2294 2310]))                  
+                :type ("boot_target" type (:type "enum") nil nil))
+                nil [2173 2311])
+            ("ux_prompt_user_for_boot_target" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("code" variable (:type ("ux_error_code" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [2706 2730]))                  
+                :type ("boot_target" type (:type "enum") nil nil))
+                nil [2658 2731])
+            ("ux_display_low_battery" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("delay" variable (:type ("UINTN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2827 2839]))                  
+                :type ("VOID" type (:type "class") nil nil))
+                nil [2799 2840])
+            ("ux_display_empty_battery" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("VOID" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2871 2876]))                  
+                :type ("VOID" type (:type "class") nil nil))
+                nil [2841 2877])
+            ("ux_display_vendor_splash" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("VOID" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2909 2914]))                  
+                :type ("VOID" type (:type "class") nil nil))
+                nil [2879 2915]))          
+      :file "ux.h"
+      :pointmax 2924
+      :fsize 2923
+      :lastmodtime '(22813 3865 590460 227000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("_UX_H_")
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("efi.h" include (:system-flag t) nil [1458 1474])
+            ("efiapi.h" include (:system-flag t) nil [1475 1494])
+            ("efilib.h" include (:system-flag t) nil [1495 1514])
+            ("openssl/sha.h" include (:system-flag t) nil [1516 1540])
+            ("fastboot.h" include (:system-flag t) nil [1542 1563])
+            ("vars.h" include nil nil [1565 1582])
+            ("lib.h" include nil nil [1583 1599])
+            ("security.h" include nil nil [1600 1621])
+            ("android.h" include nil nil [1622 1642])
+            ("ux.h" include nil nil [1643 1658])
+            ("options.h" include nil nil [1659 1679])
+            ("power.h" include nil nil [1680 1698])
+            ("targets.h" include nil nil [1699 1719])
+            ("unittest.h" include nil nil [1720 1741])
+            ("em.h" include nil nil [1742 1757])
+            ("storage.h" include nil nil [1758 1778])
+            ("version.h" include nil nil [1779 1799])
+            ("trusty.h" include nil nil [1800 1819])
+            ("oemvars.h" include nil nil [1872 1892])
+            ("slot.h" include nil nil [1893 1910])
+            ("magic" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "L\"### kernelflinger ###\""
+                :type ("CHAR16" type (:type "class") nil nil))
+                nil [1970 2047])
+            ("EFI_RESET_WAIT_MS" variable (:constant-flag t) nil [2272 2289])
+            ("DETECT_KEY_STALL_TIME_MS" variable (:constant-flag t) nil [2385 2409])
+            ("FASTBOOT_HOLD_DELAY" variable (:constant-flag t) nil [2508 2527])
+            ("MAGIC_KEY" variable (:constant-flag t) nil [2615 2624])
+            ("FASTBOOT_SENTINEL" variable (:constant-flag t) nil [2753 2770])
+            ("FWUPDATE_FILE" variable (:constant-flag t) nil [2839 2852])
+            ("WATCHDOG_DELAY" variable (:constant-flag t) nil [3084 3098])
+            ("g_disk_device" variable
+               (:typemodifiers ("static")
+                :type ("EFI_HANDLE" type (:type "class") nil nil))
+                nil [3116 3148])
+            ("g_loaded_image" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :type ("EFI_LOADED_IMAGE" type (:type "class") nil nil))
+                nil [3149 3189])
+            ("die" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type ("VOID" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3206 3211]))                  
+                :type ("VOID" type (:type "class") nil nil))
+                nil [3190 3239])
+            ("check_fastboot_sentinel" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type ("VOID" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4090 4095]))                  
+                :type ("boot_target" type (:type "enum") nil nil))
+                nil [4042 4277])
+            ("check_magic_key" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type ("VOID" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4320 4325]))                  
+                :type ("boot_target" type (:type "enum") nil nil))
+                nil [4280 6096])
+            ("check_bcb" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("target_path" variable
+                       (:pointer 2
+                        :type ("CHAR16" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6133 6154])
+                    ("oneshot" variable
+                       (:pointer 1
+                        :type ("BOOLEAN" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6155 6172]))                  
+                :type ("boot_target" type (:type "enum") nil nil))
+                nil [6099 8718])
+            ("check_loader_entry_one_shot" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type ("VOID" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8773 8778]))                  
+                :type ("boot_target" type (:type "enum") nil nil))
+                nil [8721 9967])
+            ("reset_is_due_to_watchdog_or_panic" function
+               (:typemodifiers ("static")
+                :type ("BOOLEAN" type (:type "class") nil nil))
+                nil [9969 10716])
+            ("check_watchdog" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type ("VOID" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11028 11033]))                  
+                :type ("boot_target" type (:type "enum") nil nil))
+                nil [10989 13471])
+            ("check_command_line" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type ("VOID" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [13516 13521]))                  
+                :type ("boot_target" type (:type "enum") nil nil))
+                nil [13473 15241])
+            ("check_battery_inserted" function
+               (:typemodifiers ("static")
+                :type ("boot_target" type (:type "enum") nil nil))
+                nil [15243 15567])
+            ("check_charge_mode" function
+               (:typemodifiers ("static")
+                :type ("boot_target" type (:type "enum") nil nil))
+                nil [15569 16020])
+            ("check_battery" function (:type ("boot_target" type (:type "enum") nil nil)) nil [16022 16494])
+            ("choose_boot_target" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("target_path" variable
+                       (:pointer 2
+                        :type ("CHAR16" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [17720 17741])
+                    ("oneshot" variable
+                       (:pointer 1
+                        :type ("BOOLEAN" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [17742 17759]))                  
+                :type ("boot_target" type (:type "enum") nil nil))
+                nil [17677 19446])
+            ("validate_bootimage" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type ("IN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [20012 20019])
+                    ("boot_target" variable (:type ("boot_target" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [20015 20044])
+                    ("VOID" variable (:type ("IN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [20061 20070])
+                    ("" variable (:type ("bootimage" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [20070 20080])
+                    ("X509" variable (:type ("OUT" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [20097 20107])
+                    ("" variable (:type ("verifier_cert" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [20108 20122]))                  
+                :type ("UINT8" type (:type "class") nil nil))
+                nil [19963 21579])
+            ("load_boot_image" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type ("IN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [22412 22419])
+                    ("boot_target" variable (:type ("boot_target" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [22415 22444])
+                    ("CHAR16" variable (:type ("IN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [22461 22472])
+                    ("" variable (:type ("target_path" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [22472 22484])
+                    ("VOID" variable (:type ("OUT" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [22501 22511])
+                    ("" variable (:type ("bootimage" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [22512 22522])
+                    ("BOOLEAN" variable (:type ("IN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [22539 22557])
+                    ("" variable (:type ("oneshot" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [22550 22558]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [22361 24281])
+            ("enter_efi_binary" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("path" variable
+                       (:pointer 1
+                        :type ("CHAR16" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [24443 24456])
+                    ("" variable (:type ("BOOLEAN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [24457 24471]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [24408 25394])
+            ("OEMVARS_MAGIC" variable (:constant-flag t) nil [25405 25418])
+            ("OEMVARS_MAGIC_SZ" variable (:constant-flag t) nil [25450 25466])
+            ("set_image_oemvars_nocheck" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("bootimage" variable
+                       (:pointer 1
+                        :type ("VOID" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [25521 25537])
+                    ("restricted_guid" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("EFI_GUID" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [25582 25614]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [25477 26681])
+            ("set_image_oemvars" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("bootimage" variable
+                       (:pointer 1
+                        :type ("VOID" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [26719 26735]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [26683 27025])
+            ("load_image" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("bootimage" variable
+                       (:pointer 1
+                        :type ("VOID" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [27056 27072])
+                    ("boot_state" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [27073 27090])
+                    ("boot_target" variable (:type ("boot_target" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [27120 27149])
+                    ("verifier_cert" variable
+                       (:pointer 1
+                        :type ("X509" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [27179 27199]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [27027 29600])
+            ("die" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type ("VOID" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [29618 29623]))                  
+                :type ("VOID" type (:type "class") nil nil))
+                nil [29602 29772])
+            ("enter_fastboot_mode" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("boot_state" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [29806 29823]))                  
+                :type ("VOID" type (:type "class") nil nil))
+                nil [29774 29859])
+            ("enter_fastboot_mode" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("boot_state" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [29893 29910]))                  
+                :type ("VOID" type (:type "class") nil nil))
+                nil [29861 32421])
+            ("push_capsule" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("EFI_FILE" variable (:type ("IN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [32471 32484])
+                    ("" variable (:type ("root_dir" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [32484 32493])
+                    ("CHAR16" variable (:type ("IN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [32510 32521])
+                    ("" variable (:type ("name" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [32521 32526])
+                    ("EFI_RESET_TYPE" variable (:type ("OUT" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [32543 32563])
+                    ("" variable (:type ("resetType" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [32563 32573]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [32423 35392])
+            ("bootloader_recover_mode" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("boot_state" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [35430 35447]))                  
+                :type "void")
+                nil [35394 35684])
+            ("boot_error" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("error_code" variable (:type ("ux_error_code" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [35709 35739])
+                    ("boot_state" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [35740 35757])
+                    ("hash" variable
+                       (:pointer 1
+                        :type ("UINT8" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [35781 35793])
+                    ("hash_size" variable (:type ("UINTN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [35794 35810]))                  
+                :type ("VOID" type (:type "class") nil nil))
+                nil [35686 36504])
+            ("efi_main" function
+               (:arguments 
+                  ( ("image" variable (:type ("EFI_HANDLE" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [37745 37762])
+                    ("sys_table" variable
+                       (:pointer 1
+                        :type ("EFI_SYSTEM_TABLE" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [37763 37791]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [37725 45157]))          
+      :file "kernelflinger.c"
+      :pointmax 45208
+      :fsize 45207
+      :lastmodtime '(22836 51311 251165 620000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("EFI_RESET_WAIT_MS" . ((number "200" 2300 . 2303)))
+          ("FASTBOOT_SENTINEL" . ((string "L\"\\\\force_fastboot\"" 2779 . 2798)))
+          ("DETECT_KEY_STALL_TIME_MS" . ((number "1" 2413 . 2414)))
+          ("WATCHDOG_DELAY" . ((semantic-list "(10 * 60)" 3105 . 3114)))
+          ("OEMVARS_MAGIC" . ((string "\"#OEMVARS\\n\"" 25249 . 25261)))
+          ("OEMVARS_MAGIC_SZ" . ((number "9" 25294 . 25295)))
+          ("FWUPDATE_FILE" . ((string "L\"\\\\BIOSUPDATE.fv\"" 2865 . 2883)))
+          ("MAGIC_KEY" . ((symbol "EV_DOWN" 2634 . 2641)))
+          ("FASTBOOT_HOLD_DELAY" . ((semantic-list "(2 * 1000)" 2536 . 2546)))
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("UNITTEST_H" variable (:constant-flag t) nil [1484 1494])
+            ("unittest_main" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("testname" variable
+                       (:pointer 1
+                        :type ("CHAR16" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1515 1532]))                  
+                :type ("VOID" type (:type "class") nil nil))
+                nil [1496 1533]))          
+      :file "unittest.h"
+      :pointmax 1542
+      :fsize 1541
+      :lastmodtime '(22813 3865 590460 227000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("UNITTEST_H")
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("efi.h" include (:system-flag t) nil [1458 1474])
+            ("efiapi.h" include (:system-flag t) nil [1475 1494])
+            ("efilib.h" include (:system-flag t) nil [1495 1514])
+            ("ux.h" include nil nil [1516 1531])
+            ("ui.h" include nil nil [1532 1547])
+            ("lib.h" include nil nil [1548 1564])
+            ("unittest.h" include nil nil [1565 1586])
+            ("blobstore.h" include nil nil [1587 1609])
+            ("watchdog.h" include nil nil [1610 1631])
+            ("TCO_SECOND_TIMEOUT" variable (:constant-flag t) nil [1693 1711])
+            ("test_watchdog" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type ("VOID" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1741 1746]))                  
+                :type ("VOID" type (:type "class") nil nil))
+                nil [1715 2322])
+            ("test_keys" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type ("VOID" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2347 2352]))                  
+                :type ("VOID" type (:type "class") nil nil))
+                nil [2325 2817])
+            ("fake_hash" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :default-value "{0x12, 0x34, 0x56, 0x78, 0x90, 0xAB}"
+                :type ("UINT8" type (:type "class") nil nil))
+                nil [2819 2883])
+            ("test_ux" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type ("VOID" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2905 2910]))                  
+                :type ("VOID" type (:type "class") nil nil))
+                nil [2885 4016])
+            ("TEST_SUITES" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :default-value "{
+        { L\"ux\", test_ux },
+        { L\"keys\", test_keys },
+        { L\"watchdog\", test_watchdog }
+}"
+                :type ("test_suite" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [4018 4215])
+            ("test_suite" type
+               (:members 
+                  ( ("name" variable
+                       (:pointer 1
+                        :type ("CHAR16" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [4053 4066])
+                    ("fun" function
+                       (:prototype-flag t
+                        :function-pointer t
+                        :arguments 
+                          ( ("" variable (:type ("VOID" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4087 4092]))                          
+                        :type ("VOID" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [4075 4093]))                  
+                :type "struct")
+                nil [4018 4215])
+            ("unittest_main" function
+               (:arguments 
+                  ( ("testname" variable
+                       (:pointer 1
+                        :type ("CHAR16" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4236 4253]))                  
+                :type ("VOID" type (:type "class") nil nil))
+                nil [4217 4838]))          
+      :file "unittest.c"
+      :pointmax 4839
+      :fsize 4838
+      :lastmodtime '(22813 3865 590460 227000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("TCO_SECOND_TIMEOUT" . ((number "3" 1712 . 1713)))
+          )
+))
+  :file "!home!chenqi!work!aia_github!hardware!intel!kernelflinger!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

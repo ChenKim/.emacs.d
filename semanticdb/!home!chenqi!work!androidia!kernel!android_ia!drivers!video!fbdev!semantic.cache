@@ -1,0 +1,162 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("linux/kernel.h" include (:system-flag t) nil [186 211])
+            ("linux/efi.h" include (:system-flag t) nil [212 234])
+            ("linux/errno.h" include (:system-flag t) nil [235 259])
+            ("linux/fb.h" include (:system-flag t) nil [260 281])
+            ("linux/platform_device.h" include (:system-flag t) nil [282 316])
+            ("linux/screen_info.h" include (:system-flag t) nil [317 347])
+            ("video/vga.h" include (:system-flag t) nil [348 370])
+            ("asm/efi.h" include (:system-flag t) nil [371 391])
+            ("request_mem_succeeded" variable
+               (:typemodifiers ("static")
+                :default-value "false"
+                :type "bool")
+                nil [393 435])
+            ("efifb_defined" variable
+               (:typemodifiers ("static")
+                :default-value "{
+	.activate		= FB_ACTIVATE_NOW,
+	.height			= -1,
+	.width			= -1,
+	.right_margin		= 32,
+	.upper_margin		= 16,
+	.lower_margin		= 4,
+	.vsync_len		= 4,
+	.vmode			= FB_VMODE_NONINTERLACED,
+}"
+                :type ("fb_var_screeninfo" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [437 672])
+            ("efifb_fix" variable
+               (:typemodifiers ("static")
+                :default-value "{
+	.id			= \"EFI VGA\",
+	.type			= FB_TYPE_PACKED_PIXELS,
+	.accel			= FB_ACCEL_NONE,
+	.visual			= FB_VISUAL_TRUECOLOR,
+}"
+                :type ("fb_fix_screeninfo" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [674 837])
+            ("efifb_setcolreg" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("regno" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [866 881])
+                    ("red" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [882 895])
+                    ("green" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [896 911])
+                    ("blue" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [918 932])
+                    ("transp" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [933 949])
+                    ("info" variable
+                       (:pointer 1
+                        :type ("fb_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [956 977]))                  
+                :type "int")
+                nil [839 1552])
+            ("efifb_destroy" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("info" variable
+                       (:pointer 1
+                        :type ("fb_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1580 1601]))                  
+                :type "void")
+                nil [1554 1813])
+            ("efifb_ops" variable
+               (:typemodifiers ("static")
+                :default-value "{
+	.owner		= THIS_MODULE,
+	.fb_destroy	= efifb_destroy,
+	.fb_setcolreg	= efifb_setcolreg,
+	.fb_fillrect	= cfb_fillrect,
+	.fb_copyarea	= cfb_copyarea,
+	.fb_imageblit	= cfb_imageblit,
+}"
+                :type ("fb_ops" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1815 2032])
+            ("efifb_setup" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("options" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2057 2071]))                  
+                :type "int")
+                nil [2034 2720])
+            ("fb_base_is_valid" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [2758 2763]))                  
+                :type "bool")
+                nil [2722 2953])
+            ("efifb_probe" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("platform_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2978 3006]))                  
+                :type "int")
+                nil [2955 8990])
+            ("efifb_remove" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("pdev" variable
+                       (:pointer 1
+                        :type ("platform_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9016 9045]))                  
+                :type "int")
+                nil [8992 9173])
+            ("efifb_driver" variable
+               (:typemodifiers ("static")
+                :default-value "{
+	.driver = {
+		.name = \"efi-framebuffer\",
+	},
+	.probe = efifb_probe,
+	.remove = efifb_remove,
+}"
+                :type ("platform_driver" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [9175 9318])
+            ("builtin_platform_driver" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("efifb_driver" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9344 9357]))                  
+                :type "int")
+                nil [9320 9358]))          
+      :file "efifb.c"
+      :pointmax 9359
+      :fsize 9358
+      :lastmodtime '(22781 19804 58156 585000)
+      :unmatched-syntax nil))
+  :file "!home!chenqi!work!androidia!kernel!android_ia!drivers!video!fbdev!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

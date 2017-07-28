@@ -1,0 +1,204 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("linux/efi.h" include (:system-flag t) nil [575 597])
+            ("linux/module.h" include (:system-flag t) nil [598 623])
+            ("linux/moduleparam.h" include (:system-flag t) nil [624 654])
+            ("linux/reboot.h" include (:system-flag t) nil [655 680])
+            ("linux/kexec.h" include (:system-flag t) nil [681 705])
+            ("linux/slab.h" include (:system-flag t) nil [706 729])
+            ("linux/nls.h" include (:system-flag t) nil [730 752])
+            ("MODULE_NAME" variable (:constant-flag t) nil [762 773])
+            ("LOADER_GUID" variable
+               (:typemodifiers ("static")
+                :constant-flag t
+                :default-value "EFI_GUID(0x4a67b082, 0x0a4c, 0x41cf,
+		 0xb6, 0xc7, 0x44, 0x0b, 0x29, 0xbb, 0x8c, 0x4f)"
+                :type ("efi_guid_t" type (:type "class") nil nil))
+                nil [783 910])
+            ("REBOOT_TARGET" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"LoaderEntryOneShot\""
+                :type "char")
+                nil [912 969])
+            ("REBOOT_REASON" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"LoaderEntryRebootReason\""
+                :type "char")
+                nil [970 1032])
+            ("WDT_SOURCE_PREFIX" variable
+               (:pointer 1
+                :dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+	\"Kernel Watchdog\", \"Watchdog\", \"softlockup\", \"Software Watchdog\"
+}"
+                :type "char")
+                nil [1034 1152])
+            ("efibc_str_to_str16" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("str" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1185 1201])
+                    ("str16" variable
+                       (:pointer 1
+                        :type "wchar_t")
+                        (reparse-symbol arg-sub-list) [1202 1217]))                  
+                :type "void")
+                nil [1154 1377])
+            ("efibc_get_var_entry" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1427 1444]))                  
+                :type ("efivar_entry" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1379 1701])
+            ("efibc_set_variable" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1734 1751])
+                    ("value" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1752 1770]))                  
+                :type "void")
+                nil [1703 2241])
+            ("efibc_reboot_notifier_call" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("notifier" variable
+                       (:pointer 1
+                        :type ("notifier_block" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2281 2313])
+                    ("what" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [2324 2343])
+                    ("data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [2344 2355]))                  
+                :type "int")
+                nil [2243 2573])
+            ("is_watchdog_source" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("str" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2606 2622]))                  
+                :type "bool")
+                nil [2575 2804])
+            ("efibc_panic_notifier_call" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("notifier" variable
+                       (:pointer 1
+                        :type ("notifier_block" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2843 2875])
+                    ("what" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [2885 2904])
+                    ("data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [2905 2916]))                  
+                :type "int")
+                nil [2806 3234])
+            ("efibc_reboot_notifier" variable
+               (:typemodifiers ("static")
+                :default-value "{
+	.notifier_call = efibc_reboot_notifier_call,
+}"
+                :type ("notifier_block" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [3236 3339])
+            ("efibc_panic_notifier" variable
+               (:typemodifiers ("static")
+                :default-value "{
+	.notifier_call  = efibc_panic_notifier_call,
+}"
+                :type ("notifier_block" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [3341 3443])
+            ("efibc_init" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [3474 3479]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [3456 3806])
+            ("module_init" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("efibc_init" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3819 3830]))                  
+                :type "int")
+                nil [3807 3831])
+            ("efibc_exit" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [3863 3868]))                  
+                :type ("__exit" type (:type "class") nil nil))
+                nil [3845 4011])
+            ("module_exit" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("efibc_exit" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4024 4035]))                  
+                :type "int")
+                nil [4012 4036])
+            ("MODULE_AUTHOR" function
+               (:prototype-flag t
+                :type "int")
+                nil [4038 4105])
+            ("MODULE_AUTHOR" function
+               (:prototype-flag t
+                :type "int")
+                nil [4106 4163])
+            ("MODULE_DESCRIPTION" function
+               (:prototype-flag t
+                :type "int")
+                nil [4164 4222])
+            ("MODULE_LICENSE" function
+               (:prototype-flag t
+                :type "int")
+                nil [4223 4248]))          
+      :file "efibc.c"
+      :pointmax 4249
+      :fsize 4248
+      :lastmodtime '(22809 6816 799652 928000)
+      :unmatched-syntax '((string 4238 . 4246) (string 4183 . 4220) (string 4120 . 4161) (string 4052 . 4103) (VOID 3840 . 3844) (STATIC 3833 . 3839) (INT 3452 . 3455) (STATIC 3445 . 3451))
+      :lexical-table 
+        '(("MODULE_NAME" . ((string "\"efibc\"" 774 . 781)))
+          )
+))
+  :file "!home!chenqi!work!ivio!kernel!bxt!arch!x86!platform!efi!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

@@ -1,0 +1,1492 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("lib.h" include (:system-flag t) nil [1470 1486])
+            ("vars.h" include (:system-flag t) nil [1487 1504])
+            ("usb.h" include (:system-flag t) nil [1505 1521])
+            ("tcp.h" include (:system-flag t) nil [1522 1538])
+            ("transport.h" include (:system-flag t) nil [1539 1561])
+            ("adb.h" include nil nil [1563 1579])
+            ("adb_socket.h" include nil nil [1580 1603])
+            ("service.h" include nil nil [1604 1624])
+            ("ADB_IF_SUBCLASS" variable (:constant-flag t) nil [1658 1673])
+            ("ADB_IF_PROTOCOL" variable (:constant-flag t) nil [1688 1703])
+            ("STR_CONFIGURATION" variable (:constant-flag t) nil [1718 1735])
+            ("STR_INTERFACE" variable (:constant-flag t) nil [1751 1764])
+            ("TCP_PORT" variable (:constant-flag t) nil [1816 1824])
+            ("ADB_VERSION" variable (:constant-flag t) nil [1866 1877])
+            ("SYSTEM_TYPE" variable (:constant-flag t) nil [1897 1908])
+            ("adb_state" type
+               (:members 
+                  ( ("ADB_READ_MSG" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1969 1982])
+                    ("ADB_READ_MSG_PAYLOAD" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1984 2005])
+                    ("ADB_PROCESS_MSG" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [2007 2024]))                  
+                :type "enum")
+                nil [1943 2037])
+            ("adb_state_t" type
+               (:typedef ("adb_state" type (:type "enum") nil nil)
+                :type "typedef")
+                nil [1943 2037])
+            ("SERVICES" variable
+               (:pointer 1
+                :dereference 1
+                :typemodifiers ("static")
+                :default-value "{ &reboot_service, &sync_service }"
+                :type ("service_t" type (:type "class") nil nil))
+                nil [2039 2105])
+            ("adb_state" variable
+               (:typemodifiers ("static")
+                :type ("adb_state_t" type (:type "class") nil nil))
+                nil [2106 2135])
+            ("adb_pkt_in" variable
+               (:typemodifiers ("static")
+                :type ("adb_pkt_t" type (:type "class") nil nil))
+                nil [2136 2164])
+            ("in_buf" variable
+               (:dereference 1
+                :type "unsigned char")
+                nil [2364 2402])
+            ("adb_max_payload" variable (:type ("UINT32" type (:type "class") nil nil)) nil [2404 2427])
+            ("adb_pkt_sum" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("pkt" variable
+                       (:pointer 1
+                        :type ("adb_pkt_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2455 2470]))                  
+                :type ("UINT32" type (:type "class") nil nil))
+                nil [2429 2619])
+            ("delayed_pkt_data" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :type ("adb_pkt_t" type (:type "class") nil nil))
+                nil [2621 2656])
+            ("adb_send_pkt" function
+               (:arguments 
+                  ( ("pkt" variable
+                       (:pointer 1
+                        :type ("adb_pkt_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2681 2696])
+                    ("command" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2697 2712])
+                    ("arg0" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2713 2725])
+                    ("arg1" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2726 2738]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [2657 3445])
+            ("adb_read_msg" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [3472 3477]))                  
+                :type "void")
+                nil [3447 3677])
+            ("adb_read_msg_payload" function
+               (:typemodifiers ("static")
+                :type "void")
+                nil [3679 3929])
+            ("cmd_unsupported" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("pkt" variable
+                       (:pointer 1
+                        :type ("adb_pkt_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3978 3993]))                  
+                :type "void")
+                nil [3950 4190])
+            ("cmd_connect" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("pkt" variable
+                       (:pointer 1
+                        :type ("adb_pkt_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4216 4231]))                  
+                :type "void")
+                nil [4192 4775])
+            ("cmd_open" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("pkt" variable
+                       (:pointer 1
+                        :type ("adb_pkt_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4798 4813]))                  
+                :type "void")
+                nil [4777 5260])
+            ("cmd_okay" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("pkt" variable
+                       (:pointer 1
+                        :type ("adb_pkt_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5283 5298]))                  
+                :type "void")
+                nil [5262 5357])
+            ("cmd_close" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("pkt" variable
+                       (:pointer 1
+                        :type ("adb_pkt_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5381 5396]))                  
+                :type "void")
+                nil [5359 5456])
+            ("cmd_write" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("pkt" variable
+                       (:pointer 1
+                        :type ("adb_pkt_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5480 5495]))                  
+                :type "void")
+                nil [5458 5592])
+            ("adb_handler" type
+               (:members 
+                  ( ("command" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5624 5639])
+                    ("fun" function
+                       (:prototype-flag t
+                        :function-pointer t
+                        :arguments 
+                          ( ("" variable
+                               (:pointer 1
+                                :type ("adb_pkt_t" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [5653 5665]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [5641 5666]))                  
+                :type "struct")
+                nil [5594 5683])
+            ("adb_handler_t" type
+               (:typedef ("adb_handler" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [5594 5683])
+            ("HANDLERS" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :default-value "{
+	{ A_SYNC, cmd_unsupported },
+	{ A_CNXN, cmd_connect },
+	{ A_OPEN, cmd_open },
+	{ A_OKAY, cmd_okay },
+	{ A_CLSE, cmd_close },
+	{ A_WRTE, cmd_write },
+	{ A_AUTH, cmd_unsupported }
+}"
+                :type ("adb_handler_t" type (:type "class") nil nil))
+                nil [5685 5902])
+            ("get_handler" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("msg" variable
+                       (:pointer 1
+                        :type ("adb_msg_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5938 5953]))                  
+                :type ("adb_handler_t" type (:type "class") nil nil))
+                nil [5904 6094])
+            ("process_msg" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [6120 6125]))                  
+                :type "void")
+                nil [6096 6339])
+            ("adb_process_rx" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("buf" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [6368 6378])
+                    ("len" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [6379 6392]))                  
+                :type "void")
+                nil [6341 7586])
+            ("adb_process_tx" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("buf" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [7643 7653])
+                    ("len" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [7688 7701]))                  
+                :type "void")
+                nil [7588 7938])
+            ("exit_bt" variable
+               (:typemodifiers ("static")
+                :type ("boot_target" type (:type "enum") nil nil))
+                nil [7940 7972])
+            ("adb_get_boot_target" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [8011 8016]))                  
+                :type ("boot_target" type (:type "enum") nil nil))
+                nil [7974 8037])
+            ("adb_set_boot_target" function
+               (:arguments 
+                  ( ("bt" variable (:type ("boot_target" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [8064 8084]))                  
+                :type "void")
+                nil [8039 8103])
+            ("adb_usb_start" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("start_cb" variable (:type ("start_callback_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8137 8163])
+                    ("rx_cb" variable (:type ("data_callback_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8168 8190])
+                    ("tx_cb" variable (:type ("data_callback_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8195 8217]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [8105 8340])
+            ("print_tcpip_information" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("address" variable
+                       (:pointer 1
+                        :type ("EFI_IPv4_ADDRESS" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [8378 8404]))                  
+                :type "void")
+                nil [8342 8699])
+            ("adb_tcp_start" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("start_cb" variable (:type ("start_callback_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8733 8759])
+                    ("rx_cb" variable (:type ("data_callback_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8764 8786])
+                    ("tx_cb" variable (:type ("data_callback_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8791 8813]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [8701 9045])
+            ("ADB_TRANSPORT" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :default-value "{
+	{
+		.name = \"USB for adb\",
+		.start = adb_usb_start,
+		.stop = usb_stop,
+		.run = usb_run,
+		.read = usb_read,
+		.write = usb_write
+	},
+	{
+		.name = \"TCP for adb\",
+		.start = adb_tcp_start,
+		.stop = tcp_stop,
+		.run = tcp_run,
+		.read = tcp_read,
+		.write = tcp_write
+	}
+}"
+                :type ("transport_t" type (:type "class") nil nil))
+                nil [9047 9361])
+            ("adb_init" function (:type ("EFI_STATUS" type (:type "class") nil nil)) nil [9363 9706])
+            ("adb_run" function (:type ("EFI_STATUS" type (:type "class") nil nil)) nil [9708 9928])
+            ("adb_exit" function (:type ("EFI_STATUS" type (:type "class") nil nil)) nil [9930 10015]))          
+      :file "adb.c"
+      :pointmax 10016
+      :fsize 10015
+      :lastmodtime '(22781 19772 250156 351000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("TCP_PORT" . ((number "5555" 1825 . 1829)))
+          ("SYSTEM_TYPE" . ((string "\"bootloader\"" 1909 . 1921)))
+          ("ADB_VERSION" . ((number "0x01000000" 1878 . 1888)))
+          ("STR_CONFIGURATION" . ((string "L\"ADB\"" 1736 . 1742)))
+          ("STR_INTERFACE" . ((string "L\"ADB Interface\"" 1766 . 1782)))
+          ("ADB_IF_SUBCLASS" . ((number "0x42" 1675 . 1679)))
+          ("ADB_IF_PROTOCOL" . ((number "0x01" 1705 . 1709)))
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :file "adb_socket.h"
+      :fsize 2201
+      :lastmodtime '(22781 19772 250156 351000))
+    (semanticdb-table "semanticdb-table"
+      :file "service.h"
+      :fsize 1969
+      :lastmodtime '(22781 19772 250156 351000))
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("lib.h" include (:system-flag t) nil [1470 1486])
+            ("adb_socket.h" include nil nil [1488 1511])
+            ("service.h" include nil nil [1512 1532])
+            ("reboot_service_open" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("arg" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1572 1588])
+                    ("context" variable
+                       (:pointer 2
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [1589 1604]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [1534 2048])
+            ("reboot_service_ready" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("s" variable (:type ("asock_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2089 2099]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [2050 2243])
+            ("reboot_service_close" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("s" variable (:type ("asock_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2284 2294]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [2245 2406])
+            ("reboot_service_okay" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("s" variable (:type ("asock_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2474 2484]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [2408 2570])
+            ("reboot_service_read" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("s" variable (:type ("asock_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2638 2648])
+                    ("data" variable
+                       (:pointer 1
+                        :type "unsigned char")
+                        (reparse-symbol arg-sub-list) [2687 2707])
+                    ("length" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2746 2760]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [2572 2846])
+            ("reboot_service" variable
+               (:default-value "{
+	.name	 = \"reboot\",
+	.open	 = reboot_service_open,
+	.ready	 = reboot_service_ready,
+	.close	 = reboot_service_close,
+	.okay	 = reboot_service_okay,
+	.read	 = reboot_service_read
+}"
+                :type ("service_t" type (:type "class") nil nil))
+                nil [2848 3057]))          
+      :file "reboot_service.c"
+      :pointmax 3058
+      :fsize 3057
+      :lastmodtime '(22781 19772 250156 351000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("lib.h" include (:system-flag t) nil [1470 1486])
+            ("slot.h" include (:system-flag t) nil [1487 1504])
+            ("acpi.h" include nil nil [1506 1523])
+            ("reader.h" include nil nil [1565 1584])
+            ("sparse_format.h" include nil nil [1585 1611])
+            ("MAX_MEMORY_REGION_NB" variable (:constant-flag t) nil [1764 1784])
+            ("memory_priv" type
+               (:members 
+                  ( ("is_in_used" variable (:type ("BOOLEAN" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1820 1839])
+                    ("memmap" variable
+                       (:dereference 1
+                        :type ("UINT8" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1860 1927])
+                    ("nr_descr" variable (:type ("UINTN" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1929 1944])
+                    ("descr_sz" variable (:type ("UINTN" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1946 1961])
+                    ("start" variable (:type ("EFI_PHYSICAL_ADDRESS" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1982 2009])
+                    ("end" variable (:type ("EFI_PHYSICAL_ADDRESS" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2011 2036])
+                    ("cur" variable (:type ("EFI_PHYSICAL_ADDRESS" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2068 2093])
+                    ("cur_end" variable (:type ("EFI_PHYSICAL_ADDRESS" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2095 2124]))                  
+                :type "struct")
+                nil [1790 2136])
+            ("memory_t" type
+               (:typedef ("memory_priv" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [1790 2136])
+            ("get_sorted_memory_map" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("mem" variable
+                       (:pointer 1
+                        :type ("memory_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2178 2192]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [2138 2657])
+            ("memory_open" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("reader_ctx_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2689 2707])
+                    ("mem" variable
+                       (:pointer 1
+                        :type ("memory_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2708 2722])
+                    ("init" function
+                       (:function-pointer t
+                        :arguments 
+                          ( ("" variable
+                               (:pointer 1
+                                :type ("reader_ctx_t" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [2751 2766])
+                            ("" variable
+                               (:pointer 1
+                                :type "void")
+                                (reparse-symbol arg-sub-list) [2767 2774]))                          
+                        :type ("EFI_STATUS" type (:type "class") nil nil))
+                        nil nil)
+                    ("argc" variable (:type ("UINTN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2785 2796])
+                    ("argv" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2797 2809]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [2659 3826])
+            ("memory_read_current" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("mem" variable
+                       (:pointer 1
+                        :type ("memory_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3866 3880])
+                    ("buf" variable
+                       (:pointer 2
+                        :type "unsigned char")
+                        (reparse-symbol arg-sub-list) [3881 3901])
+                    ("len" variable
+                       (:pointer 1
+                        :type ("UINT64" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3902 3914]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [3828 4180])
+            ("memory_close" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("reader_ctx_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4207 4225]))                  
+                :type "void")
+                nil [4182 4315])
+            ("SIZEOF_TOTALSZ" variable (:constant-flag t) nil [4342 4356])
+            ("MAX_CHUNK_SIZE" variable (:constant-flag t) nil [4406 4420])
+            ("ram_priv" variable
+               (:typemodifiers ("static")
+                :default-value "{
+	.sheader = {
+		.magic = SPARSE_HEADER_MAGIC,
+		.major_version = 0x1,
+		.minor_version = 0,
+		.file_hdr_sz = sizeof(struct sparse_header),
+		.chunk_hdr_sz = sizeof(struct chunk_header),
+		.blk_sz = EFI_PAGE_SIZE
+	}
+}"
+                :type ("ram_priv" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [4477 4886])
+            ("ram_priv" type
+               (:members 
+                  ( ("m" variable (:type ("memory_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4503 4514])
+                    ("chunk_nb" variable (:type ("UINTN" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4538 4553])
+                    ("cur_chunk" variable (:type ("UINTN" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4555 4571])
+                    ("sheader" variable (:type ("sparse_header" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [4573 4602])
+                    ("chunks" variable
+                       (:dereference 1
+                        :type ("chunk_header" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [4604 4653]))                  
+                :type "struct")
+                nil [4477 4886])
+            ("ram_add_chunk" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("reader_ctx_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4920 4938])
+                    ("priv" variable
+                       (:pointer 1
+                        :type ("ram_priv" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4939 4961])
+                    ("type" variable (:type ("UINT16" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4962 4974])
+                    ("size" variable (:type ("UINT64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4975 4987]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [4888 5920])
+            ("ram_build_chunks" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("reader_ctx_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5957 5975])
+                    ("priv_p" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [5976 5989]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [5922 8198])
+            ("ram_open" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("reader_ctx_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [8227 8245])
+                    ("argc" variable (:type ("UINTN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8246 8257])
+                    ("argv" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [8258 8270]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [8200 8343])
+            ("ram_read" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("reader_ctx_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [8372 8390])
+                    ("buf" variable
+                       (:pointer 2
+                        :type "unsigned char")
+                        (reparse-symbol arg-sub-list) [8391 8411])
+                    ("len" variable
+                       (:pointer 1
+                        :type ("UINT64" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [8412 8424]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [8345 9374])
+            ("elf_ident" type
+               (:members 
+                  ( ("EI_MAG0" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [9430 9438])
+                    ("EI_MAG1" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [9467 9475])
+                    ("EI_MAG2" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [9477 9485])
+                    ("EI_MAG3" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [9487 9495])
+                    ("EI_CLASS" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [9497 9506])
+                    ("EI_DATA" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [9526 9534])
+                    ("EI_VERSION" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [9557 9568])
+                    ("EI_OSABI" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [9590 9599])
+                    ("EI_ABIVERSION" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [9630 9644])
+                    ("EI_PAD" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [9665 9672])
+                    ("EI_NIDENT" variable
+                       (:constant-flag t
+                        :default-value (9717 9719)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [9705 9719]))                  
+                :type "enum")
+                nil [9412 9745])
+            ("elf64_hdr" type
+               (:members 
+                  ( ("ident" variable
+                       (:dereference 1
+                        :type "unsigned char")
+                        (reparse-symbol classsubparts) [9775 9806])
+                    ("type" variable (:type ("UINT16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [9833 9845])
+                    ("machine" variable (:type ("UINT16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [9874 9889])
+                    ("version" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [9914 9929])
+                    ("entry" variable (:type ("EFI_PHYSICAL_ADDRESS" type (:type "class") nil nil)) (reparse-symbol classsubparts) [9961 9988])
+                    ("phoff" variable (:type ("UINT64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [10016 10029])
+                    ("shoff" variable (:type ("UINT64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [10063 10076])
+                    ("flags" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [10110 10123])
+                    ("ehsize" variable (:type ("UINT16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [10160 10174])
+                    ("phentsize" variable (:type ("UINT16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [10202 10219])
+                    ("phnum" variable (:type ("UINT16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [10259 10272])
+                    ("shentsize" variable (:type ("UINT16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [10317 10334])
+                    ("shnum" variable (:type ("UINT16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [10374 10387])
+                    ("shstrndx" variable (:type ("UINT16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [10432 10448]))                  
+                :type "struct")
+                nil [9747 10504])
+            ("elf64_hdr_t" type
+               (:typedef ("elf64_hdr" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [9747 10504])
+            ("ident_ei_class" type
+               (:members 
+                  ( ("ELFCLASS32" variable
+                       (:constant-flag t
+                        :default-value (10542 10543)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [10529 10543])
+                    ("ELFCLASS64" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [10568 10602]))                  
+                :type "enum")
+                nil [10506 10603])
+            ("ident_ei_data" type
+               (:members 
+                  ( ("ELFDATA2LSB" variable
+                       (:constant-flag t
+                        :default-value (10641 10642)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [10627 10642])
+                    ("ELFDATA2MSB" variable
+                       (:constant-flag t
+                        :default-value (10718 10719)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [10704 10719]))                  
+                :type "enum")
+                nil [10605 10778])
+            ("elf_type" type
+               (:members 
+                  ( ("ET_NONE" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [10797 10805])
+                    ("ET_REL" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [10827 10834])
+                    ("ET_EXEC" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [10868 10876])
+                    ("ET_DYN" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [10901 10908])
+                    ("ET_CORE" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [10937 10945])
+                    ("ET_LOOS" variable
+                       (:constant-flag t
+                        :default-value (10976 10982)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [10964 10982])
+                    ("ET_HIOS" variable
+                       (:constant-flag t
+                        :default-value (11028 11034)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [11016 11034])
+                    ("ET_LOPROC" variable
+                       (:constant-flag t
+                        :default-value (11049 11055)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [11037 11055])
+                    ("ET_HIPROC" variable
+                       (:constant-flag t
+                        :default-value (11099 11105)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [11087 11105]))                  
+                :type "enum")
+                nil [10780 11108])
+            ("elf_machine" type
+               (:members 
+                  ( ("EM_NONE" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [11130 11138])
+                    ("EM_X86_64" variable
+                       (:constant-flag t
+                        :default-value (11170 11172)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [11158 11172]))                  
+                :type "enum")
+                nil [11110 11206])
+            ("elf64_phdr" type
+               (:members 
+                  ( ("type" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [11237 11249])
+                    ("flags" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [11275 11288])
+                    ("offset" variable (:type ("UINT64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [11317 11331])
+                    ("vaddr" variable (:type ("EFI_PHYSICAL_ADDRESS" type (:type "class") nil nil)) (reparse-symbol classsubparts) [11356 11383])
+                    ("paddr" variable (:type ("EFI_PHYSICAL_ADDRESS" type (:type "class") nil nil)) (reparse-symbol classsubparts) [11417 11444])
+                    ("filesz" variable (:type ("UINT64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [11461 11475])
+                    ("memsz" variable (:type ("UINT64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [11509 11522])
+                    ("align" variable (:type ("UINT64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [11558 11571]))                  
+                :type "struct")
+                nil [11208 11616])
+            ("elf64_phdr_t" type
+               (:typedef ("elf64_phdr" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [11208 11616])
+            ("elfp_type" type
+               (:members 
+                  ( ("PT_NULL" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [11636 11644])
+                    ("PT_LOAD" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [11666 11674])
+                    ("PT_DYNAMIC" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [11701 11712])
+                    ("PT_INTERP" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [11744 11754])
+                    ("PT_NOTE" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [11793 11824]))                  
+                :type "enum")
+                nil [11618 11825])
+            ("ELF_VERSION" variable (:constant-flag t) nil [11835 11846])
+            ("KERNEL_PAGE_FLAGS" variable (:constant-flag t) nil [11858 11875])
+            ("KERNEL_PAGE_OFFSET" variable (:constant-flag t) nil [12063 12081])
+            ("vmcore_priv" variable
+               (:typemodifiers ("static")
+                :default-value "{
+	.hdr = {
+		.ident = {
+			[EI_MAG0] = 0x7f,
+			[EI_MAG1] = 'E',
+			[EI_MAG2] = 'L',
+			[EI_MAG3] = 'F',
+			[EI_CLASS] = ELFCLASS64,
+			[EI_DATA] = ELFDATA2LSB,
+			[EI_VERSION] = ELF_VERSION
+		},
+		.type = ET_CORE,
+		.machine = EM_X86_64,
+		.version = ELF_VERSION,
+		.phoff = sizeof(elf64_hdr_t),
+		.ehsize = sizeof(elf64_hdr_t),
+		.phentsize = sizeof(elf64_phdr_t)
+	},
+	.phdr = {
+		[0] = { .type = PT_NOTE } /* First program header is
+					     reserved to notes */
+	}
+}"
+                :type ("vmcore_priv" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [12102 12797])
+            ("vmcore_priv" type
+               (:members 
+                  ( ("m" variable (:type ("memory_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [12131 12142])
+                    ("cur_phdr" variable (:type ("INTN" type (:type "class") nil nil)) (reparse-symbol classsubparts) [12175 12189])
+                    ("hdr_sz" variable (:type ("UINTN" type (:type "class") nil nil)) (reparse-symbol classsubparts) [12234 12247])
+                    ("hdr" variable (:type ("elf64_hdr_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [12249 12265])
+                    ("phdr" variable
+                       (:dereference 1
+                        :type ("elf64_phdr_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [12267 12307]))                  
+                :type "struct")
+                nil [12102 12797])
+            ("vmcore_build_header" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("reader_ctx_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [12852 12870])
+                    ("priv_p" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [12871 12884]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [12814 14365])
+            ("vmcore_open" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("reader_ctx_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [14397 14415])
+                    ("argc" variable (:type ("UINTN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [14416 14427])
+                    ("argv" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [14428 14440]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [14367 14519])
+            ("vmcore_read" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("reader_ctx_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [14551 14569])
+                    ("buf" variable
+                       (:pointer 2
+                        :type "unsigned char")
+                        (reparse-symbol arg-sub-list) [14570 14590])
+                    ("len" variable
+                       (:pointer 1
+                        :type ("UINT64" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [14591 14603]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [14521 15364])
+            ("PART_READER_BUF_SIZE" variable (:constant-flag t) nil [15397 15417])
+            ("part_priv" type
+               (:members 
+                  ( ("gparti" variable (:type ("gpt_partition_interface" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [15458 15496])
+                    ("need_more_data" variable (:type ("BOOLEAN" type (:type "class") nil nil)) (reparse-symbol classsubparts) [15498 15521])
+                    ("buf" variable
+                       (:dereference 1
+                        :type "unsigned char")
+                        (reparse-symbol classsubparts) [15523 15563])
+                    ("buf_cur" variable (:type ("UINTN" type (:type "class") nil nil)) (reparse-symbol classsubparts) [15565 15579])
+                    ("buf_len" variable (:type ("UINTN" type (:type "class") nil nil)) (reparse-symbol classsubparts) [15581 15595])
+                    ("offset" variable (:type ("UINT64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [15597 15611]))                  
+                :type "struct")
+                nil [15438 15614])
+            ("_part_open" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("reader_ctx_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [15645 15663])
+                    ("argc" variable (:type ("UINTN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15664 15675])
+                    ("argv" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [15676 15688])
+                    ("log_unit" variable (:type ("logical_unit_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15689 15713]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [15616 16999])
+            ("part_open" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("reader_ctx_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [17029 17047])
+                    ("argc" variable (:type ("UINTN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [17048 17059])
+                    ("argv" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [17060 17072]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [17001 17132])
+            ("factory_part_open" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("reader_ctx_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [17170 17188])
+                    ("argc" variable (:type ("UINTN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [17189 17200])
+                    ("argv" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [17201 17213]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [17134 17276])
+            ("part_read" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("reader_ctx_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [17306 17324])
+                    ("buf" variable
+                       (:pointer 2
+                        :type "unsigned char")
+                        (reparse-symbol arg-sub-list) [17325 17345])
+                    ("len" variable
+                       (:pointer 1
+                        :type ("UINT64" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [17346 17358]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [17278 18032])
+            ("acpi_open" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("reader_ctx_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [18086 18104])
+                    ("argc" variable (:type ("UINTN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [18105 18116])
+                    ("argv" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [18117 18129]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [18058 18479])
+            ("efivar_find" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("varname" variable
+                       (:pointer 1
+                        :type ("CHAR16" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [18537 18553])
+                    ("guid_p" variable
+                       (:pointer 1
+                        :type ("EFI_GUID" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [18554 18571]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [18507 19833])
+            ("efivar_open" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("reader_ctx_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [19865 19883])
+                    ("argc" variable (:type ("UINTN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [19884 19895])
+                    ("argv" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [19896 19908]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [19835 20598])
+            ("mbr_open" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("reader_ctx_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [20637 20655])
+                    ("argc" variable (:type ("UINTN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [20656 20667])
+                    ("argv" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [20702 20714]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [20610 21429])
+            ("_gpt_header_open" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("reader_ctx_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [21506 21524])
+                    ("log_unit" variable (:type ("logical_unit_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [21525 21549]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [21471 21805])
+            ("gpt_header_open" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("reader_ctx_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [21841 21859])
+                    ("argc" variable (:type ("UINTN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [21860 21871])
+                    ("argv" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [21906 21918]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [21807 22021])
+            ("gpt_factory_header_open" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("reader_ctx_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [22065 22083])
+                    ("argc" variable (:type ("UINTN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [22084 22095])
+                    ("argv" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [22131 22143]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [22023 22249])
+            ("_gpt_parts_open" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("reader_ctx_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [22323 22341])
+                    ("log_unit" variable (:type ("logical_unit_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [22342 22366]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [22289 22643])
+            ("gpt_parts_open" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("reader_ctx_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [22678 22696])
+                    ("argc" variable (:type ("UINTN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [22697 22708])
+                    ("argv" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [22742 22754]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [22645 22856])
+            ("gpt_factory_parts_open" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("reader_ctx_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [22899 22917])
+                    ("argc" variable (:type ("UINTN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [22918 22929])
+                    ("argv" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [22964 22976]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [22858 23081])
+            ("BERR_MAGIC" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"BERR\""
+                :type "char")
+                nil [23108 23149])
+            ("bert_region_open" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("reader_ctx_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [23217 23235])
+                    ("argc" variable (:type ("UINTN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [23236 23247])
+                    ("argv" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [23283 23295]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [23182 23768])
+            ("bert_region_read" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("reader_ctx_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [23805 23823])
+                    ("buf" variable
+                       (:pointer 2
+                        :type "unsigned char")
+                        (reparse-symbol arg-sub-list) [23824 23844])
+                    ("len" variable
+                       (:pointer 1
+                        :type ("UINT64" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [23845 23857]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [23770 24276])
+            ("read_from_private" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("reader_ctx_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [24330 24348])
+                    ("buf" variable
+                       (:pointer 2
+                        :type "unsigned char")
+                        (reparse-symbol arg-sub-list) [24349 24369])
+                    ("len" variable
+                       (:pointer 1
+                        :type ("UINT64" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [24406 24418]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [24294 24493])
+            ("free_private" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("reader_ctx_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [24520 24538]))                  
+                :type "void")
+                nil [24495 24567])
+            ("READERS" variable
+               (:dereference 1
+                :default-value "{
+	{ \"ram\",		ram_open,			ram_read,		memory_close },
+	{ \"vmcore\",		vmcore_open,			vmcore_read,		memory_close },
+	{ \"acpi\",		acpi_open,			read_from_private,	NULL },
+	{ \"part\",		part_open,			part_read,		free_private },
+	{ \"factory-part\",	factory_part_open,		part_read,		free_private },
+	{ \"efivar\",		efivar_open,			read_from_private,	free_private },
+	{ \"mbr\",		mbr_open,			read_from_private,	free_private },
+	{ \"gpt-header\",		gpt_header_open,		read_from_private,	free_private },
+	{ \"gpt-parts\",		gpt_parts_open,			read_from_private,	free_private },
+	{ \"gpt-factory-header\",	gpt_factory_header_open,	read_from_private,	free_private },
+	{ \"gpt-factory-parts\",	gpt_factory_parts_open,		read_from_private,	free_private },
+	{ \"bert-region\",	bert_region_open,		bert_region_read,	NULL }
+}"
+                :type ("reader" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [24569 25571])
+            ("reader" type
+               (:members 
+                  ( ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol classsubparts) [24586 24603])
+                    ("open" function
+                       (:prototype-flag t
+                        :function-pointer t
+                        :arguments 
+                          ( ("ctx" variable
+                               (:pointer 1
+                                :type ("reader_ctx_t" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [24624 24642])
+                            ("argc" variable (:type ("UINTN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [24643 24654])
+                            ("argv" variable
+                               (:pointer 2
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [24655 24667]))                          
+                        :type ("EFI_STATUS" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [24605 24668])
+                    ("read" function
+                       (:prototype-flag t
+                        :function-pointer t
+                        :arguments 
+                          ( ("ctx" variable
+                               (:pointer 1
+                                :type ("reader_ctx_t" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [24689 24707])
+                            ("buf" variable
+                               (:pointer 2
+                                :type "unsigned char")
+                                (reparse-symbol arg-sub-list) [24708 24728])
+                            ("len" variable
+                               (:pointer 1
+                                :type ("UINT64" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [24729 24741]))                          
+                        :type ("EFI_STATUS" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [24670 24742])
+                    ("close" function
+                       (:prototype-flag t
+                        :function-pointer t
+                        :arguments 
+                          ( ("ctx" variable
+                               (:pointer 1
+                                :type ("reader_ctx_t" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [24758 24776]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [24744 24777]))                  
+                :type "struct")
+                nil [24569 25571])
+            ("MAX_ARGS" variable (:constant-flag t) nil [25581 25589])
+            ("READER_DELIMITER" variable (:constant-flag t) nil [25601 25617])
+            ("reader_open" function
+               (:arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("reader_ctx_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [25646 25664])
+                    ("args" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [25665 25676]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [25623 26441])
+            ("reader_read" function
+               (:arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("reader_ctx_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [26466 26484])
+                    ("buf" variable
+                       (:pointer 2
+                        :type "unsigned char")
+                        (reparse-symbol arg-sub-list) [26485 26505])
+                    ("len" variable
+                       (:pointer 1
+                        :type ("UINT64" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [26506 26518]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [26443 26814])
+            ("reader_close" function
+               (:arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("reader_ctx_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [26834 26852]))                  
+                :type "void")
+                nil [26816 26946]))          
+      :file "reader.c"
+      :pointmax 26947
+      :fsize 26946
+      :lastmodtime '(22781 19772 250156 351000)
+      :unmatched-syntax '((semantic-list 12810 . 12812) (symbol 12806 . 12810) (symbol 12799 . 12805) (punctuation 12798 . 12799) (semantic-list 9408 . 9411) (symbol 9404 . 9408) (number 9409 . 9410) (symbol 9397 . 9403) (number 9409 . 9410) (punctuation 9396 . 9397))
+      :lexical-table 
+        '(("MAX_CHUNK_SIZE" . ((semantic-list "(((UINT64)1 << (SIZEOF_TOTALSZ * 8)) - EFI_PAGE_SIZE)" 4422 . 4475)))
+          ("MAX_ARGS" . ((number "8" 25591 . 25592)))
+          ("KERNEL_PAGE_FLAGS" . ((number "7" 11876 . 11877)))
+          ("ELF_VERSION" . ((number "1" 11848 . 11849)))
+          ("KERNEL_PAGE_OFFSET" . ((number "0xffff880000000000" 12082 . 12100)))
+          ("MAX_MEMORY_REGION_NB" . ((number "256" 1785 . 1788)))
+          ("SIZEOF_TOTALSZ" . ((SIZEOF "sizeof" 4358 . 4364) (semantic-list "(((chunk_header_t *)0)->total_sz)" 4364 . 4397)))
+          ("READER_DELIMITER" . ((string "\":\"" 25618 . 25621)))
+          ("PART_READER_BUF_SIZE" . ((semantic-list "(10 * 1024 * 1024)" 15418 . 15436)))
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :file "reader.h"
+      :fsize 1845
+      :lastmodtime '(22781 19772 250156 351000))
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("lib.h" include (:system-flag t) nil [1470 1486])
+            ("adb_socket.h" include nil nil [1488 1511])
+            ("service.h" include nil nil [1512 1532])
+            ("reader.h" include nil nil [1533 1552])
+            ("ID_STAT" variable (:constant-flag t) nil [1562 1569])
+            ("ID_RECV" variable (:constant-flag t) nil [1600 1607])
+            ("ID_DATA" variable (:constant-flag t) nil [1638 1645])
+            ("ID_DONE" variable (:constant-flag t) nil [1676 1683])
+            ("ID_QUIT" variable (:constant-flag t) nil [1714 1721])
+            ("state" type
+               (:members 
+                  ( ("FREE" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1767 1772])
+                    ("ESTABLISHED" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1774 1786])
+                    ("STAT" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1788 1793])
+                    ("RECV" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1795 1800])
+                    ("SENDING_DATA" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1802 1815])
+                    ("CLOSED" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1817 1825]))                  
+                :type "enum")
+                nil [1745 1834])
+            ("state_t" type
+               (:typedef ("state" type (:type "enum") nil nil)
+                :type "typedef")
+                nil [1745 1834])
+            ("sync_msg_t" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("id" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1853 1863])
+                          ("req" variable (:type ("" type
+                               (:members 
+                                  ( ("id" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1876 1886])
+                                    ("namelen" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1889 1904]))                                  
+                                :type "struct")
+                                nil nil)) (reparse-symbol classsubparts) [1865 1912])
+                          ("stat" variable (:type ("" type
+                               (:members 
+                                  ( ("id" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1925 1935])
+                                    ("mode" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1938 1950])
+                                    ("size" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1953 1965])
+                                    ("time" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1968 1980]))                                  
+                                :type "struct")
+                                nil nil)) (reparse-symbol classsubparts) [1914 1989])
+                          ("data" variable (:type ("" type
+                               (:members 
+                                  ( ("id" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2002 2012])
+                                    ("size" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2015 2027]))                                  
+                                :type "struct")
+                                nil nil)) (reparse-symbol classsubparts) [1991 2036]))                        
+                      :type "union")
+                      nil nil)
+                :type "typedef")
+                nil [1836 2050])
+            ("SYNC_DATA_MAX" variable (:constant-flag t) nil [2060 2073])
+            ("sync_ctx_t" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("state" variable (:type ("state_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2105 2119])
+                          ("reader_ctx" variable (:type ("reader_ctx_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2121 2145])
+                          ("need_more_data" variable (:type ("BOOLEAN" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2147 2170])
+                          ("buf" variable
+                             (:pointer 1
+                              :type "unsigned char")
+                              (reparse-symbol classsubparts) [2172 2191])
+                          ("buf_cur" variable (:type ("UINT64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2193 2208])
+                          ("buf_len" variable (:type ("UINT64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2210 2225])
+                          ("sent" variable (:type ("UINT64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2227 2239]))                        
+                      :type "struct")
+                      nil nil)
+                :type "typedef")
+                nil [2087 2253])
+            ("CONTEXTS" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :type ("sync_ctx_t" type (:type "class") nil nil))
+                nil [2254 2297])
+            ("sync_service_open" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("arg" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2335 2351])
+                    ("ctx_p" variable
+                       (:pointer 2
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [2352 2365]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [2299 2773])
+            ("sync_service_ready" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("s" variable (:type ("asock_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2840 2850]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [2775 2875])
+            ("sync_service_close" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("s" variable (:type ("asock_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2914 2924]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [2877 3120])
+            ("send_done" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("s" variable (:type ("asock_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3150 3160])
+                    ("ctx" variable
+                       (:pointer 1
+                        :type ("sync_ctx_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3161 3177]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [3122 3370])
+            ("DATA_PROGRESS_THRESHOLD" variable (:constant-flag t) nil [3380 3403])
+            ("send_more_data" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("s" variable (:type ("asock_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3456 3466])
+                    ("ctx" variable
+                       (:pointer 1
+                        :type ("sync_ctx_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3467 3483]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [3423 4438])
+            ("sync_service_okay" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("s" variable (:type ("asock_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4476 4486]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [4440 4682])
+            ("sync_service_reader_open" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("sync_ctx_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4727 4743])
+                    ("data" variable
+                       (:pointer 1
+                        :type "unsigned char")
+                        (reparse-symbol arg-sub-list) [4744 4764])
+                    ("length" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4765 4779]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [4684 4905])
+            ("REGULAR_FILE_STAT_MODE" variable (:constant-flag t) nil [4915 4937])
+            ("sync_service_stat" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("s" variable (:type ("asock_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4986 4996])
+                    ("ctx" variable
+                       (:pointer 1
+                        :type ("sync_ctx_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4997 5013])
+                    ("data" variable
+                       (:pointer 1
+                        :type "unsigned char")
+                        (reparse-symbol arg-sub-list) [5014 5034])
+                    ("length" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5035 5049]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [4950 5738])
+            ("sync_service_recv" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("s" variable (:type ("asock_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5776 5786])
+                    ("ctx" variable
+                       (:pointer 1
+                        :type ("sync_ctx_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5787 5803])
+                    ("data" variable
+                       (:pointer 1
+                        :type "unsigned char")
+                        (reparse-symbol arg-sub-list) [5804 5824])
+                    ("length" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5825 5839]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [5740 6118])
+            ("sync_service_read" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("s" variable (:type ("asock_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6156 6166])
+                    ("data" variable
+                       (:pointer 1
+                        :type "unsigned char")
+                        (reparse-symbol arg-sub-list) [6167 6187])
+                    ("length" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6188 6202]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [6120 7354])
+            ("sync_service" variable
+               (:default-value "{
+	.name	= \"sync\",
+	.open	= sync_service_open,
+	.ready	= sync_service_ready,
+	.close	= sync_service_close,
+	.okay	= sync_service_okay,
+	.read	= sync_service_read
+}"
+                :type ("service_t" type (:type "class") nil nil))
+                nil [7356 7545]))          
+      :file "sync_service.c"
+      :pointmax 7546
+      :fsize 7545
+      :lastmodtime '(22781 19772 250156 351000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("ID_QUIT" . ((symbol "MKID" 1722 . 1726) (semantic-list "('Q','U','I','T')" 1726 . 1743)))
+          ("REGULAR_FILE_STAT_MODE" . ((number "0x000081b6" 4938 . 4948)))
+          ("SYNC_DATA_MAX" . ((semantic-list "(64 * 1024)" 2074 . 2085)))
+          ("ID_DATA" . ((symbol "MKID" 1646 . 1650) (semantic-list "('D','A','T','A')" 1650 . 1667)))
+          ("ID_STAT" . ((symbol "MKID" 1570 . 1574) (semantic-list "('S','T','A','T')" 1574 . 1591)))
+          ("ID_RECV" . ((symbol "MKID" 1608 . 1612) (semantic-list "('R','E','C','V')" 1612 . 1629)))
+          ("DATA_PROGRESS_THRESHOLD" . ((semantic-list "(5 * 1024 * 1024)" 3404 . 3421)))
+          ("ID_DONE" . ((symbol "MKID" 1684 . 1688) (semantic-list "('D','O','N','E')" 1688 . 1705)))
+          )
+))
+  :file "!home!chenqi!work!androidia!hardware!intel!kernelflinger!libadb!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

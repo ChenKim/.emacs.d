@@ -1,0 +1,178 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("errno.h" include (:system-flag t) nil [618 636])
+            ("fcntl.h" include (:system-flag t) nil [637 655])
+            ("mntent.h" include (:system-flag t) nil [656 675])
+            ("stdbool.h" include (:system-flag t) nil [676 696])
+            ("stdio.h" include (:system-flag t) nil [697 715])
+            ("stdlib.h" include (:system-flag t) nil [716 735])
+            ("string.h" include (:system-flag t) nil [736 755])
+            ("sys/cdefs.h" include (:system-flag t) nil [756 778])
+            ("sys/mount.h" include (:system-flag t) nil [779 801])
+            ("sys/reboot.h" include (:system-flag t) nil [802 825])
+            ("sys/stat.h" include (:system-flag t) nil [826 847])
+            ("sys/syscall.h" include (:system-flag t) nil [848 872])
+            ("sys/types.h" include (:system-flag t) nil [873 895])
+            ("unistd.h" include (:system-flag t) nil [896 915])
+            ("cutils/android_reboot.h" include (:system-flag t) nil [917 951])
+            ("cutils/klog.h" include (:system-flag t) nil [952 976])
+            ("cutils/list.h" include (:system-flag t) nil [977 1001])
+            ("TAG" variable (:constant-flag t) nil [1011 1014])
+            ("READONLY_CHECK_MS" variable (:constant-flag t) nil [1040 1057])
+            ("READONLY_CHECK_TIMES" variable (:constant-flag t) nil [1071 1091])
+            ("mntent_list" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("list" variable (:type ("listnode" type
+                               (:prototype t
+                                :type "struct")
+                                nil nil)) (reparse-symbol classsubparts) [1117 1138])
+                          ("entry" variable (:type ("mntent" type
+                               (:prototype t
+                                :type "struct")
+                                nil nil)) (reparse-symbol classsubparts) [1143 1163]))                        
+                      :type "struct")
+                      nil nil)
+                :type "typedef")
+                nil [1096 1178])
+            ("has_mount_option" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("opts" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1209 1226])
+                    ("opt_to_find" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1227 1251]))                  
+                :type "bool")
+                nil [1180 1519])
+            ("is_block_device" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("fsname" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1549 1568]))                  
+                :type "bool")
+                nil [1521 1619])
+            ("find_rw" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("rw_entries" variable
+                       (:pointer 1
+                        :type ("listnode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1731 1759]))                  
+                :type "void")
+                nil [1711 2545])
+            ("free_entries" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("entries" variable
+                       (:pointer 1
+                        :type ("listnode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2572 2597]))                  
+                :type "void")
+                nil [2547 2933])
+            ("find_item" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("rw_entries" variable
+                       (:pointer 1
+                        :type ("listnode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2965 2993])
+                    ("fsname_to_find" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2994 3021]))                  
+                :type ("mntent_list" type (:type "class") nil nil))
+                nil [2935 3278])
+            ("remount_ro" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("cb_on_remount" function
+                       (:function-pointer t
+                        :arguments 
+                          ( ("" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type ("mntent" type
+                                     (:prototype t
+                                      :type "struct")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [4003 4024]))                          
+                        :type "void")
+                        nil nil))                  
+                :type "void")
+                nil [3958 6456])
+            ("android_reboot_with_callback" function
+               (:arguments 
+                  ( ("cmd" variable (:type "int") (reparse-symbol arg-sub-list) [6496 6504])
+                    ("flags" variable (:type "int") (reparse-symbol arg-sub-list) [6505 6523])
+                    ("" variable (:type ("__unused" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6515 6524])
+                    ("arg" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [6525 6541])
+                    ("cb_on_remount" function
+                       (:function-pointer t
+                        :arguments 
+                          ( ("" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type ("mntent" type
+                                     (:prototype t
+                                      :type "struct")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [6568 6589]))                          
+                        :type "void")
+                        nil nil))                  
+                :type "int")
+                nil [6458 7100])
+            ("android_reboot" function
+               (:arguments 
+                  ( ("cmd" variable (:type "int") (reparse-symbol arg-sub-list) [7121 7129])
+                    ("flags" variable (:type "int") (reparse-symbol arg-sub-list) [7130 7140])
+                    ("arg" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [7141 7157]))                  
+                :type "int")
+                nil [7102 7225]))          
+      :file "android_reboot.c"
+      :pointmax 7226
+      :fsize 7225
+      :lastmodtime '(22781 20192 658159 450000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("READONLY_CHECK_TIMES" . ((number "50" 1092 . 1094)))
+          ("TAG" . ((string "\"android_reboot\"" 1015 . 1031)))
+          ("READONLY_CHECK_MS" . ((number "5000" 1058 . 1062)))
+          )
+))
+  :file "!home!chenqi!work!androidia!system!core!libcutils!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

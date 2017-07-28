@@ -1,0 +1,321 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("lib.h" include (:system-flag t) nil [1634 1650])
+            ("vars.h" include (:system-flag t) nil [1651 1668])
+            ("storage.h" include (:system-flag t) nil [1669 1689])
+            ("slot.h" include (:system-flag t) nil [1690 1707])
+            ("uefi_utils.h" include nil nil [1709 1732])
+            ("flash.h" include nil nil [1733 1751])
+            ("hashes.h" include nil nil [1752 1771])
+            ("fastboot.h" include nil nil [1772 1793])
+            ("fastboot_ui.h" include nil nil [1794 1818])
+            ("gpt.h" include nil nil [1819 1835])
+            ("authenticated_action.h" include nil nil [1836 1869])
+            ("fastboot_oem.h" include nil nil [1871 1896])
+            ("intel_variables.h" include nil nil [1897 1925])
+            ("text_parser.h" include nil nil [1926 1950])
+            ("OFF_MODE_CHARGE" variable (:constant-flag t) nil [1960 1975])
+            ("CRASH_EVENT_MENU" variable (:constant-flag t) nil [2003 2019])
+            ("SLOT_FALLBACK" variable (:constant-flag t) nil [2047 2060])
+            ("cmdlist" variable
+               (:typemodifiers ("static")
+                :type ("cmdlist_t" type (:type "class") nil nil))
+                nil [2079 2104])
+            ("fastboot_oem_publish" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [2145 2150]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [2106 2320])
+            ("cmd_oem_set_boolean" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("argc" variable (:type ("INTN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2360 2370])
+                    ("argv" variable
+                       (:pointer 2
+                        :type ("CHAR8" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2371 2384])
+                    ("name" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2395 2406])
+                    ("set_fun" function
+                       (:function-pointer t
+                        :arguments 
+                          ( ("value" variable (:type ("BOOLEAN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2429 2443]))                          
+                        :type ("EFI_STATUS" type (:type "class") nil nil))
+                        nil nil))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [2322 2905])
+            ("cmd_oem_off_mode_charge" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("argc" variable (:type ("INTN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2943 2953])
+                    ("argv" variable
+                       (:pointer 2
+                        :type ("CHAR8" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2954 2967]))                  
+                :type "void")
+                nil [2907 3230])
+            ("cmd_oem_crash_event_menu" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("argc" variable (:type ("INTN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3269 3279])
+                    ("argv" variable
+                       (:pointer 2
+                        :type ("CHAR8" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3280 3293]))                  
+                :type "void")
+                nil [3232 3558])
+            ("cmd_oem_setvar" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("argc" variable (:type ("INTN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3587 3597])
+                    ("argv" variable
+                       (:pointer 2
+                        :type ("CHAR8" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3598 3611]))                  
+                :type "void")
+                nil [3560 4159])
+            ("cmd_oem_reboot" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("argc" variable (:type ("INTN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4188 4198])
+                    ("argv" variable
+                       (:pointer 2
+                        :type ("CHAR8" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4199 4212]))                  
+                :type "void")
+                nil [4161 4642])
+            ("cmd_oem_garbage_disk" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("argc" variable (:type ("INTN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4705 4715])
+                    ("argv" variable
+                       (:pointer 2
+                        :type ("CHAR8" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4749 4762]))                  
+                :type "void")
+                nil [4644 4902])
+            ("OEM_HASH" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :default-value "{
+	{ BOOT_LABEL,		get_boot_image_hash,	TRUE },
+	{ RECOVERY_LABEL,	get_boot_image_hash,	FALSE },
+#ifdef USE_TRUSTY
+#ifdef USE_MULTIBOOT
+	{ MULTIBOOT_LABEL,	get_ias_image_hash,	TRUE },
+#else
+	{ TOS_LABEL,		get_boot_image_hash,	TRUE },
+#endif
+#endif
+	{ BOOTLOADER_LABEL,	get_bootloader_hash,	FALSE },
+	{ SYSTEM_LABEL,		get_fs_hash,		TRUE },
+	{ VENDOR_LABEL,		get_fs_hash,		FALSE }
+}"
+                :type ("oem_hash" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [4904 5412])
+            ("oem_hash" type
+               (:members 
+                  ( ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("CHAR16" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [4930 4949])
+                    ("hash" function
+                       (:prototype-flag t
+                        :function-pointer t
+                        :arguments 
+                          ( ("name" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type ("CHAR16" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [4970 4989]))                          
+                        :type ("EFI_STATUS" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [4951 4990])
+                    ("fail_if_missing" variable (:type ("BOOLEAN" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4992 5016]))                  
+                :type "struct")
+                nil [4904 5412])
+            ("cmd_oem_gethashes" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("argc" variable (:type ("INTN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5444 5454])
+                    ("argv" variable
+                       (:pointer 2
+                        :type ("CHAR8" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5455 5468]))                  
+                :type "void")
+                nil [5414 5966])
+            ("cmd_oem_set_storage" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("argc" variable (:type ("INTN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6013 6023])
+                    ("argv" variable
+                       (:pointer 2
+                        :type ("CHAR8" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6024 6037]))                  
+                :type "void")
+                nil [5981 6761])
+            ("cmd_oem_reprovision" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("argc" variable (:type ("INTN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6823 6833])
+                    ("argv" variable
+                       (:pointer 2
+                        :type ("CHAR8" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6873 6886]))                  
+                :type "void")
+                nil [6763 7054])
+            ("cmd_oem_rm" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("argc" variable (:type ("INTN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7079 7089])
+                    ("argv" variable
+                       (:pointer 2
+                        :type ("CHAR8" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7090 7103]))                  
+                :type "void")
+                nil [7056 8031])
+            ("cmd_oem_set_watchdog_counter_max" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("argc" variable (:type ("INTN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8078 8088])
+                    ("argv" variable
+                       (:pointer 2
+                        :type ("CHAR8" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [8089 8102]))                  
+                :type "void")
+                nil [8033 8533])
+            ("cmd_oem_disable_slot_fallback" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("argc" variable (:type ("INTN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8577 8587])
+                    ("argv" variable
+                       (:pointer 2
+                        :type ("CHAR8" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [8588 8601]))                  
+                :type "void")
+                nil [8535 8749])
+            ("cmd_oem_erase_efivars" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("argc" variable (:type ("INTN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8813 8823])
+                    ("argv" variable
+                       (:pointer 2
+                        :type ("CHAR8" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [8858 8871]))                  
+                :type "void")
+                nil [8751 9111])
+            ("cmd_oem_get_logs" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("argc" variable (:type ("INTN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9149 9159])
+                    ("argv" variable
+                       (:pointer 2
+                        :type ("CHAR8" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [9188 9201]))                  
+                :type "void")
+                nil [9120 9715])
+            ("cmd_oem" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("argc" variable (:type ("INTN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9737 9747])
+                    ("argv" variable
+                       (:pointer 2
+                        :type ("CHAR8" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [9748 9761]))                  
+                :type "void")
+                nil [9717 9899])
+            ("COMMANDS" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :default-value "{
+	{ OFF_MODE_CHARGE,		LOCKED,		cmd_oem_off_mode_charge  },
+	/* The following commands are not part of the Google
+	 * requirements.  They are provided for engineering and
+	 * provisioning purpose only.  */
+	{ CRASH_EVENT_MENU,		LOCKED,		cmd_oem_crash_event_menu  },
+	{ \"setvar\",			UNLOCKED,	cmd_oem_setvar  },
+	{ \"garbage-disk\",		UNLOCKED,	cmd_oem_garbage_disk  },
+	{ \"reboot\",			LOCKED,		cmd_oem_reboot  },
+#ifndef USER
+	{ \"set-storage\",		LOCKED,		cmd_oem_set_storage  },
+	{ \"reprovision\",		LOCKED,		cmd_oem_reprovision  },
+	{ \"rm\",				LOCKED,		cmd_oem_rm },
+	{ \"set-watchdog-counter-max\",	LOCKED,		cmd_oem_set_watchdog_counter_max },
+	{ SLOT_FALLBACK,		LOCKED,		cmd_oem_disable_slot_fallback },
+	{ \"erase-efivars\",		LOCKED,		cmd_oem_erase_efivars },
+#endif
+	{ \"get-hashes\",			LOCKED,		cmd_oem_gethashes  },
+	{ \"get-provisioning-logs\",	LOCKED,		cmd_oem_get_logs },
+#ifdef BOOTLOADER_POLICY
+	{ \"get-action-nonce\",		LOCKED,		cmd_oem_get_action_nonce }
+#endif
+}"
+                :type ("fastboot_cmd" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [10431 11431])
+            ("oem" variable
+               (:typemodifiers ("static")
+                :default-value "{ \"oem\", LOCKED, cmd_oem }"
+                :type ("fastboot_cmd" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [11433 11493])
+            ("fastboot_oem_init" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [11524 11529]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [11495 11819])
+            ("fastboot_oem_free" function (:type "void") nil [11821 11889]))          
+      :file "fastboot_oem.c"
+      :pointmax 11890
+      :fsize 11889
+      :lastmodtime '(22775 10757 23191 141000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("SLOT_FALLBACK" . ((string "\"slot-fallback\"" 2062 . 2077)))
+          ("CRASH_EVENT_MENU" . ((string "\"crash-event-menu\"" 2020 . 2038)))
+          ("OFF_MODE_CHARGE" . ((string "\"off-mode-charge\"" 1977 . 1994)))
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :file "flash.h"
+      :fsize 2212
+      :lastmodtime '(22775 10757 23191 141000))
+    (semanticdb-table "semanticdb-table"
+      :file "hashes.h"
+      :fsize 1928
+      :lastmodtime '(22775 10757 23191 141000))
+    (semanticdb-table "semanticdb-table"
+      :file "fastboot_ui.h"
+      :fsize 1809
+      :lastmodtime '(22775 10757 23191 141000))
+    (semanticdb-table "semanticdb-table"
+      :file "authenticated_action.h"
+      :fsize 1741
+      :lastmodtime '(22775 10757 19191 141000))
+    (semanticdb-table "semanticdb-table"
+      :file "fastboot_oem.h"
+      :fsize 1727
+      :lastmodtime '(22775 10757 23191 141000))
+    (semanticdb-table "semanticdb-table"
+      :file "intel_variables.h"
+      :fsize 1608
+      :lastmodtime '(22775 10757 23191 141000)))
+  :file "!home!chenqi!work!1A_code!hardware!intel!kernelflinger!libfastboot!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

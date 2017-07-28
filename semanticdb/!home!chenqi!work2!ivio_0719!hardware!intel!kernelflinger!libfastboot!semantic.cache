@@ -1,0 +1,150 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("lib.h" include (:system-flag t) nil [1634 1650])
+            ("fastboot.h" include nil nil [1651 1672])
+            ("flash.h" include nil nil [1673 1691])
+            ("fastboot_ui.h" include nil nil [1692 1716])
+            ("gpt.h" include nil nil [1717 1733])
+            ("intel_variables.h" include nil nil [1734 1762])
+            ("android.h" include nil nil [1763 1783])
+            ("cmdlist" variable
+               (:typemodifiers ("static")
+                :type ("cmdlist_t" type (:type "class") nil nil))
+                nil [1785 1810])
+            ("fastboot_flashing_publish" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1856 1861]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [1812 2134])
+            ("change_device_state" function
+               (:arguments 
+                  ( ("new_state" variable (:type ("device_state" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [2167 2195])
+                    ("interactive" variable (:type ("BOOLEAN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2196 2216]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [2136 3636])
+            ("is_already_in_state" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("state" variable (:type ("device_state" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [3673 3697]))                  
+                :type ("BOOLEAN" type (:type "class") nil nil))
+                nil [3638 3876])
+            ("cmd_lock" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("argc" variable (:type ("INTN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3927 3937])
+                    ("argv" variable
+                       (:pointer 2
+                        :type ("CHAR8" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3973 3986]))                  
+                :type "void")
+                nil [3878 4062])
+            ("frp_allows_unlock" function
+               (:typemodifiers ("static")
+                :type ("BOOLEAN" type (:type "class") nil nil))
+                nil [4064 4959])
+            ("unlock_ability" type
+               (:members 
+                  ( ("UNLOCK_ALLOWED" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [4984 4999])
+                    ("NO_UNLOCK_FRP" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [5001 5015])
+                    ("NO_UNLOCK_CLASS_A" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [5017 5036]))                  
+                :type "enum")
+                nil [4961 5037])
+            ("get_unlock_ability" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [5085 5090]))                  
+                :type ("unlock_ability" type (:type "enum") nil nil))
+                nil [5039 5267])
+            ("cmd_unlock" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("argc" variable (:type ("INTN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5320 5330])
+                    ("argv" variable
+                       (:pointer 2
+                        :type ("CHAR8" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5368 5381]))                  
+                :type "void")
+                nil [5269 5946])
+            ("cmd_get_unlock_ability" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("argc" variable (:type ("INTN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6011 6021])
+                    ("argv" variable
+                       (:pointer 2
+                        :type ("CHAR8" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6057 6070]))                  
+                :type "void")
+                nil [5948 6509])
+            ("cmd_flashing" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("argc" variable (:type ("INTN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6536 6546])
+                    ("argv" variable
+                       (:pointer 2
+                        :type ("CHAR8" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6547 6560]))                  
+                :type "void")
+                nil [6511 6698])
+            ("COMMANDS" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :default-value "{
+	{ \"lock\",		LOCKED,	cmd_lock },
+	{ \"unlock\",		LOCKED,	cmd_unlock },
+	{ \"get_unlock_ability\",	LOCKED,	cmd_get_unlock_ability }
+}"
+                :type ("fastboot_cmd" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [6700 6870])
+            ("flashing" variable
+               (:typemodifiers ("static")
+                :default-value "{ \"flashing\", LOCKED, cmd_flashing }"
+                :type ("fastboot_cmd" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [6872 6947])
+            ("fastboot_flashing_init" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [6983 6988]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [6949 7288])
+            ("fastboot_flashing_free" function (:type "void") nil [7290 7363]))          
+      :file "fastboot_flashing.c"
+      :pointmax 7364
+      :fsize 7363
+      :lastmodtime '(22894 45027 462499 576000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :file "flash.h"
+      :fsize 2212
+      :lastmodtime '(22894 45027 462499 576000))
+    (semanticdb-table "semanticdb-table"
+      :file "fastboot_ui.h"
+      :fsize 1809
+      :lastmodtime '(22894 45027 462499 576000))
+    (semanticdb-table "semanticdb-table"
+      :file "intel_variables.h"
+      :fsize 1608
+      :lastmodtime '(22894 45027 462499 576000)))
+  :file "!home!chenqi!work2!ivio_0719!hardware!intel!kernelflinger!libfastboot!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

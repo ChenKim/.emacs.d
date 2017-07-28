@@ -1,0 +1,1626 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("efi.h" include (:system-flag t) nil [1584 1600])
+            ("efilib.h" include (:system-flag t) nil [1601 1620])
+            ("lib.h" include (:system-flag t) nil [1621 1637])
+            ("uefi_utils.h" include nil nil [1638 1661])
+            ("gpt.h" include nil nil [1662 1678])
+            ("gpt_bin.h" include nil nil [1679 1699])
+            ("storage.h" include nil nil [1700 1720])
+            ("PROTECTIVE_MBR" variable (:constant-flag t) nil [1730 1744])
+            ("legacy_partition" type
+               (:members 
+                  ( ("status" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1778 1791])
+                    ("f_head" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1793 1806])
+                    ("f_sect" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1808 1821])
+                    ("f_cyl" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1823 1835])
+                    ("type" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1837 1848])
+                    ("l_head" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1850 1863])
+                    ("l_sect" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1865 1878])
+                    ("l_cyl" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1880 1892])
+                    ("f_lba" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1894 1907])
+                    ("num_sect" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1909 1925]))                  
+                :type "struct")
+                nil [1751 1952])
+            ("mbr_chs" type
+               (:members 
+                  ( ("head" variable (:type ("uint8_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1972 1985])
+                    ("sector" variable (:type ("uint8_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1987 2002])
+                    ("cylinder" variable (:type ("uint8_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2049 2066]))                  
+                :type "struct")
+                nil [1954 2097])
+            ("mbr_entry" type
+               (:members 
+                  ( ("status" variable (:type ("uint8_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2119 2134])
+                    ("first_chs" variable (:type ("mbr_chs" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [2136 2161])
+                    ("type" variable (:type ("uint8_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2163 2176])
+                    ("last_chs" variable (:type ("mbr_chs" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [2178 2202])
+                    ("first_lba" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2204 2223])
+                    ("lba_count" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2225 2244]))                  
+                :type "struct")
+                nil [2099 2275])
+            ("mbr" type
+               (:members 
+                  ( ("disk_sig" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2291 2309])
+                    ("reserved" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2311 2329])
+                    ("entries" variable
+                       (:dereference 1
+                        :type ("mbr_entry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [2331 2359])
+                    ("sig" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2361 2374]))                  
+                :type "struct")
+                nil [2277 2405])
+            ("GPT_REVISION" variable (:constant-flag t) nil [2415 2427])
+            ("gpt_disk" type
+               (:members 
+                  ( ("bio" variable
+                       (:pointer 1
+                        :type ("EFI_BLOCK_IO" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2459 2477])
+                    ("dio" variable
+                       (:pointer 1
+                        :type ("EFI_DISK_IO" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2479 2496])
+                    ("handle" variable (:type ("EFI_HANDLE" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2498 2516])
+                    ("label_prefix_removed" variable (:type ("BOOLEAN" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2518 2547])
+                    ("log_unit" variable (:type ("logical_unit_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2549 2573])
+                    ("gpt_hd" variable (:type ("gpt_header" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [2575 2600])
+                    ("partitions" variable
+                       (:dereference 1
+                        :type ("gpt_partition" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [2602 2647]))                  
+                :type "struct")
+                nil [2440 2650])
+            ("sdisk" variable
+               (:typemodifiers ("static")
+                :type ("gpt_disk" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2755 2784])
+            ("calculate_crc32" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [2820 2831])
+                    ("size" variable (:type ("UINTN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2832 2843])
+                    ("crc" variable
+                       (:pointer 1
+                        :type ("UINT32" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2844 2856]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [2786 3023])
+            ("set_header_crc32" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("gh" variable
+                       (:pointer 1
+                        :type ("gpt_header" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3060 3082]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [3025 3239])
+            ("read_gpt_header" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("disk" variable
+                       (:pointer 1
+                        :type ("gpt_disk" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3275 3297]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [3241 3574])
+            ("is_gpt_device" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("gpt" variable
+                       (:pointer 1
+                        :type ("gpt_header" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3605 3628]))                  
+                :type ("BOOLEAN" type (:type "class") nil nil))
+                nil [3576 3717])
+            ("read_gpt_partitions" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("disk" variable
+                       (:pointer 1
+                        :type ("gpt_disk" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3757 3779]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [3719 4326])
+            ("gpt_prepare_disk" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("handle" variable (:type ("EFI_HANDLE" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4363 4381])
+                    ("disk" variable
+                       (:pointer 1
+                        :type ("gpt_disk" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4382 4404]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [4328 5335])
+            ("ANDROID_PREFIX" variable
+               (:pointer 1
+                :constant-flag t
+                :default-value "L\"android_\""
+                :type ("CHAR16" type (:type "class") nil nil))
+                nil [5557 5600])
+            ("gpt_remove_prefix" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [5638 5643]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [5602 6459])
+            ("gpt_put_prefix_back" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [6493 6498]))                  
+                :type "void")
+                nil [6461 7071])
+            ("gpt_list_partition_on_disk" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("disk" variable
+                       (:pointer 1
+                        :type ("gpt_disk" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7118 7140]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [7073 7505])
+            ("gpt_cache_partition" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("log_unit" variable (:type ("logical_unit_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7646 7670]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [7608 9051])
+            ("gpt_free_cache" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [9073 9078]))                  
+                :type "void")
+                nil [9053 9115])
+            ("gpt_sync" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [9137 9142]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [9117 9361])
+            ("gpt_refresh" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [9386 9391]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [9363 9878])
+            ("gpt_get_root_disk" function
+               (:arguments 
+                  ( ("gpart" variable
+                       (:pointer 1
+                        :type ("gpt_partition_interface" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9909 9947])
+                    ("log_unit" variable (:type ("logical_unit_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9948 9972]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [9880 10272])
+            ("gpt_find_partition" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("label" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("CHAR16" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [10322 10342]))                  
+                :type ("gpt_partition" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [10274 10649])
+            ("gpt_get_partition_by_label" function
+               (:arguments 
+                  ( ("label" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("CHAR16" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [10689 10709])
+                    ("gpart" variable
+                       (:pointer 1
+                        :type ("gpt_partition_interface" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10720 10758])
+                    ("log_unit" variable (:type ("logical_unit_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10769 10793]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [10651 11299])
+            ("gpt_list_partition" function
+               (:arguments 
+                  ( ("gpartlist" variable
+                       (:pointer 2
+                        :type ("gpt_partition_interface" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11331 11374])
+                    ("part_count" variable
+                       (:pointer 1
+                        :type ("UINTN" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [11375 11393])
+                    ("log_unit" variable (:type ("logical_unit_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11394 11418]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [11301 12280])
+            ("gpt_new" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("gh" variable
+                       (:pointer 1
+                        :type ("gpt_header" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [12302 12324])
+                    ("start_lba" variable (:type ("UINTN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12325 12341])
+                    ("blocksize" variable (:type ("UINTN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12342 12358])
+                    ("lastblock" variable (:type ("UINTN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12359 12375]))                  
+                :type "void")
+                nil [12282 13198])
+            ("gpt_check_partition_list" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("part_count" variable (:type ("UINTN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [13422 13439])
+                    ("gbp" variable
+                       (:pointer 1
+                        :type ("gpt_bin_part" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13440 13465]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [13379 14277])
+            ("gpt_fill_entries" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("part_count" variable (:type ("UINTN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [14308 14325])
+                    ("gbp" variable
+                       (:pointer 1
+                        :type ("gpt_bin_part" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [14326 14351])
+                    ("gp" variable
+                       (:pointer 1
+                        :type ("gpt_partition" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [14352 14377]))                  
+                :type ("VOID" type (:type "class") nil nil))
+                nil [14279 14961])
+            ("gpt_write_mbr" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [14995 15000]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [14963 15535])
+            ("gpt_write_table_to_disk" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("gh" variable
+                       (:pointer 1
+                        :type ("gpt_header" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [15579 15601]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [15537 16305])
+            ("gpt_write_partition_tables" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [16352 16357]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [16307 17842])
+            ("gpt_create" function
+               (:arguments 
+                  ( ("gh" variable
+                       (:pointer 1
+                        :type ("gpt_header" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [17866 17888])
+                    ("gh_size" variable (:type ("UINTN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [17889 17903])
+                    ("start_lba" variable (:type ("UINT64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [17912 17929])
+                    ("part_count" variable (:type ("UINTN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [17930 17947])
+                    ("gbp" variable
+                       (:pointer 1
+                        :type ("gpt_bin_part" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [17948 17973])
+                    ("log_unit" variable (:type ("logical_unit_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [17974 17998]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [17844 19066])
+            ("get_partition_guid" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("label" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("CHAR16" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [19105 19125])
+                    ("guid" variable
+                       (:pointer 1
+                        :type ("EFI_GUID" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [19126 19141])
+                    ("log_unit" variable (:type ("logical_unit_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [19151 19175])
+                    ("uuid" variable (:type ("BOOLEAN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [19176 19189]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [19068 19585])
+            ("gpt_get_partition_type" function
+               (:arguments 
+                  ( ("label" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("CHAR16" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [19621 19641])
+                    ("type" variable
+                       (:pointer 1
+                        :type ("EFI_GUID" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [19642 19657])
+                    ("log_unit" variable (:type ("logical_unit_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [19658 19682]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [19587 19744])
+            ("gpt_get_partition_uuid" function
+               (:arguments 
+                  ( ("label" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("CHAR16" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [19780 19800])
+                    ("uuid" variable
+                       (:pointer 1
+                        :type ("EFI_GUID" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [19801 19816])
+                    ("log_unit" variable (:type ("logical_unit_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [19817 19841]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [19746 19902])
+            ("gpt_swap_partition" function
+               (:arguments 
+                  ( ("label1" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("CHAR16" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [19934 19955])
+                    ("label2" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("CHAR16" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [19956 19977])
+                    ("log_unit" variable (:type ("logical_unit_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [19978 20002]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [19904 20752])
+            ("get_hd_device_path" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("p" variable
+                       (:pointer 1
+                        :type ("EFI_DEVICE_PATH" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [20803 20822]))                  
+                :type ("HARDDRIVE_DEVICE_PATH" type (:type "class") nil nil))
+                nil [20754 21043])
+            ("gpt_get_partition_handle" function
+               (:arguments 
+                  ( ("label" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("CHAR16" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [21081 21101])
+                    ("log_unit" variable (:type ("logical_unit_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [21110 21134])
+                    ("handle" variable
+                       (:pointer 1
+                        :type ("EFI_HANDLE" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [21143 21162]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [21045 22254])
+            ("gpt_get_header" function
+               (:arguments 
+                  ( ("header" variable
+                       (:pointer 2
+                        :type ("gpt_header" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [22282 22309])
+                    ("size" variable
+                       (:pointer 1
+                        :type ("UINTN" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [22310 22322])
+                    ("log_unit" variable (:type ("logical_unit_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [22323 22347]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [22256 22667])
+            ("gpt_get_partitions" function
+               (:arguments 
+                  ( ("partitions" variable
+                       (:pointer 2
+                        :type ("gpt_partition" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [22699 22733])
+                    ("size" variable
+                       (:pointer 1
+                        :type ("UINTN" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [22734 22746])
+                    ("log_unit" variable (:type ("logical_unit_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [22747 22771]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [22669 23152]))          
+      :file "gpt.c"
+      :pointmax 23153
+      :fsize 23152
+      :lastmodtime '(22775 10757 27191 141000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("PROTECTIVE_MBR" . ((number "0xEE" 1745 . 1749)))
+          ("GPT_REVISION" . ((number "0x00010000" 2428 . 2438)))
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("lib.h" include (:system-flag t) nil [1405 1421])
+            ("oemvars.h" include nil nil [1423 1443])
+            ("vars.h" include nil nil [1444 1461])
+            ("text_parser.h" include nil nil [1462 1486])
+            ("vartype" type
+               (:members 
+                  ( ("VAR_TYPE_UNKNOWN" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1504 1521])
+                    ("VAR_TYPE_STRING" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1523 1539])
+                    ("VAR_TYPE_BLOB" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1541 1556]))                  
+                :type "enum")
+                nil [1488 1557])
+            ("oemvars_ctx" type
+               (:members 
+                  ( ("guid" variable (:type ("EFI_GUID" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1589 1603])
+                    ("restricted_guid" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("EFI_GUID" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1605 1637])
+                    ("silent_write_error" variable (:type ("BOOLEAN" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1639 1666]))                  
+                :type "struct")
+                nil [1559 1683])
+            ("oemvars_ctx_t" type
+               (:typedef ("oemvars_ctx" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [1559 1683])
+            ("parse_oemvar_guid_line" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("line" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1723 1734])
+                    ("g" variable
+                       (:pointer 1
+                        :type ("EFI_GUID" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1735 1747]))                  
+                :type ("BOOLEAN" type (:type "class") nil nil))
+                nil [1685 2106])
+            ("unescape_oemvar_val" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("val" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2355 2365]))                  
+                :type ("UINTN" type (:type "class") nil nil))
+                nil [2322 2738])
+            ("parse_oemvar_attributes" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("linep" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2775 2788])
+                    ("attributesp" variable
+                       (:pointer 1
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2789 2811])
+                    ("typep" variable
+                       (:pointer 1
+                        :type ("vartype" type (:type "enum") nil nil))
+                        (reparse-symbol arg-sub-list) [2812 2832]))                  
+                :type "int")
+                nil [2740 4199])
+            ("parse_line" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("line" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [4230 4241])
+                    ("context" variable
+                       (:pointer 1
+                        :type ("VOID" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4242 4256]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [4201 6612])
+            ("_flash_oemvars" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("data" variable
+                       (:pointer 1
+                        :type ("VOID" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7920 7931])
+                    ("size" variable (:type ("UINTN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7932 7943])
+                    ("restricted_guid" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("EFI_GUID" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7949 7981])
+                    ("silent_error" variable (:type ("BOOLEAN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7987 8008]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [7887 8252])
+            ("flash_oemvars_silent_write_error" function
+               (:arguments 
+                  ( ("data" variable
+                       (:pointer 1
+                        :type ("VOID" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [8298 8309])
+                    ("size" variable (:type ("UINTN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8310 8321])
+                    ("restricted_guid" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("EFI_GUID" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [8331 8363]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [8254 8426])
+            ("flash_oemvars" function
+               (:arguments 
+                  ( ("data" variable
+                       (:pointer 1
+                        :type ("VOID" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [8453 8464])
+                    ("size" variable (:type ("UINTN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8465 8476]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [8428 8529]))          
+      :file "oemvars.c"
+      :pointmax 8530
+      :fsize 8529
+      :lastmodtime '(22775 10757 27191 141000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("efi.h" include (:system-flag t) nil [1555 1571])
+            ("efilib.h" include (:system-flag t) nil [1572 1591])
+            ("ui.h" include (:system-flag t) nil [1592 1607])
+            ("android.h" include nil nil [1609 1629])
+            ("efilinux.h" include nil nil [1630 1651])
+            ("lib.h" include nil nil [1652 1668])
+            ("security.h" include nil nil [1669 1690])
+            ("vars.h" include nil nil [1691 1708])
+            ("power.h" include nil nil [1709 1727])
+            ("targets.h" include nil nil [1728 1748])
+            ("gpt.h" include nil nil [1749 1765])
+            ("storage.h" include nil nil [1766 1786])
+            ("text_parser.h" include nil nil [1787 1811])
+            ("watchdog.h" include nil nil [1812 1833])
+            ("slot.h" include nil nil [1886 1903])
+            ("pae.h" include nil nil [1904 1920])
+            ("OS_INITIATED" variable (:constant-flag t) nil [1930 1942])
+            ("EFI_LOADER_SIGNATURE" variable (:constant-flag t) nil [1981 2001])
+            ("setup_header" type
+               (:members 
+                  ( ("setup_secs" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2089 2106])
+                    ("root_flags" variable (:type ("UINT16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2151 2169])
+                    ("sys_size" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2178 2194])
+                    ("ram_size" variable (:type ("UINT16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2203 2219])
+                    ("video_mode" variable (:type ("UINT16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2228 2246])
+                    ("root_dev" variable (:type ("UINT16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2255 2271])
+                    ("signature" variable (:type ("UINT16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2280 2297])
+                    ("jump" variable (:type ("UINT16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2334 2346])
+                    ("header" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2355 2369])
+                    ("version" variable (:type ("UINT16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2378 2393])
+                    ("su_switch" variable (:type ("UINT16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2402 2419])
+                    ("setup_seg" variable (:type ("UINT16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2428 2445])
+                    ("start_sys" variable (:type ("UINT16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2454 2471])
+                    ("kernel_ver" variable (:type ("UINT16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2480 2498])
+                    ("loader_id" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2507 2523])
+                    ("load_flags" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2532 2549])
+                    ("movesize" variable (:type ("UINT16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2558 2574])
+                    ("code32_start" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2583 2603])
+                    ("ramdisk_start" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2651 2672])
+                    ("ramdisk_len" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2719 2738])
+                    ("bootsect_kludge" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2786 2809])
+                    ("heap_end" variable (:type ("UINT16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2818 2834])
+                    ("ext_loader_ver" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2843 2864])
+                    ("ext_loader_type" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2909 2931])
+                    ("cmd_line_ptr" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2970 2990])
+                    ("ramdisk_max" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3049 3068])
+                    ("kernel_alignment" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3115 3139])
+                    ("relocatable_kernel" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3198 3223])
+                    ("min_alignment" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3275 3295])
+                    ("xloadflags" variable (:type ("UINT16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3304 3322])
+                    ("cmdline_size" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3331 3351])
+                    ("hardware_subarch" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3360 3384])
+                    ("hardware_subarch_data" variable (:type ("UINT64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3393 3422])
+                    ("payload_offset" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3431 3453])
+                    ("payload_length" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3462 3484])
+                    ("setup_data" variable (:type ("UINT64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3493 3511])
+                    ("pref_address" variable (:type ("UINT64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3520 3540])
+                    ("init_size" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3549 3566])
+                    ("handover_offset" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3575 3598]))                  
+                :type "struct")
+                nil [2059 3625])
+            ("efi_info" type
+               (:members 
+                  ( ("efi_loader_signature" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3653 3681])
+                    ("efi_systab" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3690 3708])
+                    ("efi_memdesc_size" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3717 3741])
+                    ("efi_memdesc_version" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3750 3777])
+                    ("efi_memmap" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3786 3804])
+                    ("efi_memmap_size" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3813 3836])
+                    ("efi_systab_hi" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3845 3866])
+                    ("efi_memmap_hi" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3875 3896]))                  
+                :type "struct")
+                nil [3627 3899])
+            ("E820_UNDEFINED" variable (:constant-flag t) nil [3909 3923])
+            ("E820_RAM" variable (:constant-flag t) nil [3937 3945])
+            ("E820_RESERVED" variable (:constant-flag t) nil [3965 3978])
+            ("E820_ACPI" variable (:constant-flag t) nil [3993 4002])
+            ("E820_NVS" variable (:constant-flag t) nil [4021 4029])
+            ("E820_UNUSABLE" variable (:constant-flag t) nil [4049 4062])
+            ("e820_entry" type
+               (:members 
+                  ( ("addr" variable (:type ("UINT64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4098 4110])
+                    ("size" variable (:type ("UINT64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4164 4176])
+                    ("type" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4229 4241]))                  
+                :type "struct")
+                nil [4070 4312])
+            ("screen_info" type
+               (:members 
+                  ( ("orig_x" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4343 4357])
+                    ("orig_y" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4387 4401])
+                    ("ext_mem_k" variable (:type ("UINT16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4431 4448])
+                    ("orig_video_page" variable (:type ("UINT16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4475 4498])
+                    ("orig_video_mode" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4519 4542])
+                    ("orig_video_cols" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4563 4586])
+                    ("flags" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4607 4620])
+                    ("unused2" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4651 4666])
+                    ("orig_video_ega_bx" variable (:type ("UINT16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4695 4720])
+                    ("unused3" variable (:type ("UINT16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4739 4754])
+                    ("orig_video_lines" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4783 4807])
+                    ("orig_video_isVGA" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4827 4851])
+                    ("orig_video_points" variable (:type ("UINT16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4871 4896])
+                    ("lfb_width" variable (:type ("UINT16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4971 4988])
+                    ("lfb_height" variable (:type ("UINT16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5015 5033])
+                    ("lfb_depth" variable (:type ("UINT16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5059 5076])
+                    ("lfb_base" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5103 5119])
+                    ("lfb_size" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5147 5163])
+                    ("cl_magic" variable (:type ("UINT16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5191 5218])
+                    ("cl_offset" variable (:type ("UINT16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5191 5218])
+                    ("lfb_linelength" variable (:type ("UINT16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5238 5260])
+                    ("red_size" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5282 5298])
+                    ("red_pos" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5326 5341])
+                    ("green_size" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5370 5388])
+                    ("green_pos" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5414 5431])
+                    ("blue_size" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5458 5475])
+                    ("blue_pos" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5502 5518])
+                    ("rsvd_size" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5546 5563])
+                    ("rsvd_pos" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5590 5606])
+                    ("vesapm_seg" variable (:type ("UINT16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5634 5652])
+                    ("vesapm_off" variable (:type ("UINT16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5678 5696])
+                    ("pages" variable (:type ("UINT16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5722 5735])
+                    ("vesa_attributes" variable (:type ("UINT16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5766 5789])
+                    ("capabilities" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5810 5830])
+                    ("_reserved" variable
+                       (:dereference 1
+                        :type ("UINT8" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [5854 5874]))                  
+                :type "struct")
+                nil [4314 5916])
+            ("boot_params" type
+               (:members 
+                  ( ("screen_info" variable (:type ("screen_info" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [5947 5978])
+                    ("apm_bios_info" variable
+                       (:dereference 1
+                        :type ("UINT8" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [5987 6013])
+                    ("_pad2" variable
+                       (:dereference 1
+                        :type ("UINT8" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [6022 6037])
+                    ("tboot_addr" variable (:type ("UINT64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [6046 6064])
+                    ("ist_info" variable
+                       (:dereference 1
+                        :type ("UINT8" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [6073 6094])
+                    ("_pad3" variable
+                       (:dereference 1
+                        :type ("UINT8" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [6103 6119])
+                    ("hd0_info" variable
+                       (:dereference 1
+                        :type ("UINT8" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [6128 6147])
+                    ("hd1_info" variable
+                       (:dereference 1
+                        :type ("UINT8" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [6156 6175])
+                    ("sys_desc_table" variable
+                       (:dereference 1
+                        :type ("UINT8" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [6184 6211])
+                    ("olpc_ofw_header" variable
+                       (:dereference 1
+                        :type ("UINT8" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [6220 6248])
+                    ("_pad4" variable
+                       (:dereference 1
+                        :type ("UINT8" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [6257 6274])
+                    ("edid_info" variable
+                       (:dereference 1
+                        :type ("UINT8" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [6283 6305])
+                    ("efi_info" variable (:type ("efi_info" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [6314 6339])
+                    ("alt_mem_k" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [6348 6365])
+                    ("scratch" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [6374 6389])
+                    ("e820_entries" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [6398 6417])
+                    ("eddbuf_entries" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [6426 6447])
+                    ("edd_mbr_sig_buf_entries" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [6456 6486])
+                    ("_pad6" variable
+                       (:dereference 1
+                        :type ("UINT8" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [6495 6510])
+                    ("hdr" variable (:type ("setup_header" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [6519 6543])
+                    ("_pad7" variable
+                       (:dereference 1
+                        :type ("UINT8" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [6552 6605])
+                    ("edd_mbr_sig_buffer" variable
+                       (:dereference 1
+                        :type ("UINT32" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [6614 6644])
+                    ("e820_map" variable
+                       (:dereference 1
+                        :type ("e820_entry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [6653 6685])
+                    ("_pad8" variable
+                       (:dereference 1
+                        :type ("UINT8" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [6694 6710])
+                    ("eddbuf" variable
+                       (:dereference 1
+                        :type ("UINT8" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [6719 6739])
+                    ("_pad9" variable
+                       (:dereference 1
+                        :type ("UINT8" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [6748 6765]))                  
+                :type "struct")
+                nil [5918 6768])
+            ("segment_descriptor" type
+               (:members 
+                  ( ("limit0" variable (:type ("UINT16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [6924 6938])
+                    ("base0" variable (:type ("UINT16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [6947 6960])
+                    ("base1" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [6969 6981])
+                    ("type" variable
+                       (:suffix ":4"
+                        :type ("UINTN" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [6990 7004])
+                    ("descriptor_type" variable
+                       (:suffix ":1"
+                        :type ("UINTN" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [7013 7038])
+                    ("descriptor_privilege_level" variable
+                       (:suffix ":2"
+                        :type ("UINTN" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [7047 7083])
+                    ("present" variable
+                       (:suffix ":1"
+                        :type ("UINTN" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [7092 7109])
+                    ("limit1" variable
+                       (:suffix ":4"
+                        :type ("UINTN" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [7118 7134])
+                    ("available" variable
+                       (:suffix ":1"
+                        :type ("UINTN" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [7143 7162])
+                    ("code_segment_64bit" variable
+                       (:suffix ":1"
+                        :type ("UINTN" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [7171 7199])
+                    ("default_operation_size" variable
+                       (:suffix ":1"
+                        :type ("UINTN" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [7208 7240])
+                    ("granularity" variable
+                       (:suffix ":1"
+                        :type ("UINTN" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [7249 7270])
+                    ("base2" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [7279 7291]))                  
+                :type "struct")
+                nil [6888 7322])
+            ("dt_addr_t" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("limit" variable (:type ("UINT16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [7349 7362])
+                          ("base" variable
+                             (:pointer 1
+                              :type ("segment_descriptor" type
+                                   (:prototype t
+                                    :type "struct")
+                                    nil nil))
+                              (reparse-symbol classsubparts) [7371 7403]))                        
+                      :type "struct")
+                      nil nil)
+                :type "typedef")
+                nil [7324 7440])
+            ("gdt" variable
+               (:pointer 1
+                :type ("dt_addr_t" type (:type "class") nil nil))
+                nil [7442 7457])
+            ("kernel_func" function
+               (:prototype-flag t
+                :function-pointer t
+                :arguments 
+                  ( ("" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [7486 7493])
+                    ("" variable
+                       (:pointer 1
+                        :type ("boot_params" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7494 7515]))                  
+                :type "void")
+                nil [7467 7516])
+            ("SEGMENT_TYPE_DATA" variable (:constant-flag t) nil [7526 7543])
+            ("SEGMENT_TYPE_READ_WRITE" variable (:constant-flag t) nil [7566 7589])
+            ("SEGMENT_TYPE_CODE" variable (:constant-flag t) nil [7613 7630])
+            ("SEGMENT_TYPE_EXEC_READ" variable (:constant-flag t) nil [7660 7682])
+            ("SEGMENT_TYPE_TASK" variable (:constant-flag t) nil [7707 7724])
+            ("SEGMENT_OPERATION_SIZE_16BITS" variable (:constant-flag t) nil [7760 7789])
+            ("SEGMENT_OPERATION_SIZE_32BITS" variable (:constant-flag t) nil [7800 7829])
+            ("SEGMENT_GRANULARITY_4KB" variable (:constant-flag t) nil [7840 7863])
+            ("DESCRIPTOR_TYPE_CODE_OR_DATA" variable (:constant-flag t) nil [7880 7908])
+            ("setup_gdt" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [7941 7946]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [7913 9902])
+            ("setup_e820_map" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("boot_params" variable
+                       (:pointer 1
+                        :type ("boot_params" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10051 10083])
+                    ("mem_entries" variable
+                       (:pointer 1
+                        :type ("EFI_MEMORY_DESCRIPTOR" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [10111 10146])
+                    ("nr_entries" variable (:type ("UINTN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10174 10191])
+                    ("entry_sz" variable (:type ("UINTN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10219 10234]))                  
+                :type "void")
+                nil [10024 12234])
+            ("setup_memory_map" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("boot_params" variable
+                       (:pointer 1
+                        :type ("boot_params" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [12391 12423])
+                    ("key" variable
+                       (:pointer 1
+                        :type ("UINTN" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [12424 12435]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [12356 13761])
+            ("handover_jump" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("image" variable (:type ("EFI_HANDLE" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [13802 13819])
+                    ("boot_params" variable
+                       (:pointer 1
+                        :type ("boot_params" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13859 13891])
+                    ("kernel_start" variable (:type ("EFI_PHYSICAL_ADDRESS" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [13931 13965]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [13763 15656])
+            ("pagealign" function
+               (:arguments 
+                  ( ("hdr" variable
+                       (:pointer 1
+                        :type ("boot_img_hdr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [15677 15702])
+                    ("blob_size" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15703 15720]))                  
+                :type ("UINT32" type (:type "class") nil nil))
+                nil [15660 15826])
+            ("bootimage_size" function
+               (:arguments 
+                  ( ("aosp_header" variable
+                       (:pointer 1
+                        :type ("boot_img_hdr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [15850 15883]))                  
+                :type ("UINTN" type (:type "class") nil nil))
+                nil [15829 16168])
+            ("get_bootimage_header" function
+               (:pointer 1
+                :arguments 
+                  ( ("bootimage_blob" variable
+                       (:pointer 1
+                        :type ("VOID" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [16213 16234]))                  
+                :type ("boot_img_hdr" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [16171 16495])
+            ("setup_ramdisk" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("bootimage" variable
+                       (:pointer 1
+                        :type ("UINT8" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [16530 16547]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [16498 17738])
+            ("get_serial_port" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [17772 17777]))                  
+                :type ("CHAR16" type (:type "class") nil nil))
+                nil [17741 19458])
+            ("get_wake_reason" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [19492 19497]))                  
+                :type ("CHAR16" type (:type "class") nil nil))
+                nil [19461 20243])
+            ("get_reset_reason" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [20278 20283]))                  
+                :type ("CHAR16" type (:type "class") nil nil))
+                nil [20246 21458])
+            ("get_boot_reason" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [21492 21497]))                  
+                :type ("CHAR16" type (:type "class") nil nil))
+                nil [21461 22612])
+            ("prepend_command_line" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("cmdline" variable
+                       (:pointer 2
+                        :type ("CHAR16" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [22654 22671])
+                    ("fmt" variable
+                       (:pointer 1
+                        :type ("CHAR16" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [22672 22684])
+                    ("..." variable (:type "vararg") (reparse-symbol arg-sub-list) [22685 22689]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [22615 23178])
+            ("get_command_line" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type ("IN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [23213 23222])
+                    ("aosp_header" variable
+                       (:pointer 1
+                        :type ("boot_img_hdr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [23216 23249])
+                    ("" variable (:type ("IN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [23282 23289])
+                    ("boot_target" variable (:type ("boot_target" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [23285 23314]))                  
+                :type ("CHAR16" type (:type "class") nil nil))
+                nil [23181 26051])
+            ("get_bootimage_2nd" function
+               (:arguments 
+                  ( ("bootimage" variable
+                       (:pointer 1
+                        :type ("VOID" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [26082 26098])
+                    ("second" variable
+                       (:pointer 2
+                        :type ("VOID" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [26099 26113])
+                    ("size" variable
+                       (:pointer 1
+                        :type ("UINT32" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [26114 26127]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [26053 26623])
+            ("ROOTFS_PREFIX" variable (:constant-flag t) nil [28597 28610])
+            ("prepend_command_line_rootfs" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("cmdline16" variable
+                       (:pointer 2
+                        :type ("CHAR16" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [28705 28724])
+                    ("verity_cert" variable
+                       (:pointer 1
+                        :type ("X509" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [28725 28743]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [28659 29861])
+            ("setup_command_line" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("UINT8" variable (:type ("IN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [29917 29927])
+                    ("" variable (:type ("bootimage" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [29927 29937])
+                    ("" variable (:type ("IN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [29954 29961])
+                    ("boot_target" variable (:type ("boot_target" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [29957 29986])
+                    ("EFI_GUID" variable (:type ("IN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [30003 30016])
+                    ("" variable (:type ("swap_guid" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [30016 30026])
+                    ("UINT8" variable (:type ("IN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [30043 30062])
+                    ("" variable (:type ("boot_state" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [30052 30063])
+                    ("X509" variable (:type ("IN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [30080 30089])
+                    ("" variable (:type ("verity_cert" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [30089 30101]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [29863 35685])
+            ("GraphicsOutputProtocol" variable
+               (:typemodifiers ("extern")
+                :type ("EFI_GUID" type (:type "class") nil nil))
+                nil [35687 35726])
+            ("VIDEO_TYPE_EFI" variable (:constant-flag t) nil [35735 35749])
+            ("setup_screen_info_from_gop" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("pinfo" variable
+                       (:pointer 1
+                        :type ("screen_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [35795 35821]))                  
+                :type "void")
+                nil [35756 36479])
+            ("handover_kernel" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("bootimage" variable
+                       (:pointer 1
+                        :type ("CHAR8" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [36515 36532])
+                    ("parent_image" variable (:type ("EFI_HANDLE" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [36533 36557]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [36481 39321])
+            ("android_image_load_partition" function
+               (:arguments 
+                  ( ("CHAR16" variable
+                       (:constant-flag t
+                        :type ("IN" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [39380 39397])
+                    ("" variable (:type ("label" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [39397 39403])
+                    ("VOID" variable (:type ("OUT" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [39420 39430])
+                    ("" variable (:type ("bootimage_p" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [39431 39443]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [39323 41214])
+            ("android_image_load_file" function
+               (:arguments 
+                  ( ("EFI_HANDLE" variable (:type ("IN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [41269 41289])
+                    ("" variable (:type ("device" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [41283 41290])
+                    ("CHAR16" variable (:type ("IN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [41307 41318])
+                    ("" variable (:type ("loader" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [41318 41325])
+                    ("BOOLEAN" variable (:type ("IN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [41342 41359])
+                    ("VOID" variable (:type ("OUT" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [41377 41387])
+                    ("" variable (:type ("bootimage_p" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [41388 41400]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [41217 46248])
+            ("android_image_start_buffer" function
+               (:arguments 
+                  ( ("EFI_HANDLE" variable (:type ("IN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [46306 46332])
+                    ("" variable (:type ("parent_image" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [46320 46333])
+                    ("VOID" variable (:type ("IN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [46350 46359])
+                    ("" variable (:type ("bootimage" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [46359 46369])
+                    ("" variable (:type ("IN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [46386 46393])
+                    ("boot_target" variable (:type ("boot_target" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [46389 46418])
+                    ("UINT8" variable (:type ("IN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [46435 46454])
+                    ("" variable (:type ("boot_state" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [46444 46455])
+                    ("EFI_GUID" variable (:type ("IN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [46472 46485])
+                    ("" variable (:type ("swap_guid" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [46485 46495])
+                    ("X509" variable (:type ("IN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [46512 46521])
+                    ("" variable (:type ("verity_cert" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [46521 46533]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [46251 48877])
+            ("dump_bcb" variable (:constant-flag t) nil [49087 49095])
+            ("read_bcb" function
+               (:arguments 
+                  ( ("CHAR16" variable
+                       (:constant-flag t
+                        :type ("IN" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [49152 49169])
+                    ("" variable (:type ("label" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [49169 49175])
+                    ("" variable (:type ("OUT" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [49192 49202])
+                    ("bcb" variable
+                       (:pointer 1
+                        :type ("bootloader_message" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [49196 49227]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [49115 50060])
+            ("write_bcb" function
+               (:arguments 
+                  ( ("CHAR16" variable
+                       (:constant-flag t
+                        :type ("IN" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [50102 50119])
+                    ("" variable (:type ("label" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [50119 50125])
+                    ("" variable (:type ("IN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [50142 50151])
+                    ("bcb" variable
+                       (:pointer 1
+                        :type ("bootloader_message" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [50145 50176]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [50064 50946])
+            ("android_clear_memory" function (:type ("EFI_STATUS" type (:type "class") nil nil)) nil [50949 52811])
+            ("recovery_in_boot_partition" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [52848 52853]))                  
+                :type ("BOOLEAN" type (:type "class") nil nil))
+                nil [52813 53106]))          
+      :file "android.c"
+      :pointmax 53156
+      :fsize 53155
+      :lastmodtime '(22775 10757 23191 141000)
+      :unmatched-syntax '((punctuation 50118 . 50119) (punctuation 49168 . 49169) (punctuation 46520 . 46521) (punctuation 46484 . 46485) (punctuation 46358 . 46359) (punctuation 41387 . 41388) (punctuation 41386 . 41387) (DELETE 41353 . 41359) (punctuation 41317 . 41318) (punctuation 39430 . 39431) (punctuation 39429 . 39430) (punctuation 39396 . 39397) (punctuation 30088 . 30089) (punctuation 30015 . 30016) (punctuation 29926 . 29927) (TYPEDEF 7459 . 7466))
+      :lexical-table 
+        '(("E820_UNDEFINED" . ((number "0" 3927 . 3928)))
+          ("E820_ACPI" . ((number "3" 4011 . 4012)))
+          ("SEGMENT_TYPE_DATA" . ((number "0" 7556 . 7557)))
+          ("EFI_LOADER_SIGNATURE" . ((string "\"EL64\"" 2002 . 2008)))
+          ("E820_UNUSABLE" . ((number "5" 4067 . 4068)))
+          ("SEGMENT_TYPE_READ_WRITE" . ((semantic-list "(1 << 1)" 7596 . 7604)))
+          ("SEGMENT_OPERATION_SIZE_32BITS" . ((number "1" 7830 . 7831)))
+          ("ROOTFS_PREFIX" . ((string "L\"skip_initramfs rootwait ro init=/init root=\"" 28611 . 28657)))
+          ("SEGMENT_TYPE_CODE" . ((semantic-list "(1 << 3)" 7643 . 7651)))
+          ("SEGMENT_TYPE_EXEC_READ" . ((semantic-list "(1 << 1)" 7690 . 7698)))
+          ("E820_NVS" . ((number "4" 4039 . 4040)))
+          ("SEGMENT_GRANULARITY_4KB" . ((number "1" 7870 . 7871)))
+          ("OS_INITIATED" . ((string "L\"os_initiated\"" 1943 . 1958)))
+          ("E820_RESERVED" . ((number "2" 3983 . 3984)))
+          ("VIDEO_TYPE_EFI" . ((number "0x70" 35750 . 35754)))
+          ("SEGMENT_OPERATION_SIZE_16BITS" . ((number "0" 7790 . 7791)))
+          ("E820_RAM" . ((number "1" 3955 . 3956)))
+          ("SEGMENT_TYPE_TASK" . ((semantic-list "((1 << 3) | 1)" 7737 . 7751)))
+          ("DESCRIPTOR_TYPE_CODE_OR_DATA" . ((number "1" 7910 . 7911)))
+          ("dump_bcb" (spp-arg-list ("b") 49095 . 49098) . ((semantic-list "(void)" 49099 . 49105) (number "0" 49105 . 49106)))
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :file "efilinux.h"
+      :fsize 6880
+      :lastmodtime '(22775 10757 27191 141000))
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("lib.h" include (:system-flag t) nil [1469 1485])
+            ("vars.h" include (:system-flag t) nil [1486 1503])
+            ("gpt.h" include (:system-flag t) nil [1504 1520])
+            ("android.h" include (:system-flag t) nil [1521 1541])
+            ("slot.h" include (:system-flag t) nil [1542 1559])
+            ("endian.h" include (:system-flag t) nil [1560 1579])
+            ("SLOT_STORAGE_PART" variable
+               (:pointer 1
+                :constant-flag t
+                :default-value "MISC_LABEL"
+                :type ("CHAR16" type (:type "class") nil nil))
+                nil [1599 1644])
+            ("MAX_NB_SLOT" variable (:constant-flag t) nil [1653 1664])
+            ("MAX_LABEL_LEN" variable (:constant-flag t) nil [1729 1742])
+            ("MAX_PRIORITY" variable
+               (:typemodifiers ("static")
+                :constant-flag t
+                :default-value "15"
+                :type ("UINTN" type (:type "class") nil nil))
+                nil [1747 1787])
+            ("MAX_RETRIES" variable
+               (:typemodifiers ("static")
+                :constant-flag t
+                :default-value "7"
+                :type ("UINTN" type (:type "class") nil nil))
+                nil [1788 1827])
+            ("SUFFIX_FMT" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"_%c\""
+                :type "char")
+                nil [1828 1871])
+            ("SLOT_START_CHAR" variable
+               (:typemodifiers ("static")
+                :constant-flag t
+                :default-value "'a'"
+                :type "char")
+                nil [1872 1913])
+            ("SUFFIX_LEN" variable
+               (:typemodifiers ("static")
+                :constant-flag t
+                :default-value "2"
+                :type ("UINTN" type (:type "class") nil nil))
+                nil [1914 1953])
+            ("SUFFIX_INDEX" variable (:constant-flag t) nil [1963 1975])
+            ("slot_metadata_t" type
+               (:typedef ("slot_metadata" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil)
+                :type "typedef")
+                nil [2045 2090])
+            ("boot_ctrl_t" type
+               (:typedef ("bootloader_control" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil)
+                :type "typedef")
+                nil [2091 2137])
+            ("is_used" variable
+               (:typemodifiers ("static")
+                :type ("BOOLEAN" type (:type "class") nil nil))
+                nil [2155 2178])
+            ("_suffixes" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :type "char")
+                nil [2179 2235])
+            ("suffixes" variable
+               (:pointer 1
+                :dereference 1
+                :typemodifiers ("static")
+                :type "char")
+                nil [2236 2271])
+            ("cur_suffix" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :type "char")
+                nil [2272 2296])
+            ("boot_ctrl" variable
+               (:typemodifiers ("static")
+                :type ("boot_ctrl_t" type (:type "class") nil nil))
+                nil [2376 2405])
+            ("slots" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :default-value "boot_ctrl.slot_info;"
+                :type ("slot_metadata_t" type (:type "class") nil nil))
+                nil [2406 2458])
+            ("label_with_suffix" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :arguments 
+                  ( ("label" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("CHAR16" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2499 2519])
+                    ("suffix" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2520 2539]))                  
+                :type ("CHAR16" type (:type "class") nil nil))
+                nil [2460 3014])
+            ("get_part_nb_slot" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("label" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("CHAR16" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3046 3066]))                  
+                :type ("UINTN" type (:type "class") nil nil))
+                nil [3016 3581])
+            ("sync_boot_ctrl" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("out" variable (:type ("BOOLEAN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3623 3635]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [3583 4133])
+            ("read_boot_ctrl" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [4168 4173]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [4135 4207])
+            ("slot_crc32" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("crc32" variable
+                       (:pointer 1
+                        :type ("UINT32" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4238 4252]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [4209 4490])
+            ("write_boot_ctrl" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [4526 4531]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [4492 4750])
+            ("is_suffix" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("suffix" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [4777 4796]))                  
+                :type ("BOOLEAN" type (:type "class") nil nil))
+                nil [4752 4955])
+            ("get_slot" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("suffix" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [4990 5009]))                  
+                :type ("slot_metadata_t" type (:type "class") nil nil))
+                nil [4957 5233])
+            ("highest_priority_slot" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [5281 5286]))                  
+                :type ("slot_metadata_t" type (:type "class") nil nil))
+                nil [5235 5484])
+            ("disable_slot" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("slot" variable
+                       (:pointer 1
+                        :type ("slot_metadata_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5517 5539])
+                    ("store" variable (:type ("BOOLEAN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5540 5554]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [5486 5773])
+            ("select_highest_priority_slot" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [5822 5827]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [5775 6202])
+            ("slot_init" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [6225 6230]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [6204 7246])
+            ("use_slot" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [7265 7270]))                  
+                :type ("BOOLEAN" type (:type "class") nil nil))
+                nil [7248 7291])
+            ("slot_label" function
+               (:pointer 1
+                :constant-flag t
+                :arguments 
+                  ( ("base" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("CHAR16" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7318 7337]))                  
+                :type ("CHAR16" type (:type "class") nil nil))
+                nil [7293 7666])
+            ("slot_base" function
+               (:pointer 1
+                :constant-flag t
+                :arguments 
+                  ( ("label" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("CHAR16" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7692 7712]))                  
+                :type ("CHAR16" type (:type "class") nil nil))
+                nil [7668 8195])
+            ("slot_get_active" function
+               (:pointer 1
+                :constant-flag t
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [8225 8230]))                  
+                :type "char")
+                nil [8197 8274])
+            ("lower_other_slots_priority" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("except" variable
+                       (:pointer 1
+                        :type ("slot_metadata_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [8315 8339]))                  
+                :type "void")
+                nil [8276 8536])
+            ("slot_set_active" function
+               (:arguments 
+                  ( ("suffix" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [8565 8584]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [8538 9166])
+            ("slot_get_suffixes" function
+               (:arguments 
+                  ( ("suffixes_p" variable
+                       (:pointer 2
+                        :dereference 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [9192 9212]))                  
+                :type ("UINTN" type (:type "class") nil nil))
+                nil [9168 9299])
+            ("slot_get_successful" function
+               (:pointer 1
+                :constant-flag t
+                :arguments 
+                  ( ("suffix" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [9333 9352]))                  
+                :type "char")
+                nil [9301 9481])
+            ("slot_get_unbootable" function
+               (:pointer 1
+                :constant-flag t
+                :arguments 
+                  ( ("suffix" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [9515 9534]))                  
+                :type "char")
+                nil [9483 9661])
+            ("slot_get_retry_count" function
+               (:pointer 1
+                :constant-flag t
+                :arguments 
+                  ( ("suffix" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [9696 9715]))                  
+                :type "char")
+                nil [9663 9991])
+            ("slot_get_verity_corrupted" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [10027 10032]))                  
+                :type ("BOOLEAN" type (:type "class") nil nil))
+                nil [9993 10242])
+            ("slot_set_verity_corrupted" function
+               (:arguments 
+                  ( ("corrupted" variable (:type ("BOOLEAN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10295 10313]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [10258 10675])
+            ("slot_reset" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [10699 10704]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [10677 11326])
+            ("slot_restore" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [11352 11357]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [11328 11415])
+            ("slot_boot" function
+               (:arguments 
+                  ( ("target" variable (:type ("boot_target" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [11438 11462]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [11417 12192])
+            ("slot_boot_failed" function
+               (:arguments 
+                  ( ("target" variable (:type ("boot_target" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [12222 12246]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [12194 12668])
+            ("slot_recovery_tries_remaining" function (:type ("UINT8" type (:type "class") nil nil)) nil [12670 12786]))          
+      :file "slot.c"
+      :pointmax 12787
+      :fsize 12786
+      :lastmodtime '(22775 10757 35191 142000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("MAX_LABEL_LEN" . ((number "64" 1743 . 1745)))
+          ("MAX_NB_SLOT" . ((symbol "ARRAY_SIZE" 1665 . 1675) (semantic-list "(((struct bootloader_control *)0)->slot_info)" 1675 . 1720)))
+          ("SUFFIX_INDEX" (spp-arg-list ("suffix") 1975 . 1983) . ((semantic-list "(suffix[1] - SLOT_START_CHAR)" 1984 . 2013)))
+          )
+))
+  :file "!home!chenqi!work!1A_code!hardware!intel!kernelflinger!libkernelflinger!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

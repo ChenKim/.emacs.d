@@ -1,0 +1,408 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("linux/kernel.h" include (:system-flag t) nil [4124 4149])
+            ("linux/crc32.h" include (:system-flag t) nil [4150 4174])
+            ("linux/ctype.h" include (:system-flag t) nil [4175 4199])
+            ("linux/math64.h" include (:system-flag t) nil [4200 4225])
+            ("linux/slab.h" include (:system-flag t) nil [4226 4249])
+            ("check.h" include nil nil [4250 4268])
+            ("efi.h" include nil nil [4269 4285])
+            ("force_gpt" variable
+               (:typemodifiers ("static")
+                :type "int")
+                nil [4465 4486])
+            ("force_gpt_fn" function
+               (:arguments 
+                  ( ("str" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [4518 4528]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [4498 4559])
+            ("__setup" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("force_gpt_fn" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4575 4588]))                  
+                :type "int")
+                nil [4560 4589])
+            ("efi_crc32" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("buf" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [5041 5057])
+                    ("len" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [5058 5076]))                  
+                :type ("u32" type (:type "class") nil nil))
+                nil [5013 5118])
+            ("last_lba" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("bdev" variable
+                       (:pointer 1
+                        :type ("block_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5447 5473]))                  
+                :type ("u64" type (:type "class") nil nil))
+                nil [5427 5608])
+            ("pmbr_part_valid" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("part" variable
+                       (:pointer 1
+                        :type ("gpt_mbr_record" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5644 5665]))                  
+                :type "int")
+                nil [5610 5940])
+            ("is_pmbr_valid" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("mbr" variable
+                       (:pointer 1
+                        :type ("legacy_mbr" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6661 6677])
+                    ("total_sectors" variable (:type ("sector_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6678 6701]))                  
+                :type "int")
+                nil [6636 8147])
+            ("read_lba" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("state" variable
+                       (:pointer 1
+                        :type ("parsed_partitions" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8513 8545])
+                    ("lba" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8555 8563])
+                    ("buffer" variable
+                       (:pointer 1
+                        :type ("u8" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [8564 8575])
+                    ("count" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8576 8589]))                  
+                :type ("size_t" type (:type "class") nil nil))
+                nil [8490 9114])
+            ("alloc_read_gpt_entries" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("state" variable
+                       (:pointer 1
+                        :type ("parsed_partitions" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9456 9488])
+                    ("gpt" variable
+                       (:pointer 1
+                        :type ("gpt_header" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [9495 9511]))                  
+                :type ("gpt_entry" type (:type "class") nil nil))
+                nil [9415 9938])
+            ("alloc_read_gpt_header" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("state" variable
+                       (:pointer 1
+                        :type ("parsed_partitions" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10345 10377])
+                    ("lba" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10384 10392]))                  
+                :type ("gpt_header" type (:type "class") nil nil))
+                nil [10304 10653])
+            ("is_gpt_valid" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("state" variable
+                       (:pointer 1
+                        :type ("parsed_partitions" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11044 11076])
+                    ("lba" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11077 11085])
+                    ("gpt" variable
+                       (:pointer 2
+                        :type ("gpt_header" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [11089 11106])
+                    ("ptes" variable
+                       (:pointer 2
+                        :type ("gpt_entry" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [11107 11124]))                  
+                :type "int")
+                nil [11020 14421])
+            ("is_pte_valid" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("pte" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("gpt_entry" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [14616 14637])
+                    ("lastlba" variable
+                       (:constant-flag t
+                        :type ("u64" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [14638 14656]))                  
+                :type "int")
+                nil [14585 14847])
+            ("compare_gpts" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("pgpt" variable
+                       (:pointer 1
+                        :type ("gpt_header" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [15151 15168])
+                    ("agpt" variable
+                       (:pointer 1
+                        :type ("gpt_header" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [15169 15186])
+                    ("lastlba" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15187 15199]))                  
+                :type "void")
+                nil [15126 18324])
+            ("find_valid_gpt" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("state" variable
+                       (:pointer 1
+                        :type ("parsed_partitions" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [19133 19165])
+                    ("gpt" variable
+                       (:pointer 2
+                        :type ("gpt_header" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [19166 19183])
+                    ("ptes" variable
+                       (:pointer 2
+                        :type ("gpt_entry" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [19189 19206]))                  
+                :type "int")
+                nil [19107 21151])
+            ("efi_partition" function
+               (:arguments 
+                  ( ("state" variable
+                       (:pointer 1
+                        :type ("parsed_partitions" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [21747 21779]))                  
+                :type "int")
+                nil [21729 23245]))          
+      :file "efi.c"
+      :pointmax 23246
+      :fsize 23245
+      :lastmodtime '(22781 19789 718156 480000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("linux/pagemap.h" include (:system-flag t) nil [1 27])
+            ("linux/blkdev.h" include (:system-flag t) nil [28 53])
+            ("linux/genhd.h" include (:system-flag t) nil [54 78])
+            ("parsed_partitions" type
+               (:members 
+                  ( ("bdev" variable
+                       (:pointer 1
+                        :type ("block_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [202 228])
+                    ("name" variable
+                       (:dereference 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [230 255])
+                    ("parts" variable
+                       (:pointer 1
+                        :type ("" type
+                             (:members 
+                                ( ("from" variable (:type ("sector_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [268 282])
+                                  ("size" variable (:type ("sector_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [285 299])
+                                  ("flags" variable (:type "int") (reparse-symbol classsubparts) [302 312])
+                                  ("has_info" variable (:type "bool") (reparse-symbol classsubparts) [315 329])
+                                  ("info" variable (:type ("partition_meta_info" type
+                                       (:prototype t
+                                        :type "struct")
+                                        nil nil)) (reparse-symbol classsubparts) [332 364]))                                
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [257 375])
+                    ("next" variable (:type "int") (reparse-symbol classsubparts) [377 386])
+                    ("limit" variable (:type "int") (reparse-symbol classsubparts) [388 398])
+                    ("access_beyond_eod" variable (:type "bool") (reparse-symbol classsubparts) [400 423])
+                    ("pp_buf" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [425 438]))                  
+                :type "struct")
+                nil [174 441])
+            ("free_partitions" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("state" variable
+                       (:pointer 1
+                        :type ("parsed_partitions" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [464 496]))                  
+                :type "void")
+                nil [443 497])
+            ("check_partition" function
+               (:prototype-flag t
+                :pointer 1
+                :arguments 
+                  ( ("" variable
+                       (:pointer 1
+                        :type ("gendisk" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [542 559])
+                    ("" variable
+                       (:pointer 1
+                        :type ("block_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [560 582]))                  
+                :type ("parsed_partitions" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [499 583])
+            ("read_part_sector" function
+               (:pointer 1
+                :typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("state" variable
+                       (:pointer 1
+                        :type ("parsed_partitions" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [622 654])
+                    ("n" variable (:type ("sector_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [664 675])
+                    ("p" variable
+                       (:pointer 1
+                        :type ("Sector" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [676 686]))                  
+                :type "void")
+                nil [585 835])
+            ("put_partition" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("p" variable
+                       (:pointer 1
+                        :type ("parsed_partitions" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [870 898])
+                    ("n" variable (:type "int") (reparse-symbol arg-sub-list) [899 905])
+                    ("from" variable (:type ("sector_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [906 920])
+                    ("size" variable (:type ("sector_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [921 935]))                  
+                :type "void")
+                nil [837 1147])
+            ("warn_no_part" variable
+               (:typemodifiers ("extern")
+                :type "int")
+                nil [1149 1173]))          
+      :file "check.h"
+      :pointmax 1175
+      :fsize 1174
+      :lastmodtime '(22781 19789 718156 480000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("FS_PART_EFI_H_INCLUDED" variable (:constant-flag t) nil [1127 1149])
+            ("linux/types.h" include (:system-flag t) nil [1151 1175])
+            ("linux/fs.h" include (:system-flag t) nil [1176 1197])
+            ("linux/genhd.h" include (:system-flag t) nil [1198 1222])
+            ("linux/kernel.h" include (:system-flag t) nil [1223 1248])
+            ("linux/major.h" include (:system-flag t) nil [1249 1273])
+            ("linux/string.h" include (:system-flag t) nil [1274 1299])
+            ("linux/efi.h" include (:system-flag t) nil [1300 1322])
+            ("linux/compiler.h" include (:system-flag t) nil [1323 1350])
+            ("MSDOS_MBR_SIGNATURE" variable (:constant-flag t) nil [1360 1379])
+            ("EFI_PMBR_OSTYPE_EFI" variable (:constant-flag t) nil [1395 1414])
+            ("EFI_PMBR_OSTYPE_EFI_GPT" variable (:constant-flag t) nil [1428 1451])
+            ("GPT_MBR_PROTECTIVE" variable (:constant-flag t) nil [1466 1484])
+            ("GPT_MBR_HYBRID" variable (:constant-flag t) nil [1496 1510])
+            ("GPT_HEADER_SIGNATURE" variable (:constant-flag t) nil [1527 1547])
+            ("GPT_HEADER_REVISION_V1" variable (:constant-flag t) nil [1578 1600])
+            ("GPT_PRIMARY_PARTITION_TABLE_LBA" variable (:constant-flag t) nil [1620 1651])
+            ("PARTITION_SYSTEM_GUID" variable (:constant-flag t) nil [1663 1684])
+            ("LEGACY_MBR_PARTITION_GUID" variable (:constant-flag t) nil [1802 1827])
+            ("PARTITION_MSFT_RESERVED_GUID" variable (:constant-flag t) nil [1944 1972])
+            ("PARTITION_BASIC_DATA_GUID" variable (:constant-flag t) nil [2089 2114])
+            ("PARTITION_LINUX_RAID_GUID" variable (:constant-flag t) nil [2231 2256])
+            ("PARTITION_LINUX_SWAP_GUID" variable (:constant-flag t) nil [2373 2398])
+            ("PARTITION_LINUX_LVM_GUID" variable (:constant-flag t) nil [2515 2539])
+            ("gpt_header" variable (:type ((((0) "__packed")) type (:superclasses ("_gpt_header" type (:members (("signature" variable (:type ("__le64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2679 2696]) ("revision" variable (:type ("__le32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2698 2714]) ("header_size" variable (:type ("__le32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2716 2735]) ("header_crc32" variable (:type ("__le32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2737 2757]) ("reserved1" variable (:type ("__le32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2759 2776]) ("my_lba" variable (:type ("__le64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2778 2792]) ("alternate_lba" variable (:type ("__le64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2794 2815]) ("first_usable_lba" variable (:type ("__le64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2817 2841]) ("last_usable_lba" variable (:type ("__le64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2843 2866]) ("disk_guid" variable (:type ("efi_guid_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2868 2889]) ("partition_entry_lba" variable (:type ("__le64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2891 2918]) ("num_partition_entries" variable (:type ("__le32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2920 2949]) ("sizeof_partition_entry" variable (:type ("__le32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2951 2981]) ("partition_entry_array_crc32" variable (:type ("__le32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2983 3018])) :type "struct") nil nil) :type "typedef") nil nil)) nil [2649 3199])
+            ("gpt_entry_attributes" variable (:type ((((0) "__packed")) type (:superclasses ("_gpt_entry_attributes" type (:members (("required_to_function" variable (:suffix ":1" :type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3241 3268]) ("reserved" variable (:suffix ":47" :type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3270 3286]) ("type_guid_specific" variable (:suffix ":16" :type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3295 3321])) :type "struct") nil nil) :type "typedef") nil nil)) nil [3201 3354])
+            ("gpt_entry" variable (:type ((((0) "__packed")) type (:superclasses ("_gpt_entry" type (:members (("partition_type_guid" variable (:type ("efi_guid_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3385 3416]) ("unique_partition_guid" variable (:type ("efi_guid_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3418 3451]) ("starting_lba" variable (:type ("__le64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3453 3473]) ("ending_lba" variable (:type ("__le64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3475 3493]) ("attributes" variable (:type ("gpt_entry_attributes" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3495 3527]) ("partition_name" variable (:dereference 1 :type ("efi_char16_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3529 3585])) :type "struct") nil nil) :type "typedef") nil nil)) nil [3356 3607])
+            ("gpt_mbr_record" variable (:type ((((0) "__packed")) type (:superclasses ("_gpt_mbr_record" type (:members (("boot_indicator" variable (:type ("u8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3643 3661]) ("start_head" variable (:type ("u8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3709 3723]) ("start_sector" variable (:type ("u8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3766 3782]) ("start_track" variable (:type ("u8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3823 3838]) ("os_type" variable (:type ("u8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3840 3851]) ("end_head" variable (:type ("u8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3898 3910]) ("end_sector" variable (:type ("u8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3953 3967]) ("end_track" variable (:type ("u8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4008 4021]) ("starting_lba" variable (:type ("__le32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4063 4083]) ("size_in_lba" variable (:type ("__le32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4136 4155])) :type "struct") nil nil) :type "typedef") nil nil)) nil [3609 4223])
+            ("legacy_mbr" variable (:type ((((0) "__packed")) type (:superclasses ("_legacy_mbr" type (:members (("boot_code" variable (:dereference 1 :type ("u8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4256 4274]) ("unique_mbr_signature" variable (:type ("__le32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4276 4304]) ("unknown" variable (:type ("__le16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4306 4321]) ("partition_record" variable (:dereference 1 :type ("gpt_mbr_record" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4323 4358]) ("signature" variable (:type ("__le16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4360 4377])) :type "struct") nil nil) :type "typedef") nil nil)) nil [4226 4400])
+            ("efi_partition" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("state" variable
+                       (:pointer 1
+                        :type ("parsed_partitions" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4443 4475]))                  
+                :type "int")
+                nil [4418 4476]))          
+      :file "efi.h"
+      :pointmax 4485
+      :fsize 4484
+      :lastmodtime '(22781 19789 718156 480000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("PARTITION_LINUX_RAID_GUID" . ((symbol "EFI_GUID" 2263 . 2271) (semantic-list "( 0xa19d880f, 0x05fc, 0x4d3b, \\
+              0xa0, 0x06, 0x74, 0x3f, 0x0f, 0x84, 0x91, 0x1e)" 2271 . 2364)))
+          ("PARTITION_SYSTEM_GUID" . ((symbol "EFI_GUID" 1691 . 1699) (semantic-list "( 0xC12A7328, 0xF81F, 0x11d2, \\
+              0xBA, 0x4B, 0x00, 0xA0, 0xC9, 0x3E, 0xC9, 0x3B)" 1699 . 1792)))
+          ("GPT_HEADER_REVISION_V1" . ((number "0x00010000" 1601 . 1611)))
+          ("GPT_PRIMARY_PARTITION_TABLE_LBA" . ((number "1" 1652 . 1653)))
+          ("PARTITION_LINUX_LVM_GUID" . ((symbol "EFI_GUID" 2546 . 2554) (semantic-list "( 0xe6d6d379, 0xf507, 0x44c2, \\
+              0xa2, 0x3c, 0x23, 0x8f, 0x2a, 0x3d, 0xf9, 0x28)" 2554 . 2647)))
+          ("PARTITION_LINUX_SWAP_GUID" . ((symbol "EFI_GUID" 2405 . 2413) (semantic-list "( 0x0657fd6d, 0xa4ab, 0x43c4, \\
+              0x84, 0xe5, 0x09, 0x33, 0xc8, 0x4b, 0x4f, 0x4f)" 2413 . 2506)))
+          ("MSDOS_MBR_SIGNATURE" . ((number "0xaa55" 1380 . 1386)))
+          ("GPT_MBR_PROTECTIVE" . ((number "1" 1486 . 1487)))
+          ("PARTITION_MSFT_RESERVED_GUID" . ((symbol "EFI_GUID" 1979 . 1987) (semantic-list "( 0xE3C9E316, 0x0B5C, 0x4DB8, \\
+              0x81, 0x7D, 0xF9, 0x2D, 0xF0, 0x02, 0x15, 0xAE)" 1987 . 2080)))
+          ("PARTITION_BASIC_DATA_GUID" . ((symbol "EFI_GUID" 2121 . 2129) (semantic-list "( 0xEBD0A0A2, 0xB9E5, 0x4433, \\
+              0x87, 0xC0, 0x68, 0xB6, 0xB7, 0x26, 0x99, 0xC7)" 2129 . 2222)))
+          ("EFI_PMBR_OSTYPE_EFI_GPT" . ((number "0xEE" 1452 . 1456)))
+          ("FS_PART_EFI_H_INCLUDED")
+          ("EFI_PMBR_OSTYPE_EFI" . ((number "0xEF" 1415 . 1419)))
+          ("GPT_MBR_HYBRID" . ((number "2" 1516 . 1517)))
+          ("GPT_HEADER_SIGNATURE" . ((symbol "0x5452415020494645ULL" 1548 . 1569)))
+          ("LEGACY_MBR_PARTITION_GUID" . ((symbol "EFI_GUID" 1834 . 1842) (semantic-list "( 0x024DEE41, 0x33E7, 0x11d3, \\
+              0x9D, 0x69, 0x00, 0x08, 0xC7, 0x81, 0xF3, 0x9F)" 1842 . 1935)))
+          )
+))
+  :file "!home!chenqi!work!androidia!kernel!android_ia!block!partitions!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

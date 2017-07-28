@@ -1,0 +1,91 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("vmm_defs.h" include nil nil [750 771])
+            ("evmm_desc.h" include nil nil [772 794])
+            ("libc.h" include nil nil [795 812])
+            ("lib/util.h" include nil nil [813 834])
+            ("address.h" include nil nil [835 855])
+            ("hw_includes.h" include nil nil [856 880])
+            ("heap.h" include nil nil [881 898])
+            ("gdt.h" include nil nil [899 915])
+            ("idt.h" include nil nil [916 932])
+            ("isr.h" include nil nil [933 949])
+            ("vmm_stack.h" include nil nil [950 972])
+            ("host_memory_manager.h" include nil nil [973 1005])
+            ("vmx_cap.h" include nil nil [1006 1026])
+            ("guest.h" include nil nil [1027 1045])
+            ("host_cpu.h" include nil nil [1046 1067])
+            ("scheduler.h" include nil nil [1068 1090])
+            ("vmexit.h" include nil nil [1141 1160])
+            ("parse_image.h" include nil nil [1161 1185])
+            ("vmm_dbg.h" include nil nil [1186 1206])
+            ("event_mgr.h" include nil nil [1207 1229])
+            ("ept.h" include nil nil [1230 1246])
+            ("mtrrs_abstraction.h" include nil nil [1247 1277])
+            ("vmcs.h" include nil nil [1340 1357])
+            ("gpm.h" include nil nil [1358 1374])
+            ("vmexit_cr_access.h" include nil nil [1562 1591])
+            ("gcpu.h" include nil nil [1592 1609])
+            ("gcpu_state.h" include nil nil [1610 1633])
+            ("gcpu_switch.h" include nil nil [1634 1658])
+            ("vmm_arch.h" include nil nil [1659 1680])
+            ("vmm_input_params_t" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("cpuid" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2344 2359])
+                          ("evmm_desc" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2361 2380]))                        
+                      :type "struct")
+                      nil nil)
+                :type "typedef")
+                nil [2326 2402])
+            ("g_application_procs_may_be_launched" variable
+               (:typemodifiers ("static" "volatile")
+                :default-value "FALSE"
+                :type ("uint32_t" type (:type "class") nil nil))
+                nil [2470 2539])
+            ("g_application_procs_launch_the_guest" variable
+               (:typemodifiers ("static" "volatile")
+                :default-value "0"
+                :type ("uint32_t" type (:type "class") nil nil))
+                nil [2541 2607])
+            ("WAIT_FOR_APPLICATION_PROCS_LAUNCH" variable (:constant-flag t) nil [2682 2715])
+            ("LAUNCH_APPLICATION_PROCS" variable (:constant-flag t) nil [2815 2839])
+            ("WAIT_FOR_APPLICATION_PROCS_LAUNCHED_THE_GUEST" variable (:constant-flag t) nil [2952 2997])
+            ("APPLICATION_PROC_LAUNCHING_THE_GUEST" variable (:constant-flag t) nil [3109 3145])
+            ("vmm_main_continue" function
+               (:arguments 
+                  ( ("vmm_input_params" variable
+                       (:pointer 1
+                        :type ("vmm_input_params_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3643 3680]))                  
+                :type "void")
+                nil [3620 8322])
+            ("vmm_main" function
+               (:arguments 
+                  ( ("cpuid" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8344 8359])
+                    ("evmm_desc_u" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8366 8387]))                  
+                :type ("CDECL" type (:type "class") nil nil))
+                nil [8329 9157]))          
+      :file "main.c"
+      :pointmax 9158
+      :fsize 9157
+      :lastmodtime '(22799 51685 907619 325000)
+      :unmatched-syntax '((VOID 8324 . 8328))
+      :lexical-table 
+        '(("APPLICATION_PROC_LAUNCHING_THE_GUEST" (spp-arg-list nil 3145 . 3147) . ((semantic-list "{ asm_lock_inc32((&g_application_procs_launch_the_guest)); \\
+	}" 3167 . 3230)))
+          ("WAIT_FOR_APPLICATION_PROCS_LAUNCH" (spp-arg-list nil 2715 . 2717) . ((semantic-list "{ while (!g_application_procs_may_be_launched) { asm_pause(); } }" 2740 . 2805)))
+          ("LAUNCH_APPLICATION_PROCS" (spp-arg-list nil 2839 . 2841) . ((semantic-list "{ hw_assign_as_barrier(&g_application_procs_may_be_launched, TRUE); }" 2873 . 2942)))
+          ("WAIT_FOR_APPLICATION_PROCS_LAUNCHED_THE_GUEST" (spp-arg-list ("count") 2997 . 3004) . ((semantic-list "{ while (g_application_procs_launch_the_guest != \\
+		 (uint32_t)(count)) { asm_pause(); } }" 3008 . 3099)))
+          )
+))
+  :file "!home!chenqi!work!1A_code!vendor!intel!fw!evmm!bxt!core!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

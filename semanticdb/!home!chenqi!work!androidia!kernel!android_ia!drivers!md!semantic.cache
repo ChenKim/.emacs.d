@@ -1,0 +1,826 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("linux/buffer_head.h" include (:system-flag t) nil [505 535])
+            ("linux/debugfs.h" include (:system-flag t) nil [536 562])
+            ("linux/delay.h" include (:system-flag t) nil [563 587])
+            ("linux/device.h" include (:system-flag t) nil [588 613])
+            ("linux/device-mapper.h" include (:system-flag t) nil [614 646])
+            ("linux/errno.h" include (:system-flag t) nil [647 671])
+            ("linux/fs.h" include (:system-flag t) nil [672 693])
+            ("linux/fcntl.h" include (:system-flag t) nil [694 718])
+            ("linux/init.h" include (:system-flag t) nil [719 742])
+            ("linux/kernel.h" include (:system-flag t) nil [743 768])
+            ("linux/key.h" include (:system-flag t) nil [769 791])
+            ("linux/module.h" include (:system-flag t) nil [792 817])
+            ("linux/mount.h" include (:system-flag t) nil [818 842])
+            ("linux/namei.h" include (:system-flag t) nil [843 867])
+            ("linux/of.h" include (:system-flag t) nil [868 889])
+            ("linux/reboot.h" include (:system-flag t) nil [890 915])
+            ("linux/string.h" include (:system-flag t) nil [916 941])
+            ("linux/vmalloc.h" include (:system-flag t) nil [942 968])
+            ("asm/setup.h" include (:system-flag t) nil [970 992])
+            ("crypto/hash.h" include (:system-flag t) nil [993 1017])
+            ("crypto/public_key.h" include (:system-flag t) nil [1018 1048])
+            ("crypto/sha.h" include (:system-flag t) nil [1049 1072])
+            ("keys/asymmetric-type.h" include (:system-flag t) nil [1073 1106])
+            ("keys/system_keyring.h" include (:system-flag t) nil [1107 1139])
+            ("dm-verity.h" include nil nil [1141 1163])
+            ("dm-android-verity.h" include nil nil [1164 1194])
+            ("verifiedbootstate" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :type "char")
+                nil [1196 1259])
+            ("veritymode" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :type "char")
+                nil [1260 1316])
+            ("veritykeyid" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :type "char")
+                nil [1317 1371])
+            ("buildvariant" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :type "char")
+                nil [1372 1412])
+            ("target_added" variable
+               (:typemodifiers ("static")
+                :type "bool")
+                nil [1414 1439])
+            ("verity_enabled" variable
+               (:typemodifiers ("static")
+                :default-value "true"
+                :type "bool")
+                nil [1440 1474])
+            ("debug_dir" variable
+               (:pointer 1
+                :type ("dentry" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1475 1500])
+            ("android_verity_ctr" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("ti" variable
+                       (:pointer 1
+                        :type ("dm_target" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1531 1552])
+                    ("argc" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [1553 1567])
+                    ("argv" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1568 1580]))                  
+                :type "int")
+                nil [1501 1581])
+            ("android_verity_target" variable
+               (:typemodifiers ("static")
+                :default-value "{
+	.name                   = \"android-verity\",
+	.version                = {1, 0, 0},
+	.module                 = THIS_MODULE,
+	.ctr                    = android_verity_ctr,
+	.dtr                    = verity_dtr,
+	.map                    = verity_map,
+	.status                 = verity_status,
+	.prepare_ioctl          = verity_prepare_ioctl,
+	.iterate_devices        = verity_iterate_devices,
+	.io_hints               = verity_io_hints,
+}"
+                :type ("target_type" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1583 2071])
+            ("verified_boot_state_param" function
+               (:arguments 
+                  ( ("line" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2117 2128]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [2084 2205])
+            ("__setup" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("verified_boot_state_param" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2249 2275]))                  
+                :type "int")
+                nil [2207 2276])
+            ("verity_mode_param" function
+               (:arguments 
+                  ( ("line" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2314 2325]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [2289 2388])
+            ("__setup" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("verity_mode_param" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2425 2443]))                  
+                :type "int")
+                nil [2390 2444])
+            ("verity_keyid_param" function
+               (:arguments 
+                  ( ("line" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2483 2494]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [2457 2559])
+            ("__setup" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("verity_keyid_param" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2585 2604]))                  
+                :type "int")
+                nil [2561 2605])
+            ("verity_buildvariant" function
+               (:arguments 
+                  ( ("line" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2645 2656]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [2618 2723])
+            ("__setup" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("verity_buildvariant" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2750 2770]))                  
+                :type "int")
+                nil [2725 2771])
+            ("default_verity_key_id" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [2814 2819]))                  
+                :type "bool")
+                nil [2773 2855])
+            ("is_eng" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [2883 2888]))                  
+                :type "bool")
+                nil [2857 2990])
+            ("is_userdebug" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [3024 3029]))                  
+                :type "bool")
+                nil [2992 3155])
+            ("is_unlocked" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [3188 3193]))                  
+                :type "bool")
+                nil [3157 3305])
+            ("table_extract_mpi_array" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("pks" variable
+                       (:pointer 1
+                        :type ("public_key_signature" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3342 3375])
+                    ("data" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [3380 3397])
+                    ("len" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3398 3409]))                  
+                :type "int")
+                nil [3307 3584])
+            ("table_make_digest" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("hash" variable (:type ("hash_algo" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [3647 3667])
+                    ("table" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [3674 3692])
+                    ("table_len" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [3699 3723]))                  
+                :type ("public_key_signature" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [3586 4911])
+            ("read_block_dev" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("payload" variable
+                       (:pointer 1
+                        :type ("bio_read" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4939 4964])
+                    ("bdev" variable
+                       (:pointer 1
+                        :type ("block_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4965 4991])
+                    ("offset" variable (:type ("sector_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4994 5010])
+                    ("length" variable (:type "int") (reparse-symbol arg-sub-list) [5011 5022]))                  
+                :type "int")
+                nil [4913 6142])
+            ("fec_div_round_up" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("x" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6179 6185])
+                    ("y" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6186 6192]))                  
+                :type ("u64" type (:type "class") nil nil))
+                nil [6144 6282])
+            ("populate_fec_metadata" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("header" variable
+                       (:pointer 1
+                        :type ("fec_header" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6325 6351])
+                    ("ecc" variable
+                       (:pointer 1
+                        :type ("fec_ecc_metadata" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6356 6385]))                  
+                :type "void")
+                nil [6284 6559])
+            ("validate_fec_header" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("header" variable
+                       (:pointer 1
+                        :type ("fec_header" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6599 6625])
+                    ("offset" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6626 6637]))                  
+                :type "int")
+                nil [6561 7022])
+            ("extract_fec_header" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dev" variable (:type ("dev_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7054 7064])
+                    ("fec" variable
+                       (:pointer 1
+                        :type ("fec_header" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7065 7088])
+                    ("ecc" variable
+                       (:pointer 1
+                        :type ("fec_ecc_metadata" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7093 7122]))                  
+                :type "int")
+                nil [7024 8456])
+            ("find_metadata_offset" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("fec" variable
+                       (:pointer 1
+                        :type ("fec_header" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8490 8513])
+                    ("bdev" variable
+                       (:pointer 1
+                        :type ("block_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8516 8542])
+                    ("metadata_offset" variable
+                       (:pointer 1
+                        :type ("u64" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [8543 8564]))                  
+                :type "void")
+                nil [8457 8815])
+            ("find_size" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dev" variable (:type ("dev_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8838 8848])
+                    ("device_size" variable
+                       (:pointer 1
+                        :type ("u64" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [8849 8866]))                  
+                :type "int")
+                nil [8817 9218])
+            ("verify_header" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("header" variable
+                       (:pointer 1
+                        :type ("android_metadata_header" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9245 9284]))                  
+                :type "int")
+                nil [9220 9837])
+            ("extract_metadata" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dev" variable (:type ("dev_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9867 9877])
+                    ("fec" variable
+                       (:pointer 1
+                        :type ("fec_header" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9878 9901])
+                    ("metadata" variable
+                       (:pointer 2
+                        :type ("android_metadata" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9906 9941])
+                    ("verity_enabled" variable
+                       (:pointer 1
+                        :type "bool")
+                        (reparse-symbol arg-sub-list) [9946 9967]))                  
+                :type "int")
+                nil [9839 13559])
+            ("find_dt_value" function
+               (:pointer 1
+                :constant-flag t
+                :arguments 
+                  ( ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [13641 13658]))                  
+                :type "char")
+                nil [13615 13888])
+            ("verity_mode" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [13913 13918]))                  
+                :type "int")
+                nil [13890 14242])
+            ("verify_verity_signature" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("key_id" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [14279 14292])
+                    ("metadata" variable
+                       (:pointer 1
+                        :type ("android_metadata" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [14295 14329]))                  
+                :type "int")
+                nil [14244 15174])
+            ("handle_error" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [15201 15206]))                  
+                :type "void")
+                nil [15176 15408])
+            ("test_mult_overflow" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("a" variable (:type ("sector_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15448 15459])
+                    ("b" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15460 15466]))                  
+                :type "bool")
+                nil [15410 15536])
+            ("add_as_linear_device" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ti" variable
+                       (:pointer 1
+                        :type ("dm_target" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [15570 15591])
+                    ("dev" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [15592 15602]))                  
+                :type "int")
+                nil [15538 16350])
+            ("create_linear_device" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ti" variable
+                       (:pointer 1
+                        :type ("dm_target" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [16384 16405])
+                    ("dev" variable (:type ("dev_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [16406 16416])
+                    ("target_device" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [16421 16441]))                  
+                :type "int")
+                nil [16352 16748])
+            ("android_verity_ctr" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ti" variable
+                       (:pointer 1
+                        :type ("dm_target" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [17069 17090])
+                    ("argc" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [17091 17105])
+                    ("argv" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [17106 17118]))                  
+                :type "int")
+                nil [17039 22056])
+            ("dm_android_verity_init" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [22099 22104]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [22069 23000])
+            ("dm_android_verity_exit" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [23044 23049]))                  
+                :type ("__exit" type (:type "class") nil nil))
+                nil [23014 23173])
+            ("module_init" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("dm_android_verity_init" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [23187 23210]))                  
+                :type "int")
+                nil [23175 23211])
+            ("module_exit" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("dm_android_verity_exit" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [23224 23247]))                  
+                :type "int")
+                nil [23212 23248]))          
+      :file "dm-android-verity.c"
+      :pointmax 23249
+      :fsize 23248
+      :lastmodtime '(22781 19794 598156 516000)
+      :unmatched-syntax '((VOID 23009 . 23013) (STATIC 23002 . 23008) (INT 22065 . 22068) (STATIC 22058 . 22064) (string 2733 . 2748) (INT 2614 . 2617) (STATIC 2607 . 2613) (string 2569 . 2583) (INT 2453 . 2456) (STATIC 2446 . 2452) (string 2398 . 2423) (INT 2285 . 2288) (STATIC 2278 . 2284) (string 2215 . 2247) (INT 2080 . 2083) (STATIC 2073 . 2079)))
+    (semanticdb-table "semanticdb-table"
+      :file "dm-verity.h"
+      :fsize 4204
+      :lastmodtime '(22781 19794 606156 516000))
+    (semanticdb-table "semanticdb-table"
+      :file "dm-android-verity.h"
+      :fsize 3731
+      :lastmodtime '(22781 19794 598156 516000))
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("dm-core.h" include nil nil [104 124])
+            ("linux/module.h" include (:system-flag t) nil [126 151])
+            ("linux/init.h" include (:system-flag t) nil [152 175])
+            ("linux/kmod.h" include (:system-flag t) nil [176 199])
+            ("linux/bio.h" include (:system-flag t) nil [200 222])
+            ("DM_MSG_PREFIX" variable (:constant-flag t) nil [232 245])
+            ("LIST_HEAD" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type ("_targets" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [273 282]))                  
+                :type "int")
+                nil [256 283])
+            ("DECLARE_RWSEM" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type ("_lock" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [305 311]))                  
+                :type "int")
+                nil [284 312])
+            ("DM_MOD_NAME_SIZE" variable (:constant-flag t) nil [322 338])
+            ("__find_target_type" function
+               (:pointer 1
+                :typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [396 413]))                  
+                :type ("target_type" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [343 545])
+            ("get_target_type" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [590 607]))                  
+                :type ("target_type" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [547 774])
+            ("load_module" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [800 817]))                  
+                :type "void")
+                nil [776 853])
+            ("dm_get_target_type" function
+               (:pointer 1
+                :arguments 
+                  ( ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [894 911]))                  
+                :type ("target_type" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [855 1044])
+            ("dm_put_target_type" function
+               (:arguments 
+                  ( ("tt" variable
+                       (:pointer 1
+                        :type ("target_type" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1070 1093]))                  
+                :type "void")
+                nil [1046 1160])
+            ("dm_target_iterate" function
+               (:arguments 
+                  ( ("iter_func" function
+                       (:function-pointer t
+                        :arguments 
+                          ( ("tt" variable
+                               (:pointer 1
+                                :type ("target_type" type
+                                     (:prototype t
+                                      :type "struct")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [1202 1225])
+                            ("param" variable
+                               (:pointer 1
+                                :type "void")
+                                (reparse-symbol arg-sub-list) [1231 1243]))                          
+                        :type "void")
+                        nil nil)
+                    ("param" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [1245 1257]))                  
+                :type "int")
+                nil [1162 1403])
+            ("dm_register_target" function
+               (:arguments 
+                  ( ("tt" variable
+                       (:pointer 1
+                        :type ("target_type" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1428 1451]))                  
+                :type "int")
+                nil [1405 1613])
+            ("dm_unregister_target" function
+               (:arguments 
+                  ( ("tt" variable
+                       (:pointer 1
+                        :type ("target_type" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1641 1664]))                  
+                :type "void")
+                nil [1615 1843])
+            ("io_err_ctr" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("tt" variable
+                       (:pointer 1
+                        :type ("dm_target" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1960 1981])
+                    ("argc" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [1982 2000])
+                    ("args" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2001 2013]))                  
+                :type "int")
+                nil [1938 2118])
+            ("io_err_dtr" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("tt" variable
+                       (:pointer 1
+                        :type ("dm_target" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2143 2164]))                  
+                :type "void")
+                nil [2120 2181])
+            ("io_err_map" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("tt" variable
+                       (:pointer 1
+                        :type ("dm_target" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2205 2226])
+                    ("bio" variable
+                       (:pointer 1
+                        :type ("bio" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2227 2243]))                  
+                :type "int")
+                nil [2183 2261])
+            ("io_err_map_rq" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ti" variable
+                       (:pointer 1
+                        :type ("dm_target" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2288 2309])
+                    ("clone" variable
+                       (:pointer 1
+                        :type ("request" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2310 2332])
+                    ("map_context" variable
+                       (:pointer 1
+                        :type ("map_info" type (:type "union") nil nil))
+                        (reparse-symbol arg-sub-list) [2337 2365]))                  
+                :type "int")
+                nil [2263 2383])
+            ("io_err_clone_and_map_rq" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ti" variable
+                       (:pointer 1
+                        :type ("dm_target" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2420 2441])
+                    ("rq" variable
+                       (:pointer 1
+                        :type ("request" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2442 2461])
+                    ("map_context" variable
+                       (:pointer 1
+                        :type ("map_info" type (:type "union") nil nil))
+                        (reparse-symbol arg-sub-list) [2469 2497])
+                    ("clone" variable
+                       (:pointer 2
+                        :type ("request" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2505 2528]))                  
+                :type "int")
+                nil [2385 2546])
+            ("io_err_release_clone_rq" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("clone" variable
+                       (:pointer 1
+                        :type ("request" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2584 2606]))                  
+                :type "void")
+                nil [2548 2610])
+            ("io_err_direct_access" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ti" variable
+                       (:pointer 1
+                        :type ("dm_target" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2645 2666])
+                    ("sector" variable (:type ("sector_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2667 2683])
+                    ("kaddr" variable
+                       (:pointer 2
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [2689 2702])
+                    ("pfn" variable
+                       (:pointer 1
+                        :type ("pfn_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2703 2714])
+                    ("size" variable (:type "long") (reparse-symbol arg-sub-list) [2715 2725]))                  
+                :type "long")
+                nil [2612 2743])
+            ("error_target" variable
+               (:typemodifiers ("static")
+                :default-value "{
+	.name = \"error\",
+	.version = {1, 5, 0},
+	.features = DM_TARGET_WILDCARD,
+	.ctr  = io_err_ctr,
+	.dtr  = io_err_dtr,
+	.map  = io_err_map,
+	.map_rq = io_err_map_rq,
+	.clone_and_map_rq = io_err_clone_and_map_rq,
+	.release_clone_rq = io_err_release_clone_rq,
+	.direct_access = io_err_direct_access,
+}"
+                :type ("target_type" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2745 3085])
+            ("dm_target_init" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [3113 3118]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [3091 3165])
+            ("dm_target_exit" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [3187 3192]))                  
+                :type "void")
+                nil [3167 3234])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("dm_register_target" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3250 3269]))                  
+                :type "int")
+                nil [3236 3270])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("dm_unregister_target" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3285 3306]))                  
+                :type "int")
+                nil [3271 3307]))          
+      :file "dm-target.c"
+      :pointmax 3308
+      :fsize 3307
+      :lastmodtime '(22781 19794 602156 516000)
+      :unmatched-syntax '((INT 3087 . 3090))
+      :lexical-table 
+        '(("DM_MOD_NAME_SIZE" . ((number "32" 339 . 341)))
+          ("DM_MSG_PREFIX" . ((string "\"target\"" 246 . 254)))
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :file "dm-core.h"
+      :fsize 3262
+      :lastmodtime '(22781 19794 598156 516000)))
+  :file "!home!chenqi!work!androidia!kernel!android_ia!drivers!md!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

@@ -1,0 +1,350 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c++-mode
+      :tags 
+        '( ("errno.h" include (:system-flag t) nil [622 640])
+            ("fcntl.h" include (:system-flag t) nil [641 659])
+            ("stdlib.h" include (:system-flag t) nil [660 679])
+            ("string.h" include (:system-flag t) nil [680 699])
+            ("unistd.h" include (:system-flag t) nil [700 719])
+            ("linux/watchdog.h" include (:system-flag t) nil [721 748])
+            ("log.h" include nil nil [750 766])
+            ("util.h" include nil nil [767 784])
+            ("DEV_NAME" variable (:constant-flag t) nil [794 802])
+            ("watchdogd_main" function
+               (:arguments 
+                  ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [839 848])
+                    ("argv" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [849 861]))                  
+                :type "int")
+                nil [820 2053]))          
+      :file "watchdogd.cpp"
+      :pointmax 2054
+      :fsize 2053
+      :lastmodtime '(22809 7385 915667 875000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("DEV_NAME" . ((string "\"/dev/watchdog\"" 803 . 818)))
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("_INIT_LOG_H_" variable (:constant-flag t) nil [651 663])
+            ("android-base/logging.h" include (:system-flag t) nil [665 698])
+            ("InitKernelLogging" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("argv" variable
+                       (:pointer 1
+                        :dereference 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [723 736]))                  
+                :type "void")
+                nil [700 737])
+            ("__printflike" function
+               (:prototype-flag t
+                :type "int")
+                nil [798 817]))          
+      :file "log.h"
+      :pointmax 826
+      :fsize 825
+      :lastmodtime '(22809 7385 899667 874000)
+      :unmatched-syntax '((number 814 . 815) (number 811 . 812) (semantic-list 764 . 797) (symbol 743 . 764) (INT 739 . 742))
+      :lexical-table 
+        '(("_INIT_LOG_H_")
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("_INIT_UTIL_H_" variable (:constant-flag t) nil [652 665])
+            ("sys/stat.h" include (:system-flag t) nil [667 688])
+            ("sys/types.h" include (:system-flag t) nil [689 711])
+            ("chrono" include (:system-flag t) nil [713 730])
+            ("functional" include (:system-flag t) nil [731 752])
+            ("ostream" include (:system-flag t) nil [753 771])
+            ("string" include (:system-flag t) nil [772 789])
+            ("COLDBOOT_DONE" variable (:constant-flag t) nil [799 812])
+            ("kAndroidDtDir" function
+               (:prototype-flag t
+                :constant-flag t
+                :type ("std::string" type (:type "class") nil nil))
+                nil [836 907])
+            ("std::chrono_literals" using (:type ("std::chrono_literals" type
+                 (:prototype t
+                  :type "namespace")
+                  nil nil)) nil [909 946])
+            ("create_socket" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [966 983])
+                    ("type" variable (:type "int") (reparse-symbol arg-sub-list) [984 993])
+                    ("perm" variable (:type ("mode_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [994 1006])
+                    ("uid" variable (:type ("uid_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1025 1035])
+                    ("gid" variable (:type ("gid_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1036 1046])
+                    ("socketcon" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1047 1069]))                  
+                :type "int")
+                nil [948 1070])
+            ("read_file" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("path" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("std::string" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1087 1111])
+                    ("content" variable
+                       (:pointer 1
+                        :type ("std::string" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1112 1133]))                  
+                :type "bool")
+                nil [1072 1134])
+            ("write_file" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("path" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("std::string" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1151 1175])
+                    ("content" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("std::string" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1176 1203]))                  
+                :type "bool")
+                nil [1135 1204])
+            ("boot_clock" type
+               (:members 
+                  ( ("public" label nil (reparse-symbol classsubparts) [1274 1281])
+                    ("duration" type
+                       (:typedef ("std::chrono::nanoseconds" type (:type "class") nil nil)
+                        :type "typedef")
+                        (reparse-symbol classsubparts) [1284 1326])
+                    ("time_point" type
+                       (:typedef ("std::chrono::time_point" type
+                             (:template-specifier 
+                                ( ("boot_clock" type nil nil nil)
+                                  ("duration" type nil nil nil))                                
+                              :type "class")
+                              nil nil)
+                        :type "typedef")
+                        (reparse-symbol classsubparts) [1329 1394])
+                    ("is_steady" variable
+                       (:default-value "true"
+                        :type "bool")
+                        (reparse-symbol classsubparts) [1414 1436])
+                    ("now" function
+                       (:prototype-flag t
+                        :typemodifiers ("static")
+                        :type ("time_point" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1440 1464]))                  
+                :type "class")
+                nil [1254 1467])
+            ("Timer" type
+               (:members 
+                  ( ("public" label nil (reparse-symbol classsubparts) [1484 1491])
+                    ("Timer" function
+                       (:constructor-flag t
+                        :type ("Timer" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1494 1535])
+                    ("duration_s" function
+                       (:methodconst-flag t
+                        :type "double")
+                        (reparse-symbol classsubparts) [1539 1721])
+                    ("duration_ms" function
+                       (:methodconst-flag t
+                        :type ("int64_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1725 1860])
+                    ("private" label nil (reparse-symbol classsubparts) [1863 1871])
+                    ("start_" variable (:type ("boot_clock::time_point" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1874 1904]))                  
+                :type "class")
+                nil [1469 1907])
+            ("<<" function
+               (:prototype-flag t
+                :operator-flag t
+                :arguments 
+                  ( ("os" variable
+                       (:reference 1
+                        :type ("std::ostream" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1934 1951])
+                    ("t" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("Timer" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1952 1967]))                  
+                :type ("std::ostream" type (:type "class") nil nil))
+                nil [1909 1968])
+            ("decode_uid" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("s" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1994 2008]))                  
+                :type "unsigned int")
+                nil [1970 2009])
+            ("mkdir_recursive" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("pathname" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2031 2052])
+                    ("mode" variable (:type ("mode_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2053 2065]))                  
+                :type "int")
+                nil [2011 2066])
+            ("sanitize" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("p" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2081 2089]))                  
+                :type "void")
+                nil [2067 2090])
+            ("wait_for_file" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("filename" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2109 2130])
+                    ("timeout" variable (:type ("std::chrono::nanoseconds" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2131 2164]))                  
+                :type "int")
+                nil [2091 2165])
+            ("import_kernel_cmdline" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("in_qemu" variable (:type "bool") (reparse-symbol arg-sub-list) [2193 2206])
+                    ("" variable
+                       (:constant-flag t
+                        :type ("std::function" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2234 2254])
+                    ("" variable (:type "void") (reparse-symbol arg-sub-list) [2254 2304]))                  
+                :type "void")
+                nil [2166 2308])
+            ("make_dir" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("path" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2322 2339])
+                    ("mode" variable (:type ("mode_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2340 2352]))                  
+                :type "int")
+                nil [2309 2353])
+            ("restorecon" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("pathname" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2369 2390])
+                    ("flags" variable
+                       (:default-value "0"
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [2391 2404]))                  
+                :type "int")
+                nil [2354 2406])
+            ("bytes_to_hex" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("bytes" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("uint8_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2432 2453])
+                    ("bytes_len" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2454 2471]))                  
+                :type ("std::string" type (:type "class") nil nil))
+                nil [2407 2472])
+            ("is_dir" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("pathname" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2485 2506]))                  
+                :type "bool")
+                nil [2473 2507])
+            ("expand_props" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("src" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("std::string" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2526 2549])
+                    ("dst" variable
+                       (:pointer 1
+                        :type ("std::string" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2550 2567]))                  
+                :type "bool")
+                nil [2508 2568])
+            ("panic" function
+               (:prototype-flag t
+                :type "void")
+                nil [2570 2613])
+            ("read_android_dt_file" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("sub_path" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("std::string" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2725 2753])
+                    ("dt_content" variable
+                       (:pointer 1
+                        :type ("std::string" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2754 2778]))                  
+                :type "bool")
+                nil [2699 2779])
+            ("is_android_dt_value_expected" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("sub_path" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("std::string" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2814 2842])
+                    ("expected_content" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("std::string" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2843 2879]))                  
+                :type "bool")
+                nil [2780 2880]))          
+      :file "util.h"
+      :pointmax 2889
+      :fsize 2888
+      :lastmodtime '(22809 7385 915667 875000)
+      :unmatched-syntax '((punctuation 2305 . 2306) (punctuation 2304 . 2305) (semantic-list 2258 . 2304) (punctuation 2253 . 2254) (symbol 1404 . 1413) (STATIC 1397 . 1403) (string 868 . 905))
+      :lexical-table 
+        '(("_INIT_UTIL_H_")
+          ("COLDBOOT_DONE" . ((string "\"/dev/.coldboot_done\"" 813 . 834)))
+          )
+))
+  :file "!home!chenqi!work!ivio!system!core!init!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

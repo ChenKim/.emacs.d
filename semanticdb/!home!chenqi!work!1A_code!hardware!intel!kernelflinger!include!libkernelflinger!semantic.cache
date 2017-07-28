@@ -1,0 +1,131 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("_TARGETS_H_" variable (:constant-flag t) nil [1548 1559])
+            ("efi.h" include (:system-flag t) nil [1561 1577])
+            ("efilib.h" include (:system-flag t) nil [1578 1597])
+            ("boot_target" type
+               (:members 
+                  ( ("UNKNOWN_TARGET" variable
+                       (:constant-flag t
+                        :default-value (1643 1645)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1626 1645])
+                    ("NORMAL_BOOT" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1655 1667])
+                    ("RECOVERY" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1676 1685])
+                    ("FASTBOOT" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1694 1703])
+                    ("ESP_BOOTIMAGE" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1712 1726])
+                    ("ESP_EFI_BINARY" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1735 1750])
+                    ("MEMORY" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1759 1766])
+                    ("CHARGER" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1775 1783])
+                    ("POWER_OFF" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1792 1802])
+                    ("EXIT_SHELL" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1811 1822])
+                    ("DNX" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1831 1835])
+                    ("CRASHMODE" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1844 1855]))                  
+                :type "enum")
+                nil [1599 1856])
+            ("is_bootimg_target" variable (:constant-flag t) nil [1866 1883])
+            ("boot_target_name" function
+               (:prototype-flag t
+                :pointer 1
+                :constant-flag t
+                :arguments 
+                  ( ("bt" variable (:type ("boot_target" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [2001 2021]))                  
+                :type ("CHAR16" type (:type "class") nil nil))
+                nil [1970 2022])
+            ("boot_target_description" function
+               (:prototype-flag t
+                :pointer 1
+                :constant-flag t
+                :arguments 
+                  ( ("bt" variable (:type ("boot_target" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [2061 2081]))                  
+                :type ("CHAR16" type (:type "class") nil nil))
+                nil [2023 2082])
+            ("name_to_boot_target" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("str" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("CHAR16" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2120 2138]))                  
+                :type ("boot_target" type (:type "enum") nil nil))
+                nil [2083 2139])
+            ("reboot_to_target" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("bt" variable (:type ("boot_target" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [2168 2188])
+                    ("type" variable (:type ("EFI_RESET_TYPE" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2189 2209]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [2140 2210]))          
+      :file "targets.h"
+      :pointmax 2237
+      :fsize 2236
+      :lastmodtime '(22775 10757 7191 141000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("_TARGETS_H_")
+          ("is_bootimg_target" (spp-arg-list ("target") 1883 . 1891) . ((semantic-list "(target == NORMAL_BOOT || target == CHARGER || target == RECOVERY)" 1902 . 1968)))
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :file "lib.h"
+      :fsize 6382
+      :lastmodtime '(22775 10757 3191 141000))
+    (semanticdb-table "semanticdb-table"
+      :file "vars.h"
+      :fsize 5574
+      :lastmodtime '(22775 10757 7191 141000))
+    (semanticdb-table "semanticdb-table"
+      :file "options.h"
+      :fsize 1721
+      :lastmodtime '(22775 10757 3191 141000))
+    (semanticdb-table "semanticdb-table"
+      :file "android.h"
+      :fsize 11185
+      :lastmodtime '(22775 10757 3191 141000))
+    (semanticdb-table "semanticdb-table"
+      :file "slot.h"
+      :fsize 4493
+      :lastmodtime '(22775 10757 7191 141000)))
+  :file "!home!chenqi!work!1A_code!hardware!intel!kernelflinger!include!libkernelflinger!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

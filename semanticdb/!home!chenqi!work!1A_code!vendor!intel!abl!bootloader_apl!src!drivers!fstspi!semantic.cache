@@ -1,0 +1,256 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("_FSTSPI_H" variable (:constant-flag t) nil [1355 1364])
+            ("FSTSPI_ERR_OUT_OF_BOUND" variable (:constant-flag t) nil [1424 1447])
+            ("FSTSPI_ERR_INVALID_REGION" variable (:constant-flag t) nil [1459 1484])
+            ("FSTSPI_ERR_FCERR" variable (:constant-flag t) nil [1496 1512])
+            ("FSTSPI_ERR_UNALIGNED" variable (:constant-flag t) nil [1526 1546])
+            ("FSTSPI_ERR_TIMEOUT" variable (:constant-flag t) nil [1559 1577])
+            ("FSTSPI_ERR_ERROR" variable (:constant-flag t) nil [1590 1606])
+            ("FSTSPI_ERR_NO_ERROR" variable (:constant-flag t) nil [1620 1639])
+            ("fstspi_region_info_item" type
+               (:members 
+                  ( ("valid" variable (:type ("_Bool" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1729 1741])
+                    ("perm" variable (:type "unsigned char") (reparse-symbol classsubparts) [1743 1762])
+                    ("base" variable (:type "unsigned int") (reparse-symbol classsubparts) [1764 1782])
+                    ("limit" variable (:type "unsigned int") (reparse-symbol classsubparts) [1784 1803]))                  
+                :type "struct")
+                nil [1695 1806])
+            ("FSTSPI_REGION_NO_ACCESS" variable (:constant-flag t) nil [1817 1840])
+            ("FSTSPI_REGION_READ_ACCESS" variable (:constant-flag t) nil [1853 1878])
+            ("FSTSPI_REGION_WRITE_ACCESS" variable (:constant-flag t) nil [1891 1917])
+            ("FSTSPI_REGION_READ_WRITE_ACCESS" variable (:constant-flag t) nil [1929 1960])
+            ("FSTSPI_REGION_TYPE" type
+               (:members 
+                  ( ("FSTSPI_REGION_DESCRIPTOR" variable
+                       (:constant-flag t
+                        :default-value (2020 2021)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1991 2021])
+                    ("FSTSPI_REGION_BIOS" variable
+                       (:constant-flag t
+                        :default-value (2048 2049)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [2024 2049])
+                    ("FSTSPI_REGION_CSME" variable
+                       (:constant-flag t
+                        :default-value (2076 2077)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [2052 2077])
+                    ("FSTSPI_REGION_GBE" variable
+                       (:constant-flag t
+                        :default-value (2104 2105)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [2080 2105])
+                    ("FSTSPI_REGION_PDR" variable
+                       (:constant-flag t
+                        :default-value (2132 2133)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [2108 2133])
+                    ("FSTSPI_REGION_DEVICE_EXPANSION_1" variable
+                       (:constant-flag t
+                        :default-value (2171 2172)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [2136 2172])
+                    ("FSTSPI_REGION_SECONDARY_BIOS" variable
+                       (:constant-flag t
+                        :default-value (2207 2208)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [2175 2208])
+                    ("FSTSPI_REGION_uCODE_PATCH" variable
+                       (:constant-flag t
+                        :default-value (2241 2242)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [2211 2242])
+                    ("FSTSPI_REGION_EC" variable
+                       (:constant-flag t
+                        :default-value (2268 2269)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [2245 2269])
+                    ("FSTSPI_REGION_DEVICE_EXPANSION_2" variable
+                       (:constant-flag t
+                        :default-value (2307 2308)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [2272 2308])
+                    ("FSTSPI_REGION_INNOVATION_ENGINGE" variable
+                       (:constant-flag t
+                        :default-value (2346 2348)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [2311 2348])
+                    ("FSTSPI_REGION_10_GBE_A" variable
+                       (:constant-flag t
+                        :default-value (2378 2380)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [2351 2380])
+                    ("FSTSPI_REGION_10_GBE_B" variable
+                       (:constant-flag t
+                        :default-value (2410 2412)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [2383 2412])
+                    ("FSTSPI_REGION_MAX_NUMBER" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [2415 2441]))                  
+                :type "enum")
+                nil [1964 2442])
+            ("fstspi_region_info" type
+               (:members 
+                  ( ("region" variable
+                       (:dereference 1
+                        :type ("fstspi_region_info_item" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [2473 2539]))                  
+                :type "struct")
+                nil [2444 2542])
+            ("fstspi_region_write" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("region" variable (:type ("FSTSPI_REGION_TYPE" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [2575 2606])
+                    ("offset" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [2607 2627])
+                    ("data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [2628 2639])
+                    ("length" variable (:type "int") (reparse-symbol arg-sub-list) [2640 2651]))                  
+                :type "int")
+                nil [2544 2652])
+            ("fstspi_region_write_and_verify" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("region" variable (:type ("FSTSPI_REGION_TYPE" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [2696 2727])
+                    ("offset" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [2728 2748])
+                    ("data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [2757 2768])
+                    ("length" variable (:type "int") (reparse-symbol arg-sub-list) [2769 2780]))                  
+                :type "int")
+                nil [2653 2781])
+            ("fstspi_region_read" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("region" variable (:type ("FSTSPI_REGION_TYPE" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [2812 2843])
+                    ("offset" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [2844 2864])
+                    ("data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [2865 2876])
+                    ("length" variable (:type "int") (reparse-symbol arg-sub-list) [2877 2888]))                  
+                :type "int")
+                nil [2782 2889])
+            ("fstspi_region_erase_block" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("region" variable (:type ("FSTSPI_REGION_TYPE" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [2927 2958])
+                    ("offset" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [2959 2979])
+                    ("length" variable (:type "int") (reparse-symbol arg-sub-list) [2980 2991]))                  
+                :type "int")
+                nil [2890 2992])
+            ("fstspi_region_erase_sector" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("region" variable (:type ("FSTSPI_REGION_TYPE" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [3031 3062])
+                    ("offset" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [3063 3083])
+                    ("length" variable (:type "int") (reparse-symbol arg-sub-list) [3084 3095]))                  
+                :type "int")
+                nil [2993 3096])
+            ("fstspi_get_region_info" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("region" variable (:type ("FSTSPI_REGION_TYPE" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [3132 3163])
+                    ("item" variable
+                       (:pointer 1
+                        :type ("fstspi_region_info_item" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3164 3201]))                  
+                :type "int")
+                nil [3097 3202])
+            ("fstspi_init" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [3248 3253]))                  
+                :type "int")
+                nil [3225 3254])
+            ("fstspi_lock" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [3279 3284]))                  
+                :type "void")
+                nil [3255 3285])
+            ("fstspi_init_stage1" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [3340 3345]))                  
+                :type "int")
+                nil [3309 3346])
+            ("fstspi_region_read_stage1" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("region" variable (:type ("FSTSPI_REGION_TYPE" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [3385 3416])
+                    ("offset" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [3417 3437])
+                    ("data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [3438 3449])
+                    ("length" variable (:type "int") (reparse-symbol arg-sub-list) [3450 3461]))                  
+                :type "int")
+                nil [3347 3462])
+            ("S1_fstspi_region" variable
+               (:dereference 1
+                :typemodifiers ("extern")
+                :type ("fstspi_region_info_item" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [3548 3630])
+            ("fstspi_region" variable
+               (:dereference 1
+                :typemodifiers ("extern")
+                :type ("fstspi_region_info_item" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [3631 3713]))          
+      :file "fstspi.h"
+      :pointmax 3739
+      :fsize 3738
+      :lastmodtime '(22796 14660 629483 307000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("FSTSPI_ERR_OUT_OF_BOUND" . ((number "6" 1449 . 1450)))
+          ("FSTSPI_REGION_READ_ACCESS" . ((number "1" 1881 . 1882)))
+          ("FSTSPI_ERR_TIMEOUT" . ((number "2" 1580 . 1581)))
+          ("FSTSPI_ERR_NO_ERROR" . ((number "0" 1642 . 1643)))
+          ("FSTSPI_REGION_WRITE_ACCESS" . ((number "2" 1919 . 1920)))
+          ("FSTSPI_ERR_INVALID_REGION" . ((number "5" 1486 . 1487)))
+          ("FSTSPI_ERR_FCERR" . ((number "4" 1516 . 1517)))
+          ("FSTSPI_ERR_UNALIGNED" . ((number "3" 1549 . 1550)))
+          ("FSTSPI_REGION_READ_WRITE_ACCESS" . ((number "3" 1961 . 1962)))
+          ("_FSTSPI_H")
+          ("FSTSPI_ERR_ERROR" . ((number "1" 1610 . 1611)))
+          ("FSTSPI_REGION_NO_ACCESS" . ((number "0" 1843 . 1844)))
+          )
+))
+  :file "!home!chenqi!work!1A_code!vendor!intel!abl!bootloader_apl!src!drivers!fstspi!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

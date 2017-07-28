@@ -1,0 +1,119 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("pr_fmt" variable (:constant-flag t) nil [583 589])
+            ("linux/efi.h" include (:system-flag t) nil [610 632])
+            ("linux/module.h" include (:system-flag t) nil [633 658])
+            ("linux/reboot.h" include (:system-flag t) nil [659 684])
+            ("linux/slab.h" include (:system-flag t) nil [685 708])
+            ("efibc_str_to_str16" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("str" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [741 757])
+                    ("str16" variable
+                       (:pointer 1
+                        :type ("efi_char16_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [758 778]))                  
+                :type "void")
+                nil [710 869])
+            ("efibc_set_variable" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [901 918])
+                    ("value" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [919 937]))                  
+                :type "int")
+                nil [871 1857])
+            ("efibc_reboot_notifier_call" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("notifier" variable
+                       (:pointer 1
+                        :type ("notifier_block" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1897 1929])
+                    ("event" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [1940 1960])
+                    ("data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [1961 1972]))                  
+                :type "int")
+                nil [1859 2253])
+            ("efibc_reboot_notifier" variable
+               (:typemodifiers ("static")
+                :default-value "{
+	.notifier_call = efibc_reboot_notifier_call,
+}"
+                :type ("notifier_block" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2255 2358])
+            ("efibc_init" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [2389 2394]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [2371 2600])
+            ("module_init" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("efibc_init" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2613 2624]))                  
+                :type "int")
+                nil [2601 2625])
+            ("efibc_exit" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [2657 2662]))                  
+                :type ("__exit" type (:type "class") nil nil))
+                nil [2639 2719])
+            ("module_exit" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("efibc_exit" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2732 2743]))                  
+                :type "int")
+                nil [2720 2744])
+            ("MODULE_AUTHOR" function
+               (:prototype-flag t
+                :type "int")
+                nil [2746 2813])
+            ("MODULE_AUTHOR" function
+               (:prototype-flag t
+                :type "int")
+                nil [2814 2871])
+            ("MODULE_DESCRIPTION" function
+               (:prototype-flag t
+                :type "int")
+                nil [2872 2917])
+            ("MODULE_LICENSE" function
+               (:prototype-flag t
+                :type "int")
+                nil [2918 2943]))          
+      :file "efibc.c"
+      :pointmax 2944
+      :fsize 2943
+      :lastmodtime '(22813 3891 326460 903000)
+      :unmatched-syntax '((string 2933 . 2941) (string 2891 . 2915) (string 2828 . 2869) (string 2760 . 2811) (VOID 2634 . 2638) (STATIC 2627 . 2633) (INT 2367 . 2370) (STATIC 2360 . 2366))
+      :lexical-table 
+        '(("pr_fmt" (spp-arg-list ("fmt") 589 . 594) . ((string "\"efibc: \"" 595 . 604) (symbol "fmt" 605 . 608)))
+          )
+))
+  :file "!home!chenqi!work!aia_github!kernel!android_ia!drivers!firmware!efi!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

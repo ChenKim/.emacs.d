@@ -1,0 +1,1414 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("efi.h" include (:system-flag t) nil [1517 1533])
+            ("efiapi.h" include (:system-flag t) nil [1534 1553])
+            ("signature.h" include nil nil [1555 1577])
+            ("vars.h" include nil nil [1578 1595])
+            ("ui.h" include nil nil [1596 1611])
+            ("lib.h" include nil nil [1612 1628])
+            ("smbios.h" include nil nil [1629 1648])
+            ("version.h" include nil nil [1649 1669])
+            ("life_cycle.h" include nil nil [1670 1693])
+            ("OFF_MODE_CHARGE" variable (:constant-flag t) nil [1703 1718])
+            ("OEM_LOCK" variable (:constant-flag t) nil [1747 1755])
+            ("CRASH_EVENT_MENU" variable (:constant-flag t) nil [1776 1792])
+            ("WDT_COUNTER" variable (:constant-flag t) nil [1819 1830])
+            ("WDT_COUNTER_MAX" variable (:constant-flag t) nil [1859 1874])
+            ("WDT_TIME_REF" variable (:constant-flag t) nil [1906 1918])
+            ("DISABLE_WDT" variable (:constant-flag t) nil [1953 1964])
+            ("UPDATE_OEMVARS" variable (:constant-flag t) nil [1993 2007])
+            ("UI_DISPLAY_SPLASH" variable (:constant-flag t) nil [2034 2051])
+            ("REBOOT_REASON" variable (:constant-flag t) nil [2079 2092])
+            ("SLOT_FALLBACK" variable (:constant-flag t) nil [2142 2155])
+            ("OEM_LOCK_UNLOCKED" variable (:constant-flag t) nil [2479 2496])
+            ("ANDROID_PROP_VALUE_MAX" variable (:constant-flag t) nil [2515 2537])
+            ("REBOOT_REASON_MAX" variable (:constant-flag t) nil [2549 2566])
+            ("WATCHDOG_COUNTER_MAX" variable (:constant-flag t) nil [2682 2702])
+            ("fastboot_guid" variable
+               (:constant-flag t
+                :default-value "{ 0x1ac80a82, 0x4f0c, 0x456b,
+	{0x9a, 0x99, 0xde, 0xbe, 0xb4, 0x31, 0xfc, 0xc1} }"
+                :type ("EFI_GUID" type (:type "class") nil nil))
+                nil [2706 2819])
+            ("loader_guid" variable
+               (:constant-flag t
+                :default-value "{ 0x4a67b082, 0x0a4c, 0x41cf,
+	{0xb6, 0xc7, 0x44, 0x0b, 0x29, 0xbb, 0x8c, 0x4f} }"
+                :type ("EFI_GUID" type (:type "class") nil nil))
+                nil [2878 2989])
+            ("provisioning_mode" variable
+               (:typemodifiers ("static")
+                :default-value "FALSE"
+                :type ("BOOLEAN" type (:type "class") nil nil))
+                nil [3204 3245])
+            ("current_state" variable
+               (:typemodifiers ("static")
+                :default-value "UNKNOWN_STATE"
+                :type ("device_state" type (:type "enum") nil nil))
+                nil [3246 3301])
+            ("STATE_DISPLAY" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :default-value "{
+	{ \"unknown\", &COLOR_RED },
+	{ \"locked\", &COLOR_WHITE },
+	{ \"unlocked\", &COLOR_RED }
+}"
+                :type ("state_display" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [3303 3496])
+            ("state_display" type
+               (:members 
+                  ( ("string" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [3334 3347])
+                    ("color" variable
+                       (:pointer 1
+                        :type ("EFI_GRAPHICS_OUTPUT_BLT_PIXEL" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3349 3386]))                  
+                :type "struct")
+                nil [3303 3496])
+            ("bool_value" type
+               (:members 
+                  ( ("is_cached" variable
+                       (:suffix ":1"
+                        :type ("UINT8" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3527 3547])
+                    ("value" variable
+                       (:suffix ":1"
+                        :type ("UINT8" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3549 3565]))                  
+                :type "struct")
+                nil [3498 3609])
+            ("bool_value_t" type
+               (:typedef ("bool_value" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [3498 3609])
+            ("off_mode_charge" variable
+               (:typemodifiers ("static")
+                :type ("bool_value_t" type (:type "class") nil nil))
+                nil [3611 3647])
+            ("crash_event_menu" variable
+               (:typemodifiers ("static")
+                :type ("bool_value_t" type (:type "class") nil nil))
+                nil [3648 3685])
+            ("disable_wdt" variable
+               (:typemodifiers ("static")
+                :type ("bool_value_t" type (:type "class") nil nil))
+                nil [3686 3718])
+            ("update_oemvars" variable
+               (:typemodifiers ("static")
+                :type ("bool_value_t" type (:type "class") nil nil))
+                nil [3719 3754])
+            ("ui_display_splash" variable
+               (:typemodifiers ("static")
+                :type ("bool_value_t" type (:type "class") nil nil))
+                nil [3755 3793])
+            ("slot_fallback" variable
+               (:typemodifiers ("static")
+                :type ("bool_value_t" type (:type "class") nil nil))
+                nil [3807 3841])
+            ("boot_state_to_string" function
+               (:pointer 1
+                :arguments 
+                  ( ("boot_state" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3879 3896]))                  
+                :type ("CHAR16" type (:type "class") nil nil))
+                nil [3850 4129])
+            ("get_current_boolean_var" function
+               (:arguments 
+                  ( ("guid" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("EFI_GUID" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4163 4184])
+                    ("varname" variable
+                       (:pointer 1
+                        :type ("CHAR16" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4185 4201])
+                    ("cache" variable
+                       (:pointer 1
+                        :type ("bool_value_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4206 4226])
+                    ("default_value" variable
+                       (:constant-flag t
+                        :type ("BOOLEAN" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4227 4255]))                  
+                :type ("BOOLEAN" type (:type "class") nil nil))
+                nil [4131 4702])
+            ("set_boolean_var" function
+               (:arguments 
+                  ( ("guid" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("EFI_GUID" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4731 4752])
+                    ("varname" variable
+                       (:pointer 1
+                        :type ("CHAR16" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4753 4769])
+                    ("cache" variable
+                       (:pointer 1
+                        :type ("bool_value_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4776 4796])
+                    ("enabled" variable (:type ("BOOLEAN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4797 4813]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [4704 5111])
+            ("get_off_mode_charge" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [5141 5146]))                  
+                :type ("BOOLEAN" type (:type "class") nil nil))
+                nil [5113 5251])
+            ("set_off_mode_charge" function
+               (:arguments 
+                  ( ("enabled" variable (:type ("BOOLEAN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5284 5300]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [5253 5399])
+            ("get_crash_event_menu" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [5430 5435]))                  
+                :type ("BOOLEAN" type (:type "class") nil nil))
+                nil [5401 5542])
+            ("set_crash_event_menu" function
+               (:arguments 
+                  ( ("enabled" variable (:type ("BOOLEAN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5576 5592]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [5544 5693])
+            ("get_display_splash" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [5722 5727]))                  
+                :type ("BOOLEAN" type (:type "class") nil nil))
+                nil [5695 5834])
+            ("get_oemvars_update" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [5863 5868]))                  
+                :type ("BOOLEAN" type (:type "class") nil nil))
+                nil [5836 5971])
+            ("set_oemvars_update" function
+               (:arguments 
+                  ( ("enabled" variable (:type ("BOOLEAN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6003 6019]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [5973 6116])
+            ("get_slot_fallback" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [6144 6149]))                  
+                :type ("BOOLEAN" type (:type "class") nil nil))
+                nil [6118 6290])
+            ("set_slot_fallback" function
+               (:arguments 
+                  ( ("enabled" variable (:type ("BOOLEAN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6321 6337]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [6292 6524])
+            ("set_provisioning_mode" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("provisioning" variable (:type ("BOOLEAN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6560 6581]))                  
+                :type "void")
+                nil [6526 6671])
+            ("get_current_state" function (:type ("device_state" type (:type "enum") nil nil)) nil [6673 8138])
+            ("set_current_state" function
+               (:arguments 
+                  ( ("state" variable (:type ("device_state" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [8169 8193]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [8140 8700])
+            ("reprovision_state_vars" function
+               (:arguments 
+                  ( ("" variable (:type ("VOID" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8749 8754]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [8715 8810])
+            ("EFIVAR_BLACK_LIST" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :default-value "{
+	{ .name = OEM_LOCK, &fastboot_guid },
+	/* We cannot delete the LOG_VAR EFI variable because
+	   Kernelflinger continously saves all the error messages in
+	   it. Deleting it could lead to a infinite loop. */
+	{ .name = LOG_VAR, &loader_guid }
+}"
+                :type ("efivar_black_list" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [8812 9162])
+            ("efivar_black_list" type
+               (:members 
+                  ( ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("CHAR16" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [8847 8866])
+                    ("guid" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("EFI_GUID" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [8868 8889]))                  
+                :type "struct")
+                nil [8812 9162])
+            ("erase_efivars" function
+               (:arguments 
+                  ( ("" variable (:type ("VOID" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9189 9194]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [9164 11069])
+            ("get_current_state_string" function
+               (:pointer 1
+                :constant-flag t
+                :type "char")
+                nil [11078 11175])
+            ("get_current_state_color" function
+               (:pointer 1
+                :type ("EFI_GRAPHICS_OUTPUT_BLT_PIXEL" type (:type "class") nil nil))
+                nil [11177 11291])
+            ("device_is_unlocked" function (:type ("BOOLEAN" type (:type "class") nil nil)) nil [11293 11366])
+            ("device_is_locked" function (:type ("BOOLEAN" type (:type "class") nil nil)) nil [11368 11437])
+            ("device_is_provisioning" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [11470 11475]))                  
+                :type ("BOOLEAN" type (:type "class") nil nil))
+                nil [11439 11579])
+            ("get_watchdog_status" function
+               (:arguments 
+                  ( ("counter" variable
+                       (:pointer 1
+                        :type ("UINT8" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [11612 11627])
+                    ("time" variable
+                       (:pointer 1
+                        :type ("EFI_TIME" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [11628 11643]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [11581 12130])
+            ("reset_watchdog_status" function
+               (:arguments 
+                  ( ("" variable (:type ("VOID" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12165 12170]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [12132 12303])
+            ("set_watchdog_counter" function
+               (:arguments 
+                  ( ("counter" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12337 12351]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [12305 12530])
+            ("set_watchdog_time_reference" function
+               (:arguments 
+                  ( ("time" variable
+                       (:pointer 1
+                        :type ("EFI_TIME" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [12571 12586]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [12532 12761])
+            ("get_watchdog_counter_max" function
+               (:arguments 
+                  ( ("" variable (:type ("VOID" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12794 12799]))                  
+                :type ("UINT8" type (:type "class") nil nil))
+                nil [12763 13011])
+            ("set_watchdog_counter_max" function
+               (:arguments 
+                  ( ("max" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [13049 13059]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [13013 13158])
+            ("get_disable_watchdog" function (:type ("BOOLEAN" type (:type "class") nil nil)) nil [13160 13286])
+            ("CDD_clean_string" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("buf" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [13317 13327]))                  
+                :type "void")
+                nil [13288 14107])
+            ("SMBIOS_TO_BUFFER" variable (:constant-flag t) nil [14117 14133])
+            ("get_property_bootloader" function
+               (:pointer 1
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [14459 14464]))                  
+                :type "char")
+                nil [14429 14798])
+            ("get_device_id" function
+               (:pointer 1
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [17641 17646]))                  
+                :type "char")
+                nil [17621 17669])
+            ("get_serial_number" function
+               (:pointer 1
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [17799 17804]))                  
+                :type "char")
+                nil [17775 19289])
+            ("get_reboot_reason" function
+               (:pointer 1
+                :type ("CHAR16" type (:type "class") nil nil))
+                nil [19291 19760])
+            ("is_reboot_reason" function
+               (:arguments 
+                  ( ("reason" variable
+                       (:pointer 1
+                        :type ("CHAR16" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [19787 19802]))                  
+                :type ("BOOLEAN" type (:type "class") nil nil))
+                nil [19762 19926])
+            ("del_reboot_reason" function (:type ("VOID" type (:type "class") nil nil)) nil [19928 20004]))          
+      :file "vars.c"
+      :pointmax 21936
+      :fsize 21935
+      :lastmodtime '(22836 59578 974883 229000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("ANDROID_PROP_VALUE_MAX" . ((number "92" 2538 . 2540)))
+          ("SMBIOS_TO_BUFFER" (spp-arg-list ("buffer" "type" "field") 14133 . 14154) . 
+              ((DO "do" 14155 . 14157) (semantic-list "{ \\
+	if (!buffer[0]) { \\
+		UINTN bufsz = sizeof(buffer); \\
+		char *dmidata = SMBIOS_GET_STRING(type, field); \\
+		if (dmidata && dmidata != SMBIOS_UNDEFINED) { \\
+			strncpy((CHAR8 *)buffer, (CHAR8 *)dmidata, bufsz); \\
+			buffer[bufsz - 1] = '\\0'; \\
+		} \\
+	} \\
+}" 14158 . 14418) (WHILE "while" 14419 . 14424) (semantic-list "(0)" 14424 . 14427)))
+          ("WDT_COUNTER_MAX" . ((string "L\"WatchdogCounterMax\"" 1876 . 1897)))
+          ("DISABLE_WDT" . ((string "L\"DisableWatchdog\"" 1966 . 1984)))
+          ("SLOT_FALLBACK" . ((string "L\"SlotFallback\"" 2157 . 2172)))
+          ("REBOOT_REASON" . ((string "L\"LoaderEntryRebootReason\"" 2094 . 2120)))
+          ("WDT_COUNTER" . ((string "L\"WatchdogCounter\"" 1832 . 1850)))
+          ("OEM_LOCK_UNLOCKED" . ((semantic-list "(1 << 0)" 2497 . 2505)))
+          ("OEM_LOCK" . ((string "L\"OEMLock\"" 1757 . 1767)))
+          ("CRASH_EVENT_MENU" . ((string "L\"CrashEventMenu\"" 1793 . 1810)))
+          ("UPDATE_OEMVARS" . ((string "L\"UpdateOemVars\"" 2009 . 2025)))
+          ("OFF_MODE_CHARGE" . ((string "L\"off-mode-charge\"" 1720 . 1738)))
+          ("REBOOT_REASON_MAX" . ((number "64" 2568 . 2570)))
+          ("WATCHDOG_COUNTER_MAX" . ((number "2" 2703 . 2704)))
+          ("UI_DISPLAY_SPLASH" . ((string "L\"UIDisplaySplash\"" 2052 . 2070)))
+          ("WDT_TIME_REF" . ((string "L\"WatchdogTimeReference\"" 1920 . 1944)))
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("_LIFE_CYCLE_H_" variable (:constant-flag t) nil [1545 1559])
+            ("efi.h" include (:system-flag t) nil [1561 1577])
+            ("efiapi.h" include (:system-flag t) nil [1578 1597])
+            ("life_cycle_is_enduser" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("enduser" variable
+                       (:pointer 1
+                        :type ("BOOLEAN" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1632 1649]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [1599 1650]))          
+      :file "life_cycle.h"
+      :pointmax 1680
+      :fsize 1679
+      :lastmodtime '(22813 3865 582460 227000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("_LIFE_CYCLE_H_")
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("efi.h" include (:system-flag t) nil [1405 1421])
+            ("efilib.h" include (:system-flag t) nil [1422 1441])
+            ("log.h" include (:system-flag t) nil [1442 1458])
+            ("lib.h" include (:system-flag t) nil [1459 1475])
+            ("watchdog.h" include nil nil [1476 1497])
+            ("protocol/tco_protocol.h" include nil nil [1498 1532])
+            ("TCO_OPT_DISABLED" variable (:constant-flag t) nil [1542 1558])
+            ("gEfiTcoResetProtocolGuid" variable
+               (:typemodifiers ("static")
+                :default-value "EFI_TCO_RESET_PROTOCOL_GUID"
+                :type ("EFI_GUID" type (:type "class") nil nil))
+                nil [1589 1660])
+            ("watchdog_disabled_from_cmdline" function
+               (:arguments 
+                  ( ("cmdline" variable
+                       (:pointer 1
+                        :type ("CHAR8" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1701 1716]))                  
+                :type ("BOOLEAN" type (:type "class") nil nil))
+                nil [1662 2075])
+            ("start_watchdog" function
+               (:arguments 
+                  ( ("seconds" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2103 2118]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [2077 2724]))          
+      :file "watchdog.c"
+      :pointmax 2725
+      :fsize 2724
+      :lastmodtime '(22813 3865 590460 227000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("TCO_OPT_DISABLED" . ((string "\"iTCO_wdt.force_no_reboot=1\"" 1559 . 1587)))
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("efi.h" include (:system-flag t) nil [1555 1571])
+            ("efilib.h" include (:system-flag t) nil [1572 1591])
+            ("ui.h" include (:system-flag t) nil [1592 1607])
+            ("android.h" include nil nil [1609 1629])
+            ("efilinux.h" include nil nil [1630 1651])
+            ("lib.h" include nil nil [1652 1668])
+            ("security.h" include nil nil [1669 1690])
+            ("vars.h" include nil nil [1691 1708])
+            ("power.h" include nil nil [1709 1727])
+            ("targets.h" include nil nil [1728 1748])
+            ("gpt.h" include nil nil [1749 1765])
+            ("storage.h" include nil nil [1766 1786])
+            ("text_parser.h" include nil nil [1787 1811])
+            ("watchdog.h" include nil nil [1812 1833])
+            ("slot.h" include nil nil [1886 1903])
+            ("pae.h" include nil nil [1904 1920])
+            ("OS_INITIATED" variable (:constant-flag t) nil [1930 1942])
+            ("EFI_LOADER_SIGNATURE" variable (:constant-flag t) nil [1981 2001])
+            ("setup_header" type
+               (:members 
+                  ( ("setup_secs" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2089 2106])
+                    ("root_flags" variable (:type ("UINT16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2151 2169])
+                    ("sys_size" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2178 2194])
+                    ("ram_size" variable (:type ("UINT16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2203 2219])
+                    ("video_mode" variable (:type ("UINT16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2228 2246])
+                    ("root_dev" variable (:type ("UINT16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2255 2271])
+                    ("signature" variable (:type ("UINT16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2280 2297])
+                    ("jump" variable (:type ("UINT16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2334 2346])
+                    ("header" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2355 2369])
+                    ("version" variable (:type ("UINT16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2378 2393])
+                    ("su_switch" variable (:type ("UINT16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2402 2419])
+                    ("setup_seg" variable (:type ("UINT16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2428 2445])
+                    ("start_sys" variable (:type ("UINT16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2454 2471])
+                    ("kernel_ver" variable (:type ("UINT16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2480 2498])
+                    ("loader_id" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2507 2523])
+                    ("load_flags" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2532 2549])
+                    ("movesize" variable (:type ("UINT16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2558 2574])
+                    ("code32_start" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2583 2603])
+                    ("ramdisk_start" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2651 2672])
+                    ("ramdisk_len" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2719 2738])
+                    ("bootsect_kludge" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2786 2809])
+                    ("heap_end" variable (:type ("UINT16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2818 2834])
+                    ("ext_loader_ver" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2843 2864])
+                    ("ext_loader_type" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2909 2931])
+                    ("cmd_line_ptr" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2970 2990])
+                    ("ramdisk_max" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3049 3068])
+                    ("kernel_alignment" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3115 3139])
+                    ("relocatable_kernel" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3198 3223])
+                    ("min_alignment" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3275 3295])
+                    ("xloadflags" variable (:type ("UINT16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3304 3322])
+                    ("cmdline_size" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3331 3351])
+                    ("hardware_subarch" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3360 3384])
+                    ("hardware_subarch_data" variable (:type ("UINT64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3393 3422])
+                    ("payload_offset" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3431 3453])
+                    ("payload_length" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3462 3484])
+                    ("setup_data" variable (:type ("UINT64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3493 3511])
+                    ("pref_address" variable (:type ("UINT64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3520 3540])
+                    ("init_size" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3549 3566])
+                    ("handover_offset" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3575 3598]))                  
+                :type "struct")
+                nil [2059 3625])
+            ("efi_info" type
+               (:members 
+                  ( ("efi_loader_signature" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3653 3681])
+                    ("efi_systab" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3690 3708])
+                    ("efi_memdesc_size" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3717 3741])
+                    ("efi_memdesc_version" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3750 3777])
+                    ("efi_memmap" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3786 3804])
+                    ("efi_memmap_size" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3813 3836])
+                    ("efi_systab_hi" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3845 3866])
+                    ("efi_memmap_hi" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3875 3896]))                  
+                :type "struct")
+                nil [3627 3899])
+            ("E820_UNDEFINED" variable (:constant-flag t) nil [3909 3923])
+            ("E820_RAM" variable (:constant-flag t) nil [3937 3945])
+            ("E820_RESERVED" variable (:constant-flag t) nil [3965 3978])
+            ("E820_ACPI" variable (:constant-flag t) nil [3993 4002])
+            ("E820_NVS" variable (:constant-flag t) nil [4021 4029])
+            ("E820_UNUSABLE" variable (:constant-flag t) nil [4049 4062])
+            ("e820_entry" type
+               (:members 
+                  ( ("addr" variable (:type ("UINT64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4098 4110])
+                    ("size" variable (:type ("UINT64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4164 4176])
+                    ("type" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4229 4241]))                  
+                :type "struct")
+                nil [4070 4312])
+            ("screen_info" type
+               (:members 
+                  ( ("orig_x" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4343 4357])
+                    ("orig_y" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4387 4401])
+                    ("ext_mem_k" variable (:type ("UINT16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4431 4448])
+                    ("orig_video_page" variable (:type ("UINT16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4475 4498])
+                    ("orig_video_mode" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4519 4542])
+                    ("orig_video_cols" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4563 4586])
+                    ("flags" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4607 4620])
+                    ("unused2" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4651 4666])
+                    ("orig_video_ega_bx" variable (:type ("UINT16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4695 4720])
+                    ("unused3" variable (:type ("UINT16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4739 4754])
+                    ("orig_video_lines" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4783 4807])
+                    ("orig_video_isVGA" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4827 4851])
+                    ("orig_video_points" variable (:type ("UINT16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4871 4896])
+                    ("lfb_width" variable (:type ("UINT16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4971 4988])
+                    ("lfb_height" variable (:type ("UINT16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5015 5033])
+                    ("lfb_depth" variable (:type ("UINT16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5059 5076])
+                    ("lfb_base" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5103 5119])
+                    ("lfb_size" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5147 5163])
+                    ("cl_magic" variable (:type ("UINT16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5191 5218])
+                    ("cl_offset" variable (:type ("UINT16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5191 5218])
+                    ("lfb_linelength" variable (:type ("UINT16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5238 5260])
+                    ("red_size" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5282 5298])
+                    ("red_pos" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5326 5341])
+                    ("green_size" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5370 5388])
+                    ("green_pos" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5414 5431])
+                    ("blue_size" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5458 5475])
+                    ("blue_pos" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5502 5518])
+                    ("rsvd_size" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5546 5563])
+                    ("rsvd_pos" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5590 5606])
+                    ("vesapm_seg" variable (:type ("UINT16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5634 5652])
+                    ("vesapm_off" variable (:type ("UINT16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5678 5696])
+                    ("pages" variable (:type ("UINT16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5722 5735])
+                    ("vesa_attributes" variable (:type ("UINT16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5766 5789])
+                    ("capabilities" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5810 5830])
+                    ("_reserved" variable
+                       (:dereference 1
+                        :type ("UINT8" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [5854 5874]))                  
+                :type "struct")
+                nil [4314 5916])
+            ("boot_params" type
+               (:members 
+                  ( ("screen_info" variable (:type ("screen_info" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [5947 5978])
+                    ("apm_bios_info" variable
+                       (:dereference 1
+                        :type ("UINT8" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [5987 6013])
+                    ("_pad2" variable
+                       (:dereference 1
+                        :type ("UINT8" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [6022 6037])
+                    ("tboot_addr" variable (:type ("UINT64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [6046 6064])
+                    ("ist_info" variable
+                       (:dereference 1
+                        :type ("UINT8" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [6073 6094])
+                    ("_pad3" variable
+                       (:dereference 1
+                        :type ("UINT8" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [6103 6119])
+                    ("hd0_info" variable
+                       (:dereference 1
+                        :type ("UINT8" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [6128 6147])
+                    ("hd1_info" variable
+                       (:dereference 1
+                        :type ("UINT8" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [6156 6175])
+                    ("sys_desc_table" variable
+                       (:dereference 1
+                        :type ("UINT8" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [6184 6211])
+                    ("olpc_ofw_header" variable
+                       (:dereference 1
+                        :type ("UINT8" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [6220 6248])
+                    ("_pad4" variable
+                       (:dereference 1
+                        :type ("UINT8" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [6257 6274])
+                    ("edid_info" variable
+                       (:dereference 1
+                        :type ("UINT8" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [6283 6305])
+                    ("efi_info" variable (:type ("efi_info" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [6314 6339])
+                    ("alt_mem_k" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [6348 6365])
+                    ("scratch" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [6374 6389])
+                    ("e820_entries" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [6398 6417])
+                    ("eddbuf_entries" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [6426 6447])
+                    ("edd_mbr_sig_buf_entries" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [6456 6486])
+                    ("_pad6" variable
+                       (:dereference 1
+                        :type ("UINT8" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [6495 6510])
+                    ("hdr" variable (:type ("setup_header" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [6519 6543])
+                    ("_pad7" variable
+                       (:dereference 1
+                        :type ("UINT8" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [6552 6605])
+                    ("edd_mbr_sig_buffer" variable
+                       (:dereference 1
+                        :type ("UINT32" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [6614 6644])
+                    ("e820_map" variable
+                       (:dereference 1
+                        :type ("e820_entry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [6653 6685])
+                    ("_pad8" variable
+                       (:dereference 1
+                        :type ("UINT8" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [6694 6710])
+                    ("eddbuf" variable
+                       (:dereference 1
+                        :type ("UINT8" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [6719 6739])
+                    ("_pad9" variable
+                       (:dereference 1
+                        :type ("UINT8" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [6748 6765]))                  
+                :type "struct")
+                nil [5918 6768])
+            ("segment_descriptor" type
+               (:members 
+                  ( ("limit0" variable (:type ("UINT16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [6924 6938])
+                    ("base0" variable (:type ("UINT16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [6947 6960])
+                    ("base1" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [6969 6981])
+                    ("type" variable
+                       (:suffix ":4"
+                        :type ("UINTN" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [6990 7004])
+                    ("descriptor_type" variable
+                       (:suffix ":1"
+                        :type ("UINTN" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [7013 7038])
+                    ("descriptor_privilege_level" variable
+                       (:suffix ":2"
+                        :type ("UINTN" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [7047 7083])
+                    ("present" variable
+                       (:suffix ":1"
+                        :type ("UINTN" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [7092 7109])
+                    ("limit1" variable
+                       (:suffix ":4"
+                        :type ("UINTN" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [7118 7134])
+                    ("available" variable
+                       (:suffix ":1"
+                        :type ("UINTN" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [7143 7162])
+                    ("code_segment_64bit" variable
+                       (:suffix ":1"
+                        :type ("UINTN" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [7171 7199])
+                    ("default_operation_size" variable
+                       (:suffix ":1"
+                        :type ("UINTN" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [7208 7240])
+                    ("granularity" variable
+                       (:suffix ":1"
+                        :type ("UINTN" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [7249 7270])
+                    ("base2" variable (:type ("UINT8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [7279 7291]))                  
+                :type "struct")
+                nil [6888 7322])
+            ("dt_addr_t" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("limit" variable (:type ("UINT16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [7349 7362])
+                          ("base" variable
+                             (:pointer 1
+                              :type ("segment_descriptor" type
+                                   (:prototype t
+                                    :type "struct")
+                                    nil nil))
+                              (reparse-symbol classsubparts) [7371 7403]))                        
+                      :type "struct")
+                      nil nil)
+                :type "typedef")
+                nil [7324 7440])
+            ("gdt" variable
+               (:pointer 1
+                :type ("dt_addr_t" type (:type "class") nil nil))
+                nil [7442 7457])
+            ("kernel_func" function
+               (:prototype-flag t
+                :function-pointer t
+                :arguments 
+                  ( ("" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [7486 7493])
+                    ("" variable
+                       (:pointer 1
+                        :type ("boot_params" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7494 7515]))                  
+                :type "void")
+                nil [7467 7516])
+            ("SEGMENT_TYPE_DATA" variable (:constant-flag t) nil [7526 7543])
+            ("SEGMENT_TYPE_READ_WRITE" variable (:constant-flag t) nil [7566 7589])
+            ("SEGMENT_TYPE_CODE" variable (:constant-flag t) nil [7613 7630])
+            ("SEGMENT_TYPE_EXEC_READ" variable (:constant-flag t) nil [7660 7682])
+            ("SEGMENT_TYPE_TASK" variable (:constant-flag t) nil [7707 7724])
+            ("SEGMENT_OPERATION_SIZE_16BITS" variable (:constant-flag t) nil [7760 7789])
+            ("SEGMENT_OPERATION_SIZE_32BITS" variable (:constant-flag t) nil [7800 7829])
+            ("SEGMENT_GRANULARITY_4KB" variable (:constant-flag t) nil [7840 7863])
+            ("DESCRIPTOR_TYPE_CODE_OR_DATA" variable (:constant-flag t) nil [7880 7908])
+            ("setup_gdt" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [7941 7946]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [7913 9902])
+            ("setup_e820_map" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("boot_params" variable
+                       (:pointer 1
+                        :type ("boot_params" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10051 10083])
+                    ("mem_entries" variable
+                       (:pointer 1
+                        :type ("EFI_MEMORY_DESCRIPTOR" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [10111 10146])
+                    ("nr_entries" variable (:type ("UINTN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10174 10191])
+                    ("entry_sz" variable (:type ("UINTN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10219 10234]))                  
+                :type "void")
+                nil [10024 12234])
+            ("setup_memory_map" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("boot_params" variable
+                       (:pointer 1
+                        :type ("boot_params" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [12391 12423])
+                    ("key" variable
+                       (:pointer 1
+                        :type ("UINTN" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [12424 12435]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [12356 13761])
+            ("handover_jump" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("image" variable (:type ("EFI_HANDLE" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [13802 13819])
+                    ("boot_params" variable
+                       (:pointer 1
+                        :type ("boot_params" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13859 13891])
+                    ("kernel_start" variable (:type ("EFI_PHYSICAL_ADDRESS" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [13931 13965]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [13763 15656])
+            ("pagealign" function
+               (:arguments 
+                  ( ("hdr" variable
+                       (:pointer 1
+                        :type ("boot_img_hdr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [15677 15702])
+                    ("blob_size" variable (:type ("UINT32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15703 15720]))                  
+                :type ("UINT32" type (:type "class") nil nil))
+                nil [15660 15826])
+            ("bootimage_size" function
+               (:arguments 
+                  ( ("aosp_header" variable
+                       (:pointer 1
+                        :type ("boot_img_hdr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [15850 15883]))                  
+                :type ("UINTN" type (:type "class") nil nil))
+                nil [15829 16168])
+            ("get_bootimage_header" function
+               (:pointer 1
+                :arguments 
+                  ( ("bootimage_blob" variable
+                       (:pointer 1
+                        :type ("VOID" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [16213 16234]))                  
+                :type ("boot_img_hdr" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [16171 16495])
+            ("setup_ramdisk" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("bootimage" variable
+                       (:pointer 1
+                        :type ("UINT8" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [16530 16547]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [16498 17738])
+            ("get_serial_port" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [17772 17777]))                  
+                :type ("CHAR16" type (:type "class") nil nil))
+                nil [17741 19458])
+            ("get_wake_reason" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [19492 19497]))                  
+                :type ("CHAR16" type (:type "class") nil nil))
+                nil [19461 20243])
+            ("get_reset_reason" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [20278 20283]))                  
+                :type ("CHAR16" type (:type "class") nil nil))
+                nil [20246 21458])
+            ("get_boot_reason" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [21492 21497]))                  
+                :type ("CHAR16" type (:type "class") nil nil))
+                nil [21461 22612])
+            ("prepend_command_line" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("cmdline" variable
+                       (:pointer 2
+                        :type ("CHAR16" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [22654 22671])
+                    ("fmt" variable
+                       (:pointer 1
+                        :type ("CHAR16" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [22672 22684])
+                    ("..." variable (:type "vararg") (reparse-symbol arg-sub-list) [22685 22689]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [22615 23178])
+            ("get_command_line" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type ("IN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [23213 23222])
+                    ("aosp_header" variable
+                       (:pointer 1
+                        :type ("boot_img_hdr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [23216 23249])
+                    ("" variable (:type ("IN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [23282 23289])
+                    ("boot_target" variable (:type ("boot_target" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [23285 23314]))                  
+                :type ("CHAR16" type (:type "class") nil nil))
+                nil [23181 26051])
+            ("get_bootimage_2nd" function
+               (:arguments 
+                  ( ("bootimage" variable
+                       (:pointer 1
+                        :type ("VOID" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [26082 26098])
+                    ("second" variable
+                       (:pointer 2
+                        :type ("VOID" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [26099 26113])
+                    ("size" variable
+                       (:pointer 1
+                        :type ("UINT32" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [26114 26127]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [26053 26623])
+            ("ROOTFS_PREFIX" variable (:constant-flag t) nil [28597 28610])
+            ("prepend_command_line_rootfs" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("cmdline16" variable
+                       (:pointer 2
+                        :type ("CHAR16" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [28705 28724])
+                    ("verity_cert" variable
+                       (:pointer 1
+                        :type ("X509" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [28725 28743]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [28659 29861])
+            ("setup_command_line" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("UINT8" variable (:type ("IN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [29917 29927])
+                    ("" variable (:type ("bootimage" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [29927 29937])
+                    ("" variable (:type ("IN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [29954 29961])
+                    ("boot_target" variable (:type ("boot_target" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [29957 29986])
+                    ("EFI_GUID" variable (:type ("IN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [30003 30016])
+                    ("" variable (:type ("swap_guid" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [30016 30026])
+                    ("UINT8" variable (:type ("IN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [30043 30062])
+                    ("" variable (:type ("boot_state" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [30052 30063])
+                    ("X509" variable (:type ("IN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [30080 30089])
+                    ("" variable (:type ("verity_cert" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [30089 30101]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [29863 35685])
+            ("GraphicsOutputProtocol" variable
+               (:typemodifiers ("extern")
+                :type ("EFI_GUID" type (:type "class") nil nil))
+                nil [35687 35726])
+            ("VIDEO_TYPE_EFI" variable (:constant-flag t) nil [35735 35749])
+            ("setup_screen_info_from_gop" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("pinfo" variable
+                       (:pointer 1
+                        :type ("screen_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [35795 35821]))                  
+                :type "void")
+                nil [35756 36479])
+            ("handover_kernel" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("bootimage" variable
+                       (:pointer 1
+                        :type ("CHAR8" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [36515 36532])
+                    ("parent_image" variable (:type ("EFI_HANDLE" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [36533 36557]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [36481 39321])
+            ("android_image_load_partition" function
+               (:arguments 
+                  ( ("CHAR16" variable
+                       (:constant-flag t
+                        :type ("IN" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [39380 39397])
+                    ("" variable (:type ("label" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [39397 39403])
+                    ("VOID" variable (:type ("OUT" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [39420 39430])
+                    ("" variable (:type ("bootimage_p" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [39431 39443]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [39323 41214])
+            ("android_image_load_file" function
+               (:arguments 
+                  ( ("EFI_HANDLE" variable (:type ("IN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [41269 41289])
+                    ("" variable (:type ("device" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [41283 41290])
+                    ("CHAR16" variable (:type ("IN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [41307 41318])
+                    ("" variable (:type ("loader" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [41318 41325])
+                    ("BOOLEAN" variable (:type ("IN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [41342 41359])
+                    ("VOID" variable (:type ("OUT" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [41377 41387])
+                    ("" variable (:type ("bootimage_p" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [41388 41400]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [41217 46248])
+            ("android_image_start_buffer" function
+               (:arguments 
+                  ( ("EFI_HANDLE" variable (:type ("IN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [46306 46332])
+                    ("" variable (:type ("parent_image" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [46320 46333])
+                    ("VOID" variable (:type ("IN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [46350 46359])
+                    ("" variable (:type ("bootimage" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [46359 46369])
+                    ("" variable (:type ("IN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [46386 46393])
+                    ("boot_target" variable (:type ("boot_target" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [46389 46418])
+                    ("UINT8" variable (:type ("IN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [46435 46454])
+                    ("" variable (:type ("boot_state" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [46444 46455])
+                    ("EFI_GUID" variable (:type ("IN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [46472 46485])
+                    ("" variable (:type ("swap_guid" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [46485 46495])
+                    ("X509" variable (:type ("IN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [46512 46521])
+                    ("" variable (:type ("verity_cert" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [46521 46533]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [46251 48877])
+            ("dump_bcb" variable (:constant-flag t) nil [49087 49095])
+            ("read_bcb" function
+               (:arguments 
+                  ( ("CHAR16" variable
+                       (:constant-flag t
+                        :type ("IN" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [49152 49169])
+                    ("" variable (:type ("label" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [49169 49175])
+                    ("" variable (:type ("OUT" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [49192 49202])
+                    ("bcb" variable
+                       (:pointer 1
+                        :type ("bootloader_message" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [49196 49227]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [49115 50060])
+            ("write_bcb" function
+               (:arguments 
+                  ( ("CHAR16" variable
+                       (:constant-flag t
+                        :type ("IN" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [50102 50119])
+                    ("" variable (:type ("label" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [50119 50125])
+                    ("" variable (:type ("IN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [50142 50151])
+                    ("bcb" variable
+                       (:pointer 1
+                        :type ("bootloader_message" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [50145 50176]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [50064 50946])
+            ("android_clear_memory" function (:type ("EFI_STATUS" type (:type "class") nil nil)) nil [50949 52811])
+            ("recovery_in_boot_partition" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [52848 52853]))                  
+                :type ("BOOLEAN" type (:type "class") nil nil))
+                nil [52813 53106]))          
+      :file "android.c"
+      :pointmax 53156
+      :fsize 53155
+      :lastmodtime '(22813 3865 582460 227000)
+      :unmatched-syntax '((punctuation 50118 . 50119) (punctuation 49168 . 49169) (punctuation 46520 . 46521) (punctuation 46484 . 46485) (punctuation 46358 . 46359) (punctuation 41387 . 41388) (punctuation 41386 . 41387) (DELETE 41353 . 41359) (punctuation 41317 . 41318) (punctuation 39430 . 39431) (punctuation 39429 . 39430) (punctuation 39396 . 39397) (punctuation 30088 . 30089) (punctuation 30015 . 30016) (punctuation 29926 . 29927) (TYPEDEF 7459 . 7466))
+      :lexical-table 
+        '(("E820_UNDEFINED" . ((number "0" 3927 . 3928)))
+          ("E820_ACPI" . ((number "3" 4011 . 4012)))
+          ("SEGMENT_TYPE_DATA" . ((number "0" 7556 . 7557)))
+          ("EFI_LOADER_SIGNATURE" . ((string "\"EL64\"" 2002 . 2008)))
+          ("E820_UNUSABLE" . ((number "5" 4067 . 4068)))
+          ("SEGMENT_TYPE_READ_WRITE" . ((semantic-list "(1 << 1)" 7596 . 7604)))
+          ("SEGMENT_OPERATION_SIZE_32BITS" . ((number "1" 7830 . 7831)))
+          ("ROOTFS_PREFIX" . ((string "L\"skip_initramfs rootwait ro init=/init root=\"" 28611 . 28657)))
+          ("SEGMENT_TYPE_CODE" . ((semantic-list "(1 << 3)" 7643 . 7651)))
+          ("SEGMENT_TYPE_EXEC_READ" . ((semantic-list "(1 << 1)" 7690 . 7698)))
+          ("E820_NVS" . ((number "4" 4039 . 4040)))
+          ("SEGMENT_GRANULARITY_4KB" . ((number "1" 7870 . 7871)))
+          ("OS_INITIATED" . ((string "L\"os_initiated\"" 1943 . 1958)))
+          ("E820_RESERVED" . ((number "2" 3983 . 3984)))
+          ("VIDEO_TYPE_EFI" . ((number "0x70" 35750 . 35754)))
+          ("SEGMENT_OPERATION_SIZE_16BITS" . ((number "0" 7790 . 7791)))
+          ("E820_RAM" . ((number "1" 3955 . 3956)))
+          ("SEGMENT_TYPE_TASK" . ((semantic-list "((1 << 3) | 1)" 7737 . 7751)))
+          ("DESCRIPTOR_TYPE_CODE_OR_DATA" . ((number "1" 7910 . 7911)))
+          ("dump_bcb" (spp-arg-list ("b") 49095 . 49098) . ((semantic-list "(void)" 49099 . 49105) (number "0" 49105 . 49106)))
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :file "efilinux.h"
+      :fsize 6880
+      :lastmodtime '(22813 3865 582460 227000))
+    (semanticdb-table "semanticdb-table"
+      :major-mode makefile-gmake-mode
+      :tags 
+        '( ("LIBKERNELFLINGER_LOCAL_PATH" variable (:default-value ("$(call my-dir)")) nil [1 47])
+            ("$(call all-subdir-makefiles)" include nil nil [47 84])
+            ("LOCAL_PATH" variable (:default-value ("$(LIBKERNELFLINGER_LOCAL_PATH)")) nil [84 129])
+            ("$(CLEAR_VARS)" include nil nil [130 152])
+            ("PNG2C" variable (:default-value ("$(HOST_OUT_EXECUTABLES)/png2c$(HOST_EXECUTABLE_SUFFIX)")) nil [153 217])
+            ("GEN_IMAGES" variable (:default-value ("$(LOCAL_PATH)/tools/gen_images.sh")) nil [217 265])
+            ("GEN_FONTS" variable (:default-value ("$(LOCAL_PATH)/tools/gen_fonts.sh")) nil [265 311])
+            ("res_intermediates" variable (:default-value ("$(call intermediates-dir-for,STATIC_LIBRARIES,libkernelflinger)")) nil [312 397])
+            ("font_res" variable (:default-value ("$(res_intermediates)/res/font_res.h")) nil [398 446])
+            ("img_res" variable (:default-value ("$(res_intermediates)/res/img_res.h")) nil [446 492])
+            ("$(LOCAL_PATH)" function (:arguments ("$(font_res)")) nil [493 530])
+            ("$(LOCAL_PATH)" function (:arguments ("$(img_res)")) nil [530 567])
+            ("TARGET_KERNELFLINGER_IMAGES_DIR" variable (:default-value ("$(LOCAL_PATH)/res/images/")) nil [607 668])
+            ("TARGET_KERNELFLINGER_FONT_DIR" variable (:default-value ("$(LOCAL_PATH)/res/fonts/")) nil [711 769])
+            ("KERNELFLINGER_IMAGES" variable (:default-value ("$(wildcard $(TARGET_KERNELFLINGER_IMAGES_DIR)/*.png)")) nil [776 853])
+            ("KERNELFLINGER_FONTS" variable (:default-value ("$(wildcard $(TARGET_KERNELFLINGER_FONT_DIR)/*.png)")) nil [853 927])
+            ("$(img_res)" function (:arguments ("$(KERNELFLINGER_IMAGES)" "$(PNG2C)" "$(GEN_IMAGES)")) nil [928 1120])
+            ("$(font_res)" function (:arguments ("$(KERNELFLINGER_FONTS)" "$(PNG2C)" "$(GEN_FONTS)")) nil [1121 1309])
+            ("LOCAL_MODULE" variable (:default-value ("libkernelflinger-$(TARGET_BUILD_VARIANT)")) nil [1310 1367])
+            ("LOCAL_EXPORT_C_INCLUDE_DIRS" variable (:default-value ("$(LOCAL_PATH)/../include/libkernelflinger")) nil [1367 1440])
+            ("LOCAL_CFLAGS" variable (:default-value ("$(KERNELFLINGER_CFLAGS)")) nil [1440 1480])
+            ("LOCAL_STATIC_LIBRARIES" variable (:default-value ("$(KERNELFLINGER_STATIC_LIBRARIES)")) nil [1480 1540])
+            ("LOCAL_SRC_FILES" variable (:default-value ("android.c" "efilinux.c" "acpi.c" "lib.c" "options.c" "security.c" "signature.c" "vars.c" "ui.c" "ui_font.c" "ui_textarea.c" "ui_image.c" "ui_boot_menu.c" "ui_confirm.c" "log.c" "em.c" "gpt.c" "storage.c" "pci.c" "mmc.c" "ufs.c" "sdcard.c" "sdio.c" "sata.c" "uefi_utils.c" "targets.c" "smbios.c" "oemvars.c" "text_parser.c" "watchdog.c" "slot.c" "life_cycle.c" "qsort.c")) nil [2033 2456])
+            ("LOCAL_C_INCLUDES" variable (:default-value ("$(LOCAL_PATH)/../include/libkernelflinger" "$(res_intermediates)")) nil [2812 2899])
+            ("$(BUILD_EFI_STATIC_LIBRARY)" include nil nil [2900 2936]))          
+      :file "Android.mk"
+      :pointmax 2936
+      :fsize 2935
+      :lastmodtime '(22813 3865 578460 227000)
+      :unmatched-syntax '((symbol 2798 . 2804) (semantic-list 2778 . 2798) (punctuation 2777 . 2778) (punctuation 2775 . 2776) (punctuation 2774 . 2775) (symbol 2758 . 2773) (bol 2754 . 2754) (symbol 2742 . 2748) (symbol 2728 . 2738) (punctuation 2723 . 2724) (punctuation 2722 . 2723) (symbol 2706 . 2721) (bol 2702 . 2702) (symbol 2659 . 2664) (punctuation 2657 . 2658) (punctuation 2656 . 2657) (symbol 2640 . 2655) (bol 2636 . 2636) (symbol 2585 . 2593) (punctuation 2583 . 2584) (punctuation 2582 . 2583) (symbol 2566 . 2581) (bol 2562 . 2562) (symbol 2510 . 2521) (punctuation 2508 . 2509) (punctuation 2507 . 2508) (symbol 2491 . 2506) (bol 2487 . 2487) (symbol 1996 . 2025) (punctuation 1994 . 1995) (punctuation 1993 . 1994) (symbol 1980 . 1992) (bol 1976 . 1976) (symbol 1901 . 1911) (punctuation 1899 . 1900) (punctuation 1898 . 1899) (symbol 1885 . 1897) (bol 1881 . 1881) (symbol 1810 . 1831) (punctuation 1808 . 1809) (punctuation 1807 . 1808) (symbol 1794 . 1806) (bol 1790 . 1790) (symbol 1719 . 1733) (punctuation 1717 . 1718) (punctuation 1716 . 1717) (symbol 1703 . 1715) (bol 1699 . 1699) (symbol 1619 . 1649) (punctuation 1617 . 1618) (punctuation 1616 . 1617) (symbol 1603 . 1615) (bol 1599 . 1599)))
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("efi.h" include (:system-flag t) nil [1402 1418])
+            ("efilib.h" include (:system-flag t) nil [1419 1438])
+            ("acpi.h" include nil nil [1440 1457])
+            ("power.h" include nil nil [1458 1476])
+            ("efilinux.h" include nil nil [1477 1498])
+            ("lib.h" include nil nil [1499 1515])
+            ("FACP_table" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :default-value "NULL"
+                :type ("FACP_TABLE" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1517 1561])
+            ("OEM1_table" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :default-value "NULL"
+                :type ("OEM1_TABLE" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1630 1674])
+            ("SIG_SIZE" variable (:constant-flag t) nil [1684 1692])
+            ("XSDT_SIG" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"XSDT\""
+                :type "char")
+                nil [1746 1792])
+            ("RSDP_SIG" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"RSD PTR \""
+                :type "char")
+                nil [1793 1836])
+            ("SUPPORTED_TABLES" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+	{ .signature = \"FACP\",
+	  .oem_id = \"INTEL \",
+	  .oem_table_id = \"EDK2    \",
+	  .revision = 5 },
+	{ .signature = \"RSCI\",
+	  .oem_id = \"INTEL \",
+	  .oem_table_id = \"BOOTSRC \",
+	  .revision = 2 },
+	{ .signature = \"OEM1\",
+	  .oem_id = \"INTEL \",
+	  .oem_table_id = \"ENRGYMGT\",
+	  .revision = 1 }
+}"
+                :type ("ACPI_DESC_HEADER" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1875 2230])
+            ("get_acpi_field" variable (:constant-flag t) nil [2719 2733])
+            ("acpi_table_is_supported" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("t" variable
+                       (:pointer 1
+                        :type ("ACPI_DESC_HEADER" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2989 3016]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [2947 3723])
+            ("_get_acpi_field" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("name" variable
+                       (:pointer 1
+                        :type ("CHAR8" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3755 3767])
+                    ("fieldname" variable
+                       (:pointer 1
+                        :type ("CHAR8" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3768 3792])
+                    ("" variable (:type ("_unused" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3785 3793])
+                    ("var" variable
+                       (:pointer 2
+                        :type ("VOID" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3794 3805])
+                    ("offset" variable (:type ("UINTN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3806 3819])
+                    ("size" variable (:type ("UINTN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3820 3831]))                  
+                :type ("UINT64" type (:type "class") nil nil))
+                nil [3725 4475])
+            ("acpi_verify_checksum" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("table" variable
+                       (:pointer 1
+                        :type ("ACPI_DESC_HEADER" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4517 4548]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [4478 4708])
+            ("get_xsdt_table" function
+               (:arguments 
+                  ( ("xsdt" variable
+                       (:pointer 2
+                        :type ("XSDT_TABLE" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4736 4761]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [4710 5395])
+            ("get_acpi_table" function
+               (:arguments 
+                  ( ("signature" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("CHAR8" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5423 5446])
+                    ("table" variable
+                       (:pointer 2
+                        :type ("VOID" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5447 5460]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [5397 6761])
+            ("rsci_get_wake_source" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [7194 7199]))                  
+                :type ("wake_sources" type (:type "enum") nil nil))
+                nil [7155 7232])
+            ("rsci_get_reset_source" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [7275 7280]))                  
+                :type ("reset_sources" type (:type "enum") nil nil))
+                nil [7234 7314])
+            ("rsci_get_reset_type" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [7353 7358]))                  
+                :type ("reset_types" type (:type "enum") nil nil))
+                nil [7316 7386])
+            ("rsci_get_reset_extra_info" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [7421 7426]))                  
+                :type ("UINT32" type (:type "class") nil nil))
+                nil [7388 7442])
+            ("oem1_get_ia_apps_to_use" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [7496 7501]))                  
+                :type ("UINT8" type (:type "class") nil nil))
+                nil [7466 7551])
+            ("oem1_get_ia_apps_cap" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [7580 7585]))                  
+                :type ("UINT8" type (:type "class") nil nil))
+                nil [7553 7632])
+            ("oem1_get_ia_apps_run" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [7662 7667]))                  
+                :type ("UINT16" type (:type "class") nil nil))
+                nil [7634 7714]))          
+      :file "acpi.c"
+      :pointmax 9391
+      :fsize 9390
+      :lastmodtime '(22813 3865 582460 227000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("get_acpi_field" (spp-arg-list ("table" "field") 2733 . 2747) . 
+              ((semantic-list "(typeof(table##_table->field))" 2754 . 2784) (symbol "_get_acpi_field" 2791 . 2806) (semantic-list "((CHAR8 *)#table, (CHAR8 *)#field,	\\
+			(VOID **)&table##_table,		\\
+			offsetof(struct table##_TABLE, field), sizeof(table##_table->field))" 2806 . 2945)))
+          ("SIG_SIZE" . ((semantic-list "(sizeof(((struct ACPI_DESC_HEADER *)0)->signature))" 1693 . 1744)))
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("lib.h" include (:system-flag t) nil [1470 1486])
+            ("targets.h" include (:system-flag t) nil [1487 1507])
+            ("TARGETS" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :default-value "{
+        { NORMAL_BOOT,    L\"\",           L\"Android\" },
+        { NORMAL_BOOT,    L\"boot\",       L\"Android\" },
+        { RECOVERY,       L\"recovery\",   L\"Recovery OS\" },
+        { FASTBOOT,       L\"bootloader\", L\"Fastboot mode\" },
+        { FASTBOOT,       L\"fastboot\",   L\"Fastboot mode\" },
+        { CHARGER,        L\"charging\",   L\"Charger mode\" },
+        { DNX,            L\"dnx\",        L\"Download and Execute mode\" },
+#ifdef CRASHMODE_USE_ADB
+        { CRASHMODE,      L\"crashmode\",  L\"Crashmode\" },
+#else
+        { CRASHMODE,      NULL,          L\"Crashmode\" },
+#endif
+        /* Internal only */
+        { ESP_BOOTIMAGE,  NULL,          L\"ESP bootimage\" },
+        { ESP_EFI_BINARY, NULL,          L\"ESP efi binary\" },
+        { MEMORY,         NULL,          L\"RAM bootimage\" },
+        { POWER_OFF,      NULL,          L\"Power Off\" },
+        { EXIT_SHELL,     NULL,          L\"Exit to shell\" }
+}"
+                :type ("target" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1509 2547])
+            ("target" type
+               (:members 
+                  ( ("bt" variable (:type ("boot_target" type (:type "enum") nil nil)) (reparse-symbol classsubparts) [1540 1560])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("CHAR16" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1569 1588])
+                    ("description" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("CHAR16" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1597 1623]))                  
+                :type "struct")
+                nil [1509 2547])
+            ("find_entry" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("bt" variable (:type ("boot_target" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [2582 2602]))                  
+                :type ("target" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2549 2781])
+            ("boot_target_name" function
+               (:pointer 1
+                :constant-flag t
+                :arguments 
+                  ( ("bt" variable (:type ("boot_target" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [2814 2834]))                  
+                :type ("CHAR16" type (:type "class") nil nil))
+                nil [2783 2931])
+            ("boot_target_description" function
+               (:pointer 1
+                :constant-flag t
+                :arguments 
+                  ( ("bt" variable (:type ("boot_target" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [2971 2991]))                  
+                :type ("CHAR16" type (:type "class") nil nil))
+                nil [2933 3108])
+            ("name_to_boot_target" function
+               (:arguments 
+                  ( ("str" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("CHAR16" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3147 3165]))                  
+                :type ("boot_target" type (:type "enum") nil nil))
+                nil [3110 3450])
+            ("reboot_to_target" function
+               (:arguments 
+                  ( ("bt" variable (:type ("boot_target" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [3480 3500]))                  
+                :type ("EFI_STATUS" type (:type "class") nil nil))
+                nil [3452 3810]))          
+      :file "targets.c"
+      :pointmax 3812
+      :fsize 3811
+      :lastmodtime '(22813 3865 586460 227000)
+      :unmatched-syntax '((punctuation 3810 . 3811))))
+  :file "!home!chenqi!work!aia_github!hardware!intel!kernelflinger!libkernelflinger!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

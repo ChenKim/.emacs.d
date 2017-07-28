@@ -1,0 +1,510 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("memory_address_mapper.h" include nil nil [763 797])
+            ("vmm_dbg.h" include nil nil [798 818])
+            ("host_memory_manager.h" include nil nil [819 851])
+            ("hw_utils.h" include nil nil [852 873])
+            ("vmm_objects.h" include nil nil [874 898])
+            ("guest.h" include nil nil [899 917])
+            ("gpm.h" include nil nil [918 934])
+            ("modules/acpi.h" include nil nil [935 960])
+            ("modules/vtd.h" include nil nil [961 985])
+            ("event_mgr.h" include nil nil [986 1008])
+            ("DMAR_SIGNATURE" variable (:constant-flag t) nil [1018 1032])
+            ("VTD_REG_CAP" variable (:constant-flag t) nil [1083 1094])
+            ("VTD_REG_ECAP" variable (:constant-flag t) nil [1114 1126])
+            ("VTD_REG_GCMD" variable (:constant-flag t) nil [1145 1157])
+            ("VTD_REG_GSTS" variable (:constant-flag t) nil [1176 1188])
+            ("VTD_REG_RTADDR" variable (:constant-flag t) nil [1207 1221])
+            ("VTD_REG_CCMD" variable (:constant-flag t) nil [1238 1250])
+            ("VTD_PT_R" variable (:constant-flag t) nil [1452 1460])
+            ("VTD_PT_W" variable (:constant-flag t) nil [1489 1497])
+            ("VTD_PT_P" variable (:constant-flag t) nil [1526 1534])
+            ("VTD_PT_SP" variable (:constant-flag t) nil [1573 1582])
+            ("VTD_PT_SNP" variable (:constant-flag t) nil [1610 1620])
+            ("VTD_PT_TM" variable (:constant-flag t) nil [1648 1657])
+            ("acpi_dmar_table_t" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("header" variable (:type ("acpi_table_header_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1697 1724])
+                          ("width" variable (:type ("uint8_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1726 1752])
+                          ("flags" variable (:type ("uint8_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1754 1780])
+                          ("reserved" variable
+                             (:dereference 1
+                              :type ("uint8_t" type (:type "class") nil nil))
+                              (reparse-symbol classsubparts) [1782 1815])
+                          ("remapping_structures" variable
+                             (:dereference 1
+                              :type ("uint8_t" type (:type "class") nil nil))
+                              (reparse-symbol classsubparts) [1817 1861]))                        
+                      :type "struct")
+                      nil nil)
+                :type "typedef")
+                nil [1679 1882])
+            ("acpi_dmar_header_t" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("type" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1902 1919])
+                          ("length" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1921 1940]))                        
+                      :type "struct")
+                      nil nil)
+                :type "typedef")
+                nil [1884 1962])
+            ("acpi_path_element_t" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("dev" variable (:type ("uint8_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1982 1998])
+                          ("func" variable (:type ("uint8_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2000 2017]))                        
+                      :type "struct")
+                      nil nil)
+                :type "typedef")
+                nil [1964 2040])
+            ("acpi_device_scope_t" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("type" variable (:type ("uint8_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2060 2085])
+                          ("length" variable (:type ("uint8_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2087 2114])
+                          ("reserved" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2116 2145])
+                          ("enumeration_id" variable (:type ("uint8_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2147 2182])
+                          ("start_bus_num" variable (:type ("uint8_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2184 2218])
+                          ("path" variable
+                             (:dereference 1
+                              :type ("acpi_path_element_t" type (:type "class") nil nil))
+                              (reparse-symbol classsubparts) [2220 2248]))                        
+                      :type "struct")
+                      nil nil)
+                :type "typedef")
+                nil [2042 2271])
+            ("acpi_dma_hw_unit_t" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("header" variable (:type ("acpi_dmar_header_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2291 2318])
+                          ("flags" variable (:type ("uint8_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2320 2346])
+                          ("reserved" variable (:type ("uint8_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2348 2377])
+                          ("segment" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2379 2407])
+                          ("reg_base_hpa" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2409 2442])
+                          ("device_scope" variable
+                             (:dereference 1
+                              :type ("acpi_device_scope_t" type (:type "class") nil nil))
+                              (reparse-symbol classsubparts) [2444 2480]))                        
+                      :type "struct")
+                      nil nil)
+                :type "typedef")
+                nil [2273 2502])
+            ("vtd_cap_reg_t" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("bits" variable (:type ("" type
+                               (:members 
+                                  ( ("nd" variable
+                                       (:suffix ":3"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [2532 2556])
+                                    ("afl" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [2559 2583])
+                                    ("rwbf" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [2586 2610])
+                                    ("pmlr" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [2613 2637])
+                                    ("pmhr" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [2640 2664])
+                                    ("cm" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [2667 2691])
+                                    ("sagaw" variable
+                                       (:suffix ":5"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [2694 2718])
+                                    ("rsvd0" variable
+                                       (:suffix ":3"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [2721 2745])
+                                    ("mgaw" variable
+                                       (:suffix ":6"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [2748 2772])
+                                    ("zlr" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [2775 2799])
+                                    ("isoch" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [2802 2826])
+                                    ("fro_low" variable
+                                       (:suffix ":8"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [2829 2853])
+                                    ("fro_high" variable
+                                       (:suffix ":2"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [2856 2880])
+                                    ("sps" variable
+                                       (:suffix ":4"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [2883 2907])
+                                    ("rsvd1" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [2910 2934])
+                                    ("psi" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [2937 2961])
+                                    ("nfr" variable
+                                       (:suffix ":8"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [2964 2988])
+                                    ("mamv" variable
+                                       (:suffix ":6"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [2991 3015])
+                                    ("dwd" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [3018 3042])
+                                    ("drd" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [3045 3069])
+                                    ("rsvd2" variable
+                                       (:suffix ":8"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [3072 3096]))                                  
+                                :type "struct")
+                                nil nil)) (reparse-symbol classsubparts) [2521 3105])
+                          ("uint64" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3107 3123]))                        
+                      :type "union")
+                      nil nil)
+                :type "typedef")
+                nil [2504 3140])
+            ("vtd_ext_cap_reg_t" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("bits" variable (:type ("" type
+                               (:members 
+                                  ( ("c" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [3170 3190])
+                                    ("qi" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [3193 3213])
+                                    ("di" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [3216 3236])
+                                    ("ir" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [3239 3259])
+                                    ("eim" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [3262 3282])
+                                    ("ch" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [3285 3305])
+                                    ("pt" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [3308 3328])
+                                    ("sc" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [3331 3351])
+                                    ("ivo" variable
+                                       (:suffix ":10"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [3354 3375])
+                                    ("rsvd" variable
+                                       (:suffix ":2"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [3378 3398])
+                                    ("mhmv" variable
+                                       (:suffix ":4"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [3401 3421])
+                                    ("rsvd1" variable
+                                       (:suffix ":8"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [3424 3444])
+                                    ("rsvd2" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3447 3462]))                                  
+                                :type "struct")
+                                nil nil)) (reparse-symbol classsubparts) [3159 3471])
+                          ("uint64" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3473 3489]))                        
+                      :type "union")
+                      nil nil)
+                :type "typedef")
+                nil [3142 3510])
+            ("dma_root_entry_t" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("low" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3530 3543])
+                          ("high" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3545 3559]))                        
+                      :type "struct")
+                      nil nil)
+                :type "typedef")
+                nil [3512 3579])
+            ("dma_context_entry_t" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("low" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3599 3612])
+                          ("high" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3614 3628]))                        
+                      :type "struct")
+                      nil nil)
+                :type "typedef")
+                nil [3581 3651])
+            ("vtd_dma_remapping_t" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("reg_base_hva" variable
+                             (:dereference 1
+                              :type ("uint64_t" type (:type "class") nil nil))
+                              (reparse-symbol classsubparts) [3671 3718])
+                          ("reg_base_hpa" variable
+                             (:dereference 1
+                              :type ("uint64_t" type (:type "class") nil nil))
+                              (reparse-symbol classsubparts) [3720 3767])
+                          ("max_leaf" variable (:type ("uint8_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3769 3795])
+                          ("tm" variable (:type ("uint8_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3797 3817])
+                          ("snoop" variable (:type ("uint8_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3819 3842])
+                          ("device_gpu_engine" variable (:type ("uint8_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3844 3879])
+                          ("pad" variable
+                             (:dereference 1
+                              :type ("uint8_t" type (:type "class") nil nil))
+                              (reparse-symbol classsubparts) [3881 3905])
+                          ("root_table" variable
+                             (:pointer 1
+                              :type ("dma_root_entry_t" type (:type "class") nil nil))
+                              (reparse-symbol classsubparts) [3907 3936])
+                          ("address_space" variable (:type ("mam_handle_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3938 3969]))                        
+                      :type "struct")
+                      nil nil)
+                :type "typedef")
+                nil [3653 3992])
+            ("vtdpt_attr_t" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("bits" variable (:type ("" type
+                               (:members 
+                                  ( ("read" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [4022 4041])
+                                    ("write" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [4044 4063])
+                                    ("snoop" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [4066 4085])
+                                    ("tm" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [4088 4107])
+                                    ("rsvd1" variable
+                                       (:suffix ":28"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [4110 4130]))                                  
+                                :type "struct")
+                                nil nil)) (reparse-symbol classsubparts) [4011 4139])
+                          ("uint32" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4141 4157]))                        
+                      :type "union")
+                      nil nil)
+                :type "typedef")
+                nil [3994 4173])
+            ("g_remapping" variable
+               (:typemodifiers ("static")
+                :type ("vtd_dma_remapping_t" type (:type "class") nil nil))
+                nil [4175 4214])
+            ("vtd_read_reg64" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("base_hva" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4254 4272])
+                    ("reg" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4273 4286]))                  
+                :type ("uint64_t" type (:type "class") nil nil))
+                nil [4216 4340])
+            ("vtd_write_reg64" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("base_hva" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4377 4395])
+                    ("reg" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4396 4409])
+                    ("value" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4410 4425]))                  
+                :type "void")
+                nil [4342 4480])
+            ("vtd_read_reg32" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("base_hva" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4520 4538])
+                    ("reg" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4539 4552]))                  
+                :type ("uint32_t" type (:type "class") nil nil))
+                nil [4482 4606])
+            ("vtd_write_reg32" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("base_hva" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4643 4661])
+                    ("reg" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4662 4675])
+                    ("value" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4676 4691]))                  
+                :type "void")
+                nil [4608 4746])
+            ("vtd_addr_trans_is_leaf" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("entry" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4788 4803])
+                    ("level" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4804 4819]))                  
+                :type ("boolean_t" type (:type "class") nil nil))
+                nil [4748 4969])
+            ("vtd_addr_trans_is_present" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("attr" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5014 5028]))                  
+                :type ("boolean_t" type (:type "class") nil nil))
+                nil [4971 5074])
+            ("vtd_addr_trans_to_table" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("p_entry" variable
+                       (:pointer 1
+                        :type ("uint64_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5112 5130]))                  
+                :type "void")
+                nil [5076 5191])
+            ("vtd_addr_trans_to_leaf" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("p_entry" variable
+                       (:pointer 1
+                        :type ("uint64_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5228 5246])
+                    ("level" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5247 5262])
+                    ("attr" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5263 5277]))                  
+                :type "void")
+                nil [5193 5642])
+            ("vtd_leaf_get_attr" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("leaf_entry" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5678 5698])
+                    ("level" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5699 5714]))                  
+                :type ("uint32_t" type (:type "class") nil nil))
+                nil [5644 6132])
+            ("vtd_make_entry_ops" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [6177 6182]))                  
+                :type ("mam_entry_ops_t" type (:type "class") nil nil))
+                nil [6134 6660])
+            ("dmar_parse_drhd" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("entry" variable
+                       (:pointer 1
+                        :type ("acpi_dma_hw_unit_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [8265 8291]))                  
+                :type "void")
+                nil [8237 9759])
+            ("dmar_parse" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dmar" variable
+                       (:pointer 1
+                        :type ("acpi_dmar_table_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [9784 9808]))                  
+                :type "void")
+                nil [9761 10318])
+            ("vtd_init_mapping" function
+               (:typemodifiers ("static")
+                :type "void")
+                nil [10320 11248])
+            ("vtd_send_global_cmd" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("bit" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11282 11295]))                  
+                :type "void")
+                nil [11250 11923])
+            ("vtd_guest_setup" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("gcpu" variable (:type ("guest_cpu_handle_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11953 11977])
+                    ("pv" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [11978 11987]))                  
+                :type "void")
+                nil [11925 12368])
+            ("vtd_reinit_from_s3" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("gcpu" variable (:type ("guest_cpu_handle_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12401 12425])
+                    ("pv" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [12426 12435]))                  
+                :type "void")
+                nil [12370 12452])
+            ("vtd_add_range" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("pa_start" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12480 12498])
+                    ("size" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12499 12513]))                  
+                :type "void")
+                nil [12454 12759])
+            ("vtd_remove_range" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("gcpu" variable (:type ("guest_cpu_handle_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12790 12814])
+                    ("pv" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [12815 12824]))                  
+                :type "void")
+                nil [12761 13055])
+            ("vtd_init" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [13071 13076]))                  
+                :type "void")
+                nil [13057 14532])
+            ("vtd_done" function (:type "void") nil [14534 15065]))          
+      :file "vtd.c"
+      :pointmax 15066
+      :fsize 15065
+      :lastmodtime '(22799 51685 907619 325000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("VTD_REG_ECAP" . ((number "0x0010" 1130 . 1136)))
+          ("VTD_REG_GCMD" . ((number "0x0018" 1161 . 1167)))
+          ("DMAR_SIGNATURE" . ((number "0x52414d44" 1033 . 1043)))
+          ("VTD_PT_W" . ((semantic-list "(1ULL << 1)" 1506 . 1517)))
+          ("VTD_REG_RTADDR" . ((number "0x0020" 1223 . 1229)))
+          ("VTD_PT_SNP" . ((semantic-list "(1ULL << 11)" 1627 . 1639)))
+          ("VTD_REG_CAP" . ((number "0x0008" 1099 . 1105)))
+          ("VTD_PT_P" . ((semantic-list "(VTD_PT_R | VTD_PT_W)" 1543 . 1564)))
+          ("VTD_REG_CCMD" . ((number "0x0028" 1254 . 1260)))
+          ("VTD_PT_R" . ((semantic-list "(1ULL << 0)" 1469 . 1480)))
+          ("VTD_REG_GSTS" . ((number "0x001C" 1192 . 1198)))
+          ("VTD_PT_SP" . ((semantic-list "(1ULL << 7)" 1590 . 1601)))
+          ("VTD_PT_TM" . ((semantic-list "(1ULL << 62)" 1665 . 1677)))
+          )
+))
+  :file "!home!chenqi!work!1A_code!vendor!intel!fw!evmm!bxt!core!modules!vtd!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

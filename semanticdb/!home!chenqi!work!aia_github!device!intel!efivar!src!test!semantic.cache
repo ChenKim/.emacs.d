@@ -1,0 +1,120 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("alloca.h" include (:system-flag t) nil [1 20])
+            ("errno.h" include (:system-flag t) nil [21 39])
+            ("fcntl.h" include (:system-flag t) nil [40 58])
+            ("stdarg.h" include (:system-flag t) nil [59 78])
+            ("stdio.h" include (:system-flag t) nil [79 97])
+            ("stdlib.h" include (:system-flag t) nil [98 117])
+            ("string.h" include (:system-flag t) nil [118 137])
+            ("sys/types.h" include (:system-flag t) nil [138 160])
+            ("sys/stat.h" include (:system-flag t) nil [161 182])
+            ("unistd.h" include (:system-flag t) nil [183 202])
+            ("efivar.h" include (:system-flag t) nil [204 223])
+            ("TEST_GUID" variable (:constant-flag t) nil [233 242])
+            ("get_random_bytes" function
+               (:pointer 1
+                :arguments 
+                  ( ("size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [398 410]))                  
+                :type ("uint8_t" type (:type "class") nil nil))
+                nil [316 847])
+            ("test" type
+               (:members 
+                  ( ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol classsubparts) [864 881])
+                    ("size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [883 895])
+                    ("result" variable (:type "int") (reparse-symbol classsubparts) [897 908]))                  
+                :type "struct")
+                nil [849 911])
+            ("print_error" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("line" variable (:type "int") (reparse-symbol arg-sub-list) [937 946])
+                    ("test" variable
+                       (:pointer 1
+                        :type ("test" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [947 965])
+                    ("rc" variable (:type "int") (reparse-symbol arg-sub-list) [966 973])
+                    ("fmt" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [974 984])
+                    ("..." variable (:type "vararg") (reparse-symbol arg-sub-list) [985 989]))                  
+                :type "void")
+                nil [913 1031])
+            ("print_error" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("line" variable (:type "int") (reparse-symbol arg-sub-list) [1056 1065])
+                    ("test" variable
+                       (:pointer 1
+                        :type ("test" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1066 1084])
+                    ("rc" variable (:type "int") (reparse-symbol arg-sub-list) [1085 1092])
+                    ("fmt" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1093 1103])
+                    ("..." variable (:type "vararg") (reparse-symbol arg-sub-list) [1104 1108]))                  
+                :type "void")
+                nil [1032 1257])
+            ("report_error" variable (:constant-flag t) nil [1267 1279])
+            ("do_test" function
+               (:arguments 
+                  ( ("test" variable
+                       (:pointer 1
+                        :type ("test" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1660 1678]))                  
+                :type "int")
+                nil [1648 5368])
+            ("main" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [5379 5384]))                  
+                :type "int")
+                nil [5370 6704]))          
+      :file "tester.c"
+      :pointmax 6705
+      :fsize 6704
+      :lastmodtime '(22824 61063 370987 310000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("report_error" (spp-arg-list ("test" "ret" "rc" "...") 1279 . 1299) . ((semantic-list "({			\\
+		__typeof(errno) __errno_saved = errno;		\\
+		free(testdata);					\\
+		if (data) {					\\
+			free(data);				\\
+			data = NULL;				\\
+		}						\\
+		if (test->result != rc) {				\\
+			print_error(__LINE__, test, rc, __VA_ARGS__);	\\
+			ret = -1;					\\
+			errno = __errno_saved;				\\
+			goto fail;					\\
+		}							\\
+		errno = __errno_saved;				\\
+	})" 1300 . 1646)))
+          ("TEST_GUID" . ((symbol "EFI_GUID" 243 . 251) (semantic-list "(0x84be9c3e,0x8a32,0x42c0,0x891c,0x4c,0xd3,0xb0,0x72,0xbe,0xcc)" 251 . 314)))
+          )
+))
+  :file "!home!chenqi!work!aia_github!device!intel!efivar!src!test!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

@@ -1,0 +1,225 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("errno.h" include (:system-flag t) nil [741 759])
+            ("fcntl.h" include (:system-flag t) nil [760 778])
+            ("stdlib.h" include (:system-flag t) nil [779 798])
+            ("string.h" include (:system-flag t) nil [799 818])
+            ("sys/types.h" include (:system-flag t) nil [819 841])
+            ("sys/stat.h" include (:system-flag t) nil [842 863])
+            ("unistd.h" include (:system-flag t) nil [864 883])
+            ("efivar.h" include nil nil [885 904])
+            ("lib.h" include nil nil [905 921])
+            ("generics.h" include nil nil [922 943])
+            ("default_probe" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [970 975]))                  
+                :type "int")
+                nil [945 990])
+            ("default_ops" variable
+               (:default-value "{
+		.name = \"default\",
+		.probe = default_probe,
+	}"
+                :type ("efi_var_operations" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [992 1084])
+            ("ops" variable
+               (:pointer 1
+                :default-value "NULL"
+                :type ("efi_var_operations" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1086 1124])
+            ("_efi_set_variable" function
+               (:arguments 
+                  ( ("guid" variable (:type ("efi_guid_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1228 1244])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1245 1262])
+                    ("data" variable
+                       (:pointer 1
+                        :type ("uint8_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1263 1277])
+                    ("data_size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1282 1299])
+                    ("attributes" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1300 1320]))                  
+                :type "int")
+                nil [1126 1398])
+            ("_efi_set_variable_variadic" function
+               (:arguments 
+                  ( ("guid" variable (:type ("efi_guid_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1511 1527])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1528 1545])
+                    ("data" variable
+                       (:pointer 1
+                        :type ("uint8_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1546 1560])
+                    ("data_size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1567 1584])
+                    ("attributes" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1585 1605])
+                    ("..." variable (:type "vararg") (reparse-symbol arg-sub-list) [1606 1610]))                  
+                :type "int")
+                nil [1400 1688])
+            ("efi_set_variable" function
+               (:arguments 
+                  ( ("guid" variable (:type ("efi_guid_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1791 1807])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1808 1825])
+                    ("data" variable
+                       (:pointer 1
+                        :type ("uint8_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1826 1840])
+                    ("data_size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1844 1861])
+                    ("attributes" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1862 1882])
+                    ("mode" variable (:type ("mode_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1883 1895]))                  
+                :type "int")
+                nil [1690 1973])
+            ("efi_append_variable" function
+               (:arguments 
+                  ( ("guid" variable (:type ("efi_guid_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2079 2095])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2096 2113])
+                    ("data" variable
+                       (:pointer 1
+                        :type ("uint8_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2114 2128])
+                    ("data_size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2132 2149])
+                    ("attributes" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2150 2170]))                  
+                :type "int")
+                nil [1975 2354])
+            ("efi_del_variable" function
+               (:arguments 
+                  ( ("guid" variable (:type ("efi_guid_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2454 2470])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2471 2488]))                  
+                :type "int")
+                nil [2356 2592])
+            ("efi_get_variable" function
+               (:arguments 
+                  ( ("guid" variable (:type ("efi_guid_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2701 2717])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2718 2735])
+                    ("data" variable
+                       (:pointer 2
+                        :type ("uint8_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2736 2751])
+                    ("data_size" variable
+                       (:pointer 1
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2756 2774])
+                    ("attributes" variable
+                       (:pointer 1
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2775 2796]))                  
+                :type "int")
+                nil [2594 2929])
+            ("efi_get_variable_attributes" function
+               (:arguments 
+                  ( ("guid" variable (:type ("efi_guid_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3043 3059])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [3060 3077])
+                    ("attributes" variable
+                       (:pointer 1
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3085 3106]))                  
+                :type "int")
+                nil [2931 3244])
+            ("efi_get_variable_size" function
+               (:arguments 
+                  ( ("guid" variable (:type ("efi_guid_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3352 3368])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [3369 3386])
+                    ("size" variable
+                       (:pointer 1
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3387 3400]))                  
+                :type "int")
+                nil [3246 3520])
+            ("efi_get_next_variable_name" function
+               (:arguments 
+                  ( ("guid" variable
+                       (:pointer 2
+                        :type ("efi_guid_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3633 3651])
+                    ("name" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [3652 3664]))                  
+                :type "int")
+                nil [3522 3788])
+            ("efi_chmod_variable" function
+               (:arguments 
+                  ( ("guid" variable (:type ("efi_guid_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3890 3906])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [3907 3924])
+                    ("mode" variable (:type ("mode_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3925 3937]))                  
+                :type "int")
+                nil [3790 4051])
+            ("efi_variables_supported" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [4125 4130]))                  
+                :type "int")
+                nil [4053 4183])
+            ("libefivar_init" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [4212 4217]))                  
+                :type "void")
+                nil [4185 4247])
+            ("libefivar_init" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [4276 4281]))                  
+                :type "void")
+                nil [4249 4712]))          
+      :file "lib.c"
+      :pointmax 4713
+      :fsize 4712
+      :lastmodtime '(22824 61063 370987 310000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :file "lib.h"
+      :fsize 1998
+      :lastmodtime '(22824 61063 370987 310000))
+    (semanticdb-table "semanticdb-table"
+      :file "generics.h"
+      :fsize 3717
+      :lastmodtime '(22824 61063 370987 310000)))
+  :file "!home!chenqi!work!aia_github!device!intel!efivar!src!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

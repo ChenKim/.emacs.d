@@ -1,0 +1,3441 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c++-mode
+      :tags 
+        '( ("device.h" include nil nil [622 641])
+            ("MENU_ITEMS" variable
+               (:pointer 1
+                :dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+    \"Reboot system now\",
+    \"Reboot to bootloader\",
+    \"Apply update from ADB\",
+    \"Apply update from SD card\",
+    \"Apply update from udisk\",
+    \"Wipe data/factory reset\",
+#ifndef AB_OTA_UPDATER
+    \"Wipe cache partition\",
+#endif  // !AB_OTA_UPDATER
+    \"Mount /system\",
+    \"View recovery logs\",
+    \"Run graphics test\",
+    \"Power off\",
+    NULL,
+}"
+                :type "char")
+                nil [643 1035])
+            ("MENU_ACTIONS" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+    Device::REBOOT,
+    Device::REBOOT_BOOTLOADER,
+    Device::APPLY_ADB_SIDELOAD,
+    Device::APPLY_SDCARD,
+    Device::APPLY_UDISK,
+    Device::WIPE_DATA,
+#ifndef AB_OTA_UPDATER
+    Device::WIPE_CACHE,
+#endif  // !AB_OTA_UPDATER
+    Device::MOUNT_SYSTEM,
+    Device::VIEW_RECOVERY_LOGS,
+    Device::RUN_GRAPHICS_TEST,
+    Device::SHUTDOWN,
+}"
+                :type ("Device::BuiltinAction" type (:type "class") nil nil))
+                nil [1037 1435])
+            ("static_assert" function
+               (:prototype-flag t
+                :type "int")
+                nil [1437 1701])
+            ("GetMenuItems" function
+               (:pointer 2
+                :parent "Device"
+                :constant-flag t
+                :type "char")
+                nil [1703 1769])
+            ("InvokeMenuItem" function
+               (:parent "Device"
+                :arguments 
+                  ( ("menu_position" variable (:type "int") (reparse-symbol arg-sub-list) [1816 1834]))                  
+                :type ("Device::BuiltinAction" type (:type "class") nil nil))
+                nil [1771 1908])
+            ("HandleMenuKey" function
+               (:parent "Device"
+                :arguments 
+                  ( ("key" variable (:type "int") (reparse-symbol arg-sub-list) [1936 1944])
+                    ("visible" variable (:type "bool") (reparse-symbol arg-sub-list) [1945 1958]))                  
+                :type "int")
+                nil [1910 2447]))          
+      :file "device.cpp"
+      :pointmax 2448
+      :fsize 2447
+      :lastmodtime '(22886 58380 141398 851000)
+      :unmatched-syntax '((string 1651 . 1699) (string 1577 . 1636) (number 1560 . 1561) (punctuation 1558 . 1559) (semantic-list 1540 . 1557) (SIZEOF 1534 . 1540) (punctuation 1532 . 1533) (semantic-list 1517 . 1531) (SIZEOF 1511 . 1517) (punctuation 1495 . 1496) (punctuation 1494 . 1495) (semantic-list 1478 . 1493) (SIZEOF 1472 . 1478) (punctuation 1470 . 1471) (semantic-list 1457 . 1469) (SIZEOF 1451 . 1457)))
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("_RECOVERY_DEVICE_H" variable (:constant-flag t) nil [657 675])
+            ("ui.h" include nil nil [677 692])
+            ("Device" type
+               (:members 
+                  ( ("public" label nil (reparse-symbol classsubparts) [710 717])
+                    ("Device" function
+                       (:constructor-flag t
+                        :arguments 
+                          ( ("ui" variable
+                               (:pointer 1
+                                :type ("RecoveryUI" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [736 751]))                          
+                        :type ("Device" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [729 764])
+                    ("Device" function
+                       (:destructor-flag t
+                        :typemodifiers ("virtual")
+                        :type "void")
+                        (reparse-symbol classsubparts) [767 787])
+                    ("GetUI" function
+                       (:pointer 1
+                        :typemodifiers ("virtual")
+                        :type ("RecoveryUI" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1024 1073])
+                    ("StartRecovery" function
+                       (:typemodifiers ("virtual")
+                        :type "void")
+                        (reparse-symbol classsubparts) [1235 1266])
+                    ("HandleMenuKey" function
+                       (:prototype-flag t
+                        :typemodifiers ("virtual")
+                        :arguments 
+                          ( ("key" variable (:type "int") (reparse-symbol arg-sub-list) [2183 2191])
+                            ("visible" variable (:type "bool") (reparse-symbol arg-sub-list) [2192 2205]))                          
+                        :type "int")
+                        (reparse-symbol classsubparts) [2157 2206])
+                    ("BuiltinAction" type
+                       (:members 
+                          ( ("NO_ACTION" variable
+                               (:constant-flag t
+                                :default-value (2247 2248)
+                                :type "int")
+                                (reparse-symbol enumsubparts) [2235 2248])
+                            ("REBOOT" variable
+                               (:constant-flag t
+                                :default-value (2263 2264)
+                                :type "int")
+                                (reparse-symbol enumsubparts) [2254 2264])
+                            ("APPLY_SDCARD" variable
+                               (:constant-flag t
+                                :default-value (2285 2286)
+                                :type "int")
+                                (reparse-symbol enumsubparts) [2270 2286])
+                            ("APPLY_ADB_SIDELOAD" variable
+                               (:constant-flag t
+                                :default-value (2339 2340)
+                                :type "int")
+                                (reparse-symbol enumsubparts) [2318 2340])
+                            ("WIPE_DATA" variable
+                               (:constant-flag t
+                                :default-value (2358 2359)
+                                :type "int")
+                                (reparse-symbol enumsubparts) [2346 2359])
+                            ("WIPE_CACHE" variable
+                               (:constant-flag t
+                                :default-value (2378 2379)
+                                :type "int")
+                                (reparse-symbol enumsubparts) [2365 2379])
+                            ("REBOOT_BOOTLOADER" variable
+                               (:constant-flag t
+                                :default-value (2405 2406)
+                                :type "int")
+                                (reparse-symbol enumsubparts) [2385 2406])
+                            ("SHUTDOWN" variable
+                               (:constant-flag t
+                                :default-value (2423 2424)
+                                :type "int")
+                                (reparse-symbol enumsubparts) [2412 2424])
+                            ("VIEW_RECOVERY_LOGS" variable
+                               (:constant-flag t
+                                :default-value (2451 2452)
+                                :type "int")
+                                (reparse-symbol enumsubparts) [2430 2452])
+                            ("MOUNT_SYSTEM" variable
+                               (:constant-flag t
+                                :default-value (2473 2475)
+                                :type "int")
+                                (reparse-symbol enumsubparts) [2458 2475])
+                            ("RUN_GRAPHICS_TEST" variable
+                               (:constant-flag t
+                                :default-value (2501 2503)
+                                :type "int")
+                                (reparse-symbol enumsubparts) [2481 2503])
+                            ("APPLY_UDISK" variable
+                               (:constant-flag t
+                                :default-value (2523 2525)
+                                :type "int")
+                                (reparse-symbol enumsubparts) [2509 2525]))                          
+                        :type "enum")
+                        (reparse-symbol classsubparts) [2210 2531])
+                    ("GetMenuItems" function
+                       (:prototype-flag t
+                        :pointer 2
+                        :typemodifiers ("virtual")
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol classsubparts) [2706 2748])
+                    ("InvokeMenuItem" function
+                       (:prototype-flag t
+                        :typemodifiers ("virtual")
+                        :arguments 
+                          ( ("menu_position" variable (:type "int") (reparse-symbol arg-sub-list) [3306 3324]))                          
+                        :type ("BuiltinAction" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3269 3325])
+                    ("kNoAction" variable
+                       (:typemodifiers ("static")
+                        :constant-flag t
+                        :default-value "-1"
+                        :type "int")
+                        (reparse-symbol classsubparts) [3329 3361])
+                    ("kHighlightUp" variable
+                       (:typemodifiers ("static")
+                        :constant-flag t
+                        :default-value "-2"
+                        :type "int")
+                        (reparse-symbol classsubparts) [3364 3399])
+                    ("kHighlightDown" variable
+                       (:typemodifiers ("static")
+                        :constant-flag t
+                        :default-value "-3"
+                        :type "int")
+                        (reparse-symbol classsubparts) [3402 3439])
+                    ("kInvokeItem" variable
+                       (:typemodifiers ("static")
+                        :constant-flag t
+                        :default-value "-4"
+                        :type "int")
+                        (reparse-symbol classsubparts) [3442 3476])
+                    ("PreWipeData" function
+                       (:typemodifiers ("virtual")
+                        :type "bool")
+                        (reparse-symbol classsubparts) [3967 4016])
+                    ("PostWipeData" function
+                       (:typemodifiers ("virtual")
+                        :type "bool")
+                        (reparse-symbol classsubparts) [4020 4070])
+                    ("private" label nil (reparse-symbol classsubparts) [4073 4081])
+                    ("ui_" variable
+                       (:pointer 1
+                        :type ("RecoveryUI" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [4084 4100]))                  
+                :type "class")
+                nil [694 4103])
+            ("make_device" function
+               (:prototype-flag t
+                :pointer 1
+                :type ("Device" type (:type "class") nil nil))
+                nil [4295 4317]))          
+      :file "device.h"
+      :pointmax 4340
+      :fsize 4339
+      :lastmodtime '(22886 58176 881397 353000)
+      :unmatched-syntax '((punctuation 1266 . 1267) (EXPLICIT 720 . 728))
+      :lexical-table 
+        '(("_RECOVERY_DEVICE_H")
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c++-mode
+      :tags 
+        '( ("ctype.h" include (:system-flag t) nil [622 640])
+            ("dirent.h" include (:system-flag t) nil [641 660])
+            ("errno.h" include (:system-flag t) nil [661 679])
+            ("fcntl.h" include (:system-flag t) nil [680 698])
+            ("getopt.h" include (:system-flag t) nil [699 718])
+            ("inttypes.h" include (:system-flag t) nil [719 740])
+            ("limits.h" include (:system-flag t) nil [741 760])
+            ("linux/fs.h" include (:system-flag t) nil [761 782])
+            ("linux/input.h" include (:system-flag t) nil [783 807])
+            ("stdarg.h" include (:system-flag t) nil [808 827])
+            ("stdio.h" include (:system-flag t) nil [828 846])
+            ("stdlib.h" include (:system-flag t) nil [847 866])
+            ("string.h" include (:system-flag t) nil [867 886])
+            ("sys/klog.h" include (:system-flag t) nil [887 908])
+            ("sys/stat.h" include (:system-flag t) nil [909 930])
+            ("sys/types.h" include (:system-flag t) nil [931 953])
+            ("sys/wait.h" include (:system-flag t) nil [954 975])
+            ("sys/mount.h" include (:system-flag t) nil [976 998])
+            ("time.h" include (:system-flag t) nil [999 1016])
+            ("unistd.h" include (:system-flag t) nil [1017 1036])
+            ("algorithm" include (:system-flag t) nil [1038 1058])
+            ("chrono" include (:system-flag t) nil [1059 1076])
+            ("memory" include (:system-flag t) nil [1077 1094])
+            ("string" include (:system-flag t) nil [1095 1112])
+            ("vector" include (:system-flag t) nil [1113 1130])
+            ("adb.h" include (:system-flag t) nil [1132 1148])
+            ("android-base/file.h" include (:system-flag t) nil [1149 1179])
+            ("android-base/logging.h" include (:system-flag t) nil [1180 1213])
+            ("android-base/parseint.h" include (:system-flag t) nil [1214 1248])
+            ("android-base/properties.h" include (:system-flag t) nil [1249 1285])
+            ("android-base/stringprintf.h" include (:system-flag t) nil [1286 1324])
+            ("android-base/strings.h" include (:system-flag t) nil [1325 1358])
+            ("android-base/unique_fd.h" include (:system-flag t) nil [1359 1394])
+            ("bootloader_message/bootloader_message.h" include (:system-flag t) nil [1395 1445])
+            ("cutils/android_reboot.h" include (:system-flag t) nil [1446 1480])
+            ("cutils/properties.h" include (:system-flag t) nil [1481 1511])
+            ("healthd/BatteryMonitor.h" include (:system-flag t) nil [1536 1571])
+            ("private/android_logger.h" include (:system-flag t) nil [1572 1607])
+            ("private/android_filesystem_config.h" include (:system-flag t) nil [1637 1683])
+            ("selinux/label.h" include (:system-flag t) nil [1706 1732])
+            ("selinux/selinux.h" include (:system-flag t) nil [1733 1761])
+            ("ziparchive/zip_archive.h" include (:system-flag t) nil [1762 1797])
+            ("adb_install.h" include nil nil [1799 1823])
+            ("common.h" include nil nil [1824 1843])
+            ("device.h" include nil nil [1844 1863])
+            ("error_code.h" include nil nil [1864 1887])
+            ("fuse_blk_dev_provider.h" include nil nil [1888 1922])
+            ("fuse_sideload.h" include nil nil [1923 1949])
+            ("install.h" include nil nil [1950 1970])
+            ("minadbd/minadbd.h" include nil nil [1971 1999])
+            ("minui/minui.h" include nil nil [2000 2024])
+            ("otautil/DirUtil.h" include nil nil [2025 2053])
+            ("roots.h" include nil nil [2054 2072])
+            ("rotate_logs.h" include nil nil [2073 2097])
+            ("screen_ui.h" include nil nil [2098 2120])
+            ("stub_ui.h" include nil nil [2121 2141])
+            ("ui.h" include nil nil [2142 2157])
+            ("OPTIONS" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+  { \"update_package\", required_argument, NULL, 'u' },
+  { \"retry_count\", required_argument, NULL, 'n' },
+  { \"wipe_data\", no_argument, NULL, 'w' },
+  { \"wipe_cache\", no_argument, NULL, 'c' },
+  { \"show_text\", no_argument, NULL, 't' },
+  { \"sideload\", no_argument, NULL, 's' },
+  { \"sideload_auto_reboot\", no_argument, NULL, 'a' },
+  { \"just_exit\", no_argument, NULL, 'x' },
+  { \"locale\", required_argument, NULL, 'l' },
+  { \"shutdown_after\", no_argument, NULL, 'p' },
+  { \"reason\", required_argument, NULL, 'r' },
+  { \"security\", no_argument, NULL, 'e'},
+  { \"wipe_ab\", no_argument, NULL, 0 },
+  { \"wipe_package_size\", required_argument, NULL, 0 },
+  { \"prompt_and_wipe_data\", no_argument, NULL, 0 },
+  { NULL, 0, NULL, 0 },
+}"
+                :type ("option" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2159 2927])
+            ("bootreason_blacklist" variable
+               (:typemodifiers ("static")
+                :constant-flag t
+                :type ("std::vector" type
+                     (:template-specifier 
+                        ( ("std::string" type nil nil nil))                        
+                      :type "class")
+                      nil nil))
+                nil [3002 3094])
+            ("CACHE_LOG_DIR" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"/cache/recovery\""
+                :type "char")
+                nil [3096 3149])
+            ("COMMAND_FILE" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"/cache/recovery/command\""
+                :type "char")
+                nil [3150 3210])
+            ("LOG_FILE" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"/cache/recovery/log\""
+                :type "char")
+                nil [3211 3263])
+            ("LAST_INSTALL_FILE" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"/cache/recovery/last_install\""
+                :type "char")
+                nil [3264 3334])
+            ("LOCALE_FILE" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"/cache/recovery/last_locale\""
+                :type "char")
+                nil [3335 3398])
+            ("CONVERT_FBE_DIR" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"/tmp/convert_fbe\""
+                :type "char")
+                nil [3399 3455])
+            ("CONVERT_FBE_FILE" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"/tmp/convert_fbe/convert_fbe\""
+                :type "char")
+                nil [3456 3525])
+            ("CACHE_ROOT" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"/cache\""
+                :type "char")
+                nil [3526 3567])
+            ("DATA_ROOT" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"/data\""
+                :type "char")
+                nil [3568 3607])
+            ("SDCARD_ROOT" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"/sdcard\""
+                :type "char")
+                nil [3608 3651])
+            ("UDISK_ROOT" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"/udisk\""
+                :type "char")
+                nil [3652 3693])
+            ("UDISK_DEV_BLK" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"/dev/block/sd*\""
+                :type "char")
+                nil [3694 3746])
+            ("TEMPORARY_LOG_FILE" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"/tmp/recovery.log\""
+                :type "char")
+                nil [3747 3807])
+            ("TEMPORARY_INSTALL_FILE" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"/tmp/last_install\""
+                :type "char")
+                nil [3808 3872])
+            ("LAST_KMSG_FILE" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"/cache/recovery/last_kmsg\""
+                :type "char")
+                nil [3873 3937])
+            ("LAST_LOG_FILE" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"/cache/recovery/last_log\""
+                :type "char")
+                nil [3938 4000])
+            ("EIO_RETRY_COUNT" variable
+               (:typemodifiers ("static")
+                :constant-flag t
+                :default-value "4"
+                :type "int")
+                nil [4085 4122])
+            ("BATTERY_READ_TIMEOUT_IN_SEC" variable
+               (:typemodifiers ("static")
+                :constant-flag t
+                :default-value "10"
+                :type "int")
+                nil [4123 4173])
+            ("BATTERY_OK_PERCENTAGE" variable
+               (:typemodifiers ("static")
+                :constant-flag t
+                :default-value "20"
+                :type "int")
+                nil [4400 4444])
+            ("BATTERY_WITH_CHARGER_OK_PERCENTAGE" variable
+               (:typemodifiers ("static")
+                :constant-flag t
+                :default-value "15"
+                :type "int")
+                nil [4445 4502])
+            ("RECOVERY_WIPE" variable
+               (:pointer 1
+                :constant-flag t
+                :default-value "\"/etc/recovery.wipe\""
+                :type "char")
+                nil [4520 4569])
+            ("DEFAULT_LOCALE" variable
+               (:pointer 1
+                :constant-flag t
+                :default-value "\"en-US\""
+                :type "char")
+                nil [4587 4624])
+            ("locale" variable
+               (:typemodifiers ("static")
+                :type ("std::string" type (:type "class") nil nil))
+                nil [4626 4652])
+            ("has_cache" variable
+               (:typemodifiers ("static")
+                :default-value "false"
+                :type "bool")
+                nil [4653 4683])
+            ("ui" variable
+               (:pointer 1
+                :default-value "nullptr"
+                :type ("RecoveryUI" type (:type "class") nil nil))
+                nil [4685 4710])
+            ("modified_flash" variable
+               (:default-value "false"
+                :type "bool")
+                nil [4711 4739])
+            ("stage" variable (:type ("std::string" type (:type "class") nil nil)) nil [4740 4758])
+            ("reason" variable
+               (:pointer 1
+                :constant-flag t
+                :default-value "nullptr"
+                :type "char")
+                nil [4759 4788])
+            ("sehandle" variable
+               (:pointer 1
+                :type ("selabel_handle" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [4789 4821])
+            ("fopen_path" function
+               (:pointer 1
+                :arguments 
+                  ( ("path" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [7125 7142])
+                    ("mode" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [7143 7160]))                  
+                :type ("FILE" type (:type "class") nil nil))
+                nil [7108 7558])
+            ("check_and_fclose" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("fp" variable
+                       (:pointer 1
+                        :type ("FILE" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7649 7658])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [7659 7676]))                  
+                :type "void")
+                nil [7620 7876])
+            ("is_ro_debuggable" function (:type "bool") nil [7878 7972])
+            ("reboot" function
+               (:arguments 
+                  ( ("command" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("std::string" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7986 8013]))                  
+                :type "bool")
+                nil [7974 8218])
+            ("redirect_stdio" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("filename" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [8247 8268]))                  
+                :type "void")
+                nil [8220 10830])
+            ("get_args" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("argc" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [11082 11097])
+                    ("argv" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [11098 11116]))                  
+                :type ("std::vector" type
+                     (:template-specifier 
+                        ( ("std::string" type nil nil nil))                        
+                      :type "class")
+                      nil nil))
+                nil [11041 13685])
+            ("set_update_bootloader_message" function
+               (:typemodifiers ("static")
+                :type "void")
+                nil [13790 14003])
+            ("save_kernel_log" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("destination" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [14092 14116]))                  
+                :type "void")
+                nil [14064 14551])
+            ("__pmsg_write" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("filename" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [14627 14648])
+                    ("buf" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [14649 14665])
+                    ("len" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [14666 14677]))                  
+                :type ("ssize_t" type (:type "class") nil nil))
+                nil [14599 14817])
+            ("copy_log_file_to_pmsg" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("source" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [14853 14872])
+                    ("destination" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [14873 14897]))                  
+                :type "void")
+                nil [14819 15047])
+            ("tmplog_offset" variable
+               (:typemodifiers ("static")
+                :default-value "0"
+                :type ("off_t" type (:type "class") nil nil))
+                nil [15114 15145])
+            ("copy_log_file" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("source" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [15173 15192])
+                    ("destination" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [15193 15217])
+                    ("append" variable (:type "bool") (reparse-symbol arg-sub-list) [15218 15230]))                  
+                :type "void")
+                nil [15147 15993])
+            ("copy_logs" function
+               (:typemodifiers ("static")
+                :type "void")
+                nil [15995 17352])
+            ("finish_recovery" function
+               (:typemodifiers ("static")
+                :type "void")
+                nil [17565 18694])
+            ("saved_log_file" type
+               (:members 
+                  ( ("name" variable (:type ("std::string" type (:type "class") nil nil)) (reparse-symbol classsubparts) [18722 18739])
+                    ("sb" variable (:type ("stat" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [18742 18757])
+                    ("data" variable (:type ("std::string" type (:type "class") nil nil)) (reparse-symbol classsubparts) [18760 18777]))                  
+                :type "struct")
+                nil [18696 18780])
+            ("erase_volume" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("volume" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [18807 18826]))                  
+                :type "bool")
+                nil [18782 21842])
+            ("get_menu_selection" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("headers" variable
+                       (:pointer 2
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [22245 22272])
+                    ("items" variable
+                       (:pointer 2
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [22273 22298])
+                    ("menu_only" variable (:type "bool") (reparse-symbol arg-sub-list) [22299 22314])
+                    ("initial_selection" variable (:type "int") (reparse-symbol arg-sub-list) [22345 22367])
+                    ("device" variable
+                       (:pointer 1
+                        :type ("Device" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [22368 22383]))                  
+                :type "int")
+                nil [22215 23503])
+            ("browse_directory" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("path" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("std::string" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [23595 23619])
+                    ("device" variable
+                       (:pointer 1
+                        :type ("Device" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [23620 23635]))                  
+                :type ("std::string" type (:type "class") nil nil))
+                nil [23559 25418])
+            ("yes_no" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("device" variable
+                       (:pointer 1
+                        :type ("Device" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [25439 25454])
+                    ("question1" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [25455 25477])
+                    ("question2" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [25478 25500]))                  
+                :type "bool")
+                nil [25420 25722])
+            ("ask_to_wipe_data" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("device" variable
+                       (:pointer 1
+                        :type ("Device" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [25753 25768]))                  
+                :type "bool")
+                nil [25724 25851])
+            ("wipe_data" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("device" variable
+                       (:pointer 1
+                        :type ("Device" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [25902 25917]))                  
+                :type "bool")
+                nil [25880 26248])
+            ("prompt_and_wipe_data" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("device" variable
+                       (:pointer 1
+                        :type ("Device" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [26283 26298]))                  
+                :type "bool")
+                nil [26250 26927])
+            ("wipe_cache" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("should_confirm" variable (:type "bool") (reparse-symbol arg-sub-list) [26979 26999])
+                    ("device" variable
+                       (:pointer 1
+                        :type ("Device" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [27000 27015]))                  
+                :type "bool")
+                nil [26956 27439])
+            ("secure_wipe_partition" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("partition" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("std::string" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [27637 27666]))                  
+                :type "bool")
+                nil [27603 28801])
+            ("check_wipe_package" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("wipe_package_size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [28987 29012]))                  
+                :type "bool")
+                nil [28956 31154])
+            ("wipe_ab_device" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("wipe_package_size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [31277 31302]))                  
+                :type "bool")
+                nil [31250 32214])
+            ("choose_recovery_file" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("device" variable
+                       (:pointer 1
+                        :type ("Device" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [32249 32264]))                  
+                :type "void")
+                nil [32216 33670])
+            ("run_graphics_test" function
+               (:typemodifiers ("static")
+                :type "void")
+                nil [33672 34686])
+            ("SDCARD_INSTALL_TIMEOUT" variable (:constant-flag t) nil [34797 34819])
+            ("UDISK_INSTALL_TIMEOUT" variable (:constant-flag t) nil [34831 34852])
+            ("apply_from_blk_dev" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("device" variable
+                       (:pointer 1
+                        :type ("Device" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [34887 34902])
+                    ("wipe_cache" variable
+                       (:pointer 1
+                        :type "bool")
+                        (reparse-symbol arg-sub-list) [34903 34920])
+                    ("mount_point" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [34921 34945]))                  
+                :type "int")
+                nil [34857 37264])
+            ("prompt_and_wait" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("device" variable
+                       (:pointer 1
+                        :type ("Device" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [37509 37524])
+                    ("status" variable (:type "int") (reparse-symbol arg-sub-list) [37525 37536]))                  
+                :type ("Device::BuiltinAction" type (:type "class") nil nil))
+                nil [37464 41189])
+            ("print_property" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("key" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [41218 41234])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [41235 41252])
+                    ("cookie" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [41253 41266]))                  
+                :type "void")
+                nil [41191 41304])
+            ("load_locale_from_cache" function
+               (:typemodifiers ("static")
+                :type ("std::string" type (:type "class") nil nil))
+                nil [41306 41693])
+            ("ui_print" function
+               (:arguments 
+                  ( ("format" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [41709 41728])
+                    ("..." variable (:type "vararg") (reparse-symbol arg-sub-list) [41729 41733]))                  
+                :type "void")
+                nil [41695 41999])
+            ("log_characters" variable
+               (:dereference 1
+                :default-value "\"VDIWEF\""
+                :type "char")
+                nil [42018 42051])
+            ("UiLogger" function
+               (:arguments 
+                  ( ("id" variable (:type ("android::base::LogId" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [42067 42091])
+                    ("severity" variable (:type ("android::base::LogSeverity" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [42092 42128])
+                    ("tag" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [42144 42160])
+                    ("file" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [42161 42178])
+                    ("line" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [42179 42197])
+                    ("message" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [42213 42233]))                  
+                :type "void")
+                nil [42053 42426])
+            ("is_battery_ok" function
+               (:typemodifiers ("static")
+                :type "bool")
+                nil [42428 45337])
+            ("set_retry_bootloader_message" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("retry_count" variable (:type "int") (reparse-symbol arg-sub-list) [45380 45396])
+                    ("args" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("std::vector" type
+                             (:template-specifier 
+                                ( ("std::string" type nil nil nil))                                
+                              :type "class")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [45397 45434]))                  
+                :type "void")
+                nil [45339 45831])
+            ("bootreason_in_blacklist" function
+               (:typemodifiers ("static")
+                :type "bool")
+                nil [45833 46152])
+            ("log_failure_code" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("code" variable (:type ("ErrorCode" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [46183 46198])
+                    ("update_package" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [46199 46226]))                  
+                :type "void")
+                nil [46154 46678])
+            ("main" function
+               (:arguments 
+                  ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [46689 46698])
+                    ("argv" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [46699 46711]))                  
+                :type "int")
+                nil [46680 57623]))          
+      :file "recovery.cpp"
+      :pointmax 57624
+      :fsize 57623
+      :lastmodtime '(22888 23044 302104 609000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("UDISK_INSTALL_TIMEOUT" . ((number "10" 34853 . 34855)))
+          ("SDCARD_INSTALL_TIMEOUT" . ((number "10" 34820 . 34822)))
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("_ADB_INSTALL_H" variable (:constant-flag t) nil [653 667])
+            ("RecoveryUI" type
+               (:prototype t
+                :type "class")
+                nil [669 686])
+            ("apply_from_adb" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("h" variable
+                       (:pointer 1
+                        :type ("RecoveryUI" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [707 721])
+                    ("wipe_cache" variable
+                       (:pointer 1
+                        :type "bool")
+                        (reparse-symbol arg-sub-list) [722 739])
+                    ("install_file" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [740 765]))                  
+                :type "int")
+                nil [688 766]))          
+      :file "adb_install.h"
+      :pointmax 775
+      :fsize 774
+      :lastmodtime '(22876 43658 408459 74000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("_ADB_INSTALL_H")
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("RECOVERY_COMMON_H" variable (:constant-flag t) nil [656 673])
+            ("stdio.h" include (:system-flag t) nil [675 693])
+            ("stdarg.h" include (:system-flag t) nil [694 713])
+            ("string" include (:system-flag t) nil [715 732])
+            ("STRINGIFY" variable (:constant-flag t) nil [742 751])
+            ("EXPAND" variable (:constant-flag t) nil [766 772])
+            ("RecoveryUI" type
+               (:prototype t
+                :type "class")
+                nil [790 807])
+            ("ui" variable
+               (:pointer 1
+                :typemodifiers ("extern")
+                :type ("RecoveryUI" type (:type "class") nil nil))
+                nil [809 831])
+            ("modified_flash" variable
+               (:typemodifiers ("extern")
+                :type "bool")
+                nil [832 859])
+            ("stage" variable
+               (:typemodifiers ("extern")
+                :type ("std::string" type (:type "class") nil nil))
+                nil [895 920])
+            ("reason" variable
+               (:pointer 1
+                :typemodifiers ("extern")
+                :constant-flag t
+                :type "char")
+                nil [970 996])
+            ("fopen_path" function
+               (:prototype-flag t
+                :pointer 1
+                :arguments 
+                  ( ("path" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1086 1103])
+                    ("mode" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1104 1121]))                  
+                :type ("FILE" type (:type "class") nil nil))
+                nil [1069 1122])
+            ("ui_print" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("format" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1138 1157])
+                    ("..." variable (:type "vararg") (reparse-symbol arg-sub-list) [1158 1162]))                  
+                :type "void")
+                nil [1124 1163])
+            ("is_ro_debuggable" function
+               (:prototype-flag t
+                :type "bool")
+                nil [1165 1189])
+            ("reboot" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("command" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("std::string" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1203 1230]))                  
+                :type "bool")
+                nil [1191 1231]))          
+      :file "common.h"
+      :pointmax 1262
+      :fsize 1261
+      :lastmodtime '(22876 43658 444459 74000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("EXPAND" (spp-arg-list ("x") 772 . 775) . ((symbol "STRINGIFY" 776 . 785) (semantic-list "(x)" 785 . 788)))
+          ("RECOVERY_COMMON_H")
+          ("STRINGIFY" (spp-arg-list ("x") 751 . 754) . ((punctuation "#" 755 . 756) (symbol "x" 756 . 757)))
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("_ERROR_CODE_H_" variable (:constant-flag t) nil [653 667])
+            ("ErrorCode" type
+               (:members 
+                  ( ("kNoError" variable
+                       (:constant-flag t
+                        :default-value (699 701)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [688 701])
+                    ("kLowBattery" variable
+                       (:constant-flag t
+                        :default-value (719 721)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [705 721])
+                    ("kZipVerificationFailure" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [725 749])
+                    ("kZipOpenFailure" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [752 768])
+                    ("kBootreasonInBlacklist" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [771 794])
+                    ("kPackageCompatibilityFailure" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [797 826]))                  
+                :type "enum")
+                nil [669 829])
+            ("CauseCode" type
+               (:members 
+                  ( ("kNoCause" variable
+                       (:constant-flag t
+                        :default-value (861 863)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [850 863])
+                    ("kArgsParsingFailure" variable
+                       (:constant-flag t
+                        :default-value (889 892)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [867 892])
+                    ("kStashCreationFailure" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [896 918])
+                    ("kFileOpenFailure" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [921 938])
+                    ("kLseekFailure" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [941 955])
+                    ("kFreadFailure" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [958 972])
+                    ("kFwriteFailure" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [975 990])
+                    ("kFsyncFailure" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [993 1007])
+                    ("kLibfecFailure" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1010 1025])
+                    ("kFileGetPropFailure" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1028 1048])
+                    ("kFileRenameFailure" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1051 1070])
+                    ("kSymlinkFailure" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1073 1089])
+                    ("kSetMetadataFailure" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1092 1112])
+                    ("kTune2FsFailure" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1115 1131])
+                    ("kRebootFailure" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1134 1149])
+                    ("kPackageExtractFileFailure" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1152 1179])
+                    ("kVendorFailure" variable
+                       (:constant-flag t
+                        :default-value (1199 1202)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1182 1202]))                  
+                :type "enum")
+                nil [831 1205])
+            ("UncryptErrorCode" type
+               (:members 
+                  ( ("kUncryptNoError" variable
+                       (:constant-flag t
+                        :default-value (1251 1253)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1233 1253])
+                    ("kUncryptErrorPlaceholder" variable
+                       (:constant-flag t
+                        :default-value (1284 1286)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1257 1286])
+                    ("kUncryptTimeoutError" variable
+                       (:constant-flag t
+                        :default-value (1313 1316)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1290 1316])
+                    ("kUncryptFileRemoveError" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1320 1344])
+                    ("kUncryptFileOpenError" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1347 1369])
+                    ("kUncryptSocketOpenError" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1372 1396])
+                    ("kUncryptSocketWriteError" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1399 1424])
+                    ("kUncryptSocketListenError" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1427 1453])
+                    ("kUncryptSocketAcceptError" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1456 1482])
+                    ("kUncryptFstabReadError" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1485 1508])
+                    ("kUncryptFileStatError" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1511 1533])
+                    ("kUncryptBlockOpenError" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1536 1559])
+                    ("kUncryptIoctlError" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1562 1581])
+                    ("kUncryptReadError" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1584 1602])
+                    ("kUncryptWriteError" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1605 1624])
+                    ("kUncryptFileSyncError" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1627 1649])
+                    ("kUncryptFileCloseError" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1652 1675])
+                    ("kUncryptFileRenameError" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1678 1702])
+                    ("kUncryptPackageMissingError" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1705 1733]))                  
+                :type "enum")
+                nil [1207 1736]))          
+      :file "error_code.h"
+      :pointmax 1763
+      :fsize 1762
+      :lastmodtime '(22876 43658 452459 74000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("_ERROR_CODE_H_")
+          )
+)
+
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("__FUSE_SIDELOAD_H" variable (:constant-flag t) nil [656 673])
+            ("FUSE_SIDELOAD_HOST_MOUNTPOINT" variable (:constant-flag t) nil [747 776])
+            ("FUSE_SIDELOAD_HOST_FILENAME" variable (:constant-flag t) nil [797 824])
+            ("FUSE_SIDELOAD_HOST_PATHNAME" variable (:constant-flag t) nil [847 874])
+            ("FUSE_SIDELOAD_HOST_EXIT_FLAG" variable (:constant-flag t) nil [947 975])
+            ("FUSE_SIDELOAD_HOST_EXIT_PATHNAME" variable (:constant-flag t) nil [991 1023])
+            ("provider_vtab" type
+               (:members 
+                  ( ("read_block" function
+                       (:prototype-flag t
+                        :function-pointer t
+                        :arguments 
+                          ( ("cookie" variable
+                               (:pointer 1
+                                :type "void")
+                                (reparse-symbol arg-sub-list) [1155 1168])
+                            ("block" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1169 1184])
+                            ("buffer" variable
+                               (:pointer 1
+                                :type ("uint8_t" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [1185 1201])
+                            ("fetch_size" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1202 1222]))                          
+                        :type "int")
+                        (reparse-symbol classsubparts) [1137 1223])
+                    ("close" function
+                       (:prototype-flag t
+                        :function-pointer t
+                        :arguments 
+                          ( ("cookie" variable
+                               (:pointer 1
+                                :type "void")
+                                (reparse-symbol arg-sub-list) [1261 1274]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [1247 1275]))                  
+                :type "struct")
+                nil [1090 1278])
+            ("run_fuse_sideload" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("vtab" variable
+                       (:pointer 1
+                        :type ("provider_vtab" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1302 1329])
+                    ("cookie" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [1330 1343])
+                    ("file_size" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1366 1385])
+                    ("block_size" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1386 1406]))                  
+                :type "int")
+                nil [1280 1407]))          
+      :file "fuse_sideload.h"
+      :pointmax 1416
+      :fsize 1415
+      :lastmodtime '(22876 43658 452459 74000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("FUSE_SIDELOAD_HOST_EXIT_PATHNAME" . ((semantic-list "(FUSE_SIDELOAD_HOST_MOUNTPOINT \"/\" FUSE_SIDELOAD_HOST_EXIT_FLAG)" 1024 . 1088)))
+          ("__FUSE_SIDELOAD_H")
+          ("FUSE_SIDELOAD_HOST_EXIT_FLAG" . ((string "\"exit\"" 976 . 982)))
+          ("FUSE_SIDELOAD_HOST_PATHNAME" . ((semantic-list "(FUSE_SIDELOAD_HOST_MOUNTPOINT \"/\" FUSE_SIDELOAD_HOST_FILENAME)" 875 . 938)))
+          ("FUSE_SIDELOAD_HOST_FILENAME" . ((string "\"package.zip\"" 825 . 838)))
+          ("FUSE_SIDELOAD_HOST_MOUNTPOINT" . ((string "\"/sideload\"" 777 . 788)))
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("RECOVERY_INSTALL_H_" variable (:constant-flag t) nil [658 677])
+            ("string" include (:system-flag t) nil [679 696])
+            ("ziparchive/zip_archive.h" include (:system-flag t) nil [697 732])
+            ("" type
+               (:members 
+                  ( ("INSTALL_SUCCESS" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [741 757])
+                    ("INSTALL_ERROR" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [758 772])
+                    ("INSTALL_CORRUPT" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [773 789])
+                    ("INSTALL_NONE" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [790 803])
+                    ("INSTALL_SKIPPED" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [804 820])
+                    ("INSTALL_RETRY" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [829 844]))                  
+                :type "enum")
+                nil [734 845])
+            ("install_package" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("root_path" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1025 1047])
+                    ("wipe_cache" variable
+                       (:pointer 1
+                        :type "bool")
+                        (reparse-symbol arg-sub-list) [1048 1065])
+                    ("install_file" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1066 1091])
+                    ("needs_mount" variable (:type "bool") (reparse-symbol arg-sub-list) [1112 1129])
+                    ("retry_count" variable (:type "int") (reparse-symbol arg-sub-list) [1130 1146]))                  
+                :type "int")
+                nil [1005 1147])
+            ("verify_package" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("package_data" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "unsigned char")
+                        (reparse-symbol arg-sub-list) [1284 1318])
+                    ("package_size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1319 1339]))                  
+                :type "bool")
+                nil [1264 1340])
+            ("read_metadata_from_package" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("zip" variable (:type ("ZipArchiveHandle" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1518 1539])
+                    ("meta_data" variable
+                       (:pointer 1
+                        :type ("std::string" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1540 1563]))                  
+                :type "bool")
+                nil [1486 1564])
+            ("verify_package_compatibility" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("package_zip" variable (:type ("ZipArchiveHandle" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1719 1748]))                  
+                :type "bool")
+                nil [1685 1749]))          
+      :file "install.h"
+      :pointmax 1782
+      :fsize 1781
+      :lastmodtime '(22876 43658 452459 74000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("RECOVERY_INSTALL_H_")
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("RECOVERY_ROOTS_H_" variable (:constant-flag t) nil [656 673])
+            ("Volume" type
+               (:typedef ("fstab_rec" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil)
+                :type "typedef")
+                nil [675 707])
+            ("load_volume_table" function
+               (:prototype-flag t
+                :type "void")
+                nil [765 790])
+            ("volume_for_path" function
+               (:prototype-flag t
+                :pointer 1
+                :arguments 
+                  ( ("path" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [870 887]))                  
+                :type ("Volume" type (:type "class") nil nil))
+                nil [846 888])
+            ("ensure_path_mounted" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("path" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1014 1031]))                  
+                :type "int")
+                nil [990 1032])
+            ("ensure_path_mounted_at" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("path" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1139 1156])
+                    ("mount_point" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1157 1181]))                  
+                :type "int")
+                nil [1112 1182])
+            ("ensure_path_unmounted" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("path" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1314 1331]))                  
+                :type "int")
+                nil [1288 1332])
+            ("format_volume" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("volume" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1502 1521]))                  
+                :type "int")
+                nil [1484 1522])
+            ("format_volume" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("volume" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1752 1771])
+                    ("directory" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1772 1794]))                  
+                :type "int")
+                nil [1734 1795])
+            ("setup_install_mounts" function
+               (:prototype-flag t
+                :type "int")
+                nil [1931 1958]))          
+      :file "roots.h"
+      :pointmax 1989
+      :fsize 1988
+      :lastmodtime '(22876 43658 608459 75000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("RECOVERY_ROOTS_H_")
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("_ROTATE_LOGS_H" variable (:constant-flag t) nil [653 667])
+            ("string" include (:system-flag t) nil [669 686])
+            ("private/android_logger.h" include (:system-flag t) nil [688 723])
+            ("KEEP_LOG_COUNT" variable
+               (:default-value "10"
+                :type "int")
+                nil [764 788])
+            ("logbasename" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("log_id_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [810 831])
+                    ("" variable (:type "char") (reparse-symbol arg-sub-list) [840 856])
+                    ("filename" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [865 886])
+                    ("" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [895 918])
+                    ("len" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [919 930])
+                    ("arg" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [939 949]))                  
+                :type ("ssize_t" type (:type "class") nil nil))
+                nil [790 950])
+            ("logrotate" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("logId" variable (:type ("log_id_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [979 994])
+                    ("prio" variable (:type "char") (reparse-symbol arg-sub-list) [1003 1013])
+                    ("filename" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1022 1043])
+                    ("buf" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1052 1068])
+                    ("len" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1069 1080])
+                    ("arg" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [1089 1099]))                  
+                :type ("ssize_t" type (:type "class") nil nil))
+                nil [952 1100])
+            ("rotate_logs" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("last_log_file" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1322 1348])
+                    ("last_kmsg_file" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1349 1376]))                  
+                :type "void")
+                nil [1305 1377]))          
+      :file "rotate_logs.h"
+      :pointmax 1402
+      :fsize 1401
+      :lastmodtime '(22876 43658 608459 75000)
+      :unmatched-syntax '((symbol 754 . 763))
+      :lexical-table 
+        '(("_ROTATE_LOGS_H")
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("RECOVERY_SCREEN_UI_H" variable (:constant-flag t) nil [659 679])
+            ("pthread.h" include (:system-flag t) nil [681 701])
+            ("stdio.h" include (:system-flag t) nil [702 720])
+            ("string" include (:system-flag t) nil [722 739])
+            ("ui.h" include nil nil [741 756])
+            ("GRSurface" type
+               (:prototype t
+                :type "struct")
+                nil [781 798])
+            ("ScreenRecoveryUI" type
+               (:superclasses 
+                  ( ("RecoveryUI" type
+                       (:protection "public"
+                        :type "class")
+                        nil nil))                  
+                :members 
+                  ( ("public" label nil (reparse-symbol classsubparts) [979 986])
+                    ("ScreenRecoveryUI" function
+                       (:prototype-flag t
+                        :constructor-flag t
+                        :type ("ScreenRecoveryUI" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [991 1010])
+                    ("override" variable (:type "int") (reparse-symbol classsubparts) [1053 1062])
+                    ("SetBackground" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("icon" variable (:type ("Icon" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1138 1148]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [1119 1149])
+                    ("SetSystemUpdateText" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("security_update" variable (:type "bool") (reparse-symbol arg-sub-list) [1179 1200]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [1154 1201])
+                    ("override" variable (:type "int") (reparse-symbol classsubparts) [1273 1282])
+                    ("override" variable (:type "int") (reparse-symbol classsubparts) [1335 1344])
+                    ("override" variable (:type "int") (reparse-symbol classsubparts) [1382 1391])
+                    ("override" variable (:type "int") (reparse-symbol classsubparts) [1433 1442])
+                    ("override" variable (:type "int") (reparse-symbol classsubparts) [1492 1501])
+                    ("override" variable (:type "int") (reparse-symbol classsubparts) [1527 1536])
+                    ("override" variable (:type "int") (reparse-symbol classsubparts) [1567 1576])
+                    ("__printflike" function
+                       (:prototype-flag t
+                        :type "int")
+                        (reparse-symbol classsubparts) [1640 1659])
+                    ("__printflike" function
+                       (:prototype-flag t
+                        :type "int")
+                        (reparse-symbol classsubparts) [1709 1728])
+                    ("ShowFile" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("filename" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [1747 1768]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [1733 1769])
+                    ("StartMenu" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("headers" variable
+                               (:pointer 2
+                                :constant-flag t
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [1810 1838])
+                            ("items" variable
+                               (:pointer 2
+                                :constant-flag t
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [1839 1865])
+                            ("initial_selection" variable (:type "int") (reparse-symbol arg-sub-list) [1885 1907]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [1795 1908])
+                    ("SelectMenu" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("sel" variable (:type "int") (reparse-symbol arg-sub-list) [1928 1936]))                          
+                        :type "int")
+                        (reparse-symbol classsubparts) [1913 1937])
+                    ("EndMenu" function
+                       (:prototype-flag t
+                        :type "void")
+                        (reparse-symbol classsubparts) [1942 1957])
+                    ("KeyLongPress" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("" variable (:type "int") (reparse-symbol arg-sub-list) [1981 1985]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [1963 1986])
+                    ("Redraw" function
+                       (:prototype-flag t
+                        :type "void")
+                        (reparse-symbol classsubparts) [1992 2006])
+                    ("UIElement" type
+                       (:members 
+                          ( ("HEADER" variable
+                               (:constant-flag t
+                                :type "int")
+                                (reparse-symbol enumsubparts) [2037 2044])
+                            ("MENU" variable
+                               (:constant-flag t
+                                :type "int")
+                                (reparse-symbol enumsubparts) [2045 2050])
+                            ("MENU_SEL_BG" variable
+                               (:constant-flag t
+                                :type "int")
+                                (reparse-symbol enumsubparts) [2051 2063])
+                            ("MENU_SEL_BG_ACTIVE" variable
+                               (:constant-flag t
+                                :type "int")
+                                (reparse-symbol enumsubparts) [2064 2083])
+                            ("MENU_SEL_FG" variable
+                               (:constant-flag t
+                                :type "int")
+                                (reparse-symbol enumsubparts) [2084 2096])
+                            ("LOG" variable
+                               (:constant-flag t
+                                :type "int")
+                                (reparse-symbol enumsubparts) [2097 2101])
+                            ("TEXT_FILL" variable
+                               (:constant-flag t
+                                :type "int")
+                                (reparse-symbol enumsubparts) [2102 2112])
+                            ("INFO" variable
+                               (:constant-flag t
+                                :type "int")
+                                (reparse-symbol enumsubparts) [2113 2123]))                          
+                        :type "enum")
+                        (reparse-symbol classsubparts) [2012 2124])
+                    ("SetColor" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("e" variable (:type ("UIElement" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2143 2155]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [2129 2156])
+                    ("protected" label nil (reparse-symbol classsubparts) [2160 2170])
+                    ("currentIcon" variable (:type ("Icon" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2175 2192])
+                    ("density_" variable (:type "float") (reparse-symbol classsubparts) [2272 2287])
+                    ("layout_" variable (:type "int") (reparse-symbol classsubparts) [2318 2330])
+                    ("error_icon" variable
+                       (:pointer 1
+                        :type ("GRSurface" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2336 2358])
+                    ("erasing_text" variable
+                       (:pointer 1
+                        :type ("GRSurface" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2364 2388])
+                    ("error_text" variable
+                       (:pointer 1
+                        :type ("GRSurface" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2393 2415])
+                    ("installing_text" variable
+                       (:pointer 1
+                        :type ("GRSurface" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2420 2447])
+                    ("no_command_text" variable
+                       (:pointer 1
+                        :type ("GRSurface" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2452 2479])
+                    ("introFrames" variable
+                       (:pointer 2
+                        :type ("GRSurface" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2485 2509])
+                    ("loopFrames" variable
+                       (:pointer 2
+                        :type ("GRSurface" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2514 2537])
+                    ("progressBarEmpty" variable
+                       (:pointer 1
+                        :type ("GRSurface" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2543 2571])
+                    ("progressBarFill" variable
+                       (:pointer 1
+                        :type ("GRSurface" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2576 2603])
+                    ("stageMarkerEmpty" variable
+                       (:pointer 1
+                        :type ("GRSurface" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2608 2636])
+                    ("stageMarkerFill" variable
+                       (:pointer 1
+                        :type ("GRSurface" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2641 2668])
+                    ("progressBarType" variable (:type ("ProgressType" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2674 2703])
+                    ("progressScopeStart" variable (:type "float") (reparse-symbol classsubparts) [2709 2763])
+                    ("progressScopeSize" variable (:type "float") (reparse-symbol classsubparts) [2709 2763])
+                    ("progress" variable (:type "float") (reparse-symbol classsubparts) [2709 2763])
+                    ("progressScopeTime" variable (:type "double") (reparse-symbol classsubparts) [2768 2816])
+                    ("progressScopeDuration" variable (:type "double") (reparse-symbol classsubparts) [2768 2816])
+                    ("pagesIdentical" variable (:type "bool") (reparse-symbol classsubparts) [2903 2923])
+                    ("text_cols_" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2929 2959])
+                    ("text_rows_" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2929 2959])
+                    ("text_" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol classsubparts) [3029 3042])
+                    ("text_col_" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3047 3086])
+                    ("text_row_" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3047 3086])
+                    ("text_top_" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3047 3086])
+                    ("show_text" variable (:type "bool") (reparse-symbol classsubparts) [3092 3107])
+                    ("show_text_ever" variable (:type "bool") (reparse-symbol classsubparts) [3112 3132])
+                    ("menu_" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol classsubparts) [3173 3186])
+                    ("menu_headers_" variable
+                       (:pointer 2
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol classsubparts) [3191 3224])
+                    ("show_menu" variable (:type "bool") (reparse-symbol classsubparts) [3229 3244])
+                    ("menu_items" variable (:type "int") (reparse-symbol classsubparts) [3249 3274])
+                    ("menu_sel" variable (:type "int") (reparse-symbol classsubparts) [3249 3274])
+                    ("file_viewer_text_" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol classsubparts) [3365 3390])
+                    ("progress_thread_" variable (:type ("pthread_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3396 3423])
+                    ("intro_frames" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3493 3513])
+                    ("loop_frames" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3518 3537])
+                    ("current_frame" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3543 3564])
+                    ("intro_done" variable (:type "bool") (reparse-symbol classsubparts) [3569 3585])
+                    ("animation_fps" variable (:type "int") (reparse-symbol classsubparts) [3670 3688])
+                    ("stage" variable (:type "int") (reparse-symbol classsubparts) [3694 3715])
+                    ("max_stage" variable (:type "int") (reparse-symbol classsubparts) [3694 3715])
+                    ("char_width_" variable (:type "int") (reparse-symbol classsubparts) [3721 3737])
+                    ("char_height_" variable (:type "int") (reparse-symbol classsubparts) [3742 3759])
+                    ("updateMutex" variable (:type ("pthread_mutex_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3764 3792])
+                    ("InitTextParams" function
+                       (:prototype-flag t
+                        :typemodifiers ("virtual")
+                        :type "bool")
+                        (reparse-symbol classsubparts) [3798 3828])
+                    ("draw_background_locked" function
+                       (:prototype-flag t
+                        :typemodifiers ("virtual")
+                        :type "void")
+                        (reparse-symbol classsubparts) [3834 3872])
+                    ("draw_foreground_locked" function
+                       (:prototype-flag t
+                        :typemodifiers ("virtual")
+                        :type "void")
+                        (reparse-symbol classsubparts) [3877 3915])
+                    ("draw_screen_locked" function
+                       (:prototype-flag t
+                        :typemodifiers ("virtual")
+                        :type "void")
+                        (reparse-symbol classsubparts) [3920 3954])
+                    ("update_screen_locked" function
+                       (:prototype-flag t
+                        :typemodifiers ("virtual")
+                        :type "void")
+                        (reparse-symbol classsubparts) [3959 3995])
+                    ("update_progress_locked" function
+                       (:prototype-flag t
+                        :typemodifiers ("virtual")
+                        :type "void")
+                        (reparse-symbol classsubparts) [4000 4038])
+                    ("GetCurrentFrame" function
+                       (:prototype-flag t
+                        :pointer 1
+                        :type ("GRSurface" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [4044 4073])
+                    ("GetCurrentText" function
+                       (:prototype-flag t
+                        :pointer 1
+                        :type ("GRSurface" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [4078 4106])
+                    ("ProgressThreadStartRoutine" function
+                       (:prototype-flag t
+                        :pointer 1
+                        :typemodifiers ("static")
+                        :arguments 
+                          ( ("data" variable
+                               (:pointer 1
+                                :type "void")
+                                (reparse-symbol arg-sub-list) [4152 4163]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [4112 4164])
+                    ("ProgressThreadLoop" function
+                       (:prototype-flag t
+                        :type "void")
+                        (reparse-symbol classsubparts) [4169 4195])
+                    ("ShowFile" function
+                       (:prototype-flag t
+                        :typemodifiers ("virtual")
+                        :arguments 
+                          ( ("" variable
+                               (:pointer 1
+                                :type ("FILE" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [4223 4229]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [4201 4230])
+                    ("PrintV" function
+                       (:prototype-flag t
+                        :typemodifiers ("virtual")
+                        :arguments 
+                          ( ("" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [4255 4267])
+                            ("" variable (:type "bool") (reparse-symbol arg-sub-list) [4268 4273])
+                            ("" variable (:type ("va_list" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4274 4282]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [4235 4283])
+                    ("PutChar" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("" variable (:type "char") (reparse-symbol arg-sub-list) [4301 4306]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [4288 4307])
+                    ("ClearText" function
+                       (:prototype-flag t
+                        :type "void")
+                        (reparse-symbol classsubparts) [4312 4329])
+                    ("LoadAnimation" function
+                       (:prototype-flag t
+                        :type "void")
+                        (reparse-symbol classsubparts) [4335 4356])
+                    ("LoadBitmap" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("filename" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [4377 4398])
+                            ("surface" variable
+                               (:pointer 2
+                                :type ("GRSurface" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [4399 4419]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [4361 4420])
+                    ("LoadLocalizedBitmap" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("filename" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [4450 4471])
+                            ("surface" variable
+                               (:pointer 2
+                                :type ("GRSurface" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [4472 4492]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [4425 4493])
+                    ("PixelsFromDp" function
+                       (:prototype-flag t
+                        :methodconst-flag t
+                        :arguments 
+                          ( ("dp" variable (:type "int") (reparse-symbol arg-sub-list) [4516 4523]))                          
+                        :type "int")
+                        (reparse-symbol classsubparts) [4499 4530])
+                    ("GetAnimationBaseline" function
+                       (:prototype-flag t
+                        :typemodifiers ("virtual")
+                        :type "int")
+                        (reparse-symbol classsubparts) [4535 4570])
+                    ("GetProgressBaseline" function
+                       (:prototype-flag t
+                        :typemodifiers ("virtual")
+                        :type "int")
+                        (reparse-symbol classsubparts) [4575 4609])
+                    ("GetTextBaseline" function
+                       (:prototype-flag t
+                        :typemodifiers ("virtual")
+                        :type "int")
+                        (reparse-symbol classsubparts) [4614 4644])
+                    ("DrawHorizontalRule" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("y" variable
+                               (:pointer 1
+                                :type "int")
+                                (reparse-symbol arg-sub-list) [4674 4681]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [4650 4682])
+                    ("DrawTextLine" function
+                       (:prototype-flag t
+                        :methodconst-flag t
+                        :arguments 
+                          ( ("x" variable (:type "int") (reparse-symbol arg-sub-list) [4705 4711])
+                            ("y" variable
+                               (:pointer 1
+                                :type "int")
+                                (reparse-symbol arg-sub-list) [4712 4719])
+                            ("line" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [4720 4737])
+                            ("bold" variable (:type "bool") (reparse-symbol arg-sub-list) [4738 4748]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [4687 4755])
+                    ("DrawTextLines" function
+                       (:prototype-flag t
+                        :methodconst-flag t
+                        :arguments 
+                          ( ("x" variable (:type "int") (reparse-symbol arg-sub-list) [4779 4785])
+                            ("y" variable
+                               (:pointer 1
+                                :type "int")
+                                (reparse-symbol arg-sub-list) [4786 4793])
+                            ("lines" variable
+                               (:pointer 2
+                                :constant-flag t
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [4794 4819]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [4760 4826]))                  
+                :type "class")
+                nil [932 4829]))          
+      :file "screen_ui.h"
+      :pointmax 4856
+      :fsize 4855
+      :lastmodtime '(22876 43658 608459 75000)
+      :unmatched-syntax '((number 1725 . 1726) (number 1722 . 1723) (semantic-list 1686 . 1708) (symbol 1669 . 1686) (VOID 1664 . 1668) (number 1656 . 1657) (number 1653 . 1654) (semantic-list 1617 . 1639) (symbol 1612 . 1617) (VOID 1607 . 1611) (semantic-list 1564 . 1566) (symbol 1546 . 1564) (BOOL 1541 . 1545) (semantic-list 1524 . 1526) (symbol 1511 . 1524) (BOOL 1506 . 1510) (semantic-list 1477 . 1491) (symbol 1469 . 1477) (VOID 1464 . 1468) (semantic-list 1410 . 1432) (symbol 1402 . 1410) (VOID 1397 . 1401) (semantic-list 1365 . 1381) (symbol 1354 . 1365) (VOID 1349 . 1353) (semantic-list 1304 . 1334) (symbol 1292 . 1304) (VOID 1287 . 1291) (semantic-list 1253 . 1272) (symbol 1238 . 1253) (VOID 1233 . 1237) (semantic-list 1025 . 1052) (symbol 1021 . 1025) (BOOL 1016 . 1020))
+      :lexical-table 
+        '(("RECOVERY_SCREEN_UI_H")
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("RECOVERY_STUB_UI_H" variable (:constant-flag t) nil [657 675])
+            ("ui.h" include nil nil [677 692])
+            ("StubRecoveryUI" type
+               (:superclasses 
+                  ( ("RecoveryUI" type
+                       (:protection "public"
+                        :type "class")
+                        nil nil))                  
+                :members 
+                  ( ("public" label nil (reparse-symbol classsubparts) [803 810]))                  
+                :type "class")
+                nil [759 1850]))          
+      :file "stub_ui.h"
+      :pointmax 1882
+      :fsize 1881
+      :lastmodtime '(22876 43658 608459 75000)
+      :unmatched-syntax '((semantic-list 1845 . 1847) (symbol 1836 . 1844) (semantic-list 1833 . 1835) (symbol 1826 . 1833) (VOID 1821 . 1825) (semantic-list 1797 . 1818) (symbol 1788 . 1796) (semantic-list 1778 . 1787) (symbol 1768 . 1778) (INT 1764 . 1767) (semantic-list 1759 . 1761) (symbol 1750 . 1758) (semantic-list 1655 . 1749) (symbol 1646 . 1655) (VOID 1641 . 1645) (semantic-list 1617 . 1619) (symbol 1608 . 1616) (semantic-list 1585 . 1607) (symbol 1577 . 1585) (VOID 1572 . 1576) (semantic-list 1567 . 1569) (symbol 1558 . 1566) (semantic-list 1535 . 1557) (symbol 1518 . 1535) (VOID 1513 . 1517) (semantic-list 1428 . 1510) (symbol 1419 . 1427) (semantic-list 1396 . 1418) (symbol 1391 . 1396) (VOID 1386 . 1390) (semantic-list 1336 . 1359) (symbol 1327 . 1335) (semantic-list 1324 . 1326) (symbol 1306 . 1324) (BOOL 1301 . 1305) (semantic-list 1275 . 1298) (symbol 1266 . 1274) (semantic-list 1263 . 1265) (symbol 1250 . 1263) (BOOL 1245 . 1249) (semantic-list 1240 . 1242) (symbol 1231 . 1239) (semantic-list 1216 . 1230) (symbol 1208 . 1216) (VOID 1203 . 1207) (semantic-list 1183 . 1185) (symbol 1174 . 1182) (semantic-list 1151 . 1173) (symbol 1143 . 1151) (VOID 1138 . 1142) (semantic-list 1132 . 1134) (symbol 1123 . 1131) (semantic-list 1106 . 1122) (symbol 1095 . 1106) (VOID 1090 . 1094) (semantic-list 1085 . 1087) (symbol 1076 . 1084) (semantic-list 1045 . 1075) (symbol 1033 . 1045) (VOID 1028 . 1032) (semantic-list 1023 . 1025) (symbol 1014 . 1022) (semantic-list 994 . 1013) (symbol 979 . 994) (VOID 974 . 978) (semantic-list 944 . 946) (symbol 935 . 943) (semantic-list 912 . 934) (symbol 893 . 912) (VOID 888 . 892) (semantic-list 883 . 885) (symbol 874 . 882) (semantic-list 862 . 873) (symbol 849 . 862) (VOID 844 . 848) (punctuation 839 . 840) (DEFAULT 832 . 839) (punctuation 830 . 831) (semantic-list 827 . 829) (symbol 813 . 827))
+      :lexical-table 
+        '(("RECOVERY_STUB_UI_H")
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("RECOVERY_UI_H" variable (:constant-flag t) nil [652 665])
+            ("linux/input.h" include (:system-flag t) nil [667 691])
+            ("pthread.h" include (:system-flag t) nil [692 712])
+            ("time.h" include (:system-flag t) nil [713 730])
+            ("string" include (:system-flag t) nil [732 749])
+            ("RecoveryUI" type
+               (:members 
+                  ( ("public" label nil (reparse-symbol classsubparts) [842 849])
+                    ("RecoveryUI" function
+                       (:prototype-flag t
+                        :constructor-flag t
+                        :type ("RecoveryUI" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [854 867])
+                    ("RecoveryUI" function
+                       (:destructor-flag t
+                        :typemodifiers ("virtual")
+                        :type "void")
+                        (reparse-symbol classsubparts) [873 898])
+                    ("Init" function
+                       (:prototype-flag t
+                        :typemodifiers ("virtual")
+                        :arguments 
+                          ( ("locale" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("std::string" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [1073 1099]))                          
+                        :type "bool")
+                        (reparse-symbol classsubparts) [1055 1100])
+                    ("SetStage" function
+                       (:pure-virtual-flag t
+                        :prototype-flag t
+                        :typemodifiers ("virtual")
+                        :arguments 
+                          ( ("current" variable (:type "int") (reparse-symbol arg-sub-list) [1191 1203])
+                            ("max" variable (:type "int") (reparse-symbol arg-sub-list) [1204 1212]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [1169 1217])
+                    ("Icon" type
+                       (:members 
+                          ( ("NONE" variable
+                               (:constant-flag t
+                                :type "int")
+                                (reparse-symbol enumsubparts) [1295 1300])
+                            ("INSTALLING_UPDATE" variable
+                               (:constant-flag t
+                                :type "int")
+                                (reparse-symbol enumsubparts) [1301 1319])
+                            ("ERASING" variable
+                               (:constant-flag t
+                                :type "int")
+                                (reparse-symbol enumsubparts) [1320 1328])
+                            ("NO_COMMAND" variable
+                               (:constant-flag t
+                                :type "int")
+                                (reparse-symbol enumsubparts) [1329 1340])
+                            ("ERROR" variable
+                               (:constant-flag t
+                                :type "int")
+                                (reparse-symbol enumsubparts) [1341 1348]))                          
+                        :type "enum")
+                        (reparse-symbol classsubparts) [1283 1349])
+                    ("SetBackground" function
+                       (:pure-virtual-flag t
+                        :prototype-flag t
+                        :typemodifiers ("virtual")
+                        :arguments 
+                          ( ("icon" variable (:type ("Icon" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1381 1391]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [1354 1396])
+                    ("SetSystemUpdateText" function
+                       (:pure-virtual-flag t
+                        :prototype-flag t
+                        :typemodifiers ("virtual")
+                        :arguments 
+                          ( ("security_update" variable (:type "bool") (reparse-symbol arg-sub-list) [1434 1455]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [1401 1460])
+                    ("ProgressType" type
+                       (:members 
+                          ( ("EMPTY" variable
+                               (:constant-flag t
+                                :type "int")
+                                (reparse-symbol enumsubparts) [1520 1526])
+                            ("INDETERMINATE" variable
+                               (:constant-flag t
+                                :type "int")
+                                (reparse-symbol enumsubparts) [1527 1541])
+                            ("DETERMINATE" variable
+                               (:constant-flag t
+                                :type "int")
+                                (reparse-symbol enumsubparts) [1542 1555]))                          
+                        :type "enum")
+                        (reparse-symbol classsubparts) [1500 1556])
+                    ("SetProgressType" function
+                       (:pure-virtual-flag t
+                        :prototype-flag t
+                        :typemodifiers ("virtual")
+                        :arguments 
+                          ( ("determinate" variable (:type ("ProgressType" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1590 1615]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [1561 1620])
+                    ("ShowProgress" function
+                       (:pure-virtual-flag t
+                        :prototype-flag t
+                        :typemodifiers ("virtual")
+                        :arguments 
+                          ( ("portion" variable (:type "float") (reparse-symbol arg-sub-list) [1883 1897])
+                            ("seconds" variable (:type "float") (reparse-symbol arg-sub-list) [1898 1912]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [1857 1917])
+                    ("SetProgress" function
+                       (:pure-virtual-flag t
+                        :prototype-flag t
+                        :typemodifiers ("virtual")
+                        :arguments 
+                          ( ("fraction" variable (:type "float") (reparse-symbol arg-sub-list) [2059 2074]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [2034 2079])
+                    ("ShowText" function
+                       (:pure-virtual-flag t
+                        :prototype-flag t
+                        :typemodifiers ("virtual")
+                        :arguments 
+                          ( ("visible" variable (:type "bool") (reparse-symbol arg-sub-list) [2132 2145]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [2110 2150])
+                    ("IsTextVisible" function
+                       (:pure-virtual-flag t
+                        :prototype-flag t
+                        :typemodifiers ("virtual")
+                        :type "bool")
+                        (reparse-symbol classsubparts) [2156 2189])
+                    ("WasTextEverVisible" function
+                       (:pure-virtual-flag t
+                        :prototype-flag t
+                        :typemodifiers ("virtual")
+                        :type "bool")
+                        (reparse-symbol classsubparts) [2195 2233])
+                    ("__printflike" function
+                       (:pure-virtual-flag t
+                        :prototype-flag t
+                        :type "int")
+                        (reparse-symbol classsubparts) [2479 2502])
+                    ("__printflike" function
+                       (:pure-virtual-flag t
+                        :prototype-flag t
+                        :type "int")
+                        (reparse-symbol classsubparts) [2560 2583])
+                    ("ShowFile" function
+                       (:pure-virtual-flag t
+                        :prototype-flag t
+                        :typemodifiers ("virtual")
+                        :arguments 
+                          ( ("filename" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [2611 2632]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [2589 2637])
+                    ("WaitKey" function
+                       (:prototype-flag t
+                        :typemodifiers ("virtual")
+                        :type "int")
+                        (reparse-symbol classsubparts) [2739 2761])
+                    ("IsKeyPressed" function
+                       (:prototype-flag t
+                        :typemodifiers ("virtual")
+                        :arguments 
+                          ( ("key" variable (:type "int") (reparse-symbol arg-sub-list) [2793 2801]))                          
+                        :type "bool")
+                        (reparse-symbol classsubparts) [2767 2802])
+                    ("IsLongPress" function
+                       (:prototype-flag t
+                        :typemodifiers ("virtual")
+                        :type "bool")
+                        (reparse-symbol classsubparts) [2807 2834])
+                    ("HasThreeButtons" function
+                       (:prototype-flag t
+                        :typemodifiers ("virtual")
+                        :type "bool")
+                        (reparse-symbol classsubparts) [2961 2992])
+                    ("FlushKeys" function
+                       (:prototype-flag t
+                        :typemodifiers ("virtual")
+                        :type "void")
+                        (reparse-symbol classsubparts) [3031 3056])
+                    ("KeyAction" type
+                       (:members 
+                          ( ("ENQUEUE" variable
+                               (:constant-flag t
+                                :type "int")
+                                (reparse-symbol enumsubparts) [3353 3361])
+                            ("TOGGLE" variable
+                               (:constant-flag t
+                                :type "int")
+                                (reparse-symbol enumsubparts) [3362 3369])
+                            ("REBOOT" variable
+                               (:constant-flag t
+                                :type "int")
+                                (reparse-symbol enumsubparts) [3370 3377])
+                            ("IGNORE" variable
+                               (:constant-flag t
+                                :type "int")
+                                (reparse-symbol enumsubparts) [3378 3386]))                          
+                        :type "enum")
+                        (reparse-symbol classsubparts) [3336 3387])
+                    ("CheckKey" function
+                       (:prototype-flag t
+                        :typemodifiers ("virtual")
+                        :arguments 
+                          ( ("key" variable (:type "int") (reparse-symbol arg-sub-list) [3419 3427])
+                            ("is_long_press" variable (:type "bool") (reparse-symbol arg-sub-list) [3428 3447]))                          
+                        :type ("KeyAction" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3392 3448])
+                    ("KeyLongPress" function
+                       (:prototype-flag t
+                        :typemodifiers ("virtual")
+                        :arguments 
+                          ( ("key" variable (:type "int") (reparse-symbol arg-sub-list) [3787 3795]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [3761 3796])
+                    ("SetEnableReboot" function
+                       (:prototype-flag t
+                        :typemodifiers ("virtual")
+                        :arguments 
+                          ( ("enabled" variable (:type "bool") (reparse-symbol arg-sub-list) [4157 4170]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [4128 4171])
+                    ("StartMenu" function
+                       (:pure-virtual-flag t
+                        :prototype-flag t
+                        :typemodifiers ("virtual")
+                        :arguments 
+                          ( ("headers" variable
+                               (:pointer 2
+                                :constant-flag t
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [4404 4432])
+                            ("items" variable
+                               (:pointer 2
+                                :constant-flag t
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [4433 4459])
+                            ("initial_selection" variable (:type "int") (reparse-symbol arg-sub-list) [4487 4509]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [4381 4514])
+                    ("SelectMenu" function
+                       (:pure-virtual-flag t
+                        :prototype-flag t
+                        :typemodifiers ("virtual")
+                        :arguments 
+                          ( ("sel" variable (:type "int") (reparse-symbol arg-sub-list) [4657 4665]))                          
+                        :type "int")
+                        (reparse-symbol classsubparts) [4634 4670])
+                    ("EndMenu" function
+                       (:pure-virtual-flag t
+                        :prototype-flag t
+                        :typemodifiers ("virtual")
+                        :type "void")
+                        (reparse-symbol classsubparts) [4781 4808])
+                    ("protected" label nil (reparse-symbol classsubparts) [4812 4822])
+                    ("EnqueueKey" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("key_code" variable (:type "int") (reparse-symbol arg-sub-list) [4843 4856]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [4827 4857])
+                    ("locale_" variable (:type ("std::string" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4921 4941])
+                    ("rtl_locale_" variable (:type "bool") (reparse-symbol classsubparts) [4946 4963])
+                    ("brightness_normal_" variable (:type "unsigned int") (reparse-symbol classsubparts) [5272 5304])
+                    ("brightness_dimmed_" variable (:type "unsigned int") (reparse-symbol classsubparts) [5309 5341])
+                    ("private" label nil (reparse-symbol classsubparts) [5345 5353])
+                    ("key_queue_mutex" variable (:type ("pthread_mutex_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5387 5419])
+                    ("key_queue_cond" variable (:type ("pthread_cond_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5424 5454])
+                    ("key_queue" variable
+                       (:dereference 1
+                        :type "int")
+                        (reparse-symbol classsubparts) [5459 5493])
+                    ("key_queue_len" variable (:type "int") (reparse-symbol classsubparts) [5459 5493])
+                    ("key_pressed" variable
+                       (:dereference 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [5498 5528])
+                    ("key_last_down" variable (:type "int") (reparse-symbol classsubparts) [5562 5580])
+                    ("key_long_press" variable (:type "bool") (reparse-symbol classsubparts) [5626 5646])
+                    ("key_down_count" variable (:type "int") (reparse-symbol classsubparts) [5690 5709])
+                    ("enable_reboot" variable (:type "bool") (reparse-symbol classsubparts) [5754 5773])
+                    ("rel_sum" variable (:type "int") (reparse-symbol classsubparts) [5818 5830])
+                    ("consecutive_power_keys" variable (:type "int") (reparse-symbol classsubparts) [5836 5863])
+                    ("last_key" variable (:type "int") (reparse-symbol classsubparts) [5868 5881])
+                    ("has_power_key" variable (:type "bool") (reparse-symbol classsubparts) [5887 5906])
+                    ("has_up_key" variable (:type "bool") (reparse-symbol classsubparts) [5911 5927])
+                    ("has_down_key" variable (:type "bool") (reparse-symbol classsubparts) [5932 5950])
+                    ("key_timer_t" type
+                       (:members 
+                          ( ("ui" variable
+                               (:pointer 1
+                                :type ("RecoveryUI" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [5985 6000])
+                            ("key_code" variable (:type "int") (reparse-symbol classsubparts) [6009 6022])
+                            ("count" variable (:type "int") (reparse-symbol classsubparts) [6031 6041]))                          
+                        :type "struct")
+                        (reparse-symbol classsubparts) [5956 6048])
+                    ("input_thread_" variable (:type ("pthread_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [6054 6078])
+                    ("OnKeyDetected" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("key_code" variable (:type "int") (reparse-symbol arg-sub-list) [6103 6116]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [6084 6117])
+                    ("OnInputEvent" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("fd" variable (:type "int") (reparse-symbol arg-sub-list) [6139 6146])
+                            ("epevents" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6147 6165]))                          
+                        :type "int")
+                        (reparse-symbol classsubparts) [6122 6166])
+                    ("ProcessKey" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("key_code" variable (:type "int") (reparse-symbol arg-sub-list) [6187 6200])
+                            ("updown" variable (:type "int") (reparse-symbol arg-sub-list) [6201 6212]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [6171 6213])
+                    ("IsUsbConnected" function
+                       (:prototype-flag t
+                        :type "bool")
+                        (reparse-symbol classsubparts) [6219 6241])
+                    ("time_key_helper" function
+                       (:prototype-flag t
+                        :pointer 1
+                        :typemodifiers ("static")
+                        :arguments 
+                          ( ("cookie" variable
+                               (:pointer 1
+                                :type "void")
+                                (reparse-symbol arg-sub-list) [6276 6289]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [6247 6290])
+                    ("time_key" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("key_code" variable (:type "int") (reparse-symbol arg-sub-list) [6309 6322])
+                            ("count" variable (:type "int") (reparse-symbol arg-sub-list) [6323 6333]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [6295 6334])
+                    ("SetLocale" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("std::string" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [6355 6374]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [6340 6375])
+                    ("ScreensaverState" type (:type "class") (reparse-symbol classsubparts) [6386 6443])
+                    ("screensaver_state_" variable (:type ("ScreensaverState" type (:type "class") nil nil)) (reparse-symbol classsubparts) [6448 6484])
+                    ("brightness_normal_value_" variable (:type "unsigned int") (reparse-symbol classsubparts) [6619 6657])
+                    ("brightness_dimmed_value_" variable (:type "unsigned int") (reparse-symbol classsubparts) [6662 6700])
+                    ("InitScreensaver" function
+                       (:prototype-flag t
+                        :type "bool")
+                        (reparse-symbol classsubparts) [6705 6728]))                  
+                :type "class")
+                nil [821 6731]))          
+      :file "ui.h"
+      :pointmax 6758
+      :fsize 6757
+      :lastmodtime '(22876 43658 656459 76000)
+      :unmatched-syntax '((symbol 6437 . 6440) (punctuation 6435 . 6436) (symbol 6429 . 6435) (punctuation 6427 . 6428) (symbol 6421 . 6427) (punctuation 6419 . 6420) (symbol 6411 . 6419) (symbol 6437 . 6440) (punctuation 6435 . 6436) (symbol 6429 . 6435) (punctuation 6427 . 6428) (symbol 6421 . 6427) (punctuation 6419 . 6420) (symbol 6411 . 6419) (ENUM 6381 . 6385) (number 2576 . 2577) (number 2573 . 2574) (semantic-list 2537 . 2559) (symbol 2520 . 2537) (VOID 2515 . 2519) (VIRTUAL 2507 . 2514) (number 2495 . 2496) (number 2492 . 2493) (semantic-list 2456 . 2478) (symbol 2451 . 2456) (VOID 2446 . 2450) (VIRTUAL 2438 . 2445))
+      :lexical-table 
+        '(("RECOVERY_UI_H")
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c++-mode
+      :tags 
+        '( ("unistd.h" include (:system-flag t) nil [622 641])
+            ("dirent.h" include (:system-flag t) nil [642 661])
+            ("errno.h" include (:system-flag t) nil [662 680])
+            ("stdlib.h" include (:system-flag t) nil [681 700])
+            ("string.h" include (:system-flag t) nil [701 720])
+            ("sys/types.h" include (:system-flag t) nil [721 743])
+            ("sys/wait.h" include (:system-flag t) nil [744 765])
+            ("sys/stat.h" include (:system-flag t) nil [766 787])
+            ("signal.h" include (:system-flag t) nil [788 807])
+            ("fcntl.h" include (:system-flag t) nil [808 826])
+            ("ui.h" include nil nil [828 843])
+            ("install.h" include nil nil [844 864])
+            ("common.h" include nil nil [865 884])
+            ("adb_install.h" include nil nil [885 909])
+            ("minadbd/fuse_adb_provider.h" include nil nil [910 948])
+            ("fuse_sideload.h" include nil nil [949 975])
+            ("android-base/properties.h" include (:system-flag t) nil [977 1013])
+            ("set_usb_driver" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ui" variable
+                       (:pointer 1
+                        :type ("RecoveryUI" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1042 1057])
+                    ("enabled" variable (:type "bool") (reparse-symbol arg-sub-list) [1058 1071]))                  
+                :type "void")
+                nil [1015 1519])
+            ("stop_adbd" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ui" variable
+                       (:pointer 1
+                        :type ("RecoveryUI" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1543 1558]))                  
+                :type "void")
+                nil [1521 1682])
+            ("maybe_restart_adbd" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ui" variable
+                       (:pointer 1
+                        :type ("RecoveryUI" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1715 1730]))                  
+                :type "void")
+                nil [1684 1904])
+            ("ADB_INSTALL_TIMEOUT" variable (:constant-flag t) nil [2013 2032])
+            ("apply_from_adb" function
+               (:arguments 
+                  ( ("ui" variable
+                       (:pointer 1
+                        :type ("RecoveryUI" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2057 2072])
+                    ("wipe_cache" variable
+                       (:pointer 1
+                        :type "bool")
+                        (reparse-symbol arg-sub-list) [2073 2090])
+                    ("install_file" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2091 2116]))                  
+                :type "int")
+                nil [2038 4337]))          
+      :file "adb_install.cpp"
+      :pointmax 4338
+      :fsize 4337
+      :lastmodtime '(22876 43658 408459 74000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("ADB_INSTALL_TIMEOUT" . ((number "300" 2033 . 2036)))
+          )
+)
+
+    (semanticdb-table "semanticdb-table"
+      :major-mode c++-mode
+      :tags 
+        '( ("ctype.h" include (:system-flag t) nil [2027 2045])
+            ("dirent.h" include (:system-flag t) nil [2046 2065])
+            ("errno.h" include (:system-flag t) nil [2066 2084])
+            ("fcntl.h" include (:system-flag t) nil [2085 2103])
+            ("limits.h" include (:system-flag t) nil [2104 2123])
+            ("linux/fuse.h" include (:system-flag t) nil [2124 2147])
+            ("pthread.h" include (:system-flag t) nil [2148 2168])
+            ("stdio.h" include (:system-flag t) nil [2169 2187])
+            ("stdlib.h" include (:system-flag t) nil [2188 2207])
+            ("string.h" include (:system-flag t) nil [2208 2227])
+            ("sys/inotify.h" include (:system-flag t) nil [2228 2252])
+            ("sys/mount.h" include (:system-flag t) nil [2253 2275])
+            ("sys/param.h" include (:system-flag t) nil [2276 2298])
+            ("sys/resource.h" include (:system-flag t) nil [2299 2324])
+            ("sys/stat.h" include (:system-flag t) nil [2325 2346])
+            ("sys/statfs.h" include (:system-flag t) nil [2347 2370])
+            ("sys/time.h" include (:system-flag t) nil [2371 2392])
+            ("sys/uio.h" include (:system-flag t) nil [2393 2413])
+            ("unistd.h" include (:system-flag t) nil [2414 2433])
+            ("openssl/sha.h" include (:system-flag t) nil [2435 2459])
+            ("fuse_sideload.h" include nil nil [2461 2487])
+            ("PACKAGE_FILE_ID" variable (:constant-flag t) nil [2497 2512])
+            ("EXIT_FLAG_ID" variable (:constant-flag t) nil [2540 2552])
+            ("NO_STATUS" variable (:constant-flag t) nil [2584 2593])
+            ("NO_STATUS_EXIT" variable (:constant-flag t) nil [2612 2626])
+            ("fuse_data" type
+               (:members 
+                  ( ("ffd" variable (:type "int") (reparse-symbol classsubparts) [2656 2664])
+                    ("vtab" variable
+                       (:pointer 1
+                        :type ("provider_vtab" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [2711 2738])
+                    ("cookie" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol classsubparts) [2743 2756])
+                    ("file_size" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2762 2781])
+                    ("block_size" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2800 2820])
+                    ("file_blocks" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2892 2913])
+                    ("uid" variable (:type ("uid_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2955 2965])
+                    ("gid" variable (:type ("gid_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2970 2980])
+                    ("curr_block" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2986 3006])
+                    ("block_data" variable
+                       (:pointer 1
+                        :type ("uint8_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3066 3086])
+                    ("extra_block" variable
+                       (:pointer 1
+                        :type ("uint8_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3092 3113])
+                    ("hashes" variable
+                       (:pointer 1
+                        :type ("uint8_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3211 3227]))                  
+                :type "struct")
+                nil [2633 3340])
+            ("fuse_reply" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("fd" variable
+                       (:pointer 1
+                        :type ("fuse_data" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3365 3386])
+                    ("unique" variable (:type ("__u64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3387 3400])
+                    ("data" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [3401 3418])
+                    ("len" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3419 3430]))                  
+                :type "void")
+                nil [3342 3847])
+            ("handle_init" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [3872 3883])
+                    ("fd" variable
+                       (:pointer 1
+                        :type ("fuse_data" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3884 3905])
+                    ("hdr" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("fuse_in_header" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3906 3939]))                  
+                :type "int")
+                nil [3849 5325])
+            ("fill_attr" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("attr" variable
+                       (:pointer 1
+                        :type ("fuse_attr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5349 5372])
+                    ("fd" variable
+                       (:pointer 1
+                        :type ("fuse_data" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5373 5394])
+                    ("nodeid" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5417 5433])
+                    ("size" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5434 5448])
+                    ("mode" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5449 5463]))                  
+                :type "void")
+                nil [5327 5742])
+            ("handle_getattr" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [5770 5787])
+                    ("fd" variable
+                       (:pointer 1
+                        :type ("fuse_data" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5788 5809])
+                    ("hdr" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("fuse_in_header" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5810 5843]))                  
+                :type "int")
+                nil [5744 6459])
+            ("handle_lookup" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [6486 6497])
+                    ("fd" variable
+                       (:pointer 1
+                        :type ("fuse_data" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6498 6519])
+                    ("hdr" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("fuse_in_header" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6545 6578]))                  
+                :type "int")
+                nil [6461 7471])
+            ("handle_open" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [7496 7513])
+                    ("fd" variable
+                       (:pointer 1
+                        :type ("fuse_data" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7514 7535])
+                    ("hdr" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("fuse_in_header" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7536 7569]))                  
+                :type "int")
+                nil [7473 7892])
+            ("handle_flush" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [7918 7929])
+                    ("fd" variable
+                       (:pointer 1
+                        :type ("fuse_data" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7930 7951])
+                    ("hdr" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("fuse_in_header" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7952 7985]))                  
+                :type "int")
+                nil [7894 8003])
+            ("handle_release" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [8031 8042])
+                    ("fd" variable
+                       (:pointer 1
+                        :type ("fuse_data" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8043 8064])
+                    ("hdr" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("fuse_in_header" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8065 8098]))                  
+                :type "int")
+                nil [8005 8116])
+            ("fetch_block" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("fd" variable
+                       (:pointer 1
+                        :type ("fuse_data" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8266 8287])
+                    ("block" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8288 8303]))                  
+                :type "int")
+                nil [8243 9937])
+            ("handle_read" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [9962 9973])
+                    ("fd" variable
+                       (:pointer 1
+                        :type ("fuse_data" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9974 9995])
+                    ("hdr" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("fuse_in_header" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9996 10029]))                  
+                :type "int")
+                nil [9939 12682])
+            ("run_fuse_sideload" function
+               (:arguments 
+                  ( ("vtab" variable
+                       (:pointer 1
+                        :type ("provider_vtab" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [12706 12733])
+                    ("cookie" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [12734 12747])
+                    ("file_size" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12770 12789])
+                    ("block_size" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12790 12810]))                  
+                :type "int")
+                nil [12684 17379]))          
+      :file "fuse_sideload.cpp"
+      :pointmax 17380
+      :fsize 17379
+      :lastmodtime '(22876 43658 452459 74000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("EXIT_FLAG_ID" . ((semantic-list "(FUSE_ROOT_ID+2)" 2558 . 2574)))
+          ("PACKAGE_FILE_ID" . ((semantic-list "(FUSE_ROOT_ID+1)" 2515 . 2531)))
+          ("NO_STATUS_EXIT" . ((number "2" 2630 . 2631)))
+          ("NO_STATUS" . ((number "1" 2602 . 2603)))
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c++-mode
+      :tags 
+        '( ("install.h" include nil nil [622 642])
+            ("ctype.h" include (:system-flag t) nil [644 662])
+            ("errno.h" include (:system-flag t) nil [663 681])
+            ("fcntl.h" include (:system-flag t) nil [682 700])
+            ("inttypes.h" include (:system-flag t) nil [701 722])
+            ("limits.h" include (:system-flag t) nil [723 742])
+            ("string.h" include (:system-flag t) nil [743 762])
+            ("sys/stat.h" include (:system-flag t) nil [763 784])
+            ("sys/wait.h" include (:system-flag t) nil [785 806])
+            ("unistd.h" include (:system-flag t) nil [807 826])
+            ("algorithm" include (:system-flag t) nil [828 848])
+            ("chrono" include (:system-flag t) nil [849 866])
+            ("condition_variable" include (:system-flag t) nil [867 896])
+            ("functional" include (:system-flag t) nil [897 918])
+            ("limits" include (:system-flag t) nil [919 936])
+            ("map" include (:system-flag t) nil [937 951])
+            ("mutex" include (:system-flag t) nil [952 968])
+            ("string" include (:system-flag t) nil [969 986])
+            ("thread" include (:system-flag t) nil [987 1004])
+            ("vector" include (:system-flag t) nil [1005 1022])
+            ("android-base/file.h" include (:system-flag t) nil [1024 1054])
+            ("android-base/logging.h" include (:system-flag t) nil [1055 1088])
+            ("android-base/parsedouble.h" include (:system-flag t) nil [1089 1126])
+            ("android-base/parseint.h" include (:system-flag t) nil [1127 1161])
+            ("android-base/properties.h" include (:system-flag t) nil [1162 1198])
+            ("android-base/stringprintf.h" include (:system-flag t) nil [1199 1237])
+            ("android-base/strings.h" include (:system-flag t) nil [1238 1271])
+            ("vintf/VintfObjectRecovery.h" include (:system-flag t) nil [1272 1310])
+            ("ziparchive/zip_archive.h" include (:system-flag t) nil [1311 1346])
+            ("common.h" include nil nil [1348 1367])
+            ("error_code.h" include nil nil [1368 1391])
+            ("minui/minui.h" include nil nil [1392 1416])
+            ("otautil/SysUtil.h" include nil nil [1417 1445])
+            ("otautil/ThermalUtil.h" include nil nil [1446 1478])
+            ("roots.h" include nil nil [1479 1497])
+            ("ui.h" include nil nil [1498 1513])
+            ("verifier.h" include nil nil [1514 1535])
+            ("std::chrono_literals" using (:type ("std::chrono_literals" type
+                 (:prototype t
+                  :type "namespace")
+                  nil nil)) nil [1537 1574])
+            ("PUBLIC_KEYS_FILE" variable (:constant-flag t) nil [1584 1600])
+            ("METADATA_PATH" variable
+               (:pointer 1
+                :constant-flag t
+                :default-value "\"META-INF/com/android/metadata\""
+                :type "char")
+                nil [1630 1690])
+            ("UNCRYPT_STATUS" variable
+               (:pointer 1
+                :constant-flag t
+                :default-value "\"/cache/recovery/uncrypt_status\""
+                :type "char")
+                nil [1708 1770])
+            ("VERIFICATION_PROGRESS_TIME" variable
+               (:default-value "60"
+                :type "int")
+                nil [1850 1886])
+            ("VERIFICATION_PROGRESS_FRACTION" variable
+               (:default-value "0.25"
+                :type "float")
+                nil [1904 1948])
+            ("DEFAULT_FILES_PROGRESS_FRACTION" variable
+               (:default-value "0.4"
+                :type "float")
+                nil [1966 2010])
+            ("DEFAULT_IMAGE_PROGRESS_FRACTION" variable
+               (:default-value "0.1"
+                :type "float")
+                nil [2028 2072])
+            ("finish_log_temperature" variable
+               (:typemodifiers ("static")
+                :type ("std::condition_variable" type (:type "class") nil nil))
+                nil [2074 2128])
+            ("parse_build_number" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("str" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("std::string" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2226 2249]))                  
+                :type "int")
+                nil [2196 2623])
+            ("read_metadata_from_package" function
+               (:arguments 
+                  ( ("zip" variable (:type ("ZipArchiveHandle" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2657 2678])
+                    ("meta_data" variable
+                       (:pointer 1
+                        :type ("std::string" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2679 2702]))                  
+                :type "bool")
+                nil [2625 3390])
+            ("read_source_target_build" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("zip" variable (:type ("ZipArchiveHandle" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3524 3545])
+                    ("log_buffer" variable
+                       (:reference 1
+                        :type ("std::vector" type
+                             (:template-specifier 
+                                ( ("std::string" type nil nil nil))                                
+                              :type "class")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3546 3583]))                  
+                :type "void")
+                nil [3487 4640])
+            ("update_binary_command" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("path" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("std::string" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4925 4949])
+                    ("zip" variable (:type ("ZipArchiveHandle" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4950 4971])
+                    ("retry_count" variable (:type "int") (reparse-symbol arg-sub-list) [4972 4988])
+                    ("status_fd" variable (:type "int") (reparse-symbol arg-sub-list) [5015 5029])
+                    ("cmd" variable
+                       (:pointer 1
+                        :type ("std::vector" type
+                             (:template-specifier 
+                                ( ("std::string" type nil nil nil))                                
+                              :type "class")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5030 5060]))                  
+                :type "int")
+                nil [4899 5061])
+            ("update_binary_command" function
+               (:arguments 
+                  ( ("path" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("std::string" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [10154 10178])
+                    ("zip" variable (:type ("ZipArchiveHandle" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10179 10200])
+                    ("retry_count" variable (:type "int") (reparse-symbol arg-sub-list) [10201 10217])
+                    ("status_fd" variable (:type "int") (reparse-symbol arg-sub-list) [10244 10258])
+                    ("cmd" variable
+                       (:pointer 1
+                        :type ("std::vector" type
+                             (:template-specifier 
+                                ( ("std::string" type nil nil nil))                                
+                              :type "class")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10259 10289]))                  
+                :type "int")
+                nil [10128 11339])
+            ("log_max_temperature" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("max_temperature" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [11400 11421]))                  
+                :type "void")
+                nil [11368 11687])
+            ("try_update_binary" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("path" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [11786 11803])
+                    ("zip" variable (:type ("ZipArchiveHandle" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11804 11825])
+                    ("wipe_cache" variable
+                       (:pointer 1
+                        :type "bool")
+                        (reparse-symbol arg-sub-list) [11826 11843])
+                    ("log_buffer" variable
+                       (:reference 1
+                        :type ("std::vector" type
+                             (:template-specifier 
+                                ( ("std::string" type nil nil nil))                                
+                              :type "class")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11873 11910])
+                    ("retry_count" variable (:type "int") (reparse-symbol arg-sub-list) [11911 11927])
+                    ("max_temperature" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [11957 11978]))                  
+                :type "int")
+                nil [11757 17595])
+            ("verify_package_compatibility" function
+               (:arguments 
+                  ( ("package_zip" variable (:type ("ZipArchiveHandle" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [17834 17863]))                  
+                :type "bool")
+                nil [17800 20409])
+            ("really_install_package" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("path" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [20445 20462])
+                    ("wipe_cache" variable
+                       (:pointer 1
+                        :type "bool")
+                        (reparse-symbol arg-sub-list) [20463 20480])
+                    ("needs_mount" variable (:type "bool") (reparse-symbol arg-sub-list) [20481 20498])
+                    ("log_buffer" variable
+                       (:reference 1
+                        :type ("std::vector" type
+                             (:template-specifier 
+                                ( ("std::string" type nil nil nil))                                
+                              :type "class")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [20522 20559])
+                    ("retry_count" variable (:type "int") (reparse-symbol arg-sub-list) [20560 20576])
+                    ("max_temperature" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [20577 20598]))                  
+                :type "int")
+                nil [20411 22720])
+            ("install_package" function
+               (:arguments 
+                  ( ("path" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [22742 22759])
+                    ("wipe_cache" variable
+                       (:pointer 1
+                        :type "bool")
+                        (reparse-symbol arg-sub-list) [22760 22777])
+                    ("install_file" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [22778 22803])
+                    ("needs_mount" variable (:type "bool") (reparse-symbol arg-sub-list) [22820 22837])
+                    ("retry_count" variable (:type "int") (reparse-symbol arg-sub-list) [22838 22854]))                  
+                :type "int")
+                nil [22722 25480])
+            ("verify_package" function
+               (:arguments 
+                  ( ("package_data" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "unsigned char")
+                        (reparse-symbol arg-sub-list) [25502 25536])
+                    ("package_size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [25537 25557]))                  
+                :type "bool")
+                nil [25482 26411]))          
+      :file "install.cpp"
+      :pointmax 26412
+      :fsize 26411
+      :lastmodtime '(22876 43658 452459 74000)
+      :unmatched-syntax '((symbol 2018 . 2027) (STATIC 2011 . 2017) (symbol 1956 . 1965) (STATIC 1949 . 1955) (symbol 1894 . 1903) (STATIC 1887 . 1893) (symbol 1840 . 1849) (STATIC 1833 . 1839) (symbol 1698 . 1707) (STATIC 1691 . 1697) (symbol 1620 . 1629) (STATIC 1613 . 1619))
+      :lexical-table 
+        '(("PUBLIC_KEYS_FILE" . ((string "\"/res/keys\"" 1601 . 1612)))
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :file "verifier.h"
+      :fsize 2300
+      :lastmodtime '(22876 43658 664459 76000))
+    (semanticdb-table "semanticdb-table"
+      :major-mode c++-mode
+      :tags 
+        '( ("roots.h" include nil nil [622 640])
+            ("errno.h" include (:system-flag t) nil [642 660])
+            ("stdlib.h" include (:system-flag t) nil [661 680])
+            ("sys/mount.h" include (:system-flag t) nil [681 703])
+            ("sys/stat.h" include (:system-flag t) nil [704 725])
+            ("sys/types.h" include (:system-flag t) nil [726 748])
+            ("sys/wait.h" include (:system-flag t) nil [749 770])
+            ("unistd.h" include (:system-flag t) nil [771 790])
+            ("ctype.h" include (:system-flag t) nil [791 809])
+            ("fcntl.h" include (:system-flag t) nil [810 828])
+            ("android-base/logging.h" include (:system-flag t) nil [830 863])
+            ("ext4_utils/make_ext4fs.h" include (:system-flag t) nil [864 899])
+            ("ext4_utils/wipe.h" include (:system-flag t) nil [900 928])
+            ("fs_mgr.h" include (:system-flag t) nil [929 948])
+            ("common.h" include nil nil [950 969])
+            ("mounts.h" include nil nil [970 989])
+            ("cryptfs.h" include nil nil [990 1010])
+            ("fstab" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :default-value "NULL"
+                :type ("fstab" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1012 1046])
+            ("sehandle" variable
+               (:pointer 1
+                :typemodifiers ("extern")
+                :type ("selabel_handle" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1048 1087])
+            ("load_volume_table" function (:type "void") nil [1089 1807])
+            ("volume_for_path" function
+               (:pointer 1
+                :arguments 
+                  ( ("path" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1833 1850]))                  
+                :type ("Volume" type (:type "class") nil nil))
+                nil [1809 1912])
+            ("ensure_path_mounted_at" function
+               (:arguments 
+                  ( ("path" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2005 2022])
+                    ("mount_point" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2023 2047]))                  
+                :type "int")
+                nil [1978 3781])
+            ("ensure_path_mounted" function
+               (:arguments 
+                  ( ("path" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [3807 3824]))                  
+                :type "int")
+                nil [3783 3919])
+            ("ensure_path_unmounted" function
+               (:arguments 
+                  ( ("path" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [3947 3964]))                  
+                :type "int")
+                nil [3921 4573])
+            ("exec_cmd" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("path" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [4595 4612])
+                    ("argv" variable
+                       (:pointer 1
+                        :dereference 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [4613 4632]))                  
+                :type "int")
+                nil [4575 4970])
+            ("format_volume" function
+               (:arguments 
+                  ( ("volume" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [4990 5009])
+                    ("directory" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [5010 5032]))                  
+                :type "int")
+                nil [4972 8362])
+            ("format_volume" function
+               (:arguments 
+                  ( ("volume" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [8382 8401]))                  
+                :type "int")
+                nil [8364 8445])
+            ("setup_install_mounts" function (:type "int") nil [8447 9180]))          
+      :file "roots.cpp"
+      :pointmax 9181
+      :fsize 9180
+      :lastmodtime '(22876 43658 608459 75000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("MOUNTS_H_" variable (:constant-flag t) nil [648 657])
+            ("MountedVolume" type
+               (:prototype t
+                :type "struct")
+                nil [659 680])
+            ("scan_mounted_volumes" function
+               (:prototype-flag t
+                :type "bool")
+                nil [682 710])
+            ("find_mounted_volume_by_device" function
+               (:prototype-flag t
+                :pointer 1
+                :arguments 
+                  ( ("device" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [757 776]))                  
+                :type ("MountedVolume" type (:type "class") nil nil))
+                nil [712 777])
+            ("find_mounted_volume_by_mount_point" function
+               (:prototype-flag t
+                :pointer 1
+                :arguments 
+                  ( ("mount_point" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [829 853]))                  
+                :type ("MountedVolume" type (:type "class") nil nil))
+                nil [779 854])
+            ("unmount_mounted_volume" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("volume" variable
+                       (:pointer 1
+                        :type ("MountedVolume" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [883 905]))                  
+                :type "int")
+                nil [856 906])
+            ("remount_read_only" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("volume" variable
+                       (:pointer 1
+                        :type ("MountedVolume" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [930 952]))                  
+                :type "int")
+                nil [908 953]))          
+      :file "mounts.h"
+      :pointmax 962
+      :fsize 961
+      :lastmodtime '(22876 43658 456459 74000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("MOUNTS_H_")
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c++-mode
+      :tags 
+        '( ("mounts.h" include nil nil [622 641])
+            ("errno.h" include (:system-flag t) nil [643 661])
+            ("fcntl.h" include (:system-flag t) nil [662 680])
+            ("mntent.h" include (:system-flag t) nil [681 700])
+            ("stdio.h" include (:system-flag t) nil [701 719])
+            ("stdlib.h" include (:system-flag t) nil [720 739])
+            ("string.h" include (:system-flag t) nil [740 759])
+            ("sys/mount.h" include (:system-flag t) nil [760 782])
+            ("string" include (:system-flag t) nil [784 801])
+            ("vector" include (:system-flag t) nil [802 819])
+            ("MountedVolume" type
+               (:members 
+                  ( ("device" variable (:type ("std::string" type (:type "class") nil nil)) (reparse-symbol classsubparts) [848 867])
+                    ("mount_point" variable (:type ("std::string" type (:type "class") nil nil)) (reparse-symbol classsubparts) [872 896])
+                    ("filesystem" variable (:type ("std::string" type (:type "class") nil nil)) (reparse-symbol classsubparts) [901 924])
+                    ("flags" variable (:type ("std::string" type (:type "class") nil nil)) (reparse-symbol classsubparts) [929 947]))                  
+                :type "struct")
+                nil [821 950])
+            ("g_mounts_state" variable (:type ("std::vector" type
+                 (:template-specifier 
+                    ( ("MountedVolume" type (:pointer 1) nil nil))                    
+                  :type "class")
+                  nil nil)) nil [952 995])
+            ("scan_mounted_volumes" function (:type "bool") nil [997 1617])
+            ("find_mounted_volume_by_device" function
+               (:pointer 1
+                :arguments 
+                  ( ("device" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1664 1683]))                  
+                :type ("MountedVolume" type (:type "class") nil nil))
+                nil [1619 1845])
+            ("find_mounted_volume_by_mount_point" function
+               (:pointer 1
+                :arguments 
+                  ( ("mount_point" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1897 1921]))                  
+                :type ("MountedVolume" type (:type "class") nil nil))
+                nil [1847 2093])
+            ("unmount_mounted_volume" function
+               (:arguments 
+                  ( ("volume" variable
+                       (:pointer 1
+                        :type ("MountedVolume" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2122 2144]))                  
+                :type "int")
+                nil [2095 2423])
+            ("remount_read_only" function
+               (:arguments 
+                  ( ("volume" variable
+                       (:pointer 1
+                        :type ("MountedVolume" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2447 2469]))                  
+                :type "int")
+                nil [2425 2656]))          
+      :file "mounts.cpp"
+      :pointmax 2657
+      :fsize 2656
+      :lastmodtime '(22876 43658 456459 74000)
+      :unmatched-syntax nil)
+
+
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("__FUSE_BLK_DEV_PROVIDER_H" variable (:constant-flag t) nil [664 689])
+            ("start_blk_dev_fuse" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("path" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [715 732]))                  
+                :type "bool")
+                nil [691 733]))          
+      :file "fuse_blk_dev_provider.h"
+      :pointmax 742
+      :fsize 741
+      :lastmodtime '(22887 12297 173542 257000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("__FUSE_BLK_DEV_PROVIDER_H")
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c++-mode
+      :tags 
+        '( ("stdlib.h" include (:system-flag t) nil [622 641])
+            ("stdio.h" include (:system-flag t) nil [642 660])
+            ("string.h" include (:system-flag t) nil [661 680])
+            ("errno.h" include (:system-flag t) nil [681 699])
+            ("sys/mount.h" include (:system-flag t) nil [700 722])
+            ("sys/stat.h" include (:system-flag t) nil [723 744])
+            ("unistd.h" include (:system-flag t) nil [745 764])
+            ("fcntl.h" include (:system-flag t) nil [765 783])
+            ("android-base/file.h" include (:system-flag t) nil [785 815])
+            ("fuse_sideload.h" include nil nil [817 843])
+            ("file_data" type
+               (:members 
+                  ( ("fd" variable (:type "int") (reparse-symbol classsubparts) [868 875])
+                    ("file_size" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [912 931])
+                    ("block_size" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [936 956]))                  
+                :type "struct")
+                nil [845 959])
+            ("read_block_file" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("cookie" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [988 1001])
+                    ("block" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1002 1017])
+                    ("buffer" variable
+                       (:pointer 1
+                        :type ("uint8_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1018 1034])
+                    ("fetch_size" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1035 1055]))                  
+                :type "int")
+                nil [961 1527])
+            ("close_file" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("cookie" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [1552 1565]))                  
+                :type "void")
+                nil [1529 1646])
+            ("start_blk_dev_fuse" function
+               (:arguments 
+                  ( ("path" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1672 1689]))                  
+                :type "bool")
+                nil [1648 2602]))          
+      :file "fuse_blk_dev_provider.cpp"
+      :pointmax 2603
+      :fsize 2602
+      :lastmodtime '(22888 23072 298104 815000)
+      :unmatched-syntax nil))
+  :file "!home!chenqi!work!ivio!bootable!recovery!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

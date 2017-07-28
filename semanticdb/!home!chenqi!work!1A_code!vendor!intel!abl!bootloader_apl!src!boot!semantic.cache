@@ -1,0 +1,1149 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :file "emmc.h"
+      :fsize 4022
+      :lastmodtime '(22796 14660 613483 306000))
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("stdbool.h" include (:system-flag t) nil [1326 1346])
+            ("stdint.h" include (:system-flag t) nil [1347 1366])
+            ("emmc.h" include nil nil [1368 1385])
+            ("bootloader.h" include nil nil [1387 1410])
+            ("pci.h" include nil nil [1411 1427])
+            ("kp_image.h" include nil nil [1428 1449])
+            ("loadfile.h" include nil nil [1450 1471])
+            ("drivers/mmc/mmc.h" include nil nil [1480 1508])
+            ("drivers/mmc/sdhci.h" include nil nil [1509 1539])
+            ("drivers/mmc/sdhci-bxt.h" include nil nil [1540 1574])
+            ("emmc_boot_buffer" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :default-value "0"
+                :type "void")
+                nil [1576 1612])
+            ("emmc_boot_data_END" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :default-value "0"
+                :type "void")
+                nil [1657 1693])
+            ("emmc_boot_image" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "0"
+                :type ("kpi_header" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1742 1794])
+            ("emmc_image_status" variable
+               (:typemodifiers ("static")
+                :default-value "eMMC_IMAGE_MISSING"
+                :type "int")
+                nil [1832 1882])
+            ("my_hash" variable
+               (:typemodifiers ("static")
+                :type ("_hash" type (:type "union") nil nil))
+                nil [1884 1911])
+            ("sdmmc" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :default-value "NULL"
+                :type ("mmc" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1913 1945])
+            ("emmc_boot_start" function
+               (:arguments 
+                  ( ("dev" variable (:type ("pci_device_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2196 2213])
+                    ("image_buffer" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [2214 2233]))                  
+                :type "int")
+                nil [2175 2520])
+            ("emmc_boot_stop" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [2711 2716]))                  
+                :type "void")
+                nil [2683 2840])
+            ("emmc_boot_check" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [3063 3068]))                  
+                :type "void")
+                nil [3041 3656])
+            ("emmc_boot_await_done" function
+               (:arguments 
+                  ( ("millis" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [3962 3978]))                  
+                :type "void")
+                nil [3935 6144])
+            ("emmc_boot_get_image" function
+               (:pointer 1
+                :constant-flag t
+                :arguments 
+                  ( ("err" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [6331 6340])
+                    ("hash" variable
+                       (:pointer 2
+                        :type ("_hash" type (:type "union") nil nil))
+                        (reparse-symbol arg-sub-list) [6341 6360]))                  
+                :type "void")
+                nil [6297 6696]))          
+      :file "emmc.c"
+      :pointmax 6774
+      :fsize 6773
+      :lastmodtime '(22796 14660 613483 306000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("bootloader.h" include nil nil [1322 1345])
+            ("version.h" include nil nil [1346 1366])
+            ("boot.h" include nil nil [1368 1385])
+            ("boot/android.h" include nil nil [1386 1411])
+            ("bootmode.h" include nil nil [1412 1433])
+            ("bufmem.h" include nil nil [1434 1453])
+            ("cli.h" include nil nil [1454 1470])
+            ("consbuf.h" include nil nil [1471 1491])
+            ("emmc.h" include nil nil [1492 1509])
+            ("sb.h" include nil nil [1510 1525])
+            ("drivers/mmc/mmc.h" include nil nil [1527 1555])
+            ("drivers/fs/filesys.h" include nil nil [1556 1587])
+            ("drivers/blockdev/blockdev.h" include nil nil [1588 1626])
+            ("drivers/fstspi/fstspi.h" include nil nil [1627 1661])
+            ("cse/cse_S2.h" include nil nil [1662 1685])
+            ("kp_image.h" include nil nil [1687 1708])
+            ("loadfile.h" include nil nil [1709 1730])
+            ("ifwi.h" include nil nil [1732 1749])
+            ("config/cdata.h" include nil nil [1751 1776])
+            ("config/builtin.h" include nil nil [1777 1804])
+            ("pm.h" include nil nil [1806 1821])
+            ("boot_device_str" variable
+               (:dereference 1
+                :type "char")
+                nil [1823 1848])
+            ("is_android" variable
+               (:default-value "0"
+                :type "int")
+                nil [1849 1868])
+            ("android_features" variable
+               (:default-value "{0}"
+                :type ("android_features_t" type (:type "class") nil nil))
+                nil [1869 1911])
+            ("is_android_memboot" variable
+               (:default-value "0"
+                :type "int")
+                nil [1912 1939])
+            ("mem_boot_addr" variable
+               (:default-value "0"
+                :type ("uintptr_t" type (:type "class") nil nil))
+                nil [1940 1968])
+            ("BOOT_IMAGE_ENTRY" variable (:constant-flag t) nil [2104 2120])
+            ("boot_image_idx" variable
+               (:typemodifiers ("static")
+                :type "int")
+                nil [2954 2980])
+            ("show_boot_device" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("fmt" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [3060 3076])
+                    ("..." variable (:type "vararg") (reparse-symbol arg-sub-list) [3077 3081]))                  
+                :type "void")
+                nil [3030 3341])
+            ("device_name" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :arguments 
+                  ( ("dev" variable (:type ("pci_device_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3376 3393])
+                    ("part" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [3394 3408]))                  
+                :type "char")
+                nil [3343 3577])
+            ("do_emmc_boot_partition" function
+               (:arguments 
+                  ( ("cmd_ac" variable (:type "int") (reparse-symbol arg-sub-list) [3649 3660])
+                    ("cmd_av" variable
+                       (:pointer 1
+                        :dereference 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [3661 3682]))                  
+                :type "void")
+                nil [3620 4186])
+            ("do_emmc_filesystem" function
+               (:arguments 
+                  ( ("dev" variable (:type ("pci_device_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4260 4277])
+                    ("partition" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [4278 4297])
+                    ("filename" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [4298 4319])
+                    ("cmd_ac" variable (:type "int") (reparse-symbol arg-sub-list) [4320 4331])
+                    ("cmd_av" variable
+                       (:pointer 1
+                        :dereference 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [4332 4353]))                  
+                :type "void")
+                nil [4235 5008])
+            ("do_rawpartition_boot" function
+               (:arguments 
+                  ( ("dev" variable (:type ("pci_device_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5074 5091])
+                    ("partno" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [5092 5108])
+                    ("offset" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [5109 5125])
+                    ("cmd_ac" variable (:type "int") (reparse-symbol arg-sub-list) [5126 5137])
+                    ("cmd_av" variable
+                       (:pointer 1
+                        :dereference 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [5138 5159]))                  
+                :type "void")
+                nil [5047 5764])
+            ("do_spiflash_boot" function
+               (:arguments 
+                  ( ("module_name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [5820 5844])
+                    ("cmd_ac" variable (:type "int") (reparse-symbol arg-sub-list) [5845 5856])
+                    ("cmd_av" variable
+                       (:pointer 1
+                        :dereference 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [5857 5878]))                  
+                :type "void")
+                nil [5797 7410])
+            ("string_base" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :arguments 
+                  ( ("boot" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("CDATA_BOOT_IMAGE" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [8061 8090]))                  
+                :type "char")
+                nil [8028 8430])
+            ("strnlen" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("s" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [8455 8469])
+                    ("maxlen" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8470 8484]))                  
+                :type ("size_t" type (:type "class") nil nil))
+                nil [8432 8569])
+            ("try_boot" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ch" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("_cdata_header" type (:type "union") nil nil))
+                        (reparse-symbol arg-sub-list) [8592 8622])
+                    ("arg" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [8623 8633])
+                    ("unused" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [8634 8650]))                  
+                :type "int")
+                nil [8571 10903])
+            ("do_oem_pdr_boot" function
+               (:arguments 
+                  ( ("offset" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [10927 10943])
+                    ("cmd_ac" variable (:type "int") (reparse-symbol arg-sub-list) [10944 10955])
+                    ("cmd_av" variable
+                       (:pointer 1
+                        :dereference 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [10956 10977]))                  
+                :type "void")
+                nil [10905 11313])
+            ("do_mem_boot" function
+               (:arguments 
+                  ( ("kpi" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11332 11346])
+                    ("cmd_ac" variable (:type "int") (reparse-symbol arg-sub-list) [11347 11358])
+                    ("cmd_av" variable
+                       (:pointer 1
+                        :dereference 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [11359 11380]))                  
+                :type "void")
+                nil [11315 11469])
+            ("do_dnx_boot" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [11488 11493]))                  
+                :type "void")
+                nil [11471 11869])
+            ("boot" function
+               (:arguments 
+                  ( ("mode" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [11882 11896]))                  
+                :type "void")
+                nil [11871 12883]))          
+      :file "boot.c"
+      :pointmax 12962
+      :fsize 12961
+      :lastmodtime '(22799 51684 735619 294000)
+      :unmatched-syntax '((punctuation 2950 . 2951) (semantic-list #("{	\\
+	.hdr =	\\
+	{	\\
+		.tag = CDATA_TAG_BOOT_IMAGE, \\
+	    .length = (sizeof(union _cdata_header) + sizeof(struct _cdata_cond) + sizeof(CDATA_BOOT_IMAGE) + sizeof(n) + 3) / 4, \\
+		.ncond = 1,	\\
+	},	\\
+	.cond = { .mask = (m), .value = (v) },  \\
+	.image = \\
+	{   \\
+		.device    = d, \\
+		.partition = p, \\
+		.offset    = o, \\
+	}, \\
+	.name = n	\\
+}" 0 1 (macros (("n" string "\"\"" 2929 . 2931) ("o" number "0" 2926 . 2927) ("p" number "0" 2923 . 2924) ("d" symbol "SPI_FLASH" 2912 . 2921) ("v" number "0x8000" 2904 . 2910) ("m" number "0x8000" 2896 . 2902) ("_var" symbol "builtin_elk" 2881 . 2892)))) 2864 . 2950) (punctuation "=" 2864 . 2950) (semantic-list #("(2)" 0 1 (macros (("n" string "\"\"" 2929 . 2931) ("o" number "0" 2926 . 2927) ("p" number "0" 2923 . 2924) ("d" symbol "SPI_FLASH" 2912 . 2921) ("v" number "0x8000" 2904 . 2910) ("m" number "0x8000" 2896 . 2902) ("_var" symbol "builtin_elk" 2881 . 2892)))) 2864 . 2950) (symbol "_ATTRIBUTE_CDATA_STAGE" 2864 . 2950) (symbol "_boot_entry_builtin_elk" 2864 . 2950) (semantic-list #("{	\\
+	union _cdata_header hdr;	\\
+	struct _cdata_cond  cond;	\\
+    CDATA_BOOT_IMAGE    image;  \\
+	char name[sizeof(n)];	\\
+}" 0 1 (macros (("n" string "\"\"" 2929 . 2931) ("o" number "0" 2926 . 2927) ("p" number "0" 2923 . 2924) ("d" symbol "SPI_FLASH" 2912 . 2921) ("v" number "0x8000" 2904 . 2910) ("m" number "0x8000" 2896 . 2902) ("_var" symbol "builtin_elk" 2881 . 2892)))) 2864 . 2950) (STRUCT "struct" 2864 . 2950) (CONST "const" 2864 . 2950) (STATIC "static" 2864 . 2950) (punctuation 2862 . 2863) (semantic-list #("{	\\
+	.hdr =	\\
+	{	\\
+		.tag = CDATA_TAG_BOOT_IMAGE, \\
+	    .length = (sizeof(union _cdata_header) + sizeof(struct _cdata_cond) + sizeof(CDATA_BOOT_IMAGE) + sizeof(n) + 3) / 4, \\
+		.ncond = 1,	\\
+	},	\\
+	.cond = { .mask = (m), .value = (v) },  \\
+	.image = \\
+	{   \\
+		.device    = d, \\
+		.partition = p, \\
+		.offset    = o, \\
+	}, \\
+	.name = n	\\
+}" 0 1 (macros (("n" string "\"iasImage\"" 2851 . 2861) ("o" number "0" 2848 . 2849) ("p" number "2" 2845 . 2846) ("d" symbol "EMMC" 2834 . 2838) ("v" number "0x8000" 2826 . 2832) ("m" number "0x8000" 2818 . 2824) ("_var" symbol "builtin_plk2" 2803 . 2815)))) 2786 . 2862) (punctuation "=" 2786 . 2862) (semantic-list #("(2)" 0 1 (macros (("n" string "\"iasImage\"" 2851 . 2861) ("o" number "0" 2848 . 2849) ("p" number "2" 2845 . 2846) ("d" symbol "EMMC" 2834 . 2838) ("v" number "0x8000" 2826 . 2832) ("m" number "0x8000" 2818 . 2824) ("_var" symbol "builtin_plk2" 2803 . 2815)))) 2786 . 2862) (symbol "_ATTRIBUTE_CDATA_STAGE" 2786 . 2862) (symbol "_boot_entry_builtin_plk2" 2786 . 2862) (semantic-list #("{	\\
+	union _cdata_header hdr;	\\
+	struct _cdata_cond  cond;	\\
+    CDATA_BOOT_IMAGE    image;  \\
+	char name[sizeof(n)];	\\
+}" 0 1 (macros (("n" string "\"iasImage\"" 2851 . 2861) ("o" number "0" 2848 . 2849) ("p" number "2" 2845 . 2846) ("d" symbol "EMMC" 2834 . 2838) ("v" number "0x8000" 2826 . 2832) ("m" number "0x8000" 2818 . 2824) ("_var" symbol "builtin_plk2" 2803 . 2815)))) 2786 . 2862) (STRUCT "struct" 2786 . 2862) (CONST "const" 2786 . 2862) (STATIC "static" 2786 . 2862) (punctuation 2784 . 2785) (semantic-list #("{	\\
+	.hdr =	\\
+	{	\\
+		.tag = CDATA_TAG_BOOT_IMAGE, \\
+	    .length = (sizeof(union _cdata_header) + sizeof(struct _cdata_cond) + sizeof(CDATA_BOOT_IMAGE) + sizeof(n) + 3) / 4, \\
+		.ncond = 1,	\\
+	},	\\
+	.cond = { .mask = (m), .value = (v) },  \\
+	.image = \\
+	{   \\
+		.device    = d, \\
+		.partition = p, \\
+		.offset    = o, \\
+	}, \\
+	.name = n	\\
+}" 0 1 (macros (("n" string "\"iasImage\"" 2773 . 2783) ("o" number "0" 2770 . 2771) ("p" number "1" 2767 . 2768) ("d" symbol "EMMC_BOOT" 2756 . 2765) ("v" number "0x8000" 2748 . 2754) ("m" number "0x8000" 2740 . 2746) ("_var" symbol "builtin_plk1" 2725 . 2737)))) 2708 . 2784) (punctuation "=" 2708 . 2784) (semantic-list #("(2)" 0 1 (macros (("n" string "\"iasImage\"" 2773 . 2783) ("o" number "0" 2770 . 2771) ("p" number "1" 2767 . 2768) ("d" symbol "EMMC_BOOT" 2756 . 2765) ("v" number "0x8000" 2748 . 2754) ("m" number "0x8000" 2740 . 2746) ("_var" symbol "builtin_plk1" 2725 . 2737)))) 2708 . 2784) (symbol "_ATTRIBUTE_CDATA_STAGE" 2708 . 2784) (symbol "_boot_entry_builtin_plk1" 2708 . 2784) (semantic-list #("{	\\
+	union _cdata_header hdr;	\\
+	struct _cdata_cond  cond;	\\
+    CDATA_BOOT_IMAGE    image;  \\
+	char name[sizeof(n)];	\\
+}" 0 1 (macros (("n" string "\"iasImage\"" 2773 . 2783) ("o" number "0" 2770 . 2771) ("p" number "1" 2767 . 2768) ("d" symbol "EMMC_BOOT" 2756 . 2765) ("v" number "0x8000" 2748 . 2754) ("m" number "0x8000" 2740 . 2746) ("_var" symbol "builtin_plk1" 2725 . 2737)))) 2708 . 2784) (STRUCT "struct" 2708 . 2784) (CONST "const" 2708 . 2784) (STATIC "static" 2708 . 2784))
+      :lexical-table 
+        '(("BOOT_IMAGE_ENTRY" (spp-arg-list ("_var" "m" "v" "d" "p" "o" "n") 2120 . 2144) . 
+              ((STATIC "static" 2147 . 2153) (CONST "const" 2154 . 2159) (STRUCT "struct" 2160 . 2166) (symbol "__attribute__" 2167 . 2180) (semantic-list "((packed))" 2180 . 2190) (semantic-list "{	\\
+	union _cdata_header hdr;	\\
+	struct _cdata_cond  cond;	\\
+    CDATA_BOOT_IMAGE    image;  \\
+	char name[sizeof(n)];	\\
+}" 2193 . 2314) (spp-symbol-merge ((symbol "_boot_entry_" 2315 . 2327) (symbol "_var" 2331 . 2335)) 2315 . 2335) (symbol "_ATTRIBUTE_CDATA_STAGE" 2336 . 2358) (semantic-list "(2)" 2358 . 2361) (punctuation "=" 2362 . 2363) (semantic-list "{	\\
+	.hdr =	\\
+	{	\\
+		.tag = CDATA_TAG_BOOT_IMAGE, \\
+	    .length = (sizeof(union _cdata_header) + sizeof(struct _cdata_cond) + sizeof(CDATA_BOOT_IMAGE) + sizeof(n) + 3) / 4, \\
+		.ncond = 1,	\\
+	},	\\
+	.cond = { .mask = (m), .value = (v) },  \\
+	.image = \\
+	{   \\
+		.device    = d, \\
+		.partition = p, \\
+		.offset    = o, \\
+	}, \\
+	.name = n	\\
+}" 2366 . 2706)))
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("_ANDROID_H" variable (:constant-flag t) nil [1357 1367])
+            ("stdint.h" include (:system-flag t) nil [1369 1388])
+            ("android_bootimg.h" include nil nil [1389 1417])
+            ("is_android_bootimg" function
+               (:prototype-flag t
+                :pointer 1
+                :typemodifiers ("extern")
+                :constant-flag t
+                :arguments 
+                  ( ("addr" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [1563 1580]))                  
+                :type ("android_bootimg_hdr" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1502 1581])
+            ("android_bootimg_size" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :constant-flag t
+                :arguments 
+                  ( ("hdr" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("android_bootimg_hdr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1626 1664]))                  
+                :type ("uint32_t" type (:type "class") nil nil))
+                nil [1582 1665])
+            ("BOOT_STATE_GREEN" variable (:constant-flag t) nil [1725 1741])
+            ("BOOT_STATE_ORANGE" variable (:constant-flag t) nil [1759 1776])
+            ("BOOT_STATE_RED" variable (:constant-flag t) nil [1793 1807])
+            ("android_boot_state" variable
+               (:typemodifiers ("extern")
+                :type ("uint8_t" type (:type "class") nil nil))
+                nil [1820 1854])
+            ("android_boot_state_str" function
+               (:prototype-flag t
+                :pointer 1
+                :typemodifiers ("extern")
+                :constant-flag t
+                :arguments 
+                  ( ("boot_mode" variable (:type ("uint8_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1897 1915]))                  
+                :type "char")
+                nil [1855 1916])
+            ("boot_target" type
+               (:members 
+                  ( ("NORMAL_BOOT" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1945 1957])
+                    ("FASTBOOT" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1966 1975])
+                    ("ELK" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1984 1988])
+                    ("RECOVERY" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1997 2006])
+                    ("CRASHMODE" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [2015 2025])
+                    ("DNX" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [2034 2039]))                  
+                :type "enum")
+                nil [1918 2040])
+            ("CDATA_ANDROID_CONFIG" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("features" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2130 2148]))                        
+                      :type "struct")
+                      nil nil)
+                :type "typedef")
+                nil [2075 2229])
+            ("android_features_t" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("raw" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2255 2268])
+                          ("" type
+                             (:members 
+                                ( ("bootloader_class_a" variable
+                                     (:suffix ":1"
+                                      :type ("uint32_t" type (:type "class") nil nil))
+                                      (reparse-symbol classsubparts) [2302 2332])
+                                  ("virtual_mode" variable
+                                     (:suffix ":1"
+                                      :type ("uint32_t" type (:type "class") nil nil))
+                                      (reparse-symbol classsubparts) [2349 2373])
+                                  ("preload_img" variable
+                                     (:suffix ":1"
+                                      :type ("uint32_t" type (:type "class") nil nil))
+                                      (reparse-symbol classsubparts) [2390 2413])
+                                  ("crashmode_enable" variable
+                                     (:suffix ":1"
+                                      :type ("uint32_t" type (:type "class") nil nil))
+                                      (reparse-symbol classsubparts) [2430 2458])
+                                  ("npk_disable" variable
+                                     (:suffix ":1"
+                                      :type ("uint32_t" type (:type "class") nil nil))
+                                      (reparse-symbol classsubparts) [2475 2498])
+                                  ("boot_osloader" variable
+                                     (:suffix ":1"
+                                      :type ("uint32_t" type (:type "class") nil nil))
+                                      (reparse-symbol classsubparts) [2515 2540])
+                                  ("seed_hardcode" variable
+                                     (:suffix ":1"
+                                      :type ("uint32_t" type (:type "class") nil nil))
+                                      (reparse-symbol classsubparts) [2557 2582]))                                
+                              :type "struct")
+                              (reparse-symbol classsubparts) [2277 2593]))                        
+                      :type "union")
+                      nil nil)
+                :type "typedef")
+                nil [2231 2615])
+            ("is_android" variable
+               (:typemodifiers ("extern")
+                :type "int")
+                nil [2617 2639])
+            ("android_features" variable
+               (:typemodifiers ("extern")
+                :type ("android_features_t" type (:type "class") nil nil))
+                nil [2640 2683])
+            ("is_android_memboot" variable
+               (:typemodifiers ("extern")
+                :type "int")
+                nil [2684 2714])
+            ("mem_boot_addr" variable
+               (:typemodifiers ("extern")
+                :type ("uintptr_t" type (:type "class") nil nil))
+                nil [2715 2746])
+            ("ANDROID_MISC_LABEL" variable (:constant-flag t) nil [2757 2775])
+            ("ANDROID_BOOT_LABEL" variable (:constant-flag t) nil [2799 2817])
+            ("bootloader_message" type
+               (:members 
+                  ( ("command" variable
+                       (:dereference 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [2866 2883])
+                    ("status" variable
+                       (:dereference 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [2888 2904])
+                    ("recovery" variable
+                       (:dereference 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [2909 2928])
+                    ("stage" variable
+                       (:dereference 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [2933 2948])
+                    ("abl" variable
+                       (:dereference 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [2953 2966]))                  
+                :type "struct")
+                nil [2834 2969])
+            ("check_bcb" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("device" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [3005 3021]))                  
+                :type ("boot_target" type (:type "enum") nil nil))
+                nil [2971 3022])
+            ("OSLOADER_LABEL" variable (:constant-flag t) nil [3032 3046])
+            ("OSLOADER_FILE" variable (:constant-flag t) nil [3076 3089]))          
+      :file "android.h"
+      :pointmax 3113
+      :fsize 3112
+      :lastmodtime '(22796 14660 613483 306000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("BOOT_STATE_GREEN" . ((number "0" 1749 . 1750)))
+          ("BOOT_STATE_ORANGE" . ((number "2" 1783 . 1784)))
+          ("ANDROID_BOOT_LABEL" . ((string "\"android_boot\"" 2818 . 2832)))
+          ("OSLOADER_LABEL" . ((string "\"android_bootloader\"" 3047 . 3067)))
+          ("OSLOADER_FILE" . ((string "\"osloader.bin\"" 3090 . 3104)))
+          ("_ANDROID_H")
+          ("ANDROID_MISC_LABEL" . ((string "\"android_misc\"" 2776 . 2790)))
+          ("BOOT_STATE_RED" . ((number "3" 1817 . 1818)))
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("bootloader.h" include nil nil [1323 1346])
+            ("version.h" include nil nil [1347 1367])
+            ("boot.h" include nil nil [1369 1386])
+            ("boot/android.h" include nil nil [1387 1412])
+            ("boot/cmdline.h" include nil nil [1413 1438])
+            ("boot/linux.h" include nil nil [1439 1462])
+            ("boot/multiboot.h" include nil nil [1463 1490])
+            ("boot/preload.h" include nil nil [1491 1516])
+            ("bootmode.h" include nil nil [1517 1538])
+            ("bufmem.h" include nil nil [1539 1558])
+            ("config/cdata.h" include nil nil [1559 1584])
+            ("consbuf.h" include nil nil [1585 1605])
+            ("cse.h" include nil nil [1606 1622])
+            ("kp_image.h" include nil nil [1623 1644])
+            ("lz4.h" include nil nil [1645 1661])
+            ("mmap.h" include nil nil [1662 1679])
+            ("oem_key_manifest.h" include nil nil [1680 1709])
+            ("sb.h" include nil nil [1710 1725])
+            ("seed.h" include nil nil [1726 1743])
+            ("uart.h" include nil nil [1744 1761])
+            ("uart_impl.h" include nil nil [1762 1784])
+            ("xz.h" include nil nil [1785 1800])
+            ("acpi/acpi.h" include nil nil [1801 1823])
+            ("update-ifwi.h" include nil nil [1824 1848])
+            ("update-pdr.h" include nil nil [1849 1872])
+            ("cse/cse_S2.h" include nil nil [1873 1896])
+            ("cse/cse_msg.h" include nil nil [1897 1921])
+            ("vmm.h" include nil nil [1922 1938])
+            ("loadfile.h" include nil nil [1939 1960])
+            ("drivers/blockdev/gpt.h" include nil nil [1961 1994])
+            ("lib/auth.h" include nil nil [1995 2016])
+            ("drivers/fstspi/fstspi.h" include nil nil [2017 2051])
+            ("MAX_KP_SUB_IMAGE" variable (:constant-flag t) nil [3285 3301])
+            ("MAX_ABL_MNG_IMAGE" variable (:constant-flag t) nil [3313 3330])
+            ("MAX_TEMPLATE_LEN" variable (:constant-flag t) nil [3392 3408])
+            ("MAX_IMAGE_LEN" variable (:constant-flag t) nil [3420 3433])
+            ("boot_system" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("kpi_header" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3465 3491])
+                    ("payload" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [3517 3537])
+                    ("payload_size" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [3538 3560])
+                    ("args" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [3586 3603])
+                    ("args_length" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [3604 3625])
+                    ("initrd" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [3651 3670])
+                    ("initrd_size" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [3671 3692])
+                    ("cmdline_ac" variable (:type "int") (reparse-symbol arg-sub-list) [3718 3733])
+                    ("cmdline_av" variable
+                       (:pointer 1
+                        :dereference 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [3734 3759])
+                    ("num_file" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [3785 3803])
+                    ("file" variable
+                       (:pointer 1
+                        :type ("_image_data" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3804 3829])
+                    ("sb_enable" variable (:type ("_Bool" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3855 3871]))                  
+                :type "void")
+                nil [3440 3872])
+            ("decompress_xz_image" function
+               (:prototype-flag t
+                :pointer 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :arguments 
+                  ( ("addr" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [3913 3930]))                  
+                :type "void")
+                nil [3873 3931])
+            ("decompress_lz4f_image" function
+               (:prototype-flag t
+                :pointer 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :arguments 
+                  ( ("in_buf" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [3974 3993])
+                    ("in_size" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [3994 4011])
+                    ("res_size" variable
+                       (:pointer 1
+                        :type "unsigned int")
+                        (reparse-symbol arg-sub-list) [4012 4031]))                  
+                :type "void")
+                nil [3932 4032])
+            ("mfile_update_cmdline" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("nfile" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [4070 4085])
+                    ("file" variable
+                       (:pointer 1
+                        :type ("_image_data" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4086 4111])
+                    ("buf" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [4112 4122]))                  
+                :type "unsigned int")
+                nil [4033 4123])
+            ("init_multiboot_module" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("nfile" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [4158 4173])
+                    ("file" variable
+                       (:dereference 1
+                        :type ("_image_data" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4174 4200]))                  
+                :type "void")
+                nil [4124 4201])
+            ("setup_android" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("android_hdr" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("android_bootimg_hdr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4227 4273])
+                    ("image_address" variable
+                       (:constant-flag t
+                        :type ("uintptr_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4274 4304])
+                    ("file" variable
+                       (:dereference 1
+                        :type ("_image_data" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4305 4331])
+                    ("sec_boot_en" variable (:type "int") (reparse-symbol arg-sub-list) [4332 4348])
+                    ("p_num_file" variable
+                       (:pointer 1
+                        :type "unsigned int")
+                        (reparse-symbol arg-sub-list) [4349 4370]))                  
+                :type "int")
+                nil [4202 4371])
+            ("construct_cmdline" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("args" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [4402 4419])
+                    ("args_length" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [4420 4441])
+                    ("num_file" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [4465 4483])
+                    ("file" variable
+                       (:pointer 1
+                        :type ("_image_data" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4484 4509])
+                    ("cmdline_ac" variable (:type "int") (reparse-symbol arg-sub-list) [4532 4547])
+                    ("cmdline_av" variable
+                       (:pointer 1
+                        :dereference 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [4548 4573])
+                    ("sb_enable" variable (:type ("_Bool" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4574 4590]))                  
+                :type "void")
+                nil [4372 4591])
+            ("init_multiboot_module" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("nfile" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [4628 4643])
+                    ("file" variable
+                       (:dereference 1
+                        :type ("_image_data" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4644 4670]))                  
+                :type "void")
+                nil [4594 5301])
+            ("android_cmdline" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :type ("uint8_t" type (:type "class") nil nil))
+                nil [5303 5389])
+            ("vmm_args" variable
+               (:typemodifiers ("static")
+                :default-value "{
+	.boot_param = {IMAGE_BOOT_PARAMS_V1, VMM_NB_IMAGES, (uint32_t)vmm_args.img_el},
+	.img_el = {
+		{\"Android\", IMAGE_AOSP, sizeof(android_image_boot_params_t), (uint32_t)&vmm_args.android_img_param},
+		{\"VMM\",     IMAGE_MULTIBOOT, sizeof(vmm_boot_params_t), (uint32_t)&vmm_args.vmm_img_param},
+		{\"Trusty\",  IMAGE_ELF, sizeof(trusty_boot_params_t), (uint32_t)&vmm_args.trusty_img_param} },
+}"
+                :type ("vmm_args_t" type (:type "class") nil nil))
+                nil [5441 5861])
+            ("mbi_preload" variable
+               (:default-value "{ .mi_flags = 0 }"
+                :type ("multiboot_info" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [5863 5917])
+            ("setup_android" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("android_hdr" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("android_bootimg_hdr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5945 5991])
+                    ("image_address" variable
+                       (:constant-flag t
+                        :type ("uintptr_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5992 6022])
+                    ("file" variable
+                       (:dereference 1
+                        :type ("_image_data" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6023 6049])
+                    ("sec_boot_en" variable (:type "int") (reparse-symbol arg-sub-list) [6050 6066])
+                    ("p_num_file" variable
+                       (:pointer 1
+                        :type "unsigned int")
+                        (reparse-symbol arg-sub-list) [6067 6088]))                  
+                :type "int")
+                nil [5920 10263])
+            ("set_reset_cause" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("prop" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [10293 10310]))                  
+                :type "void")
+                nil [10265 10922])
+            ("add_kernel_params" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [10955 10960]))                  
+                :type "void")
+                nil [10924 14369])
+            ("add_android_params" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [14403 14408]))                  
+                :type "void")
+                nil [14371 15781])
+            ("boot_image" function
+               (:arguments 
+                  ( ("image_address" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15800 15824])
+                    ("digest" variable
+                       (:pointer 1
+                        :type ("_hash" type (:type "union") nil nil))
+                        (reparse-symbol arg-sub-list) [15825 15845])
+                    ("cmdline_ac" variable (:type "int") (reparse-symbol arg-sub-list) [15846 15861])
+                    ("cmdline_av" variable
+                       (:pointer 1
+                        :dereference 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [15862 15887]))                  
+                :type "void")
+                nil [15783 18523])
+            ("pkey_hash" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :default-value "\"01234567890123456789012345678901\""
+                :type ("uint8_t" type (:type "class") nil nil))
+                nil [18525 18605])
+            ("preload_android_img" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("cpu_state" variable
+                       (:pointer 1
+                        :type ("cpu_state_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [18638 18661])
+                    ("img" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [18662 18678])
+                    ("cmdline_ac" variable (:type "int") (reparse-symbol arg-sub-list) [18679 18694])
+                    ("cmdline_av" variable
+                       (:pointer 1
+                        :dereference 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [18695 18720])
+                    ("sb_enable" variable (:type ("_Bool" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [18720 18736]))                  
+                :type "int")
+                nil [18607 22640])
+            ("read_android_img" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("kpi" variable
+                       (:pointer 2
+                        :constant-flag t
+                        :type ("kpi_header" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [22670 22700])
+                    ("sb_enable" variable (:type ("_Bool" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [22701 22717]))                  
+                :type "int")
+                nil [22642 23693])
+            ("init_vmm_args" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("cmdline_ac" variable (:type "int") (reparse-symbol arg-sub-list) [23721 23736])
+                    ("cmdline_av" variable
+                       (:pointer 1
+                        :dereference 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [23737 23762])
+                    ("sb_enable" variable (:type ("_Bool" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [23763 23779]))                  
+                :type "int")
+                nil [23695 25948])
+            ("construct_cmdline" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("args" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [25980 25997])
+                    ("args_length" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [25998 26019])
+                    ("num_file" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [26043 26061])
+                    ("file" variable
+                       (:pointer 1
+                        :type ("_image_data" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [26062 26087])
+                    ("cmdline_ac" variable (:type "int") (reparse-symbol arg-sub-list) [26110 26125])
+                    ("cmdline_av" variable
+                       (:pointer 1
+                        :dereference 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [26126 26151])
+                    ("sb_enable" variable (:type ("_Bool" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [26152 26168]))                  
+                :type "void")
+                nil [25950 27854])
+            ("boot_system" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("kpi" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("kpi_header" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [27986 28015])
+                    ("payload" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [28067 28087])
+                    ("payload_size" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [28088 28110])
+                    ("args" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [28140 28157])
+                    ("args_length" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [28158 28179])
+                    ("initrd" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [28220 28239])
+                    ("initrd_size" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [28240 28261])
+                    ("cmdline_ac" variable (:type "int") (reparse-symbol arg-sub-list) [28275 28290])
+                    ("cmdline_av" variable
+                       (:pointer 1
+                        :dereference 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [28291 28316])
+                    ("num_file" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [28330 28348])
+                    ("file" variable
+                       (:pointer 1
+                        :type ("_image_data" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [28349 28374])
+                    ("sb_enable" variable (:type ("_Bool" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [28388 28404]))                  
+                :type "void")
+                nil [27961 31339])
+            ("decompress_xz_image" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :arguments 
+                  ( ("addr" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [31462 31479]))                  
+                :type "void")
+                nil [31421 32361])
+            ("LZ4_frame_header" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("magic" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [32552 32567])
+                          ("FLG" variable (:type ("uint8_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [32570 32586])
+                          ("BD" variable (:type ("uint8_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [32588 32603])
+                          ("size_LO" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [32605 32622])
+                          ("size_HI" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [32624 32641])
+                          ("HC" variable (:type ("uint8_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [32643 32658]))                        
+                      :type "struct")
+                      nil nil)
+                :pointer 1
+                :type "typedef")
+                nil [32528 32765])
+            ("LZ4F_ERROR" variable (:constant-flag t) nil [32781 32791])
+            ("decompress_lz4f_image" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :arguments 
+                  ( ("in_buf" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [32961 32980])
+                    ("in_size" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [32981 32998])
+                    ("res_size" variable
+                       (:pointer 1
+                        :type "unsigned int")
+                        (reparse-symbol arg-sub-list) [32999 33018]))                  
+                :type "void")
+                nil [32918 35206])
+            ("mfile_find_pattern" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("src" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [35370 35380])
+                    ("dst" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [35381 35391])
+                    ("size" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [35392 35406])
+                    ("addr" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [35407 35424]))                  
+                :type "int")
+                nil [35340 36083])
+            ("mfile_update_cmdline" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("nfile" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [36159 36174])
+                    ("file" variable
+                       (:pointer 1
+                        :type ("_image_data" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [36175 36200])
+                    ("buf" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [36201 36211]))                  
+                :type "unsigned int")
+                nil [36122 38056]))          
+      :file "image.c"
+      :pointmax 38133
+      :fsize 38132
+      :lastmodtime '(22799 51684 735619 294000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("MAX_TEMPLATE_LEN" . ((number "16" 3409 . 3411)))
+          ("MAX_ABL_MNG_IMAGE" . ((number "4" 3331 . 3332)))
+          ("MAX_IMAGE_LEN" . ((number "128" 3435 . 3438)))
+          ("MAX_KP_SUB_IMAGE" . ((number "32" 3302 . 3304)))
+          ("LZ4F_ERROR" (spp-arg-list ("fmt" "...") 32791 . 32801) . 
+              ((DO "do" 32802 . 32804) (semantic-list "{ printf (\"LF4F: \" fmt, ##__VA_ARGS__); return 0; }" 32805 . 32856) (WHILE "while" 32857 . 32862) (semantic-list "(0)" 32862 . 32865)))
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :file "cmdline.h"
+      :fsize 1797
+      :lastmodtime '(22796 14660 613483 306000))
+    (semanticdb-table "semanticdb-table"
+      :file "linux.h"
+      :fsize 1743
+      :lastmodtime '(22796 14660 613483 306000))
+    (semanticdb-table "semanticdb-table"
+      :file "multiboot.h"
+      :fsize 5688
+      :lastmodtime '(22796 14660 613483 306000))
+    (semanticdb-table "semanticdb-table"
+      :file "preload.h"
+      :fsize 1460
+      :lastmodtime '(22796 14660 613483 306000))
+    (semanticdb-table "semanticdb-table"
+      :file "vmm.h"
+      :fsize 6221
+      :lastmodtime '(22796 14660 613483 306000)))
+  :file "!home!chenqi!work!1A_code!vendor!intel!abl!bootloader_apl!src!boot!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

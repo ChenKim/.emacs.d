@@ -1,0 +1,197 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("bootloader.h" include nil nil [1334 1357])
+            ("blockdev.h" include nil nil [1358 1379])
+            ("gpt.h" include nil nil [1380 1396])
+            ("drivers/mmc/mmc.h" include nil nil [1397 1425])
+            ("_table_type" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("MBR" variable
+                             (:constant-flag t
+                              :default-value (1449 1452)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [1443 1452])
+                          ("GPT" variable
+                             (:constant-flag t
+                              :default-value (1461 1464)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [1455 1464]))                        
+                      :type "enum")
+                      nil nil)
+                :type "typedef")
+                nil [1427 1479])
+            ("_blockdev_table" type
+               (:members 
+                  ( ("mbr" variable (:type ("_blockdev_mbr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [1507 1532])
+                    ("gpt" variable (:type ("_blockdev_gpt" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [1534 1559])
+                    ("type" variable (:type ("_table_type" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1561 1578]))                  
+                :type "struct")
+                nil [1481 1605])
+            ("opened" variable
+               (:typemodifiers ("static")
+                :type ("_Bool" type (:type "class") nil nil))
+                nil [1607 1641])
+            ("transferring" variable
+               (:typemodifiers ("static")
+                :type ("_Bool" type (:type "class") nil nil))
+                nil [1607 1641])
+            ("mbr_valid" variable
+               (:typemodifiers ("static")
+                :type "int")
+                nil [1642 1678])
+            ("is_backup_gpt" variable
+               (:typemodifiers ("static")
+                :type "int")
+                nil [1642 1678])
+            ("partition_lba" variable
+               (:typemodifiers ("static")
+                :type "int")
+                nil [1679 1720])
+            ("partition_size" variable
+               (:typemodifiers ("static")
+                :type "int")
+                nil [1679 1720])
+            ("_blck_table" variable
+               (:typemodifiers ("static")
+                :type ("_blockdev_table" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1772 1814])
+            ("gpt_cache" variable
+               (:typemodifiers ("static")
+                :type ("gpt_cache_t" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1815 1851])
+            ("gpt_cache_initialized" variable
+               (:typemodifiers ("static")
+                :type "unsigned int")
+                nil [1852 1890])
+            ("bdev_ops" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :type ("blockdev_ops" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1892 1929])
+            ("gpt_cache_partitions" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1963 1968]))                  
+                :type "int")
+                nil [1931 1969])
+            ("blockdev_select_gpt_partition_by_number" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("part_no" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [2022 2039]))                  
+                :type "int")
+                nil [1970 2040])
+            ("blockdev_transfer" function
+               (:arguments 
+                  ( ("blockno" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2064 2081])
+                    ("reading" variable (:type "int") (reparse-symbol arg-sub-list) [2082 2094])
+                    ("nblock" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2095 2111])
+                    ("addr" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [2112 2123]))                  
+                :type "int")
+                nil [2042 2726])
+            ("blockdev_select_partition" function
+               (:arguments 
+                  ( ("partition" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [2758 2777]))                  
+                :type "int")
+                nil [2728 3336])
+            ("blockdev_mbr" function
+               (:pointer 1
+                :constant-flag t
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [3381 3386]))                  
+                :type ("_blockdev_mbr" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [3338 3467])
+            ("blockdev_gpt" function
+               (:pointer 1
+                :constant-flag t
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [3512 3517]))                  
+                :type ("_blockdev_gpt" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [3469 3607])
+            ("blockdev_await" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [3629 3634]))                  
+                :type "int")
+                nil [3609 3961])
+            ("blockdev_register_ops" function
+               (:arguments 
+                  ( ("bdev" variable
+                       (:pointer 1
+                        :type ("blockdev_ops" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3991 4017])
+                    ("devdata" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [4018 4032]))                  
+                :type "void")
+                nil [3963 4108])
+            ("blockdev_open" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [4129 4134]))                  
+                :type "int")
+                nil [4110 6465])
+            ("blockdev_close" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [6487 6492]))                  
+                :type "int")
+                nil [6467 6645])
+            ("blockdev_pcount" variable (:type ("_blockdev_pcount" type
+                 (:prototype t
+                  :type "struct")
+                  nil nil)) nil [6828 6868])
+            ("gpt.c" include nil nil [6949 6965]))          
+      :file "blockdev.c"
+      :pointmax 6966
+      :fsize 6965
+      :lastmodtime '(22796 14660 625483 306000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :file "blockdev.h"
+      :fsize 5541
+      :lastmodtime '(22796 14660 625483 306000))
+    (semanticdb-table "semanticdb-table"
+      :file "gpt.h"
+      :fsize 2071
+      :lastmodtime '(22796 14660 625483 306000))
+    (semanticdb-table "semanticdb-table"
+      :file "gpt.c"
+      :fsize 2861
+      :lastmodtime '(22796 14660 625483 306000)))
+  :file "!home!chenqi!work!1A_code!vendor!intel!abl!bootloader_apl!src!drivers!blockdev!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

@@ -1,0 +1,544 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("linux/efi.h" include (:system-flag t) nil [355 377])
+            ("linux/pci.h" include (:system-flag t) nil [378 400])
+            ("asm/efi.h" include (:system-flag t) nil [401 421])
+            ("asm/setup.h" include (:system-flag t) nil [422 444])
+            ("asm/desc.h" include (:system-flag t) nil [445 466])
+            ("../string.h" include nil nil [468 490])
+            ("eboot.h" include nil nil [491 509])
+            ("sys_table" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :type ("efi_system_table_t" type (:type "class") nil nil))
+                nil [511 548])
+            ("efi_early" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :type ("efi_config" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [550 586])
+            ("__efi_early" function
+               (:pointer 1
+                :constant-flag t
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [632 637]))                  
+                :type ("efi_config" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [595 660])
+            ("BOOT_SERVICES" variable (:constant-flag t) nil [670 683])
+            ("setup_boot_services32" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("c" variable
+                       (:pointer 1
+                        :type ("efi_config" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) nil))                  
+                :type "void")
+                nil [959 976])
+            ("setup_boot_services64" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("c" variable
+                       (:pointer 1
+                        :type ("efi_config" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) nil))                  
+                :type "void")
+                nil [978 995])
+            ("efi_char16_printk" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable
+                       (:pointer 1
+                        :type ("efi_system_table_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1021 1042])
+                    ("" variable
+                       (:pointer 1
+                        :type ("efi_char16_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1043 1058]))                  
+                :type "void")
+                nil [998 1059])
+            ("__file_size32" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("__fh" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [1095 1106])
+                    ("filename_16" variable
+                       (:pointer 1
+                        :type ("efi_char16_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1107 1133])
+                    ("handle" variable
+                       (:pointer 2
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [1141 1155])
+                    ("file_sz" variable
+                       (:pointer 1
+                        :type ("u64" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1156 1169]))                  
+                :type ("efi_status_t" type (:type "class") nil nil))
+                nil [1061 2391])
+            ("__file_size64" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("__fh" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [2427 2438])
+                    ("filename_16" variable
+                       (:pointer 1
+                        :type ("efi_char16_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2439 2465])
+                    ("handle" variable
+                       (:pointer 2
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [2473 2487])
+                    ("file_sz" variable
+                       (:pointer 1
+                        :type ("u64" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2488 2501]))                  
+                :type ("efi_status_t" type (:type "class") nil nil))
+                nil [2393 3723])
+            ("efi_file_size" function
+               (:arguments 
+                  ( ("sys_table" variable
+                       (:pointer 1
+                        :type ("efi_system_table_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3751 3781])
+                    ("__fh" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [3782 3793])
+                    ("filename_16" variable
+                       (:pointer 1
+                        :type ("efi_char16_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3801 3827])
+                    ("handle" variable
+                       (:pointer 2
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [3828 3842])
+                    ("file_sz" variable
+                       (:pointer 1
+                        :type ("u64" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3843 3856]))                  
+                :type ("efi_status_t" type (:type "class") nil nil))
+                nil [3724 4002])
+            ("efi_file_read" function
+               (:arguments 
+                  ( ("handle" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [4031 4044])
+                    ("size" variable
+                       (:pointer 1
+                        :type "unsigned long")
+                        (reparse-symbol arg-sub-list) [4045 4065])
+                    ("addr" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [4066 4077]))                  
+                :type ("efi_status_t" type (:type "class") nil nil))
+                nil [4004 4388])
+            ("efi_file_close" function
+               (:arguments 
+                  ( ("handle" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [4418 4431]))                  
+                :type ("efi_status_t" type (:type "class") nil nil))
+                nil [4390 4668])
+            ("__open_volume32" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("__image" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [4713 4727])
+                    ("__fh" variable
+                       (:pointer 2
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [4728 4740]))                  
+                :type ("efi_status_t" type (:type "class") nil nil))
+                nil [4670 5371])
+            ("__open_volume64" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("__image" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [5416 5430])
+                    ("__fh" variable
+                       (:pointer 2
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [5431 5443]))                  
+                :type ("efi_status_t" type (:type "class") nil nil))
+                nil [5373 6074])
+            ("efi_open_volume" function
+               (:arguments 
+                  ( ("sys_table" variable
+                       (:pointer 1
+                        :type ("efi_system_table_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6105 6135])
+                    ("__image" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [6136 6150])
+                    ("__fh" variable
+                       (:pointer 2
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [6151 6163]))                  
+                :type ("efi_status_t" type (:type "class") nil nil))
+                nil [6076 6271])
+            ("efi_char16_printk" function
+               (:arguments 
+                  ( ("table" variable
+                       (:pointer 1
+                        :type ("efi_system_table_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6296 6322])
+                    ("str" variable
+                       (:pointer 1
+                        :type ("efi_char16_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6323 6341]))                  
+                :type "void")
+                nil [6273 7015])
+            ("__setup_efi_pci32" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("pci" variable
+                       (:pointer 1
+                        :type ("efi_pci_io_protocol_32" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7055 7083])
+                    ("__rom" variable
+                       (:pointer 2
+                        :type ("pci_setup_rom" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7084 7113]))                  
+                :type ("efi_status_t" type (:type "class") nil nil))
+                nil [7017 8576])
+            ("setup_efi_pci32" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("params" variable
+                       (:pointer 1
+                        :type ("boot_params" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8606 8633])
+                    ("pci_handle" variable
+                       (:pointer 2
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [8634 8652])
+                    ("size" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [8655 8674]))                  
+                :type "void")
+                nil [8578 9547])
+            ("__setup_efi_pci64" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("pci" variable
+                       (:pointer 1
+                        :type ("efi_pci_io_protocol_64" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [9587 9615])
+                    ("__rom" variable
+                       (:pointer 2
+                        :type ("pci_setup_rom" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9616 9645]))                  
+                :type ("efi_status_t" type (:type "class") nil nil))
+                nil [9549 11067])
+            ("setup_efi_pci64" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("params" variable
+                       (:pointer 1
+                        :type ("boot_params" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11097 11124])
+                    ("pci_handle" variable
+                       (:pointer 2
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [11125 11143])
+                    ("size" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [11146 11165]))                  
+                :type "void")
+                nil [11069 12038])
+            ("setup_efi_pci" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("params" variable
+                       (:pointer 1
+                        :type ("boot_params" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [12434 12461]))                  
+                :type "void")
+                nil [12408 13289])
+            ("setup_uga32" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("uga_handle" variable
+                       (:pointer 2
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [13323 13341])
+                    ("size" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [13342 13361])
+                    ("width" variable
+                       (:pointer 1
+                        :type ("u32" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [13362 13373])
+                    ("height" variable
+                       (:pointer 1
+                        :type ("u32" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [13374 13386]))                  
+                :type ("efi_status_t" type (:type "class") nil nil))
+                nil [13291 14360])
+            ("setup_uga64" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("uga_handle" variable
+                       (:pointer 2
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [14394 14412])
+                    ("size" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [14413 14432])
+                    ("width" variable
+                       (:pointer 1
+                        :type ("u32" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [14433 14444])
+                    ("height" variable
+                       (:pointer 1
+                        :type ("u32" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [14445 14457]))                  
+                :type ("efi_status_t" type (:type "class") nil nil))
+                nil [14362 15431])
+            ("setup_uga" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("si" variable
+                       (:pointer 1
+                        :type ("screen_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [15530 15553])
+                    ("uga_proto" variable
+                       (:pointer 1
+                        :type ("efi_guid_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [15554 15576])
+                    ("size" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [15586 15605]))                  
+                :type ("efi_status_t" type (:type "class") nil nil))
+                nil [15500 16555])
+            ("setup_graphics" function
+               (:arguments 
+                  ( ("boot_params" variable
+                       (:pointer 1
+                        :type ("boot_params" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [16577 16609]))                  
+                :type "void")
+                nil [16557 17365])
+            ("make_boot_params" function
+               (:pointer 1
+                :arguments 
+                  ( ("c" variable
+                       (:pointer 1
+                        :type ("efi_config" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [17658 17679]))                  
+                :type ("boot_params" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [17621 20683])
+            ("add_e820ext" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("params" variable
+                       (:pointer 1
+                        :type ("boot_params" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [20709 20736])
+                    ("e820ext" variable
+                       (:pointer 1
+                        :type ("setup_data" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [20740 20767])
+                    ("nr_entries" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [20768 20783]))                  
+                :type "void")
+                nil [20685 21228])
+            ("setup_e820" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("params" variable
+                       (:pointer 1
+                        :type ("boot_params" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [21261 21288])
+                    ("e820ext" variable
+                       (:pointer 1
+                        :type ("setup_data" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [21299 21326])
+                    ("e820ext_size" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [21327 21344]))                  
+                :type ("efi_status_t" type (:type "class") nil nil))
+                nil [21230 23474])
+            ("alloc_e820ext" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("nr_desc" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [23510 23522])
+                    ("e820ext" variable
+                       (:pointer 2
+                        :type ("setup_data" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [23523 23551])
+                    ("e820ext_size" variable
+                       (:pointer 1
+                        :type ("u32" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [23558 23576]))                  
+                :type ("efi_status_t" type (:type "class") nil nil))
+                nil [23476 23954])
+            ("exit_boot_struct" type
+               (:members 
+                  ( ("boot_params" variable
+                       (:pointer 1
+                        :type ("boot_params" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [23983 24015])
+                    ("efi" variable
+                       (:pointer 1
+                        :type ("efi_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [24017 24038])
+                    ("e820ext" variable
+                       (:pointer 1
+                        :type ("setup_data" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [24040 24067])
+                    ("e820ext_size" variable (:type ("__u32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [24069 24088])
+                    ("is64" variable (:type "bool") (reparse-symbol classsubparts) [24090 24100]))                  
+                :type "struct")
+                nil [23956 24103])
+            ("exit_boot_func" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("sys_table_arg" variable
+                       (:pointer 1
+                        :type ("efi_system_table_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [24140 24174])
+                    ("map" variable
+                       (:pointer 1
+                        :type ("efi_boot_memmap" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [24182 24210])
+                    ("priv" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [24218 24229]))                  
+                :type ("efi_status_t" type (:type "class") nil nil))
+                nil [24105 25249])
+            ("exit_boot" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("boot_params" variable
+                       (:pointer 1
+                        :type ("boot_params" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [25281 25313])
+                    ("handle" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [25323 25336])
+                    ("is64" variable (:type "bool") (reparse-symbol arg-sub-list) [25337 25347]))                  
+                :type ("efi_status_t" type (:type "class") nil nil))
+                nil [25251 26301])
+            ("efi_main" function
+               (:pointer 1
+                :arguments 
+                  ( ("c" variable
+                       (:pointer 1
+                        :type ("efi_config" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [26425 26446])
+                    ("boot_params" variable
+                       (:pointer 1
+                        :type ("boot_params" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [26455 26487]))                  
+                :type ("boot_params" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [26396 29580]))          
+      :file "eboot.c"
+      :pointmax 29581
+      :fsize 29580
+      :lastmodtime '(22781 19787 370156 462000)
+      :unmatched-syntax '((punctuation 995 . 996) (punctuation 976 . 977) (symbol 588 . 594))
+      :lexical-table 
+        '(("BOOT_SERVICES" (spp-arg-list ("bits") 683 . 689) . 
+              ((STATIC "static" 697 . 703) (VOID "void" 704 . 708) (spp-symbol-merge ((symbol "setup_boot_services" 709 . 728) (symbol "bits" 730 . 734)) 709 . 734) (semantic-list "(struct efi_config *c)" 734 . 756) (semantic-list "{									\\
+	efi_system_table_##bits##_t *table;				\\
+									\\
+	table = (typeof(table))sys_table;				\\
+									\\
+	c->boot_services = table->boottime;				\\
+	c->text_output = table->con_out;				\\
+}" 760 . 958)))
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :file "eboot.h"
+      :fsize 631
+      :lastmodtime '(22781 19787 370156 462000)))
+  :file "!home!chenqi!work!androidia!kernel!android_ia!arch!x86!boot!compressed!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

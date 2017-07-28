@@ -1,0 +1,631 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("__CORE_FS_MGR_H" variable (:constant-flag t) nil [654 669])
+            ("stdio.h" include (:system-flag t) nil [671 689])
+            ("stdint.h" include (:system-flag t) nil [690 709])
+            ("stdbool.h" include (:system-flag t) nil [710 730])
+            ("linux/dm-ioctl.h" include (:system-flag t) nil [731 758])
+            ("string" include (:system-flag t) nil [870 887])
+            ("VERITY_METADATA_MAGIC_NUMBER" variable (:constant-flag t) nil [948 976])
+            ("VERITY_METADATA_MAGIC_DISABLE" variable (:constant-flag t) nil [1104 1133])
+            ("C" extern nil nil [1156 1169])
+            ("verity_mode" type
+               (:members 
+                  ( ("VERITY_MODE_EIO" variable
+                       (:constant-flag t
+                        :default-value (1228 1229)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1210 1229])
+                    ("VERITY_MODE_LOGGING" variable
+                       (:constant-flag t
+                        :default-value (1257 1258)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1235 1258])
+                    ("VERITY_MODE_RESTART" variable
+                       (:constant-flag t
+                        :default-value (1286 1287)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1264 1287])
+                    ("VERITY_MODE_LAST" variable
+                       (:constant-flag t
+                        :default-value (1312 1331)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1293 1331])
+                    ("VERITY_MODE_DEFAULT" variable
+                       (:constant-flag t
+                        :default-value (1359 1378)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1337 1378]))                  
+                :type "enum")
+                nil [1187 1381])
+            ("mount_mode" type
+               (:members 
+                  ( ("MOUNT_MODE_DEFAULT" variable
+                       (:constant-flag t
+                        :default-value (1441 1442)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1420 1442])
+                    ("MOUNT_MODE_EARLY" variable
+                       (:constant-flag t
+                        :default-value (1467 1468)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1448 1468])
+                    ("MOUNT_MODE_LATE" variable
+                       (:constant-flag t
+                        :default-value (1492 1493)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1474 1493]))                  
+                :type "enum")
+                nil [1398 1496])
+            ("fstab" type
+               (:members 
+                  ( ("num_entries" variable (:type "int") (reparse-symbol classsubparts) [1695 1711])
+                    ("recs" variable
+                       (:pointer 1
+                        :type ("fstab_rec" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [1716 1739])
+                    ("fstab_filename" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [1744 1765]))                  
+                :type "struct")
+                nil [1676 1768])
+            ("fstab_rec" type
+               (:members 
+                  ( ("blk_device" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [1793 1810])
+                    ("mount_point" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [1815 1833])
+                    ("fs_type" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [1838 1852])
+                    ("flags" variable (:type "unsigned long") (reparse-symbol classsubparts) [1857 1877])
+                    ("fs_options" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [1882 1899])
+                    ("fs_mgr_flags" variable (:type "int") (reparse-symbol classsubparts) [1904 1921])
+                    ("key_loc" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [1926 1940])
+                    ("verity_loc" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [1945 1962])
+                    ("length" variable (:type "long long") (reparse-symbol classsubparts) [1967 1984])
+                    ("label" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [1989 2001])
+                    ("partnum" variable (:type "int") (reparse-symbol classsubparts) [2006 2018])
+                    ("swap_prio" variable (:type "int") (reparse-symbol classsubparts) [2023 2037])
+                    ("max_comp_streams" variable (:type "int") (reparse-symbol classsubparts) [2042 2063])
+                    ("zram_size" variable (:type "unsigned int") (reparse-symbol classsubparts) [2068 2091])
+                    ("reserved_size" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2096 2119])
+                    ("file_contents_mode" variable (:type "unsigned int") (reparse-symbol classsubparts) [2124 2156])
+                    ("file_names_mode" variable (:type "unsigned int") (reparse-symbol classsubparts) [2161 2190])
+                    ("erase_blk_size" variable (:type "unsigned int") (reparse-symbol classsubparts) [2195 2223])
+                    ("logical_blk_size" variable (:type "unsigned int") (reparse-symbol classsubparts) [2228 2258]))                  
+                :type "struct")
+                nil [1770 2261])
+            ("fs_mgr_verity_state_callback" function
+               (:prototype-flag t
+                :function-pointer t
+                :arguments 
+                  ( ("fstab" variable
+                       (:pointer 1
+                        :type ("fstab_rec" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2347 2371])
+                    ("mount_point" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2380 2404])
+                    ("mode" variable (:type "int") (reparse-symbol arg-sub-list) [2405 2414])
+                    ("status" variable (:type "int") (reparse-symbol arg-sub-list) [2415 2426]))                  
+                :type "void")
+                nil [2310 2427])
+            ("fs_mgr_read_fstab_default" function
+               (:prototype-flag t
+                :pointer 1
+                :type ("fstab" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2429 2471])
+            ("fs_mgr_read_fstab_dt" function
+               (:prototype-flag t
+                :pointer 1
+                :type ("fstab" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2472 2509])
+            ("fs_mgr_read_fstab" function
+               (:prototype-flag t
+                :pointer 1
+                :arguments 
+                  ( ("fstab_path" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2542 2565]))                  
+                :type ("fstab" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2510 2566])
+            ("fs_mgr_free_fstab" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("fstab" variable
+                       (:pointer 1
+                        :type ("fstab" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2590 2610]))                  
+                :type "void")
+                nil [2567 2611])
+            ("FS_MGR_MNTALL_DEV_FILE_ENCRYPTED" variable (:constant-flag t) nil [2621 2653])
+            ("FS_MGR_MNTALL_DEV_NEEDS_RECOVERY" variable (:constant-flag t) nil [2664 2696])
+            ("FS_MGR_MNTALL_DEV_NEEDS_ENCRYPTION" variable (:constant-flag t) nil [2707 2741])
+            ("FS_MGR_MNTALL_DEV_MIGHT_BE_ENCRYPTED" variable (:constant-flag t) nil [2752 2788])
+            ("FS_MGR_MNTALL_DEV_NOT_ENCRYPTED" variable (:constant-flag t) nil [2799 2830])
+            ("FS_MGR_MNTALL_DEV_NOT_ENCRYPTABLE" variable (:constant-flag t) nil [2841 2874])
+            ("FS_MGR_MNTALL_FAIL" variable (:constant-flag t) nil [2885 2903])
+            ("fs_mgr_mount_all" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("fstab" variable
+                       (:pointer 1
+                        :type ("fstab" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2930 2950])
+                    ("mount_mode" variable (:type "int") (reparse-symbol arg-sub-list) [2951 2966]))                  
+                :type "int")
+                nil [2909 2967])
+            ("FS_MGR_DOMNT_FAILED" variable (:constant-flag t) nil [2977 2996])
+            ("FS_MGR_DOMNT_BUSY" variable (:constant-flag t) nil [3010 3027])
+            ("fs_mgr_do_mount" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("fstab" variable
+                       (:pointer 1
+                        :type ("fstab" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3054 3074])
+                    ("n_name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [3075 3094])
+                    ("n_blk_device" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [3095 3114])
+                    ("tmp_mount_point" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [3135 3157]))                  
+                :type "int")
+                nil [3034 3158])
+            ("fs_mgr_do_mount_one" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("rec" variable
+                       (:pointer 1
+                        :type ("fstab_rec" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3183 3205]))                  
+                :type "int")
+                nil [3159 3206])
+            ("fs_mgr_do_tmpfs_mount" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("n_name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [3233 3252]))                  
+                :type "int")
+                nil [3207 3253])
+            ("fs_mgr_unmount_all" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("fstab" variable
+                       (:pointer 1
+                        :type ("fstab" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3277 3297]))                  
+                :type "int")
+                nil [3254 3298])
+            ("fs_mgr_get_crypt_info" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("fstab" variable
+                       (:pointer 1
+                        :type ("fstab" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3325 3345])
+                    ("key_loc" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [3346 3360])
+                    ("real_blk_device" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [3387 3409])
+                    ("size" variable (:type "int") (reparse-symbol arg-sub-list) [3410 3419]))                  
+                :type "int")
+                nil [3299 3420])
+            ("fs_mgr_load_verity_state" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("mode" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [3451 3461]))                  
+                :type "bool")
+                nil [3421 3462])
+            ("fs_mgr_update_verity_state" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("callback" variable (:type ("fs_mgr_verity_state_callback" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3495 3533]))                  
+                :type "bool")
+                nil [3463 3534])
+            ("fs_mgr_add_entry" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("fstab" variable
+                       (:pointer 1
+                        :type ("fstab" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3556 3576])
+                    ("mount_point" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [3598 3622])
+                    ("fs_type" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [3623 3643])
+                    ("blk_device" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [3665 3688]))                  
+                :type "int")
+                nil [3535 3689])
+            ("fs_mgr_get_entry_for_mount_point" function
+               (:prototype-flag t
+                :pointer 1
+                :arguments 
+                  ( ("fstab" variable
+                       (:pointer 1
+                        :type ("fstab" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3741 3761])
+                    ("path" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [3762 3779]))                  
+                :type ("fstab_rec" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [3690 3780])
+            ("fs_mgr_is_voldmanaged" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("fstab" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("fstab_rec" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3807 3837]))                  
+                :type "int")
+                nil [3781 3838])
+            ("fs_mgr_is_nonremovable" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("fstab" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("fstab_rec" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3866 3896]))                  
+                :type "int")
+                nil [3839 3897])
+            ("fs_mgr_is_verified" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("fstab" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("fstab_rec" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3921 3951]))                  
+                :type "int")
+                nil [3898 3952])
+            ("fs_mgr_is_verifyatboot" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("fstab" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("fstab_rec" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3980 4010]))                  
+                :type "int")
+                nil [3953 4011])
+            ("fs_mgr_is_avb" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("fstab" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("fstab_rec" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4030 4060]))                  
+                :type "int")
+                nil [4012 4061])
+            ("fs_mgr_is_encryptable" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("fstab" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("fstab_rec" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4088 4118]))                  
+                :type "int")
+                nil [4062 4119])
+            ("fs_mgr_is_file_encrypted" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("fstab" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("fstab_rec" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4149 4179]))                  
+                :type "int")
+                nil [4120 4180])
+            ("fs_mgr_get_file_encryption_modes" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("fstab" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("fstab_rec" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4219 4249])
+                    ("contents_mode_ret" variable
+                       (:pointer 2
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [4288 4319])
+                    ("filenames_mode_ret" variable
+                       (:pointer 2
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [4358 4390]))                  
+                :type "void")
+                nil [4181 4391])
+            ("fs_mgr_is_convertible_to_fbe" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("fstab" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("fstab_rec" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4425 4455]))                  
+                :type "int")
+                nil [4392 4456])
+            ("fs_mgr_is_noemulatedsd" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("fstab" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("fstab_rec" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4484 4514]))                  
+                :type "int")
+                nil [4457 4515])
+            ("fs_mgr_is_notrim" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("fstab" variable
+                       (:pointer 1
+                        :type ("fstab_rec" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4537 4561]))                  
+                :type "int")
+                nil [4516 4562])
+            ("fs_mgr_is_formattable" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("fstab" variable
+                       (:pointer 1
+                        :type ("fstab_rec" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4589 4613]))                  
+                :type "int")
+                nil [4563 4614])
+            ("fs_mgr_is_slotselect" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("fstab" variable
+                       (:pointer 1
+                        :type ("fstab_rec" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4640 4664]))                  
+                :type "int")
+                nil [4615 4665])
+            ("fs_mgr_is_nofail" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("fstab" variable
+                       (:pointer 1
+                        :type ("fstab_rec" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4687 4711]))                  
+                :type "int")
+                nil [4666 4712])
+            ("fs_mgr_is_latemount" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("fstab" variable
+                       (:pointer 1
+                        :type ("fstab_rec" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4737 4761]))                  
+                :type "int")
+                nil [4713 4762])
+            ("fs_mgr_is_quota" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("fstab" variable
+                       (:pointer 1
+                        :type ("fstab_rec" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4783 4807]))                  
+                :type "int")
+                nil [4763 4808])
+            ("fs_mgr_swapon_all" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("fstab" variable
+                       (:pointer 1
+                        :type ("fstab" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4831 4851]))                  
+                :type "int")
+                nil [4809 4852])
+            ("fs_mgr_do_format" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("fstab" variable
+                       (:pointer 1
+                        :type ("fstab_rec" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4875 4899])
+                    ("reserve_footer" variable (:type "bool") (reparse-symbol arg-sub-list) [4900 4920]))                  
+                :type "int")
+                nil [4854 4921])
+            ("FS_MGR_SETUP_VERITY_DISABLED" variable (:constant-flag t) nil [4931 4959])
+            ("FS_MGR_SETUP_VERITY_FAIL" variable (:constant-flag t) nil [4973 4997])
+            ("FS_MGR_SETUP_VERITY_SUCCESS" variable (:constant-flag t) nil [5011 5038])
+            ("fs_mgr_setup_verity" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("fstab" variable
+                       (:pointer 1
+                        :type ("fstab_rec" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5065 5089])
+                    ("wait_for_verity_dev" variable (:type "bool") (reparse-symbol arg-sub-list) [5090 5115]))                  
+                :type "int")
+                nil [5041 5116]))          
+      :file "fs_mgr.h"
+      :pointmax 5318
+      :fsize 5317
+      :lastmodtime '(22876 44514 552465 385000)
+      :unmatched-syntax '((punctuation 5279 . 5280) (close-paren 5278 . 5279) (open-paren 5277 . 5278) (symbol 5255 . 5277) (symbol 5248 . 5254) (punctuation 5247 . 5248) (punctuation 5246 . 5247) (symbol 5243 . 5246) (close-paren "}" 5118 . 5129) (TYPEDEF 2302 . 2309))
+      :lexical-table 
+        '(("FS_MGR_MNTALL_DEV_NEEDS_ENCRYPTION" . ((number "3" 2742 . 2743)))
+          ("FS_MGR_MNTALL_FAIL" . ((semantic-list "(-1)" 2904 . 2908)))
+          ("VERITY_METADATA_MAGIC_NUMBER" . ((number "0xb001b001" 977 . 987)))
+          ("FS_MGR_MNTALL_DEV_FILE_ENCRYPTED" . ((number "5" 2654 . 2655)))
+          ("FS_MGR_DOMNT_FAILED" . ((semantic-list "(-1)" 2997 . 3001)))
+          ("__CORE_FS_MGR_H")
+          ("FS_MGR_MNTALL_DEV_NOT_ENCRYPTABLE" . ((number "0" 2875 . 2876)))
+          ("FS_MGR_DOMNT_BUSY" . ((semantic-list "(-2)" 3028 . 3032)))
+          ("FS_MGR_SETUP_VERITY_DISABLED" . ((semantic-list "(-2)" 4960 . 4964)))
+          ("FS_MGR_SETUP_VERITY_SUCCESS" . ((number "0" 5039 . 5040)))
+          ("FS_MGR_MNTALL_DEV_NOT_ENCRYPTED" . ((number "1" 2831 . 2832)))
+          ("VERITY_METADATA_MAGIC_DISABLE" . ((number "0x46464f56" 1134 . 1144)))
+          ("FS_MGR_MNTALL_DEV_MIGHT_BE_ENCRYPTED" . ((number "2" 2789 . 2790)))
+          ("FS_MGR_MNTALL_DEV_NEEDS_RECOVERY" . ((number "4" 2697 . 2698)))
+          ("FS_MGR_SETUP_VERITY_FAIL" . ((semantic-list "(-1)" 4998 . 5002)))
+          )
+))
+  :file "!home!chenqi!work!ivio!system!core!fs_mgr!include!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

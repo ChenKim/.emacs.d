@@ -2,7 +2,12 @@
 (require 'package)
 (add-to-list 'package-archives
 	     '("melpa" . "http://melpa.milkbox.net/packages/") t)
+(add-to-list 'package-archives
+             '("elpy" . "http://jorgenschaefer.github.io/packages/"))
 (package-initialize)
+
+(elpy-enable)
+(elpy-use-ipython)
 
 (setq gc-cons-threshold 100000000)
 (setq inhibit-startup-message t)
@@ -497,7 +502,10 @@
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    (quote
-    ("5e7fd953d1ac6dc54dded0c0eb0512d0673a2715c3c3a8e88aebbca5a633e0bc" default))))
+    ("5e7fd953d1ac6dc54dded0c0eb0512d0673a2715c3c3a8e88aebbca5a633e0bc" default)))
+ '(package-selected-packages
+   (quote
+    (elpy zygospore yasnippet ws-butler window-margin windata volatile-highlights tree-mode smartparens session redo+ project-explorer ppd-sr-speedbar neotree multiple-cursors monokai-theme magit imenu-list iedit highlight-symbol highlight-parentheses helm-swoop helm-projectile helm-gtags ggtags function-args flycheck evil etags-table duplicate-thing dtrt-indent ctypes crosshairs company comment-dwim-2 color-theme clean-aindent-mode anzu))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -587,3 +595,6 @@
 (global-set-key "\M--" 'scroll-down-line)
 (define-key (current-global-map) [remap c-electric-delete-forward] 'scroll-up-command)
 (global-set-key (kbd "C-v") 'scroll-down-command)
+
+;; projects for gtags
+(setenv "GTAGSLIBPATH" "~/work/androidia/external/gnu-efi/")

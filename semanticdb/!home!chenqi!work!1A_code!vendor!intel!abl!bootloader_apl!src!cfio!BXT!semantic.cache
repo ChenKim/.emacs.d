@@ -1,0 +1,186 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("bootloader.h" include nil nil [1361 1384])
+            ("version.h" include nil nil [1385 1405])
+            ("bootmode.h" include nil nil [1406 1427])
+            ("cfio.h" include nil nil [1429 1446])
+            ("BIOS-config.h" include nil nil [1448 1472])
+            ("BIOS/GpioLib.h" include nil nil [1473 1498])
+            ("config/cdata.h" include nil nil [1500 1525])
+            ("gpio.h" include nil nil [1527 1544])
+            ("drivers/rp/private.h" include nil nil [1545 1576])
+            ("ALREADY_CONFIGURED" variable (:constant-flag t) nil [1586 1604])
+            ("PCIE_RP_OVERLAP" variable (:constant-flag t) nil [1621 1636])
+            ("" type
+               (:members 
+                  ( ("SW_COMM_COUNT" variable
+                       (:constant-flag t
+                        :default-value (1705 1707)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1689 1707])
+                    ("NW_COMM_COUNT" variable
+                       (:constant-flag t
+                        :default-value (1726 1732)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1710 1732])
+                    ("N_COMM_COUNT" variable
+                       (:constant-flag t
+                        :default-value (1760 1762)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1744 1762])
+                    ("W_COMM_COUNT" variable
+                       (:constant-flag t
+                        :default-value (1781 1783)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1765 1783])
+                    ("MAX_CFIO_COUNT" variable
+                       (:constant-flag t
+                        :default-value (1803 1832)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1786 1832])
+                    ("N_COMM_COUNT" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1835 1849])
+                    ("W_COMM_COUNT" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1850 1863])
+                    ("SW_COMM_OFFSET" variable
+                       (:constant-flag t
+                        :default-value (1914 1915)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1897 1915])
+                    ("NW_COMM_OFFSET" variable
+                       (:constant-flag t
+                        :default-value (1935 1965)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1918 1965])
+                    ("N_COMM_OFFSET" variable
+                       (:constant-flag t
+                        :default-value (1985 2015)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1968 2015])
+                    ("W_COMM_OFFSET" variable
+                       (:constant-flag t
+                        :default-value (2035 2064)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [2018 2064]))                  
+                :type "enum")
+                nil [1649 2067])
+            ("community_size" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+	[SW_INDEX] = SW_COMM_COUNT,
+	[NW_INDEX] = NW_COMM_COUNT,
+	[N_INDEX]  = N_COMM_COUNT,
+	[W_INDEX]  = W_COMM_COUNT,
+}"
+                :type ("uint8_t" type (:type "class") nil nil))
+                nil [2069 2227])
+            ("pin_conf_status_offset" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+	[SW_INDEX] = SW_COMM_OFFSET,
+	[NW_INDEX] = NW_COMM_OFFSET,
+	[N_INDEX]  = N_COMM_OFFSET,
+	[W_INDEX]  = W_COMM_OFFSET,
+}"
+                :type ("uint8_t" type (:type "class") nil nil))
+                nil [2229 2399])
+            ("check_pcie_root_port_gpio" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("padConfg0" variable
+                       (:pointer 1
+                        :type ("BXT_CONF_PAD0" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2607 2632])
+                    ("comm_index" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2633 2653])
+                    ("pad_offset" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2654 2675]))                  
+                :type "int")
+                nil [2570 3223])
+            ("pad_config" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ch" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("_cdata_header" type (:type "union") nil nil))
+                        (reparse-symbol arg-sub-list) [3248 3278])
+                    ("arg" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [3279 3289])
+                    ("unused" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [3290 3306]))                  
+                :type "int")
+                nil [3225 5600])
+            ("pin_conf_status_update" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("pconf_status" variable
+                       (:pointer 1
+                        :type ("uint8_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5637 5659])
+                    ("po" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("_board_pin_out" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5660 5693]))                  
+                :type "void")
+                nil [5602 5804])
+            ("pin_conf_status_init" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("pin_conf_status" variable
+                       (:pointer 1
+                        :type ("uint8_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5839 5864])
+                    ("pin_conf_status_size" variable (:type "int") (reparse-symbol arg-sub-list) [5865 5890]))                  
+                :type "void")
+                nil [5806 6468])
+            ("cfio_config_BIOS" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [6748 6753]))                  
+                :type "void")
+                nil [6725 8609])
+            ("my_DEBUG" function
+               (:arguments 
+                  ( ("level" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [8727 8742])
+                    ("fmt" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [8743 8759])
+                    ("..." variable (:type "vararg") (reparse-symbol arg-sub-list) [8760 8764]))                  
+                :type "void")
+                nil [8712 8834]))          
+      :file "config.c"
+      :pointmax 9442
+      :fsize 9441
+      :lastmodtime '(22796 14660 617483 306000)
+      :unmatched-syntax '((punctuation 9360 . 9361) (semantic-list 9105 . 9360) (punctuation 9103 . 9104) (semantic-list 9099 . 9102) (symbol 9077 . 9099) (number 9100 . 9101) (symbol 9034 . 9076) (number 9100 . 9101) (semantic-list 8964 . 9033) (symbol 8936 . 8963) (STRUCT 8929 . 8935) (CONST 8923 . 8928) (STATIC 8916 . 8922) (punctuation 1848 . 1849) (punctuation 1833 . 1834))
+      :lexical-table 
+        '(("PCIE_RP_OVERLAP" . ((symbol "BIT_" 1640 . 1644) (semantic-list "(1)" 1644 . 1647)))
+          ("ALREADY_CONFIGURED" . ((symbol "BIT_" 1605 . 1609) (semantic-list "(0)" 1609 . 1612)))
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :file "BIOS-config.h"
+      :fsize 1554
+      :lastmodtime '(22796 14660 617483 306000)))
+  :file "!home!chenqi!work!1A_code!vendor!intel!abl!bootloader_apl!src!cfio!BXT!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

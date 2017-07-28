@@ -1,0 +1,171 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("vmm_defs.h" include nil nil [750 771])
+            ("vmm_dbg.h" include nil nil [772 792])
+            ("vmm_objects.h" include nil nil [793 817])
+            ("modules/ipc.h" include nil nil [818 842])
+            ("modules/vmcall.h" include nil nil [843 870])
+            ("modules/trusty_guest.h" include nil nil [871 904])
+            ("guest.h" include nil nil [905 923])
+            ("gcpu.h" include nil nil [924 941])
+            ("gcpu_state.h" include nil nil [942 965])
+            ("gpm.h" include nil nil [966 982])
+            ("scheduler.h" include nil nil [983 1005])
+            ("host_memory_manager.h" include nil nil [1006 1038])
+            ("host_cpu.h" include nil nil [1039 1060])
+            ("event_mgr.h" include nil nil [1061 1083])
+            ("trusty_startup.h" include nil nil [1084 1111])
+            ("trusty_device_info.h" include nil nil [1112 1143])
+            ("modules/msr_isolation.h" include nil nil [1144 1178])
+            ("vmcall_id_t" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("TRUSTY_VMCALL_SMC" variable
+                             (:constant-flag t
+                              :default-value (1407 1417)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [1375 1417])
+                          ("TRUSTY_VMCALL_PUTS" variable
+                             (:constant-flag t
+                              :default-value (1529 1539)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [1497 1539])
+                          ("TRUSTY_VMCALL_TIMER" variable
+                             (:constant-flag t
+                              :default-value (1574 1584)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [1542 1584])
+                          ("TRUSTY_VMCALL_DEBUG_BUFFER" variable
+                             (:constant-flag t
+                              :default-value (1619 1629)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [1587 1629])
+                          ("TRUSTY_VMCALL_PENDING_INTR" variable
+                             (:constant-flag t
+                              :default-value (1664 1674)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [1632 1674])
+                          ("TRUSTY_VMCALL_IRQ_DONE" variable
+                             (:constant-flag t
+                              :default-value (1709 1719)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [1677 1719])
+                          ("TRUSTY_VMCALL_DUMP_INIT" variable
+                             (:constant-flag t
+                              :default-value (1754 1764)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [1722 1764])
+                          ("TRUSTY_VMCALL_GET_HOST_CPU_ID" variable
+                             (:constant-flag t
+                              :default-value (1799 1809)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [1767 1809]))                        
+                      :type "enum")
+                      nil nil)
+                :type "typedef")
+                nil [1359 1823])
+            ("LK_TIMER_INTR" variable (:constant-flag t) nil [1893 1906])
+            ("LK_RESCH" variable (:constant-flag t) nil [1921 1929])
+            ("SMC_ENTITY_SECURE_MONITOR" variable (:constant-flag t) nil [2001 2026])
+            ("SMC_NR" variable (:constant-flag t) nil [2068 2074])
+            ("SMC_STDCALL_NR" variable (:constant-flag t) nil [2287 2301])
+            ("SMC_SC_NOP" variable (:constant-flag t) nil [2496 2506])
+            ("first_smc" variable
+               (:typemodifiers ("static")
+                :default-value "TRUE"
+                :type ("boolean_t" type (:type "class") nil nil))
+                nil [2555 2589])
+            ("trusty_desc" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :type ("trusty_desc_t" type (:type "class") nil nil))
+                nil [2590 2624])
+            ("smc_vmcall_exit" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("gcpu" variable (:type ("guest_cpu_handle_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2654 2678]))                  
+                :type "void")
+                nil [2626 4035])
+            ("trusty_vmcall_get_host_cpu_id" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("gcpu" variable (:type ("guest_cpu_handle_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4607 4631]))                  
+                :type "void")
+                nil [4565 4683])
+            ("trusty_vmcall_set_pending_intr" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("gcpu" variable (:type ("guest_cpu_handle_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4766 4790]))                  
+                :type "void")
+                nil [4723 4954])
+            ("trusty_vmcall_dump_init" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("gcpu" variable (:type ("guest_cpu_handle_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4992 5016]))                  
+                :type "void")
+                nil [4956 5422])
+            ("guest_register_vmcall_services" function
+               (:arguments 
+                  ( ("guest_id" variable (:type ("guest_id_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5460 5480]))                  
+                :type "void")
+                nil [5424 6150])
+            ("trusty_gcpu_state" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :type ("gcpu_state_t" type (:type "class") nil nil))
+                nil [6224 6263])
+            ("trusty_set_gcpu_state" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("gcpu" variable (:type ("guest_cpu_handle_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6299 6323])
+                    ("pv" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [6324 6333]))                  
+                :type "void")
+                nil [6265 6444])
+            ("prepare_trusty_gcpu_init_state" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("gcpu_state" variable
+                       (:pointer 1
+                        :type ("gcpu_state_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6489 6514]))                  
+                :type "void")
+                nil [6446 6634])
+            ("init_trusty_guest" function
+               (:arguments 
+                  ( ("evmm_desc" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("evmm_desc_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6659 6688]))                  
+                :type "void")
+                nil [6636 9041]))          
+      :file "trusty_guest.c"
+      :pointmax 9043
+      :fsize 9042
+      :lastmodtime '(22796 14675 293483 692000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("SMC_SC_NOP" . ((symbol "SMC_STDCALL_NR" 2507 . 2521) (semantic-list "(SMC_ENTITY_SECURE_MONITOR, 3)" 2523 . 2553)))
+          ("SMC_STDCALL_NR" (spp-arg-list ("entity" "fn") 2301 . 2313) . ((symbol "SMC_NR" 2314 . 2320) (semantic-list "((entity), (fn), 0, 0)" 2320 . 2342)))
+          ("SMC_NR" (spp-arg-list ("entity" "fn" "fastcall" "smc64") 2074 . 2103) . ((semantic-list "((((fastcall) & 0x1) << 31) | \\
+					     (((smc64) & 0x1) << 30) | \\
+					     (((entity) & 0x3F) << 24) | \\
+					     ((fn) & 0xFFFF) \\
+					    )" 2104 . 2252)))
+          ("LK_TIMER_INTR" . ((number "0x31" 1907 . 1911)))
+          ("LK_RESCH" . ((number "0xF7" 1937 . 1941)))
+          ("SMC_ENTITY_SECURE_MONITOR" . ((number "60" 2027 . 2029)))
+          )
+))
+  :file "!home!chenqi!work!1A_code!vendor!intel!fw!evmm!bxt!core!modules!trusty_guest!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

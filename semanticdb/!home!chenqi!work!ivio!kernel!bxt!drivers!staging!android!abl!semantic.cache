@@ -1,0 +1,455 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("linux/module.h" include (:system-flag t) nil [541 566])
+            ("linux/moduleparam.h" include (:system-flag t) nil [567 597])
+            ("linux/reboot.h" include (:system-flag t) nil [598 623])
+            ("linux/mc146818rtc.h" include (:system-flag t) nil [624 654])
+            ("linux/sysfs.h" include (:system-flag t) nil [655 679])
+            ("linux/slab.h" include (:system-flag t) nil [680 703])
+            ("linux/kmod.h" include (:system-flag t) nil [704 727])
+            ("MODULE_NAME" variable (:constant-flag t) nil [737 748])
+            ("cmos_read_ext_bank" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("addr" variable (:type ("u8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [830 838]))                  
+                :type "unsigned char")
+                nil [783 894])
+            ("CMOS_READ_EXT" variable (:constant-flag t) nil [903 916])
+            ("cmos_write_ext_bank" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("val" variable (:type ("u8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [982 989])
+                    ("addr" variable (:type ("u8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [990 998]))                  
+                :type "void")
+                nil [943 1053])
+            ("CMOS_WRITE_EXT" variable (:constant-flag t) nil [1062 1076])
+            ("NVRAM_START_ADDRESS" variable (:constant-flag t) nil [1140 1159])
+            ("_USERCMD_" variable (:constant-flag t) nil [1174 1183])
+            ("USERCMD_END" variable (:constant-flag t) nil [1235 1246])
+            ("USERCMD_ACTION" variable (:constant-flag t) nil [1273 1287])
+            ("USERCMD_UPDATE_IFWI" variable (:constant-flag t) nil [1314 1333])
+            ("CDATA_TAG_USER_CMD" variable (:constant-flag t) nil [1366 1384])
+            ("NVRAM_VALID_FLAG" variable (:constant-flag t) nil [1398 1414])
+            ("CRC32C_POLYNOMIAL" variable (:constant-flag t) nil [1429 1446])
+            ("capsule_request" variable
+               (:typemodifiers ("static")
+                :type "bool")
+                nil [1483 1511])
+            ("_cdata_header" type
+               (:members 
+                  ( ("data" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1536 1550])
+                    ("" type
+                       (:members 
+                          ( ("ncond" variable
+                               (:suffix ":2"
+                                :type "unsigned int")
+                                (reparse-symbol classsubparts) [1563 1582])
+                            ("length" variable
+                               (:suffix ":10"
+                                :type "unsigned int")
+                                (reparse-symbol classsubparts) [1585 1606])
+                            ("flags" variable
+                               (:suffix ":4"
+                                :type "unsigned int")
+                                (reparse-symbol classsubparts) [1609 1628])
+                            ("version" variable
+                               (:suffix ":4"
+                                :type "unsigned int")
+                                (reparse-symbol classsubparts) [1631 1651])
+                            ("tag" variable
+                               (:suffix ":12"
+                                :type "unsigned int")
+                                (reparse-symbol classsubparts) [1654 1672]))                          
+                        :type "struct")
+                        (reparse-symbol classsubparts) [1552 1676]))                  
+                :type "union")
+                nil [1513 1679])
+            ("__packed" variable (:type ("nvram_capsule_cmd" type
+                 (:prototype t
+                  :type "struct")
+                  nil nil)) nil [1681 1784])
+            ("nvram_capsule_cmd" type
+               (:members 
+                  ( ("action" variable (:type "char") (reparse-symbol classsubparts) [1709 1721])
+                    ("device" variable (:type "char") (reparse-symbol classsubparts) [1723 1735])
+                    ("partition" variable (:type "char") (reparse-symbol classsubparts) [1737 1752])
+                    ("file_name" variable
+                       (:dereference 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [1754 1772]))                  
+                :type "struct")
+                nil [1681 1784])
+            ("__packed" variable (:type ("nvram_reboot_cmd" type
+                 (:prototype t
+                  :type "struct")
+                  nil nil)) nil [1786 1877])
+            ("nvram_reboot_cmd" type
+               (:members 
+                  ( ("action" variable (:type "char") (reparse-symbol classsubparts) [1813 1825])
+                    ("target" variable (:type "char") (reparse-symbol classsubparts) [1827 1839])
+                    ("end" variable (:type "char") (reparse-symbol classsubparts) [1841 1850])
+                    ("padding" variable (:type "char") (reparse-symbol classsubparts) [1852 1865]))                  
+                :type "struct")
+                nil [1786 1877])
+            ("name2id" type
+               (:members 
+                  ( ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol classsubparts) [1897 1914])
+                    ("id" variable (:type "int") (reparse-symbol classsubparts) [1916 1923]))                  
+                :type "struct")
+                nil [1879 1926])
+            ("__packed" variable (:type ("nvram_msg" type
+                 (:prototype t
+                  :type "struct")
+                  nil nil)) nil [1928 2083])
+            ("nvram_msg" type
+               (:members 
+                  ( ("magic" variable (:type "char") (reparse-symbol classsubparts) [1948 1959])
+                    ("size" variable (:type "char") (reparse-symbol classsubparts) [1961 1971])
+                    ("cdata_header" variable (:type ("_cdata_header" type (:type "union") nil nil)) (reparse-symbol classsubparts) [1973 2006])
+                    ("cdata_payload" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [2008 2028])
+                    ("cdata_payload_size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2030 2056])
+                    ("crc" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2058 2071]))                  
+                :type "struct")
+                nil [1928 2083])
+            ("NAME2ID" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+	{ \"main\",	0x00 },
+	{ \"android\",	0x00 },
+	{ \"bootloader\",	0x01 },
+	{ \"fastboot\",	0x01 },
+	{ \"elk\",	0x02 },
+	{ \"recovery\",	0x03 },
+	{ \"crashmode\",	0x04 },
+	{ \"cli\",	0x10 },
+}"
+                :type ("name2id" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2085 2301])
+            ("offset" variable
+               (:typemodifiers ("static")
+                :type ("size_t" type (:type "class") nil nil))
+                nil [2303 2324])
+            ("write_data_to_nvram" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("data" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2400 2411])
+                    ("size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2412 2424]))                  
+                :type ("size_t" type (:type "class") nil nil))
+                nil [2366 2663])
+            ("write_msg_to_nvram" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("nvram_msg" variable
+                       (:pointer 1
+                        :type ("nvram_msg" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2696 2724]))                  
+                :type "void")
+                nil [2665 3029])
+            ("crc32c_byte" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("crc" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3134 3147])
+                    ("byte" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [3148 3162]))                  
+                :type ("uint32_t" type (:type "class") nil nil))
+                nil [3106 3353])
+            ("crc32c_buf" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("crc" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3421 3434])
+                    ("addr" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [3435 3452])
+                    ("len" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [3453 3466]))                  
+                :type ("uint32_t" type (:type "class") nil nil))
+                nil [3394 3580])
+            ("crc32c_msg" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("nvram_msg" variable
+                       (:pointer 1
+                        :type ("nvram_msg" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3609 3637]))                  
+                :type ("uint32_t" type (:type "class") nil nil))
+                nil [3582 3836])
+            ("capsule_kobject" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :type ("kobject" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [3838 3877])
+            ("is_capsule_requested" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("kobj" variable
+                       (:pointer 1
+                        :type ("kobject" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3915 3936])
+                    ("attr" variable
+                       (:pointer 1
+                        :type ("kobj_attribute" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3939 3967])
+                    ("buf" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [3968 3978])
+                    ("count" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3979 3992]))                  
+                :type ("ssize_t" type (:type "class") nil nil))
+                nil [3879 4043])
+            ("capsule_device_type" type
+               (:members 
+                  ( ("EMMC" variable
+                       (:constant-flag t
+                        :default-value (4080 4081)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [4073 4081])
+                    ("SDCARD" variable
+                       (:constant-flag t
+                        :default-value (4093 4094)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [4084 4094]))                  
+                :type "enum")
+                nil [4045 4097])
+            ("capsule_store" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("kobj" variable
+                       (:pointer 1
+                        :type ("kobject" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4128 4149])
+                    ("attr" variable
+                       (:pointer 1
+                        :type ("kobj_attribute" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4150 4178])
+                    ("buf" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [4181 4191])
+                    ("count" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4192 4205]))                  
+                :type ("ssize_t" type (:type "class") nil nil))
+                nil [4099 5424])
+            ("capsule_name_attribute" variable
+               (:typemodifiers ("static")
+                :default-value "__ATTR(capsule_name, 0600, NULL, capsule_store)"
+                :type ("kobj_attribute" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [5426 5530])
+            ("capsule_requested_attribute" variable
+               (:typemodifiers ("static")
+                :default-value "__ATTR(capsule_requested, 0400, is_capsule_requested, NULL)"
+                :type ("kobj_attribute" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [5532 5653])
+            ("reboot_target_name2id" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [5688 5705]))                  
+                :type "int")
+                nil [5655 5845])
+            ("set_reboot_target" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [5876 5893]))                  
+                :type "int")
+                nil [5847 6794])
+            ("DEFAULT_TARGET_INDEX" variable
+               (:typemodifiers ("static")
+                :constant-flag t
+                :type "unsigned int")
+                nil [6796 6843])
+            ("cold_reset" variable
+               (:pointer 1
+                :dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+	\"/sbin/cansend\",
+	\"slcan0\",
+	\"0000FFFF#05025555555555\",
+	NULL}"
+                :type "char")
+                nil [6845 6952])
+            ("cold_reset_capsule" variable
+               (:pointer 1
+                :dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+	\"/sbin/cansend\",
+	\"slcan0\",
+	\"0000FFFF#05035555555555\",
+	NULL}"
+                :type "char")
+                nil [6953 7068])
+            ("suppress_heartbeat" variable
+               (:pointer 1
+                :dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+	\"/sbin/cansend\",
+	\"slcan0\",
+	\"0000FFFF#01045555555555\",
+	NULL}"
+                :type "char")
+                nil [7069 7184])
+            ("reboot_request" variable
+               (:pointer 1
+                :dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+	\"/sbin/cansend\",
+	\"slcan0\",
+	\"0000FFFF#03015555555555\",
+	NULL}"
+                :type "char")
+                nil [7185 7296])
+            ("execute_slcan_command" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("cmd" variable
+                       (:pointer 1
+                        :dereference 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [7331 7349]))                  
+                :type "int")
+                nil [7298 7705])
+            ("ablbc_reboot_notifier_call" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("notifier" variable
+                       (:pointer 1
+                        :type ("notifier_block" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7745 7777])
+                    ("what" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [7788 7807])
+                    ("data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [7808 7819]))                  
+                :type "int")
+                nil [7707 8403])
+            ("ablbc_reboot_notifier" variable
+               (:typemodifiers ("static")
+                :default-value "{
+	.notifier_call = ablbc_reboot_notifier_call,
+}"
+                :type ("notifier_block" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [8405 8508])
+            ("ablbc_init" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [8539 8544]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [8521 9263])
+            ("module_init" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("ablbc_init" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9277 9288]))                  
+                :type "int")
+                nil [9265 9289])
+            ("ablbc_exit" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [9321 9326]))                  
+                :type ("__exit" type (:type "class") nil nil))
+                nil [9303 9414])
+            ("module_exit" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("ablbc_exit" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9427 9438]))                  
+                :type "int")
+                nil [9415 9439])
+            ("MODULE_AUTHOR" function
+               (:prototype-flag t
+                :type "int")
+                nil [9441 9504])
+            ("MODULE_DESCRIPTION" function
+               (:prototype-flag t
+                :type "int")
+                nil [9505 9569])
+            ("MODULE_LICENSE" function
+               (:prototype-flag t
+                :type "int")
+                nil [9570 9595]))          
+      :file "ablbc.c"
+      :pointmax 9596
+      :fsize 9595
+      :lastmodtime '(22867 21707 859949 132000)
+      :unmatched-syntax '((string 9585 . 9593) (string 9524 . 9567) (string 9455 . 9502) (VOID 9298 . 9302) (STATIC 9291 . 9297) (INT 8517 . 8520) (STATIC 8510 . 8516))
+      :lexical-table 
+        '(("NVRAM_START_ADDRESS" . ((number "0x10" 1160 . 1164)))
+          ("MODULE_NAME" . ((string "\"ablbc\"" 749 . 756)))
+          ("USERCMD_END" . ((symbol "_USERCMD_" 1249 . 1258) (semantic-list "(0, 0)" 1258 . 1264)))
+          ("NVRAM_VALID_FLAG" . ((number "0x12" 1415 . 1419)))
+          ("CMOS_WRITE_EXT" (spp-arg-list ("v" "a") 1076 . 1082) . ((symbol "cmos_write_ext_bank" 1083 . 1102) (semantic-list "(v, a)" 1102 . 1108)))
+          ("CDATA_TAG_USER_CMD" . ((number "0x4d" 1385 . 1389)))
+          ("CMOS_READ_EXT" (spp-arg-list ("a") 916 . 919) . ((symbol "cmos_read_ext_bank" 920 . 938) (semantic-list "(a)" 938 . 941)))
+          ("USERCMD_UPDATE_IFWI" (spp-arg-list ("len") 1333 . 1338) . ((symbol "_USERCMD_" 1339 . 1348) (semantic-list "(2, len)" 1348 . 1356)))
+          ("CRC32C_POLYNOMIAL" . ((number "0x82F63B78" 1447 . 1457)))
+          ("USERCMD_ACTION" . ((symbol "_USERCMD_" 1290 . 1299) (semantic-list "(7, 1)" 1299 . 1305)))
+          ("_USERCMD_" (spp-arg-list ("cmd" "len") 1183 . 1193) . ((semantic-list "(((cmd) << 5) | ((len) & 0x1f))" 1195 . 1226)))
+          )
+))
+  :file "!home!chenqi!work!ivio!kernel!bxt!drivers!staging!android!abl!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

@@ -1,0 +1,563 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("pr_fmt" variable (:constant-flag t) nil [9 15])
+            ("linux/export.h" include (:system-flag t) nil [46 71])
+            ("linux/reboot.h" include (:system-flag t) nil [72 97])
+            ("linux/init.h" include (:system-flag t) nil [98 121])
+            ("linux/pm.h" include (:system-flag t) nil [122 143])
+            ("linux/efi.h" include (:system-flag t) nil [144 166])
+            ("linux/dmi.h" include (:system-flag t) nil [167 189])
+            ("linux/sched.h" include (:system-flag t) nil [190 214])
+            ("linux/tboot.h" include (:system-flag t) nil [215 239])
+            ("linux/delay.h" include (:system-flag t) nil [240 264])
+            ("acpi/reboot.h" include (:system-flag t) nil [265 289])
+            ("asm/io.h" include (:system-flag t) nil [290 309])
+            ("asm/apic.h" include (:system-flag t) nil [310 331])
+            ("asm/io_apic.h" include (:system-flag t) nil [332 356])
+            ("asm/desc.h" include (:system-flag t) nil [357 378])
+            ("asm/hpet.h" include (:system-flag t) nil [379 400])
+            ("asm/pgtable.h" include (:system-flag t) nil [401 425])
+            ("asm/proto.h" include (:system-flag t) nil [426 448])
+            ("asm/reboot_fixups.h" include (:system-flag t) nil [449 479])
+            ("asm/reboot.h" include (:system-flag t) nil [480 503])
+            ("asm/pci_x86.h" include (:system-flag t) nil [504 528])
+            ("asm/virtext.h" include (:system-flag t) nil [529 553])
+            ("asm/cpu.h" include (:system-flag t) nil [554 574])
+            ("asm/nmi.h" include (:system-flag t) nil [575 595])
+            ("asm/smp.h" include (:system-flag t) nil [596 616])
+            ("linux/ctype.h" include (:system-flag t) nil [618 642])
+            ("linux/mc146818rtc.h" include (:system-flag t) nil [643 673])
+            ("asm/realmode.h" include (:system-flag t) nil [674 699])
+            ("asm/x86_init.h" include (:system-flag t) nil [700 725])
+            ("asm/efi.h" include (:system-flag t) nil [726 746])
+            ("pm_power_off" function
+               (:prototype-flag t
+                :function-pointer t
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [806 811]))                  
+                :type "void")
+                nil [785 812])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("pm_power_off" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [827 840]))                  
+                :type "int")
+                nil [813 841])
+            ("no_idt" variable
+               (:typemodifiers ("static")
+                :constant-flag t
+                :default-value "{}"
+                :type ("desc_ptr" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [843 884])
+            ("reboot_emergency" variable
+               (:typemodifiers ("static")
+                :type "int")
+                nil [1080 1108])
+            ("port_cf9_safe" variable
+               (:default-value "false"
+                :type "bool")
+                nil [1187 1214])
+            ("set_acpi_reboot" function
+               (:arguments 
+                  ( ("d" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("dmi_system_id" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1433 1463]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [1410 1637])
+            ("set_bios_reboot" function
+               (:arguments 
+                  ( ("d" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("dmi_system_id" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1792 1822]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [1769 1996])
+            ("machine_real_restart" function
+               (:arguments 
+                  ( ("type" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [2035 2053]))                  
+                :type ("__noreturn" type (:type "class") nil nil))
+                nil [2003 3181])
+            ("set_pci_reboot" function
+               (:arguments 
+                  ( ("d" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("dmi_system_id" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3367 3397]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [3345 3580])
+            ("set_kbd_reboot" function
+               (:arguments 
+                  ( ("d" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("dmi_system_id" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3615 3645]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [3593 3815])
+            ("reboot_dmi_table" variable
+               (:dereference 1
+                :default-value "{
+
+	/* Acer */
+	{	/* Handle reboot issue on Acer Aspire one */
+		.callback = set_kbd_reboot,
+		.ident = \"Acer Aspire One A110\",
+		.matches = {
+			DMI_MATCH(DMI_SYS_VENDOR, \"Acer\"),
+			DMI_MATCH(DMI_PRODUCT_NAME, \"AOA110\"),
+		},
+	},
+
+	/* Apple */
+	{	/* Handle problems with rebooting on Apple MacBook5 */
+		.callback = set_pci_reboot,
+		.ident = \"Apple MacBook5\",
+		.matches = {
+			DMI_MATCH(DMI_SYS_VENDOR, \"Apple Inc.\"),
+			DMI_MATCH(DMI_PRODUCT_NAME, \"MacBook5\"),
+		},
+	},
+	{	/* Handle problems with rebooting on Apple MacBookPro5 */
+		.callback = set_pci_reboot,
+		.ident = \"Apple MacBookPro5\",
+		.matches = {
+			DMI_MATCH(DMI_SYS_VENDOR, \"Apple Inc.\"),
+			DMI_MATCH(DMI_PRODUCT_NAME, \"MacBookPro5\"),
+		},
+	},
+	{	/* Handle problems with rebooting on Apple Macmini3,1 */
+		.callback = set_pci_reboot,
+		.ident = \"Apple Macmini3,1\",
+		.matches = {
+			DMI_MATCH(DMI_SYS_VENDOR, \"Apple Inc.\"),
+			DMI_MATCH(DMI_PRODUCT_NAME, \"Macmini3,1\"),
+		},
+	},
+	{	/* Handle problems with rebooting on the iMac9,1. */
+		.callback = set_pci_reboot,
+		.ident = \"Apple iMac9,1\",
+		.matches = {
+			DMI_MATCH(DMI_SYS_VENDOR, \"Apple Inc.\"),
+			DMI_MATCH(DMI_PRODUCT_NAME, \"iMac9,1\"),
+		},
+	},
+	{	/* Handle problems with rebooting on the iMac10,1. */
+		.callback = set_pci_reboot,
+		.ident = \"Apple iMac10,1\",
+		.matches = {
+		    DMI_MATCH(DMI_SYS_VENDOR, \"Apple Inc.\"),
+		    DMI_MATCH(DMI_PRODUCT_NAME, \"iMac10,1\"),
+		},
+	},
+
+	/* ASRock */
+	{	/* Handle problems with rebooting on ASRock Q1900DC-ITX */
+		.callback = set_pci_reboot,
+		.ident = \"ASRock Q1900DC-ITX\",
+		.matches = {
+			DMI_MATCH(DMI_BOARD_VENDOR, \"ASRock\"),
+			DMI_MATCH(DMI_BOARD_NAME, \"Q1900DC-ITX\"),
+		},
+	},
+
+	/* ASUS */
+	{	/* Handle problems with rebooting on ASUS P4S800 */
+		.callback = set_bios_reboot,
+		.ident = \"ASUS P4S800\",
+		.matches = {
+			DMI_MATCH(DMI_BOARD_VENDOR, \"ASUSTeK Computer INC.\"),
+			DMI_MATCH(DMI_BOARD_NAME, \"P4S800\"),
+		},
+	},
+
+	/* Certec */
+	{       /* Handle problems with rebooting on Certec BPC600 */
+		.callback = set_pci_reboot,
+		.ident = \"Certec BPC600\",
+		.matches = {
+			DMI_MATCH(DMI_SYS_VENDOR, \"Certec\"),
+			DMI_MATCH(DMI_PRODUCT_NAME, \"BPC600\"),
+		},
+	},
+
+	/* Dell */
+	{	/* Handle problems with rebooting on Dell DXP061 */
+		.callback = set_bios_reboot,
+		.ident = \"Dell DXP061\",
+		.matches = {
+			DMI_MATCH(DMI_SYS_VENDOR, \"Dell Inc.\"),
+			DMI_MATCH(DMI_PRODUCT_NAME, \"Dell DXP061\"),
+		},
+	},
+	{	/* Handle problems with rebooting on Dell E520's */
+		.callback = set_bios_reboot,
+		.ident = \"Dell E520\",
+		.matches = {
+			DMI_MATCH(DMI_SYS_VENDOR, \"Dell Inc.\"),
+			DMI_MATCH(DMI_PRODUCT_NAME, \"Dell DM061\"),
+		},
+	},
+	{	/* Handle problems with rebooting on the Latitude E5410. */
+		.callback = set_pci_reboot,
+		.ident = \"Dell Latitude E5410\",
+		.matches = {
+			DMI_MATCH(DMI_SYS_VENDOR, \"Dell Inc.\"),
+			DMI_MATCH(DMI_PRODUCT_NAME, \"Latitude E5410\"),
+		},
+	},
+	{	/* Handle problems with rebooting on the Latitude E5420. */
+		.callback = set_pci_reboot,
+		.ident = \"Dell Latitude E5420\",
+		.matches = {
+			DMI_MATCH(DMI_SYS_VENDOR, \"Dell Inc.\"),
+			DMI_MATCH(DMI_PRODUCT_NAME, \"Latitude E5420\"),
+		},
+	},
+	{	/* Handle problems with rebooting on the Latitude E6320. */
+		.callback = set_pci_reboot,
+		.ident = \"Dell Latitude E6320\",
+		.matches = {
+			DMI_MATCH(DMI_SYS_VENDOR, \"Dell Inc.\"),
+			DMI_MATCH(DMI_PRODUCT_NAME, \"Latitude E6320\"),
+		},
+	},
+	{	/* Handle problems with rebooting on the Latitude E6420. */
+		.callback = set_pci_reboot,
+		.ident = \"Dell Latitude E6420\",
+		.matches = {
+			DMI_MATCH(DMI_SYS_VENDOR, \"Dell Inc.\"),
+			DMI_MATCH(DMI_PRODUCT_NAME, \"Latitude E6420\"),
+		},
+	},
+	{	/* Handle problems with rebooting on Dell Optiplex 330 with 0KP561 */
+		.callback = set_bios_reboot,
+		.ident = \"Dell OptiPlex 330\",
+		.matches = {
+			DMI_MATCH(DMI_SYS_VENDOR, \"Dell Inc.\"),
+			DMI_MATCH(DMI_PRODUCT_NAME, \"OptiPlex 330\"),
+			DMI_MATCH(DMI_BOARD_NAME, \"0KP561\"),
+		},
+	},
+	{	/* Handle problems with rebooting on Dell Optiplex 360 with 0T656F */
+		.callback = set_bios_reboot,
+		.ident = \"Dell OptiPlex 360\",
+		.matches = {
+			DMI_MATCH(DMI_SYS_VENDOR, \"Dell Inc.\"),
+			DMI_MATCH(DMI_PRODUCT_NAME, \"OptiPlex 360\"),
+			DMI_MATCH(DMI_BOARD_NAME, \"0T656F\"),
+		},
+	},
+	{	/* Handle problems with rebooting on Dell Optiplex 745's SFF */
+		.callback = set_bios_reboot,
+		.ident = \"Dell OptiPlex 745\",
+		.matches = {
+			DMI_MATCH(DMI_SYS_VENDOR, \"Dell Inc.\"),
+			DMI_MATCH(DMI_PRODUCT_NAME, \"OptiPlex 745\"),
+		},
+	},
+	{	/* Handle problems with rebooting on Dell Optiplex 745's DFF */
+		.callback = set_bios_reboot,
+		.ident = \"Dell OptiPlex 745\",
+		.matches = {
+			DMI_MATCH(DMI_SYS_VENDOR, \"Dell Inc.\"),
+			DMI_MATCH(DMI_PRODUCT_NAME, \"OptiPlex 745\"),
+			DMI_MATCH(DMI_BOARD_NAME, \"0MM599\"),
+		},
+	},
+	{	/* Handle problems with rebooting on Dell Optiplex 745 with 0KW626 */
+		.callback = set_bios_reboot,
+		.ident = \"Dell OptiPlex 745\",
+		.matches = {
+			DMI_MATCH(DMI_SYS_VENDOR, \"Dell Inc.\"),
+			DMI_MATCH(DMI_PRODUCT_NAME, \"OptiPlex 745\"),
+			DMI_MATCH(DMI_BOARD_NAME, \"0KW626\"),
+		},
+	},
+	{	/* Handle problems with rebooting on Dell OptiPlex 760 with 0G919G */
+		.callback = set_bios_reboot,
+		.ident = \"Dell OptiPlex 760\",
+		.matches = {
+			DMI_MATCH(DMI_SYS_VENDOR, \"Dell Inc.\"),
+			DMI_MATCH(DMI_PRODUCT_NAME, \"OptiPlex 760\"),
+			DMI_MATCH(DMI_BOARD_NAME, \"0G919G\"),
+		},
+	},
+	{	/* Handle problems with rebooting on the OptiPlex 990. */
+		.callback = set_pci_reboot,
+		.ident = \"Dell OptiPlex 990\",
+		.matches = {
+			DMI_MATCH(DMI_SYS_VENDOR, \"Dell Inc.\"),
+			DMI_MATCH(DMI_PRODUCT_NAME, \"OptiPlex 990\"),
+		},
+	},
+	{	/* Handle problems with rebooting on Dell 300's */
+		.callback = set_bios_reboot,
+		.ident = \"Dell PowerEdge 300\",
+		.matches = {
+			DMI_MATCH(DMI_SYS_VENDOR, \"Dell Computer Corporation\"),
+			DMI_MATCH(DMI_PRODUCT_NAME, \"PowerEdge 300/\"),
+		},
+	},
+	{	/* Handle problems with rebooting on Dell 1300's */
+		.callback = set_bios_reboot,
+		.ident = \"Dell PowerEdge 1300\",
+		.matches = {
+			DMI_MATCH(DMI_SYS_VENDOR, \"Dell Computer Corporation\"),
+			DMI_MATCH(DMI_PRODUCT_NAME, \"PowerEdge 1300/\"),
+		},
+	},
+	{	/* Handle problems with rebooting on Dell 2400's */
+		.callback = set_bios_reboot,
+		.ident = \"Dell PowerEdge 2400\",
+		.matches = {
+			DMI_MATCH(DMI_SYS_VENDOR, \"Dell Computer Corporation\"),
+			DMI_MATCH(DMI_PRODUCT_NAME, \"PowerEdge 2400\"),
+		},
+	},
+	{	/* Handle problems with rebooting on the Dell PowerEdge C6100. */
+		.callback = set_pci_reboot,
+		.ident = \"Dell PowerEdge C6100\",
+		.matches = {
+			DMI_MATCH(DMI_SYS_VENDOR, \"Dell\"),
+			DMI_MATCH(DMI_PRODUCT_NAME, \"C6100\"),
+		},
+	},
+	{	/* Handle problems with rebooting on the Precision M6600. */
+		.callback = set_pci_reboot,
+		.ident = \"Dell Precision M6600\",
+		.matches = {
+			DMI_MATCH(DMI_SYS_VENDOR, \"Dell Inc.\"),
+			DMI_MATCH(DMI_PRODUCT_NAME, \"Precision M6600\"),
+		},
+	},
+	{	/* Handle problems with rebooting on Dell T5400's */
+		.callback = set_bios_reboot,
+		.ident = \"Dell Precision T5400\",
+		.matches = {
+			DMI_MATCH(DMI_SYS_VENDOR, \"Dell Inc.\"),
+			DMI_MATCH(DMI_PRODUCT_NAME, \"Precision WorkStation T5400\"),
+		},
+	},
+	{	/* Handle problems with rebooting on Dell T7400's */
+		.callback = set_bios_reboot,
+		.ident = \"Dell Precision T7400\",
+		.matches = {
+			DMI_MATCH(DMI_SYS_VENDOR, \"Dell Inc.\"),
+			DMI_MATCH(DMI_PRODUCT_NAME, \"Precision WorkStation T7400\"),
+		},
+	},
+	{	/* Handle problems with rebooting on Dell XPS710 */
+		.callback = set_bios_reboot,
+		.ident = \"Dell XPS710\",
+		.matches = {
+			DMI_MATCH(DMI_SYS_VENDOR, \"Dell Inc.\"),
+			DMI_MATCH(DMI_PRODUCT_NAME, \"Dell XPS710\"),
+		},
+	},
+	{	/* Handle problems with rebooting on Dell Optiplex 7450 AIO */
+		.callback = set_acpi_reboot,
+		.ident = \"Dell OptiPlex 7450 AIO\",
+		.matches = {
+			DMI_MATCH(DMI_SYS_VENDOR, \"Dell Inc.\"),
+			DMI_MATCH(DMI_PRODUCT_NAME, \"OptiPlex 7450 AIO\"),
+		},
+	},
+
+	/* Hewlett-Packard */
+	{	/* Handle problems with rebooting on HP laptops */
+		.callback = set_bios_reboot,
+		.ident = \"HP Compaq Laptop\",
+		.matches = {
+			DMI_MATCH(DMI_SYS_VENDOR, \"Hewlett-Packard\"),
+			DMI_MATCH(DMI_PRODUCT_NAME, \"HP Compaq\"),
+		},
+	},
+
+	/* Sony */
+	{	/* Handle problems with rebooting on Sony VGN-Z540N */
+		.callback = set_bios_reboot,
+		.ident = \"Sony VGN-Z540N\",
+		.matches = {
+			DMI_MATCH(DMI_SYS_VENDOR, \"Sony Corporation\"),
+			DMI_MATCH(DMI_PRODUCT_NAME, \"VGN-Z540N\"),
+		},
+	},
+
+	{ }
+}"
+                :type ("__initdata" type (:type "class") nil nil))
+                nil [3910 12200])
+            ("reboot_init" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [12232 12237]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [12213 12646])
+            ("core_initcall" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("reboot_init" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12661 12673]))                  
+                :type "int")
+                nil [12647 12674])
+            ("kb_wait" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [12703 12708]))                  
+                :type "void")
+                nil [12676 12811])
+            ("vmxoff_nmi" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("cpu" variable (:type "int") (reparse-symbol arg-sub-list) [12836 12844])
+                    ("regs" variable
+                       (:pointer 1
+                        :type ("pt_regs" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [12845 12866]))                  
+                :type "void")
+                nil [12813 12895])
+            ("emergency_vmx_disable_all" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [13001 13006]))                  
+                :type "void")
+                nil [12963 14057])
+            ("mach_reboot_fixups" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [14106 14111]))                  
+                :type "void")
+                nil [14060 14115])
+            ("native_machine_emergency_restart" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [14945 14950]))                  
+                :type "void")
+                nil [14900 16852])
+            ("native_machine_shutdown" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [16883 16888]))                  
+                :type "void")
+                nil [16854 17850])
+            ("__machine_emergency_restart" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("emergency" variable (:type "int") (reparse-symbol arg-sub-list) [17892 17906]))                  
+                :type "void")
+                nil [17852 17975])
+            ("native_machine_restart" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("__unused" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [18012 18027]))                  
+                :type "void")
+                nil [17977 18140])
+            ("native_machine_halt" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [18174 18179]))                  
+                :type "void")
+                nil [18142 18296])
+            ("native_machine_power_off" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [18335 18340]))                  
+                :type "void")
+                nil [18298 18521])
+            ("__ro_after_init" variable
+               (:default-value "{
+	.power_off = native_machine_power_off,
+	.shutdown = native_machine_shutdown,
+	.emergency_restart = native_machine_emergency_restart,
+	.restart = native_machine_restart,
+	.halt = native_machine_halt,
+#ifdef CONFIG_KEXEC_CORE
+	.crash_shutdown = native_machine_crash_shutdown,
+#endif
+}"
+                :type ("machine_ops" type (:type "class") nil nil))
+                nil [18542 18858])
+            ("machine_power_off" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [18883 18888]))                  
+                :type "void")
+                nil [18860 18918])
+            ("machine_shutdown" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [18942 18947]))                  
+                :type "void")
+                nil [18920 18976])
+            ("machine_emergency_restart" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [19009 19014]))                  
+                :type "void")
+                nil [18978 19051])
+            ("machine_restart" function
+               (:arguments 
+                  ( ("cmd" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [19074 19084]))                  
+                :type "void")
+                nil [19053 19115])
+            ("machine_halt" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [19135 19140]))                  
+                :type "void")
+                nil [19117 19165])
+            ("nmi_shootdown_cpus" function
+               (:arguments 
+                  ( ("callback" variable (:type ("nmi_shootdown_cb" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [21840 21866]))                  
+                :type "void")
+                nil [21816 21905])
+            ("run_crash_ipi_callback" function
+               (:arguments 
+                  ( ("regs" variable
+                       (:pointer 1
+                        :type ("pt_regs" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [21935 21956]))                  
+                :type "void")
+                nil [21907 21960]))          
+      :file "reboot.c"
+      :pointmax 21968
+      :fsize 21967
+      :lastmodtime '(22781 19789 642156 479000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("pr_fmt" (spp-arg-list ("fmt") 15 . 20) . 
+              ((symbol "KBUILD_MODNAME" 21 . 35) (string "\": \"" 36 . 40) (symbol "fmt" 41 . 44)))
+          )
+))
+  :file "!home!chenqi!work!androidia!kernel!android_ia!arch!x86!kernel!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")
